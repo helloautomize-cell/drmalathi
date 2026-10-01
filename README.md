@@ -34,3 +34,23 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## How to swap images
+
+All swappable brand imagery is driven by a single manifest, `data/images.ts`.
+The current set are **unlicensed placeholders** — each must be replaced with a
+licensed asset before launch (see `TODO.md`).
+
+1. Drop the replacement file into `assets/source-images/<slug>.<ext>` (any
+   extension, matched by slug in `data/image-sources.json` via `source`).
+2. Update `data/image-sources.json` if the recipe or `source` path changes,
+   and update `alt`/`focal` in `data/images.ts` for the new photo.
+   Never crop, blur or paint over embedded watermarks or credits — keep them
+   visible or replace the image.
+3. Regenerate variants: `npm run process:images` (writes AVIF + WebP at
+   480/768/1080px to `public/images/brand`, plus blur placeholders and
+   `data/images.generated.json`).
+4. Flip `license` to `"licensed"` in `data/image-sources.json`.
+5. Verify: `npm run check:images` lists remaining placeholders. The deploy
+   gate `REQUIRE_LICENSED_IMAGES=1 npm run check:images` fails while any
+   placeholder or unprocessed source remains.

@@ -1,0 +1,55 @@
+{
+  "hands-baby-feet": {
+    "source": "assets/source-images/hands-baby-feet.jpg",
+    "recipe": "warm-cream",
+    "license": "placeholder"
+  },
+  "baby-lifted-teddy": {
+    "source": "assets/source-images/baby-lifted-teddy.jpg",
+    "recipe": "airy",
+    "license": "placeholder",
+    "creditNote": "Photographer credit embedded bottom-right. Do not crop it out."
+  },
+  "baby-overhead": {
+    "source": "assets/source-images/baby-overhead.jpg",
+    "recipe": "warm-cream",
+    "license": "placeholder"
+  },
+  "pregnancy-test-stork": {
+    "source": "assets/source-images/pregnancy-test-stork.jpg",
+    "recipe": "warm-cream",
+    "license": "placeholder",
+    "crop": { "leftPercent": 28 }
+  },
+  "doctor-glowing-fetus": {
+    "source": "assets/source-images/doctor-glowing-fetus.jpg",
+    "recipe": "neutral",
+    "license": "placeholder"
+  },
+  "family-bw-newborn": {
+    "source": "assets/source-images/family-bw-newborn.jpg",
+    "recipe": "plum-duotone",
+    "license": "placeholder",
+    "creditNote": "Photographer logo embedded top-right. Do not crop it out."
+  },
+  "family-airy-newborn": {
+    "source": "assets/source-images/family-airy-newborn.jpg",
+    "recipe": "airy",
+    "license": "placeholder",
+    "parked": true,
+    "parkedNote": "Source file missing from assets/source-images (removed during hero-image iteration). Not rendered anywhere — hero uses family-cutout. Restore the source file to reuse."
+  },
+  "family-cutout": {
+    "source": "assets/source-images/family-cutout.webp",
+    "recipe": "cutout",
+    "license": "placeholder",
+    "creditNote": "Source is a JPEG with a baked checkerboard pattern (no real alpha). Shown as-is in a rounded frame. Replace with a transparent PNG/WebP for a true cut-out."
+  },
+  "icsi-illustration": {
+    "source": "assets/parked/icsi-illustration.jpg",
+    "recipe": "neutral",
+    "license": "placeholder",
+    "parked": true,
+    "parkedNote": "Do not render anywhere until fertility services are confirmed."
+  }
+}

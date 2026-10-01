@@ -1,0 +1,146 @@
+{
+  "hands-baby-feet": {
+    "width": 736,
+    "height": 1041,
+    "widths": [
+      480,
+      736
+    ],
+    "maxDisplayWidth": 566,
+    "hasAlpha": false,
+    "blur": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAwBACdASoQABcAPyV6tFGuJ6UisAgBwCSJZgCdBagBFo4pGzFno6Ud2IAA0e9aeYlwPK9FGRN7tv7psLtwMdxPjVzS+mXvbp+RkCsso77i0CufVeNDRcI2vNKDRyFSYDD8rYirWSuCie2NqKzEoNAA",
+    "bytes": {
+      "avif": {
+        "480": 7797,
+        "736": 14044
+      },
+      "webp": {
+        "480": 9334,
+        "736": 16602
+      }
+    }
+  },
+  "baby-lifted-teddy": {
+    "width": 736,
+    "height": 1104,
+    "widths": [
+      480,
+      736
+    ],
+    "maxDisplayWidth": 566,
+    "hasAlpha": false,
+    "blur": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAwBACdASoQABgAPyV8tVGuJ6UisAgBwCSJYwDE2CHgAH0mbprbvlwXf+AA/upoVE9NL+47YsUKsRQV2oK5x3Lwqkp2+Yq4e/UJBWSbn3aFcJ1S9SW3aTGuy24X2uOxRQZEAA==",
+    "bytes": {
+      "avif": {
+        "480": 7278,
+        "736": 13421
+      },
+      "webp": {
+        "480": 8900,
+        "736": 16476
+      }
+    }
+  },
+  "baby-overhead": {
+    "width": 236,
+    "height": 354,
+    "widths": [
+      236
+    ],
+    "maxDisplayWidth": 181,
+    "hasAlpha": false,
+    "blur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAwCdASoQABgAPyV8tVIuJ6UjsAgBwCSJYwCdMoADTpY2hOOQAAD+0uli3EMz82Y4a794PhAjrB+XVNRN/GleV1g8AA==",
+    "bytes": {
+      "avif": {
+        "236": 1692
+      },
+      "webp": {
+        "236": 1544
+      }
+    }
+  },
+  "pregnancy-test-stork": {
+    "width": 530,
+    "height": 1104,
+    "widths": [
+      480,
+      530
+    ],
+    "maxDisplayWidth": 407,
+    "hasAlpha": false,
+    "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAgCdASoQACEAPxF2r1GsJ6QitUgBgCIJQBadBxjKAAD+7srfaKAbj8RQwoWplEpDdg4NjPPHGQI1WPE8TOyOGJ4092R9XxiwF1tEKd3d0hyZ8hR5AAAA",
+    "bytes": {
+      "avif": {
+        "480": 7041,
+        "530": 8602
+      },
+      "webp": {
+        "480": 7852,
+        "530": 9268
+      }
+    }
+  },
+  "doctor-glowing-fetus": {
+    "width": 236,
+    "height": 420,
+    "widths": [
+      236
+    ],
+    "maxDisplayWidth": 181,
+    "hasAlpha": false,
+    "blur": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAAAQBACdASoQABwAPyV8tFIuJ6UisAgBwCSJbAC7AAschKNecxtlobELAAD585usntwagZoS0E9ECw7PjCs2nVNikHSRteiVUrMZv1x6kO5QsVkQJDh8ZLNzeasojBdBswlkkwh0q64EL5j9B6IhG0xfOqEt1rI6ws3xIRJ4l8UGha2FxytVQGHtRwX/GFGiIn/qIwAA",
+    "bytes": {
+      "avif": {
+        "236": 5757
+      },
+      "webp": {
+        "236": 7364
+      }
+    }
+  },
+  "family-bw-newborn": {
+    "width": 736,
+    "height": 1104,
+    "widths": [
+      480,
+      736
+    ],
+    "maxDisplayWidth": 566,
+    "hasAlpha": false,
+    "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACwAwCdASoQABgAPyV8tVIuJ6UisAgBwCSJQBadBDsU7v1f8WsTIAD+6MPdUFAIHjd4AQJ9JtUD7eGQlf/yIF7mG6FlWtPiaAW75wmMDRQZQcnA0CB20+t1rllK+AAA",
+    "bytes": {
+      "avif": {
+        "480": 8589,
+        "736": 16981
+      },
+      "webp": {
+        "480": 9898,
+        "736": 19644
+      }
+    }
+  },
+  "family-cutout": {
+    "width": 1024,
+    "height": 1536,
+    "widths": [
+      480,
+      768,
+      1024
+    ],
+    "maxDisplayWidth": 787,
+    "hasAlpha": true,
+    "blur": "data:image/webp;base64,UklGRpYBAABXRUJQVlA4WAoAAAAQAAAADwAAFwAAQUxQSMwAAAABgGJrm5rnnSR/ubaK0bHHDVQxc2UtbQAl0wbqaQHMdZFlZqbMzCtCW4iICQAAgUjVVHs0fAWiVym5Gg3hYaKa8v+fPTBdAlijpOQShMtA7jc1NZ+zIAAIJB9TkZp2AgRgoOKVmqRiPUwYyLimpsdREmBijA7dmld5rnEfxYsSwEI7lQc/7b5BmCgltetv74uEgWLp9WHTcWChl5Kk5sMZNWFghIrub4ck4uKmqT08MbD1y8BY5H+wxBOqYJUMu0AnRDNVCAyFyn2nDgRWUDggpAAAAFAEAJ0BKhAAGAA/JXq0Ua4npSKwCAHAJIliALsBi7iYTnkDsGRs3BOkwvwA/nvvPnWsVVhTRiQyzLnRszQ2csGqE5aYZIxo6+XmPPu808k761qfL7KMfVwA3iTFJQdvAuae5mzqXqPxtqFGhCUsL6Z9VvfkOXMljJzr8pqC2pe2gOiCe2VrPN7Y3asbF0GegxJMxSnYL0NBee4JD76jpFwDAAAA",
+    "bytes": {
+      "avif": {
+        "480": 26168,
+        "768": 51120,
+        "1024": 70021
+      },
+      "webp": {
+        "480": 37476,
+        "768": 70954,
+        "1024": 85400
+      }
+    }
+  }
+}

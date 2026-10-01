@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "shadcn": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "shadcn@4.21.0", "mcp"]
+    },
+    "context7": {
+      "url": "https://mcp.context7.com/mcp",
+      "transport": "http"
+    },
+    "playwright": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@playwright/mcp@0.0.82",
+        "--browser",
+        "chrome",
+        "--viewport-size",
+        "1280x800"
+      ]
+    }
+  }
+}

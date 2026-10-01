@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Write(**)",
+      "Edit(**)",
+      "Exec(git)",
+      "Exec(npm)",
+      "Exec(npx)",
+      "Exec(node)",
+      "Exec(devin mcp)",
+      "mcp__*"
+    ],
+    "deny": [
+      "Exec(sudo)",
+      "Exec(rm -rf)",
+      "Exec(git push*)",
+      "Exec(git reset --hard*)"
+    ]
+  }
+}
