@@ -42,7 +42,7 @@ export function HelpRow() {
         <SectionHeader
           eyebrow="Start here"
           title="How can we help you?"
-          subtitle="Choose the situation closest to yours — each path leads to the right scan, test, or clinic."
+          subtitle="Choose the situation closest to yours. Each path leads to the right scan, test, or clinic."
         />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {paths.map((p) => (

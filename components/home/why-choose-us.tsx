@@ -1,13 +1,14 @@
 import { Award, Clock, MessageCircle, Users } from "lucide-react";
+import Image from "next/image";
 import { FeatureCard } from "@/components/cards/feature-card";
-import { BrandImage } from "@/components/shared/brand-image";
 import { Container } from "@/components/shared/container";
 import { Section } from "@/components/shared/section";
+import { yearsOfCare } from "@/lib/site";
 
 const features = [
   {
     icon: Clock,
-    title: "13 years focused on fetal medicine",
+    title: `${yearsOfCare()} years focused on fetal medicine`,
     description:
       "A state-of-the-art centre dedicated to fetal medicine for over a decade, serving families across the region.",
   },
@@ -36,14 +37,15 @@ export function WhyChooseUs() {
     <Section className="bg-blush">
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,26rem)_1fr] lg:gap-16">
-          {/* AIRY recipe keeps the background pure white so the multiply blend
-              disappears into the blush section behind it. */}
-          <BrandImage
-            slug="baby-lifted-teddy"
-            blend="multiply"
-            sizes="(min-width: 1024px) 416px, 100vw"
-            className="mx-auto w-full max-w-md"
-          />
+          <div className="relative mx-auto aspect-[3/2] w-full max-w-md overflow-hidden rounded-3xl shadow-soft">
+            <Image
+              src="/images/gallery/event9.webp"
+              alt="A doctor at the ultrasound console with a fetal scan on screen at Trichy Fetal Medicine and Fertility Centre"
+              fill
+              sizes="(min-width: 1024px) 416px, 100vw"
+              className="object-cover"
+            />
+          </div>
           <div>
             <p className="mb-3 text-sm font-bold tracking-[0.14em] uppercase text-primary">
               Why choose us

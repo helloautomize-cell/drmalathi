@@ -70,7 +70,7 @@ for (const vp of VIEWPORTS) {
   const file = join(OUT_DIR, `${vp.name}${targetPath === "/" ? "-home" : targetPath.replaceAll("/", "-")}.png`);
 
   // Wait for lazy images to finish so scrollHeight stops shifting.
-  // Skip non-rendered images (display:none) — lazy ones never load.
+  // Skip non-rendered images (display:none); lazy ones never load.
   await page.evaluate(async () => {
     await Promise.all(
       [...document.images].map((img) => {

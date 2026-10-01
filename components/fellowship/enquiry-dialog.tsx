@@ -47,7 +47,7 @@ const enquirySchema = z.object({
   consent: z.literal(true, {
     error: "Please accept so we can respond to your enquiry.",
   }),
-  website: z.string().optional(),
+  company_url: z.string().optional(),
 });
 
 type EnquiryValues = z.infer<typeof enquirySchema>;
@@ -70,7 +70,7 @@ export function CourseEnquiryDialog({ course }: { course: Course }) {
       qualification: "",
       course: course.slug,
       message: "",
-      website: "",
+      company_url: "",
     },
   });
 
@@ -85,7 +85,7 @@ export function CourseEnquiryDialog({ course }: { course: Course }) {
         qualification: "",
         course: course.slug,
         message: "",
-        website: "",
+        company_url: "",
       });
     }
   }
@@ -99,7 +99,7 @@ export function CourseEnquiryDialog({ course }: { course: Course }) {
     formData.set("course", values.course);
     formData.set("message", values.message ?? "");
     formData.set("consent", values.consent ? "on" : "");
-    formData.set("website", values.website ?? "");
+    formData.set("company_url", values.company_url ?? "");
     formData.set("startedAt", startedAt);
 
     const result = await requestCourseEnquiry(formData);
@@ -135,15 +135,12 @@ export function CourseEnquiryDialog({ course }: { course: Course }) {
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
-          <div className="hidden" aria-hidden="true">
-            <Label htmlFor={`${id}-website`}>Website</Label>
+          <div className="absolute -left-[9999px]" aria-hidden="true">
             <input
-              id={`${id}-website`}
               type="text"
               tabIndex={-1}
-              aria-hidden="true"
               autoComplete="off"
-              {...register("website")}
+              {...register("company_url")}
             />
           </div>
 
@@ -270,18 +267,18 @@ export function CourseEnquiryDialog({ course }: { course: Course }) {
               name="consent"
               render={({ field }) => (
                 <Checkbox
-                  id={`${id}-consent`}
                   checked={field.value === true}
                   onCheckedChange={(checked) => field.onChange(checked === true)}
                   aria-invalid={!!errors.consent}
+                  aria-labelledby={`${id}-consent-label`}
                   className="mt-0.5 shrink-0"
                 />
               )}
             />
             <p className="text-sm leading-snug text-muted-foreground">
-              <label htmlFor={`${id}-consent`} className="cursor-pointer">
+              <span id={`${id}-consent-label`}>
                 I consent to the centre contacting me about this course enquiry.
-              </label>{" "}
+              </span>{" "}
               <Link href="/privacy" className="link whitespace-nowrap">
                 Privacy Policy
               </Link>

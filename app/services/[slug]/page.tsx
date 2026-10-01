@@ -18,7 +18,7 @@ export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
 }
 
-// Sensitive services show the hands/baby-feet placeholder (or no photo) —
+// Sensitive services show the hands/baby-feet placeholder (or no photo);
 // never newborn faces on these pages.
 const SENSITIVE_IMAGE_SLUGS = new Set([
   "genetic-counselling",
@@ -140,12 +140,6 @@ export default async function ServiceDetailPage({
                   size="lg"
                   icon={false}
                 />
-                <a
-                  href="#what-to-expect"
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary underline-offset-4 hover:underline"
-                >
-                  See what to expect
-                </a>
               </div>
             </div>
             <p className="rounded-2xl bg-blush p-4 text-xs leading-relaxed text-muted-foreground">

@@ -4,6 +4,7 @@ import { BookingCta } from "@/components/booking/booking-sheet";
 import { BrandImage } from "@/components/shared/brand-image";
 import { Container } from "@/components/shared/container";
 import { Button } from "@/components/ui/button";
+import { yearsOfCare } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -32,8 +33,8 @@ export function Hero() {
             Specialist care for your baby, before birth
           </h1>
           <p className="mt-4 max-w-lg text-base text-white/85 sm:text-lg">
-            13 years of specialist scans, diagnostics and genetic counselling
-            for families across south Tamil Nadu.
+            {yearsOfCare()} years of specialist scans, diagnostics and genetic
+            counselling for families across south Tamil Nadu.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <BookingCta

@@ -197,7 +197,7 @@ async function keyOutBackground(pipeline, cfg = {}) {
   // background noise). The family is one connected mass; keep every
   // component >= 0.4% of the image, discard the rest.
   // Label at >=200 so feathered (140) pixels can't bridge specks to the
-  // subject — small islands then get dropped.
+  // subject; small islands then get dropped.
   const comp = new Int32Array(W * H).fill(-1);
   const sizes = [];
   for (let p = 0; !cfg.keepSpeckles && p < W * H; p++) {
@@ -308,7 +308,7 @@ for (const [slug, cfg] of Object.entries(sources)) {
   const displayCap = Math.floor(srcW / 1.3);
   if (displayCap < 300) {
     warnings.push(
-      `${slug}: source is only ${srcW}px wide — never display above ${displayCap}px`
+      `${slug}: source is only ${srcW}px wide; never display above ${displayCap}px`
     );
   }
 

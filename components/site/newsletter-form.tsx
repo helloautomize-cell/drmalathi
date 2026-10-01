@@ -29,12 +29,11 @@ export function NewsletterForm() {
   return (
     <form ref={formRef} action={onSubmit} className="space-y-3">
       <input type="hidden" name="startedAt" value={startedAt} />
-      {/* Honeypot field, hidden from real users */}
-      <div className="hidden" aria-hidden="true">
-        <Label htmlFor="newsletter-website">Website</Label>
-        <Input
-          id="newsletter-website"
-          name="website"
+      {/* Honeypot field: off-screen so bots fill it but real users and
+          assistive tech never reach it. */}
+      <div className="absolute -left-[9999px]" aria-hidden="true">
+        <input
+          name="company_url"
           type="text"
           tabIndex={-1}
           autoComplete="off"
@@ -53,15 +52,15 @@ export function NewsletterForm() {
       />
       <div className="flex items-start gap-2.5">
         <Checkbox
-          id="newsletter-consent"
           name="consent"
           required
+          aria-labelledby="newsletter-consent-label"
           className="mt-0.5 shrink-0 border-white/40 data-checked:bg-primary"
         />
         <p className="text-xs leading-snug text-white/70">
-          <label htmlFor="newsletter-consent" className="cursor-pointer">
+          <span id="newsletter-consent-label">
             I agree to receive updates from the centre.
-          </label>{" "}
+          </span>{" "}
           <Link
             href="/privacy"
             className="whitespace-nowrap text-white underline underline-offset-2"

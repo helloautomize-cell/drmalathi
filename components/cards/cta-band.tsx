@@ -9,10 +9,19 @@ import { site } from "@/data/site";
 export function CTABand({
   title = "Book your appointment",
   subtitle = "Call us, message us on WhatsApp, or send a request and our team will call you back to schedule your visit.",
+  variant = "default",
 }: {
   title?: string;
   subtitle?: string;
+  /** "international" routes both actions to the international patient line. */
+  variant?: "default" | "international";
 }) {
+  const phone =
+    variant === "international" ? site.internationalPhone : site.phones[0];
+  const whatsapp =
+    variant === "international"
+      ? site.whatsappInternational
+      : site.whatsapp;
   return (
     <Container>
       <div className="relative overflow-hidden rounded-3xl bg-plum shadow-card">
@@ -31,10 +40,10 @@ export function CTABand({
                 size="lg"
                 nativeButton={false}
                 className="bg-white text-plum hover:bg-rose-tint"
-                render={<a href={site.phones[0].href} />}
+                render={<a href={phone.href} />}
               >
                 <Phone aria-hidden="true" />
-                Call {site.phones[0].label}
+                Call {phone.label}
               </Button>
               <Button
                 size="lg"
@@ -42,7 +51,7 @@ export function CTABand({
                 className="bg-teal text-white hover:bg-teal/85"
                 render={
                   <a
-                    href={site.whatsapp.messageHref}
+                    href={whatsapp.messageHref}
                     target="_blank"
                     rel="noopener noreferrer"
                   />

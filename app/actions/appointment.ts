@@ -31,7 +31,7 @@ const appointmentSchema = z.object({
     .default("any"),
   source: z.string().max(40).optional(),
   consent: z.literal("on"),
-  website: z.string().max(0).optional().or(z.literal("")),
+  company_url: z.string().max(0).optional().or(z.literal("")),
   startedAt: z.string().max(40).optional(),
 });
 
@@ -51,7 +51,7 @@ export async function requestAppointment(
     service: formData.get("service") ?? "any",
     source: formData.get("source") ?? "",
     consent: formData.get("consent"),
-    website: formData.get("website"),
+    company_url: formData.get("company_url"),
     startedAt: formData.get("startedAt"),
   });
 
@@ -62,12 +62,12 @@ export async function requestAppointment(
     };
   }
 
-  const { name, phone, doctor, service, source, website, startedAt } =
+  const { name, phone, doctor, service, source, company_url, startedAt } =
     parsed.data;
 
   // Honeypot and minimum submit time: silently accept so bots do not retry.
   const elapsed = startedAt ? Date.now() - new Date(startedAt).getTime() : 0;
-  if (website || !startedAt || elapsed < MIN_SUBMIT_MS) {
+  if (company_url || !startedAt || elapsed < MIN_SUBMIT_MS) {
     return {
       ok: true,
       message:
@@ -143,7 +143,7 @@ const courseEnquirySchema = z.object({
   course: z.string().refine((value) => courseSlugs.includes(value)),
   message: z.string().trim().max(1000).optional(),
   consent: z.literal("on"),
-  website: z.string().max(0).optional().or(z.literal("")),
+  company_url: z.string().max(0).optional().or(z.literal("")),
   startedAt: z.string().max(40).optional(),
 });
 
@@ -160,7 +160,7 @@ export async function requestCourseEnquiry(
     course: formData.get("course"),
     message: formData.get("message") ?? "",
     consent: formData.get("consent"),
-    website: formData.get("website"),
+    company_url: formData.get("company_url"),
     startedAt: formData.get("startedAt"),
   });
 
@@ -175,12 +175,12 @@ export async function requestCourseEnquiry(
     qualification,
     course,
     message,
-    website,
+    company_url,
     startedAt,
   } = parsed.data;
   const elapsed = startedAt ? Date.now() - new Date(startedAt).getTime() : 0;
 
-  if (website || !startedAt || elapsed < MIN_SUBMIT_MS) {
+  if (company_url || !startedAt || elapsed < MIN_SUBMIT_MS) {
     return {
       ok: true,
       message: "Thank you. We have received your course enquiry.",

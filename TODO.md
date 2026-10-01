@@ -29,7 +29,7 @@
       `data/courses.ts`.
 - [ ] **DRAFT FOR MEDICAL REVIEW**: `window` chips on service cards in
       `data/services.ts` (e.g. "Viability 6 to 9 weeks" vs timing text
-      "6 to 10 weeks" — resolve the discrepancy with the medical team).
+      "6 to 10 weeks"; resolve the discrepancy with the medical team).
 - [ ] Rajesh testimonial is in Tamil. Confirm translation approach with client.
 - [ ] Doctor bios: verify spellings of mentor names (Prof Kypros Nicolaides,
       Prof Gustavo Malinger) against client records.
@@ -38,6 +38,14 @@
 
 - [ ] WhatsApp lead number: `NEXT_PUBLIC_WHATSAPP_NUMBER` currently defaults to
       917448939808 (the number the current site links to). Confirm with client.
+- [ ] International WhatsApp: set `NEXT_PUBLIC_WHATSAPP_INTL_NUMBER` if the
+      client wants a separate line for international patients; the site falls
+      back to the general number when unset.
+- [ ] Confirm Saturday opening hours; `hours` in `lib/site.ts` currently lists
+      Mon to Fri, 9:00 AM to 9:00 PM.
+- [ ] Verify the pin position in `public/images/map-trichy.png` (stitched from
+      OpenStreetMap tiles, centred on Thillai Nagar) against the exact clinic
+      address.
 - [ ] Appointment delivery: Resend not configured yet. Set `RESEND_API_KEY`,
       `LEADS_EMAIL_TO`, `LEADS_EMAIL_FROM` (verified sender domain) before launch.
 - [ ] Social links: current site has empty social hrefs. Add real URLs to
@@ -50,28 +58,27 @@
 
 - [ ] **LICENSE REQUIRED**: all brand photos in `data/images.ts` are unlicensed
       placeholders (`license: "placeholder"` in `data/image-sources.json`).
-      Replace each with a licensed asset before launch — `npm run check:images`
+      Replace each with a licensed asset before launch; `npm run check:images`
       lists them; deploy gate: `REQUIRE_LICENSED_IMAGES=1 npm run check:images`.
       - `hands-baby-feet` (why-fetal arch, sensitive service pages)
-      - `baby-lifted-teddy` (why-choose us, /about)
       - `baby-overhead` (calculator accent, 404)
       - `pregnancy-test-stork` (services "start here", calculator)
       - `doctor-glowing-fetus` (doctors intro thumbnail)
       - `family-bw-newborn` (CTA band, plum duotone)
-      - `family-airy-newborn` (unused now — spare)
+      - `family-airy-newborn` (unused now; spare)
       - `family-cutout` (hero cut-out; alpha was recovered from a checkerboard
-        JPEG — replace with the client's real transparent PNG/WebP when
+        JPEG; replace with the client's real transparent PNG/WebP when
         available)
-      - `icsi-illustration` (PARKED — not rendered until fertility services
+      - `icsi-illustration` (PARKED, not rendered until fertility services
         confirmed)
-      - `couple-grey` (EXCLUDED — parked in `assets/parked`, not in manifest)
-- [ ] Embedded photographer credits exist on `baby-lifted-teddy` (bottom-right)
-      and `family-bw-newborn` (top-right). They are kept visible per licensing
-      rules; final licensed replacements should carry proper credit terms.
+      - `couple-grey` (EXCLUDED, parked in `assets/parked`, not in manifest)
+- [ ] An embedded photographer credit exists on `family-bw-newborn` (top-right).
+      It is kept visible per licensing rules; the final licensed replacement
+      should carry proper credit terms.
 - [ ] Hero portrait: replace `family-airy-newborn` placeholder when the
       client's cut-out portrait is supplied (drop into
       `assets/source-images/`, update manifest, re-run `process:images`).
-      `family-airy-newborn` source file is missing — restore if ever needed.
+      `family-airy-newborn` source file is missing; restore if ever needed.
 - [ ] Dr Malathi portrait: the source is a low-resolution full-body event photo.
       Replace it with a current professional head-and-shoulders portrait.
 - [ ] Doctor portrait backgrounds were removed with local segmentation and placed
@@ -95,7 +102,7 @@
 - [ ] **DRAFT FOR LEGAL REVIEW**: `/privacy` and `/terms` are boilerplate
       drafts pending client/legal approval.
 - [ ] `baby-overhead` and `doctor-glowing-fetus` sources are only 236px wide.
-      They are capped at ~181px display (`maxDisplayWidth` in the manifest) —
+      They are capped at ~181px display (`maxDisplayWidth` in the manifest);
       never render them larger.
 - [ ] Lighthouse mobile performance ~73-80 (varies run to run on this machine).
       LCP is the hero H1 under simulated throttling; real-device scores should
@@ -106,10 +113,10 @@
       Populate when real assets exist: Google rating badge (`googleRating`),
       awards/affiliations strip (`affiliations`), video testimonial
       (`videoTestimonial`), virtual tour (`virtualTour`).
-- [ ] Stats band: real figures go in `data/trust.ts` `stats` — scans performed,
+- [ ] Stats band: real figures go in `data/trust.ts` `stats`: scans performed,
       fellows trained, CME events hosted. Hidden until populated.
 - [ ] Newsletter: footer form removed in Phase 3.6 (replaced by a WhatsApp
-      card). `newsletter-form.tsx` + `app/actions/subscribe.ts` are unused —
+      card). `newsletter-form.tsx` + `app/actions/subscribe.ts` are unused;
       delete or repurpose if newsletters are not needed.
 - [ ] Video testimonial slot renders in the testimonials section when
       `trust.videoTestimonial` is set; needs a real video file + poster.

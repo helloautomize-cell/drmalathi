@@ -109,7 +109,7 @@ export default function InternationalPatientsPage() {
                 className="border-teal text-teal hover:bg-teal-tint hover:text-teal"
                 render={
                   <a
-                    href={site.whatsapp.messageHref}
+                    href={site.whatsappInternational.messageHref}
                     target="_blank"
                     rel="noopener noreferrer"
                   />
@@ -136,7 +136,7 @@ export default function InternationalPatientsPage() {
             </div>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-muted-foreground">
               <li>Your latest scan reports and any earlier ultrasound images.</li>
-              <li>Relevant medical records — blood tests, prescriptions, discharge summaries.</li>
+              <li>Relevant medical records: blood tests, prescriptions, discharge summaries.</li>
               <li>Your referral letter, if your doctor provided one.</li>
               <li>Your expected travel window so we can group appointments together.</li>
             </ul>
@@ -161,6 +161,7 @@ export default function InternationalPatientsPage() {
         <CTABand
           title="Ready to plan your visit?"
           subtitle="Call the international line or message us on WhatsApp and our team will guide you through the next steps."
+          variant="international"
         />
       </Section>
     </>

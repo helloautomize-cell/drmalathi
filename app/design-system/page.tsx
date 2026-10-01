@@ -9,6 +9,7 @@ import { TestimonialCard } from "@/components/cards/testimonial-card";
 import { Container } from "@/components/shared/container";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
+import { yearsOfCare } from "@/lib/site";
 import {
   Accordion,
   AccordionContent,
@@ -166,7 +167,7 @@ export default function DesignSystemPage() {
             align="left"
           />
           <div className="mb-6 flex flex-wrap gap-3">
-            <StatChip icon={Clock} label="13 years of fetal medicine" />
+            <StatChip icon={Clock} label={`${yearsOfCare()} years of fetal medicine`} />
             <StatChip icon={ShieldCheck} label="In-house genetic counselling" />
             <StatChip icon={HeartPulse} label="Specialist-led scans" />
           </div>

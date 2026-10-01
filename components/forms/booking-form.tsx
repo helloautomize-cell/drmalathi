@@ -32,7 +32,7 @@ const bookingSchema = z.object({
   consent: z.literal(true, {
     error: "Please accept so we can contact you.",
   }),
-  website: z.string().optional(),
+  company_url: z.string().optional(),
 });
 
 type BookingValues = z.infer<typeof bookingSchema>;
@@ -43,7 +43,7 @@ export function BookingForm({
   doctor = "any",
   onDone,
 }: {
-  /** Where the request came from — sent with the lead for context. */
+  /** Where the request came from; sent with the lead for context. */
   source: string;
   service?: string;
   doctor?: string;
@@ -63,7 +63,7 @@ export function BookingForm({
       phone: "",
       doctor,
       service,
-      website: "",
+      company_url: "",
     },
   });
 
@@ -75,7 +75,7 @@ export function BookingForm({
     formData.set("service", values.service || "any");
     formData.set("source", source);
     formData.set("consent", values.consent ? "on" : "");
-    formData.set("website", values.website ?? "");
+    formData.set("company_url", values.company_url ?? "");
     formData.set("startedAt", startedAt);
 
     const result = await requestAppointment(formData);
@@ -90,16 +90,14 @@ export function BookingForm({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
-      {/* Honeypot field, hidden from real users */}
-      <div className="hidden" aria-hidden="true">
-        <Label htmlFor="bf-website">Website</Label>
+      {/* Honeypot field: off-screen so bots fill it but real users and
+          assistive tech never reach it. */}
+      <div className="absolute -left-[9999px]" aria-hidden="true">
         <input
-          id="bf-website"
           type="text"
           tabIndex={-1}
-          aria-hidden="true"
           autoComplete="off"
-          {...register("website")}
+          {...register("company_url")}
         />
       </div>
 
@@ -198,18 +196,18 @@ export function BookingForm({
           name="consent"
           render={({ field }) => (
             <Checkbox
-              id="bf-consent"
               checked={field.value === true}
               onCheckedChange={(checked) => field.onChange(checked === true)}
               aria-invalid={!!errors.consent}
+              aria-labelledby="bf-consent-label"
               className="mt-0.5 shrink-0"
             />
           )}
         />
         <p className="text-sm leading-snug text-muted-foreground">
-          <label htmlFor="bf-consent" className="cursor-pointer">
+          <span id="bf-consent-label">
             I consent to the centre contacting me about my enquiry.
-          </label>{" "}
+          </span>{" "}
           <Link href="/privacy" className="link whitespace-nowrap">
             Privacy Policy
           </Link>

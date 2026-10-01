@@ -33,7 +33,7 @@ export function VisitSteps() {
         <SectionHeader
           eyebrow="Your visit"
           title="What to expect at your visit"
-          subtitle="Every appointment follows the same calm, unhurried flow — so you always know what comes next."
+          subtitle="Every appointment follows the same calm, unhurried flow, so you always know what comes next."
         />
         <ol className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((s, i) => (

@@ -20,27 +20,6 @@
       }
     }
   },
-  "baby-lifted-teddy": {
-    "width": 736,
-    "height": 1104,
-    "widths": [
-      480,
-      736
-    ],
-    "maxDisplayWidth": 566,
-    "hasAlpha": false,
-    "blur": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAwBACdASoQABgAPyV8tVGuJ6UisAgBwCSJYwDE2CHgAH0mbprbvlwXf+AA/upoVE9NL+47YsUKsRQV2oK5x3Lwqkp2+Yq4e/UJBWSbn3aFcJ1S9SW3aTGuy24X2uOxRQZEAA==",
-    "bytes": {
-      "avif": {
-        "480": 7278,
-        "736": 13421
-      },
-      "webp": {
-        "480": 8900,
-        "736": 16476
-      }
-    }
-  },
   "baby-overhead": {
     "width": 236,
     "height": 354,

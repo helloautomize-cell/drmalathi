@@ -7,7 +7,7 @@ import sourceConfig from "./image-sources.json";
  * - `source` files live in /assets/source-images (never served directly).
  * - Run `npm run process:images` to regenerate variants in /public/images/brand.
  * - `license: "placeholder"` = unlicensed temp art. LICENSE REQUIRED before
- *   launch — replace the source file, flip to "licensed", re-run the script.
+ *   launch; replace the source file, flip to "licensed", re-run the script.
  * - Never crop, blur or paint over embedded watermarks/credits.
  */
 
@@ -21,7 +21,6 @@ export type ImageLicense = "placeholder" | "licensed";
 
 export type BrandImageSlug =
   | "hands-baby-feet"
-  | "baby-lifted-teddy"
   | "baby-overhead"
   | "pregnancy-test-stork"
   | "doctor-glowing-fetus"
@@ -44,10 +43,6 @@ const EDITORIAL: Record<BrandImageSlug, Editorial> = {
   "hands-baby-feet": {
     alt: "Newborn baby's feet held gently in a parent's cupped hands",
     focal: { x: 50, y: 60 },
-  },
-  "baby-lifted-teddy": {
-    alt: "Baby held up between two people, reaching for a teddy bear",
-    focal: { x: 50, y: 55 },
   },
   "baby-overhead": {
     alt: "Baby in a nappy photographed from above on a cream blanket",
@@ -130,7 +125,7 @@ export type BrandImage = {
   height: number;
   /** Generated widths available (<= source width). */
   widths: number[];
-  /** Hard cap: source width / 1.3 — respect for low-res sources. */
+  /** Hard cap: source width / 1.3, to respect low-res sources. */
   maxDisplayWidth: number;
   /** True when the asset carries transparency (blur placeholder skipped). */
   hasAlpha: boolean;

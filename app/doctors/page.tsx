@@ -44,6 +44,7 @@ export default function DoctorsPage() {
               className="w-28 opacity-90 shadow-soft sm:w-32"
             />
           </div>
+          <h2 className="sr-only">Our specialists</h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {doctors.map((doctor) => (
               <DoctorCard key={doctor.slug} doctor={doctor} />

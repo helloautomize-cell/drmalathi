@@ -45,5 +45,5 @@ if (process.env.REQUIRE_LICENSED_IMAGES === "1" && placeholders.length) {
   process.exit(1);
 }
 console.log(
-  `\n${placeholders.length} placeholder(s) — LICENSE REQUIRED before launch.`
+  `\n${placeholders.length} placeholder(s): LICENSE REQUIRED before launch.`
 );

@@ -38,14 +38,14 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## How to swap images
 
 All swappable brand imagery is driven by a single manifest, `data/images.ts`.
-The current set are **unlicensed placeholders** — each must be replaced with a
+The current set are **unlicensed placeholders**; each must be replaced with a
 licensed asset before launch (see `TODO.md`).
 
 1. Drop the replacement file into `assets/source-images/<slug>.<ext>` (any
    extension, matched by slug in `data/image-sources.json` via `source`).
 2. Update `data/image-sources.json` if the recipe or `source` path changes,
    and update `alt`/`focal` in `data/images.ts` for the new photo.
-   Never crop, blur or paint over embedded watermarks or credits — keep them
+   Never crop, blur or paint over embedded watermarks or credits; keep them
    visible or replace the image.
 3. Regenerate variants: `npm run process:images` (writes AVIF + WebP at
    480/768/1080px to `public/images/brand`, plus blur placeholders and

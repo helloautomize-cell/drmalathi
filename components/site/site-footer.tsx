@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { Clock, Globe, Mail, MapPin, Phone } from "lucide-react";
 import { Container } from "@/components/shared/container";
-import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
 import { DisclaimerBar } from "@/components/site/disclaimer-bar";
 import { services } from "@/data/services";
 import { site } from "@/data/site";
+import { yearsOfCare } from "@/lib/site";
 
 const quickLinks = [
   { label: "About Us", href: "/about" },
@@ -40,7 +40,7 @@ export function SiteFooter() {
           </Link>
           <p className="mt-4 text-sm text-white/75">
             A state-of-the-art fetal medicine centre serving families in Trichy
-            and across south Tamil Nadu for 13 years.
+            and across south Tamil Nadu for {yearsOfCare()} years.
           </p>
           <ul className="mt-4 space-y-2.5 text-sm text-white/85">
             <li>
@@ -136,18 +136,40 @@ export function SiteFooter() {
             </li>
           </ul>
           <div className="mt-6 rounded-2xl bg-white/8 p-4 ring-1 ring-white/15">
-            <h3 className="text-sm font-semibold">Questions?</h3>
-            <p className="mt-1 text-sm text-white/70">
-              Message us on WhatsApp — we reply during clinic hours.
-            </p>
+            <h3 className="text-sm font-semibold">Find us</h3>
             <a
-              href={site.whatsapp.messageHref}
+              href={site.address.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-teal px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-teal/85"
+              className="mt-3 block overflow-hidden rounded-xl ring-1 ring-white/15"
             >
-              <WhatsAppIcon className="size-4" aria-hidden="true" />
-              {site.whatsapp.label}
+              <Image
+                src="/images/map-trichy.png"
+                alt={`Map showing ${site.name}, ${site.address.lines.join(" ")}`}
+                width={600}
+                height={300}
+                className="h-32 w-full object-cover"
+              />
+            </a>
+            <p className="mt-1.5 text-right text-xs text-white/50">
+              © OpenStreetMap contributors
+            </p>
+            <p className="mt-2 flex items-start gap-2 text-sm text-white/70">
+              <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+              {site.address.lines.join(" ")}
+            </p>
+            <p className="mt-2 flex items-center gap-2 text-sm text-white/70">
+              <Clock className="size-4 shrink-0" aria-hidden="true" />
+              {site.hours}
+            </p>
+            <a
+              href={site.address.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-semibold text-plum transition-colors hover:bg-rose-tint"
+            >
+              <MapPin className="size-4" aria-hidden="true" />
+              Get directions
             </a>
           </div>
         </div>

@@ -30,7 +30,7 @@ const consultSchema = z.object({
   consent: z.literal(true, {
     error: "Please accept so we can contact you.",
   }),
-  website: z.string().optional(),
+  company_url: z.string().optional(),
 });
 
 type ConsultValues = z.infer<typeof consultSchema>;
@@ -45,7 +45,7 @@ export function QuickConsultForm() {
     formState: { errors, isSubmitting },
   } = useForm<ConsultValues>({
     resolver: zodResolver(consultSchema),
-    defaultValues: { name: "", phone: "", doctor: "", website: "" },
+    defaultValues: { name: "", phone: "", doctor: "", company_url: "" },
   });
 
   async function onSubmit(values: ConsultValues) {
@@ -54,7 +54,7 @@ export function QuickConsultForm() {
     formData.set("phone", values.phone);
     formData.set("doctor", values.doctor || "any");
     formData.set("consent", values.consent ? "on" : "");
-    formData.set("website", values.website ?? "");
+    formData.set("company_url", values.company_url ?? "");
     formData.set("startedAt", startedAt);
 
     const result = await requestAppointment(formData);
@@ -68,15 +68,14 @@ export function QuickConsultForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
-      {/* Honeypot field, hidden from real users */}
-      <div className="hidden" aria-hidden="true">
-        <Label htmlFor="qc-website">Website</Label>
+      {/* Honeypot field: off-screen so bots fill it but real users and
+          assistive tech never reach it. */}
+      <div className="absolute -left-[9999px]" aria-hidden="true">
         <input
-          id="qc-website"
           type="text"
           tabIndex={-1}
           autoComplete="off"
-          {...register("website")}
+          {...register("company_url")}
         />
       </div>
 
@@ -145,18 +144,18 @@ export function QuickConsultForm() {
           name="consent"
           render={({ field }) => (
             <Checkbox
-              id="qc-consent"
               checked={field.value === true}
               onCheckedChange={(checked) => field.onChange(checked === true)}
               aria-invalid={!!errors.consent}
+              aria-labelledby="qc-consent-label"
               className="mt-0.5 shrink-0"
             />
           )}
         />
         <p className="text-sm leading-snug text-muted-foreground">
-          <label htmlFor="qc-consent" className="cursor-pointer">
+          <span id="qc-consent-label">
             I consent to the centre contacting me about my enquiry.
-          </label>{" "}
+          </span>{" "}
           <Link href="/privacy" className="link whitespace-nowrap">
             Privacy Policy
           </Link>

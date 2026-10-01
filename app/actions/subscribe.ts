@@ -6,7 +6,7 @@ import { z } from "zod";
 const subscribeSchema = z.object({
   email: z.string().email("Please enter a valid email address."),
   consent: z.literal("on"),
-  website: z.string().max(0).optional().or(z.literal("")),
+  company_url: z.string().max(0).optional().or(z.literal("")),
   startedAt: z.string().optional(),
 });
 
@@ -19,7 +19,7 @@ export async function subscribeNewsletter(
 ): Promise<SubscribeResult> {
   const parsed = subscribeSchema.safeParse({
     email: formData.get("email"),
-    website: formData.get("website"),
+    company_url: formData.get("company_url"),
     startedAt: formData.get("startedAt"),
   });
 
@@ -30,10 +30,10 @@ export async function subscribeNewsletter(
     };
   }
 
-  const { email, website, startedAt } = parsed.data;
+  const { email, company_url, startedAt } = parsed.data;
 
   // Honeypot: bots fill hidden fields. Silently succeed so they do not retry.
-  if (website) {
+  if (company_url) {
     return { ok: true, message: "Thank you for subscribing." };
   }
 

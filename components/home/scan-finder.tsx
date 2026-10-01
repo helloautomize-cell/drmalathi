@@ -42,7 +42,7 @@ export function ScanFinder() {
               try {
                 sessionStorage.setItem("fmc-scan-stage", id);
               } catch {
-                // storage unavailable — rail simply won't reflect the stage
+                // storage unavailable; rail simply won't reflect the stage
               }
               window.dispatchEvent(
                 new CustomEvent("fmc:scan-stage", { detail: id })

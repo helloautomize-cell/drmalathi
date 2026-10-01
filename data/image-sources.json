@@ -4,12 +4,6 @@
     "recipe": "warm-cream",
     "license": "placeholder"
   },
-  "baby-lifted-teddy": {
-    "source": "assets/source-images/baby-lifted-teddy.jpg",
-    "recipe": "airy",
-    "license": "placeholder",
-    "creditNote": "Photographer credit embedded bottom-right. Do not crop it out."
-  },
   "baby-overhead": {
     "source": "assets/source-images/baby-overhead.jpg",
     "recipe": "warm-cream",
@@ -37,7 +31,7 @@
     "recipe": "airy",
     "license": "placeholder",
     "parked": true,
-    "parkedNote": "Source file missing from assets/source-images (removed during hero-image iteration). Not rendered anywhere — hero uses family-cutout. Restore the source file to reuse."
+    "parkedNote": "Source file missing from assets/source-images (removed during hero-image iteration). Not rendered anywhere; hero uses family-cutout. Restore the source file to reuse."
   },
   "family-cutout": {
     "source": "assets/source-images/family-cutout.webp",
@@ -60,7 +54,7 @@
     "source": "assets/source-images/doctors/nivethitha.webp",
     "recipe": "neutral",
     "license": "licensed",
-    "creditNote": "Tight head-and-shoulders crop attempted via cutout was rejected — navy clothing is too close to the solid blue backdrop for clean keying. Shown as a neutral portrait crop."
+    "creditNote": "Tight head-and-shoulders crop attempted via cutout was rejected; navy clothing is too close to the solid blue backdrop for clean keying. Shown as a neutral portrait crop."
   },
   "icsi-illustration": {
     "source": "assets/parked/icsi-illustration.jpg",

@@ -67,7 +67,7 @@ export type ServiceCategoryId = (typeof serviceCategories)[number]["id"];
 
 // DRAFT FOR MEDICAL REVIEW: `weeks` windows follow common obstetric practice
 // and must be confirmed by the medical team before launch. This is the single
-// source — card chips, the home WeekRail and `window` strings all derive from
+// source; card chips, the home WeekRail and `window` strings all derive from
 // it, so they can never disagree. Week chips and the WeekRail render only
 // while SHOW_DRAFT_WEEK_WINDOWS is true; set it false to hide all week UI
 // until the medical team signs off.
