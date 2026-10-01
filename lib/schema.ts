@@ -1,3 +1,4 @@
+import type { Course } from "@/data/courses";
 import { doctors } from "@/data/doctors";
 import { getBrandImage } from "@/data/images";
 import { site } from "@/data/site";
@@ -16,7 +17,7 @@ export function medicalClinicSchema() {
     url: site.url,
     description: site.description,
     image: `${site.url}${getBrandImage("family-airy-newborn").src}`,
-    logo: `${site.url}/images/logo-md.webp`,
+    logo: `${site.url}/images/logo-transparent.png`,
     telephone: telephones,
     email: site.email,
     medicalSpecialty: "Obstetric",
@@ -60,10 +61,25 @@ export function physicianSchema(doctor: (typeof doctors)[number]) {
     "@context": "https://schema.org",
     "@type": "Physician",
     name: doctor.name,
-    url: `${site.url}/doctors/${doctor.slug}`,
-    image: `${site.url}${doctor.image}`,
-    ...(doctor.role ? { jobTitle: doctor.role } : {}),
+    ...(doctor.hasProfile ? { url: `${site.url}/doctors/${doctor.slug}` } : {}),
+    image: `${site.url}${doctor.photo}`,
+    medicalSpecialty: "Obstetric",
+    qualifications: doctor.qualifications.join(", "),
+    ...(!doctor.roleIsPlaceholder ? { jobTitle: doctor.role } : {}),
     worksFor: { "@type": "MedicalClinic", "@id": `${site.url}/#clinic` },
+  };
+}
+
+export function courseSchema(course: Course) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: course.title,
+    description: `${course.title} for ${course.eligibility.join(" or ")}.`,
+    provider: { "@type": "MedicalClinic", "@id": `${site.url}/#clinic` },
+    ...(course.educationalCredentialConfirmed
+      ? { educationalCredentialAwarded: course.title }
+      : {}),
   };
 }
 

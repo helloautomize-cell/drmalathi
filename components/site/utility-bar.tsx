@@ -4,7 +4,10 @@ import { site } from "@/data/site";
 
 export function UtilityBar() {
   return (
-    <div className="hidden bg-plum text-white md:block">
+    <aside
+      aria-label="Clinic contact information"
+      className="hidden bg-plum text-white md:block"
+    >
       <Container className="flex min-h-10 flex-wrap items-center justify-between gap-x-6 gap-y-1 py-1.5 text-xs">
         <div className="flex items-center gap-5">
           <a
@@ -39,6 +42,6 @@ export function UtilityBar() {
           )}
         </div>
       </Container>
-    </div>
+    </aside>
   );
 }

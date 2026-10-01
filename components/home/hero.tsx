@@ -1,6 +1,9 @@
+import Link from "next/link";
 import { ScanFinder } from "@/components/home/scan-finder";
+import { BookingCta } from "@/components/booking/booking-sheet";
 import { BrandImage } from "@/components/shared/brand-image";
 import { Container } from "@/components/shared/container";
+import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
@@ -20,32 +23,51 @@ export function Hero() {
         aria-hidden="true"
       />
 
-      <Container className="relative grid gap-8 pt-10 pb-12 lg:grid-cols-[minmax(0,34rem)_1fr] lg:items-end lg:gap-12 lg:pt-14 lg:pb-0">
-        <div className="lg:pb-14">
+      <Container className="relative grid gap-8 pt-10 pb-12 lg:grid-cols-[minmax(0,34rem)_1fr] lg:items-center lg:gap-12 lg:py-14">
+        <div>
           <p className="mb-3 text-xs font-bold tracking-[0.16em] text-white/80 uppercase sm:text-sm">
-            Specialist fetal medicine centre
+            Fetal medicine specialists in Trichy
           </p>
           <h1 className="text-display font-heading text-white">
-            Advanced fetal medicine care in Trichy
+            Specialist care for your baby, before birth
           </h1>
           <p className="mt-4 max-w-lg text-base text-white/85 sm:text-lg">
             13 years of specialist scans, diagnostics and genetic counselling
             for families across south Tamil Nadu.
           </p>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <BookingCta
+              source="hero"
+              label="Book a consultation"
+              variant="light"
+              size="lg"
+            />
+            <Button
+              size="lg"
+              variant="outline"
+              nativeButton={false}
+              className="border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white"
+              render={<Link href="/#services" />}
+            >
+              Explore our care
+            </Button>
+          </div>
           <div className="mt-7">
             <ScanFinder />
           </div>
         </div>
 
-        <div className="relative -mx-4 sm:mx-0 lg:self-end">
-          <BrandImage
-            slug="family-cutout"
-            variant="bleed"
-            priority
-            reveal={false}
-            sizes="(min-width: 1280px) 448px, (min-width: 1024px) 416px, (min-width: 640px) 384px, 100vw"
-            className="relative mx-auto w-full max-w-sm lg:max-w-[26rem] xl:max-w-md"
-          />
+        <div className="relative mx-auto w-full max-w-sm lg:max-w-[26rem] xl:max-w-md">
+          <div className="overflow-hidden rounded-t-[10rem] rounded-b-3xl bg-gradient-to-b from-white/90 via-rose-tint to-blush shadow-card">
+            <BrandImage
+              slug="family-cutout"
+              variant="bleed"
+              priority
+              reveal={false}
+              sizes="(min-width: 1280px) 448px, (min-width: 1024px) 416px, (min-width: 640px) 384px, 100vw"
+              imgClassName="[mask-image:linear-gradient(to_bottom,black_88%,transparent_100%)]"
+            />
+          </div>
         </div>
       </Container>
     </section>

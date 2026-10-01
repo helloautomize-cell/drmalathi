@@ -1,16 +1,29 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import type { Service } from "@/data/services";
+import { serviceCategories, type Service } from "@/data/services";
 
 export function ServiceCard({ service }: { service: Service }) {
   const Icon = service.icon;
+  const accent =
+    serviceCategories.find((c) => c.id === service.category)?.accent ??
+    "bg-rose-tint text-primary";
 
   return (
     <Card className="group h-full border-rose-tint shadow-soft transition-all hover:-translate-y-1 hover:shadow-card">
       <CardContent className="flex h-full flex-col gap-4 p-6">
-        <div className="flex size-12 items-center justify-center rounded-xl bg-rose-tint text-primary">
-          <Icon className="size-6" strokeWidth={1.75} aria-hidden="true" />
+        <div className="flex items-center justify-between">
+          <div
+            className={`flex size-12 items-center justify-center rounded-xl ${accent}`}
+          >
+            <Icon className="size-6" strokeWidth={1.75} aria-hidden="true" />
+          </div>
+          {service.window ? (
+            <span className="inline-flex items-center gap-1 rounded-full border border-rose-tint bg-blush px-2.5 py-1 text-[11px] font-semibold text-ink-muted">
+              <Clock className="size-3" aria-hidden="true" />
+              {service.window}
+            </span>
+          ) : null}
         </div>
         <div className="flex-1">
           <h3 className="text-lg font-semibold text-ink">{service.name}</h3>

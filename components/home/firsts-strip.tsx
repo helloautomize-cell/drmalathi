@@ -2,23 +2,27 @@ import { Brain, Dna, Zap } from "lucide-react";
 import { Container } from "@/components/shared/container";
 import { CountUp } from "@/components/shared/count-up";
 import { HeartbeatLine } from "@/components/shared/heartbeat-line";
+import { stats as metricSlots } from "@/data/trust";
 
 const firsts = [
   {
     icon: Zap,
     title: "Fetoscopic procedures",
+    pill: "South Tamil Nadu",
     description:
       "The first centre in South Tamil Nadu to perform minimally invasive surgery inside the womb.",
   },
   {
     icon: Brain,
     title: "Fetal neurosonogram",
+    pill: "Tamil Nadu",
     description:
       "The first centre in Tamil Nadu to offer detailed scanning of the baby's brain and spine.",
   },
   {
     icon: Dna,
     title: "In-house genetic counselling",
+    pill: "In-house",
     description:
       "The first centre with in-house genetic counselling and fetal postmortem evaluation.",
   },
@@ -27,7 +31,11 @@ const firsts = [
 const stats = [
   { end: 13, suffix: "", label: "years of fetal medicine care" },
   { end: 3, suffix: "", label: "regional firsts" },
-  { end: 3, suffix: "", label: "specialist doctors" },
+  // Real-figure slots populate automatically from data/trust.ts once the
+  // client supplies verified numbers (scans performed, fellows trained, CME).
+  ...Object.values(metricSlots)
+    .filter((m): m is { value: number; label: string } => m !== null)
+    .map((m) => ({ end: m.value, suffix: "", label: m.label })),
 ];
 
 export function FirstsStrip() {
@@ -63,7 +71,7 @@ export function FirstsStrip() {
                   <item.icon className="size-6" strokeWidth={1.75} aria-hidden="true" />
                 </div>
                 <span className="rounded-full border border-white/30 px-3 py-1 text-[11px] font-semibold tracking-wide text-white uppercase">
-                  First in the region
+                  {item.pill}
                 </span>
               </div>
               <h2 className="mt-4 text-lg font-semibold text-white">

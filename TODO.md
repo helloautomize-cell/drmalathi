@@ -5,10 +5,31 @@
 - [ ] **DRAFT FOR MEDICAL REVIEW**: all service descriptions in `data/services.ts`
       are new plain-language copy. The medical team must approve before launch.
 - [ ] **DRAFT FOR MEDICAL REVIEW**: all FAQ answers in `data/faqs.ts`.
-- [ ] Dr Nivethitha: no bio on the current site. Card only, links to `/doctors`.
-      Add bio to `data/doctors.ts` and set `hasProfile: true` when available.
-- [ ] Fellowship: 4th course (simulator image) title and duration are guessed.
-      Confirm exact program name in `data/courses.ts`.
+- [ ] **DRAFT FOR CLIENT REVIEW**: Dr Nivethitha is not included on the current
+      doctors page. Confirm her full bio, official role and areas of expertise;
+      replace the temporary "Fetal Medicine Specialist" role, then set
+      `hasProfile: true` when approved profile copy is available.
+- [ ] **DRAFT FOR CLIENT REVIEW**: the home page describes the centre as "13
+      years", while Dr Malathi's source bio states "14 years" in fetal medicine.
+      Confirm both figures and their intended reference dates.
+- [ ] **DRAFT FOR CLIENT REVIEW**: confirm Dr Revathy's surname spelling. The
+      source site uses both "Chandrasekharan" and "chandrasekaran".
+- [ ] Request current, professional, visually matching portraits for Dr Malathi,
+      Dr Revathy and Dr Nivethitha.
+- [ ] **DRAFT FOR CLIENT REVIEW**: confirm the duration of Fellowship in Fetal
+      Medicine (course 1).
+- [ ] **DRAFT FOR CLIENT REVIEW**: confirm that Fellowship in Advanced Obstetric
+      Ultrasound and Fetal Echo (course 2) runs for 1 year.
+- [ ] **DRAFT FOR CLIENT REVIEW**: confirm whether the requirement for 2 indexed
+      research publications applies to all three fellowship courses.
+- [ ] **DRAFT FOR CLIENT REVIEW**: provide the next fellowship intake date.
+- [ ] Add `/images/fellowship-training.webp` with its source URL in `CREDITS.md`,
+      then replace it with a real approved photo of the centre's simulator in use.
+- [ ] Request a current course brochure before setting `showBrochure: true` in
+      `data/courses.ts`.
+- [ ] **DRAFT FOR MEDICAL REVIEW**: `window` chips on service cards in
+      `data/services.ts` (e.g. "Viability 6 to 9 weeks" vs timing text
+      "6 to 10 weeks" — resolve the discrepancy with the medical team).
 - [ ] Rajesh testimonial is in Tamil. Confirm translation approach with client.
 - [ ] Doctor bios: verify spellings of mentor names (Prof Kypros Nicolaides,
       Prof Gustavo Malinger) against client records.
@@ -50,6 +71,14 @@
 - [ ] Hero portrait: replace `family-airy-newborn` placeholder when the
       client's cut-out portrait is supplied (drop into
       `assets/source-images/`, update manifest, re-run `process:images`).
+      `family-airy-newborn` source file is missing — restore if ever needed.
+- [ ] Dr Malathi portrait: the source is a low-resolution full-body event photo.
+      Replace it with a current professional head-and-shoulders portrait.
+- [ ] Doctor portrait backgrounds were removed with local segmentation and placed
+      on a shared gradient. Request client-approved transparent PNG/WebP portraits
+      for all three doctors to replace these generated cutouts.
+- [ ] The transparent header PNG was derived from the supplied white-matte logo.
+      Request the original transparent PNG or SVG brand asset from the client.
 - [ ] Images were copied from the live site into `public/images/`. Verify the
       client has approved reuse and confirm which photos are current.
 - [x] Favicon and mobile header icon generated from the logo mark
@@ -77,6 +106,11 @@
       Populate when real assets exist: Google rating badge (`googleRating`),
       awards/affiliations strip (`affiliations`), video testimonial
       (`videoTestimonial`), virtual tour (`virtualTour`).
+- [ ] Stats band: real figures go in `data/trust.ts` `stats` — scans performed,
+      fellows trained, CME events hosted. Hidden until populated.
+- [ ] Newsletter: footer form removed in Phase 3.6 (replaced by a WhatsApp
+      card). `newsletter-form.tsx` + `app/actions/subscribe.ts` are unused —
+      delete or repurpose if newsletters are not needed.
 - [ ] Video testimonial slot renders in the testimonials section when
       `trust.videoTestimonial` is set; needs a real video file + poster.
 - [ ] Newsletter and appointment actions: honeypot + 3s minimum submit time.

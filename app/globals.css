@@ -77,6 +77,7 @@
 
   html {
     @apply font-sans scroll-smooth;
+    overflow-x: clip;
   }
 
   body {
@@ -152,6 +153,29 @@
   to {
     opacity: 1;
     transform: none;
+  }
+}
+
+/* Brief highlight when a WeekRail segment scrolls to its card */
+@keyframes week-flash {
+  0%,
+  55% {
+    box-shadow: 0 0 0 4px var(--color-accent-bright);
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+.week-flash {
+  animation: week-flash 1.6s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .week-flash {
+    animation: none;
+    outline: 3px solid var(--color-accent-bright);
+    outline-offset: 3px;
   }
 }
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Globe2, MessageCircle, Phone, Plane, Video } from "lucide-react";
 import { CTABand } from "@/components/cards/cta-band";
+import { BookingForm } from "@/components/forms/booking-form";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/container";
@@ -131,14 +132,27 @@ export default function InternationalPatientsPage() {
               <span className="flex size-11 items-center justify-center rounded-xl bg-teal-tint text-teal">
                 <Globe2 className="size-5" strokeWidth={1.75} aria-hidden="true" />
               </span>
-              <h3 className="text-lg font-semibold text-ink">Before you travel</h3>
+              <h3 className="text-lg font-semibold text-ink">What to send us</h3>
             </div>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-muted-foreground">
-              <li>Carry all previous scan reports and medical records.</li>
-              <li>Tell us your travel dates so we can group appointments.</li>
-              <li>Bring your referral letter if your doctor provided one.</li>
-              <li>Plan for reports to take a short while; specialist scans are unhurried.</li>
+              <li>Your latest scan reports and any earlier ultrasound images.</li>
+              <li>Relevant medical records — blood tests, prescriptions, discharge summaries.</li>
+              <li>Your referral letter, if your doctor provided one.</li>
+              <li>Your expected travel window so we can group appointments together.</li>
             </ul>
+          </div>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
+          <div className="mx-auto max-w-xl rounded-2xl border border-rose-tint bg-white p-6 shadow-soft sm:p-8">
+            <SectionHeader
+              align="left"
+              title="Send us your details"
+              subtitle="Tell us how to reach you and we will call or WhatsApp you back to plan your visit."
+            />
+            <BookingForm source="international" />
           </div>
         </Container>
       </Section>

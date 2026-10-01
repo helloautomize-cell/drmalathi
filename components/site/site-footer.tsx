@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Clock, Globe, Mail, MapPin, Phone } from "lucide-react";
 import { Container } from "@/components/shared/container";
+import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
 import { DisclaimerBar } from "@/components/site/disclaimer-bar";
-import { NewsletterForm } from "@/components/site/newsletter-form";
 import { services } from "@/data/services";
 import { site } from "@/data/site";
 
@@ -16,6 +16,7 @@ const quickLinks = [
   { label: "Gallery", href: "/gallery" },
   { label: "FAQs", href: "/faq" },
   { label: "Due Date Calculator", href: "/due-date-calculator" },
+  { label: "International Patients", href: "/international-patients" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -101,7 +102,7 @@ export function SiteFooter() {
         </nav>
 
         <div>
-          <h2 className="text-base font-semibold">Stay in touch</h2>
+          <h2 className="text-base font-semibold">Questions?</h2>
           <ul className="mt-4 space-y-2.5 text-sm text-white/85">
             {site.phones.map((phone) => (
               <li key={phone.href}>
@@ -134,9 +135,20 @@ export function SiteFooter() {
               </a>
             </li>
           </ul>
-          <h3 className="mt-6 text-sm font-semibold">Newsletter</h3>
-          <div className="mt-3">
-            <NewsletterForm />
+          <div className="mt-6 rounded-2xl bg-white/8 p-4 ring-1 ring-white/15">
+            <h3 className="text-sm font-semibold">Questions?</h3>
+            <p className="mt-1 text-sm text-white/70">
+              Message us on WhatsApp — we reply during clinic hours.
+            </p>
+            <a
+              href={site.whatsapp.messageHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-teal px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-teal/85"
+            >
+              <WhatsAppIcon className="size-4" aria-hidden="true" />
+              {site.whatsapp.label}
+            </a>
           </div>
         </div>
       </Container>

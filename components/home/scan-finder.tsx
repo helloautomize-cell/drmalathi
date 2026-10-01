@@ -4,9 +4,9 @@ import { useState } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
-  CalendarCheck,
   ChevronDown,
 } from "lucide-react";
+import { BookingCta } from "@/components/booking/booking-sheet";
 import { Button } from "@/components/ui/button";
 import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
 import { Label } from "@/components/ui/label";
@@ -36,7 +36,18 @@ export function ScanFinder() {
           <select
             id="scan-stage"
             value={stageId}
-            onChange={(e) => setStageId(e.target.value)}
+            onChange={(e) => {
+              const id = e.target.value;
+              setStageId(id);
+              try {
+                sessionStorage.setItem("fmc-scan-stage", id);
+              } catch {
+                // storage unavailable — rail simply won't reflect the stage
+              }
+              window.dispatchEvent(
+                new CustomEvent("fmc:scan-stage", { detail: id })
+              );
+            }}
             className="h-11 w-full appearance-none rounded-lg border border-input bg-white py-2 pr-10 pl-3 text-sm text-ink transition-colors outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 aria-invalid:border-destructive"
           >
             <option value="" disabled>
@@ -101,15 +112,13 @@ export function ScanFinder() {
       </div>
 
       <div className="mt-4 grid gap-2 sm:grid-cols-2">
-        <Button
+        <BookingCta
+          source="scan-finder"
+          service={stage?.scans[0]?.slug}
+          label="Book appointment"
           size="lg"
-          nativeButton={false}
-          className="bg-primary text-white hover:bg-primary-hover"
-          render={<Link href="/contact" />}
-        >
-          <CalendarCheck aria-hidden="true" />
-          Book appointment
-        </Button>
+          className="w-full"
+        />
         <Button
           size="lg"
           variant="outline"

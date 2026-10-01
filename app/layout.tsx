@@ -28,8 +28,14 @@ const notoTamil = Noto_Sans_Tamil({
   display: "swap",
 });
 
+// Index only the production deployment. Preview/non-production hosts build
+// with noindex so staging URLs never reach search results.
+const indexable =
+  process.env.VERCEL_ENV === "production" || process.env.INDEXABLE === "1";
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  robots: { index: indexable, follow: indexable },
   title: {
     default: `${site.name} | Fetal Medicine Specialists in Trichy`,
     template: `%s | ${site.name}`,

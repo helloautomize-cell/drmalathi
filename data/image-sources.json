@@ -45,6 +45,23 @@
     "license": "placeholder",
     "creditNote": "Source is a JPEG with a baked checkerboard pattern (no real alpha). Shown as-is in a rounded frame. Replace with a transparent PNG/WebP for a true cut-out."
   },
+  "doctor-malathi": {
+    "source": "assets/source-images/doctors/malathi.webp",
+    "recipe": "neutral",
+    "license": "licensed",
+    "crop": { "rectPercent": { "left": 26, "top": 3, "width": 48, "height": 54 } }
+  },
+  "doctor-revathy": {
+    "source": "assets/source-images/doctors/revathy.webp",
+    "recipe": "neutral",
+    "license": "licensed"
+  },
+  "doctor-nivethitha": {
+    "source": "assets/source-images/doctors/nivethitha.webp",
+    "recipe": "neutral",
+    "license": "licensed",
+    "creditNote": "Tight head-and-shoulders crop attempted via cutout was rejected — navy clothing is too close to the solid blue backdrop for clean keying. Shown as a neutral portrait crop."
+  },
   "icsi-illustration": {
     "source": "assets/parked/icsi-illustration.jpg",
     "recipe": "neutral",

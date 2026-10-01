@@ -28,6 +28,9 @@ export type BrandImageSlug =
   | "family-bw-newborn"
   | "family-airy-newborn"
   | "family-cutout"
+  | "doctor-malathi"
+  | "doctor-revathy"
+  | "doctor-nivethitha"
   | "icsi-illustration";
 
 type Focal = { x: number; y: number }; // 0-100, percent position for object-position
@@ -52,7 +55,7 @@ const EDITORIAL: Record<BrandImageSlug, Editorial> = {
   },
   "pregnancy-test-stork": {
     alt: "Hand holding a positive pregnancy test with a stork perched on it",
-    focal: { x: 60, y: 55 },
+    focal: { x: 38, y: 42 },
   },
   "doctor-glowing-fetus": {
     alt: "Doctor's hands cradling a softly glowing image of a developing baby",
@@ -69,6 +72,18 @@ const EDITORIAL: Record<BrandImageSlug, Editorial> = {
   "family-cutout": {
     alt: "Parents in white cradling their sleeping newborn",
     focal: { x: 50, y: 50 },
+  },
+  "doctor-malathi": {
+    alt: "Dr Malathi G. Prasad, Managing Director and lead consultant",
+    focal: { x: 50, y: 35 },
+  },
+  "doctor-revathy": {
+    alt: "Dr Revathy Chandrasekharan, maternal-fetal medicine specialist",
+    focal: { x: 50, y: 40 },
+  },
+  "doctor-nivethitha": {
+    alt: "Dr Nivethitha, fetal medicine specialist",
+    focal: { x: 50, y: 40 },
   },
   "icsi-illustration": {
     alt: "Illustration of an ICSI fertility procedure",
@@ -93,7 +108,10 @@ type SourceEntry = {
   parked?: boolean;
   parkedNote?: string;
   creditNote?: string;
-  crop?: { leftPercent: number };
+  crop?: {
+    leftPercent?: number;
+    rectPercent?: { left: number; top: number; width: number; height: number };
+  };
 };
 
 const sources = sourceConfig as Record<BrandImageSlug, SourceEntry>;

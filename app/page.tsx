@@ -5,9 +5,11 @@ import { FaqSection } from "@/components/home/faq-section";
 import { FellowshipHighlight } from "@/components/home/fellowship-highlight";
 import { FirstsStrip } from "@/components/home/firsts-strip";
 import { GalleryPreview } from "@/components/home/gallery-preview";
+import { HelpRow } from "@/components/home/help-row";
 import { Hero } from "@/components/home/hero";
 import { ServicesSection } from "@/components/home/services-section";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
+import { VisitSteps } from "@/components/home/visit-steps";
 import { WhyChooseUs } from "@/components/home/why-choose-us";
 import { WhyFetalMedicine } from "@/components/home/why-fetal-medicine";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -28,11 +30,13 @@ export default function HomePage() {
       <JsonLd data={medicalClinicSchema()} />
       <Hero />
       <FirstsStrip />
+      <HelpRow />
       <WhyFetalMedicine />
       <ServicesSection />
       <DoctorsSection />
       <FellowshipHighlight />
       <WhyChooseUs />
+      <VisitSteps />
       <TestimonialsSection />
       <GalleryPreview />
       <TrustSlots />

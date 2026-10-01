@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, CalendarCheck, Clock, Info } from "lucide-react";
+import { ArrowRight, Clock, Info } from "lucide-react";
+import { BookingCta } from "@/components/booking/booking-sheet";
 import { CTABand } from "@/components/cards/cta-band";
 import { ServiceCard } from "@/components/cards/service-card";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -101,7 +102,10 @@ export default async function ServiceDetailPage({
           </div>
 
           <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
-            <div className="rounded-2xl border border-rose-tint bg-white p-6 shadow-soft">
+            <div
+              id="what-to-expect"
+              className="scroll-mt-24 rounded-2xl border border-rose-tint bg-white p-6 shadow-soft"
+            >
               <div className="flex items-center gap-3">
                 <span className="flex size-10 items-center justify-center rounded-lg bg-rose-tint text-primary">
                   <Icon className="size-5" strokeWidth={1.75} aria-hidden="true" />
@@ -128,13 +132,21 @@ export default async function ServiceDetailPage({
                   </div>
                 </div>
               ) : null}
-              <Link
-                href="/contact"
-                className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary underline-offset-4 hover:underline"
-              >
-                <CalendarCheck className="size-4" aria-hidden="true" />
-                Book this service
-              </Link>
+              <div className="mt-5 flex flex-wrap items-center gap-4">
+                <BookingCta
+                  source="service-page"
+                  service={service.slug}
+                  label="Book this scan"
+                  size="lg"
+                  icon={false}
+                />
+                <a
+                  href="#what-to-expect"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary underline-offset-4 hover:underline"
+                >
+                  See what to expect
+                </a>
+              </div>
             </div>
             <p className="rounded-2xl bg-blush p-4 text-xs leading-relaxed text-muted-foreground">
               In keeping with the PCPNDT Act, 1994, this service does not

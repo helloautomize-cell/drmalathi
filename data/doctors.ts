@@ -1,52 +1,97 @@
+// DRAFT FOR CLIENT REVIEW: all doctor facts below were transcribed from the
+// current FMC doctors page and the client brief. Confirm every field before launch.
+
+export type DoctorExpertise = {
+  label: string;
+  serviceSlug?: string;
+};
+
 export type Doctor = {
   slug: string;
   name: string;
-  credentials: string[];
-  badge: string;
-  role?: string;
-  image: string;
+  role: string;
+  roleIsPlaceholder?: boolean;
+  qualifications: string[];
+  highlights: string[];
+  trainedAt: string[];
+  expertise: DoctorExpertise[];
+  award?: string;
+  photo: string;
+  photoFocus: { x: number; y: number };
   hasProfile: boolean;
-  bio: string[];
+  mentors?: string[];
+  background?: string[];
 };
 
 export const doctors: Doctor[] = [
   {
     slug: "dr-malathi-g-prasad",
     name: "Dr Malathi G. Prasad",
-    credentials: ["MD", "FRCOG (UK)", "Diploma in Fetal Medicine, FMF Barcelona"],
-    badge: "FRCOG (UK)",
     role: "Managing Director and Lead Consultant",
-    image: "/images/doctors/malathi.webp",
+    qualifications: ["MD", "FRCOG (UK)", "Diploma in Fetal Medicine (FMF)"],
+    highlights: [
+      "14 years in fetal medicine",
+      "National faculty, fetal medicine conferences",
+      "Fetoscopic laser trained, St George's UK",
+    ],
+    trainedAt: [
+      "Fetal Medicine Foundation",
+      "St George's, London",
+      "King's College London",
+      "Tel Aviv (fetal neurosonography)",
+    ],
+    expertise: [
+      { label: "Fetal Neurosonogram", serviceSlug: "fetal-neurosonogram" },
+      { label: "Fetoscopic procedures" },
+      { label: "Invasive procedures (amniocentesis, CVS)" },
+    ],
+    photo: "/images/doctors/malathi-cutout.png",
+    photoFocus: { x: 50, y: 35 },
     hasProfile: true,
-    bio: [
-      "Dr Malathi G. Prasad is the Managing Director and lead consultant, with 14 years of experience in the field of fetal medicine.",
-      "She completed her MD at Kilpauk Medical College and served as Assistant Professor of Obstetrics and Gynaecology for 5 years, teaching undergraduate and postgraduate students. She went on to complete her MRCOG followed by FRCOG.",
-      "She was awarded a Diploma in Fetal Medicine by the Fetal Medicine Foundation, Barcelona. She trained in fetal medicine at St George's Hospital and King's College London, mentored by Prof Basky Thilaganathan and Prof Kypros Nicolaides. She trained in advanced fetal interventions such as fetoscopic laser at St George's, and in fetal neurosonography with Prof Gustavo Malinger in Tel Aviv.",
-      "She is national faculty at fetal medicine conferences, has conducted many workshops, and regularly holds masterclasses for doctors training in the field.",
+    mentors: ["Prof Basky Thilaganathan", "Prof Nicolaides"],
+    background: [
+      "Dr Malathi completed her MD at Kilpauk Medical College and served for five years as Assistant Professor of Obstetrics and Gynaecology.",
+      "She completed MRCOG followed by FRCOG.",
+      "She runs workshops and master classes and has trained many fetal medicine specialists.",
     ],
   },
   {
     slug: "dr-revathy-chandrasekharan",
     name: "Dr Revathy Chandrasekharan",
-    credentials: ["MS (O&G)", "Fellowship in Fetal Medicine"],
-    badge: "Fetal Medicine Fellowship",
     role: "Maternal-Fetal Medicine Specialist",
-    image: "/images/doctors/revathy.webp",
+    qualifications: ["MS (O&G)", "Fellowship in Fetal Medicine (ICOG)"],
+    highlights: [],
+    trainedAt: ["Indian College of Obstetrics and Gynaecology"],
+    expertise: [
+      { label: "3D and 4D ultrasound" },
+      { label: "CVS" },
+      { label: "Amniocentesis" },
+      { label: "Fetal blood sampling" },
+      {
+        label: "Twin and multiple pregnancy care",
+        serviceSlug: "twin-specialised-clinic",
+      },
+    ],
+    award: "Gold medal, ICOG Fetal Medicine Fellowship, 2022 batch",
+    photo: "/images/doctors/revathy-cutout.png",
+    photoFocus: { x: 50, y: 34 },
     hasProfile: true,
-    bio: [
-      "Dr Revathy Chandrasekharan is a maternal-fetal medicine specialist at Trichy Fetal Medicine Centre. She trained in fetal medicine under the Indian College of Obstetrics and Gynaecology and holds the gold medal in fetal medicine for the 2022 batch.",
-      "She specialises in fetal imaging and diagnostic procedures, including 3D and 4D ultrasound, chorionic villus sampling, amniocentesis, and fetal blood sampling.",
-      "She has special expertise in caring for multiple pregnancies, including multifetal pregnancy reduction, selective termination, and genetic evaluation with extensive counselling.",
+    background: [
+      "Dr Revathy is a trained obstetrician with specialisation in fetal medicine under the Indian College of Obstetrics and Gynaecology.",
+      "Her work includes fetal imaging, diagnostic procedures, and care for twin and multiple pregnancies.",
     ],
   },
   {
     slug: "dr-nivethitha",
     name: "Dr Nivethitha",
-    credentials: ["Fellowship in Fetal Medicine"],
-    badge: "Fetal Medicine Fellowship",
-    image: "/images/doctors/nivethitha.webp",
-    // No profile page until a bio is available. Card links to /doctors.
+    role: "Fetal Medicine Specialist",
+    roleIsPlaceholder: true,
+    qualifications: ["Fellowship in Fetal Medicine"],
+    highlights: [],
+    trainedAt: [],
+    expertise: [],
+    photo: "/images/doctors/nivethitha-cutout.png",
+    photoFocus: { x: 50, y: 34 },
     hasProfile: false,
-    bio: [],
   },
 ];

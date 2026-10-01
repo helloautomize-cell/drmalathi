@@ -2,14 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { CalendarCheck, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
+import { BookingCta } from "@/components/booking/booking-sheet";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -111,15 +111,12 @@ function MobileNav() {
           </Link>
         )
       )}
-      <Button
+      <BookingCta
+        source="mobile-nav"
+        label="Book Appointment"
         size="lg"
-        nativeButton={false}
-        className="mt-4 bg-primary text-white hover:bg-primary-hover"
-        render={<Link href="/contact" />}
-      >
-        <CalendarCheck aria-hidden="true" />
-        Book Appointment
-      </Button>
+        className="mt-4"
+      />
     </nav>
   );
 }
@@ -129,32 +126,20 @@ export function SiteHeader() {
   const restLinks = plainLinks.slice(1);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-border bg-white">
       <Container className="flex h-16 items-center justify-between gap-4 lg:h-20">
         <Link
           href="/"
           className="flex shrink-0 items-center"
           aria-label={`${site.name} home`}
         >
-          {/* Compact mark on mobile: circular icon plus short name */}
           <Image
-            src="/images/logo-icon.webp"
-            alt=""
-            width={36}
-            height={36}
-            priority
-            className="size-10 sm:hidden"
-          />
-          <span className="ml-2.5 font-heading text-lg font-semibold text-plum sm:hidden">
-            {site.shortName}
-          </span>
-          <Image
-            src="/images/logo-xs.webp"
+            src="/images/logo-transparent.png"
             alt={site.name}
             width={288}
             height={96}
             priority
-            className="hidden h-14 w-auto sm:block lg:h-16"
+            className="h-10 w-auto sm:h-14 lg:h-16"
           />
         </Link>
 
@@ -188,15 +173,13 @@ export function SiteHeader() {
         </NavigationMenu>
 
         <div className="flex items-center gap-2">
-          <Button
-            size="lg"
-            nativeButton={false}
-            className="hidden bg-primary text-white hover:bg-primary-hover sm:inline-flex"
-            render={<Link href="/contact" />}
-          >
-            <CalendarCheck aria-hidden="true" />
-            Book Appointment
-          </Button>
+          <div className="hidden sm:block">
+            <BookingCta
+              source="header"
+              label="Book Appointment"
+              size="lg"
+            />
+          </div>
           <Sheet>
             <SheetTrigger
               render={

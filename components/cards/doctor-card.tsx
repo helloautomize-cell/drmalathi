@@ -1,72 +1,50 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BadgeCheck } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { BookingCta } from "@/components/booking/booking-sheet";
 import { Card, CardContent } from "@/components/ui/card";
 import type { Doctor } from "@/data/doctors";
 
 export function DoctorCard({ doctor }: { doctor: Doctor }) {
-  const profileHref = doctor.hasProfile ? `/doctors/${doctor.slug}` : "/doctors";
-
   return (
-    <Card className="h-full overflow-hidden border-rose-tint bg-white pt-0 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card">
-      <div className="bg-gradient-to-b from-rose-tint to-blush px-8 pt-8 pb-0">
-        <div className="relative mx-auto aspect-[4/5] w-full max-w-56 overflow-hidden rounded-t-full shadow-soft">
+    <Card className="h-full overflow-hidden border-rose-tint bg-white pt-0 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card motion-reduce:hover:translate-y-0">
+      <div className="bg-gradient-to-b from-rose-tint to-blush px-8 pt-8">
+        <div className="relative mx-auto h-72 w-full max-w-56 overflow-hidden rounded-t-full">
           <Image
-            src={doctor.image}
-            alt={`${doctor.name}, fetal medicine specialist`}
+            src={doctor.photo}
+            alt={`Portrait of ${doctor.name}, fetal medicine consultant`}
             fill
-            sizes="(min-width: 1024px) 20vw, (min-width: 640px) 40vw, 60vw"
+            sizes="(min-width: 1024px) 224px, (min-width: 640px) 40vw, 60vw"
             className="object-cover"
-          />
-          <div
-            className="pointer-events-none absolute inset-0 bg-rose-tint/25 mix-blend-multiply"
-            aria-hidden="true"
+            style={{
+              objectPosition: `${doctor.photoFocus.x}% ${doctor.photoFocus.y}%`,
+            }}
           />
         </div>
       </div>
-      <CardContent className="flex flex-col gap-4 p-6 pt-5">
-        <div>
-          <div className="flex flex-wrap items-center gap-2">
-            <h3 className="text-xl font-semibold text-ink">{doctor.name}</h3>
-            <Badge className="bg-teal-tint text-teal">
-              <BadgeCheck className="size-3.5" aria-hidden="true" />
-              {doctor.badge}
-            </Badge>
-          </div>
-          {doctor.role ? (
-            <p className="mt-1.5 text-sm text-muted-foreground">{doctor.role}</p>
+      <CardContent className="flex h-full flex-col p-6 pt-5">
+        <h3 className="text-xl font-semibold text-ink">{doctor.name}</h3>
+        <p className="mt-1.5 text-sm text-muted-foreground">{doctor.role}</p>
+        <p className="mt-3 text-sm font-semibold text-plum">
+          {doctor.qualifications.join(" · ")}
+        </p>
+        <div className="mt-auto flex flex-wrap items-center gap-3 pt-5">
+          <BookingCta
+            source="doctor-card"
+            doctor={doctor.slug}
+            label="Book"
+            size="lg"
+            className="min-h-11"
+          />
+          {doctor.hasProfile ? (
+            <Link
+              href={`/doctors/${doctor.slug}`}
+              className="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-2 text-sm font-semibold text-primary underline-offset-4 hover:underline"
+            >
+              Profile
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </Link>
           ) : null}
-          <div className="mt-3 flex flex-wrap gap-1.5">
-            {doctor.credentials.map((c) => (
-              <span
-                key={c}
-                className="rounded-full border border-rose-tint bg-blush px-2.5 py-1 text-[11px] font-semibold text-ink-muted"
-              >
-                {c}
-              </span>
-            ))}
-          </div>
-        </div>
-        <div className="mt-auto flex flex-wrap gap-3">
-          <Button
-            size="lg"
-            nativeButton={false}
-            className="bg-primary text-white hover:bg-primary-hover"
-            render={<Link href="/contact" />}
-          >
-            Book Now
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            nativeButton={false}
-            className="bg-white"
-            render={<Link href={profileHref} />}
-          >
-            View Profile
-          </Button>
         </div>
       </CardContent>
     </Card>

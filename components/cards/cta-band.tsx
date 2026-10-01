@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { Phone } from "lucide-react";
+import { BookingCta } from "@/components/booking/booking-sheet";
 import { Button } from "@/components/ui/button";
 import { BrandImage } from "@/components/shared/brand-image";
 import { Container } from "@/components/shared/container";
@@ -52,12 +52,15 @@ export function CTABand({
                 WhatsApp Us
               </Button>
             </div>
-            <p className="mt-4 text-sm text-white/70">
-              {site.hours} |{" "}
-              <Link href="/contact" className="underline underline-offset-4 hover:text-white">
-                Book online instead
-              </Link>
-            </p>
+            <div className="mt-5">
+              <BookingCta
+                source="cta-band"
+                label="Book a private consultation"
+                variant="light"
+                icon={false}
+              />
+            </div>
+            <p className="mt-4 text-sm text-white/70">{site.hours}</p>
           </div>
           <div
             className="relative min-h-56 lg:min-h-0"

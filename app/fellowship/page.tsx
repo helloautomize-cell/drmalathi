@@ -9,19 +9,18 @@ import { Container } from "@/components/shared/container";
 import { PageHeader } from "@/components/shared/page-header";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
-import { courses } from "@/data/courses";
+import { courses, fellowshipProgram } from "@/data/courses";
 import { site } from "@/data/site";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Fellowship and Courses",
   description:
-    "Fetal medicine fellowship and ultrasound training courses in Trichy: a 1-year fellowship, 6-month advanced obstetric ultrasound, and 2-month short training.",
+    "Fetal medicine, advanced obstetric ultrasound, fetal echo, and obstetric ultrasound fellowship training for doctors in Trichy.",
   alternates: { canonical: "/fellowship" },
 };
 
 export default function FellowshipPage() {
-  const confirmed = courses.filter((c) => c.confirmed);
   return (
     <>
       <JsonLd
@@ -45,15 +44,15 @@ export default function FellowshipPage() {
             subtitle="Details confirmed from the centre's published course information."
           />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {confirmed.map((course) => (
+            {courses.map((course) => (
               <Card
                 key={course.title}
                 className="h-full overflow-hidden border-rose-tint pt-0 shadow-soft transition-shadow hover:shadow-card"
               >
                 <div className="relative aspect-[4/3] w-full bg-blush">
                   <Image
-                    src={course.image}
-                    alt={course.imageAlt}
+                    src={fellowshipProgram.image}
+                    alt={fellowshipProgram.imageAlt}
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     className="object-cover"
@@ -68,10 +67,12 @@ export default function FellowshipPage() {
                       <h3 className="text-lg font-semibold text-ink">
                         {course.title}
                       </h3>
-                      <p className="mt-1 flex items-center gap-1.5 text-sm text-muted-foreground">
-                        <Clock className="size-4" aria-hidden="true" />
-                        {course.duration}
-                      </p>
+                      {course.durationConfirmed ? (
+                        <p className="mt-1 flex items-center gap-1.5 text-sm text-muted-foreground">
+                          <Clock className="size-4" aria-hidden="true" />
+                          {course.duration}
+                        </p>
+                      ) : null}
                     </div>
                   </div>
                 </CardContent>
@@ -120,8 +121,8 @@ export default function FellowshipPage() {
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-card">
             <Image
-              src="/images/courses/fetal-interventions-simulator.webp"
-              alt="Fetal interventions simulator used for hands-on training at the centre"
+              src={fellowshipProgram.image}
+              alt={fellowshipProgram.imageAlt}
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"

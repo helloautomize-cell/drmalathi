@@ -14,3 +14,13 @@ export const trust = {
     caption: string;
   } | null,
 };
+
+// Real-figure slots for the stats band. Populate with numbers the client can
+// stand behind; each stat appears automatically once set. Until then only
+// "13 years" and "3 regional firsts" render.
+// TODO: client to supply verified counts.
+export const stats = {
+  scansPerformed: null as { value: number; label: string } | null,
+  fellowsTrained: null as { value: number; label: string } | null,
+  cmeEventsHosted: null as { value: number; label: string } | null,
+};

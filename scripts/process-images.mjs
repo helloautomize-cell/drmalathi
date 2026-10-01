@@ -120,18 +120,42 @@ const RECIPES = {
 
 // CUTOUT: recover alpha from a baked-in checkerboard/white background via
 // border flood-fill, so subject interiors (white clothing) stay opaque.
-async function keyOutBackground(pipeline) {
+async function keyOutBackground(pipeline, cfg = {}) {
   const { data, info } = await pipeline
     .ensureAlpha()
     .raw()
     .toBuffer({ resolveWithObject: true });
   const W = info.width;
   const H = info.height;
+
+  // Collect dominant border colours: anything covering >2% of the border is
+  // a background candidate (handles white checkerboard, solid blue, beige...).
+  const borderColors = new Map(); // quantized rgb -> {r,g,b,count}
+  const pushBorder = (i) => {
+    const r = data[i], g = data[i + 1], b = data[i + 2];
+    const key = ((r >> 4) << 8) | ((g >> 4) << 4) | (b >> 4);
+    const c = borderColors.get(key);
+    if (c) c.count++;
+    else borderColors.set(key, { r, g, b, count: 1 });
+  };
+  for (let x = 0; x < W; x++) { pushBorder(x * 4); pushBorder(((H - 1) * W + x) * 4); }
+  for (let y = 0; y < H; y++) { pushBorder(y * W * 4); pushBorder((y * W + W - 1) * 4); }
+  const borderN = 2 * W + 2 * H;
+  const bgColors = [...borderColors.values()].filter((c) => c.count > borderN * 0.02);
+  const bgDist = cfg.cutoutDistance ?? 34;
+
   const isBg = (i) => {
     const r = data[i];
     const g = data[i + 1];
     const b = data[i + 2];
-    return Math.max(r, g, b) > 228 && Math.max(r, g, b) - Math.min(r, g, b) < 18;
+    if (Math.max(r, g, b) > 228 && Math.max(r, g, b) - Math.min(r, g, b) < 18) {
+      return true; // near-white / checkerboard
+    }
+    for (const c of bgColors) {
+      const d = Math.hypot(r - c.r, g - c.g, b - c.b);
+      if (d < bgDist) return true;
+    }
+    return false;
   };
 
   const alpha = new Uint8Array(W * H).fill(255);
@@ -176,7 +200,7 @@ async function keyOutBackground(pipeline) {
   // subject — small islands then get dropped.
   const comp = new Int32Array(W * H).fill(-1);
   const sizes = [];
-  for (let p = 0; p < W * H; p++) {
+  for (let p = 0; !cfg.keepSpeckles && p < W * H; p++) {
     if (alpha[p] < 200 || comp[p] !== -1) continue;
     const id = sizes.length;
     const q = [p];
@@ -202,10 +226,12 @@ async function keyOutBackground(pipeline) {
     }
     sizes.push(size);
   }
-  const minSize = Math.max(64, Math.round(W * H * 0.004));
-  for (let p = 0; p < W * H; p++) {
-    if (alpha[p] > 0 && (comp[p] === -1 || sizes[comp[p]] < minSize)) {
-      alpha[p] = 0;
+  if (!cfg.keepSpeckles) {
+    const minSize = Math.max(64, Math.round(W * H * 0.004));
+    for (let p = 0; p < W * H; p++) {
+      if (alpha[p] > 0 && (comp[p] === -1 || sizes[comp[p]] < minSize)) {
+        alpha[p] = 0;
+      }
     }
   }
 
@@ -247,6 +273,17 @@ for (const [slug, cfg] of Object.entries(sources)) {
     srcW -= left;
   }
 
+  if (cfg.crop?.rectPercent) {
+    const r = cfg.crop.rectPercent;
+    const left = Math.round((r.left / 100) * srcW);
+    const top = Math.round((r.top / 100) * srcH);
+    const width = Math.round((r.width / 100) * srcW);
+    const height = Math.round((r.height / 100) * srcH);
+    pipeline = pipeline.extract({ left, top, width, height });
+    srcW = width;
+    srcH = height;
+  }
+
   const isCutout = cfg.recipe === "cutout";
   const recipe = RECIPES[cfg.recipe];
   if (!isCutout && !recipe) {
@@ -257,7 +294,7 @@ for (const [slug, cfg] of Object.entries(sources)) {
 
   // Apply recipe as a raw pixel pass at source resolution.
   const { data, info } = isCutout
-    ? await keyOutBackground(pipeline)
+    ? await keyOutBackground(pipeline, cfg)
     : await pipeline.raw().toBuffer({ resolveWithObject: true });
   const treated = isCutout ? data : recipe(data, info.channels);
   const base = sharp(treated, {

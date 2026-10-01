@@ -129,17 +129,77 @@
     ],
     "maxDisplayWidth": 787,
     "hasAlpha": true,
-    "blur": "data:image/webp;base64,UklGRpYBAABXRUJQVlA4WAoAAAAQAAAADwAAFwAAQUxQSMwAAAABgGJrm5rnnSR/ubaK0bHHDVQxc2UtbQAl0wbqaQHMdZFlZqbMzCtCW4iICQAAgUjVVHs0fAWiVym5Gg3hYaKa8v+fPTBdAlijpOQShMtA7jc1NZ+zIAAIJB9TkZp2AgRgoOKVmqRiPUwYyLimpsdREmBijA7dmld5rnEfxYsSwEI7lQc/7b5BmCgltetv74uEgWLp9WHTcWChl5Kk5sMZNWFghIrub4ck4uKmqT08MbD1y8BY5H+wxBOqYJUMu0AnRDNVCAyFyn2nDgRWUDggpAAAAFAEAJ0BKhAAGAA/JXq0Ua4npSKwCAHAJIliALsBi7iYTnkDsGRs3BOkwvwA/nvvPnWsVVhTRiQyzLnRszQ2csGqE5aYZIxo6+XmPPu808k761qfL7KMfVwA3iTFJQdvAuae5mzqXqPxtqFGhCUsL6Z9VvfkOXMljJzr8pqC2pe2gOiCe2VrPN7Y3asbF0GegxJMxSnYL0NBee4JD76jpFwDAAAA",
+    "blur": "data:image/webp;base64,UklGRvgBAABXRUJQVlA4WAoAAAAQAAAADwAAFwAAQUxQSBwBAAABkHPbtrG92ve9z4vPNjvbRmvbsZ3SNkvbTtqktW3b9vPcHdyRiJgAaGXl8m47/nc9TR50QGgkyqh+/mJ/GBqBQzRpcj/EPwJ+z6mo+MANQuPcRUUqTtdI5M3bSouKK10hIBBwk5cVLR4d3wYDNkzkD5KKqyYmQsKGKfylSHNtIgQAA620SFojomEAkMiyqGhyv4QAIBD1hRZ/cTRsAGCgjtcO8yeH6iQ6zLkHeWfuQB1shRt7V/C0Z4MNACQSbt+ZJGvG2b3s/wDY+qUFbhkSev/+NkdAXl8ZDI3A4hb43TiXEQPxj/eEIy8L0o69fTwMdkMKEfWR6se3HyY3Q+LfsRd/UlnK/FXsUxRtdwdE1YlZhc3lJaHr+Pn2DVZQOCC2AAAAsAQAnQEqEAAYAD8lerRRrielIrAIAcAkiWQAsRsASoDu4vSR20OKm+qtS/5yYAD+cxBIs47jM0Koc75YlO/TkUk8A7XW7Zn5LIOAhpYcs/slK9uWY6VI4e+jbtFU4YbmUN3zB55tC1x68NlZm3l5ArHQqTvQqskt4pvMBYGPuGUWGwH5bdG86ZZASXVVwiOUCb+qa8f2peNWDyuv6rjCdpHTSe5VT+QR/SUiDoNI1FsCceZAKAA=",
     "bytes": {
       "avif": {
-        "480": 26168,
-        "768": 51120,
-        "1024": 70021
+        "480": 30797,
+        "768": 56738,
+        "1024": 67798
       },
       "webp": {
-        "480": 37476,
-        "768": 70954,
-        "1024": 85400
+        "480": 45676,
+        "768": 77600,
+        "1024": 62890
+      }
+    }
+  },
+  "doctor-malathi": {
+    "width": 240,
+    "height": 324,
+    "widths": [
+      240
+    ],
+    "maxDisplayWidth": 184,
+    "hasAlpha": false,
+    "blur": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAADQAwCdASoQABYAPyV6tFGuJ6UisAgBwCSJbACsH8ABjZwUmY5BfJAA/tlamQbOfGSM3xN78uCMj59hRprBKRaMYGm5nCYE2VLhVEidt31ouHT+9UW3uUPZG/RfM6WkHrquJGsvsaMK0Tr4Dh0FY1dOAded4ObwTZT+3uadT4FkDmZlm/pbgeE0l5QiaFfZ0WPF3zlI63CeZKvJcf+f+KXbqzO2Lvn/8gAAAA==",
+    "bytes": {
+      "avif": {
+        "240": 5833
+      },
+      "webp": {
+        "240": 7658
+      }
+    }
+  },
+  "doctor-revathy": {
+    "width": 500,
+    "height": 600,
+    "widths": [
+      480,
+      500
+    ],
+    "maxDisplayWidth": 384,
+    "hasAlpha": false,
+    "blur": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAAAQBACdASoQABMAPyV6tFGuJ6UisAgBwCSJQBOgZYAlobSyt8TuK7xpMAD9ISOozQqJdyIhXN0DNUqdIcAJRSBXtZqeeASg9J3RAYTXdasl6rcqHR6PrA3fiRSmPkD6vIomKxZiCUuq9UFdkVrvlV7MCfEAWRRIAAA=",
+    "bytes": {
+      "avif": {
+        "480": 13138,
+        "500": 14689
+      },
+      "webp": {
+        "480": 15790,
+        "500": 19332
+      }
+    }
+  },
+  "doctor-nivethitha": {
+    "width": 500,
+    "height": 600,
+    "widths": [
+      480,
+      500
+    ],
+    "maxDisplayWidth": 384,
+    "hasAlpha": false,
+    "blur": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAwBACdASoQABMAPyV6tFGuJ6UisAgBwCSJZABTAAdFegjRqrxISj76IsgA9ypHUwWBXY/Og6093DVOMgcKvzwNgDyvYBL7bkK2Si9ESVS9tlAaT34ceXSWEfJ3SaSOR2XL31NhRLFAAAAA",
+    "bytes": {
+      "avif": {
+        "480": 14795,
+        "500": 16638
+      },
+      "webp": {
+        "480": 19584,
+        "500": 23888
       }
     }
   }
