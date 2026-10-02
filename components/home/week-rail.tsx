@@ -1,6 +1,6 @@
 "use client";
 
-import type { Dispatch, MouseEvent, SetStateAction } from "react";
+import { useState, type Dispatch, type MouseEvent, type SetStateAction } from "react";
 import { WeekChip } from "@/components/home/week-chip";
 import type { ServiceKind, WeekWindow } from "@/data/services";
 
@@ -28,31 +28,40 @@ const LANE_TOP: Record<string, number> = {
   "downs-screening-oscar": 54,
   "anomaly-scan": 54,
   "growth-scan-doppler": 54,
+  "first-trimester-anomaly-scan": 102,
   "fetal-echo": 102,
   nipt: 150,
 };
 
-function scrollToCard(slug: string) {
-  const card = document.getElementById(`home-service-${slug}`);
+function scrollToCard(prefix: string, slug: string) {
+  const card = document.getElementById(`${prefix}-${slug}`);
   if (!card) return;
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   card.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "center" });
-  history.replaceState(null, "", `#home-service-${slug}`);
+  history.replaceState(null, "", `#${prefix}-${slug}`);
 }
 
 export function WeekRail({
   items,
   activeSlug,
   setActiveSlug,
+  anchorPrefix = "home-service",
 }: {
   items: RailItem[];
-  activeSlug: string | null;
-  setActiveSlug: Dispatch<SetStateAction<string | null>>;
+  /** Optional controlled active state; falls back to internal state. */
+  activeSlug?: string | null;
+  setActiveSlug?: Dispatch<SetStateAction<string | null>>;
+  /** Id prefix of the card each bar scrolls to, e.g. "service" -> #service-slug. */
+  anchorPrefix?: string;
 }) {
+  const [internalActive, setInternalActive] = useState<string | null>(null);
+  const active = activeSlug !== undefined ? activeSlug : internalActive;
+  const setActive = setActiveSlug ?? setInternalActive;
+
   const onBarClick = (slug: string) => (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
-    setActiveSlug(slug);
-    scrollToCard(slug);
+    setActive(slug);
+    scrollToCard(anchorPrefix, slug);
   };
 
   return (
@@ -90,7 +99,7 @@ export function WeekRail({
           {items.map((item) => {
             const isBloodTest = item.kind === "blood-test";
             const isOpenEnded = item.weeks.end === undefined;
-            const active = activeSlug === item.slug;
+            const isActive = active === item.slug;
             const laneTop = LANE_TOP[item.slug] ?? 54;
             const width = spanPct(
               (item.weeks.end ?? RANGE_END) - item.weeks.start
@@ -99,26 +108,26 @@ export function WeekRail({
             return (
               <a
                 key={item.slug}
-                href={`#home-service-${item.slug}`}
+                href={`#${anchorPrefix}-${item.slug}`}
                 aria-label={`${item.name}, ${
                   item.weeks.end
                     ? `${item.weeks.start} to ${item.weeks.end} weeks`
                     : `From ${item.weeks.start} weeks`
                 }`}
                 onClick={onBarClick(item.slug)}
-                onMouseEnter={() => setActiveSlug(item.slug)}
+                onMouseEnter={() => setActive(item.slug)}
                 onMouseLeave={(event) => {
                   if (document.activeElement !== event.currentTarget) {
-                    setActiveSlug(null);
+                    setActive(null);
                   }
                 }}
-                onFocus={() => setActiveSlug(item.slug)}
-                onBlur={() => setActiveSlug(null)}
+                onFocus={() => setActive(item.slug)}
+                onBlur={() => setActive(null)}
                 className={`group absolute flex min-h-11 items-center rounded-full border px-3 text-xs font-semibold whitespace-nowrap transition-shadow focus-visible:outline-none ${
                   isBloodTest
                     ? "border-teal/20 bg-teal-tint text-teal"
                     : "border-primary/15 bg-rose-tint text-plum"
-                } ${active ? "ring-2 ring-primary ring-offset-2" : ""}`}
+                } ${isActive ? "ring-2 ring-primary ring-offset-2" : ""}`}
                 style={{
                   left: `${pct(item.weeks.start)}%`,
                   width: `${width}%`,

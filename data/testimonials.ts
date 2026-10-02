@@ -1,7 +1,12 @@
+// TODO: ask the client for more consented written reviews — these three are
+// the only reviews currently approved for use on the site.
+
 export type Testimonial = {
   name: string;
   quote: string;
   language?: "en" | "ta";
+  /** Faithful English rendering shown behind a "Read in English" toggle. */
+  translation?: string;
 };
 
 export const testimonials: Testimonial[] = [
@@ -12,11 +17,12 @@ export const testimonials: Testimonial[] = [
   },
   {
     name: "Rajesh",
-    // Original review is in Tamil; shown translated with the original preserved.
-    // TODO: confirm the Tamil rendering and translation with the client.
     language: "ta",
     quote:
       "மிக,மிக சிறப்பான மருத்துவமனை. கனிவான மருத்துவர்கள். தரமான மருத்துவ சேவை. நடுத்தர குடும்பங்களுக்கு ஏற்ற மருத்துவமனை. மருத்துவர் மிக கனிவுடனும், அக்கரையுடனும் சிகிச்சையளித்தார்.",
+    // TODO: client approval needed for this English translation.
+    translation:
+      "A very, very good hospital. Kind doctors. Quality medical care. A hospital well suited to middle-income families. The doctor treated us with great kindness and care.",
   },
   {
     name: "Manisha Margrete",

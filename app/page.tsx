@@ -11,7 +11,6 @@ import { ServicesSection } from "@/components/home/services-section";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { VisitSteps } from "@/components/home/visit-steps";
 import { WhyChooseUs } from "@/components/home/why-choose-us";
-import { WhyFetalMedicine } from "@/components/home/why-fetal-medicine";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Section } from "@/components/shared/section";
 import { TrustSlots } from "@/components/shared/trust-slots";
@@ -31,7 +30,6 @@ export default function HomePage() {
       <Hero />
       <FirstsStrip />
       <HelpRow />
-      <WhyFetalMedicine />
       <ServicesSection />
       <DoctorsSection />
       <FellowshipHighlight />

@@ -76,6 +76,8 @@ export const SHOW_DRAFT_WEEK_WINDOWS = true;
 /** Inclusive gestational-week window; `end` omitted = "from N weeks" onward. */
 export type WeekWindow = { start: number; end?: number };
 
+export type ServiceFaq = { question: string; answer: string };
+
 export type Service = {
   slug: string;
   name: string;
@@ -94,6 +96,16 @@ export type Service = {
   detail: string[];
   timing?: string;
   preparation?: string;
+  // DRAFT FOR MEDICAL REVIEW: the detail-page fields below are new
+  // plain-language copy and must be reviewed by the medical team before
+  // launch. No statistics, prices or success rates are stated.
+  whoFor?: string[];
+  whatItChecks?: string[];
+  steps?: string[];
+  reportAndNextSteps?: string;
+  /** Doctor slugs (see data/doctors.ts) for the "Your doctors" section. */
+  performedBy?: string[];
+  faqs?: ServiceFaq[];
 };
 
 const serviceList: Service[] = [
@@ -116,6 +128,49 @@ const serviceList: Service[] = [
     timing: "Usually from 6 to 10 weeks of pregnancy.",
     preparation:
       "A comfortably full bladder can help for very early scans. Bring any previous reports or referral notes.",
+    whoFor: [
+      "Anyone who has just found out they are pregnant and wants early confirmation",
+      "Women with early bleeding or pain who need reassurance",
+      "Pregnancies after IVF or other fertility treatment",
+      "Anyone with a previous ectopic pregnancy or early loss",
+    ],
+    whatItChecks: [
+      "That the pregnancy is growing inside the womb",
+      "Whether the baby's heartbeat has started",
+      "How many babies are present",
+      "A first estimate of how far along the pregnancy is",
+    ],
+    steps: [
+      "You check in and share any earlier reports or referral notes.",
+      "The specialist performs the scan and explains what you see on the screen.",
+      "For very early pregnancies an internal scan may be suggested for a clearer view, only with your consent.",
+      "You receive your report and the plan for your next scan before you leave.",
+    ],
+    reportAndNextSteps:
+      "You receive your report in the same visit. If all is well, the usual next step is OSCAR screening between 11 and 14 weeks. If anything needs a closer look, the specialist explains your options calmly.",
+    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan"],
+    faqs: [
+      {
+        question: "Is the scan internal or over the tummy?",
+        answer:
+          "Usually it is done over the tummy. Very early in pregnancy the baby may be too small to see clearly that way, so the specialist may suggest an internal scan. It is only done with your consent.",
+      },
+      {
+        question: "Is the scan safe for my baby?",
+        answer:
+          "Ultrasound has been used in pregnancy for decades and is considered safe when performed by trained specialists.",
+      },
+      {
+        question: "What if the heartbeat is not seen yet?",
+        answer:
+          "Very early in pregnancy it can simply be too soon. The specialist will explain what the scan shows and whether a follow-up scan a short while later is needed.",
+      },
+      {
+        question: "Do I need a full bladder?",
+        answer:
+          "A comfortably full bladder can help in very early scans. You do not need to be uncomfortably full.",
+      },
+    ],
   },
   {
     slug: "downs-screening-oscar",
@@ -134,6 +189,48 @@ const serviceList: Service[] = [
     ],
     timing: "Usually between 11 and 13+6 weeks of pregnancy.",
     preparation: "No special preparation is needed.",
+    whoFor: [
+      "Any pregnancy wanting first trimester screening",
+      "Women who will be 35 or over at delivery",
+      "Anyone with a previous pregnancy or family history of a chromosomal condition",
+    ],
+    whatItChecks: [
+      "The fluid space at the back of the baby's neck (nuchal translucency)",
+      "Scan markers such as the baby's nasal bone",
+      "Two markers measured in a blood sample from the mother",
+      "A combined chance figure, explained to you in person",
+    ],
+    steps: [
+      "A detailed ultrasound measures the baby and the nuchal translucency.",
+      "A small blood sample is taken from the mother's arm.",
+      "The scan and blood results are combined into a chance figure.",
+      "The specialist explains what the figure means for your pregnancy.",
+    ],
+    reportAndNextSteps:
+      "Your combined result is explained in the same visit. If the chance is low, the usual next step is the anomaly scan between 18 and 22 weeks. If the chance is higher, our in-house counselling helps you understand options such as NIPT or diagnostic testing.",
+    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan"],
+    faqs: [
+      {
+        question: "Is OSCAR a diagnosis?",
+        answer:
+          "No. It is a screening test that estimates the chance of a condition. A higher-chance result does not mean the baby has the condition, and a low-chance result cannot rule it out completely.",
+      },
+      {
+        question: "What happens if my result shows a higher chance?",
+        answer:
+          "The specialist and our in-house counsellor explain the result and the options, which may include NIPT or a diagnostic test. Nothing is decided for you.",
+      },
+      {
+        question: "Does it hurt the baby?",
+        answer:
+          "No. The ultrasound is like any other pregnancy scan, and the blood sample is taken from the mother's arm.",
+      },
+      {
+        question: "What if I miss the window?",
+        answer:
+          "The combined test works in the first trimester. If that window has passed, the specialist will explain which second trimester options remain.",
+      },
+    ],
   },
   {
     slug: "first-trimester-anomaly-scan",
@@ -152,6 +249,43 @@ const serviceList: Service[] = [
     ],
     timing: "Usually between 11 and 14 weeks of pregnancy.",
     preparation: "No special preparation is needed.",
+    whoFor: [
+      "Parents who want a detailed early check of the baby's development",
+      "Pregnancies where an earlier scan or history raises a question",
+      "Often done in the same visit as OSCAR screening",
+    ],
+    whatItChecks: [
+      "The baby's brain, spine, heart and major organs",
+      "The baby's limbs, tummy wall and cord insertion",
+      "The placenta and the fluid around the baby",
+      "Early signs of structural conditions, while there is still time to plan",
+    ],
+    steps: [
+      "The specialist performs a detailed, head-to-toe survey of the baby.",
+      "Findings are pointed out on the screen as the scan proceeds.",
+      "If the baby is not in a helpful position, part of the scan may be repeated after a short break.",
+      "You receive a detailed report and the plan for your next scan.",
+    ],
+    reportAndNextSteps:
+      "You receive a detailed report in the same visit. Even when everything looks normal, the anomaly scan between 18 and 22 weeks is still recommended because some structures are best seen later.",
+    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan"],
+    faqs: [
+      {
+        question: "Does this replace the 18 to 22 week anomaly scan?",
+        answer:
+          "No. This early survey finds many conditions sooner, but some parts of the baby are still too small to assess fully. The mid-pregnancy anomaly scan is still recommended.",
+      },
+      {
+        question: "How long does it take?",
+        answer:
+          "It is a detailed scan, so it can take a little longer than a routine scan, especially if the baby is not in a helpful position.",
+      },
+      {
+        question: "Can it be done in the same visit as OSCAR?",
+        answer:
+          "Yes. It is often combined with the OSCAR visit when the timing suits your pregnancy.",
+      },
+    ],
   },
   {
     slug: "anomaly-scan",
@@ -171,6 +305,50 @@ const serviceList: Service[] = [
     timing: "Usually between 18 and 22 weeks of pregnancy.",
     preparation:
       "No special preparation is needed. Bring previous scan reports and your referral if you have one.",
+    whoFor: [
+      "Every pregnancy; it is the standard detailed mid-pregnancy check",
+      "Pregnancies after IVF or other fertility treatment",
+      "Anyone with a previous baby affected by a structural condition",
+      "When another scan or blood test has raised a question",
+    ],
+    whatItChecks: [
+      "The baby's brain, face and spine",
+      "The heart chambers and major blood vessels",
+      "The stomach, kidneys and bladder",
+      "The arms, legs, hands and feet",
+      "The placenta, cord and the fluid around the baby",
+    ],
+    steps: [
+      "The specialist scans the baby from head to toe, system by system.",
+      "You can watch on the screen while the findings are pointed out.",
+      "If the baby is in a tricky position, you may be asked to walk around and continue after a short break.",
+      "The findings are explained to you before you leave.",
+    ],
+    reportAndNextSteps:
+      "You receive a detailed report in the same visit. If a finding needs a closer look, our specialists and counsellors explain what it means and what comes next. Growth scans in the third trimester follow if advised.",
+    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan"],
+    faqs: [
+      {
+        question: "How long does the scan take?",
+        answer:
+          "It is the most detailed scan of the pregnancy, so allow a little more time than a routine scan. If the baby is facing away, part of it may be finished after a short break.",
+      },
+      {
+        question: "Can my partner come in?",
+        answer:
+          "Partners are welcome to be present. Check with the front desk on the day for the current policy.",
+      },
+      {
+        question: "What if something is found?",
+        answer:
+          "The specialist explains the finding in plain language straight away. Where needed, our in-house counselling and multidisciplinary panel help you plan the next steps.",
+      },
+      {
+        question: "Is a 3D or 4D picture part of it?",
+        answer:
+          "3D or 4D views may be used when they help assess the baby, but the medical check is what matters.",
+      },
+    ],
   },
   {
     slug: "growth-scan-doppler",
@@ -189,6 +367,44 @@ const serviceList: Service[] = [
     ],
     timing: "Usually from 28 weeks onward, and repeated as advised.",
     preparation: "No special preparation is needed.",
+    whoFor: [
+      "Every pregnancy in the third trimester, as advised by your doctor",
+      "When the baby seems small or a previous baby was small",
+      "Mothers with diabetes, high blood pressure, or twins",
+      "If the baby's movements feel reduced",
+    ],
+    whatItChecks: [
+      "The baby's estimated weight and growth pattern",
+      "The fluid around the baby",
+      "The placenta and where it sits",
+      "Blood flow in the cord and the baby's vessels (Doppler)",
+    ],
+    steps: [
+      "The specialist measures the baby and checks the fluid and placenta.",
+      "Doppler readings check blood flow in the cord and the baby's vessels.",
+      "Findings are compared with your earlier scans where available.",
+      "The report and any follow-up plan are explained before you leave.",
+    ],
+    reportAndNextSteps:
+      "You receive your report in the same visit, with a follow-up interval if one is advised. If growth or blood flow raises a question, the specialist discusses monitoring with you and your obstetrician.",
+    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan"],
+    faqs: [
+      {
+        question: "How often will I need this scan?",
+        answer:
+          "That depends on what the scan shows and your doctor's advice. Some pregnancies need only one growth scan; others are watched more closely.",
+      },
+      {
+        question: "Does Doppler harm the baby?",
+        answer:
+          "Doppler ultrasound is a standard part of pregnancy care and is used to check blood flow to the baby.",
+      },
+      {
+        question: "What if the baby looks small?",
+        answer:
+          "The specialist explains whether the measurements sit within the expected range and whether closer monitoring or other checks are suggested.",
+      },
+    ],
   },
 
   // Advanced Diagnostics
@@ -209,6 +425,42 @@ const serviceList: Service[] = [
     ],
     timing: "Usually from 10 weeks of pregnancy onward.",
     preparation: "No special preparation is needed.",
+    whoFor: [
+      "Any pregnancy wanting early screening for common chromosomal conditions",
+      "Pregnancies where another screening test has shown a higher chance",
+      "Women advised screening by their doctor",
+    ],
+    whatItChecks: [
+      "Fragments of the baby's DNA that naturally circulate in the mother's blood",
+      "The common chromosomal conditions, including Down's syndrome",
+    ],
+    steps: [
+      "The counsellor or specialist explains what NIPT can and cannot tell you.",
+      "A single blood sample is taken from the mother's arm.",
+      "The sample is analysed by the laboratory.",
+      "We contact you to explain the result when it is ready.",
+    ],
+    reportAndNextSteps:
+      "The laboratory sends the result to us and we contact you to explain it. A lower-chance result is usually reassuring news; a higher-chance result is discussed with counselling and the option of diagnostic testing.",
+    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan"],
+    faqs: [
+      {
+        question: "Is NIPT safe for the baby?",
+        answer:
+          "Yes. It is a blood test from the mother's arm, so there is no risk to the baby.",
+      },
+      {
+        question: "Does a normal NIPT mean everything is fine?",
+        answer:
+          "NIPT is a screening test for specific chromosomal conditions. It does not check the baby's anatomy, so scans such as the anomaly scan are still needed.",
+        // DRAFT FOR MEDICAL REVIEW
+      },
+      {
+        question: "When can it be done?",
+        answer:
+          "From 10 weeks of pregnancy onward, once dating has been confirmed.",
+      },
+    ],
   },
   {
     slug: "fetal-echo",
@@ -227,6 +479,39 @@ const serviceList: Service[] = [
     ],
     timing: "Usually between 18 and 24 weeks of pregnancy.",
     preparation: "No special preparation is needed.",
+    whoFor: [
+      "Babies with a heart question raised on another scan",
+      "A family history of a heart condition",
+      "Mothers with diabetes or certain infections in pregnancy",
+      "Twin or IVF pregnancies, when advised",
+    ],
+    whatItChecks: [
+      "The four chambers of the baby's heart",
+      "The heart valves and the major blood vessels",
+      "The heart's rhythm and how blood flows through it",
+      "The heart's position and connections",
+    ],
+    steps: [
+      "The specialist performs a focused ultrasound of the baby's heart.",
+      "The heart is examined from several angles, so the scan can take a little longer.",
+      "Findings are explained to you in the same visit.",
+      "A plan for follow-up or delivery care is discussed if needed.",
+    ],
+    reportAndNextSteps:
+      "You receive the report in the same visit. When a heart condition is found, we explain what it means and help coordinate care with paediatric cardiology and your obstetrician.",
+    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan"],
+    faqs: [
+      {
+        question: "Is it different from the anomaly scan?",
+        answer:
+          "Yes. The anomaly scan checks the whole baby including a basic look at the heart. A fetal echo examines the heart alone, in much greater detail.",
+      },
+      {
+        question: "If a heart problem is found, what next?",
+        answer:
+          "The specialist explains the finding, and we help plan follow-up scans and link you with paediatric heart specialists where needed.",
+      },
+    ],
   },
   {
     slug: "fetal-neurosonogram",
@@ -245,6 +530,39 @@ const serviceList: Service[] = [
     ],
     timing: "When advised by your referring doctor or our specialists.",
     preparation: "Bring all previous scan reports so the specialist has the full picture.",
+    whoFor: [
+      "Babies with a brain or spine finding on another scan",
+      "A family history of a neurological condition",
+      "After certain infections in pregnancy",
+      "Follow-up of ventriculomegaly or similar findings",
+    ],
+    whatItChecks: [
+      "The detailed structure of the baby's brain",
+      "The ventricles, cerebellum and midline structures",
+      "The spine and its coverings",
+      "Changes over time, compared with your earlier scans",
+    ],
+    steps: [
+      "The specialist performs a detailed scan of the baby's brain and spine.",
+      "Different scanning angles are used, and an internal scan may occasionally help, only with your consent.",
+      "Findings are reviewed and explained in the same visit.",
+      "A plan for follow-up or further review is agreed with you.",
+    ],
+    reportAndNextSteps:
+      "Findings are explained in person and a report is provided. Where a condition is suspected, our counselling team helps the family understand the picture and the choices ahead.",
+    performedBy: ["dr-malathi-g-prasad"],
+    faqs: [
+      {
+        question: "Why was I referred for this scan?",
+        answer:
+          "Usually because a routine scan raised a question about the baby's brain or spine, or because of a relevant history. It is a specialist second look, not a verdict.",
+      },
+      {
+        question: "Is it an internal scan?",
+        answer:
+          "It is usually done over the tummy. When the baby's head is low, an internal scan can give a clearer view and may be suggested with your consent.",
+      },
+    ],
   },
   {
     slug: "second-opinion-scan",
@@ -263,6 +581,37 @@ const serviceList: Service[] = [
     ],
     timing: "At any stage of pregnancy, subject to what is being assessed.",
     preparation: "Please bring all previous scan reports, images, and medical records.",
+    whoFor: [
+      "Families with a scan report from elsewhere they want reviewed",
+      "Anyone who wants reassurance before a decision",
+      "Referrals from doctors who want a specialist view",
+    ],
+    whatItChecks: [
+      "A fresh, careful look at the area in question",
+      "Your existing reports and images alongside the new scan",
+      "A plain-language explanation of whether the findings agree",
+    ],
+    steps: [
+      "Bring your earlier reports and images to your visit.",
+      "The specialist reviews them and then performs a fresh scan.",
+      "The new findings are compared with your earlier report.",
+      "You discuss what the findings mean and the options open to you.",
+    ],
+    reportAndNextSteps:
+      "You leave with a written specialist report and a clear explanation of whether the earlier findings are confirmed or changed, plus the options open to you.",
+    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan"],
+    faqs: [
+      {
+        question: "What should I bring?",
+        answer:
+          "All earlier scan reports, images and medical records, plus your referral letter if you have one.",
+      },
+      {
+        question: "Will the result differ from my first scan?",
+        answer:
+          "Sometimes it confirms the finding, sometimes it adds detail, and occasionally it changes the picture. Either way, you get an honest specialist view.",
+      },
+    ],
   },
 
   // Specialty Clinics
@@ -283,6 +632,45 @@ const serviceList: Service[] = [
     ],
     timing: "Before or after a screening test, or when advised by your doctor.",
     preparation: "Bring family history details and any earlier reports.",
+    whoFor: [
+      "Families with a higher-chance screening result",
+      "A family history of a genetic condition",
+      "Parents who are related by blood",
+      "A previous child or pregnancy affected by a condition",
+      "Repeated pregnancy loss",
+    ],
+    whatItChecks: [
+      "A review of your family and medical history",
+      "What test results mean, and what they do not mean",
+      "How a condition may be inherited",
+      "The options open to you, explained without pressure",
+    ],
+    steps: [
+      "You sit down with the counsellor or specialist for an unhurried session.",
+      "Your history, reports and family details are discussed.",
+      "Options are explained in plain language.",
+      "You decide the next step, with time to think.",
+    ],
+    reportAndNextSteps:
+      "You leave with a clear summary of what was discussed and a suggested plan. If testing is chosen, our team coordinates it within the centre.",
+    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan"],
+    faqs: [
+      {
+        question: "Is counselling a test?",
+        answer:
+          "No. It is a conversation about results, history and options. Nothing is done without your consent.",
+      },
+      {
+        question: "Should my partner or a family member come too?",
+        answer:
+          "If the discussion involves family history or shared decisions, bringing your partner or a family member can help.",
+      },
+      {
+        question: "Do I have to decide anything on the day?",
+        answer:
+          "No. Counselling gives you information and time. Decisions are yours to make.",
+      },
+    ],
   },
   {
     slug: "fetal-postmortem",
@@ -300,6 +688,41 @@ const serviceList: Service[] = [
     ],
     timing: "After a pregnancy loss, in discussion with your doctor.",
     preparation: "Our team will guide you through what is involved.",
+    whoFor: [
+      "Families who have sadly lost a pregnancy and want to understand why",
+      "When the doctors feel the answers may help plan a future pregnancy",
+    ],
+    whatItChecks: [
+      "A careful specialist evaluation after a pregnancy loss",
+      "Findings that may help explain what happened",
+      "Information that can guide care in a future pregnancy",
+    ],
+    steps: [
+      "Our team explains privately what the evaluation involves.",
+      "It is carried out only with the family's consent.",
+      "Findings are gathered carefully and respectfully.",
+      "The specialist meets the family to discuss what was found.",
+    ],
+    reportAndNextSteps:
+      "The findings are discussed with you privately, along with what they may mean for a future pregnancy and any follow-up that could help.",
+    performedBy: ["dr-malathi-g-prasad"],
+    faqs: [
+      {
+        question: "Is this compulsory?",
+        answer:
+          "No. It is entirely your choice, and our team will support you either way.",
+      },
+      {
+        question: "Will it tell us why we lost the baby?",
+        answer:
+          "It can provide answers in some cases and useful information in many others, though not every question has an answer. The specialist will be honest about what it can and cannot show.",
+      },
+      {
+        question: "Who can we talk to about it?",
+        answer:
+          "Our specialists and counsellors can talk it through with you privately before you decide.",
+      },
+    ],
   },
   {
     slug: "recurrent-miscarriages-clinic",
@@ -318,6 +741,42 @@ const serviceList: Service[] = [
     ],
     timing: "Before or early in a subsequent pregnancy.",
     preparation: "Bring earlier pregnancy records and test results if you have them.",
+    whoFor: [
+      "Women who have had two or more pregnancy losses",
+      "A later loss or a previous complicated pregnancy",
+      "Couples planning a pregnancy after repeated losses",
+    ],
+    whatItChecks: [
+      "A careful review of your pregnancy and medical history",
+      "Targeted tests where they may help find a cause",
+      "A monitored plan for your next pregnancy",
+    ],
+    steps: [
+      "Your history and earlier records are reviewed in detail.",
+      "Tests are suggested only where they may give useful answers.",
+      "Findings are explained and a plan is agreed together.",
+      "Early monitoring is arranged in your next pregnancy.",
+    ],
+    reportAndNextSteps:
+      "You leave with a clear plan: which checks mattered, what the next pregnancy will look like, and how closely you will be monitored.",
+    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan"],
+    faqs: [
+      {
+        question: "How many losses count as recurrent miscarriage?",
+        answer:
+          "Clinics usually see women after two or more losses, but you are welcome earlier if you are worried. Your history matters more than the number.",
+      },
+      {
+        question: "Will tests find a cause?",
+        answer:
+          "In some cases a cause is found and can be treated; in others no clear cause shows up, but careful monitoring still supports the next pregnancy.",
+      },
+      {
+        question: "Can I come before I am pregnant again?",
+        answer:
+          "Yes, and it is often the best time, because the plan can be ready before the next pregnancy begins.",
+      },
+    ],
   },
   {
     slug: "twin-specialised-clinic",
@@ -336,6 +795,44 @@ const serviceList: Service[] = [
     ],
     timing: "From the first trimester, with scans usually every 2 to 4 weeks.",
     preparation: "Bring your earlier scan reports so chorionicity can be assessed.",
+    whoFor: [
+      "Twins, triplets or other multiple pregnancies",
+      "Twins that share a placenta",
+      "A history of complications in a twin pregnancy",
+      "Multiple pregnancies after fertility treatment",
+    ],
+    whatItChecks: [
+      "Whether the babies share a placenta (chorionicity)",
+      "Each baby's growth and wellbeing",
+      "The fluid around each baby",
+      "Signs of twin-specific complications such as twin-to-twin transfusion",
+    ],
+    steps: [
+      "An early scan establishes the chorionicity of the twins.",
+      "A personalised schedule of scans is planned for the pregnancy.",
+      "Each visit tracks both babies' growth, fluid and blood flow.",
+      "Delivery planning is coordinated with your obstetrician.",
+    ],
+    reportAndNextSteps:
+      "You receive a report at each visit and a clear monitoring schedule. If any twin-specific complication appears, the specialist explains it and the options promptly.",
+    performedBy: ["dr-revathy-chandrasekharan", "dr-malathi-g-prasad"],
+    faqs: [
+      {
+        question: "How often will I need scans?",
+        answer:
+          "Twin pregnancies are scanned more often than single ones. The interval depends on whether the babies share a placenta and how they are growing.",
+      },
+      {
+        question: "What is chorionicity?",
+        answer:
+          "Whether the twins share a placenta or each have their own. It is best assessed early and shapes how closely we monitor the pregnancy.",
+      },
+      {
+        question: "Do you work with my obstetrician?",
+        answer:
+          "Yes. We coordinate monitoring and findings with the doctor who will deliver your babies.",
+      },
+    ],
   },
 ];
 
@@ -351,4 +848,26 @@ export const services: Service[] = serviceList.map((s) =>
 
 export function servicesByCategory(categoryId: ServiceCategoryId) {
   return services.filter((s) => s.category === categoryId);
+}
+
+const weekMidpoint = (w: WeekWindow) => (w.start + (w.end ?? w.start)) / 2;
+
+/**
+ * Related services: nearest neighbours by week window for timed services,
+ * otherwise services in the same category.
+ */
+export function relatedServices(service: Service, count = 3): Service[] {
+  const others = services.filter((s) => s.slug !== service.slug);
+  if (service.weeks) {
+    const mid = weekMidpoint(service.weeks);
+    return others
+      .filter((s) => s.weeks)
+      .sort(
+        (a, b) =>
+          Math.abs(weekMidpoint(a.weeks as WeekWindow) - mid) -
+          Math.abs(weekMidpoint(b.weeks as WeekWindow) - mid)
+      )
+      .slice(0, count);
+  }
+  return others.filter((s) => s.category === service.category).slice(0, count);
 }

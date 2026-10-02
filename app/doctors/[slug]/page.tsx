@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, Medal, MessageCircle } from "lucide-react";
+import { ArrowRight, CheckCircle2, Medal, MessageCircle } from "lucide-react";
 import { BookingCta } from "@/components/booking/booking-sheet";
 import { CTABand } from "@/components/cards/cta-band";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -85,6 +85,22 @@ export default async function DoctorDetailPage({
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
+
+            {doctor.highlights.length ? (
+              <ul className="mt-5 space-y-2.5">
+                {doctor.highlights.map((highlight) => (
+                  <li key={highlight} className="flex items-start gap-3">
+                    <CheckCircle2
+                      className="mt-0.5 size-5 shrink-0 text-teal"
+                      aria-hidden="true"
+                    />
+                    <span className="text-sm text-muted-foreground">
+                      {highlight}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
 
             {doctor.award ? (
               <p className="mt-5 flex gap-2 text-sm font-semibold text-teal">

@@ -1,11 +1,20 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import { FileText, Presentation } from "lucide-react";
+import Link from "next/link";
+import {
+  ArrowRight,
+  CalendarDays,
+  FileText,
+  GraduationCap,
+  Handshake,
+  MapPin,
+} from "lucide-react";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Container } from "@/components/shared/container";
 import { PageHeader } from "@/components/shared/page-header";
+import { PhotoGrid } from "@/components/shared/photo-grid";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
+import { cmeYears } from "@/data/cme";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -15,12 +24,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/cme-activities" },
 };
 
-const eventImages = Array.from(
-  { length: 10 },
-  (_, i) => `/images/gallery/event${i + 1}.webp`
-);
-
 export default function CmeActivitiesPage() {
+  const years = cmeYears();
+
   return (
     <>
       <JsonLd
@@ -37,54 +43,110 @@ export default function CmeActivitiesPage() {
       />
 
       <Section>
+        <Container className="space-y-14">
+          {years.map(({ year, events }) => (
+            <div key={year}>
+              <h2 className="mb-6 text-xl font-semibold text-plum">{year}</h2>
+              <div className="space-y-8">
+                {events.map((event) => (
+                  <article
+                    key={event.id}
+                    className="rounded-2xl border border-rose-tint bg-white p-5 shadow-soft sm:p-6"
+                  >
+                    <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+                      <div className="min-w-0">
+                        <h3 className="text-xl font-semibold text-ink">
+                          {event.title}
+                        </h3>
+                        <dl className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
+                          <div className="flex items-center gap-1.5">
+                            <CalendarDays
+                              className="size-4 text-primary"
+                              aria-hidden="true"
+                            />
+                            <dt className="sr-only">Date</dt>
+                            <dd>{event.dateLabel}</dd>
+                          </div>
+                          <div className="flex items-center gap-1.5">
+                            <MapPin
+                              className="size-4 text-primary"
+                              aria-hidden="true"
+                            />
+                            <dt className="sr-only">Venue</dt>
+                            <dd>{event.venue}</dd>
+                          </div>
+                          {event.partner ? (
+                            <div className="flex items-center gap-1.5">
+                              <Handshake
+                                className="size-4 text-primary"
+                                aria-hidden="true"
+                              />
+                              <dt className="sr-only">Partner</dt>
+                              <dd>In association with {event.partner}</dd>
+                            </div>
+                          ) : null}
+                        </dl>
+                        <p className="mt-3 text-sm text-muted-foreground">
+                          {event.blurb}
+                        </p>
+                      </div>
+                      {event.pdf ? (
+                        <a
+                          href={event.pdf}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl border border-primary px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-rose-tint"
+                        >
+                          <FileText
+                            className="size-4 shrink-0"
+                            aria-hidden="true"
+                          />
+                          View program (PDF)
+                        </a>
+                      ) : null}
+                    </div>
+                    {event.photos.length ? (
+                      <div className="mt-6">
+                        <PhotoGrid images={event.photos} />
+                      </div>
+                    ) : null}
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
+        </Container>
+      </Section>
+
+      <Section className="bg-blush">
         <Container>
-          <div className="flex flex-col gap-5 rounded-2xl border border-rose-tint bg-white p-5 shadow-soft sm:flex-row sm:items-center sm:gap-6 sm:p-6">
+          <div className="rounded-2xl border border-rose-tint bg-white p-6 shadow-soft sm:flex sm:items-center sm:gap-6 sm:p-8">
             <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-teal-tint text-teal">
-              <Presentation className="size-7" strokeWidth={1.75} aria-hidden="true" />
+              <GraduationCap
+                className="size-7"
+                strokeWidth={1.75}
+                aria-hidden="true"
+              />
             </span>
-            <div className="flex-1">
-              <h2 className="text-xl font-semibold text-ink">
-                ISUOG Trichy Materno-Fetal Conclave
-              </h2>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Program details from our recent conclave, hosted in association
-                with ISUOG.
+            <div className="mt-4 flex-1 sm:mt-0">
+              <SectionHeader
+                align="left"
+                className="mb-2"
+                title="Train with us"
+              />
+              <p className="text-sm text-muted-foreground">
+                Our fellowship in fetal medicine offers hands-on scanning,
+                procedures and teaching under senior specialists.
               </p>
             </div>
-            <a
-              href="/docs/ISUOG-Trichy-Materno-Fetal-Conclave.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl border border-primary px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-rose-tint"
+            <Link
+              href="/fellowship"
+              className="mt-5 inline-flex shrink-0 items-center gap-1.5 rounded-xl border border-primary px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-rose-tint sm:mt-0"
             >
-              <FileText className="size-4 shrink-0" aria-hidden="true" />
-              View program (PDF)
-            </a>
+              Explore the fellowship
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </Link>
           </div>
-
-          <SectionHeader
-            align="left"
-            className="mt-14"
-            title="From our programs"
-            subtitle="Moments from workshops, CME programs, and training sessions held at the centre."
-          />
-          <ul className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-            {eventImages.map((src, i) => (
-              <li
-                key={src}
-                className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-soft"
-              >
-                <Image
-                  src={src}
-                  alt={`Fetal medicine CME program at the centre, photo ${i + 1}`}
-                  fill
-                  loading={i < 4 ? "eager" : "lazy"}
-                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
-                  className="object-cover transition-transform duration-300 hover:scale-105"
-                />
-              </li>
-            ))}
-          </ul>
         </Container>
       </Section>
     </>

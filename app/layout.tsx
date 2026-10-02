@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Noto_Sans_Tamil, Nunito_Sans } from "next/font/google";
 import "./globals.css";
+import { SmoothScroll } from "@/components/shared/smooth-scroll";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { MobileBottomBar } from "@/components/site/mobile-bottom-bar";
@@ -63,15 +64,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to main content
         </a>
         <TooltipProvider>
-          <UtilityBar />
+          <SmoothScroll>
+            <UtilityBar />
           <SiteHeader />
           <main id="main" className="flex-1">
             {children}
           </main>
           <SiteFooter />
           <MobileBottomBar />
-          <WhatsAppFloat />
-          <Toaster richColors position="top-center" />
+            <WhatsAppFloat />
+            <Toaster richColors position="top-center" />
+          </SmoothScroll>
         </TooltipProvider>
       </body>
     </html>

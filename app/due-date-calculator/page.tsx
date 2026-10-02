@@ -26,7 +26,7 @@ export default function DueDateCalculatorPage() {
       <PageHeader
         eyebrow="Free tool"
         title="Due date calculator"
-        subtitle="Enter the first day of your last period to see your estimated due date and the scans usually offered at your stage."
+        subtitle="Choose a method below, last period, conception date or IVF transfer, to see your estimated due date and a personal scan timeline."
         crumbs={[{ label: "Home", href: "/" }, { label: "Due Date Calculator" }]}
       />
       <Section>

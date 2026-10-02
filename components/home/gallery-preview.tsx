@@ -1,20 +1,49 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { cn } from "cn";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/container";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
 
 const previewImages = [
-  { src: "/images/gallery/g2.webp", alt: "Consultation room at the centre", ratio: "aspect-[4/5]" },
-  { src: "/images/banners/banner7.webp", alt: "Ultrasound scan room at the centre", ratio: "aspect-[4/3]" },
-  { src: "/images/gallery/g5.webp", alt: "Waiting area inside the centre", ratio: "aspect-square" },
-  { src: "/images/gallery/g8.webp", alt: "Reception corridor at the centre", ratio: "aspect-[4/5]" },
-  { src: "/images/gallery/g10.webp", alt: "Doctor reviewing a scan with a family", ratio: "aspect-[4/3]" },
-  { src: "/images/misc/feature.jpg", alt: "The centre's team and facilities", ratio: "aspect-square" },
-  { src: "/images/gallery/g13.webp", alt: "Equipment and care space at the centre", ratio: "aspect-[4/3]" },
-  { src: "/images/banners/banner3.webp", alt: "The centre building on Annamalai Nagar Main Road", ratio: "aspect-[4/5]" },
+  {
+    src: "/images/banners/banner6.webp",
+    alt: "Ultrasound machine and exam bed in the centre's scan room",
+    className: "col-span-2 aspect-[4/3] md:row-span-2 md:aspect-auto",
+    sizes: "(min-width: 768px) 66vw, 100vw",
+  },
+  {
+    src: "/images/banners/banner2.webp",
+    alt: "Families in the waiting area at the centre",
+    className: "aspect-square",
+    sizes: "(min-width: 768px) 33vw, 50vw",
+  },
+  {
+    src: "/images/banners/banner1.webp",
+    alt: "The reception desk at the centre",
+    className: "aspect-square",
+    sizes: "(min-width: 768px) 33vw, 50vw",
+  },
+  {
+    src: "/images/banners/banner4.webp",
+    alt: "Microscope workstation in the centre's laboratory",
+    className: "aspect-square",
+    sizes: "(min-width: 768px) 33vw, 50vw",
+  },
+  {
+    src: "/images/banners/banner5.webp",
+    alt: "Recovery ward with beds and privacy curtains",
+    className: "aspect-square",
+    sizes: "(min-width: 768px) 33vw, 50vw",
+  },
+  {
+    src: "/images/banners/banner3.webp",
+    alt: "The centre building on Annamalai Nagar Main Road",
+    className: "col-span-2 aspect-[2/1] md:col-span-1 md:aspect-square",
+    sizes: "(min-width: 768px) 33vw, 100vw",
+  },
 ];
 
 export function GalleryPreview() {
@@ -26,22 +55,23 @@ export function GalleryPreview() {
           title="Inside the centre"
           subtitle="A calm, welcoming space designed around your comfort and privacy."
         />
-        <ul className="columns-2 gap-4 space-y-4 md:columns-3 lg:columns-4">
+        <ul className="grid grid-cols-2 gap-4 md:grid-cols-3">
           {previewImages.map((image, i) => (
             <li
               key={image.src}
-              className="group relative break-inside-avoid overflow-hidden rounded-2xl shadow-soft"
+              className={cn(
+                "group relative overflow-hidden rounded-2xl shadow-soft",
+                image.className
+              )}
             >
-              <div className={`relative w-full ${image.ratio}`}>
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  loading={i < 4 ? "eager" : "lazy"}
-                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                loading={i === 0 ? "eager" : "lazy"}
+                sizes={image.sizes}
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
             </li>
           ))}
         </ul>

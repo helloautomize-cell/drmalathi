@@ -5,8 +5,10 @@ import Link from "next/link";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
+import { CheckCircle2, Phone } from "lucide-react";
 import { z } from "zod";
 import { requestAppointment } from "@/app/actions/appointment";
+import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
@@ -19,6 +21,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { doctors } from "@/data/doctors";
+import { services } from "@/data/services";
+import { site } from "@/data/site";
 
 const consultSchema = z.object({
   name: z.string().trim().min(2, "Please enter your name.").max(80),
@@ -27,6 +31,8 @@ const consultSchema = z.object({
     .trim()
     .regex(/^[+\d][\d\s-]{7,15}$/, "Please enter a valid phone number."),
   doctor: z.string(),
+  service: z.string(),
+  preferredTime: z.string(),
   consent: z.literal(true, {
     error: "Please accept so we can contact you.",
   }),
@@ -35,7 +41,14 @@ const consultSchema = z.object({
 
 type ConsultValues = z.infer<typeof consultSchema>;
 
+const preferredTimes = [
+  { value: "morning", label: "Morning" },
+  { value: "afternoon", label: "Afternoon" },
+  { value: "evening", label: "Evening" },
+];
+
 export function QuickConsultForm() {
+  const [submitted, setSubmitted] = useState(false);
   const [startedAt] = useState(() => new Date().toISOString());
   const {
     register,
@@ -45,7 +58,14 @@ export function QuickConsultForm() {
     formState: { errors, isSubmitting },
   } = useForm<ConsultValues>({
     resolver: zodResolver(consultSchema),
-    defaultValues: { name: "", phone: "", doctor: "", company_url: "" },
+    defaultValues: {
+      name: "",
+      phone: "",
+      doctor: "any",
+      service: "any",
+      preferredTime: "any",
+      company_url: "",
+    },
   });
 
   async function onSubmit(values: ConsultValues) {
@@ -53,17 +73,64 @@ export function QuickConsultForm() {
     formData.set("name", values.name);
     formData.set("phone", values.phone);
     formData.set("doctor", values.doctor || "any");
+    formData.set("service", values.service || "any");
+    formData.set("preferredTime", values.preferredTime || "any");
+    formData.set("source", "contact-page");
     formData.set("consent", values.consent ? "on" : "");
     formData.set("company_url", values.company_url ?? "");
     formData.set("startedAt", startedAt);
 
     const result = await requestAppointment(formData);
     if (result.ok) {
-      toast.success(result.message);
+      setSubmitted(true);
       reset();
     } else {
       toast.error(result.message);
     }
+  }
+
+  if (submitted) {
+    return (
+      <div role="status" className="rounded-2xl bg-blush p-6">
+        <p className="flex items-center gap-2 text-lg font-semibold text-ink">
+          <CheckCircle2 className="size-5 text-teal" aria-hidden="true" />
+          Request received
+        </p>
+        <ul className="mt-4 list-disc space-y-1.5 pl-5 text-sm text-muted-foreground">
+          <li>Our team will call you back on the number you shared.</li>
+          <li>We will confirm a convenient time and doctor for your visit.</li>
+          <li>Keep your phone nearby during opening hours.</li>
+        </ul>
+        <p className="mt-4 text-sm font-semibold text-ink">
+          Need us sooner? Reach us directly:
+        </p>
+        <div className="mt-3 flex flex-wrap gap-3">
+          <Button
+            nativeButton={false}
+            className="bg-primary text-white hover:bg-primary-hover"
+            render={<a href={site.phones[0].href} />}
+          >
+            <Phone aria-hidden="true" />
+            Call {site.phones[0].label}
+          </Button>
+          <Button
+            variant="outline"
+            nativeButton={false}
+            className="border-teal text-teal hover:bg-teal-tint hover:text-teal"
+            render={
+              <a
+                href={site.whatsapp.messageHref}
+                target="_blank"
+                rel="noopener noreferrer"
+              />
+            }
+          >
+            <WhatsAppIcon aria-hidden="true" />
+            WhatsApp us
+          </Button>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -109,6 +176,36 @@ export function QuickConsultForm() {
       </div>
 
       <div className="space-y-1.5">
+        <Label htmlFor="qc-service">Service (optional)</Label>
+        <Controller
+          control={control}
+          name="service"
+          render={({ field }) => (
+            <Select value={field.value} onValueChange={field.onChange}>
+              <SelectTrigger id="qc-service" className="w-full bg-white">
+                <SelectValue>
+                  {(value: string) =>
+                    value === "any" || !value
+                      ? "Not sure yet"
+                      : (services.find((s) => s.slug === value)?.name ??
+                        "Not sure yet")
+                  }
+                </SelectValue>
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="any">Not sure yet</SelectItem>
+                {services.map((s) => (
+                  <SelectItem key={s.slug} value={s.slug}>
+                    {s.name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          )}
+        />
+      </div>
+
+      <div className="space-y-1.5">
         <Label htmlFor="qc-doctor">Preferred doctor</Label>
         <Controller
           control={control}
@@ -116,7 +213,7 @@ export function QuickConsultForm() {
           render={({ field }) => (
             <Select value={field.value} onValueChange={field.onChange}>
               <SelectTrigger id="qc-doctor" className="w-full bg-white">
-                <SelectValue placeholder="Any doctor">
+                <SelectValue>
                   {(value: string) =>
                     value === "any" || !value
                       ? "Any doctor"
@@ -130,6 +227,33 @@ export function QuickConsultForm() {
                 {doctors.map((doctor) => (
                   <SelectItem key={doctor.slug} value={doctor.slug}>
                     {doctor.name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          )}
+        />
+      </div>
+
+      <div className="space-y-1.5">
+        <Label htmlFor="qc-time">Preferred time of day</Label>
+        <Controller
+          control={control}
+          name="preferredTime"
+          render={({ field }) => (
+            <Select value={field.value} onValueChange={field.onChange}>
+              <SelectTrigger id="qc-time" className="w-full bg-white">
+                <SelectValue>
+                  {(value: string) =>
+                    preferredTimes.find((t) => t.value === value)?.label ??
+                    "No preference"}
+                </SelectValue>
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="any">No preference</SelectItem>
+                {preferredTimes.map((t) => (
+                  <SelectItem key={t.value} value={t.value}>
+                    {t.label}
                   </SelectItem>
                 ))}
               </SelectContent>

@@ -61,25 +61,6 @@ function ServiceIcon({ service }: { service: Service }) {
   );
 }
 
-function DnaArtwork() {
-  return (
-    <svg
-      className="absolute top-1/2 right-8 h-[125%] -translate-y-1/2 text-white/12"
-      viewBox="0 0 200 400"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="5"
-      aria-hidden="true"
-    >
-      <path d="M60 0 C60 100 140 140 140 200 C140 260 60 300 60 400" />
-      <path d="M140 0 C140 100 60 140 60 200 C60 260 140 300 140 400" />
-      {[50, 100, 150, 200, 250, 300, 350].map((y) => (
-        <line key={y} x1={y % 100 === 0 ? 62 : 70} y1={y} x2={y % 100 === 0 ? 138 : 130} y2={y} />
-      ))}
-    </svg>
-  );
-}
-
 function ImageServiceTile({
   service,
   activeSlug,
@@ -93,7 +74,6 @@ function ImageServiceTile({
 }) {
   const handlers = getActiveHandlers(service.slug, setActiveSlug);
   const active = activeSlug === service.slug;
-  const isNipt = service.slug === "nipt";
   const focalClass =
     service.slug === "viability-scan"
       ? "object-[58%_40%]"
@@ -107,11 +87,7 @@ function ImageServiceTile({
         active ? "ring-3 ring-primary ring-offset-3" : ""
       } ${className}`}
     >
-      {isNipt ? (
-        <div className="absolute inset-0 bg-gradient-to-br from-plum via-primary-hover to-primary">
-          <DnaArtwork />
-        </div>
-      ) : service.image ? (
+      {service.image ? (
         <Image
           src={service.image}
           alt=""
@@ -272,7 +248,7 @@ export function ServicesSection() {
         <SectionHeader
           eyebrow="Our services"
           title="The right scan, at the right week"
-          subtitle="Specialist scans and tests timed to your pregnancy, each explained in plain language."
+          subtitle="Specialist scans and tests timed to your pregnancy — earlier answers, each explained in plain language."
           className="[&>p:last-child]:mx-auto [&>p:last-child]:max-w-2xl [&>p:last-child]:text-balance"
         />
         <div className="grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-4">

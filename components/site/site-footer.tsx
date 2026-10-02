@@ -151,7 +151,7 @@ export function SiteFooter() {
                 className="h-32 w-full object-cover"
               />
             </a>
-            <p className="mt-1.5 text-right text-xs text-white/50">
+            <p className="mt-1.5 text-right text-xs text-white/70">
               © OpenStreetMap contributors
             </p>
             <p className="mt-2 flex items-start gap-2 text-sm text-white/70">

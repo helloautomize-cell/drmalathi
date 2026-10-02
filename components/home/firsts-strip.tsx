@@ -1,8 +1,9 @@
-import { Brain, Dna, Zap } from "lucide-react";
+import { Brain, Calendar, Dna, TrendingUp, Zap } from "lucide-react";
+import { StatChip } from "@/components/cards/stat-chip";
 import { Container } from "@/components/shared/container";
-import { CountUp } from "@/components/shared/count-up";
 import { HeartbeatLine } from "@/components/shared/heartbeat-line";
 import { stats as metricSlots } from "@/data/trust";
+import { foundedYear } from "@/lib/site";
 
 const firsts = [
   {
@@ -28,14 +29,21 @@ const firsts = [
   },
 ];
 
-const stats = [
-  { end: 13, suffix: "", label: "years of fetal medicine care" },
-  { end: 3, suffix: "", label: "regional firsts" },
+const chips = [
+  { icon: Calendar, label: `Since ${foundedYear}` },
+  {
+    icon: Zap,
+    label: "First in south Tamil Nadu for fetoscopic procedures",
+  },
+  { icon: Dna, label: "In-house genetic counselling" },
   // Real-figure slots populate automatically from data/trust.ts once the
   // client supplies verified numbers (scans performed, fellows trained, CME).
   ...Object.values(metricSlots)
     .filter((m): m is { value: number; label: string } => m !== null)
-    .map((m) => ({ end: m.value, suffix: "", label: m.label })),
+    .map((m) => ({
+      icon: TrendingUp,
+      label: `${m.value.toLocaleString("en-IN")} ${m.label}`,
+    })),
 ];
 
 export function FirstsStrip() {
@@ -47,16 +55,9 @@ export function FirstsStrip() {
         aria-hidden="true"
       />
       <Container className="relative py-16 md:py-20">
-        <div className="mb-12 grid grid-cols-3 gap-6 text-center md:gap-10">
-          {stats.map((s) => (
-            <div key={s.label} className="reveal">
-              <p className="font-heading text-4xl font-semibold text-white md:text-5xl">
-                <CountUp end={s.end} suffix={s.suffix} />
-              </p>
-              <p className="mt-1 text-xs tracking-wide text-white/70 uppercase sm:text-sm">
-                {s.label}
-              </p>
-            </div>
+        <div className="mb-12 flex flex-wrap items-center justify-center gap-3">
+          {chips.map((chip) => (
+            <StatChip key={chip.label} icon={chip.icon} label={chip.label} />
           ))}
         </div>
 

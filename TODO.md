@@ -30,9 +30,30 @@
 - [ ] **DRAFT FOR MEDICAL REVIEW**: `window` chips on service cards in
       `data/services.ts` (e.g. "Viability 6 to 9 weeks" vs timing text
       "6 to 10 weeks"; resolve the discrepancy with the medical team).
-- [ ] Rajesh testimonial is in Tamil. Confirm translation approach with client.
+- [ ] Rajesh testimonial: an English translation is now shown behind a
+      "Read in English" toggle (`data/testimonials.ts`). Client must approve
+      the translation wording.
+- [ ] Ask the client for more consented written reviews; only three are
+      currently approved for use.
+- [ ] **DRAFT FOR MEDICAL REVIEW**: the "Advanced procedures under one roof"
+      chips on the home page were sourced from the fmctrichy.com About section
+      (amniocentesis, CVS, fetal reduction, IUT, fetoscopy, RF ablation).
 - [ ] Doctor bios: verify spellings of mentor names (Prof Kypros Nicolaides,
       Prof Gustavo Malinger) against client records.
+- [ ] **DRAFT FOR MEDICAL REVIEW**: all `whoFor`, `whatItChecks`, `steps`,
+      `reportAndNextSteps`, `performedBy` and `faqs` fields in
+      `data/services.ts` are new plain-language copy for the rebuilt service
+      detail pages and need sign-off.
+- [ ] **DRAFT FOR MEDICAL REVIEW**: due date calculator formulas
+      (`components/calculator/due-date-calculator.tsx`): Naegele's rule with
+      cycle-length adjustment, conception-date and IVF embryo-day corrections.
+- [ ] **DRAFT FOR CLIENT REVIEW**: international patients FAQ answers in
+      `app/international-patients/page.tsx`.
+- [ ] About timeline: confirm founding year and the dates of the three
+      regional firsts (`app/about/page.tsx`); the ISUOG conclave date
+      (23 to 24 August 2025) is taken from the printed banner.
+- [ ] CME event details, dates and photo descriptions in `data/cme.ts` are
+      taken from printed banners/posters; client to confirm.
 
 ## Decisions pending
 
@@ -51,8 +72,18 @@
 - [ ] Social links: current site has empty social hrefs. Add real URLs to
       `socials` in `data/site.ts`; icons render only when URLs exist.
 - [ ] GA4: set `NEXT_PUBLIC_GA4_ID` when the property exists.
+- [ ] Google reviews: set `NEXT_PUBLIC_GOOGLE_REVIEWS_URL` to the business's
+      reviews listing; the "Read more reviews on Google" link stays hidden
+      until then.
 - [ ] Google Maps URL in `data/site.ts` is a search URL. Replace with the
-      business's official Google Maps listing link.
+      business's official Google Maps listing link; `mapsEmbedUrl` on the
+      contact page uses the same query in embed form and should be updated
+      together.
+- [ ] Contact page "Getting here": client to provide landmark directions and
+      parking notes.
+- [ ] Gallery categories in `data/gallery.ts` need client confirmation, and a
+      consultation room photo is needed before the "Consultation" filter chip
+      can render (it is hidden until an image is assigned).
 
 ## Media
 
@@ -60,7 +91,7 @@
       placeholders (`license: "placeholder"` in `data/image-sources.json`).
       Replace each with a licensed asset before launch; `npm run check:images`
       lists them; deploy gate: `REQUIRE_LICENSED_IMAGES=1 npm run check:images`.
-      - `hands-baby-feet` (why-fetal arch, sensitive service pages)
+      - `hands-baby-feet` (sensitive service pages)
       - `baby-overhead` (calculator accent, 404)
       - `pregnancy-test-stork` (services "start here", calculator)
       - `doctor-glowing-fetus` (doctors intro thumbnail)

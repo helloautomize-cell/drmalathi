@@ -1,6 +1,7 @@
 import type { Course } from "@/data/courses";
 import { doctors } from "@/data/doctors";
 import { getBrandImage } from "@/data/images";
+import type { Service } from "@/data/services";
 import { site } from "@/data/site";
 
 const telephones = [
@@ -80,6 +81,22 @@ export function courseSchema(course: Course) {
     ...(course.educationalCredentialConfirmed
       ? { educationalCredentialAwarded: course.title }
       : {}),
+  };
+}
+
+export function medicalProcedureSchema(service: Service) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    name: service.name,
+    description: service.shortDescription,
+    url: `${site.url}/services/${service.slug}`,
+    bodyLocation: "Fetus and pregnancy",
+    ...(service.preparation ? { preparation: service.preparation } : {}),
+    ...(service.reportAndNextSteps
+      ? { followup: service.reportAndNextSteps }
+      : {}),
+    provider: { "@type": "MedicalClinic", "@id": `${site.url}/#clinic` },
   };
 }
 

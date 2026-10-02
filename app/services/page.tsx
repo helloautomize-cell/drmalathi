@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
-import { ServiceCard } from "@/components/cards/service-card";
 import { CTABand } from "@/components/cards/cta-band";
 import { JsonLd } from "@/components/seo/json-ld";
+import { ServiceBrowser } from "@/components/services/service-browser";
 import { Container } from "@/components/shared/container";
 import { PageHeader } from "@/components/shared/page-header";
 import { Section } from "@/components/shared/section";
-import { SectionHeader } from "@/components/shared/section-header";
-import {
-  serviceCategories,
-  servicesByCategory,
-} from "@/data/services";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -35,22 +30,11 @@ export default function ServicesPage() {
         crumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
       />
 
-      {serviceCategories.map((category, i) => (
-        <Section key={category.id} className={i % 2 === 1 ? "bg-blush" : undefined}>
-          <Container>
-            <SectionHeader
-              align="left"
-              title={category.label}
-              subtitle={category.blurb}
-            />
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {servicesByCategory(category.id).map((service) => (
-                <ServiceCard key={service.slug} service={service} />
-              ))}
-            </div>
-          </Container>
-        </Section>
-      ))}
+      <Section>
+        <Container>
+          <ServiceBrowser />
+        </Container>
+      </Section>
 
       <Section className="pt-0">
         <Container>

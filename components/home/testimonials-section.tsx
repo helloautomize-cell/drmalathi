@@ -1,12 +1,15 @@
+import { ArrowRight } from "lucide-react";
 import { TestimonialCard } from "@/components/cards/testimonial-card";
 import { Container } from "@/components/shared/container";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
+import { Button } from "@/components/ui/button";
 import { testimonials } from "@/data/testimonials";
 import { trust } from "@/data/trust";
 
 export function TestimonialsSection() {
   const video = trust.videoTestimonial;
+  const googleReviewsUrl = trust.googleReviewsUrl;
   return (
     <Section>
       <Container>
@@ -20,6 +23,26 @@ export function TestimonialsSection() {
             <TestimonialCard key={testimonial.name} testimonial={testimonial} />
           ))}
         </div>
+        {/* Renders only when NEXT_PUBLIC_GOOGLE_REVIEWS_URL is set. Never show
+            a rating or count here unless it comes from that live listing. */}
+        {googleReviewsUrl ? (
+          <div className="mt-8 text-center">
+            <Button
+              variant="outline"
+              nativeButton={false}
+              render={
+                <a
+                  href={googleReviewsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
+            >
+              Read more reviews on Google
+              <ArrowRight aria-hidden="true" />
+            </Button>
+          </div>
+        ) : null}
         {video ? (
           <div className="mt-8 overflow-hidden rounded-3xl shadow-card">
             {/* TODO: wire a real video player when the client supplies media */}

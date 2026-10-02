@@ -18,12 +18,10 @@ export function ServiceCard({ service }: { service: Service }) {
           >
             <Icon className="size-6" strokeWidth={1.75} aria-hidden="true" />
           </div>
-          {service.window ? (
-            <span className="inline-flex items-center gap-1 rounded-full border border-rose-tint bg-blush px-2.5 py-1 text-[11px] font-semibold text-ink-muted">
-              <Clock className="size-3" aria-hidden="true" />
-              {service.window}
-            </span>
-          ) : null}
+          <span className="inline-flex items-center gap-1 rounded-full border border-rose-tint bg-blush px-2.5 py-1 text-[11px] font-semibold text-ink-muted">
+            <Clock className="size-3" aria-hidden="true" />
+            {service.window ?? "When: on referral or as advised"}
+          </span>
         </div>
         <div className="flex-1">
           <h3 className="text-lg font-semibold text-ink">{service.name}</h3>

@@ -5,6 +5,9 @@
 
 export const trust = {
   googleRating: null as { score: number; count: number; url: string } | null,
+  // Link to the centre's Google reviews page. Renders only when the env var
+  // is set; never pair it with a rating or count unless that data is real.
+  googleReviewsUrl: process.env.NEXT_PUBLIC_GOOGLE_REVIEWS_URL ?? null,
   awards: [] as { title: string; org: string }[],
   affiliations: [] as string[],
   virtualTourUrl: null as string | null,

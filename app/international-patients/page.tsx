@@ -1,16 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Globe2, MessageCircle, Phone, Plane, Video } from "lucide-react";
+import { Globe2, Mail, MessageCircle, Phone, Plane, Video } from "lucide-react";
 import { CTABand } from "@/components/cards/cta-band";
 import { BookingForm } from "@/components/forms/booking-form";
+import { IstHoursNote } from "@/components/international/ist-hours-note";
 import { JsonLd } from "@/components/seo/json-ld";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/container";
 import { PageHeader } from "@/components/shared/page-header";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
 import { site } from "@/data/site";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "International Patients",
@@ -37,6 +44,28 @@ const steps = [
   },
 ];
 
+// DRAFT FOR CLIENT REVIEW: FAQ answers below are new plain-language copy
+// pending client and medical team approval.
+const faqs = [
+  {
+    question: "How do I share my reports?",
+    answer: `Email them to ${site.email} with the subject "International patient: reports", or send them on WhatsApp to our international line, ${site.internationalPhone.label}. Scan reports, images and referral letters all help us plan your visit.`,
+  },
+  {
+    question: "How are scans grouped across my visit days?",
+    answer:
+      "Share your expected travel window and we will plan your scans and consultations together, so your time in Trichy is used efficiently and repeat trips are avoided where possible.",
+  },
+  {
+    question: "How do I reach the team from abroad?",
+    answer: `Call or WhatsApp the international line on ${site.internationalPhone.label}, or email ${site.email}. We answer during centre hours, Monday to Friday, 9:00 AM to 9:00 PM IST.`,
+  },
+];
+
+const reportsMailto = `mailto:${site.email}?subject=${encodeURIComponent(
+  "International patient: reports"
+)}`;
+
 export default function InternationalPatientsPage() {
   return (
     <>
@@ -46,6 +75,7 @@ export default function InternationalPatientsPage() {
           { label: "International Patients", href: "/international-patients" },
         ])}
       />
+      <JsonLd data={faqSchema(faqs)} />
       <PageHeader
         eyebrow="International patients"
         title="Visiting us from abroad"
@@ -92,6 +122,7 @@ export default function InternationalPatientsPage() {
               international line. Share your reports and your expected travel
               window, and we will suggest a schedule of scans and consultations.
             </p>
+            <IstHoursNote />
             <div className="mt-6 flex flex-wrap gap-3">
               <Button
                 size="lg"
@@ -117,6 +148,16 @@ export default function InternationalPatientsPage() {
               >
                 <MessageCircle aria-hidden="true" />
                 WhatsApp us
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                nativeButton={false}
+                className="border-teal text-teal hover:bg-teal-tint hover:text-teal"
+                render={<a href={reportsMailto} />}
+              >
+                <Mail aria-hidden="true" />
+                Email your reports
               </Button>
             </div>
             <p className="mt-5 text-sm text-muted-foreground">
@@ -145,6 +186,25 @@ export default function InternationalPatientsPage() {
       </Section>
 
       <Section>
+        <Container>
+          <SectionHeader
+            align="left"
+            title="Common questions from international families"
+          />
+          <Accordion className="mx-auto max-w-3xl">
+            {faqs.map((faq) => (
+              <AccordionItem key={faq.question} value={faq.question}>
+                <AccordionTrigger>{faq.question}</AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">{faq.answer}</p>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </Container>
+      </Section>
+
+      <Section className="pt-0">
         <Container>
           <div className="mx-auto max-w-xl rounded-2xl border border-rose-tint bg-white p-6 shadow-soft sm:p-8">
             <SectionHeader

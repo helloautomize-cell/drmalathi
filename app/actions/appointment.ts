@@ -29,6 +29,13 @@ const appointmentSchema = z.object({
     .string()
     .refine((v) => v === "any" || serviceSlugs.includes(v), "Please choose a service.")
     .default("any"),
+  preferredTime: z
+    .string()
+    .refine(
+      (v) => v === "any" || ["morning", "afternoon", "evening"].includes(v),
+      "Please choose a preferred time."
+    )
+    .default("any"),
   source: z.string().max(40).optional(),
   consent: z.literal("on"),
   company_url: z.string().max(0).optional().or(z.literal("")),
@@ -49,6 +56,7 @@ export async function requestAppointment(
     phone: formData.get("phone"),
     doctor: formData.get("doctor") ?? "any",
     service: formData.get("service") ?? "any",
+    preferredTime: formData.get("preferredTime") ?? "any",
     source: formData.get("source") ?? "",
     consent: formData.get("consent"),
     company_url: formData.get("company_url"),
@@ -62,8 +70,16 @@ export async function requestAppointment(
     };
   }
 
-  const { name, phone, doctor, service, source, company_url, startedAt } =
-    parsed.data;
+  const {
+    name,
+    phone,
+    doctor,
+    service,
+    preferredTime,
+    source,
+    company_url,
+    startedAt,
+  } = parsed.data;
 
   // Honeypot and minimum submit time: silently accept so bots do not retry.
   const elapsed = startedAt ? Date.now() - new Date(startedAt).getTime() : 0;
@@ -83,6 +99,10 @@ export async function requestAppointment(
     service === "any"
       ? "No preference"
       : (services.find((s) => s.slug === service)?.name ?? service);
+  const timeLabel =
+    preferredTime === "any"
+      ? "No preference"
+      : preferredTime.charAt(0).toUpperCase() + preferredTime.slice(1);
 
   const apiKey = process.env.RESEND_API_KEY;
 
@@ -111,6 +131,7 @@ export async function requestAppointment(
         `Phone: ${phone}`,
         `Preferred doctor: ${doctorName}`,
         `Service: ${serviceName}`,
+        `Preferred time: ${timeLabel}`,
         `Source: ${source ?? "website"}`,
         `Submitted: ${new Date().toISOString()}`,
       ].join("\n"),

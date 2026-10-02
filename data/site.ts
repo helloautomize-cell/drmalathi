@@ -19,6 +19,10 @@ export const site = {
     lines: ["#73, C/9, Annamalai Nagar,", "Thillai Nagar, Trichy - 620 018"],
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=Trichy%20Fetal%20Medicine%20and%20Fertility%20Centre%20Thillai%20Nagar%20Trichy",
+    // TODO: replace with the official Google Maps embed share URL once the
+    // client confirms the listing.
+    mapsEmbedUrl:
+      "https://www.google.com/maps?q=Trichy%20Fetal%20Medicine%20and%20Fertility%20Centre%20Thillai%20Nagar%20Trichy&output=embed",
   },
   hours,
   phones: [...phones],
