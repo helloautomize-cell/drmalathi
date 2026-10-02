@@ -1,7 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ScanFinder } from "@/components/home/scan-finder";
 import { BookingCta } from "@/components/booking/booking-sheet";
-import { BrandImage } from "@/components/shared/brand-image";
 import { Container } from "@/components/shared/container";
 import { Button } from "@/components/ui/button";
 import { yearsOfCare } from "@/lib/site";
@@ -59,14 +59,16 @@ export function Hero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-sm lg:max-w-[26rem] xl:max-w-md">
-          <div className="overflow-hidden rounded-t-[10rem] rounded-b-3xl bg-gradient-to-b from-white/90 via-rose-tint to-blush shadow-card">
-            <BrandImage
-              slug="family-cutout"
-              variant="bleed"
+          <div className="overflow-hidden rounded-t-[10rem] rounded-b-3xl bg-white shadow-card">
+            {/* Raw asset, no image pipeline treatment (user request) */}
+            <Image
+              src="/images/family-cutout.webp"
+              alt="Parents in white cradling their sleeping newborn"
+              width={1024}
+              height={1536}
               priority
-              reveal={false}
               sizes="(min-width: 1280px) 448px, (min-width: 1024px) 416px, (min-width: 640px) 384px, 100vw"
-              imgClassName="[mask-image:linear-gradient(to_bottom,black_88%,transparent_100%)]"
+              className="h-auto w-full"
             />
           </div>
         </div>

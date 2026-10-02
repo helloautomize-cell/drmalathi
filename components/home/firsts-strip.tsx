@@ -1,7 +1,6 @@
 import { Brain, Calendar, Dna, TrendingUp, Zap } from "lucide-react";
 import { StatChip } from "@/components/cards/stat-chip";
 import { Container } from "@/components/shared/container";
-import { HeartbeatLine } from "@/components/shared/heartbeat-line";
 import { stats as metricSlots } from "@/data/trust";
 import { foundedYear } from "@/lib/site";
 
@@ -49,7 +48,6 @@ const chips = [
 export function FirstsStrip() {
   return (
     <section className="relative overflow-hidden bg-plum text-white">
-      <HeartbeatLine className="absolute top-0 left-0 h-10 w-full text-accent-soft/50" />
       <div
         className="pointer-events-none absolute -top-24 -right-24 size-96 rounded-full bg-accent-bright/15 blur-3xl"
         aria-hidden="true"

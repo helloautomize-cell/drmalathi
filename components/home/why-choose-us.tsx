@@ -4,7 +4,6 @@ import { ProofCard, type ProofCardData } from "@/components/cards/proof-card";
 import { Container } from "@/components/shared/container";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
-import { advancedProcedures } from "@/data/procedures";
 
 const proofCards: ProofCardData[] = [
   {
@@ -63,21 +62,6 @@ export function WhyChooseUs() {
               <ProofCard key={card.title} {...card} />
             ))}
           </div>
-        </div>
-        <div className="mt-12 rounded-2xl border border-rose-tint bg-white p-6 text-center shadow-soft md:p-8">
-          <h3 className="text-lg font-semibold text-ink">
-            Advanced procedures under one roof
-          </h3>
-          <ul className="mt-4 flex flex-wrap items-center justify-center gap-2">
-            {advancedProcedures.map((procedure) => (
-              <li
-                key={procedure}
-                className="rounded-full border border-rose-tint bg-blush px-4 py-2 text-sm font-semibold text-ink"
-              >
-                {procedure}
-              </li>
-            ))}
-          </ul>
         </div>
       </Container>
     </Section>
