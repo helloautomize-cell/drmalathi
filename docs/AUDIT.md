@@ -442,3 +442,48 @@ Placeholder-licence assets (`license: "placeholder"` in `data/image-sources.json
 ## Addendum findings count
 
 New: 1 Blocker (B-05). Upgraded: M-08 to High. Remaining work items filed under the sections above; no new Medium/Low IDs beyond the noted Low recommendations (README rewrite, `hands-baby-feet` priority flag - both folded into Batch 1).
+
+---
+
+# DEPLOYED-SITE MEASUREMENT (3 October 2026)
+
+Target: `https://drmalathi.vercel.app` (production deploy of `pre-launch-audit`, merge commit `2b2eb47`). Verification: `/guides` returns 404, comparative claims absent from home/about/service HTML — production gates confirmed live.
+
+## Lighthouse mobile vs public deployment (lab, single run per route)
+
+Run against the Vercel edge, not localhost. Note: PageSpeed Insights API keyless quota was exhausted (HTTP 429, 0/day), so these are Lighthouse lab numbers on the deployed site, not PSI.
+
+| Route | Perf | LCP | TBT | CLS | FCP | LCP element |
+|---|---|---|---|---|---|---|
+| `/` | 85 | 3.2 s | 350 ms | 0 | 1.1 s | `family-cutout.webp` (image) |
+| `/services/anomaly-scan` | 89 | 2.9 s | 280 ms | 0 | 1.2 s | `AnomalyScan.webp` (image) |
+| `/services/nipt` | 93 | 3.0 s | 130 ms | 0 | 1.2 s | `NIPT.webp` (image) |
+| `/doctors` | 93 | 2.9 s | 150 ms | 0 | 1.2 s | `malathi-cutout.png` served as AVIF (image) |
+| `/about` | 93 | 3.0 s | 130 ms | 0 | 1.2 s | `event8.webp` (image) |
+| `/contact` | 94 | 2.9 s | 120 ms | 0 | 1.2 s | Intro paragraph (text) |
+
+vs the same lab on localhost: LCP 3.8–4.4 s → **2.9–3.2 s**, Perf +1 to +6 on every route, FCP ~1.2 s everywhere, CLS 0. The localhost floor was the simulation, as suspected. TTFB at the edge: 26–45 ms. Remaining LCP cost is `elementRenderDelay` (265–900 ms, JS boot) plus `resourceLoadDelay` ~470–500 ms on `/services/nipt` and `/doctors` — worth a look only if PSI field data agrees.
+
+## Structured data validation
+
+validator.schema.org (API): home page **0 errors, 2 warnings** — non-standard `qualifications` and `jobTitle` on `Physician` (harmless, both are real content Google ignores). The other three page types were structural-checked locally (validator rate-limited the session): `/services/anomaly-scan` (BreadcrumbList + MedicalProcedure + FAQPage), `/doctors/dr-malathi-g-prasad` (Physician + BreadcrumbList), `/faq` (FAQPage + BreadcrumbList) — all parse, all required fields present, no issues.
+
+Pending manual runs (no public API): Google Rich Results Test on `/`, one service, one doctor, `/faq`; validator.schema.org UI on the remaining three URLs.
+
+## Security headers (live)
+
+Present: `Strict-Transport-Security` (2y, preload — Vercel edge), `Content-Security-Policy-Report-Only` with `report-uri`/`report-to`, `Reporting-Endpoints`, `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, `Permissions-Policy`. `X-Powered-By` absent.
+
+securityheaders.com and Mozilla Observatory could not be run programmatically (Cloudflare challenge on the former; Observatory API returning 502s). Manual links in the runbook. Note for whoever runs them: CSP is report-only, so scanners that penalise report-only mode will flag it — that is intentional until the baseline is clean.
+
+## Vercel Speed Insights
+
+**Not enabled.** Two steps needed, one each side: (a) code — install `@vercel/speed-insights` and render `<SpeedInsights />` in `app/layout.tsx` (deferred intentionally until numbers are reviewed, per instruction — it adds ~1.5 kB to every page); (b) dashboard — Speed Insights tab → Enable on the `drmalathi` project. Field data only accumulates after both are done.
+
+## Manual check links (for the user)
+
+- PSI: `https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fdrmalathi.vercel.app%2F` (swap path per route)
+- Rich Results: `https://search.google.com/test/rich-results?url=https%3A%2F%2Fdrmalathi.vercel.app%2F`
+- validator.schema.org: `https://validator.schema.org/#url=https%3A%2F%2Fdrmalathi.vercel.app%2F`
+- securityheaders: `https://securityheaders.com/?q=https%3A%2F%2Fdrmalathi.vercel.app&followRedirects=on`
+- Observatory: `https://developer.mozilla.org/en-US/observatory/analyze?host=drmalathi.vercel.app`
