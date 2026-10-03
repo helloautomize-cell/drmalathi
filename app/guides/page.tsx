@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { CTABand } from "@/components/cards/cta-band";
 import { GuideBrowser } from "@/components/guides/guide-browser";
 import { GuideCard } from "@/components/guides/guide-card";
@@ -22,13 +23,13 @@ export function generateMetadata(): Metadata {
     description:
       "Clear, practical guides to pregnancy scans, screening tests and fetal medicine, written by our clinical team for families in Trichy and nearby districts.",
     alternates: { canonical: "/guides" },
-    // While every guide is a draft, the page shows an empty state: keep it
-    // reachable but out of the index.
-    ...(hasPublishedGuides() ? {} : { robots: { index: false } }),
   };
 }
 
 export default function GuidesPage() {
+  // While every guide is a draft in production the section is 404, not an
+  // empty state; preview deploys keep rendering drafts.
+  if (!hasPublishedGuides()) notFound();
   const featured = getFeaturedGuide();
   const { guides: pageGuides, pages } = getAllGuides({ page: 1 });
   const allCards = getAllGuides().guides.map(toGuideCardData);
@@ -97,35 +98,23 @@ export default function GuidesPage() {
 
       <SectionShell surface="white" className="py-0! pb-12! md:py-0! md:pb-16!">
         <Container>
-          {pageCards.length === 0 && !featured ? (
-            <div className="relative z-10 -mt-10 rounded-2xl border border-rose-tint bg-white p-8 text-center shadow-soft">
-              <p className="font-heading text-xl font-semibold text-ink">
-                Our first guides are on the way
-              </p>
-              <p className="mt-2 text-base/[26px] text-ink-muted">
-                Questions in the meantime? Call or WhatsApp us and our team
-                will help.
-              </p>
-            </div>
-          ) : (
-            <div className="relative z-10 -mt-10">
-              <GuideBrowser
-                pageItems={pageCards}
-                allItems={allCards}
-                categories={categories}
-                page={1}
-                pageCount={pages}
-                basePath="/guides"
-                featured={
-                  featured ? (
-                    <GuideCard
-                      guide={{ ...toGuideCardData(featured), featured: true }}
-                    />
-                  ) : undefined
-                }
-              />
-            </div>
-          )}
+          <div className="relative z-10 -mt-10">
+            <GuideBrowser
+              pageItems={pageCards}
+              allItems={allCards}
+              categories={categories}
+              page={1}
+              pageCount={pages}
+              basePath="/guides"
+              featured={
+                featured ? (
+                  <GuideCard
+                    guide={{ ...toGuideCardData(featured), featured: true }}
+                  />
+                ) : undefined
+              }
+            />
+          </div>
         </Container>
       </SectionShell>
 

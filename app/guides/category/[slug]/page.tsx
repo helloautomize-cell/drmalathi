@@ -8,7 +8,12 @@ import { Container } from "@/components/shared/container";
 import { Section } from "@/components/shared/section";
 import { SectionShell } from "@/components/shared/section-shell";
 import { toGuideCardData } from "@/lib/guide-card-data";
-import { categoriesInUse, getAllGuides, getCategory } from "@/lib/guides";
+import {
+  categoriesInUse,
+  getAllGuides,
+  getCategory,
+  hasPublishedGuides,
+} from "@/lib/guides";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export function generateStaticParams() {
@@ -35,6 +40,7 @@ export default async function GuideCategoryPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  if (!hasPublishedGuides()) notFound();
   const { slug } = await params;
   const category = getCategory(slug);
   const { guides: categoryGuides } = getAllGuides({ category: slug });

@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { site } from "@/data/site";
 import { getAllGuides, getCategory, hasPublishedGuides } from "@/lib/guides";
 
@@ -11,6 +12,8 @@ const escapeXml = (s: string) =>
     .replace(/"/g, "&quot;");
 
 export function GET() {
+  // No published guides means no feed at all, same gate as /guides.
+  if (!hasPublishedGuides()) notFound();
   const items = getAllGuides()
     .guides.map(
       (g) => `    <item>
@@ -38,10 +41,6 @@ ${items}
 </rss>`;
 
   return new Response(xml, {
-    headers: {
-      "Content-Type": "application/rss+xml; charset=utf-8",
-      // An empty feed while all guides are drafts should not be indexed.
-      ...(hasPublishedGuides() ? {} : { "X-Robots-Tag": "noindex" }),
-    },
+    headers: { "Content-Type": "application/rss+xml; charset=utf-8" },
   });
 }

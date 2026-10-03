@@ -164,7 +164,7 @@ if (pendingConsent > 0) {
 }
 
 const claimsSrc = read("data/claims.ts");
-const unsub = [...claimsSrc.matchAll(/substantiation:\s*null/g)].length;
+const unsub = [...claimsSrc.matchAll(/substantiated:\s*(null|false)/g)].length;
 if (unsub > 0) {
   postLaunch.push(`${unsub} comparative claim(s) awaiting substantiation`);
 }

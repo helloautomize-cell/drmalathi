@@ -2,6 +2,7 @@
 // copy written for this redesign. The medical team must review and approve each
 // description before launch. No statistics, success rates, or prices are stated.
 
+import { claimIsLive } from "@/data/claims";
 import {
   Baby,
   BadgeCheck,
@@ -564,7 +565,11 @@ const serviceList: Service[] = [
       "A detailed scan of your baby's brain and spine, for conditions affecting the nervous system.",
     image: "/images/services/FetalNeurosonogram.webp",
     detail: [
-      "A fetal neurosonogram is a specialist examination of your baby's brain and spine. Our centre was the first in Tamil Nadu to offer this neurosonogram service.",
+      `A fetal neurosonogram is a specialist examination of your baby's brain and spine.${
+        claimIsLive("neurosonogram-first")
+          ? " Our centre was the first in Tamil Nadu to offer this neurosonogram service."
+          : ""
+      }`,
       "It is advised when another scan raises a question about the baby's brain, when there is a relevant family history, or after certain infections in pregnancy.",
     ],
     timing: "When advised by your referring doctor or our specialists.",
@@ -672,7 +677,11 @@ const serviceList: Service[] = [
       "In-house counselling that explains results, inheritance, and your options in clear language.",
     image: "/images/services/genetic-counselling.webp",
     detail: [
-      "Our centre was the first in the region to offer in-house genetic counselling. A genetic counsellor or specialist explains test results, family history, inheritance, and what the findings mean for your baby and future pregnancies.",
+      `${
+        claimIsLive("counselling-first")
+          ? "Our centre was the first in the region to offer in-house genetic counselling. "
+          : ""
+      }A genetic counsellor or specialist explains test results, family history, inheritance, and what the findings mean for your baby and future pregnancies.`,
       "Counselling is a conversation, not a test. You leave with clear information and time to decide the next step that is right for your family.",
     ],
     timing: "Before or after a screening test, or when advised by your doctor.",
