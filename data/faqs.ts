@@ -68,7 +68,7 @@ export const faqs: Faq[] = [
     category: 'scans-tests',
     question: "Do you offer care for twin pregnancies?",
     answer:
-      "Yes. Our Twin Specialised Clinic provides dedicated monitoring for twin and multiple pregnancies, which need closer follow-up than single pregnancies.",
+      "Yes. Twin and multiple pregnancies need closer follow-up than single pregnancies, so our Twin Specialised Clinic keeps a separate scan schedule for them.",
   },
   {
     category: 'appointments',

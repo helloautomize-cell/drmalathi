@@ -25,11 +25,12 @@ import { MobileSectionHeader } from "@/components/shared/mobile-section-header";
 import { courses, fellowshipProgram } from "@/data/courses";
 import { site } from "@/data/site";
 import { breadcrumbSchema } from "@/lib/schema";
+import { showPending } from "@/lib/env";
 
 export const metadata: Metadata = {
   title: "Fellowship and Courses",
   description:
-    "Fetal medicine, advanced obstetric ultrasound, fetal echo, and obstetric ultrasound fellowship training for doctors in Trichy.",
+    "Fetal medicine, advanced obstetric ultrasound, fetal echo and obstetric ultrasound fellowships at our Trichy centre. Hands-on training, apply by CV.",
   alternates: { canonical: "/fellowship" },
 };
 
@@ -45,7 +46,7 @@ export default function FellowshipPage() {
       <PageHero
         eyebrow="Fellowship and courses"
         title="Training the next generation of fetal medicine specialists"
-        intro="Structured, hands-on training programs run at our centre in Trichy. Applications are handled directly with the centre."
+        intro="Structured, hands-on training programmes run at our centre in Trichy. Applications are handled directly with the centre."
         crumbs={[{ label: "Home", href: "/" }, { label: "Fellowship" }]}
       />
 
@@ -53,7 +54,7 @@ export default function FellowshipPage() {
       <Section className="md:hidden">
         <Container>
           <MobileSectionHeader
-            eyebrow="The program"
+            eyebrow="The programme"
             title="Hands-on, one-to-one training"
           />
           <ul className="space-y-3">
@@ -115,7 +116,7 @@ export default function FellowshipPage() {
         <Container>
           <MobileSectionHeader
             eyebrow="Courses"
-            title="Current programs"
+            title="Current programmes"
           />
           <div className="space-y-3">
             {courses.map((course) => (
@@ -140,6 +141,11 @@ export default function FellowshipPage() {
                     <p className="flex items-center gap-2">
                       <Clock className="size-4 shrink-0 text-teal" aria-hidden="true" />
                       {course.duration}
+                    </p>
+                  ) : showPending && course.duration ? (
+                    <p className="flex items-center gap-2">
+                      <Clock className="size-4 shrink-0 text-teal" aria-hidden="true" />
+                      {course.duration} (to be confirmed)
                     </p>
                   ) : null}
                   {course.eligibility.map((item) => (
@@ -190,7 +196,7 @@ export default function FellowshipPage() {
         <Container>
           <SectionHeader
             align="left"
-            title="Current programs"
+            title="Current programmes"
             subtitle="Details confirmed from the centre's published course information."
           />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -225,6 +231,11 @@ export default function FellowshipPage() {
                         <p className="mt-1 flex items-center gap-1.5 text-sm text-muted-foreground">
                           <Clock className="size-4" aria-hidden="true" />
                           {course.duration}
+                        </p>
+                      ) : showPending && course.duration ? (
+                        <p className="mt-1 flex items-center gap-1.5 text-sm text-muted-foreground">
+                          <Clock className="size-4" aria-hidden="true" />
+                          {course.duration} (to be confirmed)
                         </p>
                       ) : null}
                     </div>

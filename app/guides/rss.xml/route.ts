@@ -1,5 +1,6 @@
+import { notFound } from "next/navigation";
 import { site } from "@/data/site";
-import { getAllGuides, getCategory } from "@/lib/guides";
+import { getAllGuides, getCategory, hasPublishedGuides } from "@/lib/guides";
 
 export const dynamic = "force-static";
 
@@ -11,6 +12,8 @@ const escapeXml = (s: string) =>
     .replace(/"/g, "&quot;");
 
 export function GET() {
+  // No published guides means no feed at all, same gate as /guides.
+  if (!hasPublishedGuides()) notFound();
   const items = getAllGuides()
     .guides.map(
       (g) => `    <item>
@@ -29,6 +32,7 @@ export function GET() {
   <channel>
     <title>${escapeXml(site.name)} patient guides</title>
     <link>${site.url}/guides</link>
+    <language>en-IN</language>
     <description>${escapeXml(
       "Clear, practical guides from our fetal medicine team."
     )}</description>

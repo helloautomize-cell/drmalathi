@@ -10,7 +10,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Services and Scans",
   description:
-    "All scans and services at our Trichy fetal medicine centre: viability scan, OSCAR screening, anomaly scan, NIPT, fetal echo, neurosonogram, growth scans and specialty clinics.",
+    "All scans and services at our Trichy fetal medicine centre: viability scans, OSCAR screening, anomaly scans, NIPT, fetal echo and specialist clinics.",
   alternates: { canonical: "/services" },
 };
 
@@ -26,7 +26,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Our services"
         title="Scans, diagnostics and specialty clinics"
-        intro="Every service below is performed or supervised by a fetal medicine specialist, with findings explained to you in plain language."
+        intro="Every service below is performed or supervised by a fetal medicine specialist who explains each finding before you leave."
         crumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
       />
 

@@ -5,6 +5,12 @@
 // "13 years" while Dr Malathi's bio says 14. Computed copy uses this value.
 export const foundedYear = 2012;
 
+// Launch-gate confirmations. check:launch reads these flags; flip each to
+// true only after the client confirms the underlying fact in writing.
+export const foundedYearConfirmed = false;
+export const whatsappNumberConfirmed = false;
+export const saturdayHoursConfirmed = false;
+
 export function yearsOfCare() {
   return new Date().getFullYear() - foundedYear;
 }

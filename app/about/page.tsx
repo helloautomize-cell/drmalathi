@@ -12,6 +12,7 @@ import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
 import { StepsList } from "@/components/shared/steps-list";
+import { claimIsLive, type ClaimId } from "@/data/claims";
 import { doctors } from "@/data/doctors";
 import { advancedProcedures } from "@/data/procedures";
 import { breadcrumbSchema } from "@/lib/schema";
@@ -20,28 +21,43 @@ import { foundedYear } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About the Centre",
   description:
-    "A dedicated fetal medicine centre in Trichy: specialist scans, advanced diagnostics, in-house counselling, and training programs for doctors.",
+    "A fetal medicine centre in Trichy since 2012: specialist scans, advanced diagnostics, in-house counselling and training for visiting doctors.",
   alternates: { canonical: "/about" },
 };
 
 // TODO: client to confirm the founding year and the dates of each regional
 // first before launch. foundedYear is a placeholder pending confirmation.
-const timeline: { year?: string; title: string; text: string; href?: string }[] = [
+// claimTitle renders only while the claim is live (substantiated, or on a
+// preview deploy); otherwise the event uses `title`.
+const timeline: {
+  year?: string;
+  title: string;
+  claimTitle?: string;
+  claimId?: ClaimId;
+  text: string;
+  href?: string;
+}[] = [
   {
     year: String(foundedYear),
     title: "The centre is founded",
-    text: "Trichy Fetal Medicine and Fertility Centre opens in Thillai Nagar, bringing dedicated fetal medicine care to the region.",
+    text: "Trichy Fetal Medicine and Fertility Centre opens in Thillai Nagar, focused on the health of the baby before birth.",
   },
   {
-    title: "First in south Tamil Nadu for fetoscopic procedures",
+    title: "Fetoscopic procedures for complex twin pregnancies",
+    claimTitle: "First in south Tamil Nadu for fetoscopic procedures",
+    claimId: "fetoscopic-first",
     text: "The centre introduces fetoscopic procedures for complex twin pregnancies.",
   },
   {
-    title: "First in Tamil Nadu for a dedicated fetal neurosonogram",
-    text: "A dedicated fetal neurosonogram service begins for detailed brain and spine assessment.",
+    title: "Fetal neurosonogram service begins",
+    claimTitle: "First in Tamil Nadu for fetal neurosonogram",
+    claimId: "neurosonogram-first",
+    text: "A fetal neurosonogram service begins for detailed brain and spine assessment.",
   },
   {
-    title: "First in the region with in-house genetic counselling",
+    title: "In-house genetic counselling",
+    claimTitle: "First in the region with in-house genetic counselling",
+    claimId: "counselling-first",
     text: "In-house genetic counselling and fetal postmortem evaluation mean families are not sent elsewhere for answers.",
   },
   {
@@ -51,6 +67,12 @@ const timeline: { year?: string; title: string; text: string; href?: string }[] 
     href: "/cme-activities",
   },
 ];
+
+function eventTitle(event: (typeof timeline)[number]): string {
+  return event.claimId && event.claimTitle && claimIsLive(event.claimId)
+    ? event.claimTitle
+    : event.title;
+}
 
 const teachingLinks = [
   {
@@ -62,8 +84,8 @@ const teachingLinks = [
   },
   {
     icon: Presentation,
-    title: "CME programs and workshops",
-    text: "Regular continuing education programs, conclaves and hands-on workshops hosted by the centre.",
+    title: "CME programmes and workshops",
+    text: "Regular continuing education programmes, conclaves and hands-on workshops hosted by the centre.",
     href: "/cme-activities",
     cta: "See CME activities",
   },
@@ -110,11 +132,11 @@ export default function AboutPage() {
               <p>
                 Our centre focuses on one thing: the health of your baby before
                 birth. Families come to us for detailed pregnancy scans,
-                advanced fetal diagnostics, fetal procedures, and calm, honest
-                counselling.
+                advanced fetal diagnostics, fetal procedures, and counselling
+                with time for your questions.
               </p>
               <p>
-                Everything is explained in plain language, and you are given
+                Findings are explained in the same visit, and you are given
                 time to ask questions. When a scan raises a concern, our
                 in-house genetic counselling and multidisciplinary panel mean
                 you are guided at every step rather than referred elsewhere.
@@ -142,8 +164,8 @@ export default function AboutPage() {
             <StepsList
               steps={timeline.map((event) => ({
                 title: event.year
-                  ? `${event.year}: ${event.title}`
-                  : event.title,
+                  ? `${event.year}: ${eventTitle(event)}`
+                  : eventTitle(event),
                 text: event.text,
               }))}
               className="max-w-none"
@@ -152,7 +174,7 @@ export default function AboutPage() {
           {/* Desktop: border-l timeline, unchanged. */}
           <ol className="relative mx-auto hidden max-w-3xl space-y-8 border-l-2 border-rose-tint pl-8 md:block">
             {timeline.map((event) => (
-              <li key={event.title} className="relative">
+              <li key={eventTitle(event)} className="relative">
                 <span
                   aria-hidden="true"
                   className="absolute top-2 -left-[41px] size-4 rounded-full border-2 border-primary bg-white"
@@ -164,7 +186,7 @@ export default function AboutPage() {
                     </span>
                   ) : null}
                   <h3 className="text-lg font-semibold text-ink">
-                    {event.title}
+                    {eventTitle(event)}
                   </h3>
                 </div>
                 <p className="mt-1 text-sm text-muted-foreground">
@@ -185,7 +207,7 @@ export default function AboutPage() {
         <Container>
           <SectionHeader
             eyebrow="What we do"
-            title="Advanced procedures under one roof"
+            title="Fetal procedures done at our centre"
             subtitle="From detailed scans to fetal procedures, our specialists manage complex care within the centre."
           />
           <ul className="flex flex-wrap items-center justify-center gap-2">

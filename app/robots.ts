@@ -4,14 +4,31 @@ import { site } from "@/data/site";
 const indexable =
   process.env.VERCEL_ENV === "production" || process.env.INDEXABLE === "1";
 
+// AI answer/search crawlers are explicitly welcome alongside regular bots.
+const aiBots = [
+  "GPTBot",
+  "OAI-SearchBot",
+  "ClaudeBot",
+  "PerplexityBot",
+  "Google-Extended",
+  "Applebot-Extended",
+];
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: indexable
-      ? {
-          userAgent: "*",
-          allow: "/",
-          disallow: ["/design-system", "/api/"],
-        }
+      ? [
+          {
+            userAgent: "*",
+            allow: "/",
+            disallow: ["/design-system", "/api/"],
+          },
+          ...aiBots.map((bot) => ({
+            userAgent: bot,
+            allow: "/",
+            disallow: ["/design-system", "/api/"],
+          })),
+        ]
       : { userAgent: "*", disallow: "/" },
     sitemap: `${site.url}/sitemap.xml`,
   };

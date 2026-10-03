@@ -1,27 +1,24 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useState, type ReactNode } from "react";
-import { CalendarCheck, Phone } from "lucide-react";
-import { BookingForm } from "@/components/forms/booking-form";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { CalendarCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { site } from "@/data/site";
+
+// The sheet + booking form (base-ui form controls) load on first
+// interaction only; nothing form-related reaches the shared layout chunk.
+const BookingSheetContent = dynamic(
+  () => import("@/components/booking/booking-sheet-content"),
+  { ssr: false }
+);
 
 /**
- * Single booking entry point. Every CTA on the site opens this sheet with
- * `source` (lead attribution) and optional `service`/`doctor` prefilled.
+ * Single booking entry point. Every CTA on the site opens the booking sheet
+ * with `source` (lead attribution) and optional `service`/`doctor` prefilled.
  *
  * Usage:
  *   <BookingCta source="hero" label="Book a consultation" />
  *   <BookingCta source="service-page" service="anomaly-scan" label="Book this scan" />
- *   <BookingCta source="nav" trigger={<custom element />} />
  */
 export function BookingCta({
   source,
@@ -43,10 +40,11 @@ export function BookingCta({
   variant?: "primary" | "light" | "outline-teal" | "outline-white" | "bare";
   size?: "default" | "sm" | "lg";
   className?: string;
-  /** Custom trigger element instead of the standard Button. */
+  /** Custom clickable element; renders instead of the default button. */
   trigger?: ReactNode;
 }) {
   const [open, setOpen] = useState(false);
+  const [preload, setPreload] = useState(false);
 
   const buttonClass = {
     primary: "bg-primary text-white hover:bg-primary-hover",
@@ -58,53 +56,44 @@ export function BookingCta({
   }[variant];
 
   return (
-    <Sheet open={open} onOpenChange={setOpen}>
+    <>
       {trigger ? (
-        <SheetTrigger render={trigger as never} />
+        <span
+          className="contents"
+          onPointerEnter={() => setPreload(true)}
+          onFocus={() => setPreload(true)}
+          onClick={() => {
+            setPreload(true);
+            setOpen(true);
+          }}
+        >
+          {trigger}
+        </span>
       ) : (
-        <SheetTrigger
-          render={
-            <Button
-              size={size}
-              nativeButton={true}
-              className={`max-md:min-h-12 max-md:w-full max-md:rounded-full ${buttonClass} ${className ?? ""}`}
-            />
-          }
+        <Button
+          size={size}
+          nativeButton={true}
+          className={`max-md:min-h-12 max-md:w-full max-md:rounded-full ${buttonClass} ${className ?? ""}`}
+          onPointerEnter={() => setPreload(true)}
+          onFocus={() => setPreload(true)}
+          onClick={() => {
+            setPreload(true);
+            setOpen(true);
+          }}
         >
           {icon ? <CalendarCheck aria-hidden="true" /> : null}
           {label ?? "Book appointment"}
-        </SheetTrigger>
+        </Button>
       )}
-      <SheetContent side="right" className="w-full gap-0 overflow-y-auto sm:max-w-md">
-        <SheetHeader className="border-b border-border px-5 pt-3 pb-4 md:px-6 md:pt-6">
-          <SheetTitle className="text-xl font-semibold text-ink">
-            Book appointment
-          </SheetTitle>
-          <SheetDescription>
-            Leave your details and our team will call you back to schedule your
-            visit.
-          </SheetDescription>
-        </SheetHeader>
-        <div className="px-5 py-5 md:px-6">
-          <BookingForm
-            source={source}
-            service={service}
-            doctor={doctor}
-            stickySubmit
-            onDone={() => setOpen(false)}
-          />
-          <p className="mt-4 text-center text-sm text-muted-foreground">
-            Prefer to call?{" "}
-            <a
-              href={site.phones[0].href}
-              className="inline-flex items-center gap-1 font-semibold text-primary underline-offset-4 hover:underline"
-            >
-              <Phone className="size-3.5" aria-hidden="true" />
-              {site.phones[0].label}
-            </a>
-          </p>
-        </div>
-      </SheetContent>
-    </Sheet>
+      {preload ? (
+        <BookingSheetContent
+          open={open}
+          onOpenChange={setOpen}
+          source={source}
+          service={service}
+          doctor={doctor}
+        />
+      ) : null}
+    </>
   );
 }

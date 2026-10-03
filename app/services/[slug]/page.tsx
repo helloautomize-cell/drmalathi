@@ -70,7 +70,7 @@ export async function generateMetadata({
   if (!service) return {};
   return {
     title: `${service.name} in Trichy`,
-    description: service.shortDescription,
+    description: service.seoDescription,
     alternates: { canonical: `/services/${service.slug}` },
   };
 }
@@ -164,7 +164,16 @@ export default async function ServiceDetailPage({
     service.preparation || service.timing
       ? { id: "preparation", label: "Preparation" }
       : null,
-    service.reportAndNextSteps ? { id: "report", label: "Report" } : null,
+    service.reportAndNextSteps || service.resultsDetail?.length
+      ? { id: "report", label: "Report" }
+      : null,
+    service.visitNotes?.length
+      ? { id: "visit-notes", label: "Your visit" }
+      : null,
+    service.limits?.length ? { id: "limits", label: "What it cannot show" } : null,
+    service.followUp?.length
+      ? { id: "follow-up", label: "Follow-up" }
+      : null,
     service.performedBy?.length
       ? { id: "your-doctors", label: "Your doctors" }
       : null,
@@ -255,6 +264,8 @@ export default async function ServiceDetailPage({
                 slug="hands-baby-feet"
                 variant="rounded"
                 ratio="16/9"
+                priority
+                reveal={false}
                 sizes="(min-width: 1024px) 60vw, 100vw"
                 className="mt-8 rounded-3xl shadow-soft"
               />
@@ -264,6 +275,8 @@ export default async function ServiceDetailPage({
                   src={service.image}
                   alt={`${service.name} at Trichy Fetal Medicine and Fertility Centre`}
                   fill
+                  priority
+                  fetchPriority="high"
                   sizes="(min-width: 1024px) 60vw, 100vw"
                   placeholder="blur"
                   blurDataURL={imageBlurDataURL}
@@ -383,11 +396,70 @@ export default async function ServiceDetailPage({
               </DetailSection>
             ) : null}
 
-            {service.reportAndNextSteps ? (
+            {service.reportAndNextSteps || service.resultsDetail?.length ? (
               <DetailSection id="report" title="Your report and next steps">
-                <p className="text-sm text-muted-foreground">
-                  {service.reportAndNextSteps}
-                </p>
+                <div className="space-y-2 text-sm text-muted-foreground">
+                  {service.reportAndNextSteps ? (
+                    <p>{service.reportAndNextSteps}</p>
+                  ) : null}
+                  {service.resultsDetail?.map((item) => (
+                    <p key={item}>{item}</p>
+                  ))}
+                </div>
+              </DetailSection>
+            ) : null}
+
+            {service.visitNotes?.length ? (
+              <DetailSection id="visit-notes" title="Your visit">
+                <ul className="space-y-2.5">
+                  {service.visitNotes.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <span
+                        aria-hidden="true"
+                        className="mt-2 size-1.5 shrink-0 rounded-full bg-primary"
+                      />
+                      <span className="text-sm text-muted-foreground">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </DetailSection>
+            ) : null}
+
+            {service.limits?.length ? (
+              <DetailSection id="limits" title="What it cannot show">
+                <ul className="space-y-2.5">
+                  {service.limits.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <span
+                        aria-hidden="true"
+                        className="mt-2 size-1.5 shrink-0 rounded-full bg-primary"
+                      />
+                      <span className="text-sm text-muted-foreground">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </DetailSection>
+            ) : null}
+
+            {service.followUp?.length ? (
+              <DetailSection id="follow-up" title="Follow-up and referrals">
+                <ul className="space-y-2.5">
+                  {service.followUp.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <span
+                        aria-hidden="true"
+                        className="mt-2 size-1.5 shrink-0 rounded-full bg-primary"
+                      />
+                      <span className="text-sm text-muted-foreground">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </DetailSection>
             ) : null}
 

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import {
   ChevronRight,
@@ -17,18 +16,18 @@ import { MobileIconTile } from "@/components/cards/mobile-cards";
 import { QuickConsultForm } from "@/components/forms/quick-consult-form";
 import { JsonLd } from "@/components/seo/json-ld";
 import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
+import { StaticMap } from "@/components/site/static-map";
 import { Container } from "@/components/shared/container";
 import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
 import { site } from "@/data/site";
 import { breadcrumbSchema } from "@/lib/schema";
-import { imageBlurDataURL } from "@/lib/image-placeholder";
 
 export const metadata: Metadata = {
   title: "Contact and Appointments",
   description:
-    "Book an appointment at Trichy Fetal Medicine and Fertility Centre, Thillai Nagar, Trichy. Call, WhatsApp, or request a callback. International line available.",
+    "Book an appointment at Trichy Fetal Medicine and Fertility Centre, Thillai Nagar. Call, WhatsApp or request a callback. International line available.",
   alternates: { canonical: "/contact" },
 };
 
@@ -303,39 +302,7 @@ export default function ContactPage() {
 
           {/* Mobile: static map card with a Get directions button. */}
           <div className="order-3 mt-6 rounded-2xl border border-rose-tint bg-white p-4 shadow-soft md:hidden">
-            <a
-              href={site.address.mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block overflow-hidden rounded-xl"
-            >
-              <Image
-                src="/images/map-trichy.png"
-                alt={`Map showing ${site.name}, ${site.address.lines.join(" ")}`}
-                width={600}
-                height={300}
-                sizes="calc(100vw - 64px)"
-                placeholder="blur"
-                blurDataURL={imageBlurDataURL}
-                className="h-36 w-full object-cover"
-              />
-            </a>
-            <p className="mt-1.5 text-right text-xs text-ink-muted">
-              © OpenStreetMap contributors
-            </p>
-            <p className="mt-2 flex items-start gap-2 text-sm text-ink-muted">
-              <MapPin className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
-              {site.address.lines.join(" ")}
-            </p>
-            <a
-              href={site.address.mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-primary px-4 text-sm font-semibold text-primary"
-            >
-              <MapPin className="size-4" aria-hidden="true" />
-              Get directions
-            </a>
+            <StaticMap />
           </div>
 
           {/* Mobile: international patients as a ListRow. */}
@@ -349,24 +316,18 @@ export default function ContactPage() {
                 International patients
               </span>
               <span className="block text-sm/[20px] text-ink-muted">
-                Dedicated line: {site.internationalPhone.label}
+                International line: {site.internationalPhone.label}
               </span>
             </span>
             <ChevronRight className="size-4 shrink-0 text-ink-muted" aria-hidden="true" />
           </Link>
 
-          {/* Desktop: embedded map, unchanged. */}
+          {/* Desktop: self-hosted static map + directions link (no embeds). */}
           <div className="order-3 mt-6 md:order-2 md:mt-0">
-          {/* TODO: client to confirm the official Google Maps listing, then
-              update site.address.mapsEmbedUrl. */}
-          <div className="overflow-hidden rounded-3xl border border-rose-tint shadow-soft max-md:hidden">
-            <iframe
-              src={site.address.mapsEmbedUrl}
-              title={`Map to ${site.name}, Thillai Nagar, Trichy`}
-              loading="lazy"
-              allowFullScreen
-              referrerPolicy="no-referrer-when-downgrade"
-              className="aspect-[16/9] w-full border-0"
+          <div className="overflow-hidden rounded-3xl border border-rose-tint bg-white p-4 shadow-soft max-md:hidden">
+            <StaticMap
+              imageClassName="aspect-[16/9] w-full object-cover"
+              sizes="(min-width: 1024px) 60vw, 100vw"
             />
           </div>
           {/* TODO: client to provide landmark directions (nearest junction,

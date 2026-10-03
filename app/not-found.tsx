@@ -1,8 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BrandImage } from "@/components/shared/brand-image";
 import { Container } from "@/components/shared/container";
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 const links = [
   { label: "Services", href: "/services", hint: "All scans and tests" },

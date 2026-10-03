@@ -3,7 +3,14 @@
 import { useState } from "react";
 import Image from "next/image";
 import { imageBlurDataURL } from "@/lib/image-placeholder";
-import { Lightbox, type LightboxImage } from "@/components/shared/lightbox";
+import dynamic from "next/dynamic";
+import type { LightboxImage } from "@/components/shared/lightbox";
+
+// Lightbox (dialog + next/image) loads only when a photo is opened.
+const Lightbox = dynamic(
+  () => import("@/components/shared/lightbox").then((m) => m.Lightbox),
+  { ssr: false }
+);
 
 /** Thumbnail grid that opens the shared Lightbox. Used on the CME page. */
 export function PhotoGrid({ images }: { images: LightboxImage[] }) {
@@ -37,11 +44,13 @@ export function PhotoGrid({ images }: { images: LightboxImage[] }) {
           </li>
         ))}
       </ul>
-      <Lightbox
-        images={images}
-        index={openIndex}
-        onIndexChange={setOpenIndex}
-      />
+      {openIndex !== null ? (
+        <Lightbox
+          images={images}
+          index={openIndex}
+          onIndexChange={setOpenIndex}
+        />
+      ) : null}
     </>
   );
 }

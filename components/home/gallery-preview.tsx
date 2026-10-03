@@ -54,7 +54,7 @@ export function GalleryPreview() {
         <SectionHeader
           eyebrow="Our clinic"
           title="Inside the centre"
-          subtitle="A calm, welcoming space designed around your comfort and privacy."
+          subtitle="Scan and consulting rooms designed around your comfort and privacy."
         />
         <ul className="grid grid-cols-2 gap-4 md:grid-cols-3">
           {previewImages.map((image, i) => (

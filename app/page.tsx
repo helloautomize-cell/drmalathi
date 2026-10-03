@@ -15,12 +15,14 @@ import { WhyChooseUs } from "@/components/home/why-choose-us";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Section } from "@/components/shared/section";
 import { TrustSlots } from "@/components/shared/trust-slots";
-import { medicalClinicSchema } from "@/lib/schema";
+import { faqs } from "@/data/faqs";
+import { hasPublishedGuides } from "@/lib/guides";
+import { faqSchema, medicalClinicSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Fetal Medicine Specialists in Trichy",
   description:
-    "Specialist pregnancy scans, NIPT, fetal procedures, and genetic counselling in Trichy. First centre for fetoscopic procedures in south Tamil Nadu. Book an appointment.",
+    "Specialist pregnancy scans, NIPT and genetic counselling in Trichy, performed or supervised by fetal medicine specialists. Book an appointment.",
   alternates: { canonical: "/" },
 };
 
@@ -30,6 +32,7 @@ export default function HomePage() {
   return (
     <>
       <JsonLd data={medicalClinicSchema()} />
+      <JsonLd data={faqSchema(faqs)} />
       <div className="flex flex-col md:contents">
         <Hero />
         <FirstsStrip />
@@ -61,7 +64,7 @@ export default function HomePage() {
           <TrustSlots />
         </div>
         <div className="order-11 md:contents">
-          <GuidesSection />
+          {hasPublishedGuides() ? <GuidesSection /> : null}
         </div>
         <div className="order-12 md:contents">
           <FaqSection />

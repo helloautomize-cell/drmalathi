@@ -7,10 +7,17 @@ import { SectionHeader } from "@/components/shared/section-header";
 import { Button } from "@/components/ui/button";
 import { testimonials } from "@/data/testimonials";
 import { trust } from "@/data/trust";
+import { showPending } from "@/lib/env";
 
 export function TestimonialsSection() {
   const video = trust.videoTestimonial;
   const googleReviewsUrl = trust.googleReviewsUrl;
+  // Production shows only testimonials with written consent on file; previews
+  // also show pending-consent ones so editors can review them.
+  const visible = testimonials.filter(
+    (t) => t.consentOnFile === true || (showPending && t.consentOnFile === null)
+  );
+  if (!visible.length && !video && !googleReviewsUrl) return null;
   return (
     <Section surface="white" className="md:bg-white">
       <Container>
@@ -22,7 +29,7 @@ export function TestimonialsSection() {
         <MobileCarousel
           label="Patient testimonials"
           className="md:grid md:grid-cols-3 md:gap-6"
-          items={testimonials.map((testimonial) => (
+          items={visible.map((testimonial) => (
             <TestimonialCard key={testimonial.name} testimonial={testimonial} />
           ))}
         />

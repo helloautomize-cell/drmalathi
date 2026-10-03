@@ -20,7 +20,8 @@ export function toGuideCardData(guide: Guide): GuideCardData {
     cover: guide.coverImage,
     categoryName: getCategory(guide.category)?.name ?? guide.category,
     categorySlug: guide.category,
-    reviewed: Boolean(guide.reviewedBy),
+    reviewed:
+      guide.reviewStatus === "reviewed" && Boolean(guide.reviewedAt),
     dateLabel: updated
       ? `Updated ${dateFmt(guide.updatedAt as string)}`
       : dateFmt(guide.publishedAt),

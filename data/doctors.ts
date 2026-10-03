@@ -21,11 +21,45 @@ export type Doctor = {
   hasProfile: boolean;
   mentors?: string[];
   background?: string[];
+  // Typed-null fields: render nothing while empty; fill from client data.
+  /** Medical council registration; required by NMC guidelines. */
+  registration: { council: string; number: string } | null;
+  /** First year in practice, used for "X years of experience" copy. */
+  experienceSinceYear: number | null;
+  /** Languages the doctor consults in. */
+  languages: string[];
+  /** Professional memberships (e.g. FMF, FOGSI). */
+  memberships: string[];
+  /** Structured qualifications: degree + institution + year. */
+  qualificationsDetailed: {
+    degree: string;
+    institution: string;
+    year?: number;
+  }[];
+  // Expanded fields filled only from the doctor's answers to
+  // docs/CONTENT-REQUESTS.md. Each renders only while populated.
+  /** Fellowship, observership or teaching posts (institution + years). */
+  trainingPosts: {
+    post: string;
+    institution: string;
+    years?: string;
+  }[];
+  /** Clinical areas the doctor personally leads, in their words. */
+  clinicalFocus: string[];
+  /** What the doctor wants a patient to feel after meeting them. */
+  patientNote: string | null;
+  /** ISO date the profile copy last changed; used for sitemap lastmod. */
+  lastModified: string;
+  /** Meta description, 140 to 155 characters. */
+  seoDescription?: string;
 };
 
 export const doctors: Doctor[] = [
   {
     slug: "dr-malathi-g-prasad",
+    lastModified: "2026-10-03",
+    seoDescription:
+      "Dr Malathi G. Prasad, Managing Director and Lead Consultant at Trichy Fetal Medicine and Fertility Centre, Trichy. MD, FRCOG (UK), FMF diploma.",
     name: "Dr Malathi G. Prasad",
     role: "Managing Director and Lead Consultant",
     qualifications: ["MD", "FRCOG (UK)", "Diploma in Fetal Medicine (FMF)"],
@@ -48,6 +82,14 @@ export const doctors: Doctor[] = [
     photo: "/images/doctors/malathi-cutout.png",
     photoFocus: { x: 50, y: 35 },
     hasProfile: true,
+    registration: null,
+    experienceSinceYear: null,
+    languages: [],
+    memberships: [],
+    qualificationsDetailed: [],
+    trainingPosts: [],
+    clinicalFocus: [],
+    patientNote: null,
     mentors: ["Prof Basky Thilaganathan", "Prof Nicolaides"],
     background: [
       "Dr Malathi completed her MD at Kilpauk Medical College and served for five years as Assistant Professor of Obstetrics and Gynaecology.",
@@ -57,6 +99,9 @@ export const doctors: Doctor[] = [
   },
   {
     slug: "dr-revathy-chandrasekharan",
+    lastModified: "2026-10-03",
+    seoDescription:
+      "Dr Revathy Chandrasekharan, Maternal-Fetal Medicine Specialist at Trichy Fetal Medicine and Fertility Centre, Trichy. MS (O&G), ICOG fellow.",
     name: "Dr Revathy Chandrasekharan",
     role: "Maternal-Fetal Medicine Specialist",
     qualifications: ["MS (O&G)", "Fellowship in Fetal Medicine (ICOG)"],
@@ -76,6 +121,14 @@ export const doctors: Doctor[] = [
     photo: "/images/doctors/revathy-cutout.png",
     photoFocus: { x: 50, y: 34 },
     hasProfile: true,
+    registration: null,
+    experienceSinceYear: null,
+    languages: [],
+    memberships: [],
+    qualificationsDetailed: [],
+    trainingPosts: [],
+    clinicalFocus: [],
+    patientNote: null,
     background: [
       "Dr Revathy is a trained obstetrician with specialisation in fetal medicine under the Indian College of Obstetrics and Gynaecology.",
       "Her work includes fetal imaging, diagnostic procedures, and care for twin and multiple pregnancies.",
@@ -83,6 +136,7 @@ export const doctors: Doctor[] = [
   },
   {
     slug: "dr-nivethitha",
+    lastModified: "2026-10-03",
     name: "Dr Nivethitha",
     role: "Fetal Medicine Specialist",
     roleIsPlaceholder: true,
@@ -93,5 +147,13 @@ export const doctors: Doctor[] = [
     photo: "/images/doctors/nivethitha-cutout.png",
     photoFocus: { x: 50, y: 34 },
     hasProfile: false,
+    registration: null,
+    experienceSinceYear: null,
+    languages: [],
+    memberships: [],
+    qualificationsDetailed: [],
+    trainingPosts: [],
+    clinicalFocus: [],
+    patientNote: null,
   },
 ];

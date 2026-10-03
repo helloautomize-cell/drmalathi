@@ -2,6 +2,7 @@
 // copy written for this redesign. The medical team must review and approve each
 // description before launch. No statistics, success rates, or prices are stated.
 
+import { claimIsLive } from "@/data/claims";
 import {
   Baby,
   BadgeCheck,
@@ -106,12 +107,30 @@ export type Service = {
   /** Doctor slugs (see data/doctors.ts) for the "Your doctors" section. */
   performedBy?: string[];
   faqs?: ServiceFaq[];
+  // Expanded sections filled only from the doctors' answers to
+  // docs/CONTENT-REQUESTS.md. Each renders only while populated; nothing is
+  // invented to reach a word count.
+  /** Practicalities of the visit: duration, scan approach, family attendance. */
+  visitNotes?: string[];
+  /** Result format and turnaround: what the patient receives, and when. */
+  resultsDetail?: string[];
+  /** What the service does not cover or cannot adjudicate. */
+  limits?: string[];
+  /** Referrals and coordination with other specialists after a finding. */
+  followUp?: string[];
+  /** ISO date the service copy last changed; used for sitemap lastmod. */
+  lastModified: string;
+  /** Meta description, 140 to 155 characters, kept in range by check:content. */
+  seoDescription: string;
 };
 
 const serviceList: Service[] = [
   // Screening Scans
   {
     slug: "viability-scan",
+    lastModified: "2026-10-03",
+    seoDescription:
+      "An early pregnancy scan that confirms the pregnancy is in the right place and checks for your baby's heartbeat, usually from 6 to 10 weeks of pregnancy.",
     name: "Viability Scan",
     category: "screening",
     icon: Sprout,
@@ -174,6 +193,9 @@ const serviceList: Service[] = [
   },
   {
     slug: "downs-screening-oscar",
+    lastModified: "2026-10-03",
+    seoDescription:
+      "A combined first trimester screening that assesses the chance of Down's syndrome and other chromosomal conditions, usually between 11 and 13+6 weeks.",
     name: "Down's Screening (OSCAR)",
     category: "screening",
     icon: ClipboardCheck,
@@ -181,7 +203,7 @@ const serviceList: Service[] = [
     kind: "scan",
     shortDescription:
       "A combined first trimester screening that assesses the chance of Down's syndrome and other chromosomal conditions.",
-    image: "/images/services/downsscreeningoscor.webp",
+    image: "/images/services/downs-screening-oscar.webp",
     weeks: { start: 11, end: 14 },
     detail: [
       "OSCAR is a combined first trimester screening that brings together a detailed ultrasound measurement of your baby and a simple blood test from the mother.",
@@ -234,6 +256,9 @@ const serviceList: Service[] = [
   },
   {
     slug: "first-trimester-anomaly-scan",
+    lastModified: "2026-10-03",
+    seoDescription:
+      "A detailed early scan that checks your baby's development and can identify major findings in the first trimester itself, at our Trichy centre.",
     name: "First Trimester Anomaly Scan",
     category: "screening",
     icon: ScanLine,
@@ -289,6 +314,9 @@ const serviceList: Service[] = [
   },
   {
     slug: "anomaly-scan",
+    lastModified: "2026-10-03",
+    seoDescription:
+      "The detailed mid-pregnancy scan that examines your baby's organs, growth and wellbeing, usually between 18 and 22 weeks, at our Trichy centre.",
     name: "Anomaly Scan",
     category: "screening",
     icon: ScanSearch,
@@ -341,7 +369,7 @@ const serviceList: Service[] = [
       {
         question: "What if something is found?",
         answer:
-          "The specialist explains the finding in plain language straight away. Where needed, our in-house counselling and multidisciplinary panel help you plan the next steps.",
+          "The specialist explains what the finding means straight away. Where needed, our in-house counselling and multidisciplinary panel help you plan the next steps.",
       },
       {
         question: "Is a 3D or 4D picture part of it?",
@@ -352,6 +380,9 @@ const serviceList: Service[] = [
   },
   {
     slug: "growth-scan-doppler",
+    lastModified: "2026-10-03",
+    seoDescription:
+      "A scan that tracks your baby's growth, blood flow and wellbeing in the third trimester, especially when growth needs watching, at our Trichy centre.",
     name: "Growth Scan with Doppler",
     category: "screening",
     icon: TrendingUp,
@@ -410,6 +441,9 @@ const serviceList: Service[] = [
   // Advanced Diagnostics
   {
     slug: "nipt",
+    lastModified: "2026-10-03",
+    seoDescription:
+      "A simple blood test from the mother that screens for common chromosomal conditions, usually from 10 weeks of pregnancy, at our Trichy centre.",
     name: "NIPT",
     category: "diagnostics",
     icon: TestTube,
@@ -464,6 +498,9 @@ const serviceList: Service[] = [
   },
   {
     slug: "fetal-echo",
+    lastModified: "2026-10-03",
+    seoDescription:
+      "A focused ultrasound of your baby's heart that checks its structure, function and rhythm in detail, performed at our Trichy fetal medicine centre.",
     name: "Fetal Echo",
     category: "diagnostics",
     icon: HeartPulse,
@@ -474,7 +511,7 @@ const serviceList: Service[] = [
     image: "/images/services/FetalEcho.webp",
     weeks: { start: 18, end: 24 },
     detail: [
-      "A fetal echo is a dedicated ultrasound of your baby's heart. It examines the heart's structure, its four chambers, the major blood vessels, and the rhythm in much more detail than a routine scan.",
+      "A fetal echo is an ultrasound focused only on your baby's heart. It examines the heart's structure, its four chambers, the major blood vessels, and the rhythm in much more detail than a routine scan.",
       "It is usually recommended when there is a family history of heart conditions, a finding on another scan, diabetes in the mother, or certain infections.",
     ],
     timing: "Usually between 18 and 24 weeks of pregnancy.",
@@ -515,6 +552,9 @@ const serviceList: Service[] = [
   },
   {
     slug: "fetal-neurosonogram",
+    lastModified: "2026-10-03",
+    seoDescription:
+      "A detailed scan of your baby's brain and spine for conditions affecting the nervous system, performed by a fetal medicine specialist in Trichy.",
     name: "Fetal Neurosonogram",
     category: "diagnostics",
     homeMoreOrder: 2,
@@ -525,7 +565,11 @@ const serviceList: Service[] = [
       "A detailed scan of your baby's brain and spine, for conditions affecting the nervous system.",
     image: "/images/services/FetalNeurosonogram.webp",
     detail: [
-      "A fetal neurosonogram is a specialist examination of your baby's brain and spine. Our centre was the first in Tamil Nadu to offer this dedicated neurosonogram service.",
+      `A fetal neurosonogram is a specialist examination of your baby's brain and spine.${
+        claimIsLive("neurosonogram-first")
+          ? " Our centre was the first in Tamil Nadu to offer this neurosonogram service."
+          : ""
+      }`,
       "It is advised when another scan raises a question about the baby's brain, when there is a relevant family history, or after certain infections in pregnancy.",
     ],
     timing: "When advised by your referring doctor or our specialists.",
@@ -566,6 +610,9 @@ const serviceList: Service[] = [
   },
   {
     slug: "second-opinion-scan",
+    lastModified: "2026-10-03",
+    seoDescription:
+      "A careful repeat scan and report review when you want reassurance or a specialist second look at a finding, at our Trichy centre in Thillai Nagar.",
     name: "Second Opinion Scan",
     category: "diagnostics",
     homeMoreOrder: 3,
@@ -577,7 +624,7 @@ const serviceList: Service[] = [
     image: "/images/services/SecondOpinionScan.webp",
     detail: [
       "If you have had a scan elsewhere and would like a specialist review, we perform a careful repeat evaluation and go through your existing report with you.",
-      "A second opinion can confirm a finding, clarify what it means, or occasionally change the picture. Either way, the findings and your options are explained in plain language.",
+      "A second opinion can confirm a finding, clarify what it means, or occasionally change the picture. Either way, the specialist goes through the findings and your options with you.",
     ],
     timing: "At any stage of pregnancy, subject to what is being assessed.",
     preparation: "Please bring all previous scan reports, images, and medical records.",
@@ -617,6 +664,9 @@ const serviceList: Service[] = [
   // Specialty Clinics
   {
     slug: "genetic-counselling",
+    lastModified: "2026-10-03",
+    seoDescription:
+      "In-house counselling that explains test results, family history and inheritance in clear language, so you can plan your next steps together.",
     name: "Genetic Counselling",
     category: "clinics",
     homeMoreOrder: 1,
@@ -625,9 +675,13 @@ const serviceList: Service[] = [
     kind: "clinic",
     shortDescription:
       "In-house counselling that explains results, inheritance, and your options in clear language.",
-    image: "/images/services/GeneticCounsellingwithExpertGenetecist.webp",
+    image: "/images/services/genetic-counselling.webp",
     detail: [
-      "Our centre was the first in the region to offer in-house genetic counselling. A genetic counsellor or specialist explains test results, family history, inheritance, and what the findings mean for your baby and future pregnancies.",
+      `${
+        claimIsLive("counselling-first")
+          ? "Our centre was the first in the region to offer in-house genetic counselling. "
+          : ""
+      }A genetic counsellor or specialist explains test results, family history, inheritance, and what the findings mean for your baby and future pregnancies.`,
       "Counselling is a conversation, not a test. You leave with clear information and time to decide the next step that is right for your family.",
     ],
     timing: "Before or after a screening test, or when advised by your doctor.",
@@ -646,9 +700,9 @@ const serviceList: Service[] = [
       "The options open to you, explained without pressure",
     ],
     steps: [
-      "You sit down with the counsellor or specialist for an unhurried session.",
+      "You sit down with the counsellor or specialist for a session with time for your questions.",
       "Your history, reports and family details are discussed.",
-      "Options are explained in plain language.",
+      "The counsellor explains each option and what it involves.",
       "You decide the next step, with time to think.",
     ],
     reportAndNextSteps:
@@ -674,6 +728,9 @@ const serviceList: Service[] = [
   },
   {
     slug: "fetal-postmortem",
+    lastModified: "2026-10-03",
+    seoDescription:
+      "A specialist evaluation after pregnancy loss that helps families understand what happened and plan future care with the medical team in Trichy.",
     name: "Fetal Postmortem",
     category: "clinics",
     icon: Microscope,
@@ -726,6 +783,9 @@ const serviceList: Service[] = [
   },
   {
     slug: "recurrent-miscarriages-clinic",
+    lastModified: "2026-10-03",
+    seoDescription:
+      "A clinic that investigates repeated pregnancy loss, looks for treatable causes and plans monitored care for your next pregnancy, in Trichy.",
     name: "Recurrent Miscarriages Clinic",
     category: "clinics",
     homeMoreOrder: 5,
@@ -733,10 +793,10 @@ const serviceList: Service[] = [
     iconName: "repeat",
     kind: "clinic",
     shortDescription:
-      "A dedicated clinic that investigates repeated pregnancy loss and plans care for your next pregnancy.",
+      "A clinic that investigates repeated pregnancy loss and plans care for your next pregnancy.",
     image: "/images/services/RecurrentMiscarriagesClinic.webp",
     detail: [
-      "Recurrent miscarriage is exhausting and heartbreaking. Our dedicated clinic reviews your history, investigates possible causes, and plans monitored care for your next pregnancy.",
+      "Recurrent miscarriage is exhausting and heartbreaking. We review your history, investigates possible causes, and plans monitored care for your next pregnancy.",
       "You are seen by specialists who understand both the medical and emotional side of pregnancy loss.",
     ],
     timing: "Before or early in a subsequent pregnancy.",
@@ -780,6 +840,9 @@ const serviceList: Service[] = [
   },
   {
     slug: "twin-specialised-clinic",
+    lastModified: "2026-10-03",
+    seoDescription:
+      "Specialist monitoring, scanning schedules and care for twin and multiple pregnancies from the first trimester onwards, at our Trichy centre.",
     name: "Twin Specialised Clinic",
     category: "clinics",
     homeMoreOrder: 4,
@@ -790,7 +853,7 @@ const serviceList: Service[] = [
       "Specialist monitoring and care for twin and multiple pregnancies.",
     image: "/images/services/TwinSpecialisedClinic.webp",
     detail: [
-      "Twin and multiple pregnancies need closer monitoring than single pregnancies, especially when the babies share a placenta. Our clinic provides specialised scanning schedules and care tailored to twins.",
+      "Twin and multiple pregnancies need closer monitoring than single pregnancies, especially when the babies share a placenta. Our clinic provides specialised scanning schedules and care plans for twins.",
       "The team watches for growth differences, fluid imbalance, and the specific complications that twins can develop, and works closely with your obstetrician.",
     ],
     timing: "From the first trimester, with scans usually every 2 to 4 weeks.",

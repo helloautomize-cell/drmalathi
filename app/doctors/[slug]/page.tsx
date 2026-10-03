@@ -26,8 +26,10 @@ export async function generateMetadata({
   const doctor = doctors.find((item) => item.slug === slug && item.hasProfile);
   if (!doctor) return {};
   return {
-    title: `${doctor.name}, Fetal Medicine Specialist`,
-    description: `${doctor.name}, ${doctor.role} at ${site.name}. ${doctor.qualifications.join(", ")}.`,
+    title: doctor.name,
+    description:
+      doctor.seoDescription ??
+      `${doctor.name}, ${doctor.role} at ${site.name}. ${doctor.qualifications.join(", ")}.`,
     alternates: { canonical: `/doctors/${doctor.slug}` },
   };
 }
@@ -160,7 +162,7 @@ export default async function DoctorDetailPage({
 
             {doctor.expertise.length ? (
               <div className="order-6 mt-6 max-md:mt-8">
-                <h3 className="text-lg font-semibold text-ink">Expertise</h3>
+                <h3 className="text-lg font-semibold text-ink">Areas of practice</h3>
                 {/* Mobile: ListRows linking to services. */}
                 <div className="mt-3 divide-y divide-rose-tint rounded-2xl border border-rose-tint bg-white px-3 md:hidden">
                   {doctor.expertise.map((expertise) =>
@@ -217,6 +219,120 @@ export default async function DoctorDetailPage({
               <p className="order-7 mt-5 flex gap-2 text-sm font-semibold text-teal max-md:mt-8">
                 <Medal className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
                 {doctor.award}
+              </p>
+            ) : null}
+
+            {doctor.qualificationsDetailed.length ? (
+              <div className="order-8 mt-6 max-md:mt-8">
+                <h3 className="text-lg font-semibold text-ink">Qualifications</h3>
+                <ul className="mt-3 space-y-2.5">
+                  {doctor.qualificationsDetailed.map((q) => (
+                    <li key={`${q.degree}-${q.institution}`} className="flex items-start gap-3">
+                      <CheckCircle2
+                        className="mt-0.5 size-5 shrink-0 text-teal"
+                        aria-hidden="true"
+                      />
+                      <span className="text-sm text-muted-foreground">
+                        <span className="font-semibold text-ink">{q.degree}</span>
+                        {`, ${q.institution}`}
+                        {q.year ? ` (${q.year})` : ""}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+
+            {doctor.trainingPosts.length ? (
+              <div className="order-9 mt-6 max-md:mt-8">
+                <h3 className="text-lg font-semibold text-ink">Training and posts</h3>
+                <ul className="mt-3 space-y-2.5">
+                  {doctor.trainingPosts.map((p) => (
+                    <li key={`${p.post}-${p.institution}`} className="flex items-start gap-3">
+                      <span
+                        aria-hidden="true"
+                        className="mt-2 size-1.5 shrink-0 rounded-full bg-primary"
+                      />
+                      <span className="text-sm text-muted-foreground">
+                        {p.post}, {p.institution}
+                        {p.years ? ` (${p.years})` : ""}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+
+            {doctor.clinicalFocus.length ? (
+              <div className="order-10 mt-6 max-md:mt-8">
+                <h3 className="text-lg font-semibold text-ink">Clinical focus</h3>
+                <ul className="mt-3 space-y-2.5">
+                  {doctor.clinicalFocus.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <span
+                        aria-hidden="true"
+                        className="mt-2 size-1.5 shrink-0 rounded-full bg-primary"
+                      />
+                      <span className="text-sm text-muted-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+
+            {doctor.languages.length ? (
+              <div className="order-11 mt-6 max-md:mt-8">
+                <h3 className="text-lg font-semibold text-ink">Consults in</h3>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {doctor.languages.map((language) => (
+                    <span
+                      key={language}
+                      className="rounded-full bg-blush px-3 py-1.5 text-xs font-semibold text-plum"
+                    >
+                      {language}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+
+            {doctor.memberships.length ? (
+              <div className="order-12 mt-6 max-md:mt-8">
+                <h3 className="text-lg font-semibold text-ink">Memberships</h3>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {doctor.memberships.map((membership) => (
+                    <span
+                      key={membership}
+                      className="rounded-full bg-blush px-3 py-1.5 text-xs font-semibold text-plum"
+                    >
+                      {membership}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+
+            {doctor.patientNote ? (
+              <figure className="order-13 mt-6 rounded-2xl border border-rose-tint bg-blush p-5 max-md:mt-8">
+                <blockquote className="text-sm/[22px] text-muted-foreground">
+                  {doctor.patientNote}
+                </blockquote>
+                <figcaption className="mt-2 text-xs font-semibold text-ink">
+                  {doctor.name}
+                </figcaption>
+              </figure>
+            ) : null}
+
+            {doctor.experienceSinceYear ? (
+              <p className="order-14 mt-6 text-sm text-muted-foreground max-md:mt-8">
+                In practice since {doctor.experienceSinceYear}.
+              </p>
+            ) : null}
+
+            {doctor.registration ? (
+              <p className="order-15 mt-6 text-xs text-muted-foreground max-md:mt-8">
+                Registered with {doctor.registration.council}, registration
+                number {doctor.registration.number}.
               </p>
             ) : null}
           </div>

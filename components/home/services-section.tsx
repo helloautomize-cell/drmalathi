@@ -294,7 +294,7 @@ export function ServicesSection() {
         <SectionHeader
           eyebrow="Our services"
           title="The right scan, at the right week"
-          subtitle="Specialist scans and tests timed to your pregnancy, with earlier answers explained in plain language."
+          subtitle="Specialist scans and tests timed to your pregnancy, with findings explained in the same visit."
           className="[&>p:last-child]:mx-auto [&>p:last-child]:max-w-2xl [&>p:last-child]:text-balance"
         />
         <WeekRailCompact items={homeServices} />

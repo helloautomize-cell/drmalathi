@@ -33,14 +33,15 @@ export default function DoctorsPage() {
       <PageHero
         eyebrow="Our doctors"
         title="Specialists who take the time"
-        intro="Every scan and procedure is performed or supervised by a fetal medicine specialist who explains findings in plain language."
+        intro="Every scan and procedure is performed or supervised by a fetal medicine specialist who explains the findings and answers your questions."
         crumbs={[{ label: "Home", href: "/" }, { label: "Doctors" }]}
       />
       <Section>
         <Container>
           {/* Mobile: lead card plus a team carousel, same cards as home. */}
           <div className="md:hidden">
-            <LeadDoctorCard doctor={doctors[0]} />
+            <h2 className="sr-only">Our specialists</h2>
+            <LeadDoctorCard doctor={doctors[0]} priority />
             {doctors.length > 1 ? (
               <div className="mt-8">
                 <MobileCarousel
@@ -67,8 +68,8 @@ export default function DoctorsPage() {
           </div>
           <h2 className="sr-only">Our specialists</h2>
           <div className="hidden gap-6 md:grid md:grid-cols-2 lg:grid-cols-3">
-            {doctors.map((doctor) => (
-              <DoctorCard key={doctor.slug} doctor={doctor} />
+            {doctors.map((doctor, index) => (
+              <DoctorCard key={doctor.slug} doctor={doctor} priority={index === 0} />
             ))}
           </div>
         </Container>

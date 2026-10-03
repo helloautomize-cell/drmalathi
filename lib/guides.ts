@@ -3,6 +3,7 @@
 
 import { guideCategories } from "@/data/guide-categories";
 import { guides } from "@/data/guides";
+import { isProduction } from "@/lib/env";
 import type { Guide, GuideBlock, GuideCategory } from "@/types/guide";
 
 export const GUIDES_PER_PAGE = 12;
@@ -10,7 +11,10 @@ export const GUIDES_PER_PAGE = 12;
 const now = () => Date.now();
 
 function isPublished(guide: Guide): boolean {
-  return new Date(guide.publishedAt).getTime() <= now();
+  if (new Date(guide.publishedAt).getTime() > now()) return false;
+  // Draft and placeholder guides render on preview deploys only.
+  if (isProduction && (guide.draft || guide.placeholder)) return false;
+  return true;
 }
 
 function sortNewest(list: Guide[]): Guide[] {
@@ -80,6 +84,16 @@ export function getGuidesByService(serviceSlug: string): Guide[] {
 
 export function getCategory(slug: string): GuideCategory | undefined {
   return guideCategories.find((c) => c.slug === slug);
+}
+
+/**
+ * Whether at least one guide is publicly visible right now. Navigation,
+ * footer links, the home guides section, sitemap entries and RSS all hide
+ * while this is false (e.g. all guides still in draft on production), and
+ * come back automatically as soon as a guide publishes.
+ */
+export function hasPublishedGuides(): boolean {
+  return guides.some(isPublished);
 }
 
 /** All categories; callers filter to those that have published guides. */

@@ -4,11 +4,12 @@ import { OnThisPage } from "@/components/shared/on-this-page";
 import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
 import { site } from "@/data/site";
+import { legal, legalDateLabel } from "@/data/legal";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How Trichy Fetal Medicine and Fertility Centre collects, uses, and protects your information.",
+    "How Trichy Fetal Medicine and Fertility Centre collects, uses and protects your information when you use this website or our appointment forms.",
   alternates: { canonical: "/privacy" },
 };
 
@@ -29,7 +30,7 @@ export default function PrivacyPage() {
       <PageHero
         eyebrow="Legal"
         title="Privacy Policy"
-        intro={`Last updated: ${new Date().toLocaleDateString("en-IN", { month: "long", year: "numeric" })}`}
+        intro={`Last updated: ${legalDateLabel(legal.privacy.lastUpdated)}`}
         crumbs={[{ label: "Home", href: "/" }, { label: "Privacy" }]}
       />
       <Section>
