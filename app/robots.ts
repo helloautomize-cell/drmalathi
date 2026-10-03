@@ -21,12 +21,12 @@ export default function robots(): MetadataRoute.Robots {
           {
             userAgent: "*",
             allow: "/",
-            disallow: ["/design-system", "/api/"],
+            disallow: ["/api/"],
           },
           ...aiBots.map((bot) => ({
             userAgent: bot,
             allow: "/",
-            disallow: ["/design-system", "/api/"],
+            disallow: ["/api/"],
           })),
         ]
       : { userAgent: "*", disallow: "/" },

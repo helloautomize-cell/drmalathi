@@ -14,7 +14,6 @@ export const pageLastModified: Record<string, string> = {
   "/guides": "2026-10-03",
   "/contact": "2026-10-03",
   "/faq": "2026-10-03",
-  "/due-date-calculator": "2026-10-03",
   "/international-patients": "2026-10-03",
   "/privacy": "2026-10-03",
   "/terms": "2026-10-03",

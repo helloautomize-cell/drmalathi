@@ -7,6 +7,8 @@ import { imageBlurDataURL } from "@/lib/image-placeholder";
 export type GuideCardData = {
   slug: string;
   title: string;
+  /** Shorter title shown on the card; falls back to `title`. */
+  cardTitle?: string;
   excerpt: string;
   cover: { src: string; alt: string };
   categoryName: string;
@@ -33,8 +35,8 @@ export function GuideCard({ guide }: { guide: GuideCardData }) {
     >
       <div
         className={cn(
-          "relative aspect-[16/10] overflow-hidden",
-          guide.featured ? "lg:col-span-7 lg:aspect-auto" : ""
+          "relative aspect-video overflow-hidden",
+          guide.featured ? "lg:col-span-7 lg:self-center" : ""
         )}
       >
         <Image
@@ -62,18 +64,18 @@ export function GuideCard({ guide }: { guide: GuideCardData }) {
         </p>
         <h3
           className={cn(
-            "mt-2 font-heading font-semibold text-balance text-ink line-clamp-2 [@media(hover:hover)]:group-hover:underline [@media(hover:hover)]:group-hover:underline-offset-4",
+            "mt-2 font-heading font-semibold text-balance text-ink [@media(hover:hover)]:group-hover:underline [@media(hover:hover)]:group-hover:underline-offset-4",
             guide.featured
               ? "text-[26px]/[32px] md:text-3xl"
-              : "text-[19px]/[26px]"
+              : "line-clamp-3 text-[19px]/[26px]"
           )}
         >
-          {guide.title}
+          {guide.cardTitle ?? guide.title}
         </h3>
         <p className="mt-2 line-clamp-2 text-base/[26px] text-pretty text-ink-muted">
           {guide.excerpt}
         </p>
-        <p className="mt-4 flex items-center gap-2 text-[13px]/[20px] text-ink-muted">
+        <p className="mt-auto flex items-center gap-2 pt-4 text-[13px]/[20px] text-ink-muted">
           {guide.reviewed ? (
             <span className="inline-flex items-center gap-1 font-semibold text-teal">
               <BadgeCheck className="size-3.5" aria-hidden="true" />

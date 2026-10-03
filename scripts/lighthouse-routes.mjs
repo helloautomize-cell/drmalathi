@@ -12,7 +12,7 @@ const CHROME = [
 const BASE = process.env.QA_BASE_URL ?? "http://localhost:3000";
 const ROUTES = process.env.QA_ROUTES
   ? process.env.QA_ROUTES.split(",")
-  : ["/", "/services/anomaly-scan", "/contact", "/due-date-calculator"];
+  : ["/", "/services/anomaly-scan", "/contact",];
 
 let port = 9223;
 for (const route of ROUTES) {

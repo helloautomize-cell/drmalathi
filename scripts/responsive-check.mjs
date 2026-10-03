@@ -18,7 +18,6 @@ const ROUTES = [
   "/services",
   "/about",
   "/contact",
-  "/due-date-calculator",
   "/gallery",
   "/cme-activities",
   "/international-patients",

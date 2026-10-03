@@ -32,6 +32,8 @@ export type GuideBlock =
 export type Guide = {
   slug: string;
   title: string;
+  /** Optional shorter title used on cards; the page H1 keeps `title`. */
+  cardTitle?: string;
   /** One to two lines, used in cards and as the meta description fallback. */
   excerpt: string;
   coverImage: { src: string; alt: string; caption?: string };
@@ -42,6 +44,11 @@ export type Guide = {
   content: GuideBlock[];
   keyTakeaways?: string[];
   faqs?: { question: string; answer: string }[];
+  /**
+   * External references cited by the article; rendered as a Sources list.
+   * Plain bibliography entries may omit publisher/url.
+   */
+  sources?: { title: string; publisher?: string; url?: string }[];
   /**
    * Review state. The "Medically reviewed" byline, reviewer card and
    * reviewedBy/lastReviewed schema render ONLY when this is "reviewed" AND

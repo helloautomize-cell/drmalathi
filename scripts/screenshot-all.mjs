@@ -16,7 +16,6 @@ const CHROME =
 const BASE = process.env.QA_BASE_URL ?? "http://localhost:3002";
 const DEFAULT_ROUTES = [
   "/",
-  "/design-system",
   "/about",
   "/services",
   "/services/viability-scan",
@@ -40,7 +39,6 @@ const DEFAULT_ROUTES = [
   "/gallery",
   "/contact",
   "/faq",
-  "/due-date-calculator",
   "/international-patients",
   "/privacy",
   "/terms",

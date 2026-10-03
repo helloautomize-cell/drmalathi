@@ -6,7 +6,10 @@ import { BadgeCheck, ScanLine } from "lucide-react";
 import { CTABand } from "@/components/cards/cta-band";
 import { InfoCard } from "@/components/cards/mobile-cards";
 import { ArticleToc, MobileToc } from "@/components/guides/article-toc";
-import { GuideBlockRenderer } from "@/components/guides/guide-blocks";
+import {
+  GuideBlockRenderer,
+  renderInline,
+} from "@/components/guides/guide-blocks";
 import { GuideCard } from "@/components/guides/guide-card";
 import { GuideCtaBlock } from "@/components/guides/guide-cta-block";
 import { ReadingProgress } from "@/components/guides/reading-progress";
@@ -106,7 +109,14 @@ export default async function GuideArticlePage({
     ? services.find((s) => s.slug === guide.relatedService)
     : undefined;
   const related = getRelatedGuides(guide).map(toGuideCardData);
-  const toc = guideToc(guide);
+  const toc = [
+    ...guideToc(guide),
+    ...(guide.keyTakeaways?.length
+      ? [{ id: "key-takeaways", text: "Key takeaways" }]
+      : []),
+    ...(guide.faqs?.length ? [{ id: "faqs", text: "Common questions" }] : []),
+    ...(guide.sources?.length ? [{ id: "sources", text: "Sources" }] : []),
+  ];
   const readTime = `${readingTime(guide)} min read`;
 
   const dateFmt = (iso: string) =>
@@ -175,6 +185,8 @@ export default async function GuideArticlePage({
       {/* Header (white) */}
       <SectionShell surface="white" className="py-10! md:py-14!">
         <Container>
+          <div className="lg:grid lg:grid-cols-12 lg:items-center lg:gap-12">
+            <div className="min-w-0 lg:col-span-5">
           <nav
             aria-label="Breadcrumb"
             className="flex min-w-0 items-center gap-1.5 text-xs text-ink-muted"
@@ -211,7 +223,7 @@ export default async function GuideArticlePage({
               {category.name}
             </Link>
           ) : null}
-          <h1 className="mt-2 max-w-3xl font-heading text-[34px]/[40px] font-semibold text-balance text-ink md:text-[48px]/[56px]">
+          <h1 className="mt-2 max-w-3xl font-heading text-[34px]/[40px] font-semibold text-balance text-ink md:text-[48px]/[56px] lg:text-[40px]/[48px]">
             {guide.title}
           </h1>
           <p className="mt-4 max-w-2xl text-pretty text-xl/[30px] text-ink-muted">
@@ -256,15 +268,18 @@ export default async function GuideArticlePage({
             <span aria-hidden="true">·</span>
             <span>{readTime}</span>
           </div>
+          <MobileToc items={toc} />
+            </div>
 
-          <figure className="mt-8">
+          <figure className="mt-8 lg:col-span-7 lg:mt-0">
             <div className="relative aspect-video overflow-hidden rounded-3xl">
               <Image
                 src={guide.coverImage.src}
                 alt={guide.coverImage.alt}
                 fill
                 priority
-                sizes="(min-width: 1024px) 896px, 100vw"
+                fetchPriority="high"
+                sizes="(min-width: 1024px) 58vw, 100vw"
                 placeholder="blur"
                 blurDataURL={imageBlurDataURL}
                 className="object-cover"
@@ -276,26 +291,25 @@ export default async function GuideArticlePage({
               </figcaption>
             ) : null}
           </figure>
-
-          <MobileToc items={toc} />
+          </div>
         </Container>
       </SectionShell>
 
       {/* Body */}
       <SectionShell surface="white" className="py-0! pb-12! md:py-0! md:pb-16!">
         <Container>
-          <div className="lg:grid lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-12">
+          <div className="lg:grid lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[240px_minmax(0,1fr)_280px]">
             <div className="hidden lg:block">
               <ArticleToc items={toc} />
             </div>
-            <div className="max-w-[68ch]">
+            <div className="min-w-0 max-w-[68ch]">
               {guide.quickAnswer ? (
                 <aside className="rounded-2xl bg-rose-tint p-5">
                   <p className="text-xs font-semibold tracking-[0.14em] text-primary uppercase">
                     Quick answer
                   </p>
                   <p className="mt-2 text-[17px]/[28px] text-pretty text-ink">
-                    {guide.quickAnswer}
+                    {renderInline(guide.quickAnswer)}
                   </p>
                 </aside>
               ) : null}
@@ -303,14 +317,17 @@ export default async function GuideArticlePage({
               {renderBlocks(guide)}
 
               {guide.keyTakeaways?.length ? (
-                <aside className="mt-10 rounded-2xl bg-blush p-5">
+                <aside
+                  id="key-takeaways"
+                  className="mt-10 scroll-mt-24 rounded-2xl bg-blush p-5"
+                >
                   <p className="font-heading text-[19px]/[26px] font-semibold text-ink">
                     Key takeaways
                   </p>
                   <ol className="mt-3 list-decimal space-y-2 pl-5 text-base/[26px] text-ink marker:font-semibold marker:text-primary">
                     {guide.keyTakeaways.map((t) => (
                       <li key={t} className="pl-1">
-                        {t}
+                        {renderInline(t)}
                       </li>
                     ))}
                   </ol>
@@ -318,7 +335,7 @@ export default async function GuideArticlePage({
               ) : null}
 
               {guide.faqs?.length ? (
-                <section className="mt-12">
+                <section id="faqs" className="mt-12 scroll-mt-24">
                   <h2 className="font-heading text-[24px]/[30px] font-semibold text-ink md:text-[28px]/[36px]">
                     Common questions
                   </h2>
@@ -333,11 +350,40 @@ export default async function GuideArticlePage({
                           {faq.question}
                         </AccordionTrigger>
                         <AccordionContent className="text-base/[26px] text-ink-muted">
-                          {faq.answer}
+                          {renderInline(faq.answer)}
                         </AccordionContent>
                       </AccordionItem>
                     ))}
                   </Accordion>
+                </section>
+              ) : null}
+
+              {guide.sources?.length ? (
+                <section id="sources" className="mt-12 scroll-mt-24">
+                  <h2 className="font-heading text-[24px]/[30px] font-semibold text-ink md:text-[28px]/[36px]">
+                    Sources
+                  </h2>
+                  <ol className="mt-4 list-decimal space-y-2 pl-5 text-base/[26px] text-ink-muted marker:font-semibold marker:text-primary">
+                    {guide.sources.map((s) => (
+                      <li key={`${s.title}-${s.url ?? ""}`} className="pl-1">
+                        {s.url ? (
+                          <a
+                            href={s.url}
+                            target="_blank"
+                            rel="noopener"
+                            className="font-medium text-primary underline underline-offset-4 focus-visible:rounded-sm focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
+                          >
+                            {s.title}
+                          </a>
+                        ) : (
+                          s.title
+                        )}
+                        {s.publisher ? (
+                          <span> · {s.publisher}</span>
+                        ) : null}
+                      </li>
+                    ))}
+                  </ol>
                 </section>
               ) : null}
 
@@ -353,7 +399,7 @@ export default async function GuideArticlePage({
               </div>
 
               {reviewer ? (
-                <div className="mt-6 flex items-center gap-4 rounded-2xl border border-rose-tint bg-white p-5">
+                <div className="mt-6 flex items-center gap-4 rounded-2xl border border-rose-tint bg-white p-5 xl:hidden">
                   <span className="relative size-16 shrink-0 overflow-hidden rounded-full bg-blush">
                     <Image
                       src={reviewer.photo}
@@ -381,6 +427,35 @@ export default async function GuideArticlePage({
 
               <ShareRow title={guide.title} path={`/guides/${guide.slug}`} />
             </div>
+            <div className="hidden xl:block">
+              {relatedService || reviewer ? (
+                <div className="sticky top-24 space-y-6">
+                  {relatedService ? (
+                    <GuideCtaBlock
+                      service={relatedService}
+                      className="mt-0"
+                    />
+                  ) : null}
+                  {reviewer ? (
+                    <div className="rounded-2xl border border-rose-tint bg-white p-5">
+                      <p className="flex items-center gap-1.5 text-[13px] font-semibold text-teal">
+                        <BadgeCheck className="size-4" aria-hidden="true" />
+                        Medically reviewed
+                      </p>
+                      <p className="mt-2 font-heading text-[19px]/[26px] font-semibold text-ink">
+                        {reviewer.name}
+                      </p>
+                      <p className="text-sm/[20px] text-ink-muted">
+                        {reviewer.qualifications.join(", ")}
+                        {guide.reviewedAt
+                          ? ` · Reviewed ${dateFmt(guide.reviewedAt)}`
+                          : ""}
+                      </p>
+                    </div>
+                  ) : null}
+                </div>
+              ) : null}
+            </div>
           </div>
         </Container>
       </SectionShell>
@@ -407,7 +482,10 @@ export default async function GuideArticlePage({
       ) : null}
 
       {relatedService ? (
-        <SectionShell surface={related.length > 0 ? "white" : "blush"}>
+        <SectionShell
+          surface={related.length > 0 ? "white" : "blush"}
+          className="xl:hidden"
+        >
           <Container className="max-w-2xl">
             <InfoCard
               icon={ScanLine}

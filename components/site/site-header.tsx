@@ -48,7 +48,6 @@ const mobileLinks = [
   { label: "Doctors", href: "/doctors" },
   { label: "Gallery", href: "/gallery" },
   { label: "FAQ", href: "/faq" },
-  { label: "Due Date Calculator", href: "/due-date-calculator" },
   { label: "International Patients", href: "/international-patients" },
   { label: "Contact", href: "/contact" },
 ];

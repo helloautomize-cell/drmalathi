@@ -24,7 +24,6 @@ const quickLinks = [
   { label: "Our Doctors", href: "/doctors" },
   { label: "Gallery", href: "/gallery" },
   { label: "FAQs", href: "/faq" },
-  { label: "Due Date Calculator", href: "/due-date-calculator" },
   { label: "International Patients", href: "/international-patients" },
   { label: "Contact", href: "/contact" },
 ];

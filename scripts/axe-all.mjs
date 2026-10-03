@@ -40,7 +40,6 @@ const ROUTES = [
   "/gallery",
   "/contact",
   "/faq",
-  "/due-date-calculator",
   "/international-patients",
   "/privacy",
   "/terms",

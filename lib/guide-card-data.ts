@@ -16,6 +16,7 @@ export function toGuideCardData(guide: Guide): GuideCardData {
   return {
     slug: guide.slug,
     title: guide.title,
+    cardTitle: guide.cardTitle,
     excerpt: guide.excerpt,
     cover: guide.coverImage,
     categoryName: getCategory(guide.category)?.name ?? guide.category,

@@ -11,7 +11,7 @@ const INLINE_RE =
   /(\[([^\]]+)\]\(([^)\s]+)\)|\*\*([^*]+)\*\*|\*([^*]+)\*)/g;
 
 /** Renders **bold**, *italic* and [links](href) inside paragraph text. */
-function renderInline(text: string): ReactNode[] {
+export function renderInline(text: string): ReactNode[] {
   const nodes: ReactNode[] = [];
   let last = 0;
   let match: RegExpExecArray | null;
@@ -88,7 +88,7 @@ function GuideTable({ block }: { block: Extract<GuideBlock, { type: "table" }> }
               >
                 {row.map((cell, j) => (
                   <td key={j} className="px-5 py-3 text-ink-muted">
-                    {cell}
+                    {renderInline(cell)}
                   </td>
                 ))}
               </tr>
@@ -108,7 +108,7 @@ function GuideTable({ block }: { block: Extract<GuideBlock, { type: "table" }> }
                 <span className="text-sm font-semibold text-primary">
                   {block.headers[j]}:{" "}
                 </span>
-                {cell}
+                {renderInline(cell)}
               </p>
             ))}
           </li>
@@ -172,7 +172,7 @@ export function GuideBlockRenderer({ block }: { block: GuideBlock }) {
     case "image":
       return (
         <figure className="mt-8">
-          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
+          <div className="relative aspect-video overflow-hidden rounded-2xl">
             <Image
               src={block.src}
               alt={block.alt}

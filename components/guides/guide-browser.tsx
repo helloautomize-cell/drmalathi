@@ -4,6 +4,9 @@ import Link from "next/link";
 import { useDeferredValue, useEffect, useState, type ReactNode } from "react";
 import { Search } from "lucide-react";
 import { GuideCard, type GuideCardData } from "@/components/guides/guide-card";
+import { Container } from "@/components/shared/container";
+import { Section } from "@/components/shared/section";
+import { SectionShell } from "@/components/shared/section-shell";
 import { cn } from "cn";
 
 type Category = { slug: string; name: string };
@@ -14,8 +17,8 @@ type Category = { slug: string; name: string };
  * `?q=` in the URL for sharing. When a query is active the server's page
  * slice is replaced by matches across every guide.
  *
- * The search input is the first child so the page can float it up onto the
- * hero boundary with a negative margin.
+ * Renders its own blush hero (passed in as `hero`) so the search input sits
+ * inside the hero under the category chips and the list reads as one block.
  */
 export function GuideBrowser({
   pageItems,
@@ -25,6 +28,7 @@ export function GuideBrowser({
   pageCount,
   basePath,
   featured,
+  hero,
 }: {
   /** Guides for the current page (already paginated by the server). */
   pageItems: GuideCardData[];
@@ -37,6 +41,8 @@ export function GuideBrowser({
   basePath: string;
   /** Featured card rendered between the search input and the grid. */
   featured?: ReactNode;
+  /** Server-rendered hero content (breadcrumb, title, chips) above the input. */
+  hero?: ReactNode;
 }) {
   const [query, setQuery] = useState("");
   const deferred = useDeferredValue(query);
@@ -68,27 +74,29 @@ export function GuideBrowser({
       )
     : pageItems;
 
-  return (
-    <div>
-      <div className="relative max-w-md">
-        <label htmlFor="guide-search" className="sr-only">
-          Search guides
-        </label>
-        <Search
-          className="pointer-events-none absolute top-1/2 left-4 size-5 -translate-y-1/2 text-ink-muted"
-          aria-hidden="true"
-        />
-        <input
-          id="guide-search"
-          type="search"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search guides"
-          className="min-h-12 w-full rounded-full border border-rose-tint bg-white pr-4 pl-11 text-base text-ink shadow-soft placeholder:text-ink-muted focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
-        />
-      </div>
+  const searchInput = (
+    <div className="relative mt-5 max-w-md">
+      <label htmlFor="guide-search" className="sr-only">
+        Search guides
+      </label>
+      <Search
+        className="pointer-events-none absolute top-1/2 left-4 size-5 -translate-y-1/2 text-ink-muted"
+        aria-hidden="true"
+      />
+      <input
+        id="guide-search"
+        type="search"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="Search guides"
+        className="min-h-12 w-full rounded-full border border-rose-tint bg-white pr-4 pl-11 text-base text-ink shadow-soft placeholder:text-ink-muted focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
+      />
+    </div>
+  );
 
-      {!searching && featured ? <div className="mt-6 md:mt-8">{featured}</div> : null}
+  const list = (
+    <>
+      {!searching && featured ? <div>{featured}</div> : null}
 
       {shown.length === 0 ? (
         <div className="mt-6 rounded-2xl border border-rose-tint bg-white p-8 text-center">
@@ -140,6 +148,20 @@ export function GuideBrowser({
           ))}
         </nav>
       ) : null}
-    </div>
+    </>
+  );
+
+  return (
+    <>
+      <Section surface="blush" className="pt-10 pb-8 md:pt-14 md:pb-10">
+        <Container>
+          {hero}
+          {searchInput}
+        </Container>
+      </Section>
+      <SectionShell surface="white" className="py-0! pb-12! md:py-0! md:pb-16!">
+        <Container className="pt-8 md:pt-10">{list}</Container>
+      </SectionShell>
+    </>
   );
 }

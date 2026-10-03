@@ -28,7 +28,7 @@ const ROUTES = [
   "/doctors", "/doctors/dr-malathi-g-prasad",
   "/doctors/dr-revathy-chandrasekharan",
   "/fellowship", "/cme-activities", "/gallery", "/contact", "/faq",
-  "/due-date-calculator", "/international-patients",
+  "/international-patients",
   "/privacy", "/terms",
   "/guides", "/guides/category/pregnancy-scans",
   "/guides/category/screening-and-tests",

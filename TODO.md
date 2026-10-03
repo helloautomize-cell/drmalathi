@@ -44,9 +44,6 @@
       `reportAndNextSteps`, `performedBy` and `faqs` fields in
       `data/services.ts` are new plain-language copy for the rebuilt service
       detail pages and need sign-off.
-- [ ] **DRAFT FOR MEDICAL REVIEW**: due date calculator formulas
-      (`components/calculator/due-date-calculator.tsx`): Naegele's rule with
-      cycle-length adjustment, conception-date and IVF embryo-day corrections.
 - [ ] **DRAFT FOR CLIENT REVIEW**: international patients FAQ answers in
       `app/international-patients/page.tsx`.
 - [ ] About timeline: confirm founding year and the dates of the three
@@ -92,8 +89,8 @@
       Replace each with a licensed asset before launch; `npm run check:images`
       lists them; deploy gate: `REQUIRE_LICENSED_IMAGES=1 npm run check:images`.
       - `hands-baby-feet` (sensitive service pages)
-      - `baby-overhead` (calculator accent, 404)
-      - `pregnancy-test-stork` (services "start here", calculator)
+      - `baby-overhead` (404 page)
+      - `pregnancy-test-stork` (services "start here")
       - `doctor-glowing-fetus` (doctors intro thumbnail)
       - `family-bw-newborn` (CTA band, plum duotone)
       - `family-airy-newborn` (unused now; spare)
@@ -128,8 +125,8 @@
       fellowship, cme-activities, doctors index + 2 profiles, gallery, contact,
       faq, due-date-calculator, international-patients, privacy, terms.
 - [ ] **DRAFT FOR MEDICAL REVIEW**: scan timing windows in
-      `data/scan-schedule.ts` drive the hero "Which scan do I need?" card and
-      the due date calculator. Each window and note needs sign-off.
+      `data/scan-schedule.ts` drive the hero "Which scan do I need?" card.
+      Each window and note needs sign-off.
 - [ ] **DRAFT FOR LEGAL REVIEW**: `/privacy` and `/terms` are boilerplate
       drafts pending client/legal approval.
 - [ ] `baby-overhead` and `doctor-glowing-fetus` sources are only 236px wide.
@@ -141,27 +138,19 @@
       deciding on further work (bundle diet, deferred hydration).
 - [ ] SEO audits must run against a build made with `INDEXABLE=1`; the default
       robots guard disallows indexing outside production.
-- [ ] `/design-system` is dev-only (returns 404 in production) and disallowed in robots.
 - [ ] Trust slots are wired but hidden (`data/trust.ts`, `components/shared/trust-slots.tsx`).
       Populate when real assets exist: Google rating badge (`googleRating`),
       awards/affiliations strip (`affiliations`), video testimonial
       (`videoTestimonial`), virtual tour (`virtualTour`).
 - [ ] Stats band: real figures go in `data/trust.ts` `stats`: scans performed,
       fellows trained, CME events hosted. Hidden until populated.
-- [ ] Newsletter: footer form removed in Phase 3.6 (replaced by a WhatsApp
-      card). `newsletter-form.tsx` + `app/actions/subscribe.ts` are unused;
-      delete or repurpose if newsletters are not needed.
 - [ ] Video testimonial slot renders in the testimonials section when
       `trust.videoTestimonial` is set; needs a real video file + poster.
 - [ ] Newsletter and appointment actions: honeypot + 3s minimum submit time.
       Add real rate limiting at the edge (Vercel) if abuse appears.
-- [ ] **DRAFT FOR MEDICAL REVIEW**: the two full guides in `data/guides.ts`
-      (OSCAR and the anomaly scan) reuse facts already on the site but must be
-      medically reviewed before launch; set `reviewedBy` + `reviewedAt` when
-      approved. `draft: true` flags them for editors.
-- [ ] **Remove before launch**: the four `placeholder-*` guides in
-      `data/guides.ts` (`placeholder: true`) exist only to fill the index grid
-      for review.
+- [ ] **DRAFT FOR MEDICAL REVIEW**: the ten imported guides in
+      `data/guides-blogs.ts` must be medically reviewed before launch; set
+      `reviewedBy` + `reviewedAt` and clear `draft: true` when approved.
 - [ ] **DRAFT FOR CLIENT REVIEW**: confirm the six guide categories in
       `data/guide-categories.ts`.
 - [ ] Guides live in `data/guides.ts` and are read only via `lib/guides.ts`;
