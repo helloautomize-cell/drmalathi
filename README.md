@@ -1,56 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FMC Trichy website
 
-## Getting Started
+Marketing site for **Trichy Fetal Medicine and Fertility Centre**
+(`fmctrichy.com`). Next.js App Router, TypeScript, Tailwind CSS 4,
+static-first pages with lead forms that email via Resend.
 
-First, run the development server:
+## Commands
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev            # local dev server
+npm run build          # production build (runs prebuild checks first)
+npm start              # serve the production build
+npm run lint           # eslint
+npm run check:guides   # guide editorial rules (dashes, PCPNDT phrases)
+npm run check:content  # same rules across all copy, plus markers
+npm run check:launch   # launch gate: BLOCKERS / POST-LAUNCH lists
+npm run process:images # rebuild image variants + data/images.generated.json
+npm run check:images   # manifest/source sanity for image data
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Before you edit copy
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Read `LAUNCH-CHECKLIST.md` first: anything listed there must not be
+  invented or guessed (registration numbers, roles, durations, consent).
+- Editorial rules live in `lib/content-rules.ts` and run on every build:
+  no em/en dashes, no sex-determination phrasing (PCPNDT), no invisible
+  characters, no PLACEHOLDER/TODO/DRAFT markers in rendered copy.
+- Medical review badges only render when a guide has
+  `reviewStatus: "reviewed"` plus `reviewedAt`; drafts never show a
+  reviewer.
+- Facts pending client confirmation are typed-null fields
+  (`data/site.ts`, `data/doctors.ts`, `data/claims.ts`) and render
+  nothing while empty. Preview deploys show pending content; production
+  hides it (`lib/env.ts`).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Images
 
-## Learn More
+`data/image-sources.json` records where every brand image came from and
+its licence. `license: "placeholder"` entries are launch blockers.
+Parked images render nothing. To replace an image: drop the new source
+into `assets/source-images/`, update the entry (source, `license`,
+`licenseSource`, unpark), then `npm run process:images`.
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-## How to swap images
-
-All swappable brand imagery is driven by a single manifest, `data/images.ts`.
-The current set are **unlicensed placeholders**; each must be replaced with a
-licensed asset before launch (see `TODO.md`).
-
-1. Drop the replacement file into `assets/source-images/<slug>.<ext>` (any
-   extension, matched by slug in `data/image-sources.json` via `source`).
-2. Update `data/image-sources.json` if the recipe or `source` path changes,
-   and update `alt`/`focal` in `data/images.ts` for the new photo.
-   Never crop, blur or paint over embedded watermarks or credits; keep them
-   visible or replace the image.
-3. Regenerate variants: `npm run process:images` (writes AVIF + WebP at
-   480/768/1080px to `public/images/brand`, plus blur placeholders and
-   `data/images.generated.json`).
-4. Flip `license` to `"licensed"` in `data/image-sources.json`.
-5. Verify: `npm run check:images` lists remaining placeholders. The deploy
-   gate `REQUIRE_LICENSED_IMAGES=1 npm run check:images` fails while any
-   placeholder or unprocessed source remains.
+Vercel. Production indexing requires `INDEXABLE=1` at build time;
+previews are `noindex`. `npm run check:launch` fails a production build
+while any blocker is open. See `docs/` for the audit, redirect map and
+content requests.

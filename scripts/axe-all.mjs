@@ -44,6 +44,8 @@ const ROUTES = [
   "/international-patients",
   "/privacy",
   "/terms",
+  "/editorial-policy",
+  "/accessibility",
 ];
 
 if (!CHROME) {
