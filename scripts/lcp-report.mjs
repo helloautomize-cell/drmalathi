@@ -41,7 +41,10 @@ for (const route of ROUTES) {
       (phaseItem?.items ?? []).map((p) => [p.subpart, Math.round(p.duration)])
     );
     console.log(`== ${route} ==`);
-    console.log(`  LCP ${a["largest-contentful-paint"].displayValue} | ${isImg ? "IMAGE" : "TEXT/other"} | ${node.nodeLabel ?? node.selector ?? "?"}`);
+    console.log(
+      `  perf=${Math.round((r.lhr.categories.performance.score ?? 0) * 100)} | LCP ${a["largest-contentful-paint"].displayValue} | TBT ${a["total-blocking-time"].displayValue} | CLS ${a["cumulative-layout-shift"].displayValue} | FCP ${a["first-contentful-paint"].displayValue}`
+    );
+    console.log(`  ${isImg ? "IMAGE" : "TEXT/other"} | ${node.nodeLabel ?? node.selector ?? "?"}`);
     if (isImg) {
       console.log(
         `  served: w=${req?.url.match(/[?&]w=(\d+)/)?.[1] ?? "?"} mime=${req?.mimeType ?? "?"} transfer=${req ? Math.round(req.transferSize / 1024) + " kB" : "?"}`
