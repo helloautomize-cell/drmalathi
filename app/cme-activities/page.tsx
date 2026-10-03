@@ -20,7 +20,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "CME Activities",
   description:
-    "Continuing medical education activities at Trichy Fetal Medicine and Fertility Centre, including the ISUOG Trichy Materno-Fetal Conclave.",
+    "Continuing medical education activities at Trichy Fetal Medicine and Fertility Centre: conclaves, workshops and hands-on training for doctors.",
   alternates: { canonical: "/cme-activities" },
 };
 
@@ -38,7 +38,7 @@ export default function CmeActivitiesPage() {
       <PageHero
         eyebrow="Education"
         title="CME activities"
-        intro="The centre regularly hosts continuing medical education programs, workshops, and masterclasses in fetal medicine."
+        intro="The centre regularly hosts continuing medical education programmes, workshops, and masterclasses in fetal medicine."
         crumbs={[{ label: "Home", href: "/" }, { label: "CME Activities" }]}
       />
 
@@ -101,7 +101,7 @@ export default function CmeActivitiesPage() {
                             className="size-4 shrink-0"
                             aria-hidden="true"
                           />
-                          View program (PDF)
+                          View programme (PDF)
                         </a>
                       ) : null}
                     </div>

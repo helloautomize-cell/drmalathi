@@ -1,6 +1,5 @@
 import type { Course } from "@/data/courses";
 import { doctors } from "@/data/doctors";
-import { getBrandImage } from "@/data/images";
 import type { Service } from "@/data/services";
 import { site } from "@/data/site";
 
@@ -8,6 +7,33 @@ const telephones = [
   ...site.phones.map((p) => p.href.replace("tel:", "")),
   site.internationalPhone.href.replace("tel:", ""),
 ];
+
+/**
+ * Reference to the clinic entity. Schema consumers must include name and url
+ * alongside @id so the reference is self-describing even if the entity node
+ * is missing from the page.
+ */
+export function clinicRef() {
+  return {
+    "@type": "MedicalClinic",
+    "@id": `${site.url}/#clinic`,
+    name: site.name,
+    url: site.url,
+  };
+}
+
+/** Publisher for Article schema: Organization with name and logo. */
+export function publisherRef() {
+  return {
+    "@type": "Organization",
+    name: site.name,
+    url: site.url,
+    logo: {
+      "@type": "ImageObject",
+      url: `${site.url}/images/logo-transparent.png`,
+    },
+  };
+}
 
 export function medicalClinicSchema() {
   return {
@@ -17,7 +43,7 @@ export function medicalClinicSchema() {
     name: site.name,
     url: site.url,
     description: site.description,
-    image: `${site.url}${getBrandImage("family-airy-newborn").src}`,
+    image: `${site.url}/images/family-cutout.webp`,
     logo: `${site.url}/images/logo-transparent.png`,
     telephone: telephones,
     email: site.email,
@@ -36,6 +62,21 @@ export function medicalClinicSchema() {
       opens: "09:00",
       closes: "21:00",
     },
+    ...(site.foundingDate ? { foundingDate: site.foundingDate } : {}),
+    ...(site.geo
+      ? {
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: site.geo.latitude,
+            longitude: site.geo.longitude,
+          },
+        }
+      : {}),
+    ...(site.hasMap ? { hasMap: site.hasMap } : {}),
+    ...(site.areaServed.length
+      ? { areaServed: site.areaServed }
+      : {}),
+    ...(site.sameAs.length ? { sameAs: site.sameAs } : {}),
     employee: doctors.map((d) => ({
       "@type": "Physician",
       name: d.name,
@@ -67,7 +108,7 @@ export function physicianSchema(doctor: (typeof doctors)[number]) {
     medicalSpecialty: "Obstetric",
     qualifications: doctor.qualifications.join(", "),
     ...(!doctor.roleIsPlaceholder ? { jobTitle: doctor.role } : {}),
-    worksFor: { "@type": "MedicalClinic", "@id": `${site.url}/#clinic` },
+    worksFor: clinicRef(),
   };
 }
 
@@ -77,7 +118,7 @@ export function courseSchema(course: Course) {
     "@type": "Course",
     name: course.title,
     description: `${course.title} for ${course.eligibility.join(" or ")}.`,
-    provider: { "@type": "MedicalClinic", "@id": `${site.url}/#clinic` },
+    provider: clinicRef(),
     ...(course.educationalCredentialConfirmed
       ? { educationalCredentialAwarded: course.title }
       : {}),
@@ -96,7 +137,7 @@ export function medicalProcedureSchema(service: Service) {
     ...(service.reportAndNextSteps
       ? { followup: service.reportAndNextSteps }
       : {}),
-    provider: { "@type": "MedicalClinic", "@id": `${site.url}/#clinic` },
+    provider: clinicRef(),
   };
 }
 
