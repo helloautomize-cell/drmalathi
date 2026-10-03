@@ -11,14 +11,19 @@ export const metadata: Metadata = {
   description:
     "Terms governing the use of the Trichy Fetal Medicine and Fertility Centre website, including educational content, appointments and PCPNDT compliance.",
   alternates: { canonical: "/terms" },
+  robots: { index: !legal.terms.draftPendingReview },
 };
 
 const toc = [
   { id: "educational-content", label: "Educational content" },
   { id: "appointments", label: "Appointments" },
   { id: "no-sex-determination", label: "No sex determination" },
+  { id: "your-details", label: "The details you submit" },
+  { id: "linked-services", label: "Linked services" },
   { id: "intellectual-property", label: "Intellectual property" },
   { id: "accuracy", label: "Accuracy" },
+  { id: "liability", label: "Liability" },
+  { id: "governing-law", label: "Governing law" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -67,6 +72,24 @@ export default function TermsPage() {
               with such requests.
             </p>
 
+            <h2 id="your-details" className={h2}>The details you submit</h2>
+            <p>
+              When you use our forms you confirm the details you provide are
+              yours and accurate, and you consent to the centre contacting you
+              about your enquiry. How that data is handled is described in the{" "}
+              <a href="/privacy" className="link">
+                Privacy Policy
+              </a>
+              .
+            </p>
+
+            <h2 id="linked-services" className={h2}>Linked services</h2>
+            <p>
+              This site links to third-party services such as WhatsApp and
+              mapping providers. Their own terms and privacy policies apply to
+              anything you do inside those services.
+            </p>
+
             <h2 id="intellectual-property" className={h2}>Intellectual property</h2>
             <p>
               Text, images, and other content on this website belong to {site.name}
@@ -78,6 +101,21 @@ export default function TermsPage() {
               We work to keep information current, but services, timings, and
               details may change. Please confirm specifics with the centre
               before relying on them.
+            </p>
+
+            <h2 id="liability" className={h2}>Liability</h2>
+            <p>
+              The website is provided as is. To the extent the law allows, the
+              centre is not liable for decisions taken in reliance on website
+              content, for interruptions to the site, or for the conduct of
+              linked third-party services.
+            </p>
+
+            <h2 id="governing-law" className={h2}>Governing law</h2>
+            <p>
+              These terms are governed by the laws of India, and the courts at
+              Tiruchirappalli, Tamil Nadu have jurisdiction over disputes
+              arising from them.
             </p>
 
             <h2 id="contact" className={h2}>Contact</h2>
