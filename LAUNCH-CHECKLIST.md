@@ -2,7 +2,9 @@
 
 Generated from `npm run check:launch` (keep both in sync). A production
 deploy must not ship while anything remains under **Blockers** —
-`check:launch` exits non-zero when `VERCEL_ENV=production`.
+`check:launch` runs inside every `npm run build` and exits non-zero when
+`LAUNCH_GATE=1`. **Set `LAUNCH_GATE=1` in Vercel production before attaching
+fmctrichy.com.**
 
 Blockers are only things that ship broken or untrue. Parked and
 production-hidden items live under Post-launch, so the gate is never

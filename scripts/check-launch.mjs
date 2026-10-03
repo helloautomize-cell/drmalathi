@@ -178,13 +178,13 @@ console.log(`\nPOST-LAUNCH (${postLaunch.length})`);
 for (const p of postLaunch) console.log(`  - ${p}`);
 if (!postLaunch.length) console.log("  none");
 
-const prod = process.env.VERCEL_ENV === "production";
-if (blockers.length && prod) {
+const gateOn = process.env.LAUNCH_GATE === "1";
+if (blockers.length && gateOn) {
   console.error(
-    `\n${blockers.length} blocker(s) present and VERCEL_ENV=production: failing.`
+    `\n${blockers.length} blocker(s) present and LAUNCH_GATE=1: failing.`
   );
   process.exit(1);
 }
 if (blockers.length) {
-  console.log("\nBlockers present. Non-production run: exiting 0.");
+  console.log("\nBlockers present. LAUNCH_GATE unset: exiting 0.");
 }
