@@ -85,6 +85,9 @@ export default function CourseEnquiryDialogContent({
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    // Capture the form now: currentTarget is null after the synthetic event
+    // finishes, which is past the dynamic imports below.
+    const form = event.currentTarget;
     const parsed = validateCourseEnquiry(values, {
       courseSlugs,
       qualificationValues,
@@ -97,7 +100,7 @@ export default function CourseEnquiryDialogContent({
     setIsSubmitting(true);
     try {
       const { toast } = await import("sonner");
-      const formData = new FormData(event.currentTarget);
+      const formData = new FormData(form);
       formData.set("qualification", parsed.data.qualification);
       formData.set("course", parsed.data.course);
       formData.set("consent", values.consent ? "on" : "");

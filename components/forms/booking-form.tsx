@@ -68,6 +68,9 @@ export function BookingForm({
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    // Capture the form now: currentTarget is null after the synthetic event
+    // finishes, which is past the dynamic imports below.
+    const form = event.currentTarget;
     const parsed = validateLead(values, { doctorSlugs, serviceSlugs });
     if (!parsed.ok) {
       setErrors(parsed.errors);
@@ -79,7 +82,7 @@ export function BookingForm({
       // Build from the live form so the honeypot value survives whatever a
       // bot typed into it.
       const { toast } = await import("sonner");
-      const formData = new FormData(event.currentTarget);
+      const formData = new FormData(form);
       formData.set("doctor", parsed.data.doctor);
       formData.set("service", parsed.data.service);
       formData.set("source", source);

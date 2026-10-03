@@ -62,6 +62,9 @@ export function QuickConsultForm() {
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    // Capture the form now: currentTarget is null after the synthetic event
+    // finishes, which is past the dynamic imports below.
+    const form = event.currentTarget;
     const parsed = validateLead(values, { doctorSlugs, serviceSlugs });
     if (!parsed.ok) {
       setErrors(parsed.errors);
@@ -71,7 +74,7 @@ export function QuickConsultForm() {
     setIsSubmitting(true);
     try {
       const { toast } = await import("sonner");
-      const formData = new FormData(event.currentTarget);
+      const formData = new FormData(form);
       formData.set("doctor", parsed.data.doctor);
       formData.set("service", parsed.data.service);
       formData.set("preferredTime", parsed.data.preferredTime);
