@@ -11,6 +11,7 @@ import { UtilityBar } from "@/components/site/utility-bar";
 import { WhatsAppFloat } from "@/components/site/whatsapp-float";
 import { site } from "@/data/site";
 import { hasPublishedGuides } from "@/lib/guides";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -79,6 +80,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <WhatsAppFloat />
           <LazyToaster />
         </TooltipProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
