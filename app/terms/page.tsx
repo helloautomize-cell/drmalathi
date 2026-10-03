@@ -4,11 +4,12 @@ import { OnThisPage } from "@/components/shared/on-this-page";
 import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
 import { site } from "@/data/site";
+import { legal, legalDateLabel } from "@/data/legal";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
   description:
-    "Terms governing the use of the Trichy Fetal Medicine and Fertility Centre website.",
+    "Terms governing the use of the Trichy Fetal Medicine and Fertility Centre website, including educational content, appointments and PCPNDT compliance.",
   alternates: { canonical: "/terms" },
 };
 
@@ -29,7 +30,7 @@ export default function TermsPage() {
       <PageHero
         eyebrow="Legal"
         title="Terms of Use"
-        intro={`Last updated: ${new Date().toLocaleDateString("en-IN", { month: "long", year: "numeric" })}`}
+        intro={`Last updated: ${legalDateLabel(legal.terms.lastUpdated)}`}
         crumbs={[{ label: "Home", href: "/" }, { label: "Terms" }]}
       />
       <Section>
