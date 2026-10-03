@@ -35,7 +35,13 @@ import {
   readingTime,
 } from "@/lib/guides";
 import { imageBlurDataURL } from "@/lib/image-placeholder";
-import { breadcrumbSchema, clinicRef, faqSchema, publisherRef } from "@/lib/schema";
+import {
+  breadcrumbSchema,
+  clinicRef,
+  faqSchema,
+  personRef,
+  publisherRef,
+} from "@/lib/schema";
 import type { GuideBlock } from "@/types/guide";
 
 export function generateStaticParams() {
@@ -124,13 +130,7 @@ export default async function GuideArticlePage({
         url: `${site.url}/guides/${guide.slug}`,
         image: `${site.url}${guide.coverImage.src}`,
         lastReviewed: guide.reviewedAt,
-        reviewedBy: {
-          "@type": "Physician",
-          name: reviewer.name,
-          ...(reviewer.hasProfile
-            ? { url: `${site.url}/doctors/${reviewer.slug}` }
-            : {}),
-        },
+        reviewedBy: personRef(reviewer),
         about: clinicRef(),
       }
     : {

@@ -77,11 +77,7 @@ export function medicalClinicSchema() {
       ? { areaServed: site.areaServed }
       : {}),
     ...(site.sameAs.length ? { sameAs: site.sameAs } : {}),
-    employee: doctors.map((d) => ({
-      "@type": "Physician",
-      name: d.name,
-      ...(d.hasProfile ? { url: `${site.url}/doctors/${d.slug}` } : {}),
-    })),
+    employee: doctors.map((d) => personRef(d)),
   };
 }
 
@@ -98,17 +94,71 @@ export function breadcrumbSchema(items: { label: string; href: string }[]) {
   };
 }
 
-export function physicianSchema(doctor: (typeof doctors)[number]) {
+type DoctorRecord = (typeof doctors)[number];
+
+/** Stable @id for a doctor; guide reviewedBy and clinic employee point here. */
+export function personId(doctor: DoctorRecord): string {
+  return `${site.url}/doctors/${doctor.slug}#person`;
+}
+
+/** Compact Person reference used wherever the doctor is named, not described. */
+export function personRef(doctor: DoctorRecord) {
+  return {
+    "@type": "Person",
+    "@id": personId(doctor),
+    name: doctor.name,
+    ...(doctor.hasProfile ? { url: `${site.url}/doctors/${doctor.slug}` } : {}),
+  };
+}
+
+/**
+ * A doctor is a Person in schema.org (Physician is an organization type).
+ * Optional fields render only when the underlying data is set: jobTitle
+ * waits for a confirmed role, memberOf for memberships, identifier for the
+ * medical council registration number.
+ */
+export function personSchema(doctor: DoctorRecord) {
   return {
     "@context": "https://schema.org",
-    "@type": "Physician",
+    "@type": "Person",
+    "@id": personId(doctor),
     name: doctor.name,
     ...(doctor.hasProfile ? { url: `${site.url}/doctors/${doctor.slug}` } : {}),
     image: `${site.url}${doctor.photo}`,
-    medicalSpecialty: "Obstetric",
-    qualifications: doctor.qualifications.join(", "),
     ...(!doctor.roleIsPlaceholder ? { jobTitle: doctor.role } : {}),
     worksFor: clinicRef(),
+    ...(doctor.trainedAt.length
+      ? {
+          alumniOf: doctor.trainedAt.map((institution) => ({
+            "@type": "EducationalOrganization",
+            name: institution,
+          })),
+        }
+      : {}),
+    hasCredential: doctor.qualifications.map((qualification) => ({
+      "@type": "EducationalOccupationalCredential",
+      name: qualification,
+    })),
+    ...(doctor.expertise.length
+      ? { knowsAbout: doctor.expertise.map((e) => e.label) }
+      : {}),
+    ...(doctor.memberships.length
+      ? {
+          memberOf: doctor.memberships.map((body) => ({
+            "@type": "Organization",
+            name: body,
+          })),
+        }
+      : {}),
+    ...(doctor.registration
+      ? {
+          identifier: {
+            "@type": "PropertyValue",
+            propertyID: doctor.registration.council,
+            value: doctor.registration.number,
+          },
+        }
+      : {}),
   };
 }
 

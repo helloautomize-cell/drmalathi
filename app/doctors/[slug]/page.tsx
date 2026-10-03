@@ -13,7 +13,7 @@ import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
 import { doctors } from "@/data/doctors";
 import { site } from "@/data/site";
-import { breadcrumbSchema, physicianSchema } from "@/lib/schema";
+import { breadcrumbSchema, personSchema } from "@/lib/schema";
 
 export function generateStaticParams() {
   return doctors.filter((doctor) => doctor.hasProfile).map((doctor) => ({ slug: doctor.slug }));
@@ -43,7 +43,7 @@ export default async function DoctorDetailPage({
 
   return (
     <>
-      <JsonLd data={physicianSchema(doctor)} />
+      <JsonLd data={personSchema(doctor)} />
       <JsonLd
         data={breadcrumbSchema([
           { label: "Home", href: "/" },

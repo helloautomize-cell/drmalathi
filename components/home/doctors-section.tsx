@@ -20,7 +20,7 @@ import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
 import { doctors, type Doctor, type DoctorExpertise } from "@/data/doctors";
 import { showPending } from "@/lib/env";
 import { site } from "@/data/site";
-import { physicianSchema } from "@/lib/schema";
+import { personSchema } from "@/lib/schema";
 
 const highlightIcons = [Award, GraduationCap, Microscope];
 
@@ -272,7 +272,7 @@ export function DoctorsSection() {
   return (
     <Section id="doctors" surface="white" className="md:bg-white">
       {doctors.map((doctor) => (
-        <JsonLd key={doctor.slug} data={physicianSchema(doctor)} />
+        <JsonLd key={doctor.slug} data={personSchema(doctor)} />
       ))}
       <Container>
         <SectionHeader
