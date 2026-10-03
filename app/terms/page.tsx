@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/shared/container";
-import { PageHeader } from "@/components/shared/page-header";
+import { OnThisPage } from "@/components/shared/on-this-page";
+import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
 import { site } from "@/data/site";
 
@@ -11,24 +12,36 @@ export const metadata: Metadata = {
   alternates: { canonical: "/terms" },
 };
 
+const toc = [
+  { id: "educational-content", label: "Educational content" },
+  { id: "appointments", label: "Appointments" },
+  { id: "no-sex-determination", label: "No sex determination" },
+  { id: "intellectual-property", label: "Intellectual property" },
+  { id: "accuracy", label: "Accuracy" },
+  { id: "contact", label: "Contact" },
+];
+
+const h2 = "scroll-mt-24 text-xl font-semibold text-ink";
+
 export default function TermsPage() {
   return (
     <>
-      <PageHeader
+      <PageHero
         eyebrow="Legal"
         title="Terms of Use"
-        subtitle={`Last updated: ${new Date().toLocaleDateString("en-IN", { month: "long", year: "numeric" })}`}
+        intro={`Last updated: ${new Date().toLocaleDateString("en-IN", { month: "long", year: "numeric" })}`}
         crumbs={[{ label: "Home", href: "/" }, { label: "Terms" }]}
       />
       <Section>
         <Container className="max-w-3xl">
-          <div className="space-y-6 text-muted-foreground">
+          <OnThisPage items={toc} />
+          <div className="mt-6 space-y-6 text-base text-pretty text-muted-foreground md:mt-0">
             <p>
               By using this website you accept these terms. This is a draft
               pending legal and client review.
             </p>
 
-            <h2 className="text-xl font-semibold text-ink">Educational content</h2>
+            <h2 id="educational-content" className={h2}>Educational content</h2>
             <p>
               The content on this website is provided for general education. It
               is not a substitute for professional medical advice, diagnosis, or
@@ -37,7 +50,7 @@ export default function TermsPage() {
               situation.
             </p>
 
-            <h2 className="text-xl font-semibold text-ink">Appointments</h2>
+            <h2 id="appointments" className={h2}>Appointments</h2>
             <p>
               Submitting a request through this website does not confirm an
               appointment. Our team will contact you to confirm a time. In an
@@ -45,7 +58,7 @@ export default function TermsPage() {
               {site.phones[0].label} or go to the nearest hospital.
             </p>
 
-            <h2 className="text-xl font-semibold text-ink">No sex determination</h2>
+            <h2 id="no-sex-determination" className={h2}>No sex determination</h2>
             <p>
               In full compliance with the PCPNDT Act, 1994, this centre does not
               perform or support the determination or disclosure of the sex of
@@ -53,20 +66,20 @@ export default function TermsPage() {
               with such requests.
             </p>
 
-            <h2 className="text-xl font-semibold text-ink">Intellectual property</h2>
+            <h2 id="intellectual-property" className={h2}>Intellectual property</h2>
             <p>
               Text, images, and other content on this website belong to {site.name}
               and may not be reproduced without written permission.
             </p>
 
-            <h2 className="text-xl font-semibold text-ink">Accuracy</h2>
+            <h2 id="accuracy" className={h2}>Accuracy</h2>
             <p>
               We work to keep information current, but services, timings, and
               details may change. Please confirm specifics with the centre
               before relying on them.
             </p>
 
-            <h2 className="text-xl font-semibold text-ink">Contact</h2>
+            <h2 id="contact" className={h2}>Contact</h2>
             <p>
               Questions about these terms can be sent to{" "}
               <a href={`mailto:${site.email}`} className="link">

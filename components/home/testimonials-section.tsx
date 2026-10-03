@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { TestimonialCard } from "@/components/cards/testimonial-card";
 import { Container } from "@/components/shared/container";
+import { MobileCarousel } from "@/components/shared/mobile-carousel";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
 import { Button } from "@/components/ui/button";
@@ -11,18 +12,20 @@ export function TestimonialsSection() {
   const video = trust.videoTestimonial;
   const googleReviewsUrl = trust.googleReviewsUrl;
   return (
-    <Section>
+    <Section surface="white" className="md:bg-white">
       <Container>
         <SectionHeader
           eyebrow="Patient stories"
           title="What families say about us"
           subtitle="Real words from families we have cared for."
         />
-        <div className="grid gap-6 md:grid-cols-3">
-          {testimonials.map((testimonial) => (
+        <MobileCarousel
+          label="Patient testimonials"
+          className="md:grid md:grid-cols-3 md:gap-6"
+          items={testimonials.map((testimonial) => (
             <TestimonialCard key={testimonial.name} testimonial={testimonial} />
           ))}
-        </div>
+        />
         {/* Renders only when NEXT_PUBLIC_GOOGLE_REVIEWS_URL is set. Never show
             a rating or count here unless it comes from that live listing. */}
         {googleReviewsUrl ? (

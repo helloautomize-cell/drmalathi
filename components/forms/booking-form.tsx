@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { CheckCircle2, Phone } from "lucide-react";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
@@ -11,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
 import {
   Select,
   SelectContent,
@@ -20,6 +22,7 @@ import {
 } from "@/components/ui/select";
 import { doctors } from "@/data/doctors";
 import { services } from "@/data/services";
+import { site } from "@/data/site";
 
 const bookingSchema = z.object({
   name: z.string().trim().min(2, "Please enter your name.").max(80),
@@ -42,14 +45,17 @@ export function BookingForm({
   service = "any",
   doctor = "any",
   onDone,
+  stickySubmit = false,
 }: {
   /** Where the request came from; sent with the lead for context. */
   source: string;
   service?: string;
   doctor?: string;
   onDone?: () => void;
+  stickySubmit?: boolean;
 }) {
   const [startedAt] = useState(() => new Date().toISOString());
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const {
     register,
     control,
@@ -82,10 +88,43 @@ export function BookingForm({
     if (result.ok) {
       toast.success(result.message);
       reset();
-      onDone?.();
+      setSuccessMessage(result.message);
     } else {
       toast.error(result.message);
     }
+  }
+
+  if (successMessage) {
+    return (
+      <div className="py-5 text-center" role="status">
+        <span className="mx-auto flex size-14 items-center justify-center rounded-full bg-teal-tint text-teal">
+          <CheckCircle2 className="size-7" aria-hidden="true" />
+        </span>
+        <h3 className="mt-4 text-xl font-semibold text-ink">Request received</h3>
+        <p className="mt-2 text-base text-muted-foreground">
+          {successMessage} Our team will review your details and call you to confirm the appointment.
+        </p>
+        <div className="mt-6 grid gap-3 sm:grid-cols-2">
+          <Button nativeButton={false} render={<a href={site.phones[0].href} />}>
+            <Phone aria-hidden="true" />
+            Call
+          </Button>
+          <Button
+            variant="outline"
+            nativeButton={false}
+            render={<a href={site.whatsapp.messageHref} target="_blank" rel="noopener noreferrer" />}
+          >
+            <WhatsAppIcon aria-hidden="true" />
+            WhatsApp us
+          </Button>
+        </div>
+        {onDone ? (
+          <button type="button" onClick={onDone} className="mt-5 text-sm font-semibold text-primary underline underline-offset-4">
+            Close
+          </button>
+        ) : null}
+      </div>
+    );
   }
 
   return (
@@ -120,6 +159,7 @@ export function BookingForm({
         <Input
           id="bf-phone"
           type="tel"
+          inputMode="tel"
           placeholder="+91"
           autoComplete="tel"
           aria-invalid={!!errors.phone}
@@ -217,14 +257,16 @@ export function BookingForm({
         <p className="text-sm text-destructive">{errors.consent.message}</p>
       ) : null}
 
-      <Button
-        type="submit"
-        size="lg"
-        disabled={isSubmitting}
-        className="w-full bg-primary text-white hover:bg-primary-hover"
-      >
-        {isSubmitting ? "Sending..." : "Request a callback"}
-      </Button>
+      <div className={stickySubmit ? "max-md:sticky max-md:bottom-0 max-md:z-10 max-md:-mx-5 max-md:bg-white max-md:px-5 max-md:pt-3 max-md:pb-[calc(0.25rem+env(safe-area-inset-bottom))]" : undefined}>
+        <Button
+          type="submit"
+          size="lg"
+          disabled={isSubmitting}
+          className="w-full bg-primary text-white hover:bg-primary-hover"
+        >
+          {isSubmitting ? "Sending..." : "Book appointment"}
+        </Button>
+      </div>
     </form>
   );
 }

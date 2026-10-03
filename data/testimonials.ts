@@ -1,4 +1,4 @@
-// TODO: ask the client for more consented written reviews — these three are
+// TODO: ask the client for more consented written reviews. These three are
 // the only reviews currently approved for use on the site.
 
 export type Testimonial = {

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { imageBlurDataURL } from "@/lib/image-placeholder";
 import {
   Dialog,
   DialogContent,
@@ -42,6 +43,8 @@ export function BrochureDialog({
             alt={alt}
             fill
             sizes="(min-width: 768px) 720px, 100vw"
+            placeholder="blur"
+            blurDataURL={imageBlurDataURL}
             className="object-contain"
           />
         </div>

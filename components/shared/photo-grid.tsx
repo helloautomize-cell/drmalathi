@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { imageBlurDataURL } from "@/lib/image-placeholder";
 import { Lightbox, type LightboxImage } from "@/components/shared/lightbox";
 
 /** Thumbnail grid that opens the shared Lightbox. Used on the CME page. */
@@ -28,6 +29,8 @@ export function PhotoGrid({ images }: { images: LightboxImage[] }) {
                 fill
                 loading={i < 4 ? "eager" : "lazy"}
                 sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
+                placeholder="blur"
+                blurDataURL={imageBlurDataURL}
                 className="object-cover transition-transform duration-300 hover:scale-105 motion-reduce:hover:scale-100"
               />
             </button>

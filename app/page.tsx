@@ -5,6 +5,7 @@ import { FaqSection } from "@/components/home/faq-section";
 import { FellowshipHighlight } from "@/components/home/fellowship-highlight";
 import { FirstsStrip } from "@/components/home/firsts-strip";
 import { GalleryPreview } from "@/components/home/gallery-preview";
+import { GuidesSection } from "@/components/home/guides-section";
 import { HelpRow } from "@/components/home/help-row";
 import { Hero } from "@/components/home/hero";
 import { ServicesSection } from "@/components/home/services-section";
@@ -23,25 +24,54 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+// Below md the sections follow the mobile story order (CSS order); at md and
+// up the wrappers collapse via `md:contents` so the desktop order is untouched.
 export default function HomePage() {
   return (
     <>
       <JsonLd data={medicalClinicSchema()} />
-      <Hero />
-      <FirstsStrip />
-      <HelpRow />
-      <ServicesSection />
-      <DoctorsSection />
-      <FellowshipHighlight />
-      <WhyChooseUs />
-      <VisitSteps />
-      <TestimonialsSection />
-      <GalleryPreview />
-      <TrustSlots />
-      <Section className="py-14 md:py-16">
-        <CTABand />
-      </Section>
-      <FaqSection />
+      <div className="flex flex-col md:contents">
+        <Hero />
+        <FirstsStrip />
+        <div className="order-2 md:contents">
+          <HelpRow />
+        </div>
+        <div className="order-3 md:contents">
+          <ServicesSection />
+        </div>
+        <div className="order-4 md:contents">
+          <DoctorsSection />
+        </div>
+        <div className="order-5 md:contents">
+          <WhyChooseUs />
+        </div>
+        <div className="order-6 md:contents">
+          <TestimonialsSection />
+        </div>
+        <div className="order-7 md:contents">
+          <VisitSteps />
+        </div>
+        <div className="order-8 md:contents">
+          <FellowshipHighlight />
+        </div>
+        <div className="order-9 md:contents">
+          <GalleryPreview />
+        </div>
+        <div className="order-10 md:contents">
+          <TrustSlots />
+        </div>
+        <div className="order-11 md:contents">
+          <GuidesSection />
+        </div>
+        <div className="order-12 md:contents">
+          <FaqSection />
+        </div>
+        <div className="order-13 md:contents">
+          <Section surface="blush" className="md:bg-white md:py-16">
+            <CTABand />
+          </Section>
+        </div>
+      </div>
     </>
   );
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Globe2, Mail, MessageCircle, Phone, Plane, Video } from "lucide-react";
+import { CheckCircle2, Globe2, Mail, MessageCircle, Phone, Plane, Video } from "lucide-react";
 import { CTABand } from "@/components/cards/cta-band";
 import { BookingForm } from "@/components/forms/booking-form";
 import { IstHoursNote } from "@/components/international/ist-hours-note";
@@ -13,9 +13,10 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/container";
-import { PageHeader } from "@/components/shared/page-header";
+import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
+import { StepsList } from "@/components/shared/steps-list";
 import { site } from "@/data/site";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 
@@ -76,10 +77,10 @@ export default function InternationalPatientsPage() {
         ])}
       />
       <JsonLd data={faqSchema(faqs)} />
-      <PageHeader
+      <PageHero
         eyebrow="International patients"
         title="Visiting us from abroad"
-        subtitle="Families travel to Trichy for our specialist fetal medicine care. A dedicated line and pre-visit reviews make the trip easier."
+        intro="Families travel to Trichy for our specialist fetal medicine care. A dedicated line and pre-visit reviews make the trip easier."
         crumbs={[{ label: "Home", href: "/" }, { label: "International Patients" }]}
       />
 
@@ -89,7 +90,15 @@ export default function InternationalPatientsPage() {
             align="left"
             title="How it works"
           />
-          <div className="grid gap-5 md:grid-cols-3">
+          {/* Mobile: shared vertical stepper. */}
+          <div className="md:hidden">
+            <StepsList
+              steps={steps.map((s) => ({ title: s.title, text: s.text }))}
+              className="max-w-none"
+            />
+          </div>
+          {/* Desktop: step cards, unchanged. */}
+          <div className="hidden gap-5 md:grid md:grid-cols-3">
             {steps.map((s, i) => (
               <div
                 key={s.title}
@@ -175,11 +184,21 @@ export default function InternationalPatientsPage() {
               </span>
               <h3 className="text-lg font-semibold text-ink">What to send us</h3>
             </div>
-            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-muted-foreground">
-              <li>Your latest scan reports and any earlier ultrasound images.</li>
-              <li>Relevant medical records: blood tests, prescriptions, discharge summaries.</li>
-              <li>Your referral letter, if your doctor provided one.</li>
-              <li>Your expected travel window so we can group appointments together.</li>
+            <ul className="mt-4 space-y-2.5 text-sm text-muted-foreground max-md:space-y-3 md:list-disc md:pl-5">
+              {[
+                "Your latest scan reports and any earlier ultrasound images.",
+                "Relevant medical records: blood tests, prescriptions, discharge summaries.",
+                "Your referral letter, if your doctor provided one.",
+                "Your expected travel window so we can group appointments together.",
+              ].map((item) => (
+                <li key={item} className="max-md:flex max-md:items-start max-md:gap-2.5">
+                  <CheckCircle2
+                    className="mt-0.5 hidden size-4 shrink-0 text-teal max-md:block"
+                    aria-hidden="true"
+                  />
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </Container>
@@ -194,7 +213,7 @@ export default function InternationalPatientsPage() {
           <Accordion className="mx-auto max-w-3xl">
             {faqs.map((faq) => (
               <AccordionItem key={faq.question} value={faq.question}>
-                <AccordionTrigger>{faq.question}</AccordionTrigger>
+                <AccordionTrigger className="max-md:min-h-14">{faq.question}</AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">{faq.answer}</p>
                 </AccordionContent>
@@ -204,9 +223,9 @@ export default function InternationalPatientsPage() {
         </Container>
       </Section>
 
-      <Section className="pt-0">
+      <Section surface="blush" className="pt-0 md:bg-white">
         <Container>
-          <div className="mx-auto max-w-xl rounded-2xl border border-rose-tint bg-white p-6 shadow-soft sm:p-8">
+          <div className="mx-auto max-w-xl rounded-2xl border border-rose-tint bg-white p-5 shadow-soft sm:p-8">
             <SectionHeader
               align="left"
               title="Send us your details"

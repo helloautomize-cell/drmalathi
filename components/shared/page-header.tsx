@@ -17,9 +17,9 @@ export function PageHeader({
 }) {
   return (
     <header className="border-b border-rose-tint bg-blush">
-      <Container className="py-10 md:py-14">
+      <Container className="py-12 text-center md:py-14 md:text-left">
         <nav aria-label="Breadcrumb">
-          <ol className="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
+          <ol className="flex flex-wrap items-center justify-center gap-1.5 text-sm text-muted-foreground md:justify-start">
             {crumbs.map((c, i) => {
               const last = i === crumbs.length - 1;
               return (
@@ -40,13 +40,13 @@ export function PageHeader({
           </ol>
         </nav>
         {eyebrow ? (
-          <p className="mt-5 mb-2 text-sm font-bold tracking-[0.14em] uppercase text-primary">
+          <p data-eyebrow className="mt-5 mb-2 text-xs font-semibold tracking-[0.14em] uppercase text-primary md:text-sm md:font-bold">
             {eyebrow}
           </p>
         ) : null}
         <h1 className="text-3xl font-semibold text-plum md:text-4xl">{title}</h1>
         {subtitle ? (
-          <p className="mt-3 max-w-2xl text-muted-foreground md:text-lg">
+          <p className="mx-auto mt-3 line-clamp-2 max-w-sm text-muted-foreground md:mx-0 md:line-clamp-none md:max-w-2xl md:text-lg">
             {subtitle}
           </p>
         ) : null}

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { imageBlurDataURL } from "@/lib/image-placeholder";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { BookingCta } from "@/components/booking/booking-sheet";
@@ -7,7 +8,7 @@ import type { Doctor } from "@/data/doctors";
 
 export function DoctorCard({ doctor }: { doctor: Doctor }) {
   return (
-    <Card className="h-full overflow-hidden border-rose-tint bg-white pt-0 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card motion-reduce:hover:translate-y-0">
+    <Card data-mobile-card="image" className="h-full overflow-hidden border-rose-tint bg-white pt-0 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card motion-reduce:hover:translate-y-0">
       <div className="bg-gradient-to-b from-rose-tint to-blush px-8 pt-8">
         <div className="relative mx-auto h-72 w-full max-w-56 overflow-hidden rounded-t-full">
           <Image
@@ -15,6 +16,8 @@ export function DoctorCard({ doctor }: { doctor: Doctor }) {
             alt={`Portrait of ${doctor.name}, fetal medicine consultant`}
             fill
             sizes="(min-width: 1024px) 224px, (min-width: 640px) 40vw, 60vw"
+            placeholder="blur"
+            blurDataURL={imageBlurDataURL}
             className="object-cover"
             style={{
               objectPosition: `${doctor.photoFocus.x}% ${doctor.photoFocus.y}%`,

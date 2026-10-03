@@ -212,14 +212,24 @@ export function DueDateCalculator() {
   return (
     <div className="rounded-2xl border border-rose-tint bg-white p-6 shadow-card sm:p-8">
       <Tabs value={method} onValueChange={(v) => setMethod(v as Method)}>
-        <TabsList className="h-auto w-full flex-wrap">
-          <TabsTrigger value="lmp" className="min-h-11 flex-1">
+        <TabsList className="grid h-auto w-full grid-cols-3">
+          <TabsTrigger
+            value="lmp"
+            className="min-h-11 max-md:px-1 max-md:text-[13px]"
+          >
             Last period
           </TabsTrigger>
-          <TabsTrigger value="conception" className="min-h-11 flex-1">
-            Conception date
+          <TabsTrigger
+            value="conception"
+            className="min-h-11 max-md:px-1 max-md:text-[13px]"
+          >
+            <span className="md:hidden">Conception</span>
+            <span className="max-md:hidden">Conception date</span>
           </TabsTrigger>
-          <TabsTrigger value="ivf" className="min-h-11 flex-1">
+          <TabsTrigger
+            value="ivf"
+            className="min-h-11 max-md:px-1 max-md:text-[13px]"
+          >
             IVF transfer
           </TabsTrigger>
         </TabsList>
@@ -308,7 +318,7 @@ export function DueDateCalculator() {
       <div aria-live="polite" className="mt-6">
         {result && !("error" in result) ? (
           <div className="space-y-5">
-            <div className="relative overflow-hidden rounded-xl bg-rose-tint p-5 pr-28">
+            <div className="relative overflow-hidden rounded-xl bg-rose-tint p-5 pr-28 max-md:rounded-2xl max-md:bg-plum">
               <BrandImage
                 slug="baby-overhead"
                 variant="circle"
@@ -317,14 +327,14 @@ export function DueDateCalculator() {
                 sizes="88px"
                 className="absolute top-1/2 right-4 w-22 -translate-y-1/2 shadow-soft"
               />
-              <p className="flex items-center gap-2 text-sm font-semibold text-plum">
+              <p className="flex items-center gap-2 text-sm font-semibold text-plum max-md:text-white/70">
                 <CalendarDays className="size-4" aria-hidden="true" />
                 Estimated due date
               </p>
-              <p className="mt-1 text-2xl font-semibold text-ink">
+              <p className="mt-1 text-2xl font-semibold text-ink max-md:text-white">
                 {formatDate(result.due)}
               </p>
-              <p className="mt-1 text-sm text-muted-foreground">
+              <p className="mt-1 text-sm text-muted-foreground max-md:text-white/80">
                 You are about {result.weeks} weeks and {result.days} days
                 along, in trimester {result.trimester}.
               </p>
@@ -341,7 +351,7 @@ export function DueDateCalculator() {
                 aria-valuemin={0}
                 aria-valuemax={40}
                 aria-label="Pregnancy progress"
-                className="mt-2 h-2.5 overflow-hidden rounded-full bg-rose-tint"
+                className="mt-2 h-2.5 overflow-hidden rounded-full bg-rose-tint max-md:bg-rose-tint/60"
               >
                 <div
                   className="h-full rounded-full bg-primary transition-all"
@@ -354,7 +364,74 @@ export function DueDateCalculator() {
               <p className="text-sm font-semibold text-ink">
                 Your scan timeline
               </p>
-              <ul className="mt-3 divide-y divide-border rounded-xl border border-border">
+              {/* Mobile: vertical stepper, week number in each circle. */}
+              <ol className="mt-3 md:hidden">
+                {result.timeline.map((entry, i) => (
+                  <li
+                    key={entry.service.slug}
+                    className={`relative flex gap-4 pb-7 last:pb-0 ${
+                      entry.passed ? "opacity-50" : ""
+                    }`}
+                  >
+                    {i < result.timeline.length - 1 ? (
+                      <span
+                        className="absolute top-11 bottom-0 left-[21px] w-0.5 bg-rose-tint"
+                        aria-hidden="true"
+                      />
+                    ) : null}
+                    <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-rose-tint text-sm font-bold text-primary">
+                      {entry.service.weeks?.start}w
+                    </span>
+                    <div className="min-w-0 flex-1 pt-1">
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="min-w-0">
+                          <p className="text-base/[26px] font-semibold text-ink">
+                            {entry.service.name}
+                          </p>
+                          <p className="text-sm/[20px] text-ink-muted">
+                            {entry.openEnded
+                              ? `From ${formatDate(entry.start)}`
+                              : `${formatDate(entry.start)} to ${formatDate(
+                                  entry.end
+                                )}`}
+                          </p>
+                        </div>
+                        {entry.current ? (
+                          <span className="mt-1 shrink-0 rounded-full bg-teal-tint px-2 py-0.5 text-xs font-semibold text-teal">
+                            Now
+                          </span>
+                        ) : null}
+                      </div>
+                      {!entry.passed ? (
+                        <BookingCta
+                          source="calculator"
+                          service={entry.service.slug}
+                          label="Book this scan"
+                          variant="bare"
+                          trigger={
+                            <button
+                              type="button"
+                              className="mt-1 inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-primary underline-offset-4"
+                            >
+                              <CalendarCheck
+                                className="size-4"
+                                aria-hidden="true"
+                              />
+                              Book this scan
+                            </button>
+                          }
+                        />
+                      ) : (
+                        <p className="mt-1 text-xs font-semibold text-ink-muted">
+                          Window passed
+                        </p>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ol>
+              {/* Desktop: dated rows, unchanged. */}
+              <ul className="mt-3 hidden divide-y divide-border rounded-xl border border-border md:block">
                 {result.timeline.map((entry) => (
                   <li
                     key={entry.service.slug}

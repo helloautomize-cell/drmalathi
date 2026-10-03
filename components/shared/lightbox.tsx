@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef } from "react";
 import Image from "next/image";
+import { imageBlurDataURL } from "@/lib/image-placeholder";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
   Dialog,
@@ -61,7 +62,7 @@ export function Lightbox({
         if (!open) onIndexChange(null);
       }}
     >
-      <DialogContent className="w-[calc(100%-2rem)] max-w-4xl gap-3 border-0 bg-plum/95 p-4 text-white shadow-lift sm:p-5">
+      <DialogContent className="w-[calc(100%-2rem)] max-w-4xl gap-3 border-0 bg-plum/95 p-4 text-white shadow-lift sm:p-5 max-md:inset-0 max-md:flex max-md:h-dvh max-md:max-h-none max-md:flex-col max-md:rounded-none">
         <DialogTitle className="sr-only">Photo viewer</DialogTitle>
         <DialogDescription className="sr-only">
           {image ? image.alt : "Photo viewer"}
@@ -69,7 +70,7 @@ export function Lightbox({
         {image ? (
           <>
             <div
-              className="relative flex items-center justify-center"
+              className="relative flex flex-1 items-center justify-center min-h-0"
               onTouchStart={(event) => {
                 touchStartX.current = event.touches[0].clientX;
               }}
@@ -88,6 +89,8 @@ export function Lightbox({
                 width={image.width}
                 height={image.height}
                 sizes="(min-width: 1024px) 60vw, 90vw"
+                placeholder="blur"
+                blurDataURL={imageBlurDataURL}
                 className="max-h-[70vh] w-auto max-w-full rounded-xl object-contain"
               />
               {images.length > 1 ? (

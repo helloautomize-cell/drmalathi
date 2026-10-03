@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
 import { CTABand } from "@/components/cards/cta-band";
 import { JsonLd } from "@/components/seo/json-ld";
+import { FaqBrowser } from "@/components/faq/faq-browser";
 import { Container } from "@/components/shared/container";
-import { PageHeader } from "@/components/shared/page-header";
+import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { faqs } from "@/data/faqs";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 
@@ -30,29 +25,18 @@ export default function FaqPage() {
           { label: "FAQ", href: "/faq" },
         ])}
       />
-      <PageHeader
+      <PageHero
         eyebrow="FAQ"
         title="Questions families ask us"
-        subtitle="Plain-language answers about our scans, NIPT, preparation, and appointments. If you have a question that is not covered, call us."
+        intro="Plain-language answers about our scans, NIPT, preparation, and appointments. If you have a question that is not covered, call us."
         crumbs={[{ label: "Home", href: "/" }, { label: "FAQ" }]}
       />
       <Section>
         <Container className="max-w-3xl">
-          <h2 className="mb-6 text-2xl font-semibold text-ink">
+          <h2 className="mb-6 text-2xl font-semibold text-ink max-md:hidden">
             Scans, tests, and appointments
           </h2>
-          <Accordion>
-            {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`faq-${i}`}>
-                <AccordionTrigger className="text-left text-base font-semibold text-ink">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <FaqBrowser />
           <p className="mt-8 rounded-2xl bg-blush p-5 text-xs leading-relaxed text-muted-foreground">
             These answers are general guidance and are not a substitute for
             medical advice about your specific pregnancy. In keeping with the
@@ -60,7 +44,7 @@ export default function FaqPage() {
           </p>
         </Container>
       </Section>
-      <Section className="pt-0">
+      <Section surface="blush" className="pt-0 md:bg-white">
         <CTABand />
       </Section>
     </>

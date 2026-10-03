@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Noto_Sans_Tamil, Nunito_Sans } from "next/font/google";
 import "./globals.css";
+import { RevealProvider } from "@/components/shared/reveal-provider";
 import { SmoothScroll } from "@/components/shared/smooth-scroll";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -56,7 +57,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${fraunces.variable} ${nunito.variable} ${notoTamil.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">
+      <body className="flex min-h-full flex-col pb-[calc(4rem+env(safe-area-inset-bottom))] md:pb-0">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded-lg focus:bg-plum focus:px-4 focus:py-2 focus:text-white"
@@ -65,13 +66,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </a>
         <TooltipProvider>
           <SmoothScroll>
+            <RevealProvider />
             <UtilityBar />
-          <SiteHeader />
-          <main id="main" className="flex-1">
-            {children}
-          </main>
-          <SiteFooter />
-          <MobileBottomBar />
+            <SiteHeader />
+            <main id="main" className="flex-1">
+              {children}
+            </main>
+            <SiteFooter />
+            <MobileBottomBar />
             <WhatsAppFloat />
             <Toaster richColors position="top-center" />
           </SmoothScroll>

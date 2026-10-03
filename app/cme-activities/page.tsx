@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Container } from "@/components/shared/container";
-import { PageHeader } from "@/components/shared/page-header";
+import { PageHero } from "@/components/shared/page-hero";
 import { PhotoGrid } from "@/components/shared/photo-grid";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
@@ -35,10 +35,10 @@ export default function CmeActivitiesPage() {
           { label: "CME Activities", href: "/cme-activities" },
         ])}
       />
-      <PageHeader
+      <PageHero
         eyebrow="Education"
         title="CME activities"
-        subtitle="The centre regularly hosts continuing medical education programs, workshops, and masterclasses in fetal medicine."
+        intro="The centre regularly hosts continuing medical education programs, workshops, and masterclasses in fetal medicine."
         crumbs={[{ label: "Home", href: "/" }, { label: "CME Activities" }]}
       />
 
@@ -95,7 +95,7 @@ export default function CmeActivitiesPage() {
                           href={event.pdf}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl border border-primary px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-rose-tint"
+                          className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl border border-primary px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-rose-tint max-md:min-h-11"
                         >
                           <FileText
                             className="size-4 shrink-0"
@@ -141,7 +141,7 @@ export default function CmeActivitiesPage() {
             </div>
             <Link
               href="/fellowship"
-              className="mt-5 inline-flex shrink-0 items-center gap-1.5 rounded-xl border border-primary px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-rose-tint sm:mt-0"
+              className="mt-5 inline-flex shrink-0 items-center gap-1.5 rounded-xl border border-primary px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-rose-tint max-md:min-h-11 sm:mt-0"
             >
               Explore the fellowship
               <ArrowRight className="size-4" aria-hidden="true" />

@@ -1,0 +1,2 @@
+export const imageBlurDataURL =
+  "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNicgaGVpZ2h0PScxMicgdmlld0JveD0nMCAwIDE2IDEyJz48cmVjdCB3aWR0aD0nMTYnIGhlaWdodD0nMTInIGZpbGw9JyNGRkYzRjcnLz48L3N2Zz4=";

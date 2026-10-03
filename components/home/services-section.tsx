@@ -1,22 +1,22 @@
 "use client";
 
-import { useState, type FocusEvent, type MouseEvent } from "react";
+import { Fragment, useState, type FocusEvent, type MouseEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import { BookingCta } from "@/components/booking/booking-sheet";
 import { WeekChip } from "@/components/home/week-chip";
+import { WeekRailCompact } from "@/components/home/week-rail-compact";
 import { Container } from "@/components/shared/container";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
-import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
 import { Button } from "@/components/ui/button";
 import {
   serviceIconMap,
   services,
   type Service,
 } from "@/data/services";
-import { site } from "@/data/site";
+import { imageBlurDataURL } from "@/lib/image-placeholder";
 
 const HOME_SLUGS = [
   "viability-scan",
@@ -26,7 +26,7 @@ const HOME_SLUGS = [
   "fetal-echo",
   "growth-scan-doppler",
 ] as const;
-const IMAGE_TILE_SLUGS = new Set(["viability-scan", "nipt", "anomaly-scan"]);
+const IMAGE_TILE_SLUGS = new Set(["viability-scan", "nipt"]);
 function getActiveHandlers(
   slug: string,
   setActiveSlug: (slug: string | null) => void
@@ -66,11 +66,13 @@ function ImageServiceTile({
   activeSlug,
   setActiveSlug,
   className = "",
+  id,
 }: {
   service: Service;
   activeSlug: string | null;
   setActiveSlug: (slug: string | null) => void;
   className?: string;
+  id?: string;
 }) {
   const handlers = getActiveHandlers(service.slug, setActiveSlug);
   const active = activeSlug === service.slug;
@@ -81,47 +83,68 @@ function ImageServiceTile({
 
   return (
     <article
-      id={`home-service-${service.slug}`}
+      id={id ?? `home-service-${service.slug}`}
       {...handlers}
-      className={`group relative h-full min-h-[300px] scroll-mt-24 overflow-hidden rounded-2xl shadow-soft transition-all hover:-translate-y-1 hover:shadow-card motion-reduce:hover:translate-y-0 ${
+      data-mobile-card="image"
+      className={`group relative h-full scroll-mt-24 overflow-hidden rounded-2xl bg-plum shadow-soft transition-all md:min-h-[300px] hover:-translate-y-1 hover:shadow-card motion-reduce:hover:translate-y-0 ${
         active ? "ring-3 ring-primary ring-offset-3" : ""
       } ${className}`}
     >
       {service.image ? (
-        <Image
-          src={service.image}
-          alt=""
-          fill
-          sizes="(min-width: 1024px) 50vw, (min-width: 768px) 50vw, 100vw"
-          className={`object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:group-hover:scale-100 ${focalClass}`}
-        />
+        <div className="relative aspect-[4/3] md:absolute md:inset-0 md:aspect-auto">
+          <Image
+            src={service.image}
+            alt=""
+            fill
+            sizes="(min-width: 1024px) 50vw, (min-width: 768px) 50vw, 85vw"
+            placeholder="blur"
+            blurDataURL={imageBlurDataURL}
+            className={`object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:group-hover:scale-100 ${focalClass}`}
+          />
+        </div>
       ) : null}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 hidden md:block"
         style={{
           background:
             "linear-gradient(to top, rgb(61 15 42 / 0.96) 0%, rgb(61 15 42 / 0.9) 38%, transparent 60%)",
         }}
         aria-hidden="true"
       />
-      <div className="relative z-10 flex min-h-[300px] flex-col p-5 sm:p-6">
+      <div className="relative z-10 flex flex-col bg-gradient-to-b from-plum to-[#260819] p-5 md:min-h-[300px] md:bg-none sm:p-6">
         <div className="flex items-center justify-between gap-3">
           <ServiceIcon service={service} />
           <WeekChip weeks={service.weeks} surface="dark" />
         </div>
         <div className="mt-auto">
           <h3 className="text-xl font-semibold text-white">{service.name}</h3>
-          <p className="mt-1 line-clamp-3 text-sm text-white">
+          <p className="mt-1 line-clamp-1 text-sm text-white md:line-clamp-3">
             {service.shortDescription}
           </p>
-          <div className="mt-4 flex flex-wrap items-center gap-3">
+          <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-1">
+            {/* Mobile: text-link actions only (one primary button per section). */}
             <BookingCta
               source={`home-${service.slug}`}
               service={service.slug}
-              label="Book this scan"
-              size="lg"
-              className="min-h-11"
+              variant="bare"
+              trigger={
+                <button
+                  type="button"
+                  className="inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-white underline underline-offset-4 md:hidden"
+                >
+                  Book this scan
+                </button>
+              }
             />
+            <span className="hidden md:contents">
+              <BookingCta
+                source={`home-${service.slug}`}
+                service={service.slug}
+                label="Book this scan"
+                size="lg"
+                className="min-h-11"
+              />
+            </span>
             <Link
               href={`/services/${service.slug}`}
               className="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-2 text-sm font-semibold text-white underline-offset-4 hover:underline focus-visible:ring-3 focus-visible:ring-white/60 focus-visible:outline-none"
@@ -141,10 +164,12 @@ function HomeServiceCard({
   service,
   activeSlug,
   setActiveSlug,
+  className = "",
 }: {
   service: Service;
   activeSlug: string | null;
   setActiveSlug: (slug: string | null) => void;
+  className?: string;
 }) {
   const handlers = getActiveHandlers(service.slug, setActiveSlug);
   const active = activeSlug === service.slug;
@@ -154,9 +179,10 @@ function HomeServiceCard({
       id={`home-service-${service.slug}`}
       href={`/services/${service.slug}`}
       {...handlers}
-      className={`group flex h-full min-h-64 scroll-mt-24 flex-col rounded-2xl border border-rose-tint bg-white p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none motion-reduce:hover:translate-y-0 ${
+      data-mobile-card="info"
+      className={`group flex h-full scroll-mt-24 flex-col rounded-2xl border border-rose-tint bg-white p-5 shadow-soft transition-all md:min-h-64 md:p-6 hover:-translate-y-1 hover:shadow-card focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none motion-reduce:hover:translate-y-0 ${
         active ? "ring-3 ring-primary ring-offset-3" : ""
-      }`}
+      } ${className}`}
     >
       <div className="flex items-center justify-between gap-3">
         <ServiceIcon service={service} />
@@ -181,15 +207,47 @@ function HomeServiceCard({
 function MoreServicesBand({
   services: hiddenServices,
   total,
-  whatsappHref,
 }: {
   services: Service[];
   total: number;
-  whatsappHref: string;
 }) {
   return (
-    <aside className="flex h-full flex-col rounded-2xl bg-plum p-6 text-white shadow-soft md:col-span-2 lg:col-span-3">
-      <h3 className="text-xl font-semibold text-white">
+    <>
+    {/* Mobile: PlumCard with a single-column ListRow list. */}
+    <aside
+      data-mobile-card="plum"
+      className="rounded-3xl bg-plum p-5 text-white shadow-card md:hidden"
+    >
+      <h3 className="text-[19px]/[26px] font-semibold text-white">
+        +{hiddenServices.length} more specialist services
+      </h3>
+      <div className="mt-2 divide-y divide-white/10">
+        {hiddenServices.map((service) => (
+          <Link
+            key={service.slug}
+            href={`/services/${service.slug}`}
+            className="flex min-h-14 items-center gap-3 py-3 text-base/[26px] font-semibold text-white focus-visible:underline"
+          >
+            <span className="min-w-0 flex-1">{service.name}</span>
+            <ChevronRight
+              className="size-4 shrink-0 text-white/70"
+              aria-hidden="true"
+            />
+          </Link>
+        ))}
+      </div>
+      <Button
+        size="lg"
+        nativeButton={false}
+        className="mt-3 min-h-12 w-full rounded-full bg-white text-plum hover:bg-rose-tint"
+        render={<Link href="/services" />}
+      >
+        View all {total} services
+      </Button>
+    </aside>
+    {/* Desktop: original band, unchanged. */}
+    <aside data-mobile-card="info" className="hidden h-full flex-col rounded-2xl border border-rose-tint bg-white p-5 text-ink shadow-soft md:col-span-2 md:flex md:border-0 md:bg-plum md:p-6 md:text-white lg:col-span-3">
+      <h3 className="text-xl font-semibold text-ink md:text-white">
         +{hiddenServices.length} more specialist services
       </h3>
       <div className="mt-4 grid flex-1 grid-cols-2 gap-x-5 lg:grid-cols-3">
@@ -197,7 +255,7 @@ function MoreServicesBand({
           <Link
             key={service.slug}
             href={`/services/${service.slug}`}
-            className="group inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-white underline-offset-4 hover:underline focus-visible:ring-3 focus-visible:ring-white/60 focus-visible:outline-none"
+            className="group inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-primary underline-offset-4 hover:underline focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none md:text-white md:focus-visible:ring-white/60"
           >
             <span>{service.name}</span>
             <ArrowRight
@@ -211,22 +269,14 @@ function MoreServicesBand({
         <Button
           size="lg"
           nativeButton={false}
-          className="min-h-11 bg-white text-plum hover:bg-rose-tint"
+          className="min-h-12 bg-primary text-white hover:bg-primary-hover md:min-h-11 md:bg-white md:text-plum md:hover:bg-rose-tint"
           render={<Link href="/services" />}
         >
           View all {total} services
         </Button>
-        <a
-          href={whatsappHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-2 text-sm font-semibold text-white underline-offset-4 hover:underline focus-visible:ring-3 focus-visible:ring-white/60 focus-visible:outline-none"
-        >
-          <WhatsAppIcon className="size-4" aria-hidden="true" />
-          Not sure which scan? Ask us on WhatsApp
-        </a>
       </div>
     </aside>
+    </>
   );
 }
 
@@ -238,21 +288,39 @@ export function ServicesSection() {
   );
   const homeSlugs = new Set(homeServices.map((service) => service.slug));
   const hiddenServices = services.filter((service) => !homeSlugs.has(service.slug));
-  const whatsappHref = `${site.whatsapp.href}?text=${encodeURIComponent(
-    "Hello, I am not sure which scan I need. Could you help me choose?"
-  )}`;
-
   return (
-    <Section id="services" className="bg-blush">
+    <Section id="services" surface="blush" className="md:bg-blush">
       <Container>
         <SectionHeader
           eyebrow="Our services"
           title="The right scan, at the right week"
-          subtitle="Specialist scans and tests timed to your pregnancy — earlier answers, each explained in plain language."
+          subtitle="Specialist scans and tests timed to your pregnancy, with earlier answers explained in plain language."
           className="[&>p:last-child]:mx-auto [&>p:last-child]:max-w-2xl [&>p:last-child]:text-balance"
         />
-        <div className="grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <WeekRailCompact items={homeServices} />
+        <div className="grid items-stretch gap-3 md:grid-cols-2 md:gap-6 lg:grid-cols-4">
           {homeServices.map((service) => {
+            if (service.slug === "anomaly-scan") {
+              return (
+                <Fragment key={service.slug}>
+                  {/* Mobile: plain info card like the other non-image services. */}
+                  <HomeServiceCard
+                    service={service}
+                    activeSlug={activeSlug}
+                    setActiveSlug={setActiveSlug}
+                    className="md:hidden"
+                  />
+                  {/* Desktop: image tile, unchanged. */}
+                  <ImageServiceTile
+                    service={service}
+                    activeSlug={activeSlug}
+                    setActiveSlug={setActiveSlug}
+                    id={`home-service-${service.slug}-desktop`}
+                    className="hidden md:block lg:col-span-2"
+                  />
+                </Fragment>
+              );
+            }
             if (IMAGE_TILE_SLUGS.has(service.slug)) {
               return (
                 <ImageServiceTile
@@ -260,13 +328,7 @@ export function ServicesSection() {
                   service={service}
                   activeSlug={activeSlug}
                   setActiveSlug={setActiveSlug}
-                  className={
-                    service.slug === "viability-scan" || service.slug === "nipt"
-                      ? "lg:col-span-2"
-                      : service.slug === "anomaly-scan"
-                        ? "lg:col-span-2"
-                        : ""
-                  }
+                  className="lg:col-span-2"
                 />
               );
             }
@@ -282,7 +344,6 @@ export function ServicesSection() {
           <MoreServicesBand
             services={hiddenServices}
             total={services.length}
-            whatsappHref={whatsappHref}
           />
         </div>
       </Container>

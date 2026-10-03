@@ -50,11 +50,12 @@ function DialogContent({
       <DialogPrimitive.Popup
         data-slot="dialog-content"
         className={cn(
-          "fixed top-1/2 left-1/2 z-50 grid max-h-[min(90vh,48rem)] w-[calc(100%-2rem)] max-w-lg -translate-x-1/2 -translate-y-1/2 gap-4 overflow-y-auto rounded-2xl border border-border bg-white p-6 text-foreground shadow-lift transition duration-150 data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0",
+          "fixed top-1/2 left-1/2 z-50 grid max-h-[min(90vh,48rem)] w-[calc(100%-2rem)] max-w-lg -translate-x-1/2 -translate-y-1/2 gap-4 overflow-y-auto rounded-2xl border border-border bg-white p-6 text-foreground shadow-lift transition duration-150 data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0 max-md:top-auto max-md:bottom-0 max-md:left-0 max-md:max-h-[90dvh] max-md:w-full max-md:max-w-none max-md:translate-x-0 max-md:translate-y-0 max-md:rounded-t-3xl max-md:rounded-b-none max-md:p-5",
           className
         )}
         {...props}
       >
+        <span className="mx-auto -mt-2 block h-1.5 w-12 rounded-full bg-ink/15 md:hidden" aria-hidden="true" />
         {children}
         {showCloseButton ? (
           <DialogPrimitive.Close

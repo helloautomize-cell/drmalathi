@@ -21,13 +21,13 @@ export function ProofCard({
   linkLabel,
 }: ProofCardData) {
   return (
-    <Card className="h-full border-rose-tint shadow-soft transition-shadow hover:shadow-card">
-      <CardContent className="flex h-full flex-col gap-3 p-6">
-        <div className="flex size-12 items-center justify-center rounded-xl bg-rose-tint text-primary">
+    <Card data-mobile-card="info" className="h-full border-rose-tint shadow-soft transition-shadow hover:shadow-card">
+      <CardContent className="flex h-full flex-col gap-3 p-5 md:p-6">
+        <div className="flex size-11 items-center justify-center rounded-xl bg-rose-tint text-primary md:size-12">
           <Icon className="size-6" strokeWidth={1.75} aria-hidden="true" />
         </div>
         <h3 className="text-lg font-semibold text-ink">{title}</h3>
-        <p className="text-sm text-muted-foreground">{body}</p>
+        <p className="text-base text-muted-foreground md:text-sm">{body}</p>
         {quote || href ? (
           <div className="mt-auto flex flex-col gap-3 pt-3">
             {quote ? (
@@ -36,7 +36,7 @@ export function ProofCard({
                   &ldquo;{quote.text}&rdquo;
                 </p>
                 <footer className="mt-1 text-xs font-semibold text-muted-foreground">
-                  &mdash; {quote.name}
+                  {quote.name}
                 </footer>
               </blockquote>
             ) : null}

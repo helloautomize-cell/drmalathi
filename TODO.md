@@ -135,10 +135,12 @@
 - [ ] `baby-overhead` and `doctor-glowing-fetus` sources are only 236px wide.
       They are capped at ~181px display (`maxDisplayWidth` in the manifest);
       never render them larger.
-- [ ] Lighthouse mobile performance ~73-80 (varies run to run on this machine).
-      LCP is the hero H1 under simulated throttling; real-device scores should
-      be higher. Options if needed: shorter-URL hero image, font subset trim,
-      or deferring footer form hydration.
+- [ ] Lighthouse mobile performance ~73-82 under simulated throttling (LCP is
+      the hero image; simulated ~4.6-6s). Real unthrottled trace on the same
+      build: LCP 651ms, Perf 100. Re-measure on the Vercel deployment before
+      deciding on further work (bundle diet, deferred hydration).
+- [ ] SEO audits must run against a build made with `INDEXABLE=1`; the default
+      robots guard disallows indexing outside production.
 - [ ] `/design-system` is dev-only (returns 404 in production) and disallowed in robots.
 - [ ] Trust slots are wired but hidden (`data/trust.ts`, `components/shared/trust-slots.tsx`).
       Populate when real assets exist: Google rating badge (`googleRating`),
@@ -153,3 +155,14 @@
       `trust.videoTestimonial` is set; needs a real video file + poster.
 - [ ] Newsletter and appointment actions: honeypot + 3s minimum submit time.
       Add real rate limiting at the edge (Vercel) if abuse appears.
+- [ ] **DRAFT FOR MEDICAL REVIEW**: the two full guides in `data/guides.ts`
+      (OSCAR and the anomaly scan) reuse facts already on the site but must be
+      medically reviewed before launch; set `reviewedBy` + `reviewedAt` when
+      approved. `draft: true` flags them for editors.
+- [ ] **Remove before launch**: the four `placeholder-*` guides in
+      `data/guides.ts` (`placeholder: true`) exist only to fill the index grid
+      for review.
+- [ ] **DRAFT FOR CLIENT REVIEW**: confirm the six guide categories in
+      `data/guide-categories.ts`.
+- [ ] Guides live in `data/guides.ts` and are read only via `lib/guides.ts`;
+      swap that module for the CMS implementation later, keeping signatures.

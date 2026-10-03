@@ -2,8 +2,11 @@ import { Baby, MessageCircle, ScanSearch, Users } from "lucide-react";
 import Image from "next/image";
 import { ProofCard, type ProofCardData } from "@/components/cards/proof-card";
 import { Container } from "@/components/shared/container";
+import { MobileCarousel } from "@/components/shared/mobile-carousel";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
+import { advancedProcedures } from "@/data/procedures";
+import { imageBlurDataURL } from "@/lib/image-placeholder";
 
 const proofCards: ProofCardData[] = [
   {
@@ -36,32 +39,47 @@ const proofCards: ProofCardData[] = [
 
 export function WhyChooseUs() {
   return (
-    <Section className="bg-blush">
+    <Section surface="blush">
       <Container>
         <SectionHeader
           eyebrow="Why families choose us"
           title="Care you can trust, in their words"
         />
-        <div className="grid items-center gap-10 lg:grid-cols-[420px_1fr] lg:gap-16">
+        <div className="grid items-center gap-6 md:gap-10 lg:grid-cols-[420px_1fr] lg:gap-16">
           <figure className="mx-auto w-full max-w-md lg:max-w-none">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-soft">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-soft md:aspect-[4/5]">
               <Image
-                src="/images/gallery/g10.webp"
-                alt="The team at the grand opening of Trichy Fetal Medicine and Fertility Centre"
+                src="/images/gallery/event9.webp"
+                alt="A fetal medicine specialist at the ultrasound console during a scan"
                 fill
                 sizes="(min-width: 1024px) 420px, (min-width: 640px) 448px, 100vw"
+                placeholder="blur"
+                blurDataURL={imageBlurDataURL}
                 className="object-cover"
               />
             </div>
             <figcaption className="mt-3 text-sm text-muted-foreground">
-              Inside our centre on grand opening day, Thillai Nagar, Trichy.
+              Inside our scan room, Thillai Nagar, Trichy.
             </figcaption>
           </figure>
-          <div className="grid auto-rows-fr gap-5 sm:grid-cols-2">
-            {proofCards.map((card) => (
+          <MobileCarousel
+            label="Why families choose us"
+            className="md:grid md:auto-rows-fr md:grid-cols-2 md:gap-5"
+            items={proofCards.map((card) => (
               <ProofCard key={card.title} {...card} />
             ))}
-          </div>
+          />
+        </div>
+        {/* Mobile only: procedure chips wrap below the proof cards. */}
+        <div className="mt-6 flex flex-wrap justify-center gap-2 md:hidden">
+          {advancedProcedures.map((procedure) => (
+            <span
+              key={procedure}
+              className="rounded-full border border-primary/15 bg-white px-3 py-1.5 text-[13px]/[20px] font-semibold text-plum"
+            >
+              {procedure}
+            </span>
+          ))}
         </div>
       </Container>
     </Section>

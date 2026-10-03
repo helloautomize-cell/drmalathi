@@ -165,6 +165,7 @@ export function QuickConsultForm() {
         <Input
           id="qc-phone"
           type="tel"
+          inputMode="tel"
           placeholder="+91"
           autoComplete="tel"
           aria-invalid={!!errors.phone}
@@ -295,7 +296,7 @@ export function QuickConsultForm() {
         disabled={isSubmitting}
         className="w-full bg-primary text-white hover:bg-primary-hover"
       >
-        {isSubmitting ? "Sending..." : "Request a callback"}
+        {isSubmitting ? "Sending..." : "Book appointment"}
       </Button>
     </form>
   );

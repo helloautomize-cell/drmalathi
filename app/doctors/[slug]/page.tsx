@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { imageBlurDataURL } from "@/lib/image-placeholder";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, CheckCircle2, Medal, MessageCircle } from "lucide-react";
+import { ArrowRight, CheckCircle2, ChevronRight, Medal, MessageCircle } from "lucide-react";
 import { BookingCta } from "@/components/booking/booking-sheet";
 import { CTABand } from "@/components/cards/cta-band";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/container";
-import { PageHeader } from "@/components/shared/page-header";
+import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
 import { doctors } from "@/data/doctors";
 import { site } from "@/data/site";
@@ -48,7 +49,7 @@ export default async function DoctorDetailPage({
           { label: doctor.name, href: `/doctors/${doctor.slug}` },
         ])}
       />
-      <PageHeader
+      <PageHero
         eyebrow={doctor.role}
         title={doctor.name}
         crumbs={[
@@ -61,12 +62,14 @@ export default async function DoctorDetailPage({
       <Section>
         <Container className="grid gap-10 lg:grid-cols-[1fr_1.6fr]">
           <div className="rounded-3xl bg-gradient-to-b from-rose-tint to-blush p-6">
-            <div className="relative mx-auto aspect-[4/5] max-w-sm overflow-hidden rounded-t-full">
+            <div className="relative mx-auto aspect-[4/5] max-w-[220px] overflow-hidden rounded-t-full md:max-w-sm">
               <Image
                 src={doctor.photo}
                 alt={`Portrait of ${doctor.name}, fetal medicine consultant`}
                 fill
                 sizes="(min-width: 1024px) 33vw, 100vw"
+                placeholder="blur"
+                blurDataURL={imageBlurDataURL}
                 className="object-cover"
                 style={{
                   objectPosition: `${doctor.photoFocus.x}% ${doctor.photoFocus.y}%`,
@@ -78,16 +81,18 @@ export default async function DoctorDetailPage({
             </p>
           </div>
 
-          <div>
-            <h2 className="text-2xl font-semibold text-ink">About {doctor.name}</h2>
-            <div className="mt-5 space-y-4 text-muted-foreground">
-              {doctor.background?.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
+          <div className="flex flex-col">
+            <div className="order-3 max-md:mt-8">
+              <h2 className="text-2xl font-semibold text-ink">About {doctor.name}</h2>
+              <div className="mt-5 space-y-4 text-muted-foreground">
+                {doctor.background?.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
             </div>
 
             {doctor.highlights.length ? (
-              <ul className="mt-5 space-y-2.5">
+              <ul className="order-1 mt-5 space-y-2.5 max-md:mt-0">
                 {doctor.highlights.map((highlight) => (
                   <li key={highlight} className="flex items-start gap-3">
                     <CheckCircle2
@@ -102,24 +107,34 @@ export default async function DoctorDetailPage({
               </ul>
             ) : null}
 
-            {doctor.award ? (
-              <p className="mt-5 flex gap-2 text-sm font-semibold text-teal">
-                <Medal className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
-                {doctor.award}
-              </p>
-            ) : null}
-
-            {doctor.mentors?.length ? (
-              <div className="mt-6">
-                <h3 className="text-lg font-semibold text-ink">Mentors</h3>
-                <p className="mt-2 text-muted-foreground">
-                  {doctor.mentors.join(" · ")}
-                </p>
-              </div>
-            ) : null}
+            <div className="order-2 mt-8 flex flex-wrap gap-3">
+              <BookingCta
+                source="doctor-profile"
+                doctor={doctor.slug}
+                label={`Book with ${doctor.name.split(" ").slice(0, 2).join(" ")}`}
+                size="lg"
+                className="min-h-11 max-md:w-full"
+              />
+              <Button
+                size="lg"
+                variant="outline"
+                nativeButton={false}
+                className="min-h-11 border-teal text-teal hover:bg-teal-tint hover:text-teal max-md:hidden"
+                render={
+                  <a
+                    href={site.whatsapp.messageHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  />
+                }
+              >
+                <MessageCircle aria-hidden="true" />
+                WhatsApp us
+              </Button>
+            </div>
 
             {doctor.trainedAt.length ? (
-              <div className="mt-6">
+              <div className="order-4 mt-6 max-md:mt-8">
                 <h3 className="text-lg font-semibold text-ink">Trained at</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {doctor.trainedAt.map((institution) => (
@@ -134,10 +149,47 @@ export default async function DoctorDetailPage({
               </div>
             ) : null}
 
+            {doctor.mentors?.length ? (
+              <div className="order-5 mt-6 max-md:mt-8">
+                <h3 className="text-lg font-semibold text-ink">Mentors</h3>
+                <p className="mt-2 text-muted-foreground">
+                  {doctor.mentors.join(" · ")}
+                </p>
+              </div>
+            ) : null}
+
             {doctor.expertise.length ? (
-              <div className="mt-6">
+              <div className="order-6 mt-6 max-md:mt-8">
                 <h3 className="text-lg font-semibold text-ink">Expertise</h3>
-                <div className="mt-2 flex flex-wrap gap-2">
+                {/* Mobile: ListRows linking to services. */}
+                <div className="mt-3 divide-y divide-rose-tint rounded-2xl border border-rose-tint bg-white px-3 md:hidden">
+                  {doctor.expertise.map((expertise) =>
+                    expertise.serviceSlug ? (
+                      <Link
+                        key={expertise.label}
+                        href={`/services/${expertise.serviceSlug}`}
+                        className="flex min-h-14 items-center gap-3 py-3"
+                      >
+                        <span className="min-w-0 flex-1 text-base/[26px] font-semibold text-ink">
+                          {expertise.label}
+                        </span>
+                        <ChevronRight
+                          className="size-4 shrink-0 text-ink-muted"
+                          aria-hidden="true"
+                        />
+                      </Link>
+                    ) : (
+                      <p
+                        key={expertise.label}
+                        className="min-h-14 py-3 text-base/[26px] font-semibold text-ink"
+                      >
+                        {expertise.label}
+                      </p>
+                    )
+                  )}
+                </div>
+                {/* Desktop: teal chips, unchanged. */}
+                <div className="mt-2 hidden flex-wrap gap-2 md:flex">
                   {doctor.expertise.map((expertise) =>
                     expertise.serviceSlug ? (
                       <Link
@@ -161,36 +213,17 @@ export default async function DoctorDetailPage({
               </div>
             ) : null}
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <BookingCta
-                source="doctor-profile"
-                doctor={doctor.slug}
-                label={`Book with ${doctor.name.split(" ").slice(0, 2).join(" ")}`}
-                size="lg"
-                className="min-h-11"
-              />
-              <Button
-                size="lg"
-                variant="outline"
-                nativeButton={false}
-                className="min-h-11 border-teal text-teal hover:bg-teal-tint hover:text-teal"
-                render={
-                  <a
-                    href={site.whatsapp.messageHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  />
-                }
-              >
-                <MessageCircle aria-hidden="true" />
-                WhatsApp us
-              </Button>
-            </div>
+            {doctor.award ? (
+              <p className="order-7 mt-5 flex gap-2 text-sm font-semibold text-teal max-md:mt-8">
+                <Medal className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+                {doctor.award}
+              </p>
+            ) : null}
           </div>
         </Container>
       </Section>
 
-      <Section className="pt-0">
+      <Section surface="blush" className="pt-0 md:bg-white">
         <CTABand />
       </Section>
     </>

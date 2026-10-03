@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "process:images": "node scripts/process-images.mjs",
-    "check:images": "node scripts/check-images.mjs"
+    "check:images": "node scripts/check-images.mjs",
+    "check:guides": "node scripts/check-guides.mjs",
+    "prebuild": "node scripts/check-guides.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",

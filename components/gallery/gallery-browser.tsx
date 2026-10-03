@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
+import { imageBlurDataURL } from "@/lib/image-placeholder";
 import {
   galleryCategories,
   galleryImages,
@@ -38,7 +39,7 @@ export function GalleryBrowser() {
       <div
         role="group"
         aria-label="Filter photos by area"
-        className="mb-8 flex flex-wrap gap-2"
+        className="mb-8 flex gap-2 max-md:sticky max-md:top-[60px] max-md:z-30 max-md:-mx-4 max-md:overflow-x-auto max-md:border-b max-md:border-rose-tint max-md:bg-white/95 max-md:px-4 max-md:py-2 max-md:backdrop-blur max-md:[scrollbar-width:none] max-md:[&::-webkit-scrollbar]:hidden md:flex-wrap"
       >
         {chips.map((chip) => (
           <button
@@ -46,7 +47,7 @@ export function GalleryBrowser() {
             type="button"
             aria-pressed={filter === chip.id}
             onClick={() => setFilter(chip.id)}
-            className={`min-h-11 rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
+            className={`min-h-11 shrink-0 rounded-full border px-4 py-2 text-sm font-semibold whitespace-nowrap transition-colors ${
               filter === chip.id
                 ? "border-primary bg-primary text-white"
                 : "border-rose-tint bg-white text-ink hover:bg-blush"
@@ -73,6 +74,8 @@ export function GalleryBrowser() {
                 height={image.height}
                 loading={i < 4 ? "eager" : "lazy"}
                 sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+                placeholder="blur"
+                blurDataURL={imageBlurDataURL}
                 className="h-auto w-full object-cover"
               />
             </button>

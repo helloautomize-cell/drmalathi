@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { imageBlurDataURL } from "@/lib/image-placeholder";
 import Link from "next/link";
 import { Award, Play, Star, StarHalf } from "lucide-react";
 import { Container } from "@/components/shared/container";
@@ -18,7 +19,7 @@ export function TrustSlots() {
   if (!hasAny) return null;
 
   return (
-    <Section className="bg-white">
+    <Section surface="blush" className="md:bg-white">
       <Container className="space-y-8">
         {googleRating ? (
           <a
@@ -90,6 +91,8 @@ export function TrustSlots() {
                 alt={videoTestimonial.caption}
                 fill
                 sizes="(min-width: 768px) 672px, 100vw"
+                placeholder="blur"
+                blurDataURL={imageBlurDataURL}
                 className="object-cover"
               />
               <button

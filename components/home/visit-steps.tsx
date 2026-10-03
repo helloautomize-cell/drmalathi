@@ -1,6 +1,7 @@
 import { CalendarCheck, ClipboardList, MessagesSquare, ScanLine } from "lucide-react";
 import { Container } from "@/components/shared/container";
 import { Section } from "@/components/shared/section";
+import { StepsList } from "@/components/shared/steps-list";
 import { SectionHeader } from "@/components/shared/section-header";
 
 const steps = [
@@ -28,21 +29,27 @@ const steps = [
 
 export function VisitSteps() {
   return (
-    <Section className="bg-blush">
+    <Section surface="blush" className="md:bg-blush">
       <Container>
         <SectionHeader
           eyebrow="Your visit"
           title="What to expect at your visit"
           subtitle="Every appointment follows the same calm, unhurried flow, so you always know what comes next."
         />
-        <ol className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Mobile: vertical stepper, numbered circles joined by a rose line. */}
+        <div className="md:hidden">
+          <StepsList steps={steps} />
+        </div>
+        {/* Desktop: original card grid, unchanged. */}
+        <ol className="hidden gap-5 sm:grid-cols-2 md:grid lg:grid-cols-4">
           {steps.map((s, i) => (
             <li
               key={s.title}
-              className="reveal relative rounded-2xl border border-rose-tint bg-white p-6 shadow-soft"
+              data-mobile-card="info"
+              className="reveal relative rounded-2xl border border-rose-tint bg-blush p-5 shadow-soft md:bg-white md:p-6"
             >
               <div className="flex items-center justify-between">
-                <span className="flex size-12 items-center justify-center rounded-xl bg-rose-tint text-primary">
+                <span className="flex size-11 items-center justify-center rounded-xl bg-rose-tint text-primary md:size-12">
                   <s.icon className="size-6" strokeWidth={1.75} aria-hidden="true" />
                 </span>
                 <span className="font-heading text-3xl font-semibold text-primary/75">
@@ -50,7 +57,7 @@ export function VisitSteps() {
                 </span>
               </div>
               <h3 className="mt-4 text-lg font-semibold text-ink">{s.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{s.text}</p>
+              <p className="mt-2 text-base text-muted-foreground md:text-sm">{s.text}</p>
             </li>
           ))}
         </ol>

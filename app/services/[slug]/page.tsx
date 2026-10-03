@@ -1,22 +1,31 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { imageBlurDataURL } from "@/lib/image-placeholder";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   ArrowRight,
   CheckCircle2,
   ChevronRight,
+  ClipboardList,
+  Clock,
   Phone,
 } from "lucide-react";
 import { BookingCta } from "@/components/booking/booking-sheet";
 import { CTABand } from "@/components/cards/cta-band";
 import { DoctorMiniCard } from "@/components/cards/doctor-mini-card";
+import { GuideCard } from "@/components/guides/guide-card";
 import { ServiceCard } from "@/components/cards/service-card";
 import { WeekChip } from "@/components/home/week-chip";
 import { JsonLd } from "@/components/seo/json-ld";
+import { ServiceBookingBar } from "@/components/services/service-booking-bar";
 import { BrandImage } from "@/components/shared/brand-image";
+import { ChipNav, type ChipNavItem } from "@/components/shared/chip-nav";
 import { Container } from "@/components/shared/container";
+import { MobileCarousel } from "@/components/shared/mobile-carousel";
 import { Section } from "@/components/shared/section";
+import { SectionHeader } from "@/components/shared/section-header";
+import { StepsList } from "@/components/shared/steps-list";
 import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
 import {
   Accordion,
@@ -33,6 +42,8 @@ import {
   type Service,
 } from "@/data/services";
 import { site } from "@/data/site";
+import { toGuideCardData } from "@/lib/guide-card-data";
+import { getGuidesByService } from "@/lib/guides";
 import {
   breadcrumbSchema,
   faqSchema,
@@ -74,7 +85,7 @@ function DetailSection({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="mt-10 scroll-mt-24">
+    <section id={id} className="mt-10 scroll-mt-24 max-md:scroll-mt-32">
       <h2 className="text-xl font-semibold text-ink">{title}</h2>
       <div className="mt-4">{children}</div>
     </section>
@@ -144,6 +155,21 @@ export default async function ServiceDetailPage({
 
   const category = serviceCategories.find((c) => c.id === service.category);
   const related = relatedServices(service);
+  const serviceGuides = getGuidesByService(service.slug).map(toGuideCardData);
+  const chipNavItems: ChipNavItem[] = [
+    service.whatItChecks?.length
+      ? { id: "what-it-checks", label: "What it checks" }
+      : null,
+    service.steps?.length ? { id: "what-to-expect", label: "What to expect" } : null,
+    service.preparation || service.timing
+      ? { id: "preparation", label: "Preparation" }
+      : null,
+    service.reportAndNextSteps ? { id: "report", label: "Report" } : null,
+    service.performedBy?.length
+      ? { id: "your-doctors", label: "Your doctors" }
+      : null,
+    service.faqs?.length ? { id: "faqs", label: "FAQs" } : null,
+  ].filter((item): item is ChipNavItem => Boolean(item));
   const performedBy = (service.performedBy ?? [])
     .map((doctorSlug) => doctors.find((d) => d.slug === doctorSlug))
     .filter((d): d is (typeof doctors)[number] => Boolean(d));
@@ -161,25 +187,34 @@ export default async function ServiceDetailPage({
       {service.faqs?.length ? <JsonLd data={faqSchema(service.faqs)} /> : null}
 
       <Section className="pt-10 md:pt-14">
-        <Container className="grid gap-10 lg:grid-cols-[1fr_360px]">
-          <div>
-            <nav aria-label="Breadcrumb">
-              <ol className="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
+        <Container className="grid min-w-0 gap-10 lg:grid-cols-[1fr_360px]">
+          <div className="min-w-0">
+            <nav aria-label="Breadcrumb" className="min-w-0 overflow-hidden">
+              <ol className="flex items-center gap-1.5 text-xs whitespace-nowrap text-muted-foreground md:flex-wrap md:text-sm">
                 {[
                   { label: "Home", href: "/" },
                   { label: "Services", href: "/services" },
                   { label: service.name },
                 ].map((crumb, i, all) => (
-                  <li key={crumb.label} className="flex items-center gap-1.5">
+                  <li
+                    key={crumb.label}
+                    className={`flex items-center gap-1.5 ${i === 0 ? "shrink-0" : "min-w-0"}`}
+                  >
                     {i > 0 ? (
-                      <ChevronRight className="size-3.5" aria-hidden="true" />
+                      <ChevronRight className="size-3.5 shrink-0" aria-hidden="true" />
                     ) : null}
                     {crumb.href && i < all.length - 1 ? (
-                      <Link href={crumb.href} className="link">
+                      <Link
+                        href={crumb.href}
+                        className="link truncate max-md:inline-flex max-md:min-h-11 max-md:min-w-11 max-md:items-center max-md:justify-center"
+                      >
                         {crumb.label}
                       </Link>
                     ) : (
-                      <span aria-current={i === all.length - 1 ? "page" : undefined}>
+                      <span
+                        aria-current={i === all.length - 1 ? "page" : undefined}
+                        className="truncate"
+                      >
                         {crumb.label}
                       </span>
                     )}
@@ -189,17 +224,27 @@ export default async function ServiceDetailPage({
             </nav>
 
             {category ? (
-              <p className="mt-5 mb-2 text-sm font-bold tracking-[0.14em] uppercase text-primary">
+              <p className="mt-5 mb-2 hidden text-sm font-bold tracking-[0.14em] uppercase text-primary md:block">
                 {category.label}
               </p>
             ) : null}
-            <h1 className="text-3xl font-semibold text-plum md:text-4xl">
+            <h1 className="text-balance text-[34px]/[40px] font-semibold text-plum md:text-4xl">
               {service.name}
             </h1>
-            <div className="mt-4">
+            {/* Mobile: one-line intro under the title. */}
+            <p className="mt-3 line-clamp-2 text-base/[26px] text-pretty text-ink-muted md:hidden">
+              {service.shortDescription}
+            </p>
+            <div className="mt-4 flex flex-wrap items-center gap-2">
               <WeekChip weeks={service.weeks} />
+              {category ? (
+                <span className="inline-flex min-h-11 items-center rounded-full bg-teal-tint px-3 py-1 text-xs font-semibold text-teal md:hidden">
+                  {category.label}
+                </span>
+              ) : null}
             </div>
-            <div className="mt-4 space-y-4 text-muted-foreground">
+            {/* Mobile: detail copy moves below the image; desktop keeps it here. */}
+            <div className="mt-4 hidden space-y-4 text-muted-foreground md:block">
               {service.detail.map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
@@ -214,16 +259,54 @@ export default async function ServiceDetailPage({
                 className="mt-8 rounded-3xl shadow-soft"
               />
             ) : service.image ? (
-              <div className="relative mt-8 aspect-video overflow-hidden rounded-3xl shadow-soft">
+              <div className="relative mt-8 aspect-[16/10] overflow-hidden rounded-3xl shadow-soft md:aspect-video">
                 <Image
                   src={service.image}
                   alt={`${service.name} at Trichy Fetal Medicine and Fertility Centre`}
                   fill
                   sizes="(min-width: 1024px) 60vw, 100vw"
+                  placeholder="blur"
+                  blurDataURL={imageBlurDataURL}
                   className="object-cover"
                 />
               </div>
             ) : null}
+
+            {/* Mobile: key facts row, Timing and Preparation side by side. */}
+            {service.timing || service.preparation ? (
+              <div className="mt-6 grid grid-cols-2 gap-3 md:hidden">
+                {service.timing ? (
+                  <div className="rounded-2xl border border-rose-tint bg-blush p-4">
+                    <p className="flex items-center gap-1.5 text-xs font-semibold tracking-[0.14em] text-primary uppercase">
+                      <Clock className="size-3.5" aria-hidden="true" />
+                      Timing
+                    </p>
+                    <p className="mt-2 text-sm/[20px] text-ink">{service.timing}</p>
+                  </div>
+                ) : null}
+                {service.preparation ? (
+                  <div className="rounded-2xl border border-rose-tint bg-blush p-4">
+                    <p className="flex items-center gap-1.5 text-xs font-semibold tracking-[0.14em] text-primary uppercase">
+                      <ClipboardList className="size-3.5" aria-hidden="true" />
+                      Preparation
+                    </p>
+                    <p className="mt-2 text-sm/[20px] text-ink">
+                      {service.preparation}
+                    </p>
+                  </div>
+                ) : null}
+              </div>
+            ) : null}
+
+            {/* Mobile: sticky in-page nav under the header. */}
+            <ChipNav items={chipNavItems} />
+
+            {/* Mobile: the full intro paragraphs lead the content. */}
+            <div className="mt-8 space-y-4 text-base/[26px] text-ink-muted md:hidden">
+              {service.detail.map((para, i) => (
+                <p key={i} className="text-pretty">{para}</p>
+              ))}
+            </div>
 
             {service.whatItChecks?.length ? (
               <DetailSection id="what-it-checks" title="What it checks">
@@ -263,7 +346,12 @@ export default async function ServiceDetailPage({
 
             {service.steps?.length ? (
               <DetailSection id="what-to-expect" title="What to expect on the day">
-                <ol className="space-y-4">
+                <div className="md:hidden">
+                  <StepsList
+                    steps={service.steps.map((step) => ({ text: step }))}
+                  />
+                </div>
+                <ol className="hidden space-y-4 md:block">
                   {service.steps.map((step, i) => (
                     <li key={step} className="flex items-start gap-4">
                       <span
@@ -318,7 +406,9 @@ export default async function ServiceDetailPage({
                 <Accordion>
                   {service.faqs.map((faq) => (
                     <AccordionItem key={faq.question} value={faq.question}>
-                      <AccordionTrigger>{faq.question}</AccordionTrigger>
+                      <AccordionTrigger className="max-md:min-h-14">
+                        {faq.question}
+                      </AccordionTrigger>
                       <AccordionContent>
                         <p className="text-muted-foreground">{faq.answer}</p>
                       </AccordionContent>
@@ -335,32 +425,36 @@ export default async function ServiceDetailPage({
         </Container>
       </Section>
 
-      {/* Mobile: the booking card is replaced by a trigger pinned just above
-          the sticky mobile bottom bar (min-h-14). */}
-      <div className="fixed inset-x-4 bottom-[calc(3.5rem+env(safe-area-inset-bottom)+0.75rem)] z-40 md:hidden">
-        <BookingCta
-          source="service-page-mobile"
-          service={service.slug}
-          label="Book this scan"
-          size="lg"
-          className="w-full shadow-lift"
-        />
-      </div>
+      {/* Mobile: the desktop sticky booking card is replaced by a slim bar
+          pinned just above the shared bottom bar. */}
+      <ServiceBookingBar service={service} />
 
       {related.length > 0 ? (
         <Section className="bg-blush">
           <Container>
-            <h2 className="mb-8 text-2xl font-semibold text-ink">
+            <SectionHeader title="Related services" className="md:hidden" />
+            <h2 className="mb-8 hidden text-2xl font-semibold text-ink md:block">
               Related services
             </h2>
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {related.map((s) => (
+            <MobileCarousel
+              label="Related services"
+              className="md:grid md:grid-cols-2 md:gap-5 lg:grid-cols-3"
+              items={related.map((s) => (
                 <ServiceCard key={s.slug} service={s} />
               ))}
-            </div>
+            />
+            <Button
+              variant="outline"
+              nativeButton={false}
+              className="mt-8 md:hidden"
+              render={<Link href="/services" />}
+            >
+              View all
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </Button>
             <Link
               href="/services"
-              className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-primary underline-offset-4 hover:underline"
+              className="mt-8 hidden items-center gap-1.5 text-sm font-semibold text-primary underline-offset-4 hover:underline md:inline-flex"
             >
               View all services
               <ArrowRight className="size-4" aria-hidden="true" />
@@ -369,7 +463,35 @@ export default async function ServiceDetailPage({
         </Section>
       ) : null}
 
-      <Section className="pt-0">
+      {serviceGuides.length > 0 ? (
+        <Section surface="white">
+          <Container>
+            <SectionHeader title="Related guides" className="md:hidden" />
+            <h2 className="mb-8 hidden text-2xl font-semibold text-ink md:block">
+              Related guides
+            </h2>
+            <MobileCarousel
+              label="Related guides"
+              className="md:grid md:grid-cols-2 md:gap-5 lg:grid-cols-3"
+              items={serviceGuides.map((g) => (
+                <GuideCard key={g.slug} guide={g} />
+              ))}
+            />
+          </Container>
+        </Section>
+      ) : null}
+
+      <Section
+        surface={serviceGuides.length > 0 ? "blush" : "white"}
+        className="pt-0 md:bg-white"
+      >
+        <Container>
+          <p className="mx-auto mb-8 max-w-3xl rounded-2xl border border-rose-tint bg-white p-4 text-xs/[20px] text-muted-foreground md:hidden">
+            In keeping with the PCPNDT Act, 1994, this service does not involve
+            determination or disclosure of the sex of the fetus. This is a
+            criminal offence in India and is never performed at this centre.
+          </p>
+        </Container>
         <CTABand />
       </Section>
     </>

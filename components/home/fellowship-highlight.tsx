@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { imageBlurDataURL } from "@/lib/image-placeholder";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -13,6 +14,7 @@ import { CourseEnquiryDialog } from "@/components/fellowship/enquiry-dialog";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/container";
+import { SectionShell } from "@/components/shared/section-shell";
 import { courses, fellowshipProgram, type Course } from "@/data/courses";
 import { doctors } from "@/data/doctors";
 import { courseSchema } from "@/lib/schema";
@@ -44,6 +46,8 @@ function FacultyItem({
           alt={`Portrait of ${doctor.name}`}
           fill
           sizes="40px"
+          placeholder="blur"
+          blurDataURL={imageBlurDataURL}
           className="object-cover"
           style={{
             objectPosition: `${doctor.photoFocus.x}% ${doctor.photoFocus.y}%`,
@@ -99,7 +103,10 @@ export function FellowshipHighlight() {
   )}`;
 
   return (
-    <section className="relative overflow-hidden bg-plum py-16 text-white md:py-24">
+    <SectionShell
+      surface="white"
+      className="relative overflow-hidden bg-white py-12 text-white md:bg-plum md:py-24"
+    >
       {courses.map((course) => (
         <JsonLd key={course.slug} data={courseSchema(course)} />
       ))}
@@ -108,6 +115,46 @@ export function FellowshipHighlight() {
         aria-hidden="true"
       />
       <Container className="relative">
+        <div className="rounded-3xl bg-plum p-5 md:contents">
+        {/* Mobile: single compact PlumCard. */}
+        <div className="md:hidden">
+          <p className="text-xs font-semibold tracking-[0.14em] text-rose-tint uppercase">
+            For doctors
+          </p>
+          <h2 className="mt-2 font-heading text-[26px]/[32px] font-semibold text-balance text-white">
+            Fellowship and courses
+          </h2>
+          <ul className="mt-4 space-y-2.5">
+            {courses.map((course) => (
+              <li
+                key={course.slug}
+                className="flex gap-2.5 text-sm/[20px] font-semibold text-white/90"
+              >
+                <CircleCheck
+                  className="mt-0.5 size-4 shrink-0 text-rose-tint"
+                  aria-hidden="true"
+                />
+                {course.title}
+              </li>
+            ))}
+          </ul>
+          <Button
+            size="lg"
+            nativeButton={false}
+            className="mt-5 min-h-12 w-full rounded-full bg-white text-plum hover:bg-rose-tint"
+            render={<Link href="/fellowship" />}
+          >
+            View courses
+          </Button>
+          <a
+            href={mailtoHref}
+            className="mt-2 flex min-h-11 w-full items-center justify-center text-sm font-semibold text-white underline-offset-4 hover:underline"
+          >
+            Send your CV
+          </a>
+        </div>
+        {/* Desktop: original section, unchanged. */}
+        <div className="hidden md:contents">
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_420px]">
           <div>
             <p className="text-sm font-bold tracking-[0.14em] text-rose-tint uppercase">
@@ -144,24 +191,28 @@ export function FellowshipHighlight() {
             </div>
           </div>
 
-          <figure>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/15">
-              <Image
-                src={fellowshipProgram.image}
-                alt={fellowshipProgram.imageAlt}
-                fill
-                sizes="(min-width: 1024px) 420px, 100vw"
-                className="object-cover"
-              />
-              <span
-                className="pointer-events-none absolute inset-0 bg-plum/20 mix-blend-multiply"
-                aria-hidden="true"
-              />
-            </div>
-            <figcaption className="mt-2 text-sm text-white/80">
-              Hands-on training in obstetric ultrasound
-            </figcaption>
-          </figure>
+          {fellowshipProgram.image ? (
+            <figure>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/15">
+                <Image
+                  src={fellowshipProgram.image}
+                  alt={fellowshipProgram.imageAlt}
+                  fill
+                  sizes="(min-width: 1024px) 420px, 100vw"
+                  placeholder="blur"
+                  blurDataURL={imageBlurDataURL}
+                  className="object-cover"
+                />
+                <span
+                  className="pointer-events-none absolute inset-0 bg-plum/20 mix-blend-multiply"
+                  aria-hidden="true"
+                />
+              </div>
+              <figcaption className="mt-2 text-sm text-white/80">
+                Hands-on training in obstetric ultrasound
+              </figcaption>
+            </figure>
+          ) : null}
         </div>
 
         <p className="mt-12 flex items-center gap-2 text-sm text-white/70">
@@ -217,7 +268,9 @@ export function FellowshipHighlight() {
             ) : null}
           </div>
         </div>
+        </div>
+        </div>
       </Container>
-    </section>
+    </SectionShell>
   );
 }

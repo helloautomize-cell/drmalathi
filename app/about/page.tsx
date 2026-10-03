@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { imageBlurDataURL } from "@/lib/image-placeholder";
 import Link from "next/link";
 import { ArrowRight, GraduationCap, HeartHandshake, Presentation } from "lucide-react";
 import { CTABand } from "@/components/cards/cta-band";
 import { DoctorMiniCard } from "@/components/cards/doctor-mini-card";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Container } from "@/components/shared/container";
-import { PageHeader } from "@/components/shared/page-header";
+import { MobileCarousel } from "@/components/shared/mobile-carousel";
+import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
+import { StepsList } from "@/components/shared/steps-list";
 import { doctors } from "@/data/doctors";
 import { advancedProcedures } from "@/data/procedures";
 import { breadcrumbSchema } from "@/lib/schema";
@@ -75,21 +78,25 @@ export default function AboutPage() {
           { label: "About", href: "/about" },
         ])}
       />
-      <PageHeader
+      <PageHero
         eyebrow="About us"
         title="A centre built around the baby you cannot see yet"
-        subtitle="Trichy Fetal Medicine and Fertility Centre cares for families in Trichy and across south Tamil Nadu."
+        intro="Trichy Fetal Medicine and Fertility Centre cares for families in Trichy and across south Tamil Nadu."
         crumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
+        image="/images/gallery/event8.webp"
+        imageAlt="A fetal medicine specialist at the ultrasound machine inside Trichy Fetal Medicine and Fertility Centre"
       />
 
       <Section>
         <Container className="grid items-center gap-10 lg:grid-cols-2">
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-soft">
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-soft max-md:hidden">
             <Image
               src="/images/gallery/event8.webp"
               alt="A fetal medicine specialist at the ultrasound machine inside Trichy Fetal Medicine and Fertility Centre"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
+              placeholder="blur"
+              blurDataURL={imageBlurDataURL}
               className="object-cover"
             />
           </div>
@@ -130,7 +137,20 @@ export default function AboutPage() {
             eyebrow="Our story"
             title="How the centre grew"
           />
-          <ol className="relative mx-auto max-w-3xl space-y-8 border-l-2 border-rose-tint pl-8">
+          {/* Mobile: the shared vertical stepper. */}
+          <div className="md:hidden">
+            <StepsList
+              steps={timeline.map((event) => ({
+                title: event.year
+                  ? `${event.year}: ${event.title}`
+                  : event.title,
+                text: event.text,
+              }))}
+              className="max-w-none"
+            />
+          </div>
+          {/* Desktop: border-l timeline, unchanged. */}
+          <ol className="relative mx-auto hidden max-w-3xl space-y-8 border-l-2 border-rose-tint pl-8 md:block">
             {timeline.map((event) => (
               <li key={event.title} className="relative">
                 <span
@@ -151,7 +171,7 @@ export default function AboutPage() {
                   {event.text}{" "}
                   {event.href ? (
                     <Link href={event.href} className="link font-semibold">
-                      Read more
+                      Learn more
                     </Link>
                   ) : null}
                 </p>
@@ -222,11 +242,13 @@ export default function AboutPage() {
             title="The team behind your care"
             subtitle="Fetal medicine specialists who take time to explain every finding."
           />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {doctors.map((doctor) => (
+          <MobileCarousel
+            label="Our specialists"
+            className="sm:grid-cols-2 md:grid md:gap-4 lg:grid-cols-3"
+            items={doctors.map((doctor) => (
               <DoctorMiniCard key={doctor.slug} doctor={doctor} />
             ))}
-          </div>
+          />
           <p className="mx-auto mt-10 flex max-w-2xl items-start gap-3 rounded-2xl border border-rose-tint bg-blush p-5 text-sm text-muted-foreground">
             <HeartHandshake
               className="mt-0.5 size-5 shrink-0 text-teal"
@@ -239,7 +261,7 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      <Section className="pt-0">
+      <Section surface="blush" className="pt-0 md:bg-white">
         <CTABand />
       </Section>
     </>

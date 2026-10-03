@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { Baby, BadgeCheck, Clock, HeartPulse, ShieldCheck } from "lucide-react";
+import { MobileShowcase } from "@/components/design-system/mobile-showcase";
 import { CTABand } from "@/components/cards/cta-band";
 import { DoctorCard } from "@/components/cards/doctor-card";
 import { FeatureCard } from "@/components/cards/feature-card";
@@ -65,6 +66,8 @@ export default function DesignSystemPage() {
 
   return (
     <>
+      <MobileShowcase />
+      <div className="hidden md:contents">
       <Section className="bg-blush">
         <Container>
           <SectionHeader
@@ -250,6 +253,7 @@ export default function DesignSystemPage() {
       <Section className="pt-0">
         <CTABand />
       </Section>
+      </div>
     </>
   );
 }

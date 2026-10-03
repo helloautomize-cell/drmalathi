@@ -40,7 +40,7 @@ export function BookingCta({
   label?: string;
   icon?: boolean;
   /** "primary" = solid rose, "light" = white on dark bands, "bare" = unstyled trigger. */
-  variant?: "primary" | "light" | "outline-teal" | "bare";
+  variant?: "primary" | "light" | "outline-teal" | "outline-white" | "bare";
   size?: "default" | "sm" | "lg";
   className?: string;
   /** Custom trigger element instead of the standard Button. */
@@ -52,6 +52,8 @@ export function BookingCta({
     primary: "bg-primary text-white hover:bg-primary-hover",
     light: "bg-white text-plum hover:bg-rose-tint",
     "outline-teal": "border-teal text-teal hover:bg-teal-tint hover:text-teal",
+    "outline-white":
+      "border-white/60 bg-transparent text-white hover:bg-white/10 hover:text-white",
     bare: "",
   }[variant];
 
@@ -65,29 +67,30 @@ export function BookingCta({
             <Button
               size={size}
               nativeButton={true}
-              className={`${buttonClass} ${className ?? ""}`}
+              className={`max-md:min-h-12 max-md:w-full max-md:rounded-full ${buttonClass} ${className ?? ""}`}
             />
           }
         >
           {icon ? <CalendarCheck aria-hidden="true" /> : null}
-          {label ?? "Book an appointment"}
+          {label ?? "Book appointment"}
         </SheetTrigger>
       )}
       <SheetContent side="right" className="w-full gap-0 overflow-y-auto sm:max-w-md">
-        <SheetHeader className="border-b border-border px-6 pt-6 pb-4">
+        <SheetHeader className="border-b border-border px-5 pt-3 pb-4 md:px-6 md:pt-6">
           <SheetTitle className="text-xl font-semibold text-ink">
-            Book an appointment
+            Book appointment
           </SheetTitle>
           <SheetDescription>
             Leave your details and our team will call you back to schedule your
             visit.
           </SheetDescription>
         </SheetHeader>
-        <div className="px-6 py-5">
+        <div className="px-5 py-5 md:px-6">
           <BookingForm
             source={source}
             service={service}
             doctor={doctor}
+            stickySubmit
             onDone={() => setOpen(false)}
           />
           <p className="mt-4 text-center text-sm text-muted-foreground">

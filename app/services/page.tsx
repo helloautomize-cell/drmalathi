@@ -3,7 +3,7 @@ import { CTABand } from "@/components/cards/cta-band";
 import { JsonLd } from "@/components/seo/json-ld";
 import { ServiceBrowser } from "@/components/services/service-browser";
 import { Container } from "@/components/shared/container";
-import { PageHeader } from "@/components/shared/page-header";
+import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
 import { breadcrumbSchema } from "@/lib/schema";
 
@@ -23,10 +23,10 @@ export default function ServicesPage() {
           { label: "Services", href: "/services" },
         ])}
       />
-      <PageHeader
+      <PageHero
         eyebrow="Our services"
         title="Scans, diagnostics and specialty clinics"
-        subtitle="Every service below is performed or supervised by a fetal medicine specialist, with findings explained to you in plain language."
+        intro="Every service below is performed or supervised by a fetal medicine specialist, with findings explained to you in plain language."
         crumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
       />
 
@@ -36,9 +36,9 @@ export default function ServicesPage() {
         </Container>
       </Section>
 
-      <Section className="pt-0">
+      <Section surface="blush" className="pt-0 md:bg-white">
         <Container>
-          <p className="mx-auto mb-10 max-w-3xl rounded-2xl border border-rose-tint bg-blush p-5 text-sm text-muted-foreground">
+          <p className="mx-auto mb-10 max-w-3xl rounded-2xl border border-rose-tint bg-white p-5 text-sm text-muted-foreground md:bg-blush">
             In keeping with the PCPNDT Act, 1994, none of our scans or services
             involve determination or disclosure of the sex of the fetus. This is
             a criminal offence in India and is never performed at this centre.

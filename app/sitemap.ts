@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { doctors } from "@/data/doctors";
 import { services } from "@/data/services";
 import { site } from "@/data/site";
+import { categoriesInUse, getAllGuides } from "@/lib/guides";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -12,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/cme-activities",
     "/doctors",
     "/gallery",
+    "/guides",
     "/contact",
     "/faq",
     "/due-date-calculator",
@@ -35,5 +37,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     }));
 
-  return [...staticRoutes, ...serviceRoutes, ...doctorRoutes];
+  const guideRoutes = getAllGuides().guides.map((guide) => ({
+    url: `${site.url}/guides/${guide.slug}`,
+    lastModified: guide.updatedAt ?? guide.publishedAt,
+  }));
+
+  const guideCategoryRoutes = categoriesInUse().map((category) => ({
+    url: `${site.url}/guides/category/${category.slug}`,
+    lastModified: new Date(),
+  }));
+
+  return [
+    ...staticRoutes,
+    ...serviceRoutes,
+    ...doctorRoutes,
+    ...guideRoutes,
+    ...guideCategoryRoutes,
+  ];
 }

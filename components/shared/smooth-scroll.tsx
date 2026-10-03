@@ -3,21 +3,22 @@
 import { ReactLenis } from "lenis/react";
 import { useSyncExternalStore, type ReactNode } from "react";
 
-const QUERY = "(prefers-reduced-motion: reduce)";
 const subscribe = (cb: () => void) => {
-  const mq = window.matchMedia(QUERY);
-  mq.addEventListener("change", cb);
-  return () => mq.removeEventListener("change", cb);
+  const queries = [
+    window.matchMedia("(prefers-reduced-motion: reduce)"),
+    window.matchMedia("(max-width: 767px)"),
+  ];
+  queries.forEach((mq) => mq.addEventListener("change", cb));
+  return () => queries.forEach((mq) => mq.removeEventListener("change", cb));
 };
+const isNativeScroll = () =>
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+  window.matchMedia("(max-width: 767px)").matches;
 
 export function SmoothScroll({ children }: { children: ReactNode }) {
-  const reducedMotion = useSyncExternalStore(
-    subscribe,
-    () => window.matchMedia(QUERY).matches,
-    () => false
-  );
+  const nativeScroll = useSyncExternalStore(subscribe, isNativeScroll, () => false);
 
-  if (reducedMotion) return <>{children}</>;
+  if (nativeScroll) return <>{children}</>;
 
   return (
     <ReactLenis root options={{ lerp: 0.1, anchors: true }}>

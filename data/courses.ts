@@ -47,7 +47,7 @@ export const fellowshipProgram = {
     phoneHref: "tel:+919443389193",
     intakeDate: null as string | null,
   },
-  image: "/images/fellowship-training.webp",
+  image: null as string | null,
   imageAlt:
     "Doctor receiving hands-on training in obstetric ultrasound using an ultrasound console",
   showBrochure: false,

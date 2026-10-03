@@ -52,7 +52,13 @@ const enquirySchema = z.object({
 
 type EnquiryValues = z.infer<typeof enquirySchema>;
 
-export function CourseEnquiryDialog({ course }: { course: Course }) {
+export function CourseEnquiryDialog({
+  course,
+  triggerClassName = "inline-flex min-h-11 items-center gap-1.5 rounded-lg text-sm font-semibold text-white underline-offset-4 hover:underline focus-visible:ring-3 focus-visible:ring-white/60 focus-visible:outline-none",
+}: {
+  course: Course;
+  triggerClassName?: string;
+}) {
   const [open, setOpen] = useState(false);
   const [startedAt, setStartedAt] = useState(() => new Date().toISOString());
   const {
@@ -116,12 +122,7 @@ export function CourseEnquiryDialog({ course }: { course: Course }) {
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger
-        render={
-          <button
-            type="button"
-            className="inline-flex min-h-11 items-center gap-1.5 rounded-lg text-sm font-semibold text-white underline-offset-4 hover:underline focus-visible:ring-3 focus-visible:ring-white/60 focus-visible:outline-none"
-          />
-        }
+        render={<button type="button" className={triggerClassName} />}
       >
         Enquire about this course
         <ArrowRight className="size-4" aria-hidden="true" />
@@ -162,6 +163,7 @@ export function CourseEnquiryDialog({ course }: { course: Course }) {
               <Input
                 id={`${id}-phone`}
                 type="tel"
+                inputMode="tel"
                 autoComplete="tel"
                 aria-invalid={!!errors.phone}
                 {...register("phone")}
@@ -177,6 +179,7 @@ export function CourseEnquiryDialog({ course }: { course: Course }) {
             <Input
               id={`${id}-email`}
               type="email"
+              inputMode="email"
               autoComplete="email"
               aria-invalid={!!errors.email}
               {...register("email")}
@@ -292,7 +295,7 @@ export function CourseEnquiryDialog({ course }: { course: Course }) {
             type="submit"
             size="lg"
             disabled={isSubmitting}
-            className="min-h-11 w-full bg-primary text-white hover:bg-primary-hover"
+            className="min-h-12 w-full bg-primary text-white hover:bg-primary-hover max-md:sticky max-md:bottom-0 max-md:z-10"
           >
             {isSubmitting ? "Sending..." : "Send course enquiry"}
           </Button>

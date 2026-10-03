@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { cn } from "cn";
+import { imageBlurDataURL } from "@/lib/image-placeholder";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/container";
 import { Section } from "@/components/shared/section";
@@ -17,7 +18,7 @@ const previewImages = [
   {
     src: "/images/banners/banner2.webp",
     alt: "Families in the waiting area at the centre",
-    className: "aspect-square",
+    className: "aspect-square max-md:hidden",
     sizes: "(min-width: 768px) 33vw, 50vw",
   },
   {
@@ -48,7 +49,7 @@ const previewImages = [
 
 export function GalleryPreview() {
   return (
-    <Section className="bg-blush">
+    <Section surface="blush" className="md:bg-blush">
       <Container>
         <SectionHeader
           eyebrow="Our clinic"
@@ -70,6 +71,8 @@ export function GalleryPreview() {
                 fill
                 loading={i === 0 ? "eager" : "lazy"}
                 sizes={image.sizes}
+                placeholder="blur"
+                blurDataURL={imageBlurDataURL}
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </li>
@@ -79,7 +82,7 @@ export function GalleryPreview() {
           <Button
             variant="outline"
             nativeButton={false}
-            className="bg-white"
+            className="bg-white max-md:min-h-12 max-md:w-full max-md:rounded-full"
             render={<Link href="/gallery" />}
           >
             View full gallery

@@ -30,16 +30,17 @@ export function CTABand({
           aria-hidden="true"
         />
         <div className="grid lg:grid-cols-[1.2fr_1fr]">
-          <div className="relative px-6 py-12 text-center md:px-12 md:py-16 lg:text-left">
-            <h2 className="text-3xl font-semibold text-white md:text-4xl">
+          <div className="relative p-5 text-center md:px-12 md:py-16 lg:text-left">
+            <h2 className="text-[26px]/[32px] font-semibold text-balance text-white md:text-4xl">
               {title}
             </h2>
-            <p className="mt-4 text-white/80">{subtitle}</p>
-            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row lg:justify-start sm:justify-center">
+            <p className="mt-4 text-pretty text-white/80">{subtitle}</p>
+            {/* Mobile: three full-width equal actions. */}
+            <div className="mt-6 flex flex-col gap-3 md:hidden">
               <Button
                 size="lg"
                 nativeButton={false}
-                className="bg-white text-plum hover:bg-rose-tint"
+                className="min-h-12 w-full rounded-full bg-white text-plum hover:bg-rose-tint"
                 render={<a href={phone.href} />}
               >
                 <Phone aria-hidden="true" />
@@ -48,7 +49,7 @@ export function CTABand({
               <Button
                 size="lg"
                 nativeButton={false}
-                className="bg-teal text-white hover:bg-teal/85"
+                className="min-h-12 w-full rounded-full bg-teal text-white hover:bg-teal/85"
                 render={
                   <a
                     href={whatsapp.messageHref}
@@ -58,13 +59,45 @@ export function CTABand({
                 }
               >
                 <WhatsAppIcon aria-hidden="true" />
-                WhatsApp Us
+                WhatsApp us
               </Button>
-            </div>
-            <div className="mt-5">
               <BookingCta
                 source="cta-band"
-                label="Book a private consultation"
+                label="Request a callback"
+                variant="outline-white"
+                icon={false}
+              />
+            </div>
+            <div className="mt-8 hidden flex-col items-center gap-3 sm:flex-row md:flex lg:justify-start sm:justify-center">
+              <Button
+                size="lg"
+                nativeButton={false}
+                className="hidden bg-white text-plum hover:bg-rose-tint md:inline-flex"
+                render={<a href={phone.href} />}
+              >
+                <Phone aria-hidden="true" />
+                Call {phone.label}
+              </Button>
+              <Button
+                size="lg"
+                nativeButton={false}
+                className="hidden bg-teal text-white hover:bg-teal/85 md:inline-flex"
+                render={
+                  <a
+                    href={whatsapp.messageHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  />
+                }
+              >
+                <WhatsAppIcon aria-hidden="true" />
+                WhatsApp us
+              </Button>
+            </div>
+            <div className="mt-5 hidden md:block">
+              <BookingCta
+                source="cta-band"
+                label="Book appointment"
                 variant="light"
                 icon={false}
               />
@@ -72,7 +105,7 @@ export function CTABand({
             <p className="mt-4 text-sm text-white/70">{site.hours}</p>
           </div>
           <div
-            className="relative min-h-56 lg:min-h-0"
+            className="relative hidden min-h-56 md:block lg:min-h-0"
             aria-hidden="true"
           >
             <BrandImage
@@ -83,6 +116,21 @@ export function CTABand({
               reveal={false}
               sizes="(min-width: 1024px) 40vw, 100vw"
               imgClassName="[mask-image:linear-gradient(to_bottom,transparent_0%,black_45%)] lg:[mask-image:linear-gradient(to_right,transparent_0%,black_40%)]"
+            />
+          </div>
+          {/* Mobile: duotone photo cropped to 16/9 at the bottom of the card. */}
+          <div
+            className="relative aspect-video md:hidden"
+            aria-hidden="true"
+          >
+            <BrandImage
+              slug="family-bw-newborn"
+              variant="bleed"
+              fill
+              decorative
+              reveal={false}
+              sizes="100vw"
+              imgClassName="object-cover"
             />
           </div>
         </div>

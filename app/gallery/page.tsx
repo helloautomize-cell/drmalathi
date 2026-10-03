@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { GalleryBrowser } from "@/components/gallery/gallery-browser";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Container } from "@/components/shared/container";
-import { PageHeader } from "@/components/shared/page-header";
+import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
 import { breadcrumbSchema } from "@/lib/schema";
 
@@ -22,10 +22,10 @@ export default function GalleryPage() {
           { label: "Gallery", href: "/gallery" },
         ])}
       />
-      <PageHeader
+      <PageHero
         eyebrow="Gallery"
         title="Inside the centre"
-        subtitle="A look at our reception, scan rooms, waiting areas, and the spaces where we care for families."
+        intro="A look at our reception, scan rooms, waiting areas, and the spaces where we care for families."
         crumbs={[{ label: "Home", href: "/" }, { label: "Gallery" }]}
       />
       <Section>

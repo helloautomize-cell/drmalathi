@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import {
+  ChevronRight,
   Clock,
   FileText,
   Globe2,
@@ -10,14 +13,17 @@ import {
   Phone,
   ScanLine,
 } from "lucide-react";
+import { MobileIconTile } from "@/components/cards/mobile-cards";
 import { QuickConsultForm } from "@/components/forms/quick-consult-form";
 import { JsonLd } from "@/components/seo/json-ld";
+import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
 import { Container } from "@/components/shared/container";
-import { PageHeader } from "@/components/shared/page-header";
+import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
 import { site } from "@/data/site";
 import { breadcrumbSchema } from "@/lib/schema";
+import { imageBlurDataURL } from "@/lib/image-placeholder";
 
 export const metadata: Metadata = {
   title: "Contact and Appointments",
@@ -95,14 +101,91 @@ export default function ContactPage() {
           { label: "Contact", href: "/contact" },
         ])}
       />
-      <PageHeader
+      <PageHero
         eyebrow="Contact"
         title="Book your appointment"
-        subtitle="Call us, message us on WhatsApp, or send a request and our team will call you back to fix a convenient time."
+        intro="Call us, message us on WhatsApp, or send a request and our team will call you back to fix a convenient time."
         crumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       />
       <Section>
-        <Container className="grid gap-10 lg:grid-cols-2">
+        <Container>
+          {/* Mobile flow: call/WhatsApp cards, form, hours. */}
+          <div className="space-y-4 md:hidden">
+            <div className="rounded-2xl border border-rose-tint bg-white p-5 shadow-soft">
+              <div className="flex items-center gap-3">
+                <MobileIconTile icon={Phone} />
+                <div>
+                  <p className="text-[19px]/[26px] font-semibold text-ink">
+                    Call us
+                  </p>
+                  <a
+                    href={site.phones[0].href}
+                    className="text-base/[26px] font-semibold text-primary"
+                  >
+                    {site.phones[0].label}
+                  </a>
+                </div>
+              </div>
+              <a
+                href={site.phones[1].href}
+                className="mt-2 block min-h-11 text-sm/[20px] text-ink-muted underline-offset-4 hover:underline"
+              >
+                Alternate: {site.phones[1].label}
+              </a>
+            </div>
+
+            <a
+              href={site.whatsapp.messageHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 rounded-2xl border border-rose-tint bg-white p-5 shadow-soft"
+            >
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-teal-tint text-teal">
+                <WhatsAppIcon className="size-5" aria-hidden="true" />
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block text-[19px]/[26px] font-semibold text-ink">
+                  WhatsApp us
+                </span>
+                <span className="block text-base/[26px] text-ink-muted">
+                  {site.whatsapp.label}
+                </span>
+              </span>
+              <ChevronRight className="size-4 shrink-0 text-ink-muted" aria-hidden="true" />
+            </a>
+
+            <div className="rounded-3xl border border-rose-tint bg-white p-5 shadow-card">
+              <h2 className="text-xl font-semibold text-ink">
+                Request a callback
+              </h2>
+              <p className="mt-1 mb-6 text-sm/[20px] text-ink-muted">
+                Share your details and we will call you back to fix a convenient
+                time.
+              </p>
+              <QuickConsultForm />
+            </div>
+
+            <div className="rounded-2xl border border-rose-tint bg-white p-5 shadow-soft">
+              <h2 className="flex items-center gap-2 text-base font-semibold text-ink">
+                <Clock className="size-4 text-primary" aria-hidden="true" />
+                Opening hours
+              </h2>
+              <dl className="mt-3 divide-y divide-border text-sm">
+                {hoursRows.map((row) => (
+                  <div
+                    key={row.days}
+                    className="flex items-center justify-between gap-4 py-2.5"
+                  >
+                    <dt className="text-muted-foreground">{row.days}</dt>
+                    <dd className="font-semibold text-ink">{row.hours}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+
+          {/* Desktop two-column layout, unchanged. */}
+          <div className="hidden gap-10 md:grid lg:grid-cols-2">
           <div>
             <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
               {contactRows.map((row) => (
@@ -184,36 +267,21 @@ export default function ContactPage() {
             </p>
             <QuickConsultForm />
           </div>
+          </div>
         </Container>
       </Section>
 
       <Section className="bg-blush">
-        <Container>
+        <Container className="flex flex-col">
           <SectionHeader
             align="left"
             eyebrow="Visit us"
             title="Getting here"
+            className="order-1"
           />
-          {/* TODO: client to confirm the official Google Maps listing, then
-              update site.address.mapsEmbedUrl. */}
-          <div className="overflow-hidden rounded-3xl border border-rose-tint shadow-soft">
-            <iframe
-              src={site.address.mapsEmbedUrl}
-              title={`Map to ${site.name}, Thillai Nagar, Trichy`}
-              loading="lazy"
-              allowFullScreen
-              referrerPolicy="no-referrer-when-downgrade"
-              className="aspect-[16/9] w-full border-0"
-            />
-          </div>
-          {/* TODO: client to provide landmark directions (nearest junction,
-              parking notes) for visitors. */}
-          <p className="mt-4 text-sm text-muted-foreground">
-            The centre is on Annamalai Nagar in Thillai Nagar, Trichy. Call us
-            on {site.phones[0].label} if you need directions on the day.
-          </p>
 
-          <div className="mt-10 rounded-2xl border border-rose-tint bg-white p-6 shadow-soft">
+          {/* Mobile: what to bring comes before the map card. */}
+          <div className="order-2 rounded-2xl border border-rose-tint bg-white p-5 shadow-soft md:order-3 md:mt-10 md:p-6">
             <h2 className="text-lg font-semibold text-ink">What to bring</h2>
             <ul className="mt-4 grid gap-3 sm:grid-cols-3">
               {bringItems.map((item) => (
@@ -231,6 +299,82 @@ export default function ContactPage() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Mobile: static map card with a Get directions button. */}
+          <div className="order-3 mt-6 rounded-2xl border border-rose-tint bg-white p-4 shadow-soft md:hidden">
+            <a
+              href={site.address.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block overflow-hidden rounded-xl"
+            >
+              <Image
+                src="/images/map-trichy.png"
+                alt={`Map showing ${site.name}, ${site.address.lines.join(" ")}`}
+                width={600}
+                height={300}
+                sizes="calc(100vw - 64px)"
+                placeholder="blur"
+                blurDataURL={imageBlurDataURL}
+                className="h-36 w-full object-cover"
+              />
+            </a>
+            <p className="mt-1.5 text-right text-xs text-ink-muted">
+              © OpenStreetMap contributors
+            </p>
+            <p className="mt-2 flex items-start gap-2 text-sm text-ink-muted">
+              <MapPin className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
+              {site.address.lines.join(" ")}
+            </p>
+            <a
+              href={site.address.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-primary px-4 text-sm font-semibold text-primary"
+            >
+              <MapPin className="size-4" aria-hidden="true" />
+              Get directions
+            </a>
+          </div>
+
+          {/* Mobile: international patients as a ListRow. */}
+          <Link
+            href="/international-patients"
+            className="order-4 mt-4 flex min-h-14 items-center gap-3 rounded-2xl border border-rose-tint bg-white px-4 py-3 shadow-soft md:hidden"
+          >
+            <MobileIconTile icon={Globe2} tone="teal" />
+            <span className="min-w-0 flex-1">
+              <span className="block text-base/[26px] font-semibold text-ink">
+                International patients
+              </span>
+              <span className="block text-sm/[20px] text-ink-muted">
+                Dedicated line: {site.internationalPhone.label}
+              </span>
+            </span>
+            <ChevronRight className="size-4 shrink-0 text-ink-muted" aria-hidden="true" />
+          </Link>
+
+          {/* Desktop: embedded map, unchanged. */}
+          <div className="order-3 mt-6 md:order-2 md:mt-0">
+          {/* TODO: client to confirm the official Google Maps listing, then
+              update site.address.mapsEmbedUrl. */}
+          <div className="overflow-hidden rounded-3xl border border-rose-tint shadow-soft max-md:hidden">
+            <iframe
+              src={site.address.mapsEmbedUrl}
+              title={`Map to ${site.name}, Thillai Nagar, Trichy`}
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+              className="aspect-[16/9] w-full border-0"
+            />
+          </div>
+          {/* TODO: client to provide landmark directions (nearest junction,
+              parking notes) for visitors. */}
+          <p className="mt-4 text-sm text-muted-foreground">
+            The centre is on Annamalai Nagar in Thillai Nagar, Trichy. Call us
+            on {site.phones[0].label} if you need directions on the day.
+          </p>
           </div>
         </Container>
       </Section>

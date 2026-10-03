@@ -17,6 +17,7 @@
   --color-ink-muted: #6B5A66;
   --color-teal: #177373;
   --color-teal-tint: #E6F4F3;
+  --color-amber-tint: #FFF4E0;
   --color-blush: #FFF3F7;
   --color-rose-tint: #FBE1EA;
 
@@ -115,33 +116,33 @@
   }
 }
 
-/* Scroll-driven reveal (no JS; progressive enhancement) */
-@media (prefers-reduced-motion: no-preference) {
+@media (max-width: 767px) and (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal[data-reveal-state="pending"] {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  .reveal[data-reveal-state="visible"] {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 250ms ease-out var(--reveal-delay, 0ms),
+      transform 250ms ease-out var(--reveal-delay, 0ms);
+  }
+}
+
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
     .reveal {
       animation: reveal-up both;
       animation-timeline: view();
       animation-range: entry 0% entry 60%;
     }
-  }
-}
-
-/* Heartbeat line draws itself once when scrolled into view */
-@media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    .heartbeat-path {
-      stroke-dasharray: 1400;
-      stroke-dashoffset: 1400;
-      animation: heartbeat-draw linear both;
-      animation-timeline: view();
-      animation-range: entry 10% cover 60%;
-    }
-  }
-}
-
-@keyframes heartbeat-draw {
-  to {
-    stroke-dashoffset: 0;
   }
 }
 
@@ -177,6 +178,125 @@
     outline: 3px solid var(--color-accent-bright);
     outline-offset: 3px;
   }
+}
+
+@media (max-width: 767px) {
+  main h1 {
+    font-size: 34px !important;
+    line-height: 40px !important;
+  }
+
+  main h2 {
+    font-size: 26px !important;
+    line-height: 32px !important;
+  }
+
+  main h3 {
+    font-size: 19px !important;
+    line-height: 26px !important;
+  }
+
+  main h1,
+  main h2,
+  main h3,
+  main h4,
+  main [data-section-shell] > p {
+    text-wrap: balance;
+  }
+
+  main p {
+    font-size: 16px;
+    line-height: 26px;
+    text-wrap: pretty;
+  }
+
+  main figcaption,
+  main [data-meta],
+  main .text-xs:not([data-eyebrow]) {
+    font-size: 13px !important;
+    line-height: 20px !important;
+  }
+
+  main [data-eyebrow] {
+    font-size: 12px !important;
+    line-height: 18px !important;
+  }
+
+  main .gap-5,
+  main .gap-6 {
+    gap: 12px !important;
+  }
+
+  main article,
+  [data-slot="card"] {
+    min-height: 0 !important;
+  }
+
+  [data-slot="card"] {
+    gap: 12px;
+    border-radius: 1rem;
+  }
+
+  [data-slot="card-content"] {
+    padding: 1.25rem !important;
+  }
+
+  main [data-slot="button"][data-variant="default"],
+  main [data-slot="button"][data-variant="outline"] {
+    min-height: 3rem;
+    width: 100%;
+    border-radius: 9999px;
+  }
+
+  input,
+  textarea,
+  [data-slot="select-trigger"] {
+    min-height: 3rem !important;
+    font-size: 16px !important;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button:active,
+  a:active {
+    transform: scale(0.98);
+    transition-duration: 100ms;
+  }
+
+  body:has([data-slot="sheet-content"]),
+  body:has([data-slot="dialog-content"]) {
+    overflow: hidden;
+  }
+
+  body:has([data-slot="sheet-content"]) [data-mobile-bottom-bar],
+  body:has([data-slot="dialog-content"]) [data-mobile-bottom-bar] {
+    display: none;
+  }
+}
+
+@media (hover: none) {
+  .hover\:-translate-y-1:hover,
+  .hover\:scale-105:hover,
+  .group:hover .group-hover\:scale-105 {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .mobile-carousel-shell {
+    contain: layout paint;
+  }
+}
+
+.mobile-carousel {
+  scrollbar-width: none;
+}
+
+.mobile-carousel::-webkit-scrollbar {
+  display: none;
 }
 
 /* Underlined in-text link for prose and inline copy */

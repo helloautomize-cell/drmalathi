@@ -3,7 +3,7 @@ import { DueDateCalculator } from "@/components/calculator/due-date-calculator";
 import { JsonLd } from "@/components/seo/json-ld";
 import { BrandImage } from "@/components/shared/brand-image";
 import { Container } from "@/components/shared/container";
-import { PageHeader } from "@/components/shared/page-header";
+import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
 import { breadcrumbSchema } from "@/lib/schema";
 
@@ -23,15 +23,16 @@ export default function DueDateCalculatorPage() {
           { label: "Due Date Calculator", href: "/due-date-calculator" },
         ])}
       />
-      <PageHeader
+      <PageHero
         eyebrow="Free tool"
         title="Due date calculator"
-        subtitle="Choose a method below, last period, conception date or IVF transfer, to see your estimated due date and a personal scan timeline."
+        intro="Choose a method below, last period, conception date or IVF transfer, to see your estimated due date and a personal scan timeline."
         crumbs={[{ label: "Home", href: "/" }, { label: "Due Date Calculator" }]}
       />
       <Section>
         <Container className="grid max-w-4xl items-start gap-8 lg:grid-cols-[1fr_15rem]">
           <div className="max-w-2xl">
+            <h2 className="sr-only">Calculate your due date</h2>
             <DueDateCalculator />
             <p className="mt-6 text-xs leading-relaxed text-muted-foreground">
               This estimate is a general guide only. Your doctor will confirm

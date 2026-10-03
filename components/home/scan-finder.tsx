@@ -5,8 +5,10 @@ import Link from "next/link";
 import {
   ArrowRight,
   ChevronDown,
+  ChevronRight,
 } from "lucide-react";
 import { BookingCta } from "@/components/booking/booking-sheet";
+import { WeekChip } from "@/components/home/week-chip";
 import { Button } from "@/components/ui/button";
 import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
 import { Label } from "@/components/ui/label";
@@ -24,9 +26,11 @@ export function ScanFinder() {
   );
 
   return (
-    <div className="rounded-2xl bg-white p-5 text-ink shadow-card sm:p-6">
-      <h2 className="text-xl font-semibold text-ink">Which scan do I need?</h2>
-      <p className="mt-1 text-sm text-muted-foreground">
+    <div className="rounded-3xl bg-white p-5 text-ink shadow-card md:rounded-2xl sm:p-6">
+      <h2 className="text-[19px]/[26px] font-semibold text-ink md:text-xl">
+        Which scan do I need?
+      </h2>
+      <p className="mt-1 hidden text-sm text-muted-foreground md:block">
         Choose your stage to see the scans usually offered at that time.
       </p>
 
@@ -48,7 +52,7 @@ export function ScanFinder() {
                 new CustomEvent("fmc:scan-stage", { detail: id })
               );
             }}
-            className="h-11 w-full appearance-none rounded-lg border border-input bg-white py-2 pr-10 pl-3 text-sm text-ink transition-colors outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 aria-invalid:border-destructive"
+            className="h-12 w-full appearance-none rounded-lg border border-input bg-white py-2 pr-10 pl-3 text-base text-ink transition-colors outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 aria-invalid:border-destructive md:h-11 md:text-sm"
           >
             <option value="" disabled>
               Select your stage
@@ -66,10 +70,52 @@ export function ScanFinder() {
         </div>
       </div>
 
+      <p className="mt-3 text-sm/[20px] text-ink-muted md:hidden">
+        Not sure of your dates?{" "}
+        <a
+          href={site.phones[0].href}
+          className="font-semibold text-primary underline-offset-4 hover:underline"
+        >
+          Call us
+        </a>{" "}
+        and we will guide you.
+      </p>
+
       <div aria-live="polite" className="mt-4">
         {stage ? (
           <>
-            <ul className="divide-y divide-border rounded-xl border border-border">
+            {/* Mobile: compact ListRows with WeekChip + chevron. */}
+            <ul className="divide-y divide-rose-tint rounded-2xl border border-rose-tint md:hidden">
+              {stage.scans.map(({ slug, when }) => {
+                const service = services.find((s) => s.slug === slug);
+                if (!service) return null;
+                return (
+                  <li key={slug}>
+                    <Link
+                      href={`/services/${slug}`}
+                      className="flex min-h-14 items-center gap-3 px-4 py-3 focus-visible:bg-blush"
+                    >
+                      <span className="min-w-0 flex-1 text-base/[26px] font-semibold text-ink">
+                        {service.name}
+                      </span>
+                      {service.weeks ? (
+                        <WeekChip weeks={service.weeks} />
+                      ) : (
+                        <span className="text-[13px]/[20px] text-ink-muted">
+                          {when}
+                        </span>
+                      )}
+                      <ChevronRight
+                        className="size-4 shrink-0 text-ink-muted"
+                        aria-hidden="true"
+                      />
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+            {/* Desktop: icon rows, unchanged. */}
+            <ul className="hidden divide-y divide-border rounded-xl border border-border md:block">
               {stage.scans.map(({ slug, when }) => {
                 const service = services.find((s) => s.slug === slug);
                 if (!service) return null;
@@ -105,13 +151,23 @@ export function ScanFinder() {
             </p>
           </>
         ) : (
-          <p className="rounded-xl bg-blush px-3 py-2.5 text-xs text-muted-foreground">
+          <p className="hidden rounded-xl bg-blush px-3 py-2.5 text-xs text-muted-foreground md:block">
             Not sure of your dates? Call us and our team will guide you.
           </p>
         )}
       </div>
 
-      <div className="mt-4 grid gap-2 sm:grid-cols-2">
+      {/* Mobile: one primary action whose label follows the selection. */}
+      <div className="mt-4 md:hidden">
+        <BookingCta
+          source="scan-finder"
+          service={stage?.scans[0]?.slug}
+          label={stage ? "Book this scan" : "Book appointment"}
+          size="lg"
+          className="w-full"
+        />
+      </div>
+      <div className="mt-4 hidden gap-2 sm:grid-cols-2 md:grid">
         <BookingCta
           source="scan-finder"
           service={stage?.scans[0]?.slug}
@@ -136,7 +192,7 @@ export function ScanFinder() {
           WhatsApp us
         </Button>
       </div>
-      <p className="mt-3 text-[11px] leading-snug text-muted-foreground">
+      <p className="mt-3 text-xs leading-snug text-muted-foreground md:text-[11px]">
         Timing is a general guide. Your obstetrician will advise what is right
         for you.
       </p>

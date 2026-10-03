@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { imageBlurDataURL } from "@/lib/image-placeholder";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -8,9 +9,11 @@ import {
   Microscope,
   Phone,
 } from "lucide-react";
+import { Fragment } from "react";
 import { BookingCta } from "@/components/booking/booking-sheet";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Container } from "@/components/shared/container";
+import { MobileCarousel } from "@/components/shared/mobile-carousel";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
 import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
@@ -31,8 +34,8 @@ function Portrait({
     <div
       className={`relative mx-auto shrink-0 overflow-hidden rounded-t-full bg-gradient-to-b from-rose-tint to-blush ${
         lead
-          ? "h-[275px] w-[220px] lg:h-[400px] lg:w-[320px]"
-          : "h-[120px] w-24 md:h-[175px] md:w-[140px]"
+          ? "h-[200px] w-[160px] md:h-[275px] md:w-[220px] lg:h-[400px] lg:w-[320px]"
+          : "h-[110px] w-[88px] md:h-[175px] md:w-[140px]"
       }`}
     >
       <Image
@@ -41,9 +44,11 @@ function Portrait({
         fill
         sizes={
           lead
-            ? "(min-width: 1024px) 320px, 220px"
-            : "(min-width: 768px) 140px, 96px"
+            ? "(min-width: 1024px) 320px, (min-width: 768px) 220px, 160px"
+            : "(min-width: 768px) 140px, 88px"
         }
+        placeholder="blur"
+        blurDataURL={imageBlurDataURL}
         className="object-cover"
         style={{
           objectPosition: `${doctor.photoFocus.x}% ${doctor.photoFocus.y}%`,
@@ -72,7 +77,7 @@ function ExpertiseChip({ expertise }: { expertise: DoctorExpertise }) {
   );
 }
 
-function LeadDoctorCard({ doctor }: { doctor: Doctor }) {
+export function LeadDoctorCard({ doctor }: { doctor: Doctor }) {
   return (
     <article className="reveal grid min-h-0 rounded-2xl border border-rose-tint bg-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card motion-reduce:hover:translate-y-0 md:p-7 lg:max-h-[460px] lg:grid-cols-[320px_1fr] lg:gap-8">
       <Portrait doctor={doctor} lead />
@@ -85,7 +90,12 @@ function LeadDoctorCard({ doctor }: { doctor: Doctor }) {
         </h3>
         <p className="mt-1 text-sm text-ink-muted">{doctor.role}</p>
         <p className="mt-2 text-sm font-semibold text-plum">
-          {doctor.qualifications.join(" · ")}
+          {doctor.qualifications.map((qualification, index) => (
+            <Fragment key={qualification}>
+              {index > 0 ? " · " : null}
+              <span className="whitespace-nowrap">{qualification}</span>
+            </Fragment>
+          ))}
         </p>
 
         <div className="mt-4 grid gap-2 sm:grid-cols-3">
@@ -105,7 +115,7 @@ function LeadDoctorCard({ doctor }: { doctor: Doctor }) {
           })}
         </div>
 
-        <div className="mt-3 flex flex-wrap items-center gap-1.5">
+        <div className="mt-3 hidden flex-wrap items-center gap-1.5 md:flex">
           <span className="mr-1 text-xs font-bold tracking-wide text-ink-muted uppercase">
             Trained at
           </span>
@@ -119,7 +129,7 @@ function LeadDoctorCard({ doctor }: { doctor: Doctor }) {
           ))}
         </div>
 
-        <div className="mt-3 flex flex-wrap gap-1.5">
+        <div className="mt-3 hidden flex-wrap gap-1.5 md:flex">
           {doctor.expertise.map((expertise) => (
             <ExpertiseChip key={expertise.label} expertise={expertise} />
           ))}
@@ -197,6 +207,39 @@ function TeamDoctorCard({ doctor }: { doctor: Doctor }) {
   );
 }
 
+/** Compact horizontal card for the mobile team carousel (88px portrait). */
+export function TeamDoctorMiniCard({ doctor }: { doctor: Doctor }) {
+  const content = (
+    <>
+      <Portrait doctor={doctor} />
+      <span className="flex min-w-0 flex-col justify-center py-1">
+        <span className="font-heading text-[19px]/[26px] font-semibold text-ink">
+          {doctor.name}
+        </span>
+        <span className="mt-1 block text-sm/[20px] text-ink-muted">
+          {doctor.role}
+        </span>
+        <span className="mt-2 inline-flex items-center gap-1.5 text-sm/[20px] font-semibold text-primary">
+          {doctor.hasProfile ? "View profile" : "Our team"}
+          <ArrowRight className="size-4" aria-hidden="true" />
+        </span>
+      </span>
+    </>
+  );
+
+  const className =
+    "grid h-full grid-cols-[88px_1fr] gap-4 rounded-2xl border border-rose-tint bg-blush p-4 shadow-soft focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none";
+
+  if (doctor.hasProfile) {
+    return (
+      <Link href={`/doctors/${doctor.slug}`} className={className}>
+        {content}
+      </Link>
+    );
+  }
+  return <article className={className}>{content}</article>;
+}
+
 export function DoctorsSection() {
   const [lead, ...team] = doctors;
   const whatsappHref = `${site.whatsapp.href}?text=${encodeURIComponent(
@@ -204,7 +247,7 @@ export function DoctorsSection() {
   )}`;
 
   return (
-    <Section id="doctors">
+    <Section id="doctors" surface="white" className="md:bg-white">
       {doctors.map((doctor) => (
         <JsonLd key={doctor.slug} data={physicianSchema(doctor)} />
       ))}
@@ -215,7 +258,14 @@ export function DoctorsSection() {
           subtitle="A dedicated fetal medicine team, led by internationally trained specialists."
         />
         {lead ? <LeadDoctorCard doctor={lead} /> : null}
-        <div className="mt-6 grid items-stretch gap-6 lg:grid-cols-2">
+        <MobileCarousel
+          label="More specialists"
+          className="mt-6 md:hidden"
+          items={team.map((doctor) => (
+            <TeamDoctorMiniCard key={doctor.slug} doctor={doctor} />
+          ))}
+        />
+        <div className="mt-6 hidden items-stretch gap-6 md:grid lg:grid-cols-2">
           {team.map((doctor) => (
             <TeamDoctorCard key={doctor.slug} doctor={doctor} />
           ))}
@@ -243,7 +293,7 @@ export function DoctorsSection() {
           </p>
           <Link
             href="/international-patients"
-            className="mt-1 inline-flex min-h-11 items-center text-xs font-semibold text-primary underline-offset-4 hover:underline"
+            className="mt-1 hidden min-h-11 items-center text-xs font-semibold text-primary underline-offset-4 hover:underline md:inline-flex"
           >
             International patients: {site.internationalPhone.label}
           </Link>

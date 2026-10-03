@@ -18,13 +18,16 @@ function initials(name: string) {
 
 export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   const [showTranslation, setShowTranslation] = useState(false);
+  const [expanded, setExpanded] = useState(false);
   const hasTranslation =
     testimonial.language === "ta" && Boolean(testimonial.translation);
   const translated = hasTranslation && showTranslation;
+  const shownText = translated ? testimonial.translation! : testimonial.quote;
+  const clampable = shownText.length > 280;
 
   return (
-    <Card className="h-full border-rose-tint shadow-soft transition-all hover:-translate-y-1 hover:shadow-card">
-      <CardContent className="flex h-full flex-col gap-5 p-7">
+    <Card data-mobile-card="info" className="h-full border-rose-tint shadow-soft transition-all hover:-translate-y-1 hover:shadow-card">
+      <CardContent className="flex h-full flex-col gap-3 p-5 md:gap-5 md:p-7">
         <Quote
           className="size-8 text-accent-bright/60"
           strokeWidth={1.5}
@@ -35,13 +38,23 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
             lang={translated ? "en" : testimonial.language}
             className={cn(
               "text-base leading-relaxed text-ink",
+              !expanded && "line-clamp-6 md:line-clamp-none",
               testimonial.language === "ta" &&
                 !translated &&
                 "[font-family:var(--font-tamil),sans-serif]"
             )}
           >
-            {translated ? testimonial.translation : testimonial.quote}
+            {shownText}
           </p>
+          {clampable ? (
+            <button
+              type="button"
+              onClick={() => setExpanded((v) => !v)}
+              className="mt-1 inline-flex min-h-11 items-center text-sm font-semibold text-primary underline-offset-4 hover:underline focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none md:hidden"
+            >
+              {expanded ? "Show less" : "Read more"}
+            </button>
+          ) : null}
         </blockquote>
         {hasTranslation ? (
           <button
@@ -62,7 +75,7 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
           </div>
           <div>
             <p className="font-semibold text-ink">{testimonial.name}</p>
-            <p className="text-xs text-muted-foreground">Patient family</p>
+            <p className="text-[13px]/[20px] text-muted-foreground md:text-xs">Patient family</p>
           </div>
         </div>
       </CardContent>
