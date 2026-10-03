@@ -20,7 +20,7 @@ import { foundedYear } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About the Centre",
   description:
-    "A dedicated fetal medicine centre in Trichy: specialist scans, advanced diagnostics, in-house counselling, and training programs for doctors.",
+    "A fetal medicine centre in Trichy since 2012: specialist scans, advanced diagnostics, in-house counselling and training for visiting doctors.",
   alternates: { canonical: "/about" },
 };
 
@@ -30,15 +30,15 @@ const timeline: { year?: string; title: string; text: string; href?: string }[] 
   {
     year: String(foundedYear),
     title: "The centre is founded",
-    text: "Trichy Fetal Medicine and Fertility Centre opens in Thillai Nagar, bringing dedicated fetal medicine care to the region.",
+    text: "Trichy Fetal Medicine and Fertility Centre opens in Thillai Nagar, focused on the health of the baby before birth.",
   },
   {
     title: "First in south Tamil Nadu for fetoscopic procedures",
     text: "The centre introduces fetoscopic procedures for complex twin pregnancies.",
   },
   {
-    title: "First in Tamil Nadu for a dedicated fetal neurosonogram",
-    text: "A dedicated fetal neurosonogram service begins for detailed brain and spine assessment.",
+    title: "First in Tamil Nadu for fetal neurosonogram",
+    text: "A fetal neurosonogram service begins for detailed brain and spine assessment.",
   },
   {
     title: "First in the region with in-house genetic counselling",
@@ -62,8 +62,8 @@ const teachingLinks = [
   },
   {
     icon: Presentation,
-    title: "CME programs and workshops",
-    text: "Regular continuing education programs, conclaves and hands-on workshops hosted by the centre.",
+    title: "CME programmes and workshops",
+    text: "Regular continuing education programmes, conclaves and hands-on workshops hosted by the centre.",
     href: "/cme-activities",
     cta: "See CME activities",
   },
@@ -110,11 +110,11 @@ export default function AboutPage() {
               <p>
                 Our centre focuses on one thing: the health of your baby before
                 birth. Families come to us for detailed pregnancy scans,
-                advanced fetal diagnostics, fetal procedures, and calm, honest
-                counselling.
+                advanced fetal diagnostics, fetal procedures, and counselling
+                with time for your questions.
               </p>
               <p>
-                Everything is explained in plain language, and you are given
+                Findings are explained in the same visit, and you are given
                 time to ask questions. When a scan raises a concern, our
                 in-house genetic counselling and multidisciplinary panel mean
                 you are guided at every step rather than referred elsewhere.
@@ -185,7 +185,7 @@ export default function AboutPage() {
         <Container>
           <SectionHeader
             eyebrow="What we do"
-            title="Advanced procedures under one roof"
+            title="Fetal procedures done at our centre"
             subtitle="From detailed scans to fetal procedures, our specialists manage complex care within the centre."
           />
           <ul className="flex flex-wrap items-center justify-center gap-2">

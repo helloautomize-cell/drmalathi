@@ -87,7 +87,15 @@ function MegaMenuContent() {
   );
 }
 
-function MobileNav({ pathname, onNavigate }: { pathname: string; onNavigate: () => void }) {
+function MobileNav({
+  pathname,
+  onNavigate,
+  showGuides,
+}: {
+  pathname: string;
+  onNavigate: () => void;
+  showGuides: boolean;
+}) {
   return (
     <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
       <div className="pt-4 pb-3">
@@ -141,7 +149,10 @@ function MobileNav({ pathname, onNavigate }: { pathname: string; onNavigate: () 
             </AccordionContent>
           </AccordionItem>
         </Accordion>
-        {mobileLinks.slice(1).map((item) => (
+        {mobileLinks
+          .slice(1)
+          .filter((l) => showGuides || l.href !== "/guides")
+          .map((item) => (
           <ListRow
             key={item.href}
             label={item.label}
@@ -165,9 +176,13 @@ function MobileNav({ pathname, onNavigate }: { pathname: string; onNavigate: () 
   );
 }
 
-export function SiteHeader() {
+export function SiteHeader({ showGuides = true }: { showGuides?: boolean }) {
   const aboutLink = plainLinks[0];
-  const restLinks = plainLinks.slice(1);
+  // "Patient Guides" is dropped everywhere while no guide is published;
+  // the gate is hasPublishedGuides() in lib/guides.ts.
+  const restLinks = plainLinks
+    .slice(1)
+    .filter((l) => showGuides || l.href !== "/guides");
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -266,7 +281,11 @@ export function SiteHeader() {
               <SheetHeader className="border-b border-border px-4 py-3">
                 <SheetTitle className="font-heading text-lg">{site.shortName}</SheetTitle>
               </SheetHeader>
-              <MobileNav pathname={pathname} onNavigate={() => setMenuOpen(false)} />
+              <MobileNav
+                pathname={pathname}
+                onNavigate={() => setMenuOpen(false)}
+                showGuides={showGuides}
+              />
             </SheetContent>
           </Sheet>
         </div>

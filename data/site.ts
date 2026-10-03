@@ -13,16 +13,12 @@ export const site = {
   shortName: "FMC Trichy",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://fmctrichy.com",
   get description() {
-    return `A state-of-the-art fetal medicine centre in Trichy offering screening scans, advanced diagnostics, fetal procedures, and specialist clinics for ${yearsOfCare()} years.`;
+    return `A fetal medicine centre in Trichy offering screening scans, advanced diagnostics, fetal procedures, and specialist clinics for ${yearsOfCare()} years.`;
   },
   address: {
     lines: ["#73, C/9, Annamalai Nagar,", "Thillai Nagar, Trichy - 620 018"],
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=Trichy%20Fetal%20Medicine%20and%20Fertility%20Centre%20Thillai%20Nagar%20Trichy",
-    // TODO: replace with the official Google Maps embed share URL once the
-    // client confirms the listing.
-    mapsEmbedUrl:
-      "https://www.google.com/maps?q=Trichy%20Fetal%20Medicine%20and%20Fertility%20Centre%20Thillai%20Nagar%20Trichy&output=embed",
   },
   hours,
   phones: [...phones],
@@ -43,6 +39,32 @@ export const site = {
   },
   // TODO: add real social URLs before launch. Icons render only when a URL exists.
   socials: [] as { label: string; href: string }[],
+
+  // Typed-null fields: nothing renders while these are empty. Fill with
+  // client-confirmed data only; see LAUNCH-CHECKLIST.md.
+  /** PCPNDT registration number, rendered in the footer when supplied. */
+  pcpndtRegistration: null as string | null,
+  /** Tamil Nadu Clinical Establishments Act registration number. */
+  clinicalEstablishmentRegistration: null as string | null,
+  /** ART (Surrogacy/IVF) registration, only if the centre provides IUI/IVF. */
+  artRegistration: null as string | null,
+  /** DPDP grievance officer; shown on the privacy page when supplied. */
+  grievanceOfficer: null as {
+    name: string;
+    designation: string;
+    email: string;
+    phone: string;
+  } | null,
+  /** Exact founding date for schema; year alone lives in lib/site.ts. */
+  foundingDate: null as string | null,
+  /** Clinic coordinates for LocalBusiness schema. */
+  geo: null as { latitude: number; longitude: number } | null,
+  /** Maps URL for schema hasMap; use site.address.mapsUrl when confirmed. */
+  hasMap: null as string | null,
+  /** Areas served, e.g. ["Tiruchirappalli", "Thanjavur"]. */
+  areaServed: [] as string[],
+  /** Same-as profile URLs for the clinic entity. */
+  sameAs: [] as string[],
 };
 
 export const mainNav = [

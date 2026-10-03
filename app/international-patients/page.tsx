@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle2, Globe2, Mail, MessageCircle, Phone, Plane, Video } from "lucide-react";
 import { CTABand } from "@/components/cards/cta-band";
-import { BookingForm } from "@/components/forms/booking-form";
+import { LazyBookingForm } from "@/components/forms/lazy-booking-form";
 import { IstHoursNote } from "@/components/international/ist-hours-note";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
@@ -23,7 +23,7 @@ import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "International Patients",
   description:
-    "Planning to visit Trichy Fetal Medicine and Fertility Centre from abroad? Dedicated international appointments line, remote report reviews, and travel guidance.",
+    "Planning to visit Trichy Fetal Medicine and Fertility Centre from abroad? A separate international line, remote report reviews and travel guidance.",
   alternates: { canonical: "/international-patients" },
 };
 
@@ -80,7 +80,7 @@ export default function InternationalPatientsPage() {
       <PageHero
         eyebrow="International patients"
         title="Visiting us from abroad"
-        intro="Families travel to Trichy for our specialist fetal medicine care. A dedicated line and pre-visit reviews make the trip easier."
+        intro="Families travel to Trichy for our specialist fetal medicine care. A separate phone line and pre-visit reviews make the trip easier."
         crumbs={[{ label: "Home", href: "/" }, { label: "International Patients" }]}
       />
 
@@ -231,7 +231,7 @@ export default function InternationalPatientsPage() {
               title="Send us your details"
               subtitle="Tell us how to reach you and we will call or WhatsApp you back to plan your visit."
             />
-            <BookingForm source="international" />
+            <LazyBookingForm source="international" />
           </div>
         </Container>
       </Section>

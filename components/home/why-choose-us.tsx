@@ -18,7 +18,7 @@ const proofCards: ProofCardData[] = [
   {
     icon: Baby,
     title: "Twin and multiple pregnancy care",
-    body: "Dedicated monitoring and care plans for twins and multiples.",
+    body: "Scan schedules and care plans for twins and multiples.",
     quote: { text: "they saved my twins", name: "Deva" },
     href: "/services/twin-specialised-clinic",
     linkLabel: "Visit the Twin Specialised Clinic",
@@ -30,7 +30,7 @@ const proofCards: ProofCardData[] = [
   },
   {
     icon: MessageCircle,
-    title: "Counselling under one roof",
+    title: "In-house counselling",
     body: "In-house genetic counselling, so families are not sent from place to place.",
   },
 ];

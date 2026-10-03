@@ -7,7 +7,9 @@ import sourceConfig from "./image-sources.json";
  * - `source` files live in /assets/source-images (never served directly).
  * - Run `npm run process:images` to regenerate variants in /public/images/brand.
  * - `license: "placeholder"` = unlicensed temp art. LICENSE REQUIRED before
- *   launch; replace the source file, flip to "licensed", re-run the script.
+ *   launch; replace the source file, set `licenseSource` to record where the
+ *   licence came from (stock site + asset ID, or photographer name and date),
+ *   flip `license` to "licensed", re-run the script.
  * - Never crop, blur or paint over embedded watermarks/credits.
  */
 
@@ -100,6 +102,10 @@ type SourceEntry = {
   source: string;
   recipe: ImageRecipe;
   license: ImageLicense;
+  /** Where the licence came from (stock site + asset ID, or photographer). */
+  licenseSource?: string;
+  /** Free-text licence terms/note, e.g. "Standard licence, web use OK". */
+  licenseNote?: string;
   parked?: boolean;
   parkedNote?: string;
   creditNote?: string;

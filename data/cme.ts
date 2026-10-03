@@ -13,7 +13,7 @@ export type CmeEvent = {
   year: number;
   venue: string;
   partner?: string;
-  /** Optional program PDF under /public. */
+  /** Optional programme PDF under /public. */
   pdf?: string;
   blurb: string;
   photos: LightboxImage[];

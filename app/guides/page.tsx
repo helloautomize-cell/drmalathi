@@ -12,15 +12,21 @@ import {
   categoriesInUse,
   getAllGuides,
   getFeaturedGuide,
+  hasPublishedGuides,
 } from "@/lib/guides";
 import { breadcrumbSchema } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: "Patient Guides",
-  description:
-    "Clear, practical guides to pregnancy scans, screening tests and fetal medicine, written by the FMC Trichy team.",
-  alternates: { canonical: "/guides" },
-};
+export function generateMetadata(): Metadata {
+  return {
+    title: "Patient Guides",
+    description:
+      "Clear, practical guides to pregnancy scans, screening tests and fetal medicine, written by our clinical team for families in Trichy and nearby districts.",
+    alternates: { canonical: "/guides" },
+    // While every guide is a draft, the page shows an empty state: keep it
+    // reachable but out of the index.
+    ...(hasPublishedGuides() ? {} : { robots: { index: false } }),
+  };
+}
 
 export default function GuidesPage() {
   const featured = getFeaturedGuide();

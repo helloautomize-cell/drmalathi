@@ -33,8 +33,8 @@ export const fellowshipProgram = {
     "Integrated course structure",
     "Extensive direct hands-on training for each candidate",
     "Hands-on training in fetal interventions",
-    "Dedicated fetal echo sessions",
-    "Comprehensive one-to-one training in fetal and postnatal care",
+    "Fetal echo sessions",
+    "One-to-one training in fetal and postnatal care",
     "Rotational postings in eight allied specialities related to fetal care",
     "Minimum of 2 research publications in indexed journals by course end",
   ],
@@ -53,7 +53,7 @@ export const fellowshipProgram = {
   showBrochure: false,
   brochure: {
     image: "/images/courses/fetal-interventions-simulator.webp",
-    alt: "Course flyer for Fetal Interventions Simulator Training listing fellowship programs, hands-on training, faculty, admission by CV and contact details",
+    alt: "Course flyer for Fetal Interventions Simulator Training listing fellowship programmes, hands-on training, faculty, admission by CV and contact details",
   },
 } as const;
 

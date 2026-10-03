@@ -2,10 +2,8 @@ import type { Guide } from "@/types/guide";
 
 // DRAFT FOR MEDICAL REVIEW: the two full guides below reuse only facts that
 // already appear on the site (service timings, steps and FAQ answers). The
-// medical team must review and set reviewedBy/reviewedAt before launch.
-//
-// TODO: remove the four placeholder guides at the bottom before launch; they
-// exist only so the index grid and pagination can be checked.
+// medical team must review and set reviewStatus "reviewed" plus
+// reviewedBy/reviewedAt before the review badge can render.
 
 export const guides: Guide[] = [
   {
@@ -13,8 +11,13 @@ export const guides: Guide[] = [
     title: "Down's screening (OSCAR): what it checks and what the result means",
     excerpt:
       "A combined first trimester screening, usually between 11 and 13+6 weeks, that estimates the chance of chromosomal conditions and is explained to you in person.",
+    seo: {
+      title: "Down's screening (OSCAR): what it checks",
+      description:
+        "A combined first trimester screening, usually between 11 and 13+6 weeks, that estimates the chance of chromosomal conditions, explained in person.",
+    },
     coverImage: {
-      src: "/images/services/downsscreeningoscor.webp",
+      src: "/images/services/downs-screening-oscar.webp",
       alt: "A pregnancy ultrasound on screen during a first trimester screening visit",
     },
     category: "screening-and-tests",
@@ -76,7 +79,7 @@ export const guides: Guide[] = [
       },
       {
         type: "paragraph",
-        text: "Our in-house counselling means you are not left to work out a higher-chance result alone. The specialist and counsellor explain the options in plain language, and nothing is decided for you.",
+        text: "Our in-house counselling means you are not left to work out a higher-chance result alone. The specialist and counsellor explain what the result means and what your options are, and nothing is decided for you.",
       },
       { type: "cta", service: "downs-screening-oscar" },
     ],
@@ -192,7 +195,7 @@ export const guides: Guide[] = [
       {
         question: "What if something is found?",
         answer:
-          "The specialist explains the finding in plain language straight away. Where needed, our in-house counselling and multidisciplinary panel help you plan the next steps.",
+          "The specialist explains what the finding means straight away. Where needed, our in-house counselling and multidisciplinary panel help you plan the next steps.",
       },
       {
         question: "Is a 3D or 4D picture part of it?",
@@ -203,105 +206,5 @@ export const guides: Guide[] = [
     relatedService: "anomaly-scan",
     publishedAt: "2025-10-01",
     draft: true,
-  },
-  {
-    slug: "placeholder-nipt-explained",
-    title: "PLACEHOLDER: NIPT explained",
-    excerpt:
-      "Placeholder guide about the NIPT blood test, to be replaced before launch.",
-    coverImage: {
-      src: "/images/services/NIPT.webp",
-      alt: "A blood sample being prepared for NIPT screening",
-    },
-    category: "screening-and-tests",
-    content: [
-      {
-        type: "paragraph",
-        text: "Placeholder content. This guide will be replaced with a medically reviewed explanation of NIPT, what it screens for, and when it can be done.",
-      },
-      {
-        type: "paragraph",
-        text: "Placeholder content. Replace with clear, plain-language guidance written or approved by the medical team.",
-      },
-    ],
-    relatedService: "nipt",
-    publishedAt: "2025-08-20",
-    draft: true,
-    placeholder: true,
-  },
-  {
-    slug: "placeholder-viability-scan",
-    title: "PLACEHOLDER: The viability scan",
-    excerpt:
-      "Placeholder guide about early pregnancy viability scans, to be replaced before launch.",
-    coverImage: {
-      src: "/images/services/viabilityscan.webp",
-      alt: "An early pregnancy ultrasound",
-    },
-    category: "pregnancy-scans",
-    content: [
-      {
-        type: "paragraph",
-        text: "Placeholder content. This guide will be replaced with a medically reviewed explanation of the early viability scan and what it confirms.",
-      },
-      {
-        type: "paragraph",
-        text: "Placeholder content. Replace with clear, plain-language guidance written or approved by the medical team.",
-      },
-    ],
-    relatedService: "viability-scan",
-    publishedAt: "2025-08-10",
-    draft: true,
-    placeholder: true,
-  },
-  {
-    slug: "placeholder-caring-for-twins",
-    title: "PLACEHOLDER: Caring for a twin pregnancy",
-    excerpt:
-      "Placeholder guide about monitoring twin pregnancies, to be replaced before launch.",
-    coverImage: {
-      src: "/images/services/TwinSpecialisedClinic.webp",
-      alt: "Ultrasound monitoring for a twin pregnancy",
-    },
-    category: "twins-and-high-risk",
-    content: [
-      {
-        type: "paragraph",
-        text: "Placeholder content. This guide will be replaced with medically reviewed information about how twin pregnancies are monitored at the centre.",
-      },
-      {
-        type: "paragraph",
-        text: "Placeholder content. Replace with clear, plain-language guidance written or approved by the medical team.",
-      },
-    ],
-    relatedService: "twin-specialised-clinic",
-    publishedAt: "2025-07-25",
-    draft: true,
-    placeholder: true,
-  },
-  {
-    slug: "placeholder-growth-scan",
-    title: "PLACEHOLDER: Your growth scan",
-    excerpt:
-      "Placeholder guide about third trimester growth scans, to be replaced before launch.",
-    coverImage: {
-      src: "/images/services/GrowthScanwithDoppler.webp",
-      alt: "A third trimester growth scan in progress",
-    },
-    category: "pregnancy-health",
-    content: [
-      {
-        type: "paragraph",
-        text: "Placeholder content. This guide will be replaced with a medically reviewed explanation of growth scans and Doppler measurements.",
-      },
-      {
-        type: "paragraph",
-        text: "Placeholder content. Replace with clear, plain-language guidance written or approved by the medical team.",
-      },
-    ],
-    relatedService: "growth-scan-doppler",
-    publishedAt: "2025-07-10",
-    draft: true,
-    placeholder: true,
   },
 ];

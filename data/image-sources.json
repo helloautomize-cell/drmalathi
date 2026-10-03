@@ -13,7 +13,9 @@
     "source": "assets/source-images/pregnancy-test-stork.jpg",
     "recipe": "warm-cream",
     "license": "placeholder",
-    "crop": { "leftPercent": 28 }
+    "crop": {
+      "leftPercent": 28
+    }
   },
   "doctor-glowing-fetus": {
     "source": "assets/source-images/doctor-glowing-fetus.jpg",
@@ -24,7 +26,9 @@
     "source": "assets/source-images/family-bw-newborn.jpg",
     "recipe": "plum-duotone",
     "license": "placeholder",
-    "creditNote": "Photographer logo embedded top-right. Do not crop it out."
+    "creditNote": "Photographer logo embedded top-right. Do not crop it out.",
+    "parked": true,
+    "parkedNote": "Photographer watermark embedded top-right; must not ship. Park until a licensed replacement source is supplied, then re-run process:images."
   },
   "family-airy-newborn": {
     "source": "assets/source-images/family-airy-newborn.jpg",
@@ -43,7 +47,14 @@
     "source": "assets/source-images/doctors/malathi.webp",
     "recipe": "neutral",
     "license": "licensed",
-    "crop": { "rectPercent": { "left": 26, "top": 3, "width": 48, "height": 54 } }
+    "crop": {
+      "rectPercent": {
+        "left": 26,
+        "top": 3,
+        "width": 48,
+        "height": 54
+      }
+    }
   },
   "doctor-revathy": {
     "source": "assets/source-images/doctors/revathy.webp",

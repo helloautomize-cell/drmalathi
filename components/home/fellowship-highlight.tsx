@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/container";
 import { SectionShell } from "@/components/shared/section-shell";
 import { courses, fellowshipProgram, type Course } from "@/data/courses";
+import { showPending } from "@/lib/env";
 import { doctors } from "@/data/doctors";
 import { courseSchema } from "@/lib/schema";
 
@@ -65,7 +66,12 @@ function FacultyItem({
 }
 
 function CourseCard({ course }: { course: Course }) {
-  const duration = course.duration ?? "to be confirmed";
+  const duration =
+    course.durationConfirmed && course.duration
+      ? course.duration
+      : showPending && course.duration
+        ? `${course.duration} (to be confirmed)`
+        : null;
 
   return (
     <article className="reveal flex h-full flex-col rounded-2xl border border-white/15 bg-white/5 p-6 transition-all hover:-translate-y-0.5 hover:bg-white/10 motion-reduce:hover:translate-y-0">
@@ -74,10 +80,12 @@ function CourseCard({ course }: { course: Course }) {
       </p>
       <h3 className="mt-3 text-xl font-semibold text-white">{course.title}</h3>
       <div className="mt-5 space-y-3 text-sm text-white/85">
-        <p className="flex gap-2.5">
-          <Clock className="mt-0.5 size-4 shrink-0 text-rose-tint" aria-hidden="true" />
-          <span>Duration: {duration}</span>
-        </p>
+        {duration ? (
+          <p className="flex gap-2.5">
+            <Clock className="mt-0.5 size-4 shrink-0 text-rose-tint" aria-hidden="true" />
+            <span>Duration: {duration}</span>
+          </p>
+        ) : null}
         <p className="flex gap-2.5">
           <GraduationCap
             className="mt-0.5 size-4 shrink-0 text-rose-tint"

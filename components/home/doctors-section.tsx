@@ -18,6 +18,7 @@ import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
 import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
 import { doctors, type Doctor, type DoctorExpertise } from "@/data/doctors";
+import { showPending } from "@/lib/env";
 import { site } from "@/data/site";
 import { physicianSchema } from "@/lib/schema";
 
@@ -26,9 +27,11 @@ const highlightIcons = [Award, GraduationCap, Microscope];
 function Portrait({
   doctor,
   lead = false,
+  priority = false,
 }: {
   doctor: Doctor;
   lead?: boolean;
+  priority?: boolean;
 }) {
   return (
     <div
@@ -42,6 +45,8 @@ function Portrait({
         src={doctor.photo}
         alt={`Portrait of ${doctor.name}, fetal medicine consultant`}
         fill
+        priority={priority}
+        fetchPriority={priority ? "high" : undefined}
         sizes={
           lead
             ? "(min-width: 1024px) 320px, (min-width: 768px) 220px, 160px"
@@ -77,10 +82,16 @@ function ExpertiseChip({ expertise }: { expertise: DoctorExpertise }) {
   );
 }
 
-export function LeadDoctorCard({ doctor }: { doctor: Doctor }) {
+export function LeadDoctorCard({
+  doctor,
+  priority = false,
+}: {
+  doctor: Doctor;
+  priority?: boolean;
+}) {
   return (
     <article className="reveal grid min-h-0 rounded-2xl border border-rose-tint bg-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card motion-reduce:hover:translate-y-0 md:p-7 lg:max-h-[460px] lg:grid-cols-[320px_1fr] lg:gap-8">
-      <Portrait doctor={doctor} lead />
+      <Portrait doctor={doctor} lead priority={priority} />
       <div className="mt-6 flex min-w-0 flex-col lg:mt-0">
         <p className="text-xs font-bold tracking-wider text-primary uppercase">
           Lead Consultant
@@ -88,7 +99,9 @@ export function LeadDoctorCard({ doctor }: { doctor: Doctor }) {
         <h3 className="mt-1 font-heading text-2xl font-semibold text-ink md:text-3xl">
           {doctor.name}
         </h3>
-        <p className="mt-1 text-sm text-ink-muted">{doctor.role}</p>
+        {doctor.roleIsPlaceholder && !showPending ? null : (
+          <p className="mt-1 text-sm text-ink-muted">{doctor.role}</p>
+        )}
         <p className="mt-2 text-sm font-semibold text-plum">
           {doctor.qualifications.map((qualification, index) => (
             <Fragment key={qualification}>
@@ -164,7 +177,9 @@ function TeamDoctorCard({ doctor }: { doctor: Doctor }) {
         <h3 className="font-heading text-xl font-semibold text-ink">
           {doctor.name}
         </h3>
-        <p className="mt-1 text-sm text-ink-muted">{doctor.role}</p>
+        {doctor.roleIsPlaceholder && !showPending ? null : (
+          <p className="mt-1 text-sm text-ink-muted">{doctor.role}</p>
+        )}
         <p className="mt-2 text-xs font-semibold text-plum">
           {doctor.qualifications.join(" · ")}
         </p>
@@ -208,17 +223,25 @@ function TeamDoctorCard({ doctor }: { doctor: Doctor }) {
 }
 
 /** Compact horizontal card for the mobile team carousel (88px portrait). */
-export function TeamDoctorMiniCard({ doctor }: { doctor: Doctor }) {
+export function TeamDoctorMiniCard({
+  doctor,
+  priority = false,
+}: {
+  doctor: Doctor;
+  priority?: boolean;
+}) {
   const content = (
     <>
-      <Portrait doctor={doctor} />
+      <Portrait doctor={doctor} priority={priority} />
       <span className="flex min-w-0 flex-col justify-center py-1">
         <span className="font-heading text-[19px]/[26px] font-semibold text-ink">
           {doctor.name}
         </span>
-        <span className="mt-1 block text-sm/[20px] text-ink-muted">
-          {doctor.role}
-        </span>
+        {doctor.roleIsPlaceholder && !showPending ? null : (
+          <span className="mt-1 block text-sm/[20px] text-ink-muted">
+            {doctor.role}
+          </span>
+        )}
         <span className="mt-2 inline-flex items-center gap-1.5 text-sm/[20px] font-semibold text-primary">
           {doctor.hasProfile ? "View profile" : "Our team"}
           <ArrowRight className="size-4" aria-hidden="true" />
@@ -255,7 +278,7 @@ export function DoctorsSection() {
         <SectionHeader
           eyebrow="Our doctors"
           title="Meet your specialists"
-          subtitle="A dedicated fetal medicine team, led by internationally trained specialists."
+          subtitle="A fetal medicine team led by internationally trained specialists."
         />
         {lead ? <LeadDoctorCard doctor={lead} /> : null}
         <MobileCarousel

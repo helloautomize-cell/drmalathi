@@ -17,7 +17,7 @@ const steps = [
   },
   {
     icon: MessagesSquare,
-    title: "Findings explained in plain language",
+    title: "Your findings, explained straight away",
     text: "We walk you through what we see on the screen and what it means, in words that make sense.",
   },
   {
@@ -34,7 +34,7 @@ export function VisitSteps() {
         <SectionHeader
           eyebrow="Your visit"
           title="What to expect at your visit"
-          subtitle="Every appointment follows the same calm, unhurried flow, so you always know what comes next."
+          subtitle="Every appointment follows the same flow, so you always know what comes next."
         />
         {/* Mobile: vertical stepper, numbered circles joined by a rose line. */}
         <div className="md:hidden">

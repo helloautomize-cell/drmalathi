@@ -35,7 +35,7 @@ import {
   readingTime,
 } from "@/lib/guides";
 import { imageBlurDataURL } from "@/lib/image-placeholder";
-import { breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { breadcrumbSchema, clinicRef, faqSchema, publisherRef } from "@/lib/schema";
 import type { GuideBlock } from "@/types/guide";
 
 export function generateStaticParams() {
@@ -90,9 +90,12 @@ export default async function GuideArticlePage({
   if (!guide) notFound();
 
   const category = getCategory(guide.category);
-  const reviewer = guide.reviewedBy
-    ? doctors.find((d) => d.slug === guide.reviewedBy)
-    : undefined;
+  // A review badge requires a completed review: status "reviewed" plus a
+  // reviewedAt date. reviewedBy alone never shows the badge.
+  const reviewer =
+    guide.reviewStatus === "reviewed" && guide.reviewedAt && guide.reviewedBy
+      ? doctors.find((d) => d.slug === guide.reviewedBy)
+      : undefined;
   const relatedService = guide.relatedService
     ? services.find((s) => s.slug === guide.relatedService)
     : undefined;
@@ -128,7 +131,7 @@ export default async function GuideArticlePage({
             ? { url: `${site.url}/doctors/${reviewer.slug}` }
             : {}),
         },
-        about: { "@type": "MedicalClinic", "@id": `${site.url}/#clinic` },
+        about: clinicRef(),
       }
     : {
         "@context": "https://schema.org",
@@ -138,8 +141,8 @@ export default async function GuideArticlePage({
         image: `${site.url}${guide.coverImage.src}`,
         datePublished: guide.publishedAt,
         dateModified: guide.updatedAt ?? guide.publishedAt,
-        author: { "@type": "MedicalClinic", "@id": `${site.url}/#clinic` },
-        publisher: { "@type": "MedicalClinic", "@id": `${site.url}/#clinic` },
+        author: clinicRef(),
+        publisher: publisherRef(),
       };
 
   return (
@@ -243,7 +246,7 @@ export default async function GuideArticlePage({
               </Link>
             ) : (
               <span className="font-semibold text-ink">
-                By the FMC Trichy team
+                Written by the FMC Trichy clinical team
               </span>
             )}
             <span aria-hidden="true" className="hidden sm:inline">
@@ -411,7 +414,7 @@ export default async function GuideArticlePage({
               tone="scan"
               title={relatedService.name}
               href={`/services/${relatedService.slug}`}
-              linkLabel="Learn more"
+              linkLabel={`About ${relatedService.name}`}
             >
               {relatedService.shortDescription}
             </InfoCard>

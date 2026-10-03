@@ -1,5 +1,5 @@
 import { site } from "@/data/site";
-import { getAllGuides, getCategory } from "@/lib/guides";
+import { getAllGuides, getCategory, hasPublishedGuides } from "@/lib/guides";
 
 export const dynamic = "force-static";
 
@@ -29,6 +29,7 @@ export function GET() {
   <channel>
     <title>${escapeXml(site.name)} patient guides</title>
     <link>${site.url}/guides</link>
+    <language>en-IN</language>
     <description>${escapeXml(
       "Clear, practical guides from our fetal medicine team."
     )}</description>
@@ -37,6 +38,10 @@ ${items}
 </rss>`;
 
   return new Response(xml, {
-    headers: { "Content-Type": "application/rss+xml; charset=utf-8" },
+    headers: {
+      "Content-Type": "application/rss+xml; charset=utf-8",
+      // An empty feed while all guides are drafts should not be indexed.
+      ...(hasPublishedGuides() ? {} : { "X-Robots-Tag": "noindex" }),
+    },
   });
 }

@@ -42,9 +42,15 @@ export type Guide = {
   content: GuideBlock[];
   keyTakeaways?: string[];
   faqs?: { question: string; answer: string }[];
-  /** Doctor slug from data/doctors.ts. */
+  /**
+   * Review state. The "Medically reviewed" byline, reviewer card and
+   * reviewedBy/lastReviewed schema render ONLY when this is "reviewed" AND
+   * reviewedAt is set. Never show a review badge on an unreviewed page.
+   */
+  reviewStatus?: "pending" | "reviewed";
+  /** Doctor slug from data/doctors.ts; ignored unless reviewStatus is "reviewed". */
   reviewedBy?: string;
-  /** ISO date, required when reviewedBy is set. */
+  /** ISO date, required for a review badge to render. */
   reviewedAt?: string;
   /** Service slug from data/services.ts. */
   relatedService?: string;

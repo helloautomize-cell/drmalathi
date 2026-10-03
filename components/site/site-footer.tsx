@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Clock, Globe, Mail, MapPin, Phone } from "lucide-react";
 import { Container } from "@/components/shared/container";
 import { DisclaimerBar } from "@/components/site/disclaimer-bar";
+import { StaticMap } from "@/components/site/static-map";
 import {
   Accordion,
   AccordionContent,
@@ -12,7 +13,7 @@ import {
 import { services } from "@/data/services";
 import { site } from "@/data/site";
 import { foundedYear, yearsOfCare } from "@/lib/site";
-import { imageBlurDataURL } from "@/lib/image-placeholder";
+import { hasPublishedGuides } from "@/lib/guides";
 
 const quickLinks = [
   { label: "About Us", href: "/about" },
@@ -28,45 +29,28 @@ const quickLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
+// Patient Guides links hide while no guide is published (all drafts).
+function visibleQuickLinks() {
+  return quickLinks.filter(
+    (l) => hasPublishedGuides() || l.href !== "/guides"
+  );
+}
+
 function FooterMap({ compact = false }: { compact?: boolean }) {
   return (
     <div className={compact ? "rounded-2xl bg-white/8 p-4 ring-1 ring-white/15" : "mt-6 rounded-2xl bg-white/8 p-4 ring-1 ring-white/15"}>
       <h3 className="text-sm font-semibold text-white">Find us</h3>
-      <a
-        href={site.address.mapsUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-3 block overflow-hidden rounded-xl ring-1 ring-white/15"
-      >
-        <Image
-          src="/images/map-trichy.png"
-          alt={`Map showing ${site.name}, ${site.address.lines.join(" ")}`}
-          width={600}
-          height={300}
+      <div className="mt-3">
+        <StaticMap
+          tone="dark"
+          imageClassName="h-28 w-full object-cover md:h-32"
           sizes="(max-width: 767px) calc(100vw - 64px), 280px"
-          placeholder="blur"
-          blurDataURL={imageBlurDataURL}
-          className="h-28 w-full object-cover md:h-32"
         />
-      </a>
-      <p className="mt-1.5 text-right text-xs text-white/70">© OpenStreetMap contributors</p>
-      <p className="mt-2 flex items-start gap-2 text-sm text-white/70">
-        <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
-        {site.address.lines.join(" ")}
-      </p>
+      </div>
       <p className="mt-2 flex items-center gap-2 text-sm text-white/70">
         <Clock className="size-4 shrink-0" aria-hidden="true" />
         {site.hours}
       </p>
-      <a
-        href={site.address.mapsUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`mt-3 inline-flex min-h-11 w-full items-center justify-center gap-2 bg-white px-4 py-2.5 text-sm font-semibold text-plum transition-colors hover:bg-rose-tint ${compact ? "rounded-full" : "rounded-lg"}`}
-      >
-        <MapPin className="size-4" aria-hidden="true" />
-        Get directions
-      </a>
     </div>
   );
 }
@@ -144,7 +128,7 @@ function MobileFooter() {
             </AccordionTrigger>
             <AccordionContent>
               <ul className="space-y-1 pb-3 text-sm/[20px] text-white/80">
-                {quickLinks.map((link) => (
+                {visibleQuickLinks().map((link) => (
                   <li key={link.href}>
                     <Link href={link.href} className="block py-2">
                       {link.label}
@@ -179,7 +163,7 @@ function DesktopFooter() {
             <Image src="/images/logo-xs.webp" alt={site.name} width={288} height={96} className="h-10 w-auto" />
           </Link>
           <p className="mt-4 text-sm text-white/75">
-            A state-of-the-art fetal medicine centre serving families in Trichy and across south Tamil Nadu for {yearsOfCare()} years.
+            A fetal medicine centre serving families in Trichy and across south Tamil Nadu for {yearsOfCare()} years.
           </p>
           <ul className="mt-4 space-y-2.5 text-sm text-white/85">
             <li>
@@ -212,7 +196,7 @@ function DesktopFooter() {
         <nav aria-label="Quick links">
           <h2 className="text-base font-semibold">Quick Links</h2>
           <ul className="mt-4 space-y-2.5 text-sm text-white/85">
-            {quickLinks.map((link) => (
+            {visibleQuickLinks().map((link) => (
               <li key={link.href}><Link href={link.href} className="underline-offset-4 hover:text-white hover:underline">{link.label}</Link></li>
             ))}
           </ul>

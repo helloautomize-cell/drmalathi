@@ -9,7 +9,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Gallery",
   description:
-    "Photos from inside Trichy Fetal Medicine and Fertility Centre: our reception, scan rooms, waiting area, and the team at work.",
+    "Photos from inside Trichy Fetal Medicine and Fertility Centre in Thillai Nagar: our reception, scan rooms, counselling spaces and care team.",
   alternates: { canonical: "/gallery" },
 };
 

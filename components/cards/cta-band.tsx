@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { BrandImage } from "@/components/shared/brand-image";
 import { Container } from "@/components/shared/container";
 import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
+import { getBrandImage } from "@/data/images";
 import { site } from "@/data/site";
 
 export function CTABand({
@@ -22,6 +23,10 @@ export function CTABand({
     variant === "international"
       ? site.whatsappInternational
       : site.whatsapp;
+  // The CTA photo is parked while its watermark/licence is unresolved; the
+  // image containers only render once a licensed replacement exists.
+  const ctaImage = getBrandImage("family-bw-newborn");
+  const showImage = !ctaImage.parked && Boolean(ctaImage.src);
   return (
     <Container>
       <div className="relative overflow-hidden rounded-3xl bg-plum shadow-card">
@@ -104,35 +109,39 @@ export function CTABand({
             </div>
             <p className="mt-4 text-sm text-white/70">{site.hours}</p>
           </div>
-          <div
-            className="relative hidden min-h-56 md:block lg:min-h-0"
-            aria-hidden="true"
-          >
-            <BrandImage
-              slug="family-bw-newborn"
-              variant="bleed"
-              fill
-              decorative
-              reveal={false}
-              sizes="(min-width: 1024px) 40vw, 100vw"
-              imgClassName="[mask-image:linear-gradient(to_bottom,transparent_0%,black_45%)] lg:[mask-image:linear-gradient(to_right,transparent_0%,black_40%)]"
-            />
-          </div>
+          {showImage ? (
+            <div
+              className="relative hidden min-h-56 md:block lg:min-h-0"
+              aria-hidden="true"
+            >
+              <BrandImage
+                slug="family-bw-newborn"
+                variant="bleed"
+                fill
+                decorative
+                reveal={false}
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                imgClassName="[mask-image:linear-gradient(to_bottom,transparent_0%,black_45%)] lg:[mask-image:linear-gradient(to_right,transparent_0%,black_40%)]"
+              />
+            </div>
+          ) : null}
           {/* Mobile: duotone photo cropped to 16/9 at the bottom of the card. */}
-          <div
-            className="relative aspect-video md:hidden"
-            aria-hidden="true"
-          >
-            <BrandImage
-              slug="family-bw-newborn"
-              variant="bleed"
-              fill
-              decorative
-              reveal={false}
-              sizes="100vw"
-              imgClassName="object-cover"
-            />
-          </div>
+          {showImage ? (
+            <div
+              className="relative aspect-video md:hidden"
+              aria-hidden="true"
+            >
+              <BrandImage
+                slug="family-bw-newborn"
+                variant="bleed"
+                fill
+                decorative
+                reveal={false}
+                sizes="100vw"
+                imgClassName="object-cover"
+              />
+            </div>
+          ) : null}
         </div>
       </div>
     </Container>
