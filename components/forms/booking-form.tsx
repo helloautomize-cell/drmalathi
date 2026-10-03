@@ -4,6 +4,7 @@ import { type FormEvent, useState } from "react";
 import Link from "next/link";
 import { CheckCircle2, Phone } from "lucide-react";
 import { requestAppointment } from "@/app/actions/appointment";
+import { ContactFallbackPanel } from "@/components/forms/contact-fallback-panel";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
@@ -44,6 +45,7 @@ export function BookingForm({
 }) {
   const [startedAt] = useState(() => new Date().toISOString());
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [failedMessage, setFailedMessage] = useState<string | null>(null);
   const [values, setValues] = useState({
     name: "",
     phone: "",
@@ -95,12 +97,18 @@ export function BookingForm({
           consent: false,
         });
         setSuccessMessage(result.message);
+      } else if (result.deliveryFailed) {
+        setFailedMessage(result.message);
       } else {
         toast.error(result.message);
       }
     } finally {
       setIsSubmitting(false);
     }
+  }
+
+  if (failedMessage) {
+    return <ContactFallbackPanel message={failedMessage} />;
   }
 
   if (successMessage) {

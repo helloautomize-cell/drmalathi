@@ -3,6 +3,7 @@
 import { type FormEvent, useState } from "react";
 import Link from "next/link";
 import { requestCourseEnquiry } from "@/app/actions/appointment";
+import { ContactFallbackPanel } from "@/components/forms/contact-fallback-panel";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -62,6 +63,7 @@ export default function CourseEnquiryDialogContent({
     Partial<Record<EnquiryField, string>>
   >({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [failedMessage, setFailedMessage] = useState<string | null>(null);
 
   function setField<K extends keyof typeof values>(
     key: K,
@@ -77,6 +79,7 @@ export default function CourseEnquiryDialogContent({
       setStartedAt(new Date().toISOString());
       setValues({ ...initialValues, course: course.slug });
       setErrors({});
+      setFailedMessage(null);
     }
   }
 
@@ -104,6 +107,8 @@ export default function CourseEnquiryDialogContent({
       if (result.ok) {
         toast.success(result.message);
         onOpenChange(false);
+      } else if (result.deliveryFailed) {
+        setFailedMessage(result.message);
       } else {
         toast.error(result.message);
       }
@@ -124,6 +129,9 @@ export default function CourseEnquiryDialogContent({
             filled in for you.
           </DialogDescription>
         </DialogHeader>
+        {failedMessage ? (
+          <ContactFallbackPanel message={failedMessage} />
+        ) : (
         <form onSubmit={onSubmit} className="space-y-4" noValidate>
           <div className="absolute -left-[9999px]" aria-hidden="true">
             <input
@@ -297,6 +305,7 @@ export default function CourseEnquiryDialogContent({
             {isSubmitting ? "Sending..." : "Send course enquiry"}
           </Button>
         </form>
+        )}
       </DialogContent>
     </Dialog>
   );

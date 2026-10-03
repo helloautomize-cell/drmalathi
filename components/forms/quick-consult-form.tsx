@@ -4,6 +4,7 @@ import { type FormEvent, useState } from "react";
 import Link from "next/link";
 import { CheckCircle2, Phone } from "lucide-react";
 import { requestAppointment } from "@/app/actions/appointment";
+import { ContactFallbackPanel } from "@/components/forms/contact-fallback-panel";
 import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -36,6 +37,7 @@ const preferredTimes = [
 
 export function QuickConsultForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [failedMessage, setFailedMessage] = useState<string | null>(null);
   const [startedAt] = useState(() => new Date().toISOString());
   const [values, setValues] = useState({
     name: "",
@@ -88,12 +90,18 @@ export function QuickConsultForm() {
           preferredTime: "any",
           consent: false,
         });
+      } else if (result.deliveryFailed) {
+        setFailedMessage(result.message);
       } else {
         toast.error(result.message);
       }
     } finally {
       setIsSubmitting(false);
     }
+  }
+
+  if (failedMessage) {
+    return <ContactFallbackPanel message={failedMessage} />;
   }
 
   if (submitted) {
