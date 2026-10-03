@@ -81,6 +81,12 @@
     overflow-x: clip;
   }
 
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
   body {
     @apply bg-background text-foreground text-base leading-relaxed antialiased;
   }

@@ -1,12 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { type FormEvent, useState } from "react";
 import Link from "next/link";
-import { Controller, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { toast } from "sonner";
 import { CheckCircle2, Phone } from "lucide-react";
-import { z } from "zod";
 import { requestAppointment } from "@/app/actions/appointment";
 import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
 import { Button } from "@/components/ui/button";
@@ -23,23 +19,14 @@ import {
 import { doctors } from "@/data/doctors";
 import { services } from "@/data/services";
 import { site } from "@/data/site";
+import {
+  type LeadField,
+  phoneInputPattern,
+  validateLead,
+} from "@/lib/lead-validation";
 
-const consultSchema = z.object({
-  name: z.string().trim().min(2, "Please enter your name.").max(80),
-  phone: z
-    .string()
-    .trim()
-    .regex(/^[+\d][\d\s-]{7,15}$/, "Please enter a valid phone number."),
-  doctor: z.string(),
-  service: z.string(),
-  preferredTime: z.string(),
-  consent: z.literal(true, {
-    error: "Please accept so we can contact you.",
-  }),
-  company_url: z.string().optional(),
-});
-
-type ConsultValues = z.infer<typeof consultSchema>;
+const doctorSlugs = doctors.map((d) => d.slug);
+const serviceSlugs = services.map((s) => s.slug);
 
 const preferredTimes = [
   { value: "morning", label: "Morning" },
@@ -50,42 +37,62 @@ const preferredTimes = [
 export function QuickConsultForm() {
   const [submitted, setSubmitted] = useState(false);
   const [startedAt] = useState(() => new Date().toISOString());
-  const {
-    register,
-    control,
-    handleSubmit,
-    reset,
-    formState: { errors, isSubmitting },
-  } = useForm<ConsultValues>({
-    resolver: zodResolver(consultSchema),
-    defaultValues: {
-      name: "",
-      phone: "",
-      doctor: "any",
-      service: "any",
-      preferredTime: "any",
-      company_url: "",
-    },
+  const [values, setValues] = useState({
+    name: "",
+    phone: "",
+    doctor: "any",
+    service: "any",
+    preferredTime: "any",
+    consent: false,
   });
+  const [errors, setErrors] = useState<
+    Partial<Record<LeadField, string>>
+  >({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  async function onSubmit(values: ConsultValues) {
-    const formData = new FormData();
-    formData.set("name", values.name);
-    formData.set("phone", values.phone);
-    formData.set("doctor", values.doctor || "any");
-    formData.set("service", values.service || "any");
-    formData.set("preferredTime", values.preferredTime || "any");
-    formData.set("source", "contact-page");
-    formData.set("consent", values.consent ? "on" : "");
-    formData.set("company_url", values.company_url ?? "");
-    formData.set("startedAt", startedAt);
+  function setField<K extends keyof typeof values>(
+    key: K,
+    value: (typeof values)[K]
+  ) {
+    setValues((v) => ({ ...v, [key]: value }));
+    setErrors((e) => (e[key as LeadField] ? { ...e, [key]: undefined } : e));
+  }
 
-    const result = await requestAppointment(formData);
-    if (result.ok) {
-      setSubmitted(true);
-      reset();
-    } else {
-      toast.error(result.message);
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const parsed = validateLead(values, { doctorSlugs, serviceSlugs });
+    if (!parsed.ok) {
+      setErrors(parsed.errors);
+      return;
+    }
+    setErrors({});
+    setIsSubmitting(true);
+    try {
+      const { toast } = await import("sonner");
+      const formData = new FormData(event.currentTarget);
+      formData.set("doctor", parsed.data.doctor);
+      formData.set("service", parsed.data.service);
+      formData.set("preferredTime", parsed.data.preferredTime);
+      formData.set("source", "contact-page");
+      formData.set("consent", values.consent ? "on" : "");
+      formData.set("startedAt", startedAt);
+
+      const result = await requestAppointment(formData);
+      if (result.ok) {
+        setSubmitted(true);
+        setValues({
+          name: "",
+          phone: "",
+          doctor: "any",
+          service: "any",
+          preferredTime: "any",
+          consent: false,
+        });
+      } else {
+        toast.error(result.message);
+      }
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
@@ -134,15 +141,15 @@ export function QuickConsultForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
+    <form onSubmit={onSubmit} className="space-y-4" noValidate>
       {/* Honeypot field: off-screen so bots fill it but real users and
           assistive tech never reach it. */}
       <div className="absolute -left-[9999px]" aria-hidden="true">
         <input
           type="text"
+          name="company_url"
           tabIndex={-1}
           autoComplete="off"
-          {...register("company_url")}
         />
       </div>
 
@@ -150,13 +157,18 @@ export function QuickConsultForm() {
         <Label htmlFor="qc-name">Your name</Label>
         <Input
           id="qc-name"
+          name="name"
           placeholder="Full name"
           autoComplete="name"
+          required
+          minLength={2}
+          maxLength={80}
+          value={values.name}
+          onChange={(e) => setField("name", e.target.value)}
           aria-invalid={!!errors.name}
-          {...register("name")}
         />
         {errors.name ? (
-          <p className="text-sm text-destructive">{errors.name.message}</p>
+          <p className="text-sm text-destructive">{errors.name}</p>
         ) : null}
       </div>
 
@@ -164,118 +176,110 @@ export function QuickConsultForm() {
         <Label htmlFor="qc-phone">Phone number</Label>
         <Input
           id="qc-phone"
+          name="phone"
           type="tel"
           inputMode="tel"
           placeholder="+91"
           autoComplete="tel"
+          required
+          pattern={phoneInputPattern}
+          value={values.phone}
+          onChange={(e) => setField("phone", e.target.value)}
           aria-invalid={!!errors.phone}
-          {...register("phone")}
         />
         {errors.phone ? (
-          <p className="text-sm text-destructive">{errors.phone.message}</p>
+          <p className="text-sm text-destructive">{errors.phone}</p>
         ) : null}
       </div>
 
       <div className="space-y-1.5">
         <Label htmlFor="qc-service">Service (optional)</Label>
-        <Controller
-          control={control}
-          name="service"
-          render={({ field }) => (
-            <Select value={field.value} onValueChange={field.onChange}>
-              <SelectTrigger id="qc-service" className="w-full bg-white">
-                <SelectValue>
-                  {(value: string) =>
-                    value === "any" || !value
-                      ? "Not sure yet"
-                      : (services.find((s) => s.slug === value)?.name ??
-                        "Not sure yet")
-                  }
-                </SelectValue>
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="any">Not sure yet</SelectItem>
-                {services.map((s) => (
-                  <SelectItem key={s.slug} value={s.slug}>
-                    {s.name}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          )}
-        />
+        <Select
+          value={values.service}
+          onValueChange={(v) => setField("service", v ?? "any")}
+        >
+          <SelectTrigger id="qc-service" className="w-full bg-white">
+            <SelectValue>
+              {(value: string) =>
+                value === "any" || !value
+                  ? "Not sure yet"
+                  : (services.find((s) => s.slug === value)?.name ??
+                    "Not sure yet")
+              }
+            </SelectValue>
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="any">Not sure yet</SelectItem>
+            {services.map((s) => (
+              <SelectItem key={s.slug} value={s.slug}>
+                {s.name}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
 
       <div className="space-y-1.5">
         <Label htmlFor="qc-doctor">Preferred doctor</Label>
-        <Controller
-          control={control}
-          name="doctor"
-          render={({ field }) => (
-            <Select value={field.value} onValueChange={field.onChange}>
-              <SelectTrigger id="qc-doctor" className="w-full bg-white">
-                <SelectValue>
-                  {(value: string) =>
-                    value === "any" || !value
-                      ? "Any doctor"
-                      : (doctors.find((d) => d.slug === value)?.name ??
-                        "Any doctor")
-                  }
-                </SelectValue>
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="any">Any doctor</SelectItem>
-                {doctors.map((doctor) => (
-                  <SelectItem key={doctor.slug} value={doctor.slug}>
-                    {doctor.name}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          )}
-        />
+        <Select
+          value={values.doctor}
+          onValueChange={(v) => setField("doctor", v ?? "any")}
+        >
+          <SelectTrigger id="qc-doctor" className="w-full bg-white">
+            <SelectValue>
+              {(value: string) =>
+                value === "any" || !value
+                  ? "Any doctor"
+                  : (doctors.find((d) => d.slug === value)?.name ??
+                    "Any doctor")
+              }
+            </SelectValue>
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="any">Any doctor</SelectItem>
+            {doctors.map((doctor) => (
+              <SelectItem key={doctor.slug} value={doctor.slug}>
+                {doctor.name}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
 
       <div className="space-y-1.5">
         <Label htmlFor="qc-time">Preferred time of day</Label>
-        <Controller
-          control={control}
-          name="preferredTime"
-          render={({ field }) => (
-            <Select value={field.value} onValueChange={field.onChange}>
-              <SelectTrigger id="qc-time" className="w-full bg-white">
-                <SelectValue>
-                  {(value: string) =>
-                    preferredTimes.find((t) => t.value === value)?.label ??
-                    "No preference"}
-                </SelectValue>
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="any">No preference</SelectItem>
-                {preferredTimes.map((t) => (
-                  <SelectItem key={t.value} value={t.value}>
-                    {t.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          )}
-        />
+        <Select
+          value={values.preferredTime}
+          onValueChange={(v) => setField("preferredTime", v ?? "any")}
+        >
+          <SelectTrigger id="qc-time" className="w-full bg-white">
+            <SelectValue>
+              {(value: string) =>
+                preferredTimes.find((t) => t.value === value)?.label ??
+                "No preference"}
+            </SelectValue>
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="any">No preference</SelectItem>
+            {preferredTimes.map((t) => (
+              <SelectItem key={t.value} value={t.value}>
+                {t.label}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
 
       <div className="flex items-start gap-2.5">
-        <Controller
-          control={control}
-          name="consent"
-          render={({ field }) => (
-            <Checkbox
-              checked={field.value === true}
-              onCheckedChange={(checked) => field.onChange(checked === true)}
-              aria-invalid={!!errors.consent}
-              aria-labelledby="qc-consent-label"
-              className="mt-0.5 shrink-0"
-            />
-          )}
+        <Checkbox
+          checked={values.consent}
+          onCheckedChange={(checked) =>
+            setField("consent", checked === true)
+          }
+          required
+          aria-invalid={!!errors.consent}
+          aria-labelledby="qc-consent-label"
+          className="mt-0.5 shrink-0"
         />
         <p className="text-sm leading-snug text-muted-foreground">
           <span id="qc-consent-label">
@@ -287,7 +291,7 @@ export function QuickConsultForm() {
         </p>
       </div>
       {errors.consent ? (
-        <p className="text-sm text-destructive">{errors.consent.message}</p>
+        <p className="text-sm text-destructive">{errors.consent}</p>
       ) : null}
 
       <Button

@@ -3,12 +3,18 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import { imageBlurDataURL } from "@/lib/image-placeholder";
+import dynamic from "next/dynamic";
 import {
   galleryCategories,
   galleryImages,
   type GalleryCategoryId,
 } from "@/data/gallery";
-import { Lightbox } from "@/components/shared/lightbox";
+
+// Lightbox (dialog + next/image) loads only when a photo is opened.
+const Lightbox = dynamic(
+  () => import("@/components/shared/lightbox").then((m) => m.Lightbox),
+  { ssr: false }
+);
 
 type Filter = "all" | GalleryCategoryId;
 
@@ -83,11 +89,13 @@ export function GalleryBrowser() {
         ))}
       </ul>
 
-      <Lightbox
-        images={visible}
-        index={openIndex}
-        onIndexChange={setOpenIndex}
-      />
+      {openIndex !== null ? (
+        <Lightbox
+          images={visible}
+          index={openIndex}
+          onIndexChange={setOpenIndex}
+        />
+      ) : null}
     </>
   );
 }

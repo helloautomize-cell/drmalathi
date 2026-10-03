@@ -1,7 +1,11 @@
 "use server";
 
 import { Resend } from "resend";
-import { z } from "zod";
+import {
+  fieldErrors,
+  validateCourseEnquiry,
+  validateLead,
+} from "@/lib/lead-validation";
 import {
   courseQualificationOptions,
   courses,
@@ -13,34 +17,9 @@ import { site } from "@/data/site";
 const doctorSlugs = doctors.map((d) => d.slug);
 const serviceSlugs = services.map((s) => s.slug);
 
-const appointmentSchema = z.object({
-  name: z.string().trim().min(2, "Please enter your name.").max(80),
-  phone: z
-    .string()
-    .trim()
-    .max(24)
-    .transform((v) => v.replace(/[\s()-]/g, ""))
-    .refine((v) => /^\+?\d{10,15}$/.test(v), "Please enter a valid phone number."),
-  doctor: z
-    .string()
-    .refine((v) => v === "any" || doctorSlugs.includes(v), "Please choose a doctor.")
-    .default("any"),
-  service: z
-    .string()
-    .refine((v) => v === "any" || serviceSlugs.includes(v), "Please choose a service.")
-    .default("any"),
-  preferredTime: z
-    .string()
-    .refine(
-      (v) => v === "any" || ["morning", "afternoon", "evening"].includes(v),
-      "Please choose a preferred time."
-    )
-    .default("any"),
-  source: z.string().max(40).optional(),
-  consent: z.literal("on"),
-  company_url: z.string().max(0).optional().or(z.literal("")),
-  startedAt: z.string().max(40).optional(),
-});
+function text(value: FormDataEntryValue | null, max = 200): string {
+  return typeof value === "string" ? value.slice(0, max) : "";
+}
 
 export type AppointmentResult = { ok: boolean; message: string };
 
@@ -51,35 +30,27 @@ const FALLBACK_MESSAGE = `We could not submit your request online right now. Ple
 export async function requestAppointment(
   formData: FormData
 ): Promise<AppointmentResult> {
-  const parsed = appointmentSchema.safeParse({
-    name: formData.get("name"),
-    phone: formData.get("phone"),
-    doctor: formData.get("doctor") ?? "any",
-    service: formData.get("service") ?? "any",
-    preferredTime: formData.get("preferredTime") ?? "any",
-    source: formData.get("source") ?? "",
-    consent: formData.get("consent"),
-    company_url: formData.get("company_url"),
-    startedAt: formData.get("startedAt"),
-  });
+  const source = text(formData.get("source"), 40);
+  const company_url = text(formData.get("company_url"), 120);
+  const startedAt = text(formData.get("startedAt"), 40);
 
-  if (!parsed.success) {
-    return {
-      ok: false,
-      message: "Please check the form and try again.",
-    };
+  const parsed = validateLead(
+    {
+      name: text(formData.get("name")),
+      phone: text(formData.get("phone"), 40),
+      doctor: text(formData.get("doctor")) || "any",
+      service: text(formData.get("service")) || "any",
+      preferredTime: text(formData.get("preferredTime")) || "any",
+      consent: text(formData.get("consent")),
+    },
+    { doctorSlugs, serviceSlugs }
+  );
+
+  if (!parsed.ok) {
+    return { ok: false, message: fieldErrors.generic };
   }
 
-  const {
-    name,
-    phone,
-    doctor,
-    service,
-    preferredTime,
-    source,
-    company_url,
-    startedAt,
-  } = parsed.data;
+  const { name, phone, doctor, service, preferredTime } = parsed.data;
 
   // Honeypot and minimum submit time: silently accept so bots do not retry.
   const elapsed = startedAt ? Date.now() - new Date(startedAt).getTime() : 0;
@@ -151,54 +122,32 @@ const qualificationValues: string[] = courseQualificationOptions.map(
   (qualification) => qualification.value
 );
 
-const courseEnquirySchema = z.object({
-  name: z.string().trim().min(2).max(80),
-  phone: z
-    .string()
-    .trim()
-    .max(24)
-    .transform((value) => value.replace(/[\s()-]/g, ""))
-    .refine((value) => /^\+?\d{10,15}$/.test(value)),
-  email: z.string().trim().email().max(160),
-  qualification: z.string().refine((value) => qualificationValues.includes(value)),
-  course: z.string().refine((value) => courseSlugs.includes(value)),
-  message: z.string().trim().max(1000).optional(),
-  consent: z.literal("on"),
-  company_url: z.string().max(0).optional().or(z.literal("")),
-  startedAt: z.string().max(40).optional(),
-});
-
 const COURSE_FALLBACK_MESSAGE = `We could not submit your course enquiry online right now. Please email ${site.email} or call ${site.internationalPhone.label}.`;
 
 export async function requestCourseEnquiry(
   formData: FormData
 ): Promise<AppointmentResult> {
-  const parsed = courseEnquirySchema.safeParse({
-    name: formData.get("name"),
-    phone: formData.get("phone"),
-    email: formData.get("email"),
-    qualification: formData.get("qualification"),
-    course: formData.get("course"),
-    message: formData.get("message") ?? "",
-    consent: formData.get("consent"),
-    company_url: formData.get("company_url"),
-    startedAt: formData.get("startedAt"),
-  });
+  const company_url = text(formData.get("company_url"), 120);
+  const startedAt = text(formData.get("startedAt"), 40);
 
-  if (!parsed.success) {
-    return { ok: false, message: "Please check the form and try again." };
+  const parsed = validateCourseEnquiry(
+    {
+      name: text(formData.get("name")),
+      phone: text(formData.get("phone"), 40),
+      email: text(formData.get("email"), 200),
+      qualification: text(formData.get("qualification")),
+      course: text(formData.get("course")),
+      message: text(formData.get("message"), 1200),
+      consent: text(formData.get("consent")),
+    },
+    { courseSlugs, qualificationValues }
+  );
+
+  if (!parsed.ok) {
+    return { ok: false, message: fieldErrors.generic };
   }
 
-  const {
-    name,
-    phone,
-    email,
-    qualification,
-    course,
-    message,
-    company_url,
-    startedAt,
-  } = parsed.data;
+  const { name, phone, email, qualification, course, message } = parsed.data;
   const elapsed = startedAt ? Date.now() - new Date(startedAt).getTime() : 0;
 
   if (company_url || !startedAt || elapsed < MIN_SUBMIT_MS) {
