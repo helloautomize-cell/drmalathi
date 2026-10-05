@@ -353,8 +353,8 @@ export const blogGuides: Guide[] = [
       }
     ],
     "publishedAt": "2026-09-30",
-    "reviewStatus": "pending",
-    "draft": true
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-05"
   },
   {
     "slug": "high-risk-pregnancy-fetal-medicine-specialist",
@@ -1171,8 +1171,8 @@ export const blogGuides: Guide[] = [
       }
     ],
     "publishedAt": "2026-10-02",
-    "reviewStatus": "pending",
-    "draft": true
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-05"
   },
   {
     "slug": "recurrent-miscarriage-causes-tests-treatment",
@@ -1641,8 +1641,8 @@ export const blogGuides: Guide[] = [
     ],
     "relatedService": "recurrent-miscarriages-clinic",
     "publishedAt": "2026-09-30",
-    "reviewStatus": "pending",
-    "draft": true
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-05"
   },
   {
     "slug": "fertility-testing-for-couples",
@@ -2381,8 +2381,8 @@ export const blogGuides: Guide[] = [
       }
     ],
     "publishedAt": "2026-09-30",
-    "reviewStatus": "pending",
-    "draft": true
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-05"
   },
   {
     "slug": "twin-pregnancy-scans-risks-monitoring",
@@ -2809,8 +2809,8 @@ export const blogGuides: Guide[] = [
     ],
     "relatedService": "twin-specialised-clinic",
     "publishedAt": "2026-09-30",
-    "reviewStatus": "pending",
-    "draft": true
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-05"
   },
   {
     "slug": "anomaly-scan-tiffa-scan-pregnancy",
@@ -3672,8 +3672,8 @@ export const blogGuides: Guide[] = [
     ],
     "relatedService": "anomaly-scan",
     "publishedAt": "2026-10-01",
-    "reviewStatus": "pending",
-    "draft": true,
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-05",
     "featured": true
   },
   {
@@ -4600,8 +4600,8 @@ export const blogGuides: Guide[] = [
     ],
     "relatedService": "fetal-echo",
     "publishedAt": "2026-10-02",
-    "reviewStatus": "pending",
-    "draft": true
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-05"
   },
   {
     "slug": "growth-scan-doppler-pregnancy-fetal-growth-restriction",
@@ -5658,8 +5658,8 @@ export const blogGuides: Guide[] = [
     ],
     "relatedService": "growth-scan-doppler",
     "publishedAt": "2026-10-02",
-    "reviewStatus": "pending",
-    "draft": true
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-05"
   },
   {
     "slug": "nipt-in-pregnancy-test-accuracy-high-risk-result",
@@ -6804,8 +6804,8 @@ export const blogGuides: Guide[] = [
     ],
     "relatedService": "nipt",
     "publishedAt": "2026-10-01",
-    "reviewStatus": "pending",
-    "draft": true
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-05"
   },
   {
     "slug": "nt-scan-pregnancy-timing-normal-range-down-syndrome",
@@ -7740,7 +7740,7 @@ export const blogGuides: Guide[] = [
     ],
     "relatedService": "downs-screening-oscar",
     "publishedAt": "2026-10-01",
-    "reviewStatus": "pending",
-    "draft": true
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-05"
   }
 ];

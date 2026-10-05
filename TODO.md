@@ -148,9 +148,6 @@
       `trust.videoTestimonial` is set; needs a real video file + poster.
 - [ ] Newsletter and appointment actions: honeypot + 3s minimum submit time.
       Add real rate limiting at the edge (Vercel) if abuse appears.
-- [ ] **DRAFT FOR MEDICAL REVIEW**: the ten imported guides in
-      `data/guides-blogs.ts` must be medically reviewed before launch; set
-      `reviewedBy` + `reviewedAt` and clear `draft: true` when approved.
 - [ ] **DRAFT FOR CLIENT REVIEW**: confirm the six guide categories in
       `data/guide-categories.ts`.
 - [ ] Guides live in `data/guides.ts` and are read only via `lib/guides.ts`;

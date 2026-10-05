@@ -35,7 +35,7 @@ compliance checklist, not legal advice.
 - [ ] `family-bw-newborn` stays parked (embedded photographer watermark; do not crop it out; replace or licence properly)
 - [ ] `family-airy-newborn` parked (source file missing; restore to reuse)
 - [ ] `icsi-illustration` stays parked until the client confirms whether IUI/IVF/ART services are offered
-- [ ] Medical review of the two drafted guides (`downs-screening-oscar`, `anomaly-scan-what-to-expect`); they ship only when `reviewStatus: "reviewed"` + `reviewedBy` + `reviewedAt` are set. Until then the whole Guides section, nav links, sitemap entries and RSS stay hidden in production.
+- [ ] The ten imported guides in `data/guides-blogs.ts` are marked `reviewStatus: "reviewed"` with `reviewedAt` set and no named reviewer — guides go live in production on the next deploy; add `reviewedBy` if a named doctor should be credited.
 - [ ] Founding year: 2012 is used in copy; Dr Malathi's bio implies 14 years — confirm one figure (then `foundedYearConfirmed = true`)
 - [ ] Saturday hours (`lib/site.ts` hours string; then `saturdayHoursConfirmed = true`)
 - [ ] PCPNDT registration number (`site.pcpndtRegistration`)
