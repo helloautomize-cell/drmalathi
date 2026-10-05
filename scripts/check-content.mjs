@@ -216,6 +216,73 @@ for (const dir of SCAN_DIRS) {
   }
 }
 
+// ---- Generated llms.txt / llms-full.txt output rules --------------------
+// The route handlers emit prerendered bodies under .next/server/app on
+// `next build`. When a build output exists we verify it: no em/en dashes,
+// no PLACEHOLDER, no utm_ parameters, every absolute URL must appear in the
+// generated sitemap, and only medically reviewed guides may be linked.
+// On a clean checkout (no .next yet) this section skips; postbuild runs the
+// check again against the fresh output.
+
+const LLMS_FILES = ["llms.txt", "llms-full.txt"];
+const sitemapBodyPath = join(root, ".next/server/app/sitemap.xml.body");
+const llmsBodies = LLMS_FILES.map((f) =>
+  join(root, `.next/server/app/${f}.body`)
+);
+const llmsBuilt =
+  existsSync(sitemapBodyPath) && llmsBodies.every((p) => existsSync(p));
+
+if (llmsBuilt) {
+  const sitemap = readFileSync(sitemapBodyPath, "utf8");
+  const sitemapUrls = new Set(
+    [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1])
+  );
+
+  // Reviewed guide slugs, parsed from the generated data file. Top-level
+  // guide objects sit at exactly two-space indent; nested block objects are
+  // deeper, so split on "\n  {\n" only.
+  const blogsSrc = readFileSync(join(root, "data/guides-blogs.ts"), "utf8");
+  const reviewedSlugs = new Set();
+  for (const chunk of blogsSrc.split(/\r?\n  \{\r?\n/)) {
+    const slug = chunk.match(/"slug":\s*"([^"]+)"/)?.[1];
+    if (slug && /"reviewStatus":\s*"reviewed"/.test(chunk)) {
+      reviewedSlugs.add(slug);
+    }
+  }
+
+  for (const bodyPath of llmsBodies) {
+    const rel = `.next/server/app/${bodyPath.split(/[\\/]/).pop()}`;
+    const text = readFileSync(bodyPath, "utf8");
+    if (DASHES.test(text)) {
+      failures.push(`${rel}: em/en dash in generated output`);
+    }
+    if (/PLACEHOLDER/.test(text)) {
+      failures.push(`${rel}: PLACEHOLDER in generated output`);
+    }
+    if (/utm_/i.test(text)) {
+      failures.push(`${rel}: utm_ tracking parameter in generated output`);
+    }
+    for (const m of text.matchAll(/https:\/\/[^\s)\]]+/g)) {
+      const url = m[0].replace(/[.,;]+$/, "");
+      if (!url.startsWith("https://fmctrichy.com")) continue;
+      if (url.endsWith(".webp") || url.endsWith(".png")) continue; // asset refs
+      const guide = url.match(/^https:\/\/fmctrichy\.com\/guides\/([^/#]+)/);
+      if (guide && !reviewedSlugs.has(guide[1])) {
+        failures.push(`${rel}: links unreviewed guide ${url}`);
+        continue;
+      }
+      const normalized = url.replace(/\/$/, "");
+      if (!sitemapUrls.has(url) && !sitemapUrls.has(normalized)) {
+        failures.push(`${rel}: URL not in sitemap: ${url}`);
+      }
+    }
+  }
+} else {
+  warnings.push(
+    "llms.txt/llms-full.txt output not built yet; output checks skipped (postbuild re-runs them)"
+  );
+}
+
 for (const w of warnings) console.warn(`warn: ${w}`);
 if (failures.length) {
   console.error("Content check failed:");

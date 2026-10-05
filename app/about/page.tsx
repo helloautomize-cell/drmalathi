@@ -193,7 +193,7 @@ export default function AboutPage() {
                   {event.text}{" "}
                   {event.href ? (
                     <Link href={event.href} className="link font-semibold">
-                      Learn more
+                      See CME activities
                     </Link>
                   ) : null}
                 </p>

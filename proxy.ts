@@ -9,7 +9,8 @@ const DISALLOW_ALL = "User-Agent: *\nDisallow: /\n";
 
 export function proxy(request: NextRequest) {
   const host = (request.headers.get("host") ?? "").split(":")[0].toLowerCase();
-  const canonical = CANONICAL_HOSTS.has(host);
+  const canonical =
+    CANONICAL_HOSTS.has(host) || process.env.INDEXABLE === "1";
   const { pathname } = request.nextUrl;
 
   if (pathname === "/robots.txt") {
