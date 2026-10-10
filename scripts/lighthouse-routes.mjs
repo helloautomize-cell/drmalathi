@@ -1,6 +1,6 @@
 import lighthouse from "lighthouse";
 import puppeteer from "puppeteer-core";
-import { existsSync } from "node:fs";
+import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 
 const CHROME = [
   "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
@@ -41,6 +41,14 @@ for (const route of ROUTES) {
       `| LCP ${a["largest-contentful-paint"]?.displayValue}`,
       `| CLS ${a["cumulative-layout-shift"]?.displayValue}`
     );
+    if (process.env.QA_SAVE_JSON === "1") {
+      mkdirSync("qa-screenshots/lighthouse", { recursive: true });
+      const name = route === "/" ? "home" : route.replaceAll("/", "_");
+      writeFileSync(
+        `qa-screenshots/lighthouse/${name}.json`,
+        JSON.stringify(r.lhr)
+      );
+    }
   } catch (err) {
     console.log(route, "LIGHTHOUSE FAILED:", err.message?.slice(0, 200));
   }

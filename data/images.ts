@@ -67,7 +67,7 @@ const EDITORIAL: Record<BrandImageSlug, Editorial> = {
     focal: { x: 55, y: 45 },
   },
   "family-cutout": {
-    alt: "Parents in white cradling their sleeping newborn",
+    alt: "Parents cradling their sleeping newborn",
     focal: { x: 50, y: 50 },
   },
   "doctor-malathi": {

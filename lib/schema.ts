@@ -43,7 +43,7 @@ export function medicalClinicSchema() {
     name: site.name,
     url: site.url,
     description: site.description,
-    image: `${site.url}/images/family-cutout.webp`,
+    image: `${site.url}/images/brand/family-cutout-1024.webp`,
     logo: `${site.url}/images/logo-transparent.png`,
     telephone: telephones,
     email: site.email,

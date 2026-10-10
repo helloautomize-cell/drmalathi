@@ -94,9 +94,8 @@
       - `doctor-glowing-fetus` (doctors intro thumbnail)
       - `family-bw-newborn` (CTA band, plum duotone)
       - `family-airy-newborn` (unused now; spare)
-      - `family-cutout` (hero cut-out; alpha was recovered from a checkerboard
-        JPEG; replace with the client's real transparent PNG/WebP when
-        available)
+      - `family-cutout` (LICENSED - hero cut-out; replaced with a real
+        transparent PNG generated with ChatGPT, October 2026)
       - `icsi-illustration` (PARKED, not rendered until fertility services
         confirmed)
       - `couple-grey` (EXCLUDED, parked in `assets/parked`, not in manifest)

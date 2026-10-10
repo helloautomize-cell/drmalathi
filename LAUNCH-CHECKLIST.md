@@ -23,8 +23,7 @@ compliance checklist, not legal advice.
 - [ ] `app/terms/page.tsx`: "draft pending legal and client review" line removed after counsel sign-off
 - [ ] `app/editorial-policy/page.tsx`: "draft pending legal and client review" line removed after counsel sign-off
 - [ ] `app/accessibility/page.tsx`: "draft pending legal and client review" line removed after counsel sign-off
-- [ ] Five placeholder-licence images in use replaced with licensed files (drop new source into `assets/source-images/`, set `license: "licensed"` + `licenseSource` in `data/image-sources.json`, run `npm run process:images`):
-  - [ ] `family-cutout` (home hero LCP; also needs real alpha, source JPEG has a baked checkerboard)
+- [ ] Four placeholder-licence images in use replaced with licensed files (drop new source into `assets/source-images/`, set `license: "licensed"` + `licenseSource` in `data/image-sources.json`, run `npm run process:images`):
   - [ ] `hands-baby-feet` (LCP image on genetic-counselling, recurrent-miscarriages-clinic, fetal-postmortem)
   - [ ] `baby-overhead`
   - [ ] `pregnancy-test-stork`

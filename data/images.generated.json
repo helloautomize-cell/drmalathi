@@ -77,27 +77,6 @@
       }
     }
   },
-  "family-bw-newborn": {
-    "width": 736,
-    "height": 1104,
-    "widths": [
-      480,
-      736
-    ],
-    "maxDisplayWidth": 566,
-    "hasAlpha": false,
-    "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACwAwCdASoQABgAPyV8tVIuJ6UisAgBwCSJQBadBDsU7v1f8WsTIAD+6MPdUFAIHjd4AQJ9JtUD7eGQlf/yIF7mG6FlWtPiaAW75wmMDRQZQcnA0CB20+t1rllK+AAA",
-    "bytes": {
-      "avif": {
-        "480": 8589,
-        "736": 16981
-      },
-      "webp": {
-        "480": 9898,
-        "736": 19644
-      }
-    }
-  },
   "family-cutout": {
     "width": 1024,
     "height": 1536,
@@ -108,17 +87,17 @@
     ],
     "maxDisplayWidth": 787,
     "hasAlpha": true,
-    "blur": "data:image/webp;base64,UklGRvgBAABXRUJQVlA4WAoAAAAQAAAADwAAFwAAQUxQSBwBAAABkHPbtrG92ve9z4vPNjvbRmvbsZ3SNkvbTtqktW3b9vPcHdyRiJgAaGXl8m47/nc9TR50QGgkyqh+/mJ/GBqBQzRpcj/EPwJ+z6mo+MANQuPcRUUqTtdI5M3bSouKK10hIBBwk5cVLR4d3wYDNkzkD5KKqyYmQsKGKfylSHNtIgQAA620SFojomEAkMiyqGhyv4QAIBD1hRZ/cTRsAGCgjtcO8yeH6iQ6zLkHeWfuQB1shRt7V/C0Z4MNACQSbt+ZJGvG2b3s/wDY+qUFbhkSev/+NkdAXl8ZDI3A4hb43TiXEQPxj/eEIy8L0o69fTwMdkMKEfWR6se3HyY3Q+LfsRd/UlnK/FXsUxRtdwdE1YlZhc3lJaHr+Pn2DVZQOCC2AAAAsAQAnQEqEAAYAD8lerRRrielIrAIAcAkiWQAsRsASoDu4vSR20OKm+qtS/5yYAD+cxBIs47jM0Koc75YlO/TkUk8A7XW7Zn5LIOAhpYcs/slK9uWY6VI4e+jbtFU4YbmUN3zB55tC1x68NlZm3l5ArHQqTvQqskt4pvMBYGPuGUWGwH5bdG86ZZASXVVwiOUCb+qa8f2peNWDyuv6rjCdpHTSe5VT+QR/SUiDoNI1FsCceZAKAA=",
+    "blur": "data:image/webp;base64,UklGRpABAABXRUJQVlA4WAoAAAAQAAAADwAAFwAAQUxQSNUAAAABgKptmzLlnZldrJGI7hZJ7hIdsjuJ0/AToLnTSGR3107ahIy8yPx7cQgRMQH4f6VUdAJRSynQPFkO4ZNQqDT8KIH8I5BchG5+sAkKgER9hK1d5L4QEhBIvCZPl8iTYghAoYfaOv6dT4BA0isdnSOtYR8gVmjp11wAqukYaLkvMUEd5PgYhwGaIMuzEIo0nc850wtgj8Zn2Q+lMEftMxxBCKETWp/mNBTS3+l8hpsQaKSj3/ImBhinCXD8yAKmqQMs3/KBHRpf5J27QPiK9o/l8TnXIAAAVlA4IJQAAABQBACdASoQABgAPyV6tFGuJ6UisAgBwCSJbACdAYuG24FKGy56GAbK/UtwAP7Y7iWSGh0FMgA4It1dWQ3l/PrC8cn4dfZLx3iokD0ihL4OpNvGQKQnl4QC6Ae5kS+UZeU8MXm0DVE/mIaDY6izNGP+mSEls7Sy0ykvSJxTmevahrqA7I7opUrYxMngg4LVxJR7hwAA",
     "bytes": {
       "avif": {
-        "480": 30797,
-        "768": 56738,
-        "1024": 67798
+        "480": 22683,
+        "768": 46273,
+        "1024": 68330
       },
       "webp": {
-        "480": 45676,
-        "768": 77600,
-        "1024": 62890
+        "480": 35226,
+        "768": 71156,
+        "1024": 98154
       }
     }
   },
