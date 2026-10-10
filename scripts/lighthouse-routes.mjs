@@ -39,13 +39,14 @@ for (const route of ROUTES) {
       route,
       JSON.stringify(scores),
       `| LCP ${a["largest-contentful-paint"]?.displayValue}`,
+      `| TBT ${a["total-blocking-time"]?.displayValue}`,
       `| CLS ${a["cumulative-layout-shift"]?.displayValue}`
     );
     if (process.env.QA_SAVE_JSON === "1") {
       mkdirSync("qa-screenshots/lighthouse", { recursive: true });
       const name = route === "/" ? "home" : route.replaceAll("/", "_");
       writeFileSync(
-        `qa-screenshots/lighthouse/${name}.json`,
+        `qa-screenshots/lighthouse/${name}${process.env.QA_RUN_TAG ?? ""}.json`,
         JSON.stringify(r.lhr)
       );
     }

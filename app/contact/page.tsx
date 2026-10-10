@@ -13,7 +13,11 @@ import {
   ScanLine,
 } from "lucide-react";
 import { MobileIconTile } from "@/components/cards/mobile-cards";
-import { QuickConsultForm } from "@/components/forms/quick-consult-form";
+import { LazyQuickConsultForm } from "@/components/forms/lazy-quick-consult-form";
+import {
+  ConsultFormBody,
+  emptyConsultValues,
+} from "@/components/forms/quick-consult-form-body";
 import { JsonLd } from "@/components/seo/json-ld";
 import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
 import { StaticMap } from "@/components/site/static-map";
@@ -21,6 +25,8 @@ import { Container } from "@/components/shared/container";
 import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
+import { doctors } from "@/data/doctors";
+import { services } from "@/data/services";
 import { site } from "@/data/site";
 import { breadcrumbSchema } from "@/lib/schema";
 
@@ -68,6 +74,22 @@ const contactRows = [
     external: false,
   },
 ];
+
+// Minimal option lists for the callback form — never ship the full data
+// modules to the client for a couple of select lists.
+const consultDoctorOptions = doctors.map((d) => ({
+  slug: d.slug,
+  name: d.name,
+}));
+const consultServiceOptions = services.map((s) => ({
+  slug: s.slug,
+  name: s.name,
+}));
+const consultContact = {
+  callHref: site.phones[0].href,
+  callLabel: site.phones[0].label,
+  whatsappHref: site.whatsapp.messageHref,
+};
 
 // TODO: client to confirm Saturday and Sunday hours before launch.
 const hoursRows = [
@@ -153,17 +175,39 @@ export default function ContactPage() {
               <ChevronRight className="size-4 shrink-0 text-ink-muted" aria-hidden="true" />
             </a>
 
-            <div className="rounded-3xl border border-rose-tint bg-white p-5 shadow-card">
-              <h2 className="text-xl font-semibold text-ink">
-                Request a callback
-              </h2>
-              <p className="mt-1 mb-6 text-sm/[20px] text-ink-muted">
-                Share your details and we will call you back to fix a convenient
-                time.
-              </p>
-              <QuickConsultForm />
-            </div>
+          </div>
 
+          {/* The single callback form — one element rendered at every
+              breakpoint so nothing hydrates twice. */}
+          <div
+            id="callback-form"
+            className="mt-4 scroll-mt-28 rounded-3xl border border-rose-tint bg-white p-5 shadow-card md:mt-0 md:p-8"
+          >
+            <h2 className="text-xl font-semibold text-ink">
+              Request a callback
+            </h2>
+            <p className="mt-1 mb-6 text-sm/[20px] text-ink-muted">
+              Share your details and we will call you back to fix a convenient
+              time.
+            </p>
+            <LazyQuickConsultForm
+              doctorOptions={consultDoctorOptions}
+              serviceOptions={consultServiceOptions}
+              contact={consultContact}
+              placeholder={
+                <ConsultFormBody
+                  interactive={false}
+                  values={emptyConsultValues}
+                  errors={{}}
+                  isSubmitting={false}
+                  doctorOptions={consultDoctorOptions}
+                  serviceOptions={consultServiceOptions}
+                />
+              }
+            />
+          </div>
+
+          <div className="mt-4 md:hidden">
             <div className="rounded-2xl border border-rose-tint bg-white p-5 shadow-soft">
               <h2 className="flex items-center gap-2 text-base font-semibold text-ink">
                 <Clock className="size-4 text-primary" aria-hidden="true" />
@@ -184,7 +228,7 @@ export default function ContactPage() {
           </div>
 
           {/* Desktop two-column layout, unchanged. */}
-          <div className="hidden gap-10 md:grid lg:grid-cols-2">
+          <div className="mt-10 hidden gap-10 md:grid lg:grid-cols-2">
           <div>
             <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
               {contactRows.map((row) => (
@@ -256,15 +300,43 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-rose-tint bg-white p-6 shadow-card sm:p-8">
+          <div className="flex flex-col justify-center rounded-3xl border border-rose-tint bg-white p-6 shadow-card sm:p-8">
             <h2 className="text-xl font-semibold text-ink">
               Request a callback
             </h2>
-            <p className="mt-1 mb-6 text-sm text-muted-foreground">
+            <p className="mt-1 text-sm text-muted-foreground">
               Share your details and we will call you back to fix a convenient
-              time.
+              time. The form above takes less than a minute.
             </p>
-            <QuickConsultForm />
+            <div className="mt-6">
+              <a
+                href="#callback-form"
+                className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-primary-hover"
+              >
+                Book appointment
+              </a>
+            </div>
+            <p className="mt-6 text-sm font-semibold text-ink">
+              Prefer to reach us directly?
+            </p>
+            <div className="mt-3 flex flex-wrap gap-3">
+              <a
+                href={site.phones[0].href}
+                className="inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-xl border border-primary px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-rose-tint sm:flex-initial"
+              >
+                <Phone className="size-4" aria-hidden="true" />
+                Call {site.phones[0].label}
+              </a>
+              <a
+                href={site.whatsapp.messageHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-xl border border-teal px-4 py-2.5 text-sm font-semibold text-teal transition-colors hover:bg-teal-tint sm:flex-initial"
+              >
+                <WhatsAppIcon className="size-4" aria-hidden="true" />
+                WhatsApp us
+              </a>
+            </div>
           </div>
           </div>
         </Container>
