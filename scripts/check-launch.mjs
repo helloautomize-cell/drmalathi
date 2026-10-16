@@ -28,7 +28,9 @@ const envText = [".env", ".env.local", ".env.production"]
 const hasEnv = (name) => Boolean(process.env[name]) || new RegExp(`^${name}=`, "m").test(envText);
 for (const name of ["RESEND_API_KEY", "LEADS_EMAIL_TO", "LEADS_EMAIL_FROM"]) {
   if (!hasEnv(name)) {
-    blockers.push(`Missing env var ${name}: lead forms cannot deliver email`);
+    postLaunch.push(
+      `Missing env var ${name}: optional email copy of bookings (bookings already go to the Google Sheet)`
+    );
   }
 }
 for (const name of ["SHEETS_WEBHOOK_URL", "SHEETS_WEBHOOK_SECRET"]) {
