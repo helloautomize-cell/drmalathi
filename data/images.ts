@@ -71,8 +71,8 @@ const EDITORIAL: Record<BrandImageSlug, Editorial> = {
     focal: { x: 50, y: 50 },
   },
   "doctor-malathi": {
-    alt: "Dr Malathi G. Prasad, Managing Director and lead consultant",
-    focal: { x: 50, y: 35 },
+    alt: "Dr Malathi G. Prasad, Lead Consultant in Fetal Medicine",
+    focal: { x: 50, y: 15 },
   },
   "doctor-revathy": {
     alt: "Dr Revathy Chandrasekharan, maternal-fetal medicine specialist",

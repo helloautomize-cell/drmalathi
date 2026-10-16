@@ -27,11 +27,13 @@ for (const [slug, cfg] of Object.entries(sources)) {
   const kb = g
     ? Math.max(...Object.values(g.bytes?.avif ?? { 0: 0 })) / 1024
     : null;
-  const status = cfg.license === "licensed" ? "LICENSED" : "PLACEHOLDER";
+  // "owned" = clinic-supplied asset, same launch-standing as licensed.
+  const cleared = cfg.license === "licensed" || cfg.license === "owned";
+  const status = cleared ? "LICENSED" : "PLACEHOLDER";
   console.log(
     `${status.padEnd(11)} ${slug.padEnd(24)} ${g ? `${g.width}x${g.height}` : "unprocessed"} ${kb ? `~${kb.toFixed(1)}KB avif` : ""}`
   );
-  if (cfg.license !== "licensed") placeholders.push(slug);
+  if (!cleared) placeholders.push(slug);
 }
 
 if (parked.length) {

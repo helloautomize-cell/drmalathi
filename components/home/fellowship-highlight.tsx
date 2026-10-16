@@ -44,7 +44,7 @@ function FacultyItem({
       <span className="relative size-10 shrink-0 overflow-hidden rounded-full bg-gradient-to-b from-rose-tint to-blush">
         <Image
           src={doctor.photo}
-          alt={`Portrait of ${doctor.name}`}
+          alt={doctor.photoAlt ?? `Portrait of ${doctor.name}`}
           fill
           sizes="40px"
           placeholder="blur"

@@ -43,7 +43,10 @@ function Portrait({
     >
       <Image
         src={doctor.photo}
-        alt={`Portrait of ${doctor.name}, fetal medicine consultant`}
+        alt={
+          doctor.photoAlt ??
+          `Portrait of ${doctor.name}, fetal medicine consultant`
+        }
         fill
         priority={priority}
         fetchPriority={priority ? "high" : undefined}
@@ -54,10 +57,18 @@ function Portrait({
         }
         placeholder="blur"
         blurDataURL={imageBlurDataURL}
-        className="object-cover"
-        style={{
-          objectPosition: `${doctor.photoFocus.x}% ${doctor.photoFocus.y}%`,
-        }}
+        className={
+          doctor.photoFit === "contain"
+            ? "object-contain object-bottom"
+            : "object-cover"
+        }
+        style={
+          doctor.photoFit === "contain"
+            ? undefined
+            : {
+                objectPosition: `${doctor.photoFocus.x}% ${doctor.photoFocus.y}%`,
+              }
+        }
       />
     </div>
   );

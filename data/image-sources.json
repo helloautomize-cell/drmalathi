@@ -44,17 +44,10 @@
     "licenseSource": "Generated with ChatGPT (OpenAI), October 2026"
   },
   "doctor-malathi": {
-    "source": "assets/source-images/doctors/malathi.webp",
+    "source": "assets/source-images/dr-malathi-portrait.png",
     "recipe": "neutral",
-    "license": "licensed",
-    "crop": {
-      "rectPercent": {
-        "left": 26,
-        "top": 3,
-        "width": 48,
-        "height": 54
-      }
-    }
+    "license": "owned",
+    "licenseSource": "Clinic supplied portrait"
   },
   "doctor-revathy": {
     "source": "assets/source-images/doctors/revathy.webp",

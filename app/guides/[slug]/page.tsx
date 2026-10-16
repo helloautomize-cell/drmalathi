@@ -241,10 +241,13 @@ export default async function GuideArticlePage({
                 <span className="relative size-10 overflow-hidden rounded-full bg-blush">
                   <Image
                     src={reviewer.photo}
-                    alt=""
+                    alt={reviewer.photoAlt ?? ""}
                     fill
                     sizes="40px"
                     className="object-cover"
+                    style={{
+                      objectPosition: `${reviewer.photoFocus.x}% ${reviewer.photoFocus.y}%`,
+                    }}
                   />
                 </span>
                 <span>
@@ -403,10 +406,13 @@ export default async function GuideArticlePage({
                   <span className="relative size-16 shrink-0 overflow-hidden rounded-full bg-blush">
                     <Image
                       src={reviewer.photo}
-                      alt={`Portrait of ${reviewer.name}`}
+                      alt={reviewer.photoAlt ?? `Portrait of ${reviewer.name}`}
                       fill
                       sizes="64px"
                       className="object-cover"
+                      style={{
+                        objectPosition: `${reviewer.photoFocus.x}% ${reviewer.photoFocus.y}%`,
+                      }}
                     />
                   </span>
                   <div className="min-w-0">

@@ -102,20 +102,26 @@
     }
   },
   "doctor-malathi": {
-    "width": 240,
-    "height": 324,
+    "width": 900,
+    "height": 1350,
     "widths": [
-      240
+      480,
+      768,
+      900
     ],
-    "maxDisplayWidth": 184,
-    "hasAlpha": false,
-    "blur": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAADQAwCdASoQABYAPyV6tFGuJ6UisAgBwCSJbACsH8ABjZwUmY5BfJAA/tlamQbOfGSM3xN78uCMj59hRprBKRaMYGm5nCYE2VLhVEidt31ouHT+9UW3uUPZG/RfM6WkHrquJGsvsaMK0Tr4Dh0FY1dOAded4ObwTZT+3uadT4FkDmZlm/pbgeE0l5QiaFfZ0WPF3zlI63CeZKvJcf+f+KXbqzO2Lvn/8gAAAA==",
+    "maxDisplayWidth": 692,
+    "hasAlpha": true,
+    "blur": "data:image/webp;base64,UklGRn4BAABXRUJQVlA4WAoAAAAQAAAADwAAFwAAQUxQSMkAAAABgGJteyrnSzLjxpXrmZlbiQtgZq6s4u6BbSUpZj87qGZSTLn5CrlZQ0RMAKyhymw4CsSHyWkIH4l5aj7GQNgElvnN90xIi0DonJ7mCJRFoYuGmtsQ/yQSLmho+J4HCQgEd6lJak5CAQoj1CRp+JgOCagwvX/UXIcAyg3thl+FkBintlFzFRIFHo3N8CkFqKKj5gLQRM/P8CYCQ9QOhlWo+6Tx4TcnJMoNjY/mmkQJnQ4V6unRYTeAVrcDhRa3swAGqV1OA+h12wIAVlA4II4AAABwBACdASoQABgAPyV6tFGuJ6UisAgBwCSJbACdMoAlrRQkufM+TtL0y3zaAAD+zs9XClk4Npqwo8ZLuEnb0mvAT85idt7TUKsA6jn4k9c86/EJveONZWPBZl/sy/uOIaqoLJ8cRXbsN3cRSLe39Jp4JETTrn3HAEKVERfhW8ZgUigdTbi7Jm6EFRXgMAAA",
     "bytes": {
       "avif": {
-        "240": 5833
+        "480": 21272,
+        "768": 44617,
+        "900": 57158
       },
       "webp": {
-        "240": 7658
+        "480": 35548,
+        "768": 76282,
+        "900": 97496
       }
     }
   },

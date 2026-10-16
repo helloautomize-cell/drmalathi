@@ -14,7 +14,7 @@ export function DoctorMiniCard({ doctor }: { doctor: Doctor }) {
       <span className="relative size-14 shrink-0 overflow-hidden rounded-full bg-blush">
         <Image
           src={doctor.photo}
-          alt={`Portrait of ${doctor.name}`}
+          alt={doctor.photoAlt ?? `Portrait of ${doctor.name}`}
           fill
           sizes="56px"
           placeholder="blur"

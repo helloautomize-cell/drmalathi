@@ -106,11 +106,10 @@
       client's cut-out portrait is supplied (drop into
       `assets/source-images/`, update manifest, re-run `process:images`).
       `family-airy-newborn` source file is missing; restore if ever needed.
-- [ ] Dr Malathi portrait: the source is a low-resolution full-body event photo.
-      Replace it with a current professional head-and-shoulders portrait.
 - [ ] Doctor portrait backgrounds were removed with local segmentation and placed
       on a shared gradient. Request client-approved transparent PNG/WebP portraits
-      for all three doctors to replace these generated cutouts.
+      for Dr Revathy Chandrasekharan and Dr Nivethitha to replace these generated
+      cutouts (Dr Malathi's clinic-supplied portrait is already in place).
 - [ ] The transparent header PNG was derived from the supplied white-matte logo.
       Request the original transparent PNG or SVG brand asset from the client.
 - [ ] Images were copied from the live site into `public/images/`. Verify the

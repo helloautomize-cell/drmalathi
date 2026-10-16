@@ -67,15 +67,26 @@ export default async function DoctorDetailPage({
             <div className="relative mx-auto aspect-[4/5] max-w-[220px] overflow-hidden rounded-t-full md:max-w-sm">
               <Image
                 src={doctor.photo}
-                alt={`Portrait of ${doctor.name}, fetal medicine consultant`}
+                alt={
+                  doctor.photoAlt ??
+                  `Portrait of ${doctor.name}, fetal medicine consultant`
+                }
                 fill
                 sizes="(min-width: 1024px) 33vw, 100vw"
                 placeholder="blur"
                 blurDataURL={imageBlurDataURL}
-                className="object-cover"
-                style={{
-                  objectPosition: `${doctor.photoFocus.x}% ${doctor.photoFocus.y}%`,
-                }}
+                className={
+                  doctor.photoFit === "contain"
+                    ? "object-contain object-bottom"
+                    : "object-cover"
+                }
+                style={
+                  doctor.photoFit === "contain"
+                    ? undefined
+                    : {
+                        objectPosition: `${doctor.photoFocus.x}% ${doctor.photoFocus.y}%`,
+                      }
+                }
               />
             </div>
             <p className="mt-5 text-center text-sm font-semibold text-plum">

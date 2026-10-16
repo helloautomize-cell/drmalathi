@@ -20,17 +20,28 @@ export function DoctorCard({
         <div className="relative mx-auto h-72 w-full max-w-56 overflow-hidden rounded-t-full">
           <Image
             src={doctor.photo}
-            alt={`Portrait of ${doctor.name}, fetal medicine consultant`}
+            alt={
+              doctor.photoAlt ??
+              `Portrait of ${doctor.name}, fetal medicine consultant`
+            }
             fill
             priority={priority}
             fetchPriority={priority ? "high" : undefined}
             sizes="(min-width: 1024px) 224px, (min-width: 640px) 40vw, 60vw"
             placeholder="blur"
             blurDataURL={imageBlurDataURL}
-            className="object-cover"
-            style={{
-              objectPosition: `${doctor.photoFocus.x}% ${doctor.photoFocus.y}%`,
-            }}
+            className={
+              doctor.photoFit === "contain"
+                ? "object-contain object-bottom"
+                : "object-cover"
+            }
+            style={
+              doctor.photoFit === "contain"
+                ? undefined
+                : {
+                    objectPosition: `${doctor.photoFocus.x}% ${doctor.photoFocus.y}%`,
+                  }
+            }
           />
         </div>
       </div>

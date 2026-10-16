@@ -18,6 +18,11 @@ export type Doctor = {
   award?: string;
   photo: string;
   photoFocus: { x: number; y: number };
+  /** "contain" pins a transparent cutout to the frame bottom instead of
+      cover-cropping. */
+  photoFit?: "contain";
+  /** Overrides the default "Portrait of <name>" alt text. */
+  photoAlt?: string;
   hasProfile: boolean;
   mentors?: string[];
   background?: string[];
@@ -79,8 +84,10 @@ export const doctors: Doctor[] = [
       { label: "Fetoscopic procedures" },
       { label: "Invasive procedures (amniocentesis, CVS)" },
     ],
-    photo: "/images/doctors/malathi-cutout.png",
-    photoFocus: { x: 50, y: 35 },
+    photo: "/images/brand/doctor-malathi-900.webp",
+    photoFocus: { x: 50, y: 15 },
+    photoFit: "contain",
+    photoAlt: "Dr Malathi G. Prasad, Lead Consultant in Fetal Medicine",
     hasProfile: true,
     registration: null,
     experienceSinceYear: null,
