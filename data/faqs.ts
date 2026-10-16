@@ -74,6 +74,6 @@ export const faqs: Faq[] = [
     category: 'appointments',
     question: "How do I book an appointment?",
     answer:
-      "You can call us on +91 96595 95141 or +91 96291 33415, message us on WhatsApp, or use the appointment form on this website. For international appointments, call +91 94433 89193.",
+      "You can call us on +91 96595 95141 or +91 74489 39808, message us on WhatsApp, or use the appointment form on this website. For international appointments, call +91 94433 89193.",
   },
 ];

@@ -19,7 +19,7 @@ export const email = "fmc.trichy@gmail.com";
 
 export const phones = [
   { label: "+91 96595 95141", href: "tel:+919659595141" },
-  { label: "+91 96291 33415", href: "tel:+919629133415" },
+  { label: "+91 74489 39808", href: "tel:+917448939808" },
 ] as const;
 
 // Dedicated line for international patients and course admissions.
