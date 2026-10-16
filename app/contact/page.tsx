@@ -13,6 +13,7 @@ import {
   ScanLine,
 } from "lucide-react";
 import { MobileIconTile } from "@/components/cards/mobile-cards";
+import { BookingQr } from "@/components/booking-qr";
 import { LazyQuickConsultForm } from "@/components/forms/lazy-quick-consult-form";
 import {
   ConsultFormBody,
@@ -75,7 +76,7 @@ const contactRows = [
   },
 ];
 
-// Minimal option lists for the callback form — never ship the full data
+// Minimal option lists for the callback form; never ship the full data
 // modules to the client for a couple of select lists.
 const consultDoctorOptions = doctors.map((d) => ({
   slug: d.slug,
@@ -177,7 +178,7 @@ export default function ContactPage() {
 
           </div>
 
-          {/* The single callback form — one element rendered at every
+          {/* The single callback form; one element rendered at every
               breakpoint so nothing hydrates twice. */}
           <div
             id="callback-form"
@@ -280,6 +281,8 @@ export default function ContactPage() {
                 </div>
               </li>
             </ul>
+
+            <BookingQr className="mt-6 hidden md:block" />
 
             <div className="mt-6 rounded-2xl border border-rose-tint bg-white p-5 shadow-soft">
               <h2 className="flex items-center gap-2 text-sm font-semibold text-ink">

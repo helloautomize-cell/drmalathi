@@ -19,6 +19,7 @@ const toc = [
   { id: "what-we-collect", label: "What we collect" },
   { id: "purposes", label: "Why we use it" },
   { id: "who-we-share-with", label: "Who we share it with" },
+  { id: "appointment-requests", label: "Appointment requests" },
   { id: "retention", label: "How long we keep it" },
   { id: "your-rights", label: "Your rights" },
   { id: "consent-withdrawal", label: "Withdrawing consent" },
@@ -95,6 +96,28 @@ export default function PrivacyPage() {
               WhatsApp&apos;s own privacy policy in addition to this one. We do
               not share your personal data with anyone else unless the law
               requires it.
+            </p>
+
+            <h2 id="appointment-requests" className={h2}>
+              Appointment requests
+            </h2>
+            <p>
+              When you request an appointment, on this website or through a QR
+              code at the centre, we collect your name, mobile number, the
+              service you chose, your preferred doctor, your preferred date
+              and time, and any optional notes you add. Please do not share
+              medical reports or health details in the notes field.
+            </p>
+            <p>
+              We use these details only to contact you about your appointment.
+              They are stored in a private Google Sheet that only clinic staff
+              can open, and kept for up to 12 months after the appointment
+              date. To ask for a request to be corrected or deleted, call us
+              on {site.phones[0].label} or email{" "}
+              <a href={`mailto:${site.email}`} className="link">
+                {site.email}
+              </a>
+              .
             </p>
 
             <h2 id="retention" className={h2}>How long we keep it</h2>

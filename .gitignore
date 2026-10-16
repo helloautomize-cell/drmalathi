@@ -45,3 +45,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .next-start.log
+
+# generated QR print files
+qr-output/

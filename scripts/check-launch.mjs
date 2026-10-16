@@ -31,6 +31,11 @@ for (const name of ["RESEND_API_KEY", "LEADS_EMAIL_TO", "LEADS_EMAIL_FROM"]) {
     blockers.push(`Missing env var ${name}: lead forms cannot deliver email`);
   }
 }
+for (const name of ["SHEETS_WEBHOOK_URL", "SHEETS_WEBHOOK_SECRET"]) {
+  if (!hasEnv(name)) {
+    blockers.push(`Missing env var ${name}: booking forms cannot save to the Sheet`);
+  }
+}
 
 // --- confirmation flags in lib/site.ts ------------------------------------
 const siteLib = read("lib/site.ts");
@@ -46,6 +51,18 @@ if (!flag("saturdayHoursConfirmed")) {
 }
 if (!flag("foundedYearConfirmed")) {
   postLaunch.push("Confirm founding year 2012 (copy also says 14 years in a bio)");
+}
+
+// QR codes must encode the production domain before launch.
+const qrLib = read("lib/qr-svg.ts");
+const qrScript = read("scripts/generate-qr.mjs");
+if (
+  qrLib.includes("drmalathi.vercel.app") ||
+  qrScript.includes("drmalathi.vercel.app")
+) {
+  blockers.push(
+    "Booking QR links still point at drmalathi.vercel.app; switch to https://fmctrichy.com (lib/qr-svg.ts + scripts/generate-qr.mjs)"
+  );
 }
 
 // --- placeholder-licence images -------------------------------------------

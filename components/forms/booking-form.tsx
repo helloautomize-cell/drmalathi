@@ -3,7 +3,7 @@
 import { type FormEvent, useState } from "react";
 import Link from "next/link";
 import { CheckCircle2, Phone } from "lucide-react";
-import { requestAppointment } from "@/app/actions/appointment";
+import { submitBooking } from "@/lib/booking-action";
 import { ContactFallbackPanel } from "@/components/forms/contact-fallback-panel";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -89,7 +89,7 @@ export function BookingForm({
       formData.set("consent", values.consent ? "on" : "");
       formData.set("startedAt", startedAt);
 
-      const result = await requestAppointment(formData);
+      const result = await submitBooking(formData);
       if (result.ok) {
         toast.success(result.message);
         setValues({

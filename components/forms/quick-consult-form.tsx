@@ -2,7 +2,7 @@
 
 import { type FormEvent, useState } from "react";
 import { CheckCircle2, Phone } from "lucide-react";
-import { requestAppointment } from "@/app/actions/appointment";
+import { submitBooking } from "@/lib/booking-action";
 import { ContactFallbackPanel } from "@/components/forms/contact-fallback-panel";
 import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
 import { Button } from "@/components/ui/button";
@@ -69,7 +69,7 @@ export function QuickConsultForm({
       formData.set("consent", values.consent ? "on" : "");
       formData.set("startedAt", startedAt);
 
-      const result = await requestAppointment(formData);
+      const result = await submitBooking(formData);
       if (result.ok) {
         setSubmitted(true);
         setValues(emptyConsultValues);
