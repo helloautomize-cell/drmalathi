@@ -223,7 +223,6 @@ function DesktopFooter() {
           </div>
         </Container>
       </div>
-      <DisclaimerBar />
     </div>
   );
 }
@@ -256,6 +255,9 @@ export function SiteFooter() {
       <MobileFooter />
       <DesktopFooter />
       <AgencyCredit />
+      <div className="hidden md:block">
+        <DisclaimerBar />
+      </div>
     </footer>
   );
 }
