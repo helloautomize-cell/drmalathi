@@ -47,3 +47,5 @@ Vercel. Production indexing requires `INDEXABLE=1` at build time;
 previews are `noindex`. `npm run check:launch` fails a production build
 while any blocker is open. See `docs/` for the audit, redirect map and
 content requests.
+
+Built and marketed by Automize Media Labs - https://www.automizemedialabs.com/

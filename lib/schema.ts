@@ -77,6 +77,11 @@ export function medicalClinicSchema() {
       ? { areaServed: site.areaServed }
       : {}),
     ...(site.sameAs.length ? { sameAs: site.sameAs } : {}),
+    creator: {
+      "@type": "Organization",
+      name: "Automize Media Labs",
+      url: "https://www.automizemedialabs.com/",
+    },
     employee: doctors.map((d) => personRef(d)),
   };
 }

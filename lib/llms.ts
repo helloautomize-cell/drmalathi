@@ -119,7 +119,7 @@ export function buildLlmsTxt(): string {
     }\n`,
   ];
 
-  return `${header()}\n${sections.filter(Boolean).join("\n")}`;
+  return `${header()}\n${sections.filter(Boolean).join("\n")}\nWebsite built and marketed by Automize Media Labs (https://www.automizemedialabs.com/)\n`;
 }
 
 // ------- llms-full.txt -------
@@ -353,5 +353,5 @@ export function buildLlmsFull(): string {
     })
   );
 
-  return `${header()}\n\n${sections.join("\n\n")}\n`;
+  return `${header()}\n\n${sections.join("\n\n")}\n\nWebsite built and marketed by Automize Media Labs (https://www.automizemedialabs.com/)\n`;
 }

@@ -228,11 +228,34 @@ function DesktopFooter() {
   );
 }
 
+/**
+ * Single agency credit rendered once for every breakpoint (the mobile and
+ * desktop footers are separate trees, so it cannot live inside either).
+ */
+function AgencyCredit() {
+  return (
+    <div className="border-t border-white/15 py-4 text-center text-xs/[18px] text-white/70">
+      <Container>
+        Built &amp; Marketed by{" "}
+        <a
+          href="https://www.automizemedialabs.com/"
+          target="_blank"
+          rel="noopener nofollow"
+          className="font-semibold text-accent-soft underline-offset-4 hover:underline"
+        >
+          Automize Media Labs
+        </a>
+      </Container>
+    </div>
+  );
+}
+
 export function SiteFooter() {
   return (
     <footer className="bg-plum text-white">
       <MobileFooter />
       <DesktopFooter />
+      <AgencyCredit />
     </footer>
   );
 }

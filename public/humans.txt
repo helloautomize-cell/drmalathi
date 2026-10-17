@@ -1,0 +1,6 @@
+/* TEAM */
+Built & marketed by: Automize Media Labs
+Site: https://www.automizemedialabs.com/
+
+/* SITE */
+Framework: Next.js
