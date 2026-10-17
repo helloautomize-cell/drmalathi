@@ -47,13 +47,6 @@ export const metadata: Metadata = {
     template: `%s | ${site.shortName}`,
   },
   description: site.description,
-  authors: [
-    {
-      name: "Automize Media Labs",
-      url: "https://www.automizemedialabs.com/",
-    },
-  ],
-  creator: "Automize Media Labs",
   openGraph: {
     siteName: site.name,
     locale: "en_IN",
