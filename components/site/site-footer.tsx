@@ -142,6 +142,7 @@ function MobileFooter() {
 
       <div className="border-t border-white/15 px-4 py-5 text-center text-xs/[18px] text-white/70">
         <p>© {new Date().getFullYear()} {site.shortName}. All rights reserved.</p>
+        <AgencyCredit className="mt-2" />
         <div className="mt-2 flex justify-center gap-5">
           <Link href="/privacy" className="inline-flex min-h-11 min-w-11 items-center justify-center">Privacy</Link>
           <Link href="/terms" className="inline-flex min-h-11 min-w-11 items-center justify-center">Terms</Link>
@@ -216,36 +217,39 @@ function DesktopFooter() {
 
       <div className="border-t border-white/15 py-5">
         <Container className="flex flex-col items-center justify-between gap-3 text-sm text-white/70 sm:flex-row">
-          <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+          <div className="text-center sm:text-left">
+            <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+            <AgencyCredit className="mt-1" />
+          </div>
           <div className="flex items-center gap-5">
             <Link href="/privacy" className="underline-offset-4 hover:underline">Privacy Policy</Link>
             <Link href="/terms" className="underline-offset-4 hover:underline">Terms of Use</Link>
           </div>
         </Container>
       </div>
+      <DisclaimerBar />
     </div>
   );
 }
 
 /**
- * Single agency credit rendered once for every breakpoint (the mobile and
- * desktop footers are separate trees, so it cannot live inside either).
+ * Agency credit line, rendered inside each footer's copyright bar directly
+ * under the copyright text. The mobile and desktop footers are mutually
+ * exclusive so exactly one instance is visible at a time.
  */
-function AgencyCredit() {
+function AgencyCredit({ className }: { className?: string }) {
   return (
-    <div className="border-t border-white/15 py-4 text-center text-xs/[18px] text-white/70">
-      <Container>
-        Built &amp; Marketed by{" "}
-        <a
-          href="https://www.automizemedialabs.com/"
-          target="_blank"
-          rel="noopener nofollow"
-          className="font-semibold text-accent-soft underline-offset-4 hover:underline"
-        >
-          Automize Media Labs
-        </a>
-      </Container>
-    </div>
+    <p className={className ?? "text-xs/[18px] text-white/70"}>
+      Built &amp; Marketed by{" "}
+      <a
+        href="https://www.automizemedialabs.com/"
+        target="_blank"
+        rel="noopener nofollow"
+        className="font-semibold text-accent-soft underline-offset-4 hover:underline"
+      >
+        Automize Media Labs
+      </a>
+    </p>
   );
 }
 
@@ -254,10 +258,6 @@ export function SiteFooter() {
     <footer className="bg-plum text-white">
       <MobileFooter />
       <DesktopFooter />
-      <AgencyCredit />
-      <div className="hidden md:block">
-        <DisclaimerBar />
-      </div>
     </footer>
   );
 }
