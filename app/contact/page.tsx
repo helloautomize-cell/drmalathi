@@ -16,9 +16,10 @@ import { MobileIconTile } from "@/components/cards/mobile-cards";
 import { BookingQr } from "@/components/booking-qr";
 import { LazyQuickConsultForm } from "@/components/forms/lazy-quick-consult-form";
 import {
-  ConsultFormBody,
-  emptyConsultValues,
-} from "@/components/forms/quick-consult-form-body";
+  BookingFields,
+  bookingOptionLists,
+  emptyBookingValues,
+} from "@/components/forms/booking-fields";
 import { JsonLd } from "@/components/seo/json-ld";
 import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
 import { StaticMap } from "@/components/site/static-map";
@@ -26,9 +27,8 @@ import { Container } from "@/components/shared/container";
 import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
-import { doctors } from "@/data/doctors";
-import { services } from "@/data/services";
 import { site } from "@/data/site";
+import { addDays, istDateString } from "@/lib/booking-schema";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -76,21 +76,10 @@ const contactRows = [
   },
 ];
 
-// Minimal option lists for the callback form; never ship the full data
-// modules to the client for a couple of select lists.
-const consultDoctorOptions = doctors.map((d) => ({
-  slug: d.slug,
-  name: d.name,
-}));
-const consultServiceOptions = services.map((s) => ({
-  slug: s.slug,
-  name: s.name,
-}));
-const consultContact = {
-  callHref: site.phones[0].href,
-  callLabel: site.phones[0].label,
-  whatsappHref: site.whatsapp.messageHref,
-};
+// Shared option lists for the callback form, identical to /book and the
+// appointment sheet.
+const { serviceOptions: consultServiceOptions, doctorOptions: consultDoctorOptions } =
+  bookingOptionLists();
 
 // TODO: client to confirm Saturday and Sunday hours before launch.
 const hoursRows = [
@@ -194,15 +183,18 @@ export default function ContactPage() {
             <LazyQuickConsultForm
               doctorOptions={consultDoctorOptions}
               serviceOptions={consultServiceOptions}
-              contact={consultContact}
               placeholder={
-                <ConsultFormBody
+                <BookingFields
                   interactive={false}
-                  values={emptyConsultValues}
+                  layout="page"
+                  idPrefix="callback"
+                  values={emptyBookingValues}
                   errors={{}}
                   isSubmitting={false}
                   doctorOptions={consultDoctorOptions}
                   serviceOptions={consultServiceOptions}
+                  minDate={addDays(istDateString(), 1)}
+                  maxDate={addDays(istDateString(), 60)}
                 />
               }
             />

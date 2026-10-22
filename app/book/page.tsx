@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
-import { BookForm, type BookOption } from "@/components/forms/book-form";
+import { BookForm } from "@/components/forms/book-form";
+import { bookingOptionLists } from "@/components/forms/booking-fields";
 import { Container } from "@/components/shared/container";
-import { doctors } from "@/data/doctors";
-import { services } from "@/data/services";
 import {
   addDays,
   istDateString,
-  NO_PREFERENCE,
   qrSourceOrUnknown,
-  UNSURE_SERVICE,
 } from "@/lib/booking-schema";
 
 export const metadata: Metadata = {
@@ -17,11 +14,6 @@ export const metadata: Metadata = {
     "Request an appointment at Trichy Fetal Medicine and Fertility Centre. Our team will call you to confirm the time.",
   robots: { index: false, follow: false },
 };
-
-const BOOK_DOCTOR_SLUGS = [
-  "dr-malathi-g-prasad",
-  "dr-revathy-chandrasekharan",
-];
 
 export default async function BookPage({
   searchParams,
@@ -34,16 +26,7 @@ export default async function BookPage({
   const source = qrSourceOrUnknown(src);
 
   const today = istDateString();
-  const serviceOptions: BookOption[] = [
-    ...services.map((s) => ({ value: s.name, label: s.name })),
-    { value: UNSURE_SERVICE, label: UNSURE_SERVICE },
-  ];
-  const doctorOptions: BookOption[] = [
-    ...doctors
-      .filter((d) => BOOK_DOCTOR_SLUGS.includes(d.slug))
-      .map((d) => ({ value: d.name, label: d.name })),
-    { value: NO_PREFERENCE, label: NO_PREFERENCE },
-  ];
+  const { serviceOptions, doctorOptions } = bookingOptionLists();
 
   return (
     <section className="py-10 sm:py-14">

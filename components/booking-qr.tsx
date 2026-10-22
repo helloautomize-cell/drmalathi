@@ -15,6 +15,7 @@ export function BookingQr({
   heading = "Book from your phone",
   subline = "Scan with your phone camera to request an appointment",
   link = true,
+  variant = "card",
 }: {
   className?: string;
   heading?: string;
@@ -22,8 +23,38 @@ export function BookingQr({
   /** The "Or open the booking page" link; hidden in contexts that already
       show the full booking form. */
   link?: boolean;
+  /** "card" = standalone QR card (/contact). "tile" = bare 72px QR + text
+      row for inside the booking sheet; the caller supplies the card. */
+  variant?: "card" | "tile";
 }) {
   const { size, d } = qrSvgPath(BOOKING_QR_URL);
+
+  const svg = (
+    <svg
+      role="img"
+      aria-label="QR code to request an appointment at Trichy Fetal Medicine and Fertility Centre"
+      viewBox={`0 0 ${size} ${size}`}
+      shapeRendering="crispEdges"
+      className="block h-auto w-full"
+    >
+      <rect width={size} height={size} fill="#ffffff" />
+      <path d={d} fill="#000000" />
+    </svg>
+  );
+
+  if (variant === "tile") {
+    return (
+      <div className={cn("flex min-w-0 items-center gap-3", className)}>
+        <div className="w-[72px] shrink-0 rounded-lg bg-white p-1 ring-1 ring-rose-tint">
+          {svg}
+        </div>
+        <div className="min-w-0">
+          <p className="text-sm font-semibold text-ink">{heading}</p>
+          <p className="mt-0.5 text-sm text-muted-foreground">{subline}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -34,16 +65,7 @@ export function BookingQr({
     >
       <h3 className="text-sm font-semibold text-ink">{heading}</h3>
       <div className="mx-auto mt-4 w-[140px] rounded-xl bg-white p-2 ring-1 ring-rose-tint">
-        <svg
-          role="img"
-          aria-label="QR code to request an appointment at Trichy Fetal Medicine and Fertility Centre"
-          viewBox={`0 0 ${size} ${size}`}
-          shapeRendering="crispEdges"
-          className="block h-auto w-full"
-        >
-          <rect width={size} height={size} fill="#ffffff" />
-          <path d={d} fill="#000000" />
-        </svg>
+        {svg}
       </div>
       <p className="mt-3 text-center text-sm text-muted-foreground">
         {subline}

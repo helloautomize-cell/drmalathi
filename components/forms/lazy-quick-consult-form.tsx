@@ -2,10 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import type {
-  ConsultContact,
-  ConsultOption,
-} from "@/components/forms/quick-consult-form-body";
+import type { BookingOption } from "@/components/forms/booking-fields";
 
 const QuickConsultForm = dynamic(
   () =>
@@ -18,18 +15,16 @@ const QuickConsultForm = dynamic(
 /**
  * The contact-page callback form sits below the fold; its JS loads only when
  * the visitor scrolls it near the viewport or focuses/points at it. Until
- * then it renders `placeholder` — the same markup rendered server-side — so
- * the page is identical before hydration.
+ * then it renders `placeholder`, the same form markup rendered server-side
+ * in non-interactive mode, so the page is identical before hydration.
  */
 export function LazyQuickConsultForm({
   doctorOptions,
   serviceOptions,
-  contact,
   placeholder,
 }: {
-  doctorOptions: ConsultOption[];
-  serviceOptions: ConsultOption[];
-  contact: ConsultContact;
+  doctorOptions: BookingOption[];
+  serviceOptions: BookingOption[];
   placeholder: ReactNode;
 }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -62,7 +57,6 @@ export function LazyQuickConsultForm({
         <QuickConsultForm
           doctorOptions={doctorOptions}
           serviceOptions={serviceOptions}
-          contact={contact}
         />
       ) : (
         placeholder
