@@ -13,7 +13,7 @@ import {
   ScanLine,
 } from "lucide-react";
 import { MobileIconTile } from "@/components/cards/mobile-cards";
-import { BookingQr } from "@/components/booking-qr";
+import { BookingQrCard } from "@/components/booking-qr-card";
 import { LazyQuickConsultForm } from "@/components/forms/lazy-quick-consult-form";
 import {
   BookingFields,
@@ -274,8 +274,6 @@ export default function ContactPage() {
               </li>
             </ul>
 
-            <BookingQr className="mt-6 hidden md:block" />
-
             <div className="mt-6 rounded-2xl border border-rose-tint bg-white p-5 shadow-soft">
               <h2 className="flex items-center gap-2 text-sm font-semibold text-ink">
                 <Clock className="size-4 text-primary" aria-hidden="true" />
@@ -293,6 +291,9 @@ export default function ContactPage() {
                 ))}
               </dl>
             </div>
+
+            {/* One QR card per page: this is the only one on /contact. */}
+            <BookingQrCard variant="compact" className="mt-6" />
           </div>
 
           <div className="flex flex-col justify-center rounded-3xl border border-rose-tint bg-white p-6 shadow-card sm:p-8">

@@ -1,10 +1,9 @@
 import { Phone } from "lucide-react";
 import { BookingCta } from "@/components/booking/booking-sheet";
+import { BookingQrCard } from "@/components/booking-qr-card";
 import { Button } from "@/components/ui/button";
-import { BrandImage } from "@/components/shared/brand-image";
 import { Container } from "@/components/shared/container";
 import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
-import { getBrandImage } from "@/data/images";
 import { site } from "@/data/site";
 
 export function CTABand({
@@ -23,10 +22,8 @@ export function CTABand({
     variant === "international"
       ? site.whatsappInternational
       : site.whatsapp;
-  // The CTA photo is parked while its watermark/licence is unresolved; the
-  // image containers only render once a licensed replacement exists.
-  const ctaImage = getBrandImage("family-bw-newborn");
-  const showImage = !ctaImage.parked && Boolean(ctaImage.src);
+  // The CTA photo slot is empty: family-bw-newborn is parked (watermark/
+  // licence unresolved) and is not rendered or loaded anywhere.
   return (
     <Container>
       <div className="relative overflow-hidden rounded-3xl bg-plum shadow-card">
@@ -40,12 +37,18 @@ export function CTABand({
               {title}
             </h2>
             <p className="mt-4 text-pretty text-white/80">{subtitle}</p>
-            {/* Mobile: three full-width equal actions. */}
+            {/* Below md: three full-width actions stacked. */}
             <div className="mt-6 flex flex-col gap-3 md:hidden">
+              <BookingCta
+                source="cta-band"
+                label="Book appointment"
+                variant="light"
+                icon={false}
+              />
               <Button
                 size="lg"
                 nativeButton={false}
-                className="min-h-12 w-full rounded-full bg-white text-plum hover:bg-rose-tint"
+                className="min-h-12 w-full rounded-full border-white/60 bg-transparent text-white hover:bg-white/10"
                 render={<a href={phone.href} />}
               >
                 <Phone aria-hidden="true" />
@@ -66,18 +69,19 @@ export function CTABand({
                 <WhatsAppIcon aria-hidden="true" />
                 WhatsApp us
               </Button>
+            </div>
+            {/* md and up: one row; wraps on narrower widths. */}
+            <div className="mt-8 hidden flex-wrap items-center justify-center gap-3 md:flex lg:justify-start">
               <BookingCta
                 source="cta-band"
-                label="Request a callback"
-                variant="outline-white"
+                label="Book appointment"
+                variant="light"
                 icon={false}
               />
-            </div>
-            <div className="mt-8 hidden flex-col items-center gap-3 sm:flex-row md:flex lg:justify-start sm:justify-center">
               <Button
                 size="lg"
                 nativeButton={false}
-                className="hidden bg-white text-plum hover:bg-rose-tint md:inline-flex"
+                className="border-white/60 bg-transparent text-white hover:bg-white/10"
                 render={<a href={phone.href} />}
               >
                 <Phone aria-hidden="true" />
@@ -86,7 +90,7 @@ export function CTABand({
               <Button
                 size="lg"
                 nativeButton={false}
-                className="hidden bg-teal text-white hover:bg-teal/85 md:inline-flex"
+                className="bg-teal text-white hover:bg-teal/85"
                 render={
                   <a
                     href={whatsapp.messageHref}
@@ -99,49 +103,12 @@ export function CTABand({
                 WhatsApp us
               </Button>
             </div>
-            <div className="mt-5 hidden md:block">
-              <BookingCta
-                source="cta-band"
-                label="Book appointment"
-                variant="light"
-                icon={false}
-              />
-            </div>
             <p className="mt-4 text-sm text-white/70">{site.hours}</p>
           </div>
-          {showImage ? (
-            <div
-              className="relative hidden min-h-56 md:block lg:min-h-0"
-              aria-hidden="true"
-            >
-              <BrandImage
-                slug="family-bw-newborn"
-                variant="bleed"
-                fill
-                decorative
-                reveal={false}
-                sizes="(min-width: 1024px) 40vw, 100vw"
-                imgClassName="[mask-image:linear-gradient(to_bottom,transparent_0%,black_45%)] lg:[mask-image:linear-gradient(to_right,transparent_0%,black_40%)]"
-              />
-            </div>
-          ) : null}
-          {/* Mobile: duotone photo cropped to 16/9 at the bottom of the card. */}
-          {showImage ? (
-            <div
-              className="relative aspect-video md:hidden"
-              aria-hidden="true"
-            >
-              <BrandImage
-                slug="family-bw-newborn"
-                variant="bleed"
-                fill
-                decorative
-                reveal={false}
-                sizes="100vw"
-                imgClassName="object-cover"
-              />
-            </div>
-          ) : null}
+          {/* Right column on lg+: the website booking QR card. */}
+          <div className="relative hidden items-center justify-center p-8 lg:flex">
+            <BookingQrCard variant="band" className="relative" />
+          </div>
         </div>
       </div>
     </Container>
