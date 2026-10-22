@@ -6,7 +6,6 @@ import {
   TeamDoctorMiniCard,
 } from "@/components/home/doctors-section";
 import { JsonLd } from "@/components/seo/json-ld";
-import { BrandImage } from "@/components/shared/brand-image";
 import { Container } from "@/components/shared/container";
 import { MobileCarousel } from "@/components/shared/mobile-carousel";
 import { PageHero } from "@/components/shared/page-hero";
@@ -55,17 +54,6 @@ export default function DoctorsPage() {
           </div>
 
           {/* Desktop: uniform card grid, unchanged. */}
-          <div className="mb-8 hidden items-center justify-end md:flex">
-            {/* Decorative illustration, capped at source resolution (~181px). */}
-            <BrandImage
-              slug="doctor-glowing-fetus"
-              variant="rounded"
-              decorative
-              reveal={false}
-              sizes="140px"
-              className="w-28 opacity-90 shadow-soft sm:w-32"
-            />
-          </div>
           <h2 className="sr-only">Our specialists</h2>
           <div className="hidden gap-6 md:grid md:grid-cols-2 lg:grid-cols-3">
             {doctors.map((doctor, index) => (

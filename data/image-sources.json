@@ -20,7 +20,9 @@
   "doctor-glowing-fetus": {
     "source": "assets/source-images/doctor-glowing-fetus.jpg",
     "recipe": "neutral",
-    "license": "placeholder"
+    "license": "placeholder",
+    "parked": true,
+    "parkedNote": "Removed from /doctors on request. Park until a licensed replacement source is supplied, then re-run process:images."
   },
   "family-bw-newborn": {
     "source": "assets/source-images/family-bw-newborn.jpg",
