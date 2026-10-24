@@ -30,8 +30,8 @@ async function qrPng(url: string, margin: number): Promise<Buffer> {
 
 describe("shared QR helper", () => {
   it("produces a module path for the booking short link", () => {
-    // Preview domain during development; update with the production origin.
-    expect(BOOKING_QR_URL).toBe("https://drmalathi.vercel.app/q/website");
+    // Production origin set in lib/qr-svg.ts; update if the origin changes.
+    expect(BOOKING_QR_URL).toBe("https://fmctrichy.com/q/website");
     const { size, d } = qrSvgPath();
     expect(size).toBeGreaterThan(20);
     expect(d).toMatch(/^M\d+ \d+/);
