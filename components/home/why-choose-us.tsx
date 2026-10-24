@@ -6,20 +6,33 @@ import { MobileCarousel } from "@/components/shared/mobile-carousel";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
 import { advancedProcedures } from "@/data/procedures";
+import { testimonials } from "@/data/testimonials";
 import { imageBlurDataURL } from "@/lib/image-placeholder";
+
+// Quotes reuse the consented testimonials only; while consent is pending the
+// quote slot stays empty instead of leaking unapproved words into production.
+const consentedQuote = (name: string, fragment: string) => {
+  const t = testimonials.find(
+    (item) =>
+      item.name === name &&
+      item.consentOnFile === true &&
+      item.quote.includes(fragment)
+  );
+  return t ? { text: fragment, name } : undefined;
+};
 
 const proofCards: ProofCardData[] = [
   {
     icon: ScanSearch,
     title: "Specialist-only scanning",
     body: "Every scan is performed or supervised by a fetal medicine specialist.",
-    quote: { text: "explained every single detail", name: "Manisha" },
+    quote: consentedQuote("Manisha Margrete", "explained every single detail"),
   },
   {
     icon: Baby,
     title: "Twin and multiple pregnancy care",
     body: "Scan schedules and care plans for twins and multiples.",
-    quote: { text: "they saved my twins", name: "Deva" },
+    quote: consentedQuote("Deva", "they saved my twins"),
     href: "/services/twin-specialised-clinic",
     linkLabel: "Visit the Twin Specialised Clinic",
   },

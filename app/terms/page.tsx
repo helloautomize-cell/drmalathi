@@ -7,7 +7,7 @@ import { site } from "@/data/site";
 import { legal, legalDateLabel } from "@/data/legal";
 
 export const metadata: Metadata = {
-  title: "Terms of Use",
+  title: "Terms of Use for This Website",
   description:
     "Terms governing the use of the Trichy Fetal Medicine and Fertility Centre website, including educational content, appointments and PCPNDT compliance.",
   alternates: { canonical: "/terms" },

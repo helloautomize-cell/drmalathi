@@ -28,7 +28,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 import { showPending } from "@/lib/env";
 
 export const metadata: Metadata = {
-  title: "Fellowship and Courses",
+  title: "Fellowship and Courses in Fetal Medicine",
   description:
     "Fetal medicine, advanced obstetric ultrasound, fetal echo and obstetric ultrasound fellowships at our Trichy centre. Hands-on training, apply by CV.",
   alternates: { canonical: "/fellowship" },

@@ -8,7 +8,7 @@ import { Section } from "@/components/shared/section";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Services and Scans",
+  title: "All Services and Pregnancy Scans in Trichy",
   description:
     "All scans and services at our Trichy fetal medicine centre: viability scans, OSCAR screening, anomaly scans, NIPT, fetal echo and specialist clinics.",
   alternates: { canonical: "/services" },

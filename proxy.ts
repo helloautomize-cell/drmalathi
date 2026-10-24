@@ -3,6 +3,7 @@ import { NextResponse, type NextRequest } from "next/server";
 // Only the public domain may be crawled. Every other host serving this app
 // (drmalathi.vercel.app, preview deploys, localhost) gets a disallow-all
 // robots.txt and noindex/nofollow on every response.
+// www is accepted but folds into the apex so a single host serves content.
 const CANONICAL_HOSTS = new Set(["fmctrichy.com", "www.fmctrichy.com"]);
 
 const DISALLOW_ALL = "User-Agent: *\nDisallow: /\n";
@@ -12,6 +13,14 @@ export function proxy(request: NextRequest) {
   const canonical =
     CANONICAL_HOSTS.has(host) || process.env.INDEXABLE === "1";
   const { pathname } = request.nextUrl;
+
+  // One host version only: www permanently redirects to the apex so no
+  // second copy of the site can be indexed.
+  if (host === "www.fmctrichy.com") {
+    const url = request.nextUrl.clone();
+    url.host = "fmctrichy.com";
+    return NextResponse.redirect(url, 308);
+  }
 
   if (pathname === "/robots.txt") {
     if (canonical) return NextResponse.next();

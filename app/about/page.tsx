@@ -19,7 +19,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 import { foundedYear } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About the Centre",
+  title: "About Our Fetal Medicine Centre in Trichy",
   description:
     "A fetal medicine centre in Trichy since 2012: specialist scans, advanced diagnostics, in-house counselling and training for visiting doctors.",
   alternates: { canonical: "/about" },

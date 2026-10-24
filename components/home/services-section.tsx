@@ -17,6 +17,7 @@ import {
   type Service,
 } from "@/data/services";
 import { imageBlurDataURL } from "@/lib/image-placeholder";
+import { site } from "@/data/site";
 
 const HOME_SLUGS = [
   "viability-scan",
@@ -94,7 +95,7 @@ function ImageServiceTile({
         <div className="relative aspect-[4/3] md:absolute md:inset-0 md:aspect-auto">
           <Image
             src={service.image}
-            alt=""
+            alt={`${service.name} at ${site.name}`}
             fill
             sizes="(min-width: 1024px) 50vw, (min-width: 768px) 50vw, 85vw"
             placeholder="blur"

@@ -7,7 +7,7 @@ import { site } from "@/data/site";
 import { legal, legalDateLabel } from "@/data/legal";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: "Privacy Policy and How We Use Your Details",
   description:
     "How Trichy Fetal Medicine and Fertility Centre collects, uses and protects your information when you use this website or our appointment forms.",
   alternates: { canonical: "/privacy" },

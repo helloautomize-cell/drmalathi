@@ -26,6 +26,7 @@ export function clinicRef() {
 export function publisherRef() {
   return {
     "@type": "Organization",
+    "@id": `${site.url}/#org`,
     name: site.name,
     url: site.url,
     logo: {
@@ -35,9 +36,39 @@ export function publisherRef() {
   };
 }
 
-export function medicalClinicSchema() {
+/**
+ * One JSON-LD script per page: a single connected @graph. Node builders below
+ * return graph members (no @context); wrap them with pageGraph() so entities
+ * link by stable @id instead of duplicating context per script.
+ */
+export function pageGraph(nodes: object[]) {
+  return { "@context": "https://schema.org", "@graph": nodes };
+}
+
+export function webSiteNode() {
   return {
-    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${site.url}/#website`,
+    name: site.name,
+    url: site.url,
+    publisher: publisherRef(),
+  };
+}
+
+export function webPageNode(path: string, name: string, description?: string) {
+  return {
+    "@type": "WebPage",
+    "@id": `${site.url}${path}#webpage`,
+    url: `${site.url}${path}`,
+    name,
+    ...(description ? { description } : {}),
+    isPartOf: { "@id": `${site.url}/#website` },
+    about: clinicRef(),
+  };
+}
+
+export function medicalClinicNode() {
+  return {
     "@type": "MedicalClinic",
     "@id": `${site.url}/#clinic`,
     name: site.name,
@@ -81,10 +112,15 @@ export function medicalClinicSchema() {
   };
 }
 
-export function breadcrumbSchema(items: { label: string; href: string }[]) {
+/** @deprecated kept for callers until all pages move to pageGraph. */
+export function medicalClinicSchema() {
+  return { "@context": "https://schema.org", ...medicalClinicNode() };
+}
+
+export function breadcrumbNode(items: { label: string; href: string }[]) {
   return {
-    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": `${site.url}${items[items.length - 1]?.href ?? "/"}#breadcrumb`,
     itemListElement: items.map((item, i) => ({
       "@type": "ListItem",
       position: i + 1,
@@ -92,6 +128,11 @@ export function breadcrumbSchema(items: { label: string; href: string }[]) {
       item: `${site.url}${item.href}`,
     })),
   };
+}
+
+/** @deprecated kept for callers until all pages move to pageGraph. */
+export function breadcrumbSchema(items: { label: string; href: string }[]) {
+  return { "@context": "https://schema.org", ...breadcrumbNode(items) };
 }
 
 type DoctorRecord = (typeof doctors)[number];
@@ -117,9 +158,8 @@ export function personRef(doctor: DoctorRecord) {
  * waits for a confirmed role, memberOf for memberships, identifier for the
  * medical council registration number.
  */
-export function personSchema(doctor: DoctorRecord) {
+export function personNode(doctor: DoctorRecord) {
   return {
-    "@context": "https://schema.org",
     "@type": "Person",
     "@id": personId(doctor),
     name: doctor.name,
@@ -162,10 +202,15 @@ export function personSchema(doctor: DoctorRecord) {
   };
 }
 
-export function courseSchema(course: Course) {
+/** @deprecated kept for callers until all pages move to pageGraph. */
+export function personSchema(doctor: DoctorRecord) {
+  return { "@context": "https://schema.org", ...personNode(doctor) };
+}
+
+export function courseNode(course: Course) {
   return {
-    "@context": "https://schema.org",
     "@type": "Course",
+    "@id": `${site.url}/fellowship#course-${course.slug}`,
     name: course.title,
     description: `${course.title} for ${course.eligibility.join(" or ")}.`,
     provider: clinicRef(),
@@ -175,14 +220,31 @@ export function courseSchema(course: Course) {
   };
 }
 
-export function medicalProcedureSchema(service: Service) {
+/** @deprecated kept for callers until all pages move to pageGraph. */
+export function courseSchema(course: Course) {
+  return { "@context": "https://schema.org", ...courseNode(course) };
+}
+
+// Scans and diagnostics are procedures; specialty clinics are services, not
+// procedures, so they type as Service with a medical serviceType.
+const SERVICE_SCHEMA_TYPE: Record<Service["kind"], string> = {
+  scan: "MedicalProcedure",
+  "blood-test": "MedicalProcedure",
+  diagnostic: "MedicalProcedure",
+  clinic: "Service",
+};
+
+export function serviceNode(service: Service) {
+  const type = SERVICE_SCHEMA_TYPE[service.kind];
   return {
-    "@context": "https://schema.org",
-    "@type": "MedicalProcedure",
+    "@type": type,
+    "@id": `${site.url}/services/${service.slug}#${type === "Service" ? "service" : "procedure"}`,
     name: service.name,
     description: service.shortDescription,
     url: `${site.url}/services/${service.slug}`,
-    bodyLocation: "Fetus and pregnancy",
+    ...(type === "MedicalProcedure"
+      ? { bodyLocation: "Fetus and pregnancy" }
+      : { serviceType: "Specialist fetal medicine clinic" }),
     ...(service.preparation ? { preparation: service.preparation } : {}),
     ...(service.reportAndNextSteps
       ? { followup: service.reportAndNextSteps }
@@ -191,14 +253,128 @@ export function medicalProcedureSchema(service: Service) {
   };
 }
 
-export function faqSchema(faqs: { question: string; answer: string }[]) {
+/** @deprecated kept for callers until all pages move to pageGraph. */
+export function medicalProcedureSchema(service: Service) {
+  return { "@context": "https://schema.org", ...serviceNode(service) };
+}
+
+export function faqNode(faqs: { question: string; answer: string }[], pagePath?: string) {
   return {
-    "@context": "https://schema.org",
     "@type": "FAQPage",
+    ...(pagePath ? { "@id": `${site.url}${pagePath}#faq` } : {}),
     mainEntity: faqs.map((f) => ({
       "@type": "Question",
       name: f.question,
       acceptedAnswer: { "@type": "Answer", text: f.answer },
     })),
+  };
+}
+
+/** @deprecated kept for callers until all pages move to pageGraph. */
+export function faqSchema(faqs: { question: string; answer: string }[]) {
+  return { "@context": "https://schema.org", ...faqNode(faqs) };
+}
+
+/**
+ * The medical entity a guide is about. Keys are guide slugs; names must only
+ * restate what the guide itself covers — nothing is invented here.
+ */
+const GUIDE_ABOUT: Record<string, { "@type": string; name: string }> = {
+  "pcos-and-pregnancy": {
+    "@type": "MedicalCondition",
+    name: "Polycystic ovary syndrome (PCOS)",
+  },
+  "high-risk-pregnancy-fetal-medicine-specialist": {
+    "@type": "MedicalCondition",
+    name: "High-risk pregnancy",
+  },
+  "recurrent-miscarriage-causes-tests-treatment": {
+    "@type": "MedicalCondition",
+    name: "Recurrent miscarriage",
+  },
+  "fertility-testing-for-couples": {
+    "@type": "MedicalProcedure",
+    name: "Fertility assessment",
+  },
+  "twin-pregnancy-scans-risks-monitoring": {
+    "@type": "MedicalCondition",
+    name: "Twin pregnancy",
+  },
+  "anomaly-scan-tiffa-scan-pregnancy": {
+    "@type": "MedicalProcedure",
+    name: "Fetal anomaly scan (TIFFA scan)",
+  },
+  "fetal-echocardiography-pregnancy": {
+    "@type": "MedicalProcedure",
+    name: "Fetal echocardiography",
+  },
+  "growth-scan-doppler-pregnancy-fetal-growth-restriction": {
+    "@type": "MedicalProcedure",
+    name: "Growth scan with Doppler",
+  },
+  "nipt-in-pregnancy-test-accuracy-high-risk-result": {
+    "@type": "MedicalProcedure",
+    name: "Non-invasive prenatal testing (NIPT)",
+  },
+  "nt-scan-pregnancy-timing-normal-range-down-syndrome": {
+    "@type": "MedicalProcedure",
+    name: "Nuchal translucency (NT) scan",
+  },
+};
+
+export function guideAboutNode(slug: string) {
+  return GUIDE_ABOUT[slug] ?? { "@type": "MedicalWebPage", name: "Fetal medicine" };
+}
+
+type GuideSchemaInput = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  coverImageSrc: string;
+  publishedAt: string;
+  updatedAt?: string;
+  reviewedAt?: string;
+  reviewedBy?: string;
+};
+
+/**
+ * Guides are always MedicalWebPage: the site states they are medically
+ * reviewed (reviewStatus + reviewedAt), so lastReviewed is factual. The named
+ * reviewer is emitted only when a doctor slug is set; until then the
+ * reviewer stays the clinical team (the organisation), matching the visible
+ * byline exactly. Never emit a named review the data cannot back.
+ */
+export function guideArticleNode(guide: GuideSchemaInput) {
+  const url = `${site.url}/guides/${guide.slug}`;
+  const reviewerDoc = guide.reviewedBy
+    ? doctors.find((d) => d.slug === guide.reviewedBy)
+    : undefined;
+  const clinicalTeam = {
+    "@type": "MedicalOrganization",
+    "@id": `${site.url}/#clinic`,
+    name: `${site.name} clinical team`,
+    url: site.url,
+  };
+  return {
+    "@type": "MedicalWebPage",
+    "@id": `${url}#article`,
+    name: guide.title,
+    headline: guide.title,
+    description: guide.excerpt,
+    url,
+    mainContentOfPage: { "@id": `${url}#webpage` },
+    image: `${site.url}${guide.coverImageSrc}`,
+    datePublished: guide.publishedAt,
+    dateModified: guide.updatedAt ?? guide.publishedAt,
+    about: guideAboutNode(guide.slug),
+    author: clinicalTeam,
+    publisher: publisherRef(),
+    isPartOf: { "@id": `${site.url}/#website` },
+    ...(guide.reviewedAt
+      ? {
+          lastReviewed: guide.reviewedAt,
+          reviewedBy: reviewerDoc ? personRef(reviewerDoc) : clinicalTeam,
+        }
+      : {}),
   };
 }

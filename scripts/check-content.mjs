@@ -66,6 +66,11 @@ const KNOWN_PENDING = [
     contains: "draft pending legal and client review",
     note: "accessibility statement draft line, counsel review pending",
   },
+  {
+    file: "app/medical-disclaimer/page.tsx",
+    contains: "draft pending legal and client review",
+    note: "medical disclaimer draft line, counsel review pending",
+  },
 ];
 
 const SCAN_DIRS = ["app", "components", "data", "lib"];

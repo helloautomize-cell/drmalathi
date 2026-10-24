@@ -21,7 +21,7 @@ import { site } from "@/data/site";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "International Patients",
+  title: "International Patients: Planning Your Visit",
   description:
     "Planning to visit Trichy Fetal Medicine and Fertility Centre from abroad? A separate international line, remote report reviews and travel guidance.",
   alternates: { canonical: "/international-patients" },

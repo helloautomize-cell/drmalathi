@@ -23,6 +23,7 @@ compliance checklist, not legal advice.
 - [ ] `app/terms/page.tsx`: "draft pending legal and client review" line removed after counsel sign-off
 - [ ] `app/editorial-policy/page.tsx`: "draft pending legal and client review" line removed after counsel sign-off
 - [ ] `app/accessibility/page.tsx`: "draft pending legal and client review" line removed after counsel sign-off
+- [ ] Indexing verified on the live host: `curl -s https://fmctrichy.com/robots.txt` must show `Allow: /` and `curl -s https://fmctrichy.com/ | grep robots` must show `index, follow`. Indexing is gated by `VERCEL_ENV=production` or `INDEXABLE=1` at build time (`app/layout.tsx`, `app/robots.ts`); a deploy missing both ships `noindex` + `Disallow: /` site-wide with no error.
 - [ ] Four placeholder-licence images in use replaced with licensed files (drop new source into `assets/source-images/`, set `license: "licensed"` + `licenseSource` in `data/image-sources.json`, run `npm run process:images`):
   - [ ] `hands-baby-feet` (LCP image on genetic-counselling, recurrent-miscarriages-clinic, fetal-postmortem)
   - [ ] `baby-overhead`

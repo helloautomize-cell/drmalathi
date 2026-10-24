@@ -45,9 +45,11 @@ import { site } from "@/data/site";
 import { toGuideCardData } from "@/lib/guide-card-data";
 import { getGuidesByService } from "@/lib/guides";
 import {
-  breadcrumbSchema,
-  faqSchema,
-  medicalProcedureSchema,
+  breadcrumbNode,
+  faqNode,
+  pageGraph,
+  serviceNode,
+  webPageNode,
 } from "@/lib/schema";
 
 export function generateStaticParams() {
@@ -72,6 +74,7 @@ export async function generateMetadata({
     title: `${service.name} in Trichy`,
     description: service.seoDescription,
     alternates: { canonical: `/services/${service.slug}` },
+    openGraph: { url: `${site.url}/services/${service.slug}` },
   };
 }
 
@@ -186,14 +189,23 @@ export default async function ServiceDetailPage({
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema([
-          { label: "Home", href: "/" },
-          { label: "Services", href: "/services" },
-          { label: service.name, href: `/services/${service.slug}` },
+        data={pageGraph([
+          webPageNode(
+            `/services/${service.slug}`,
+            service.name,
+            service.shortDescription
+          ),
+          serviceNode(service),
+          breadcrumbNode([
+            { label: "Home", href: "/" },
+            { label: "Services", href: "/services" },
+            { label: service.name, href: `/services/${service.slug}` },
+          ]),
+          ...(service.faqs?.length
+            ? [faqNode(service.faqs, `/services/${service.slug}`)]
+            : []),
         ])}
       />
-      <JsonLd data={medicalProcedureSchema(service)} />
-      {service.faqs?.length ? <JsonLd data={faqSchema(service.faqs)} /> : null}
 
       <Section className="pt-10 md:pt-14">
         <Container className="grid min-w-0 gap-10 lg:grid-cols-[1fr_360px]">
