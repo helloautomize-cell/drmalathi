@@ -7,7 +7,7 @@ import { Section } from "@/components/shared/section";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Gallery",
+  title: "Gallery: Inside Our Trichy Centre",
   description:
     "Photos from inside Trichy Fetal Medicine and Fertility Centre in Thillai Nagar: our reception, scan rooms, counselling spaces and care team.",
   alternates: { canonical: "/gallery" },

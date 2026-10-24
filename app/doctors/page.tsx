@@ -14,7 +14,7 @@ import { doctors } from "@/data/doctors";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Our Doctors",
+  title: "Our Fetal Medicine Specialists in Trichy",
   description:
     "Meet the fetal medicine specialists at Trichy Fetal Medicine and Fertility Centre: Dr Malathi G. Prasad, Dr Revathy Chandrasekharan, and Dr Nivethitha.",
   alternates: { canonical: "/doctors" },

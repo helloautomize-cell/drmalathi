@@ -115,6 +115,7 @@ for (const p of [
   "app/terms/page.tsx",
   "app/editorial-policy/page.tsx",
   "app/accessibility/page.tsx",
+  "app/medical-disclaimer/page.tsx",
 ]) {
   if (
     read(p).replace(/\s+/g, " ").includes("draft pending legal and client review")

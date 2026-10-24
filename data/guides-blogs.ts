@@ -12,7 +12,7 @@ export const blogGuides: Guide[] = [
     "cardTitle": "PCOS and Pregnancy",
     "excerpt": "Irregular periods with PCOS usually mean irregular ovulation, and that's the main reason conception can take longer. Here's what helps, and what to expect in pregnancy.",
     "seo": {
-      "description": "PCOS can make ovulation irregular, but many women with PCOS do get pregnant. Here's how it affects fertility, which tests help and what pregnancy care involves.",
+      "description": "PCOS can make ovulation irregular, but many women do get pregnant. How it affects fertility, which tests help and what care involves.",
       "title": "PCOS and Pregnancy"
     },
     "coverImage": {
@@ -299,10 +299,6 @@ export const blogGuides: Guide[] = [
         "text": "Go to a hospital or call your obstetrician straight away if you have heavy bleeding, severe abdominal pain, a bad headache with blurred vision, sudden swelling of the face or hands, or, later in pregnancy, your baby is moving less than usual. Don't wait for your next appointment."
       },
       {
-        "type": "h2",
-        "text": "Final Thoughts"
-      },
-      {
         "type": "paragraph",
         "text": "Being told you have PCOS when you're hoping for a baby can be hard to hear. In practice, the problem is often a practical one. Find out whether you're ovulating, check the basics for both partners, and get your health in good shape before pregnancy. For many couples, that's enough to find a clear way forward."
       },
@@ -351,6 +347,11 @@ export const blogGuides: Guide[] = [
         "question": "Will losing weight help me get pregnant with PCOS?",
         "answer": "If you're overweight, losing even a modest amount can restore ovulation for some women and supports a healthier pregnancy. It isn't needed if your weight is already healthy. Steady changes to diet, activity and sleep, ideally with support from a doctor or dietitian, usually work better than crash diets."
       }
+    ],
+        "sources": [
+      { "title": "International Evidence-based Guideline for the Assessment and Management of Polycystic Ovary Syndrome 2023", "publisher": "Monash University / international PCOS guideline group" },
+      { "title": "Polycystic ovary syndrome", "publisher": "WHO fact sheet" },
+      { "title": "Information for you: PCOS", "publisher": "RCOG patient information" }
     ],
     "publishedAt": "2026-09-30",
     "reviewStatus": "reviewed",
@@ -1107,10 +1108,6 @@ export const blogGuides: Guide[] = [
         "text": "If your obstetrician has referred you for fetal medicine assessment, the consultation can help clarify why the referral was made, what needs to be investigated and whether additional monitoring is necessary."
       },
       {
-        "type": "h2",
-        "text": "Final Thoughts"
-      },
-      {
         "type": "paragraph",
         "text": "Being told that you have a high-risk pregnancy can understandably raise questions. The most useful starting point is to understand why your pregnancy has been classified as high risk."
       },
@@ -1169,6 +1166,10 @@ export const blogGuides: Guide[] = [
         "question": "Does being high risk mean that I will have pregnancy complications?",
         "answer": "No. High-risk classification means that certain factors may justify closer observation or specialist input. It does not predict that a complication will definitely occur. The actual level of concern depends on the underlying condition, current pregnancy findings and how the pregnancy changes over time."
       }
+    ],
+        "sources": [
+      { "title": "Society for Maternal-Fetal Medicine Consult Series #60", "publisher": "SMFM", "url": "https://publications.smfm.org/publications/435-society-for-maternal-fetal-medicine-consult-series-60/" },
+      { "title": "Society for Maternal-Fetal Medicine Consult Series #74", "publisher": "SMFM", "url": "https://publications.smfm.org/publications/620-society-for-maternal-fetal-medicine-consult-series-74cell/" }
     ],
     "publishedAt": "2026-10-02",
     "reviewStatus": "reviewed",
@@ -1586,10 +1587,6 @@ export const blogGuides: Guide[] = [
         ]
       },
       {
-        "type": "h2",
-        "text": "Final Thoughts"
-      },
-      {
         "type": "paragraph",
         "text": "After more than one loss, wanting an explanation is completely natural. A careful, evidence-based evaluation sometimes finds a treatable cause. When it doesn't, the odds for the next pregnancy are often better than couples expect."
       },
@@ -1640,6 +1637,10 @@ export const blogGuides: Guide[] = [
       }
     ],
     "relatedService": "recurrent-miscarriages-clinic",
+        "sources": [
+      { "title": "Recurrent Miscarriage, Green-top Guideline No. 17", "publisher": "RCOG" },
+      { "title": "Miscarriage: information and support", "publisher": "NHS" }
+    ],
     "publishedAt": "2026-09-30",
     "reviewStatus": "reviewed",
     "reviewedAt": "2026-10-05"
@@ -2315,10 +2316,6 @@ export const blogGuides: Guide[] = [
         "text": "A fertility consultation can help determine which investigations are relevant and how the results should be interpreted together."
       },
       {
-        "type": "h2",
-        "text": "Final Thoughts"
-      },
-      {
         "type": "paragraph",
         "text": "Fertility testing is not about finding one number that says whether a couple can or cannot have a baby."
       },
@@ -2379,6 +2376,10 @@ export const blogGuides: Guide[] = [
         "question": "When should a couple see a fertility specialist?",
         "answer": "A fertility evaluation is commonly considered after 12 months of trying when the woman is under 35 and after 6 months when she is 35 or older. Earlier assessment may be appropriate when periods are irregular or absent, there are known reproductive problems, previous pelvic disease or surgery, suspected male-factor concerns, recurrent pregnancy loss or other reasons to suspect reduced fertility."
       }
+    ],
+        "sources": [
+      { "title": "Fertility problems: assessment and treatment", "publisher": "NICE guideline CG156" },
+      { "title": "Infertility", "publisher": "WHO fact sheet" }
     ],
     "publishedAt": "2026-09-30",
     "reviewStatus": "reviewed",
@@ -2743,10 +2744,6 @@ export const blogGuides: Guide[] = [
       {
         "type": "paragraph",
         "text": "For families in Trichy and nearby parts of Tamil Nadu, Trichy Fetal Medicine and Fertility Centre runs a specialised twin clinic. The centre also offers first-trimester screening, anomaly scans, growth scans with Doppler, [fetal echocardiography](/guides/fetal-echocardiography-pregnancy) and genetic counselling, along with CVS and amniocentesis. Fetal interventions, including fetoscopic procedures and RF ablation for selected twin pregnancies, are also available. Specialist care here works alongside your own obstetrician."
-      },
-      {
-        "type": "h2",
-        "text": "Final Thoughts"
       },
       {
         "type": "paragraph",
@@ -3612,7 +3609,7 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "What is the best week for an anomaly scan?",
-        "answer": "The anomaly scan is generally performed during the second trimester, commonly around 18 to 22 weeks of pregnancy. The exact timing may vary depending on the clinical situation, local protocol and whether additional specialist assessment is required."
+        "answer": "The anomaly scan is generally performed during the second trimester, commonly around 18 to 22 weeks of pregnancy. The exact timing may vary depending on the clinical situation, local protocol and whether additional specialist assessment is required. Your referring doctor will suggest the window that fits your dates and history."
       },
       {
         "question": "Is a TIFFA scan the same as an anomaly scan?",
@@ -3620,7 +3617,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "Can an anomaly scan detect Down syndrome?",
-        "answer": "An anomaly scan may identify certain ultrasound findings associated with chromosomal conditions, but it is not a diagnostic test for Down syndrome. Chromosomal screening and diagnostic testing are separate parts of prenatal care."
+        "answer": "An anomaly scan may identify certain ultrasound findings associated with chromosomal conditions, but it is not a diagnostic test for Down syndrome. Chromosomal screening and diagnostic testing are separate parts of prenatal care. If a marker is seen, the specialist explains what it means and which test can clarify."
       },
       {
         "question": "Can an anomaly scan detect every birth defect?",
@@ -3628,7 +3625,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "What if my baby is in the wrong position during the scan?",
-        "answer": "The examiner may wait, ask you to change position or return for another examination if important views cannot be obtained. Fetal position can make imaging technically difficult and does not by itself mean that there is an abnormality."
+        "answer": "The examiner may wait, ask you to change position or return for another examination if important views cannot be obtained. Fetal position can make imaging technically difficult and does not by itself mean that there is an abnormality. This is common and is simply a limitation of views on the day, not a sign something is wrong."
       },
       {
         "question": "What happens if an abnormality is seen?",
@@ -3636,11 +3633,11 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "Do IVF pregnancies need an anomaly scan?",
-        "answer": "Yes. IVF conception does not replace the need for routine fetal anatomical assessment. Your doctor may recommend additional screening or monitoring depending on your individual pregnancy and any associated risk factors."
+        "answer": "Yes. IVF conception does not replace the need for routine fetal anatomical assessment. Your doctor may recommend additional screening or monitoring depending on your individual pregnancy and any associated risk factors. The scan checks the same anatomy whether the pregnancy was natural or through IVF."
       },
       {
         "question": "Is the anomaly scan safe?",
-        "answer": "Diagnostic ultrasound has been used extensively during pregnancy. It should be performed appropriately by trained professionals, using the lowest exposure needed to obtain the required diagnostic information."
+        "answer": "Diagnostic ultrasound has been used extensively during pregnancy. It should be performed appropriately by trained professionals, using the lowest exposure needed to obtain the required diagnostic information. No harm to the baby is known at diagnostic levels when used appropriately."
       }
     ],
     "sources": [
@@ -3710,7 +3707,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Is Fetal Echocardiography?"
+        "text": "What is fetal echocardiography?"
       },
       {
         "type": "paragraph",
@@ -3755,7 +3752,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "When Is a Fetal Echo Done?"
+        "text": "When is a fetal echo done?"
       },
       {
         "type": "paragraph",
@@ -3775,7 +3772,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Why Would a Doctor Recommend a Fetal Echocardiogram?"
+        "text": "Why would a doctor recommend a fetal echocardiogram?"
       },
       {
         "type": "paragraph",
@@ -3791,7 +3788,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h3",
-        "text": "A Possible Heart Problem on the Ultrasound"
+        "text": "A possible heart problem on the ultrasound"
       },
       {
         "type": "paragraph",
@@ -3815,7 +3812,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h3",
-        "text": "Increased Nuchal Translucency"
+        "text": "Increased nuchal translucency"
       },
       {
         "type": "paragraph",
@@ -3839,7 +3836,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h3",
-        "text": "A Previous Baby or Pregnancy Had Congenital Heart Disease"
+        "text": "A previous baby or pregnancy had congenital heart disease"
       },
       {
         "type": "paragraph",
@@ -3855,7 +3852,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h3",
-        "text": "Diabetes That Existed Before Pregnancy"
+        "text": "Diabetes that existed before pregnancy"
       },
       {
         "type": "paragraph",
@@ -3875,7 +3872,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h3",
-        "text": "Certain Genetic or Fetal Findings"
+        "text": "Certain genetic or fetal findings"
       },
       {
         "type": "paragraph",
@@ -3891,7 +3888,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h3",
-        "text": "Certain Maternal Conditions"
+        "text": "Certain maternal conditions"
       },
       {
         "type": "paragraph",
@@ -3927,7 +3924,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Does a Fetal Echocardiogram Check?"
+        "text": "What does a fetal echocardiogram check?"
       },
       {
         "type": "paragraph",
@@ -3939,7 +3936,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h3",
-        "text": "The Four Chambers"
+        "text": "The four chambers"
       },
       {
         "type": "paragraph",
@@ -3955,7 +3952,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h3",
-        "text": "The Heart's Position and Axis"
+        "text": "The heart's position and axis"
       },
       {
         "type": "paragraph",
@@ -3967,7 +3964,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h3",
-        "text": "The Heart Valves"
+        "text": "The heart valves"
       },
       {
         "type": "paragraph",
@@ -3979,7 +3976,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h3",
-        "text": "The Outflow Tracts"
+        "text": "The outflow tracts"
       },
       {
         "type": "paragraph",
@@ -3991,7 +3988,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h3",
-        "text": "The Major Blood Vessels"
+        "text": "The major blood vessels"
       },
       {
         "type": "paragraph",
@@ -4003,7 +4000,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h3",
-        "text": "Heart Rhythm"
+        "text": "Heart rhythm"
       },
       {
         "type": "paragraph",
@@ -4015,7 +4012,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h3",
-        "text": "Blood Flow"
+        "text": "Blood flow"
       },
       {
         "type": "paragraph",
@@ -4027,7 +4024,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Fetal Echo vs Anomaly Scan: What's the Difference?"
+        "text": "Fetal echo vs anomaly scan: what's the difference?"
       },
       {
         "type": "paragraph",
@@ -4077,7 +4074,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Can an Anomaly Scan Detect Heart Problems?"
+        "text": "Can an anomaly scan detect heart problems?"
       },
       {
         "type": "paragraph",
@@ -4119,7 +4116,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Happens During a Fetal Echocardiogram?"
+        "text": "What happens during a fetal echocardiogram?"
       },
       {
         "type": "paragraph",
@@ -4151,7 +4148,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Is Fetal Echocardiography Safe?"
+        "text": "Is fetal echocardiography safe?"
       },
       {
         "type": "paragraph",
@@ -4171,7 +4168,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What If the Fetal Echo Finds Something Abnormal?"
+        "text": "What if the fetal echo finds something abnormal?"
       },
       {
         "type": "paragraph",
@@ -4208,7 +4205,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Does an Abnormal Fetal Echo Mean the Baby Has a Severe Heart Problem?"
+        "text": "Does an abnormal fetal echo mean the baby has a severe heart problem?"
       },
       {
         "type": "paragraph",
@@ -4236,7 +4233,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Can Fetal Echocardiography Detect Every Heart Defect?"
+        "text": "Can fetal echocardiography detect every heart defect?"
       },
       {
         "type": "paragraph",
@@ -4268,7 +4265,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What If the Baby Is in the Wrong Position?"
+        "text": "What if the baby is in the wrong position?"
       },
       {
         "type": "paragraph",
@@ -4303,7 +4300,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Does Every Pregnancy Need a Fetal Echo?"
+        "text": "Does every pregnancy need a fetal echo?"
       },
       {
         "type": "paragraph",
@@ -4341,7 +4338,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Does a High NT Mean My Baby Needs a Fetal Echo?"
+        "text": "Does a high NT mean my baby needs a fetal echo?"
       },
       {
         "type": "paragraph",
@@ -4365,7 +4362,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Does Diabetes Mean a Fetal Echo Is Necessary?"
+        "text": "Does diabetes mean a fetal echo is necessary?"
       },
       {
         "type": "paragraph",
@@ -4389,7 +4386,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Questions Should You Ask Before or After a Fetal Echo?"
+        "text": "What questions should you ask before or after a fetal echo?"
       },
       {
         "type": "paragraph",
@@ -4421,7 +4418,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "When Should You See a Fetal Medicine Specialist?"
+        "text": "When should you see a fetal medicine specialist?"
       },
       {
         "type": "paragraph",
@@ -4451,7 +4448,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Fetal Echocardiography in Trichy"
+        "text": "Fetal echocardiography in trichy"
       },
       {
         "type": "paragraph",
@@ -4467,7 +4464,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Fetal Echo and Fetal Neurosonography: Are They the Same?"
+        "text": "Fetal echo and fetal neurosonography: are they the same?"
       },
       {
         "type": "paragraph",
@@ -4491,7 +4488,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Can a Fetal Echo Be Done With the Anomaly Scan?"
+        "text": "Can a fetal echo be done with the anomaly scan?"
       },
       {
         "type": "paragraph",
@@ -4511,7 +4508,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Happens If the Fetal Echo Is Normal?"
+        "text": "What happens if the fetal echo is normal?"
       },
       {
         "type": "paragraph",
@@ -4524,10 +4521,6 @@ export const blogGuides: Guide[] = [
       {
         "type": "paragraph",
         "text": "It is still useful to remember that fetal echocardiography has limitations. A normal result is reassuring, but it cannot exclude every heart condition that might become apparent later in pregnancy or after birth."
-      },
-      {
-        "type": "h2",
-        "text": "Final Thoughts"
       },
       {
         "type": "paragraph",
@@ -4599,6 +4592,10 @@ export const blogGuides: Guide[] = [
       }
     ],
     "relatedService": "fetal-echo",
+        "sources": [
+      { "title": "Fetal cardiac screening examination", "publisher": "ISUOG patient information" },
+      { "title": "ISUOG Practice Guidelines: cardiac screening examination of the fetus", "publisher": "ISUOG" }
+    ],
     "publishedAt": "2026-10-02",
     "reviewStatus": "reviewed",
     "reviewedAt": "2026-10-05"
@@ -5584,10 +5581,6 @@ export const blogGuides: Guide[] = [
         "text": "Together, these findings can help guide appropriate monitoring during pregnancy."
       },
       {
-        "type": "h2",
-        "text": "Final thoughts"
-      },
-      {
         "type": "paragraph",
         "text": "Being told that your baby is “small” can be unsettling, especially when the ultrasound report contains numbers and terms that are difficult to interpret."
       },
@@ -5625,38 +5618,42 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Is a growth scan the same as a Doppler scan?",
-        "answer": "No. A growth scan primarily assesses fetal size and growth, while Doppler ultrasound evaluates blood flow through selected vessels. The two examinations may be performed together when clinically indicated."
+        "answer": "No. A growth scan primarily assesses fetal size and growth, while Doppler ultrasound evaluates blood flow through selected vessels. The two examinations may be performed together when clinically indicated. They are often done in the same visit and read together."
       },
       {
         "question": "What does it mean if my baby is measuring small?",
-        "answer": "A small measurement does not automatically mean fetal growth restriction. Some babies are naturally small. Doctors consider growth trends, fetal measurements, Doppler findings and other clinical factors before determining whether closer monitoring is required."
+        "answer": "A small measurement does not automatically mean fetal growth restriction. Some babies are naturally small. Doctors consider growth trends, fetal measurements, Doppler findings and other clinical factors before determining whether closer monitoring is required. Repeat measurements and Doppler over time matter more than one number on one day."
       },
       {
         "question": "What is fetal growth restriction?",
-        "answer": "Fetal growth restriction (FGR) refers to a fetus that has not achieved its expected growth potential because of a pathological process. It is different from simply being constitutionally small."
+        "answer": "Fetal growth restriction (FGR) refers to a fetus that has not achieved its expected growth potential because of a pathological process. It is different from simply being constitutionally small. Whether a small baby is simply small or growth restricted is worked out from trends and Doppler."
       },
       {
         "question": "Why is Doppler used when a baby is small?",
-        "answer": "Doppler can provide information about blood flow through vessels such as the umbilical artery. This can help clinicians assess placental circulation and determine how closely a pregnancy may need to be monitored."
+        "answer": "Doppler can provide information about blood flow through vessels such as the umbilical artery. This can help clinicians assess placental circulation and determine how closely a pregnancy may need to be monitored. Changes in blood flow can appear before the baby's size clearly falls behind."
       },
       {
         "question": "Can a growth scan tell the exact weight of my baby?",
-        "answer": "No. Ultrasound provides an estimated fetal weight. The actual birth weight can be different from the ultrasound estimate."
+        "answer": "No. Ultrasound provides an estimated fetal weight. The actual birth weight can be different from the ultrasound estimate. It is best read as a range; trends across scans matter more than one figure."
       },
       {
         "question": "How often should growth scans be done?",
-        "answer": "There is no single schedule for every pregnancy. The interval depends on the reason for monitoring, gestational age, previous scan findings, fetal growth and other clinical factors."
+        "answer": "There is no single schedule for every pregnancy. The interval depends on the reason for monitoring, gestational age, previous scan findings, fetal growth and other clinical factors. Your fetal medicine specialist sets the interval for your situation."
       },
       {
         "question": "Does every baby below the 10th percentile have fetal growth restriction?",
-        "answer": "No. A fetus may be small for gestational age without having pathological growth restriction. Additional assessment is needed to distinguish a constitutionally small fetus from FGR."
+        "answer": "No. A fetus may be small for gestational age without having pathological growth restriction. Additional assessment is needed to distinguish a constitutionally small fetus from FGR. The distinction is made by measuring over time and checking blood flow."
       },
       {
         "question": "What happens if Doppler is abnormal?",
-        "answer": "An abnormal Doppler finding may lead to closer monitoring or additional assessment. The significance depends on the vessel examined, gestational age, severity of the finding and the rest of the pregnancy assessment."
+        "answer": "An abnormal Doppler finding may lead to closer monitoring or additional assessment. The significance depends on the vessel examined, gestational age, severity of the finding and the rest of the pregnancy assessment. It usually means closer follow-up rather than an automatic emergency."
       }
     ],
     "relatedService": "growth-scan-doppler",
+        "sources": [
+      { "title": "Society for Maternal-Fetal Medicine Consult Series #60", "publisher": "SMFM", "url": "https://publications.smfm.org/publications/435-society-for-maternal-fetal-medicine-consult-series-60/" },
+      { "title": "Fetal growth restriction information", "publisher": "RCOG patient information" }
+    ],
     "publishedAt": "2026-10-02",
     "reviewStatus": "reviewed",
     "reviewedAt": "2026-10-05"
@@ -5674,6 +5671,7 @@ export const blogGuides: Guide[] = [
       "src": "/images/guides/nipt-in-pregnancy-test-accuracy-high-risk-result.webp",
       "alt": "Illustrated cover for the guide: NIPT in Pregnancy: What It Detects, When to Take It, Accuracy & What Happens After a High-Risk Result"
     },
+    "quickAnswer": "NIPT is a blood test taken from the mother's arm, usually from 10 weeks, that screens for common chromosomal conditions such as Down syndrome. It is a screening test, not a diagnosis: a high-risk result needs confirmation with CVS or amniocentesis before any decision is made.",
     "category": "screening-and-tests",
     "content": [
       {
@@ -5698,7 +5696,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h3",
-        "text": "What Is NIPT in Pregnancy?"
+        "text": "What is NIPT in pregnancy?"
       },
       {
         "type": "paragraph",
@@ -5736,7 +5734,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h3",
-        "text": "When Can NIPT Be Done?"
+        "text": "When can NIPT be done?"
       },
       {
         "type": "paragraph",
@@ -5768,7 +5766,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Does NIPT Detect?"
+        "text": "What does NIPT detect?"
       },
       {
         "type": "paragraph",
@@ -5780,7 +5778,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h3",
-        "text": "Trisomy 21, Down syndrome"
+        "text": "Trisomy 21, down syndrome"
       },
       {
         "type": "paragraph",
@@ -5792,7 +5790,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h3",
-        "text": "Trisomy 18, Edwards syndrome"
+        "text": "Trisomy 18, edwards syndrome"
       },
       {
         "type": "paragraph",
@@ -5804,7 +5802,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h3",
-        "text": "Trisomy 13, Patau syndrome"
+        "text": "Trisomy 13, patau syndrome"
       },
       {
         "type": "paragraph",
@@ -5832,7 +5830,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Does NIPT Detect Every Genetic Condition?"
+        "text": "Does NIPT detect every genetic condition?"
       },
       {
         "type": "paragraph",
@@ -5872,7 +5870,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Does NIPT Work?"
+        "text": "How does NIPT work?"
       },
       {
         "type": "paragraph",
@@ -5908,7 +5906,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Is NIPT a Diagnostic Test?"
+        "text": "Is NIPT a diagnostic test?"
       },
       {
         "type": "paragraph",
@@ -5960,7 +5958,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Accurate Is NIPT?"
+        "text": "How accurate is NIPT?"
       },
       {
         "type": "paragraph",
@@ -6006,7 +6004,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Is Positive Predictive Value?"
+        "text": "What is positive predictive value?"
       },
       {
         "type": "paragraph",
@@ -6038,7 +6036,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Does a Low-Risk NIPT Result Mean?"
+        "text": "What does a low-Risk NIPT result mean?"
       },
       {
         "type": "paragraph",
@@ -6074,7 +6072,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Does a High-Risk NIPT Result Mean?"
+        "text": "What does a high-Risk NIPT result mean?"
       },
       {
         "type": "paragraph",
@@ -6098,7 +6096,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Happens After a High-Risk NIPT Result?"
+        "text": "What happens after a high-Risk NIPT result?"
       },
       {
         "type": "paragraph",
@@ -6185,7 +6183,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Can You Have CVS or Amniocentesis After a High-Risk NIPT?"
+        "text": "Can you have CVS or amniocentesis after a high-Risk NIPT?"
       },
       {
         "type": "paragraph",
@@ -6221,7 +6219,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Should Pregnancy Decisions Be Made From NIPT Alone?"
+        "text": "Should pregnancy decisions be made from NIPT alone?"
       },
       {
         "type": "paragraph",
@@ -6241,7 +6239,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "NIPT vs NT Scan: Are They the Same?"
+        "text": "NIPT vs NT scan: are they the same?"
       },
       {
         "type": "paragraph",
@@ -6291,7 +6289,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "NIPT vs Double Marker Test"
+        "text": "NIPT vs double marker test"
       },
       {
         "type": "paragraph",
@@ -6319,7 +6317,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Is NIPT Recommended After IVF?"
+        "text": "Is NIPT recommended after IVF?"
       },
       {
         "type": "paragraph",
@@ -6339,7 +6337,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Is NIPT Reliable in Twin Pregnancy?"
+        "text": "Is NIPT reliable in twin pregnancy?"
       },
       {
         "type": "paragraph",
@@ -6375,7 +6373,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What If NIPT Gives an Inconclusive or No-Result Report?"
+        "text": "What if NIPT gives an inconclusive or no-Result report?"
       },
       {
         "type": "paragraph",
@@ -6417,7 +6415,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Does NIPT Replace the Anomaly Scan?"
+        "text": "Does NIPT replace the anomaly scan?"
       },
       {
         "type": "paragraph",
@@ -6466,7 +6464,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Conditions Can NIPT Miss?"
+        "text": "What conditions can NIPT miss?"
       },
       {
         "type": "paragraph",
@@ -6499,7 +6497,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Who Should Consider NIPT?"
+        "text": "Who should consider NIPT?"
       },
       {
         "type": "paragraph",
@@ -6532,7 +6530,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Should You Ask Before Taking an NIPT?"
+        "text": "What should you ask before taking an NIPT?"
       },
       {
         "type": "paragraph",
@@ -6596,7 +6594,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "When Should You Speak to a Fetal Medicine Specialist?"
+        "text": "When should you speak to a fetal medicine specialist?"
       },
       {
         "type": "paragraph",
@@ -6623,7 +6621,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "NIPT in Trichy: Why Specialist Interpretation Matters"
+        "text": "NIPT in trichy: why specialist interpretation matters"
       },
       {
         "type": "paragraph",
@@ -6643,7 +6641,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "NIPT Test Cost: Why Prices Can Differ"
+        "text": "NIPT test cost: why prices can differ"
       },
       {
         "type": "paragraph",
@@ -6681,7 +6679,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Is the Most Important Thing to Remember About NIPT?"
+        "text": "What is the most important thing to remember about NIPT?"
       },
       {
         "type": "paragraph",
@@ -6720,10 +6718,6 @@ export const blogGuides: Guide[] = [
         "text": "And if the result is inconclusive, that also deserves proper medical follow-up rather than simply being treated as a failed test."
       },
       {
-        "type": "h3",
-        "text": "Final Thoughts"
-      },
-      {
         "type": "paragraph",
         "text": "NIPT has changed the way many chromosome conditions are screened for during pregnancy. It offers an early, non-invasive way of assessing the likelihood of certain chromosomal conditions, particularly Down syndrome."
       },
@@ -6759,35 +6753,35 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "What is NIPT in pregnancy?",
-        "answer": "NIPT is a maternal blood test that analyses cell-free DNA associated with the pregnancy to screen for selected chromosome conditions, especially trisomy 21, trisomy 18 and trisomy 13."
+        "answer": "NIPT is a maternal blood test that analyses cell-free DNA associated with the pregnancy to screen for selected chromosome conditions, especially trisomy 21, trisomy 18 and trisomy 13. It carries no risk to the baby because it uses only the mother's blood sample."
       },
       {
         "question": "At how many weeks can NIPT be done?",
-        "answer": "NIPT can generally be performed from 10 weeks of pregnancy."
+        "answer": "NIPT can generally be performed from 10 weeks of pregnancy. It can also be done later in pregnancy when needed, though earlier testing leaves more time for follow-up decisions."
       },
       {
         "question": "Can NIPT diagnose Down syndrome?",
-        "answer": "No. NIPT can screen for an increased likelihood of Down syndrome, but a high-risk result is not a confirmed diagnosis. Diagnostic testing such as CVS or amniocentesis may be required for confirmation."
+        "answer": "No. NIPT can screen for an increased likelihood of Down syndrome, but a high-risk result is not a confirmed diagnosis. Diagnostic testing such as CVS or amniocentesis may be required for confirmation. A high-risk result is confirmed only through CVS or amniocentesis."
       },
       {
         "question": "What does a low-risk NIPT result mean?",
-        "answer": "It means the likelihood of the chromosome conditions included in the screening has been reduced. It does not rule out every genetic condition or fetal abnormality."
+        "answer": "It means the likelihood of the chromosome conditions included in the screening has been reduced. It does not rule out every genetic condition or fetal abnormality. It is reassuring, but the mid-pregnancy anomaly scan is still needed because the two look at different things."
       },
       {
         "question": "What does a high-risk NIPT result mean?",
-        "answer": "It means the screening test has identified an increased likelihood of a particular chromosome condition. Further evaluation and diagnostic testing may be recommended."
+        "answer": "It means the screening test has identified an increased likelihood of a particular chromosome condition. Further evaluation and diagnostic testing may be recommended. Only a diagnostic test such as CVS or amniocentesis can give a definite answer."
       },
       {
         "question": "Is NIPT safe for the baby?",
-        "answer": "The test itself involves a blood sample from the mother and does not require a procedure inside the uterus."
+        "answer": "The test itself involves a blood sample from the mother and does not require a procedure inside the uterus. There is no procedure inside the uterus, so there is no procedure-related risk to the baby."
       },
       {
         "question": "Can NIPT be done in a twin pregnancy?",
-        "answer": "Yes, cfDNA screening can be used in twin pregnancies, particularly for trisomy 21. Interpretation requires consideration of the type of twin pregnancy and the limitations of the available evidence."
+        "answer": "Yes, cfDNA screening can be used in twin pregnancies, particularly for trisomy 21. Interpretation requires consideration of the type of twin pregnancy and the limitations of the available evidence. Your specialist will advise how reliable it is for your type of twin pregnancy."
       },
       {
         "question": "Does NIPT replace the anomaly scan?",
-        "answer": "No. NIPT and ultrasound provide different information. A detailed anomaly scan remains important even when NIPT is low risk."
+        "answer": "No. NIPT and ultrasound provide different information. A detailed anomaly scan remains important even when NIPT is low risk. A low-risk NIPT result does not remove the need for the detailed mid-pregnancy scan."
       }
     ],
     "sources": [
@@ -7670,10 +7664,6 @@ export const blogGuides: Guide[] = [
         "text": "The purpose of specialist review is to interpret the findings in context and help parents understand what, if anything, needs to happen next."
       },
       {
-        "type": "h2",
-        "text": "Final Thoughts"
-      },
-      {
         "type": "paragraph",
         "text": "An NT scan gives doctors useful information at a stage of pregnancy when the fetus is developing rapidly. But the measurement is only one part of the assessment."
       },
@@ -7727,7 +7717,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "Does normal NT mean the baby has no problems?",
-        "answer": "No. A normal NT is reassuring but cannot exclude every chromosomal, genetic or structural condition. Pregnancy assessment continues after the first trimester, including the recommended second-trimester ultrasound for fetal structural abnormalities."
+        "answer": "No. A normal NT is reassuring but cannot exclude every chromosomal, genetic or structural condition. Pregnancy assessment continues after the first trimester, including the recommended second-trimester ultrasound for fetal structural abnormalities. A normal NT is reassuring, but the detailed anomaly scan later in pregnancy is still recommended."
       },
       {
         "question": "What happens if the NT scan is abnormal?",
@@ -7739,6 +7729,11 @@ export const blogGuides: Guide[] = [
       }
     ],
     "relatedService": "downs-screening-oscar",
+        "sources": [
+      { "title": "The 11-13 weeks scan", "publisher": "Fetal Medicine Foundation" },
+      { "title": "Screening tests for Down's syndrome", "publisher": "NHS" },
+      { "title": "Nuchal translucency scan", "publisher": "ISUOG patient information" }
+    ],
     "publishedAt": "2026-10-01",
     "reviewStatus": "reviewed",
     "reviewedAt": "2026-10-05"

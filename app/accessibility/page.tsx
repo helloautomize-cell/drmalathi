@@ -6,9 +6,9 @@ import { site } from "@/data/site";
 import { legal, legalDateLabel } from "@/data/legal";
 
 export const metadata: Metadata = {
-  title: "Accessibility Statement",
+  title: "Accessibility Statement for This Website",
   description:
-    "Accessibility aims and feedback contact for the Trichy Fetal Medicine and Fertility Centre website.",
+    "How the Trichy Fetal Medicine and Fertility Centre website is designed for accessibility, and how to contact us about access needs.",
   alternates: { canonical: "/accessibility" },
   robots: { index: !legal.accessibility.draftPendingReview },
 };

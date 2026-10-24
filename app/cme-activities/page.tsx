@@ -18,7 +18,7 @@ import { cmeYears } from "@/data/cme";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "CME Activities",
+  title: "CME Activities for Obstetricians in Trichy",
   description:
     "Continuing medical education activities at Trichy Fetal Medicine and Fertility Centre: conclaves, workshops and hands-on training for doctors.",
   alternates: { canonical: "/cme-activities" },

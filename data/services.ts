@@ -309,7 +309,12 @@ const serviceList: Service[] = [
         question: "Can it be done in the same visit as OSCAR?",
         answer:
           "Yes. It is often combined with the OSCAR visit when the timing suits your pregnancy.",
+      },      {
+        question: "Is an early anomaly scan safe for my baby?",
+        answer:
+          "Yes. It is an ultrasound, like any other pregnancy scan, and is performed by a fetal medicine specialist. It is often combined with the OSCAR visit when the timing suits your pregnancy.",
       },
+
     ],
   },
   {
@@ -434,7 +439,12 @@ const serviceList: Service[] = [
         question: "What if the baby looks small?",
         answer:
           "The specialist explains whether the measurements sit within the expected range and whether closer monitoring or other checks are suggested.",
+      },      {
+        question: "When will I get my report?",
+        answer:
+          "You receive your report in the same visit. If growth or blood flow raises a question, the specialist discusses monitoring with you and your obstetrician before you leave.",
       },
+
     ],
   },
 
@@ -493,7 +503,12 @@ const serviceList: Service[] = [
         question: "When can it be done?",
         answer:
           "From 10 weeks of pregnancy onward, once dating has been confirmed.",
+      },      {
+        question: "Is NIPT safe for the baby?",
+        answer:
+          "Yes. NIPT is a blood test taken from the mother's arm, so it carries no risk to the baby. It is usually done from 10 weeks of pregnancy onward.",
       },
+
     ],
   },
   {
@@ -547,7 +562,17 @@ const serviceList: Service[] = [
         question: "If a heart problem is found, what next?",
         answer:
           "The specialist explains the finding, and we help plan follow-up scans and link you with paediatric heart specialists where needed.",
+      },      {
+        question: "Is a fetal echo safe for my baby?",
+        answer:
+          "Yes. It is a focused ultrasound of the baby's heart, performed like other pregnancy scans by trained specialists, and carries no risk to the baby.",
       },
+      {
+        question: "When will I get the results?",
+        answer:
+          "The findings are explained to you in the same visit and you receive your report before you leave.",
+      },
+
     ],
   },
   {
@@ -605,7 +630,17 @@ const serviceList: Service[] = [
         question: "Is it an internal scan?",
         answer:
           "It is usually done over the tummy. When the baby's head is low, an internal scan can give a clearer view and may be suggested with your consent.",
+      },      {
+        question: "Is this scan safe for my baby?",
+        answer:
+          "Yes. It is a detailed ultrasound of the baby's brain and spine, performed by a fetal medicine specialist like any other pregnancy scan.",
       },
+      {
+        question: "When will I get the results?",
+        answer:
+          "The specialist explains the findings during the visit and you receive the report before you leave.",
+      },
+
     ],
   },
   {
@@ -657,7 +692,17 @@ const serviceList: Service[] = [
         question: "Will the result differ from my first scan?",
         answer:
           "Sometimes it confirms the finding, sometimes it adds detail, and occasionally it changes the picture. Either way, you get an honest specialist view.",
+      },      {
+        question: "What should I bring for a second opinion?",
+        answer:
+          "Bring your existing scan reports and any referral notes so the specialist can compare findings and explain what the repeat evaluation shows.",
       },
+      {
+        question: "When will I get the results?",
+        answer:
+          "You receive the repeat scan report in the same visit, and the specialist explains what it means before you leave.",
+      },
+
     ],
   },
 
@@ -723,7 +768,12 @@ const serviceList: Service[] = [
         question: "Do I have to decide anything on the day?",
         answer:
           "No. Counselling gives you information and time. Decisions are yours to make.",
+      },      {
+        question: "What should I bring to the session?",
+        answer:
+          "Bring your scan or test reports and any family history details you know. The counsellor explains results, inheritance and options in clear language.",
       },
+
     ],
   },
   {
@@ -778,7 +828,12 @@ const serviceList: Service[] = [
         question: "Who can we talk to about it?",
         answer:
           "Our specialists and counsellors can talk it through with you privately before you decide.",
+      },      {
+        question: "Is this evaluation compulsory?",
+        answer:
+          "No. It is a specialist evaluation offered after pregnancy loss to help families understand what happened and plan ahead; it is only done with your consent.",
       },
+
     ],
   },
   {
@@ -835,7 +890,12 @@ const serviceList: Service[] = [
         question: "Can I come before I am pregnant again?",
         answer:
           "Yes, and it is often the best time, because the plan can be ready before the next pregnancy begins.",
+      },      {
+        question: "When should I visit this clinic?",
+        answer:
+          "Couples who have had repeated pregnancy loss can come for investigation and planning before or during the next pregnancy.",
       },
+
     ],
   },
   {
@@ -894,7 +954,12 @@ const serviceList: Service[] = [
         question: "Do you work with my obstetrician?",
         answer:
           "Yes. We coordinate monitoring and findings with the doctor who will deliver your babies.",
+      },      {
+        question: "How often are twins scanned?",
+        answer:
+          "Twin and multiple pregnancies need closer follow-up than single pregnancies, so this clinic keeps a separate scan schedule for them.",
       },
+
     ],
   },
 ];

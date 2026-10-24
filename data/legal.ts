@@ -21,6 +21,10 @@ export const legal = {
     lastUpdated: "2026-10-03",
     draftPendingReview: true,
   },
+  medicalDisclaimer: {
+    lastUpdated: "2026-10-24",
+    draftPendingReview: true,
+  },
 } as const;
 
 export function legalDateLabel(iso: string): string {

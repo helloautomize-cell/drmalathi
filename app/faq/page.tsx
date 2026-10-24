@@ -9,7 +9,7 @@ import { faqs } from "@/data/faqs";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions",
+  title: "FAQs About Scans, Tests and Appointments",
   description:
     "Common questions about fetal medicine scans, NIPT, anomaly scans, preparation and appointments at our Trichy centre, answered by our fetal medicine team.",
   alternates: { canonical: "/faq" },

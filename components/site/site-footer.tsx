@@ -143,9 +143,11 @@ function MobileFooter() {
       <div className="border-t border-white/15 px-4 py-5 text-center text-xs/[18px] text-white/70">
         <p>© {new Date().getFullYear()} {site.shortName}. All rights reserved.</p>
         <AgencyCredit className="mt-2" />
-        <div className="mt-2 flex justify-center gap-5">
+        <div className="mt-2 flex flex-wrap justify-center gap-x-5 gap-y-1">
           <Link href="/privacy" className="inline-flex min-h-11 min-w-11 items-center justify-center">Privacy</Link>
           <Link href="/terms" className="inline-flex min-h-11 min-w-11 items-center justify-center">Terms</Link>
+          <Link href="/editorial-policy" className="inline-flex min-h-11 min-w-11 items-center justify-center">Editorial Policy</Link>
+          <Link href="/medical-disclaimer" className="inline-flex min-h-11 min-w-11 items-center justify-center">Medical Disclaimer</Link>
         </div>
         <p className="mt-4">PCPNDT Act compliant. Fetal sex determination or disclosure is not performed.</p>
         <p className="mt-2">Website information is educational and does not replace professional medical advice.</p>
@@ -221,9 +223,11 @@ function DesktopFooter() {
             <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
             <AgencyCredit className="mt-1" />
           </div>
-          <div className="flex items-center gap-5">
+          <div className="flex flex-wrap items-center justify-center gap-5">
             <Link href="/privacy" className="underline-offset-4 hover:underline">Privacy Policy</Link>
             <Link href="/terms" className="underline-offset-4 hover:underline">Terms of Use</Link>
+            <Link href="/editorial-policy" className="underline-offset-4 hover:underline">Editorial Policy</Link>
+            <Link href="/medical-disclaimer" className="underline-offset-4 hover:underline">Medical Disclaimer</Link>
           </div>
         </Container>
       </div>

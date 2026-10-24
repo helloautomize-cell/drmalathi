@@ -18,7 +18,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 
 export function generateMetadata(): Metadata {
   return {
-    title: "Patient Guides",
+    title: "Patient Guides on Scans, Screening and Pregnancy",
     description:
       "Clear, practical guides to pregnancy scans, screening tests and fetal medicine, written by our clinical team for families in Trichy and nearby districts.",
     alternates: { canonical: "/guides" },

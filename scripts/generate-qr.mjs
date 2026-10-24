@@ -14,7 +14,7 @@ import QRCode from "qrcode";
 const LOCATIONS = ["reception", "scan-room", "opd"];
 // Preview domain while in development; switch to https://fmctrichy.com at
 // launch (the launch gate blocks production builds until then).
-const BASE = "https://drmalathi.vercel.app/q";
+const BASE = "https://fmctrichy.com/q";
 const OUT_DIR = join(process.cwd(), "qr-output");
 
 const OPTIONS = {

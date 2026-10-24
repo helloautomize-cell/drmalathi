@@ -27,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Draft pages enter the sitemap only after counsel sign-off.
     ...(legal.editorialPolicy.draftPendingReview ? [] : ["/editorial-policy"]),
     ...(legal.accessibility.draftPendingReview ? [] : ["/accessibility"]),
+    ...(legal.medicalDisclaimer.draftPendingReview ? [] : ["/medical-disclaimer"]),
   ].map((path) => ({
     url: `${site.url}${path}`,
     lastModified: pageLastModified[path || "/"],

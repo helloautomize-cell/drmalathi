@@ -13,7 +13,13 @@ import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
 import { doctors } from "@/data/doctors";
 import { site } from "@/data/site";
-import { breadcrumbSchema, personSchema } from "@/lib/schema";
+import {
+  breadcrumbNode,
+  pageGraph,
+  personNode,
+  webPageNode,
+} from "@/lib/schema";
+import { getAllGuides } from "@/lib/guides";
 
 export function generateStaticParams() {
   return doctors.filter((doctor) => doctor.hasProfile).map((doctor) => ({ slug: doctor.slug }));
@@ -26,11 +32,12 @@ export async function generateMetadata({
   const doctor = doctors.find((item) => item.slug === slug && item.hasProfile);
   if (!doctor) return {};
   return {
-    title: doctor.name,
+    title: `${doctor.name}, Fetal Medicine Specialist`,
     description:
       doctor.seoDescription ??
       `${doctor.name}, ${doctor.role} at ${site.name}. ${doctor.qualifications.join(", ")}.`,
     alternates: { canonical: `/doctors/${doctor.slug}` },
+    openGraph: { url: `${site.url}/doctors/${doctor.slug}` },
   };
 }
 
@@ -41,14 +48,30 @@ export default async function DoctorDetailPage({
   const doctor = doctors.find((item) => item.slug === slug);
   if (!doctor || !doctor.hasProfile) notFound();
 
+  // Guides on this doctor's areas of practice, matched through the service
+  // each guide covers — no invented authorship, only real topic links.
+  const serviceSlugs = new Set(
+    doctor.expertise.map((e) => e.serviceSlug).filter(Boolean)
+  );
+  const expertGuides = getAllGuides().guides.filter(
+    (g) => g.relatedService && serviceSlugs.has(g.relatedService)
+  );
+
   return (
     <>
-      <JsonLd data={personSchema(doctor)} />
       <JsonLd
-        data={breadcrumbSchema([
-          { label: "Home", href: "/" },
-          { label: "Doctors", href: "/doctors" },
-          { label: doctor.name, href: `/doctors/${doctor.slug}` },
+        data={pageGraph([
+          webPageNode(
+            `/doctors/${doctor.slug}`,
+            doctor.name,
+            doctor.seoDescription
+          ),
+          personNode(doctor),
+          breadcrumbNode([
+            { label: "Home", href: "/" },
+            { label: "Doctors", href: "/doctors" },
+            { label: doctor.name, href: `/doctors/${doctor.slug}` },
+          ]),
         ])}
       />
       <PageHero
@@ -332,6 +355,26 @@ export default async function DoctorDetailPage({
                   {doctor.name}
                 </figcaption>
               </figure>
+            ) : null}
+
+            {expertGuides.length ? (
+              <div className="order-13 mt-8 max-md:mt-8">
+                <h3 className="text-lg font-semibold text-ink">
+                  Patient guides on {doctor.name.split(" ")[1]}&rsquo;s areas of practice
+                </h3>
+                <ul className="mt-3 space-y-2.5">
+                  {expertGuides.map((guide) => (
+                    <li key={guide.slug}>
+                      <Link
+                        href={`/guides/${guide.slug}`}
+                        className="text-sm font-medium text-primary underline-offset-4 hover:underline"
+                      >
+                        {guide.cardTitle ?? guide.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ) : null}
 
             {doctor.experienceSinceYear ? (

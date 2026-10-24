@@ -39,11 +39,11 @@ import {
 } from "@/lib/guides";
 import { imageBlurDataURL } from "@/lib/image-placeholder";
 import {
-  breadcrumbSchema,
-  clinicRef,
-  faqSchema,
-  personRef,
-  publisherRef,
+  breadcrumbNode,
+  faqNode,
+  guideArticleNode,
+  pageGraph,
+  webPageNode,
 } from "@/lib/schema";
 import type { GuideBlock } from "@/types/guide";
 
@@ -66,6 +66,7 @@ export async function generateMetadata({
     description,
     alternates: { canonical: `/guides/${guide.slug}` },
     openGraph: {
+      url: `${site.url}/guides/${guide.slug}`,
       title,
       description,
       type: "article",
@@ -131,55 +132,45 @@ export default async function GuideArticlePage({
     ? `Updated ${dateFmt(guide.updatedAt as string)}`
     : dateFmt(guide.publishedAt);
 
-  const articleJsonLd = reviewer
-    ? {
-        "@context": "https://schema.org",
-        "@type": "MedicalWebPage",
-        name: guide.title,
-        description: guide.excerpt,
-        url: `${site.url}/guides/${guide.slug}`,
-        image: `${site.url}${guide.coverImage.src}`,
-        lastReviewed: guide.reviewedAt,
-        reviewedBy: personRef(reviewer),
-        about: clinicRef(),
-      }
-    : {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        headline: guide.title,
-        description: guide.excerpt,
-        image: `${site.url}${guide.coverImage.src}`,
-        datePublished: guide.publishedAt,
-        dateModified: guide.updatedAt ?? guide.publishedAt,
-        author: clinicRef(),
-        publisher: publisherRef(),
-      };
+  const articleJsonLd = pageGraph([
+    webPageNode(`/guides/${guide.slug}`, guide.title, guide.excerpt),
+    guideArticleNode({
+      slug: guide.slug,
+      title: guide.title,
+      excerpt: guide.excerpt,
+      coverImageSrc: guide.coverImage.src,
+      publishedAt: guide.publishedAt,
+      updatedAt: guide.updatedAt,
+      reviewedAt:
+        guide.reviewStatus === "reviewed" ? guide.reviewedAt : undefined,
+      reviewedBy: guide.reviewedBy,
+    }),
+    breadcrumbNode([
+      { label: "Home", href: "/" },
+      { label: "Patient guides", href: "/guides" },
+      ...(category
+        ? [
+            {
+              label: category.name,
+              href: `/guides/category/${category.slug}`,
+            },
+          ]
+        : []),
+      { label: guide.title, href: `/guides/${guide.slug}` },
+    ]),
+    ...(guide.faqs?.length
+      ? [
+          faqNode(
+            guide.faqs.map((f) => ({ question: f.question, answer: f.answer })),
+            `/guides/${guide.slug}`
+          ),
+        ]
+      : []),
+  ]);
 
   return (
     <>
       <JsonLd data={articleJsonLd} />
-      <JsonLd
-        data={breadcrumbSchema([
-          { label: "Home", href: "/" },
-          { label: "Patient guides", href: "/guides" },
-          ...(category
-            ? [
-                {
-                  label: category.name,
-                  href: `/guides/category/${category.slug}`,
-                },
-              ]
-            : []),
-          { label: guide.title, href: `/guides/${guide.slug}` },
-        ])}
-      />
-      {guide.faqs?.length ? (
-        <JsonLd
-          data={faqSchema(
-            guide.faqs.map((f) => ({ question: f.question, answer: f.answer }))
-          )}
-        />
-      ) : null}
       <ReadingProgress />
 
       {/* Header (white) */}
@@ -260,9 +251,12 @@ export default async function GuideArticlePage({
                 </span>
               </Link>
             ) : (
-              <span className="font-semibold text-ink">
-                Written by the FMC Trichy clinical team
-              </span>
+              <Link
+                href="/doctors"
+                className="font-semibold text-ink underline-offset-4 hover:underline"
+              >
+                Written and medically reviewed by the FMC Trichy clinical team
+              </Link>
             )}
             <span aria-hidden="true" className="hidden sm:inline">
               ·

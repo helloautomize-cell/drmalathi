@@ -16,11 +16,18 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { Section } from "@/components/shared/section";
 import { TrustSlots } from "@/components/shared/trust-slots";
 import { faqs } from "@/data/faqs";
+import { site } from "@/data/site";
 import { hasPublishedGuides } from "@/lib/guides";
-import { faqSchema, medicalClinicSchema } from "@/lib/schema";
+import {
+  faqNode,
+  medicalClinicNode,
+  pageGraph,
+  webPageNode,
+  webSiteNode,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Fetal Medicine Specialists in Trichy",
+  title: "Fetal Medicine Specialists in Trichy | FMC Trichy",
   description:
     "Specialist pregnancy scans, NIPT and genetic counselling in Trichy, performed or supervised by fetal medicine specialists. Book an appointment.",
   alternates: { canonical: "/" },
@@ -31,8 +38,14 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <JsonLd data={medicalClinicSchema()} />
-      <JsonLd data={faqSchema(faqs)} />
+      <JsonLd
+        data={pageGraph([
+          webSiteNode(),
+          webPageNode("/", "Fetal Medicine Specialists in Trichy", site.description),
+          medicalClinicNode(),
+          faqNode(faqs, "/"),
+        ])}
+      />
       <div className="flex flex-col md:contents">
         <Hero />
         <FirstsStrip />

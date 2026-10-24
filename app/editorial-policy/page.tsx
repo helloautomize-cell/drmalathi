@@ -6,9 +6,9 @@ import { site } from "@/data/site";
 import { legal, legalDateLabel } from "@/data/legal";
 
 export const metadata: Metadata = {
-  title: "Editorial Policy",
+  title: "Editorial Policy and Medical Review Process",
   description:
-    "How medical content on the Trichy Fetal Medicine and Fertility Centre website is written, reviewed and kept up to date.",
+    "How medical content on this website is written, reviewed and updated by the fetal medicine team at our Trichy centre.",
   alternates: { canonical: "/editorial-policy" },
   robots: { index: !legal.editorialPolicy.draftPendingReview },
 };

@@ -8,8 +8,8 @@ import QRCode from "qrcode";
  */
 // Development: codes point at the preview deployment until the production
 // domain is attached. The launch gate blocks a production deploy while this
-// still says drmalathi.vercel.app; switch to https://fmctrichy.com at launch.
-export const BOOKING_QR_ORIGIN = "https://drmalathi.vercel.app";
+// Public production origin for printed QR codes.
+export const BOOKING_QR_ORIGIN = "https://fmctrichy.com";
 export const BOOKING_QR_URL = `${BOOKING_QR_ORIGIN}/q/website`;
 
 export type QrSvg = { /** viewBox width/height in modules */ size: number; d: string };

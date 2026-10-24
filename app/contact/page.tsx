@@ -32,7 +32,7 @@ import { addDays, istDateString } from "@/lib/booking-schema";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Contact and Appointments",
+  title: "Contact and Appointments: Thillai Nagar, Trichy",
   description:
     "Book an appointment at Trichy Fetal Medicine and Fertility Centre, Thillai Nagar. Call, WhatsApp or request a callback. International line available.",
   alternates: { canonical: "/contact" },
