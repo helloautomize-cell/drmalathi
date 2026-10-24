@@ -13,7 +13,11 @@ import {
   getAllGuides,
   hasPublishedGuides,
 } from "@/lib/guides";
-import { breadcrumbSchema } from "@/lib/schema";
+import {
+  breadcrumbNode,
+  pageGraph,
+  webPageNode,
+} from "@/lib/schema";
 
 export function generateStaticParams() {
   const { pages } = getAllGuides();
@@ -33,6 +37,7 @@ export async function generateMetadata({
     description:
       "Clear, practical guides to pregnancy scans, screening tests and fetal medicine, written by the FMC Trichy team.",
     alternates: { canonical: `/guides/page/${n}` },
+    robots: { index: false },
   };
 }
 
@@ -53,10 +58,16 @@ export default async function GuidesPageN({
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema([
-          { label: "Home", href: "/" },
-          { label: "Patient guides", href: "/guides" },
-          { label: `Page ${page}`, href: `/guides/page/${page}` },
+        data={pageGraph([
+          webPageNode(
+            `/guides/page/${page}`,
+            `Patient Guides, page ${page}`
+          ),
+          breadcrumbNode([
+            { label: "Home", href: "/" },
+            { label: "Patient guides", href: "/guides" },
+            { label: `Page ${page}`, href: `/guides/page/${page}` },
+          ]),
         ])}
       />
       <Section surface="blush" className="pt-10 pb-20 md:pt-14">

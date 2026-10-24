@@ -15,7 +15,11 @@ import { StepsList } from "@/components/shared/steps-list";
 import { claimIsLive, type ClaimId } from "@/data/claims";
 import { doctors } from "@/data/doctors";
 import { advancedProcedures } from "@/data/procedures";
-import { breadcrumbSchema } from "@/lib/schema";
+import {
+  breadcrumbNode,
+  pageGraph,
+  webPageNode,
+} from "@/lib/schema";
 import { foundedYear } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -95,9 +99,12 @@ export default function AboutPage() {
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema([
-          { label: "Home", href: "/" },
-          { label: "About", href: "/about" },
+        data={pageGraph([
+          webPageNode("/about", metadata.title as string, metadata.description as string),
+          breadcrumbNode([
+            { label: "Home", href: "/" },
+            { label: "About", href: "/about" },
+          ]),
         ])}
       />
       <PageHero

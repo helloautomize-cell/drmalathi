@@ -70,8 +70,20 @@ export async function generateMetadata({
   const { slug } = await params;
   const service = services.find((s) => s.slug === slug);
   if (!service) return {};
+  const SEO_TITLES: Record<string, string> = {
+    "viability-scan": "Viability Scan in Trichy: Early Pregnancy Check",
+    "anomaly-scan": "Anomaly Scan in Trichy: TIFFA and 20-Week Check",
+    "growth-scan-doppler": "Growth Scan with Doppler: Third-Trimester Check",
+    "nipt": "NIPT in Trichy: Chromosomal Screening Test",
+    "fetal-echo": "Fetal Echo in Trichy: Baby's Heart Scan",
+    "fetal-neurosonogram": "Fetal Neurosonogram in Trichy (Brain Scan)",
+    "second-opinion-scan": "Second Opinion Scan in Trichy: Expert Review",
+    "genetic-counselling": "Genetic Counselling in Trichy: Pregnancy Risks",
+    "fetal-postmortem": "Fetal Postmortem in Trichy: Answers After Loss",
+    "twin-specialised-clinic": "Twin Specialised Clinic in Trichy: Monitoring",
+  };
   return {
-    title: `${service.name} in Trichy`,
+    title: SEO_TITLES[service.slug] ?? `${service.name} in Trichy`,
     description: service.seoDescription,
     alternates: { canonical: `/services/${service.slug}` },
     openGraph: { url: `${site.url}/services/${service.slug}` },

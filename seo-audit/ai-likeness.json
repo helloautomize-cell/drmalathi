@@ -1,0 +1,930 @@
+[
+  {
+    "slug": "pcos-and-pregnancy",
+    "score": 26,
+    "flags": [
+      "banned phrase: \"whether you're\"",
+      "no relatedService card"
+    ],
+    "worst": [
+      "The choice depends on whether you're ovulating, your age, your general health, how long you've been trying and what the other tests show.",
+      "Find out whether you're ovulating, check the basics for both partners, and get your health in good shape before pregnancy.",
+      "Go to a hospital or call your obstetrician straight away if you have heavy bleeding, severe abdominal pain, a bad headache with blurred vision, sudden swelling of the face or hands, or, later in pregnancy, your baby is m",
+      "That's usually why it takes longer, and it's also why treatment for PCOS-related infertility often works well once ovulation is back on track.",
+      "It's common to find more than one factor, which is why both partners get tested."
+    ]
+  },
+  {
+    "slug": "high-risk-pregnancy-fetal-medicine-specialist",
+    "score": 15,
+    "flags": [],
+    "worst": [
+      "It is not evidence that the baby is currently unwell.",
+      "That is why pregnancy care needs to be individualized rather than based simply on a list of diagnoses.",
+      "This is one reason it is useful to tell your obstetrician about significant problems from previous pregnancies, even if they occurred several years ago.",
+      "It is particularly important to distinguish a screening result from a diagnosis.",
+      "This is one of the most common misunderstandings about high-risk pregnancy."
+    ]
+  },
+  {
+    "slug": "recurrent-miscarriage-causes-tests-treatment",
+    "score": 25,
+    "flags": [
+      "banned phrase: \"that said\"",
+      "1/8 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "That said, repeated loss takes an emotional toll on both partners, and counselling or peer support is a genuine part of good care.",
+      "Below, we look at what doctors mean by recurrent miscarriage, the causes that are known, the tests that actually help (and a few that don't), treatment that has evidence behind it, and what to do before and during your n",
+      "This is the single most common reason for miscarriage.",
+      "That's a large part of why miscarriage risk climbs after the mid-thirties.",
+      "It's worth singling out because it can be treated."
+    ]
+  },
+  {
+    "slug": "fertility-testing-for-couples",
+    "score": 20,
+    "flags": [
+      "1/8 FAQ answers outside 40-60 words",
+      "no relatedService card"
+    ],
+    "worst": [
+      "It is easy for fertility testing to become focused almost entirely on the woman.",
+      "This is why a fertility consultation looks beyond the date of the last menstrual period.",
+      "It is not a complete fertility test.",
+      "It is tempting to treat an AMH result as a simple fertility score, but reproductive potential is more complicated than that.",
+      "It is usually performed using transvaginal ultrasound and is often assessed early in the menstrual cycle."
+    ]
+  },
+  {
+    "slug": "twin-pregnancy-scans-risks-monitoring",
+    "score": 17,
+    "flags": [
+      "1/8 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "In the UK, NICE recommends offering planned birth at 37 weeks for uncomplicated twins with separate placentas, at 36 weeks for uncomplicated twins sharing a placenta but in separate sacs, and between 32 and 33+6 weeks fo",
+      "Very early scans can sometimes miss the second baby, or show a second sac that doesn't continue to grow, so the number of babies and the type of twin pregnancy are normally confirmed on a scan done between about 11 and 1",
+      "It is simply a pregnancy with two babies.",
+      "That's why the picture is confirmed on a scan a few weeks later, somewhere between 11 and 14 weeks.",
+      "This is rare."
+    ]
+  },
+  {
+    "slug": "anomaly-scan-tiffa-scan-pregnancy",
+    "score": 17,
+    "flags": [
+      "1/8 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "It is usually carried out in the second trimester, when the baby has developed enough for many important anatomical structures to be examined in detail.",
+      "It is also commonly called the 20-week scan, anatomy scan, or TIFFA scan, although the exact terminology and scope can vary between centres.",
+      "This is one reason why a scan may occasionally need additional imaging even when there is no confirmed problem.",
+      "This is one of the most important limitations parents should understand.",
+      "It is important to understand that the word may refer to a finding that needs clarification rather than a confirmed diagnosis."
+    ]
+  },
+  {
+    "slug": "fetal-echocardiography-pregnancy",
+    "score": 15,
+    "flags": [],
+    "worst": [
+      "Here is what fetal echocardiography involves, when doctors may recommend it, what it can show and what parents can expect from the result.",
+      "This is an important reason for referral.",
+      "It is a risk marker, however, rather than a diagnosis.",
+      "It is one factor that may influence the decision to perform a more detailed fetal cardiac examination.",
+      "This is worth distinguishing from gestational diabetes."
+    ]
+  },
+  {
+    "slug": "growth-scan-doppler-pregnancy-fetal-growth-restriction",
+    "score": 21,
+    "flags": [
+      "3/8 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "It is a calculated estimate based on ultrasound measurements.",
+      "This is where the distinction between small for gestational age (SGA) and fetal growth restriction (FGR) becomes important.",
+      "This is one reason fetal growth monitoring needs to be individualized rather than based only on the estimated fetal weight.",
+      "This is particularly important when parents see a result on a report and try to interpret it without the surrounding clinical information.",
+      "This is particularly useful because growth velocity can provide information that a single measurement cannot."
+    ]
+  },
+  {
+    "slug": "nipt-in-pregnancy-test-accuracy-high-risk-result",
+    "score": 23,
+    "flags": [
+      "4/8 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "If you are considering NIPT, or have already received a result that you are unsure how to interpret, discussing it with a fetal medicine specialist can help you understand what the result means and what options are avail",
+      "It is particularly useful for screening for trisomy 21 (Down syndrome), trisomy 18 and trisomy 13.",
+      "It is performed using a maternal blood sample.",
+      "That is one reason NIPT has become an important option in prenatal screening.",
+      "This is one of the most important limitations to understand before having NIPT."
+    ]
+  },
+  {
+    "slug": "nt-scan-pregnancy-timing-normal-range-down-syndrome",
+    "score": 15,
+    "flags": [],
+    "worst": [
+      "This is not simply a matter of choosing any appointment during the first trimester.",
+      "That is why a scan performed too early or outside the appropriate fetal size range may not provide a standardized NT assessment.",
+      "This is one of the most searched questions about the test, but it does not have a single-number answer.",
+      "That is why an NT report should be discussed as a complete assessment rather than reduced to one number.",
+      "That is why the wording \"increased risk\" is more appropriate than assuming that an abnormality has already been found."
+    ]
+  },
+  {
+    "slug": "tiffa-scan-pregnancy-when-to-get",
+    "score": 29,
+    "flags": [
+      "'Final Thoughts' template heading",
+      "1/5 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "It is a detailed ultrasound of how the baby's organs and body have formed.",
+      "It is a detailed ultrasound done between 18 and 22 weeks to examine the baby's organs and body structures.",
+      "It is commonly offered to all women as part of antenatal care, and your obstetrician can tell you what suits your pregnancy."
+    ]
+  },
+  {
+    "slug": "anomaly-scan-vs-normal-pregnancy-ultrasound",
+    "score": 45,
+    "flags": [
+      "'Final Thoughts' template heading",
+      "banned phrase: \"genuinely\"",
+      "5/6 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "A normal report is genuinely reassuring, but ultrasound has limits.",
+      "Your obstetrician may suggest a fetal medicine assessment if you have a family history of a genetic or structural condition, are expecting twins, had an affected pregnancy before, received an unexpected screening result,",
+      "That is normal and usually just about getting a clear view.",
+      "It is a common request and rarely a sign that something is wrong.",
+      "It is generally recommended as part of antenatal care, but the decision is yours after talking to your doctor."
+    ]
+  },
+  {
+    "slug": "anomaly-scan-detect-all-birth-defects",
+    "score": 33,
+    "flags": [
+      "'Final Thoughts' template heading",
+      "3/5 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "That is a reassuring result and worth feeling relieved about.",
+      "This is why obstetricians avoid saying \"everything is normal\" and prefer \"nothing abnormal was seen.",
+      "It is usually reserved for pregnancies with a higher risk or a suspicious finding."
+    ]
+  },
+  {
+    "slug": "what-does-anomaly-scan-check",
+    "score": 35,
+    "flags": [
+      "'Final Thoughts' template heading",
+      "4/5 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "It is the longest and most detailed ultrasound of the pregnancy, and many parents go in knowing it matters without being sure what the sonographer is looking for.",
+      "This is the check aimed at neural tube defects such as spina bifida.",
+      "It is not.",
+      "That is where tests like NIPT or amniocentesis come in, and your doctor can say whether either is relevant to you."
+    ]
+  },
+  {
+    "slug": "anomaly-found-20-week-scan-what-happens",
+    "score": 45,
+    "flags": [
+      "'Final Thoughts' template heading",
+      "banned phrase: \"genuinely\"",
+      "5/5 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "The specialist concentrates on the area of concern and tries to settle four things: whether the finding is genuinely there, whether it stands alone or is part of a pattern, how significant it looks, and whether it could ",
+      "It is a screening test that estimates the chance of certain chromosomal conditions, so it cannot explain a structural finding seen on ultrasound."
+    ]
+  },
+  {
+    "slug": "get-pregnant-naturally-with-pcos",
+    "score": 52,
+    "flags": [
+      "Title Case H2: \"Why Does PCOS Make It Harder?\"",
+      "Title Case H2: \"What Improves Your Chances Naturally?\"",
+      "Title Case H2: \"When Do You Need Medical Help?\"",
+      "Title Case H2: \"Is Pregnancy With PCOS Safe?\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words",
+      "no relatedService card"
+    ],
+    "worst": [
+      "It is not usually the main fertility treatment."
+    ]
+  },
+  {
+    "slug": "how-pcos-affects-ovulation-fertility",
+    "score": 55,
+    "flags": [
+      "Title Case H2: \"What Happens in a Normal Cycle?\"",
+      "Title Case H2: \"What Changes in PCOS?\"",
+      "Title Case H2: \"What Signs Suggest PCOS Is Affecting Fertility?\"",
+      "Title Case H2: \"Does PCOS Affect Egg Quality?\"",
+      "Title Case H2: \"How Is Ovulation Restored?\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words",
+      "no relatedService card"
+    ],
+    "worst": []
+  },
+  {
+    "slug": "tests-for-pcos-related-infertility",
+    "score": 55,
+    "flags": [
+      "Title Case H2: \"Why Are Tests Needed?\"",
+      "Title Case H2: \"Which Tests Confirm PCOS?\"",
+      "Title Case H2: \"Which Tests Rule Out Other Causes?\"",
+      "Title Case H2: \"Which Tests Check Pregnancy Readiness?\"",
+      "Title Case H2: \"Do Tubes and Sperm Need Testing Too?\"",
+      "'Final Thoughts' template heading",
+      "5/6 FAQ answers outside 40-60 words",
+      "no relatedService card"
+    ],
+    "worst": []
+  },
+  {
+    "slug": "low-amh-vs-pcos-difference",
+    "score": 52,
+    "flags": [
+      "Title Case H2: \"What Is Low AMH?\"",
+      "Title Case H2: \"How Do They Compare?\"",
+      "Title Case H2: \"Can You Have Both?\"",
+      "Title Case H2: \"How Is Each Treated?\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words",
+      "no relatedService card"
+    ],
+    "worst": [
+      "It is more common after 35, but can also happen earlier because of genetics, ovarian surgery, endometriosis, smoking or chemotherapy.",
+      "It is uncommon, but possible.",
+      "This is why doctors read AMH along with age, scans and symptoms.",
+      "It is not usually needed often."
+    ]
+  },
+  {
+    "slug": "when-to-see-fertility-specialist-pcos",
+    "score": 55,
+    "flags": [
+      "Title Case H2: \"Why Not Just Wait?\"",
+      "Title Case H2: \"Signs You Should Go Sooner\"",
+      "Title Case H2: \"What Will the Specialist Do?\"",
+      "Title Case H2: \"Can a Gynaecologist Manage PCOS Fertility?\"",
+      "Title Case H2: \"How Can You Prepare for the Visit?\"",
+      "'Final Thoughts' template heading",
+      "5/6 FAQ answers outside 40-60 words",
+      "no relatedService card"
+    ],
+    "worst": [
+      "It is simply a way to make sure time is used well."
+    ]
+  },
+  {
+    "slug": "best-time-for-nt-scan-pregnancy",
+    "score": 37,
+    "flags": [
+      "'Final Thoughts' template heading",
+      "5/5 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "Here is when that window falls, how your dates are confirmed, and what to do if you are close to missing it."
+    ]
+  },
+  {
+    "slug": "high-nt-measurement-meaning",
+    "score": 35,
+    "flags": [
+      "'Final Thoughts' template heading",
+      "4/5 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "It is more accurate than NT alone but remains a screening test, so when the NT is markedly raised many doctors move directly to a diagnostic procedure."
+    ]
+  },
+  {
+    "slug": "nt-scan-vs-double-marker-test",
+    "score": 31,
+    "flags": [
+      "'Final Thoughts' template heading",
+      "2/5 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "This is a simple blood draw.",
+      "It is a different blood test from the double marker, not a replacement name for it."
+    ]
+  },
+  {
+    "slug": "nt-scan-detect-down-syndrome",
+    "score": 37,
+    "flags": [
+      "'Final Thoughts' template heading",
+      "5/5 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "That is a signal to talk through the options, and it says nothing yet about whether the baby is affected.",
+      "It is still a screening test, though, so a high-risk NIPT result normally calls for CVS or amniocentesis to confirm it."
+    ]
+  },
+  {
+    "slug": "what-happens-after-abnormal-nt-scan",
+    "score": 37,
+    "flags": [
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "It is a screening test, so the answer it gives is still a probability."
+    ]
+  },
+  {
+    "slug": "nipt-vs-nt-scan-vs-double-marker-test",
+    "score": 52,
+    "flags": [
+      "Title Case H2: \"What Is the Double Marker Test?\"",
+      "Title Case H2: \"How Do the Tests Compare?\"",
+      "Title Case H2: \"Why Is the NT Scan Still Important With NIPT?\"",
+      "Title Case H2: \"What Happens After a High-Risk Result?\"",
+      "Title Case H2: \"Which Test Is Right for You?\"",
+      "'Final Thoughts' template heading",
+      "5/5 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "It is usually done between about 9 and 13 weeks, often on the same visit as the NT scan, and the results are combined into one risk assessment."
+    ]
+  },
+  {
+    "slug": "what-does-high-risk-nipt-result-mean",
+    "score": 55,
+    "flags": [
+      "Title Case H2: \"Why Is NIPT Not a Diagnosis?\"",
+      "Title Case H2: \"What Is Positive Predictive Value?\"",
+      "Title Case H2: \"What Happens Next?\"",
+      "Title Case H2: \"Should Decisions Be Made on NIPT Alone?\"",
+      "Title Case H2: \"What About Low-Risk Results?\"",
+      "Title Case H2: \"How Can You Cope Emotionally?\"",
+      "'Final Thoughts' template heading",
+      "5/5 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "It is important to know that NIPT is a screening test and a high-risk result is not a diagnosis.",
+      "It is higher for Down syndrome than for rarer conditions and varies with maternal age and the baseline risk.",
+      "That is why high-risk results need confirmation."
+    ]
+  },
+  {
+    "slug": "can-nipt-detect-down-syndrome",
+    "score": 52,
+    "flags": [
+      "Title Case H2: \"How NIPT Works\"",
+      "Title Case H2: \"What NIPT Can Tell You\"",
+      "Title Case H2: \"What NIPT Cannot Tell You\"",
+      "Title Case H2: \"Who Should Consider NIPT\"",
+      "Title Case H2: \"What Happens After the Result\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "It is highly accurate for screening but is not a diagnostic test, so a high-risk result needs confirmation.",
+      "It is usually done from about 10 weeks of pregnancy onwards."
+    ]
+  },
+  {
+    "slug": "nipt-in-twin-pregnancy-reliability",
+    "score": 55,
+    "flags": [
+      "Title Case H2: \"Why Is NIPT More Complex in Twins?\"",
+      "Title Case H2: \"How Reliable Is NIPT in Twins?\"",
+      "Title Case H2: \"Does Chorionicity Matter?\"",
+      "Title Case H2: \"What About IVF Twins?\"",
+      "Title Case H2: \"Why Is the NT Scan Still Important?\"",
+      "Title Case H2: \"What Happens After a High-Risk Result?\"",
+      "'Final Thoughts' template heading",
+      "5/5 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "It is strongly recommended in twin pregnancies."
+    ]
+  },
+  {
+    "slug": "what-happens-after-positive-nipt-result",
+    "score": 52,
+    "flags": [
+      "Title Case H2: \"First, Take a Breath\"",
+      "Title Case H2: \"Step 1: Counselling With Your Doctor\"",
+      "Title Case H2: \"Step 2: A Detailed Ultrasound\"",
+      "Title Case H2: \"Step 3: A Diagnostic Test\"",
+      "Title Case H2: \"Step 4: Understanding the Final Result\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "This is the time to ask every question you have.",
+      "It is best to wait for the diagnostic result and discuss it with your doctor.",
+      "It helps to remember that NIPT is a screening test."
+    ]
+  },
+  {
+    "slug": "what-is-fetal-echo-and-when-is-it-done",
+    "score": 49,
+    "flags": [
+      "Title Case H2: \"How a Fetal Echo Differs From a Routine Scan\"",
+      "Title Case H2: \"Who May Need a Fetal Echo\"",
+      "Title Case H2: \"What Happens During the Test\"",
+      "Title Case H2: \"What Do the Results Mean?\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "It is painless and safe for mother and baby.",
+      "It is advised when there are risk factors or a scan finding."
+    ]
+  },
+  {
+    "slug": "why-doctor-recommends-fetal-echocardiogram",
+    "score": 49,
+    "flags": [
+      "Title Case H2: \"Why Do Heart Defects Matter?\"",
+      "Title Case H2: \"What Are the Common Reasons for Referral?\"",
+      "Title Case H2: \"When Is a Fetal Echo Done?\"",
+      "Title Case H2: \"What Should You Expect?\"",
+      "'Final Thoughts' template heading",
+      "5/5 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "It is commonly done between about 18 and 24 weeks, when heart structures are easier to see.",
+      "It is safe and non-invasive.",
+      "It is usually performed between about 18 and 24 weeks.",
+      "It is a non-invasive ultrasound with no radiation and is considered safe when performed by trained specialists."
+    ]
+  },
+  {
+    "slug": "fetal-echo-vs-anomaly-scan-difference",
+    "score": 52,
+    "flags": [
+      "Title Case H2: \"What Does the Anomaly Scan Check?\"",
+      "Title Case H2: \"What Does a Fetal Echo Check?\"",
+      "Title Case H2: \"How Do They Compare?\"",
+      "Title Case H2: \"Can the Anomaly Scan Detect Heart Defects?\"",
+      "Title Case H2: \"When Do You Need Both?\"",
+      "'Final Thoughts' template heading",
+      "5/5 FAQ answers outside 40-60 words"
+    ],
+    "worst": []
+  },
+  {
+    "slug": "can-fetal-echo-detect-heart-defects",
+    "score": 49,
+    "flags": [
+      "Title Case H2: \"What Can a Fetal Echo Detect?\"",
+      "Title Case H2: \"What May Be Missed?\"",
+      "Title Case H2: \"What Affects Accuracy?\"",
+      "Title Case H2: \"What Happens If a Defect Is Found?\"",
+      "'Final Thoughts' template heading",
+      "5/5 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "It is the best prenatal test for examining the heart's structure and function."
+    ]
+  },
+  {
+    "slug": "fetal-echo-shows-heart-abnormality-next-steps",
+    "score": 58,
+    "flags": [
+      "Title Case H2: \"How Is the Finding Explained?\"",
+      "Title Case H2: \"Is Genetic Testing Recommended?\"",
+      "Title Case H2: \"Are Other Scans Needed?\"",
+      "Title Case H2: \"How Is Delivery Planned?\"",
+      "Title Case H2: \"What Happens After Birth?\"",
+      "Title Case H2: \"What Choices Do Parents Have?\"",
+      "Title Case H2: \"How Can Families Cope?\"",
+      "'Final Thoughts' template heading",
+      "5/5 FAQ answers outside 40-60 words"
+    ],
+    "worst": []
+  },
+  {
+    "slug": "what-is-a-growth-scan-and-when-is-it-done",
+    "score": 46,
+    "flags": [
+      "Title Case H2: \"What a Growth Scan Measures\"",
+      "Title Case H2: \"Who May Need a Growth Scan\"",
+      "Title Case H2: \"How to Understand the Report\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "It is an estimate and can differ from the birth weight, so repeat scans and trends help."
+    ]
+  },
+  {
+    "slug": "why-doppler-scan-during-pregnancy",
+    "score": 52,
+    "flags": [
+      "Title Case H2: \"How Does Doppler Ultrasound Work?\"",
+      "Title Case H2: \"Which Blood Vessels Are Checked?\"",
+      "Title Case H2: \"Why Might Your Doctor Recommend a Doppler Scan?\"",
+      "Title Case H2: \"What Do Results Mean?\"",
+      "Title Case H2: \"How Do Results Guide Care?\"",
+      "'Final Thoughts' template heading",
+      "5/5 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "It is one of the most useful tools in high-risk pregnancy care.",
+      "It is commonly recommended when the baby is small, the mother has high blood pressure or diabetes, in twin pregnancies, with reduced movements or with previous pregnancy complications."
+    ]
+  },
+  {
+    "slug": "what-does-it-mean-if-baby-is-measuring-small",
+    "score": 49,
+    "flags": [
+      "Title Case H2: \"Fetal Growth Restriction (FGR)\"",
+      "Title Case H2: \"How Doctors Tell the Difference\"",
+      "Title Case H2: \"What Can Be Done\"",
+      "Title Case H2: \"When to Call Your Doctor\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words"
+    ],
+    "worst": []
+  },
+  {
+    "slug": "fetal-growth-restriction-causes-monitoring-treatment",
+    "score": 55,
+    "flags": [
+      "Title Case H2: \"What Is the Difference Between Small and Growth Restricted?\"",
+      "Title Case H2: \"What Causes FGR?\"",
+      "Title Case H2: \"How Is FGR Diagnosed?\"",
+      "Title Case H2: \"How Is FGR Monitored?\"",
+      "Title Case H2: \"What Treatment Is Available?\"",
+      "Title Case H2: \"How Is Delivery Timing Decided?\"",
+      "'Final Thoughts' template heading",
+      "5/5 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "It is different from a baby who is simply small but healthy."
+    ]
+  },
+  {
+    "slug": "how-often-growth-scans-high-risk-pregnancy",
+    "score": 49,
+    "flags": [
+      "Title Case H2: \"Why Repeat Scans Are Needed\"",
+      "Title Case H2: \"Common Situations and Typical Approaches\"",
+      "Title Case H2: \"What Else Is Checked\"",
+      "Title Case H2: \"What You Can Do\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "It is added when there is a growth or blood flow concern."
+    ]
+  },
+  {
+    "slug": "what-makes-a-pregnancy-high-risk",
+    "score": 55,
+    "flags": [
+      "Title Case H2: \"Reasons Related to the Mother\"",
+      "Title Case H2: \"Reasons From Past Pregnancies\"",
+      "Title Case H2: \"Reasons in the Current Pregnancy\"",
+      "Title Case H2: \"What Extra Care Looks Like\"",
+      "Title Case H2: \"What You Can Do\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words",
+      "no relatedService card"
+    ],
+    "worst": []
+  },
+  {
+    "slug": "when-to-see-a-fetal-medicine-specialist",
+    "score": 49,
+    "flags": [
+      "Title Case H2: \"What Does a Fetal Medicine Specialist Do?\"",
+      "Title Case H2: \"Situations Where a Visit Is Helpful\"",
+      "Title Case H2: \"Key Scans Often Done by Fetal Medicine Specialists\"",
+      "Title Case H2: \"What to Bring to the Visit\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "That is good news, and you continue routine care."
+    ]
+  },
+  {
+    "slug": "high-risk-pregnancy-extra-scans-and-tests",
+    "score": 46,
+    "flags": [
+      "Title Case H2: \"Extra Blood and Other Tests\"",
+      "Title Case H2: \"Tips for Going Through Extra Tests\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words",
+      "no relatedService card"
+    ],
+    "worst": []
+  },
+  {
+    "slug": "pregnancy-after-ivf-extra-monitoring",
+    "score": 58,
+    "flags": [
+      "Title Case H2: \"Why Might IVF Pregnancies Need More Monitoring?\"",
+      "Title Case H2: \"What Early Scans Are Done?\"",
+      "Title Case H2: \"Which Screening Tests Are Recommended?\"",
+      "Title Case H2: \"What Monitoring Happens Later in Pregnancy?\"",
+      "Title Case H2: \"How Are IVF Twins Monitored?\"",
+      "Title Case H2: \"When Should You Seek Urgent Help?\"",
+      "'Final Thoughts' template heading",
+      "5/5 FAQ answers outside 40-60 words",
+      "no relatedService card"
+    ],
+    "worst": []
+  },
+  {
+    "slug": "diabetes-and-pregnancy-baby-extra-monitoring",
+    "score": 58,
+    "flags": [
+      "Title Case H2: \"Which Types of Diabetes Need Extra Monitoring?\"",
+      "Title Case H2: \"How Can Diabetes Affect the Baby?\"",
+      "Title Case H2: \"What Scans and Checks Are Used?\"",
+      "Title Case H2: \"How Does Good Sugar Control Help?\"",
+      "Title Case H2: \"When Should Delivery Be Planned?\"",
+      "Title Case H2: \"What Happens After Birth?\"",
+      "Title Case H2: \"When Should You Call Your Doctor?\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words"
+    ],
+    "worst": []
+  },
+  {
+    "slug": "how-many-miscarriages-recurrent-pregnancy-loss",
+    "score": 61,
+    "flags": [
+      "Title Case H2: \"How Common Is Miscarriage?\"",
+      "Title Case H2: \"How Do Guidelines Define It?\"",
+      "Title Case H2: \"Does the Number Need to Be Consecutive?\"",
+      "Title Case H2: \"Which Losses Count?\"",
+      "Title Case H2: \"When Should You See a Doctor?\"",
+      "Title Case H2: \"What Happens at the First Visit?\"",
+      "Title Case H2: \"What Should You Avoid Believing?\"",
+      "Title Case H2: \"Looking After Your Emotional Health\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "This is not caused by something the mother did, such as lifting, travel, stress or an emotional upset."
+    ]
+  },
+  {
+    "slug": "tests-after-repeated-miscarriages",
+    "score": 58,
+    "flags": [
+      "Title Case H2: \"Why Is Testing Done?\"",
+      "Title Case H2: \"What Tests Are Recommended?\"",
+      "Title Case H2: \"Which Tests Are Not Routinely Recommended?\"",
+      "Title Case H2: \"How Are Results Used?\"",
+      "Title Case H2: \"What Is the Best Time to Test?\"",
+      "Title Case H2: \"What Should You Bring?\"",
+      "Title Case H2: \"When Should You See a Doctor?\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "Here is what is usually tested and why.",
+      "It is advised when other tests suggest a uterine problem or when the cause is unclear."
+    ]
+  },
+  {
+    "slug": "can-genetic-problems-cause-recurrent-miscarriage",
+    "score": 61,
+    "flags": [
+      "Title Case H2: \"How Do Chromosomes Cause Miscarriage?\"",
+      "Title Case H2: \"Two Types of Genetic Causes\"",
+      "Title Case H2: \"Which Tests Help?\"",
+      "Title Case H2: \"What Happens If a Rearrangement Is Found?\"",
+      "Title Case H2: \"Does Genetic Testing of Embryos Prevent Miscarriage?\"",
+      "Title Case H2: \"Do Genes Cause All Miscarriages?\"",
+      "Title Case H2: \"What Can You Do Now?\"",
+      "Title Case H2: \"When Should You See a Doctor?\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "It is more likely in couples with three or more losses, or with a family history of miscarriage, stillbirth or children with birth defects.",
+      "It is not routinely advised for all couples, but may be considered after repeated losses, particularly if tissue testing shows an unbalanced rearrangement.",
+      "It is more likely with three or more losses or relevant family history.",
+      "It is considered after repeated losses, especially if tissue testing shows an unbalanced rearrangement, or if there is a family history."
+    ]
+  },
+  {
+    "slug": "before-trying-to-conceive-after-miscarriage",
+    "score": 58,
+    "flags": [
+      "Title Case H2: \"How Long Should You Wait?\"",
+      "Title Case H2: \"What Medical Checks Are Useful?\"",
+      "Title Case H2: \"Which Supplements Help?\"",
+      "Title Case H2: \"Which Lifestyle Steps Matter?\"",
+      "Title Case H2: \"What About Intercourse and Tracking?\"",
+      "Title Case H2: \"When Should You See a Specialist First?\"",
+      "Title Case H2: \"What Should You Expect in the Next Pregnancy?\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "It is normal to feel anxious.",
+      "It is best to avoid alcohol and keep caffeine below about 200 mg a day when trying to conceive."
+    ]
+  },
+  {
+    "slug": "pregnancy-after-recurrent-miscarriage-monitoring",
+    "score": 55,
+    "flags": [
+      "Title Case H2: \"What Happens in the Early Weeks?\"",
+      "Title Case H2: \"What Scans Come Later?\"",
+      "Title Case H2: \"What About Bed Rest?\"",
+      "Title Case H2: \"What Should You Do If You Have Bleeding or Pain?\"",
+      "Title Case H2: \"How Can You Look After Your Mind?\"",
+      "Title Case H2: \"When Should You See a Doctor?\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "It is not needed by everyone.",
+      "Share your feelings with a trusted person.",
+      "Remember that anxiety does not cause miscarriage."
+    ]
+  },
+  {
+    "slug": "when-can-twins-be-detected-on-ultrasound",
+    "score": 58,
+    "flags": [
+      "Title Case H2: \"How Early Can You See Twins?\"",
+      "Title Case H2: \"Can a Twin Be Missed?\"",
+      "Title Case H2: \"What Is the \"Vanishing Twin\"?\"",
+      "Title Case H2: \"Why Are the First Scans So Important?\"",
+      "Title Case H2: \"What Are the Signs That Suggest Twins?\"",
+      "Title Case H2: \"What Happens After Twins Are Confirmed?\"",
+      "Title Case H2: \"When Should You See a Doctor?\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "Here is a clear guide.",
+      "This is when many twin pregnancies are first confirmed.",
+      "This is the best time to determine whether the twins are monochorionic (sharing a placenta) or dichorionic (separate placentas).",
+      "It is when one of two early embryos stops developing and is absorbed.",
+      "It is seen in some early twin pregnancies, and the remaining baby usually develops normally."
+    ]
+  },
+  {
+    "slug": "how-often-scans-twin-pregnancy",
+    "score": 55,
+    "flags": [
+      "Title Case H2: \"Why Are More Scans Needed?\"",
+      "Title Case H2: \"What Is the Usual Schedule?\"",
+      "Title Case H2: \"What Does Each Scan Check?\"",
+      "Title Case H2: \"What Else Is Needed Besides Scans?\"",
+      "Title Case H2: \"What Symptoms Need Urgent Review?\"",
+      "Title Case H2: \"When Is Delivery Planned?\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words"
+    ],
+    "worst": []
+  },
+  {
+    "slug": "chorionicity-twin-pregnancy-why-it-matters",
+    "score": 48,
+    "flags": [
+      "Title Case H2: \"What Does Chorionicity Mean?\"",
+      "Title Case H2: \"How Is Chorionicity Different From Zygosity?\"",
+      "Title Case H2: \"How Do Doctors Find Out?\"",
+      "Title Case H2: \"Why Does Chorionicity Matter?\"",
+      "Title Case H2: \"What Does This Mean for Your Care in Trichy?\"",
+      "'Final Thoughts' template heading",
+      "3/6 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "That is why an early scan with an experienced sonologist is so valuable."
+    ]
+  },
+  {
+    "slug": "monochorionic-vs-dichorionic-twins",
+    "score": 43,
+    "flags": [
+      "Title Case H2: \"Extra Risks in Monochorionic Twins\"",
+      "Title Case H2: \"How Care Differs\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "It is best determined by ultrasound in the first trimester, between about 11 and 14 weeks, when it is most accurate.",
+      "It is the most accurate time to determine chorionicity."
+    ]
+  },
+  {
+    "slug": "twin-pregnancy-complications-doctors-look-for",
+    "score": 49,
+    "flags": [
+      "Title Case H2: \"Why Do Twins Need Extra Monitoring?\"",
+      "Title Case H2: \"What Are the Common Complications?\"",
+      "Title Case H2: \"Which Warning Signs Need Urgent Attention?\"",
+      "Title Case H2: \"How Can You Lower Your Risk?\"",
+      "'Final Thoughts' template heading",
+      "5/6 FAQ answers outside 40-60 words"
+    ],
+    "worst": [
+      "This is why regular monitoring is advised."
+    ]
+  },
+  {
+    "slug": "fertility-tests-for-women-before-treatment",
+    "score": 52,
+    "flags": [
+      "Title Case H2: \"When Should You Start Testing?\"",
+      "Title Case H2: \"Which Tests Are Done First?\"",
+      "Title Case H2: \"How Do You Prepare?\"",
+      "Title Case H2: \"What Do Results Mean?\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words",
+      "no relatedService card"
+    ],
+    "worst": []
+  },
+  {
+    "slug": "male-fertility-tests-semen-analysis",
+    "score": 55,
+    "flags": [
+      "Title Case H2: \"Why Should the Man Be Tested?\"",
+      "Title Case H2: \"What Is Semen Analysis?\"",
+      "Title Case H2: \"How Do You Prepare for It?\"",
+      "Title Case H2: \"What Other Tests May Be Needed?\"",
+      "Title Case H2: \"What Can Affect Sperm Health?\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words",
+      "no relatedService card"
+    ],
+    "worst": [
+      "It is a laboratory test of a semen sample.",
+      "It is a swelling of veins in the scrotum, similar to varicose veins.",
+      "It is common and can reduce sperm quality in some men."
+    ]
+  },
+  {
+    "slug": "what-is-amh-fertility-test",
+    "score": 61,
+    "flags": [
+      "Title Case H2: \"What Does AMH Measure?\"",
+      "Title Case H2: \"When Is the AMH Test Done?\"",
+      "Title Case H2: \"What Does a Low AMH Mean?\"",
+      "Title Case H2: \"What Does a High AMH Mean?\"",
+      "Title Case H2: \"What AMH Cannot Tell You\"",
+      "Title Case H2: \"What Else Is Checked Along With AMH?\"",
+      "Title Case H2: \"Can You Improve Your AMH?\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words",
+      "no relatedService card"
+    ],
+    "worst": [
+      "It is commonly seen in PCOS.",
+      "This is why doctors never decide treatment on AMH alone."
+    ]
+  },
+  {
+    "slug": "follicular-monitoring-ovulation-scan",
+    "score": 55,
+    "flags": [
+      "Title Case H2: \"How Is Follicular Monitoring Done?\"",
+      "Title Case H2: \"Who Benefits From It?\"",
+      "Title Case H2: \"How Does It Help You Conceive?\"",
+      "Title Case H2: \"Can a Trigger Injection Be Used?\"",
+      "Title Case H2: \"Is It Better Than Ovulation Kits?\"",
+      "'Final Thoughts' template heading",
+      "6/6 FAQ answers outside 40-60 words",
+      "no relatedService card"
+    ],
+    "worst": [
+      "It is quick and usually painless.",
+      "It is simple, safe and very useful for couples who want to understand their cycle."
+    ]
+  },
+  {
+    "slug": "how-to-know-when-you-are-ovulating",
+    "score": 52,
+    "flags": [
+      "Title Case H2: \"When Does Ovulation Happen?\"",
+      "Title Case H2: \"What Are the Body Signs of Ovulation?\"",
+      "Title Case H2: \"Which Tests Can Confirm Ovulation?\"",
+      "Title Case H2: \"When Is Home Tracking Not Enough?\"",
+      "'Final Thoughts' template heading",
+      "5/6 FAQ answers outside 40-60 words",
+      "no relatedService card"
+    ],
+    "worst": [
+      "It is uncommon but possible, for example after stopping the pill or while breastfeeding, when ovulation returns before the first period."
+    ]
+  }
+]

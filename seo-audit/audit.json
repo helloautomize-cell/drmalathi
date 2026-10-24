@@ -2,269 +2,241 @@
   "audit": {
     "site": "Trichy Fetal Medicine and Fertility Centre",
     "domain": "https://fmctrichy.com",
-    "repo": "E:\\Automize\\ivf (Next.js 16.3.7)",
+    "repo": "E:\\Automize\\ivf (Next.js 16.3.7, Turbopack)",
     "date": "2026-10-24",
-    "method": "INDEXABLE=1 production build + next start on localhost:3101; raw-HTML fetch with bot user agents via Host header; source review; Lighthouse mobile lab",
-    "note": "fmctrichy.com still serves the old LiteSpeed site; this audit covers the new Next.js build",
+    "method": "INDEXABLE=1 production build + next start on localhost:3101; all 93 sitemap URLs + 9 extras fetched raw with Googlebot/GPTBot/ClaudeBot/PerplexityBot UAs (seo-audit/crawl.mjs); source review; live-domain verification",
+    "deployment": "Next.js build is LIVE on fmctrichy.com; previous audit audited pre-deploy",
+    "supersedes": "Previous audit (score 66) covered 10 guides; this covers the post-PR#4 state with 60 guides",
     "scores": {
-      "overall": 66,
-      "crawlingAiBotAccess": 88,
-      "technical": 70,
-      "schema": 56,
-      "eeat": 42,
-      "pillarLinking": 45,
-      "faqs": 64,
-      "entitiesSemantics": 58,
-      "keywords": 66,
-      "contentHumanness": 78,
-      "aeoGeoReadiness": 68
+      "overall": 70,
+      "crawlingAiBotAccess": 92,
+      "technical": 74,
+      "schema": 74,
+      "eeat": 48,
+      "pillarLinking": 78,
+      "faqs": 58,
+      "entitiesSemantics": 66,
+      "keywords": 70,
+      "contentHumanness": 62,
+      "aeoGeoReadiness": 74
+    },
+    "checklistFails": [4, 28, 38, 42, 57],
+    "checklistPartials": [6, 13, 15, 17, 19, 21, 22, 23, 26, 27, 29, 33, 46, 49, 50, 51, 53, 56, 58],
+    "aiLikeness": {
+      "file": "seo-audit/ai-likeness.json",
+      "average": 45,
+      "pillarsAvg": "~20",
+      "newBatchAvg": "~50",
+      "worst": ["how-many-miscarriages-recurrent-pregnancy-loss", "can-genetic-problems-cause-recurrent-miscarriage", "what-is-amh-fertility-test"]
     }
   },
   "issues": [
     {
-      "id": "ISS-001",
-      "priority": "P0",
-      "area": "crawling",
-      "title": "Whole-site indexing silently depends on build-time env (VERCEL_ENV/INDEXABLE)",
-      "pages": ["*"],
-      "evidence": "app/layout.tsx:39-44 (robots meta), app/robots.ts:4-5 (rules), proxy.ts:10-20 (host gate). Verified: default local next start serves 'User-Agent: *\\nDisallow: /' and meta robots noindex,nofollow on every page.",
-      "fix": "Add a deploy-time check asserting /robots.txt allows and a page emits index,follow on the production host; document INDEXABLE=1 for non-Vercel hosts in LAUNCH-CHECKLIST.md."
-    },
-    {
-      "id": "ISS-002",
-      "priority": "P0",
-      "area": "eeat",
-      "title": "Consent-pending patient quotes hardcoded on home page bypass the consentOnFile gate",
-      "pages": ["/"],
-      "evidence": "components/home/why-choose-us.tsx:16,22 hardcodes quotes attributed to 'Manisha' and 'Deva'; data/testimonials.ts marks both consentOnFile: null (pending). Verified in production-mode HTML.",
-      "fix": "Drive proof-card quotes from data/testimonials.ts through the same consent gate, or remove the quotes until written consent is on file."
-    },
-    {
-      "id": "ISS-101",
-      "priority": "P1",
-      "area": "eeat",
-      "title": "No named author or medical reviewer rendered on any guide",
-      "pages": ["/guides/* (all 10)"],
-      "evidence": "Byline renders only 'Written by the FMC Trichy clinical team' (unlinked) — app/guides/[slug]/page.tsx:263-265. reviewedBy unset on all guides — data/guides.ts comment; reviewer branch at page.tsx:104-107 never executes.",
-      "fix": "Set reviewedBy (and optionally an author field) to a doctor slug per guide after the doctors confirm review ownership; the byline, reviewer card and MedicalWebPage schema then activate automatically."
-    },
-    {
-      "id": "ISS-102",
-      "priority": "P1",
-      "area": "eeat",
-      "title": "Doctor profiles lack registration number, memberships, languages, experience year, detailed quals; no articles list",
-      "pages": ["/doctors/dr-malathi-g-prasad", "/doctors/dr-revathy-chandrasekharan", "/doctors"],
-      "evidence": "data/doctors.ts: registration null, memberships [], languages [], experienceSinceYear null, qualificationsDetailed []; no 'articles by this doctor' section in app/doctors/[slug]/page.tsx. Dr Nivethitha has no profile (hasProfile:false) but appears in listings and clinic schema.",
-      "fix": "Fill typed-null fields from client data; add 'Articles reviewed by Dr X' section querying guides by reviewedBy; decide Nivethitha profile vs listing."
-    },
-    {
-      "id": "ISS-103",
-      "priority": "P1",
-      "area": "pillar",
-      "title": "No pillar/cluster architecture — flat guide list only",
-      "pages": ["/guides/*", "/guides/category/*"],
-      "evidence": "10 guides across 5 categories; category pages are card grids (app/guides/category/[slug]/page.tsx); no pillar content page exists; pregnancy-health category empty.",
-      "fix": "Promote category pages into real pillar content (intro sections + links to every cluster guide + related services) or create pillar guides; see cluster table in AUDIT_REPORT.md."
-    },
-    {
-      "id": "ISS-104",
-      "priority": "P1",
-      "area": "schema",
-      "title": "Schema emitted as disconnected scripts; Article used instead of MedicalWebPage; about/author point to the clinic",
-      "pages": ["*"],
-      "evidence": "Separate JsonLd scripts per page (16 on home), no @graph, no WebSite node. app/guides/[slug]/page.tsx:146-156: Article with author=clinicRef, about=clinicRef; MedicalWebPage branch dead (no reviewedBy).",
-      "fix": "Single @graph per page: MedicalClinic#clinic, WebSite#website, WebPage/MedicalWebPage, BreadcrumbList, FAQPage linked by @id; about=MedicalCondition/MedicalProcedure node; author/reviewedBy=Person."
-    },
-    {
-      "id": "ISS-105",
-      "priority": "P1",
-      "area": "eeat",
-      "title": "Trust pages noindex + draft copy; Editorial Policy not footer-linked; no Medical Disclaimer page",
-      "pages": ["/privacy", "/terms", "/editorial-policy", "/accessibility", "footer"],
-      "evidence": "data/legal.ts draftPendingReview:true for all four; footer links only Privacy+Terms (components/site/site-footer.tsx:225-226); editorial-policy page renders 'This is a draft pending legal and client review'.",
-      "fix": "Complete counsel review, flip draftPendingReview flags, link Editorial Policy and a Medical Disclaimer page from the footer."
-    },
-    {
-      "id": "ISS-106",
-      "priority": "P1",
-      "area": "technical",
-      "title": "Mobile LCP 3.7-4.6s in Lighthouse lab on all 4 page types",
-      "pages": ["/", "/guides/anomaly-scan-tiffa-scan-pregnancy", "/services/anomaly-scan", "/doctors/dr-malathi-g-prasad"],
-      "evidence": "lh-*.json: LCP home 4.6s, guide 4.3s, service 4.5s, doctor 3.7s; TBT 90-280ms; CLS 0; perf 81-84; ~23KB unused JS.",
-      "fix": "Re-measure on real CDN host; compress/resize hero image, verify sizes attr, reduce client JS on critical path."
-    },
-    {
-      "id": "ISS-107",
-      "priority": "P1",
-      "area": "technical",
-      "title": "Printed QR links still point to drmalathi.vercel.app",
-      "pages": ["lib/qr-svg.ts:12", "scripts/generate-qr.mjs:17", "/q/*"],
-      "evidence": "BOOKING_QR_ORIGIN = 'https://drmalathi.vercel.app'.",
-      "fix": "Switch base to https://fmctrichy.com and regenerate QR assets."
-    },
-    {
-      "id": "ISS-108",
-      "priority": "P1",
-      "area": "crawling",
-      "title": "Live domain still serves old LiteSpeed site; robots.txt 404s; http/https/www diverge",
-      "pages": ["fmctrichy.com"],
-      "evidence": "curl: https apex 200 (40KB old template), www 200 (534KB different page), http 200 no redirect, /robots.txt LiteSpeed 404.",
-      "fix": "Deployment: cut DNS to the Next.js app, 301 http->https and www->apex, verify robots+sitemap on canonical host."
-    },
-    {
       "id": "ISS-201",
-      "priority": "P2",
-      "area": "technical",
-      "title": "Titles under 50 chars on most pages; ~8 meta descriptions outside 140-160",
-      "pages": ["sitewide; worst: /gallery (20), /doctors (24), /terms (25), NIPT guide (30)", "desc: /accessibility 99, /editorial-policy 119, /guides/category/* 120-122, pcos 165, fetal-echo 169, twin-pregnancy 177"],
-      "evidence": "Title/description length audit of all fetched pages.",
-      "fix": "Expand titles toward 'Primary keyword — qualifier | FMC Trichy'; re-range out-of-bounds descriptions in seoDescription fields."
+      "priority": "P1",
+      "area": "crawling",
+      "checklist": [4],
+      "title": "Sitemap lists /privacy and /terms which render meta noindex",
+      "pages": ["/privacy", "/terms", "app/sitemap.ts"],
+      "evidence": "<loc>https://fmctrichy.com/privacy</loc> present in sitemap.xml while the page HTML emits <meta name=\"robots\" content=\"noindex\"> (legal.draftPendingReview gates noindex but the static route list adds /privacy and /terms unconditionally).",
+      "fix": "Exclude noindex routes from app/sitemap.ts staticRoutes, or remove noindex once counsel signs off the copy."
     },
     {
       "id": "ISS-202",
-      "priority": "P2",
-      "area": "faqs",
-      "title": "Service pages carry only 2-3 FAQs (target 4-8)",
-      "pages": ["10 of 13 /services/*"],
-      "evidence": "data/services.ts faq arrays: fetal-echo 2, fetal-neurosonogram 2, second-opinion 2, first-trimester 3, growth 3, nipt 3, genetic-counselling 3, fetal-postmortem 3, recurrent-miscarriages 3, twin-clinic 3.",
-      "fix": "Add unique real-patient FAQs per service with 40-60-word direct answers."
+      "priority": "P1",
+      "area": "eeat",
+      "checklist": [27, 28],
+      "title": "No named author/reviewer on any of 60 medical articles",
+      "pages": ["all /guides/* (60)"],
+      "evidence": "Byline renders 'Written and medically reviewed by the FMC Trichy clinical team' linking only to /doctors (app/guides/[slug]/page.tsx:253-266). reviewedBy unset on 60/60 guides in data/guides-blogs.ts while reviewStatus:'reviewed' + reviewedAt are set on all — site claims review without naming a reviewer.",
+      "fix": "Set reviewedBy to a doctor slug per guide after doctors confirm review ownership (client item). Named byline, reviewer card, doctor link and reviewedBy:Person schema activate automatically."
     },
     {
       "id": "ISS-203",
-      "priority": "P2",
-      "area": "faqs",
-      "title": "Guide FAQ answers below 40-60-word target; NIPT guide lacks quickAnswer",
-      "pages": ["/guides/anomaly-scan-tiffa-scan-pregnancy (27-42w)", "/guides/growth-scan-doppler-... (18-34w)", "/guides/nipt-... (10-32w)"],
-      "evidence": "Word-count audit of data/guides-blogs.ts.",
-      "fix": "Expand thin answers; add quickAnswer to the NIPT guide."
+      "priority": "P1",
+      "area": "pillarLinking",
+      "checklist": [38],
+      "title": "Zero in-body links to /services/* and /doctors/* across all 60 guides",
+      "pages": ["all /guides/* (60)"],
+      "evidence": "Programmatic scan of data/guides-blogs.ts content blocks: 0 links to /services/ and 0 to /doctors/; the only service link is the relatedService end-card present on 45/60 guides (missing on 15).",
+      "fix": "Add contextual in-copy service links and doctor links; fill relatedService on the 15 missing guides: pcos-and-pregnancy, fertility-testing-for-couples, get-pregnant-naturally-with-pcos, how-pcos-affects-ovulation-fertility, tests-for-pcos-related-infertility, low-amh-vs-pcos-difference, when-to-see-fertility-specialist-pcos, what-makes-a-pregnancy-high-risk, high-risk-pregnancy-extra-scans-and-tests, pregnancy-after-ivf-extra-monitoring, fertility-tests-for-women-before-treatment, male-fertility-tests-semen-analysis, what-is-amh-fertility-test, follicular-monitoring-ovulation-scan, how-to-know-when-you-are-ovulating."
     },
     {
       "id": "ISS-204",
-      "priority": "P2",
-      "area": "eeat",
-      "title": "7 of 10 guides cite zero authoritative sources",
-      "pages": ["pcos", "high-risk", "recurrent-miscarriage", "fertility-testing", "fetal-echo", "growth-scan", "nt-scan"],
-      "evidence": "sources: present only on anomaly (5: ISUOG/SMFM/NHS), twin (2), nipt (2).",
-      "fix": "Add Sources sections citing ISUOG, SMFM, RCOG, FMF, WHO or guideline pages; verify each URL."
+      "priority": "P1",
+      "area": "schema",
+      "checklist": [22, 57],
+      "title": "MedicalWebPage 'about' falls back to generic 'Fetal medicine' on 50 guides",
+      "pages": ["50/60 guides"],
+      "evidence": "GUIDE_ABOUT (lib/schema.ts:326) maps only the 10 original slugs; e.g. /guides/tiffa-scan-pregnancy-when-to-get emits about:{MedicalWebPage,'Fetal medicine'} — a page type, not the medical entity. No sameAs links to Wikipedia/Wikidata/MeSH anywhere.",
+      "fix": "Extend GUIDE_ABOUT (or move about into guide data) with the correct MedicalCondition/MedicalProcedure per guide plus sameAs links."
     },
     {
       "id": "ISS-205",
-      "priority": "P2",
-      "area": "technical",
-      "title": "3 content images ship empty alt on the home page",
-      "pages": ["/"],
-      "evidence": "alt='' on viabilityscan.webp, NIPT.webp, AnomalyScan.webp in ServicesSection.",
-      "fix": "Descriptive alt text on the service-card images."
+      "priority": "P1",
+      "area": "faqs",
+      "checklist": [42],
+      "title": "274/362 FAQ answers outside the 40-60 word band (mostly under)",
+      "pages": ["56/60 guides"],
+      "evidence": "seo-audit/guide-checks.json — worst: get-pregnant-naturally-with-pcos 6/6 out; anomaly-found-20-week-scan-what-happens 5/5 (23-word answer); anomaly-scan-vs-normal-pregnancy-ultrasound 5/5; nipt pillar 4; what-does-anomaly-scan-check 4.",
+      "fix": "Expand thin answers to a direct answer + one supporting detail (40-60 words); trim >60 outliers."
     },
     {
       "id": "ISS-206",
       "priority": "P2",
       "area": "technical",
-      "title": "og:url missing on every page; guides reuse webp cover as OG image",
-      "pages": ["*"],
-      "evidence": "No property='og:url' in any fetched page.",
-      "fix": "Emit openGraph.url = canonical; optionally generate opengraph-image for guides."
+      "checklist": [13],
+      "title": "58/93 titles and 11/93 meta descriptions outside target ranges",
+      "pages": ["see seo-audit/analysis.json"],
+      "evidence": "Titles mostly under 50 chars (NIPT in Trichy=27, Twin Pregnancy=27, Anomaly Scan in Trichy=35); a few over 60. Descriptions out of range incl /services/recurrent-miscarriages-clinic (139), twin-pregnancy guide (177), 3 category pages (120-122).",
+      "fix": "Adjust seo.title/seo.description per page to 50-60 / 140-160; keep unique."
     },
     {
       "id": "ISS-207",
       "priority": "P2",
-      "area": "content",
-      "title": "Gestational week windows render while flagged draft-for-medical-review",
-      "pages": ["service pages", "home WeekRail"],
-      "evidence": "data/services.ts:75 SHOW_DRAFT_WEEK_WINDOWS = true.",
-      "fix": "Get medical sign-off or set false pre-launch."
+      "area": "contentHumanness",
+      "checklist": [46, 51, 53],
+      "title": "AI-template fingerprints across the 50-guide batch",
+      "pages": ["50/60 guides"],
+      "evidence": "'Final Thoughts' H2 on 50 guides; 205 Title Case H2s on 40 guides; uniform skeleton (quick answer -> H2 Q&A -> takeaways -> FAQs -> sources) and exactly-5-links pattern; banned phrases: whether you're (pcos pillar), that said (recurrent-miscarriage), straightforward (anomaly pillar), genuinely x2.",
+      "fix": "Sentence-case all H2s; rename/vary the 'Final Thoughts' section; vary skeleton; remove flagged phrases. See seo-audit/ai-likeness.json per page."
     },
     {
       "id": "ISS-208",
       "priority": "P2",
-      "area": "entities",
-      "title": "No INR cost, insurance or quoted statistics anywhere",
-      "pages": ["guides", "services"],
-      "evidence": "Zero currency mentions in rendered pages; NIPT guide has 'why prices differ' section without figures.",
-      "fix": "If client allows, add indicative INR ranges with disclaimers; biggest single GEO win."
+      "area": "eeat",
+      "checklist": [27],
+      "title": "Doctor profiles are shells; no article lists; third doctor has no page",
+      "pages": ["/doctors/dr-malathi-g-prasad", "/doctors/dr-revathy-chandrasekharan", "/doctors", "data/doctors.ts"],
+      "evidence": "registration/memberships/languages/experienceSinceYear/qualificationsDetailed all null/[] (data/doctors.ts:92-161); no 'articles reviewed' section rendered; Dr Nivethitha hasProfile:false yet appears in /doctors, llms.txt and clinic employee schema.",
+      "fix": "Fill typed-null fields (client); render guides-by-reviewer on doctor pages once ISS-202 lands; resolve Nivethitha profile vs listing."
     },
     {
       "id": "ISS-209",
       "priority": "P2",
-      "area": "schema",
-      "title": "MedicalProcedure applied to clinic-type services",
-      "pages": ["genetic-counselling", "twin-specialised-clinic", "recurrent-miscarriages-clinic", "fetal-postmortem"],
-      "evidence": "lib/schema.ts:178-191 single type for every service.",
-      "fix": "Use MedicalTherapy/Service typing for clinic services."
+      "area": "eeat",
+      "checklist": [29],
+      "title": "Five draft legal pages publicly render 'pending review' copy via footer links",
+      "pages": ["/privacy", "/terms", "/editorial-policy", "/medical-disclaimer", "/accessibility"],
+      "evidence": "data/legal.ts draftPendingReview:true on all five; footer links to four of them; /accessibility is an unlinked orphan. Prebuild emits 5 counsel-pending warnings.",
+      "fix": "Counsel sign-off (client) or temporarily remove footer links to draft pages; decide /accessibility fate."
     },
     {
       "id": "ISS-210",
       "priority": "P2",
-      "area": "pillar",
-      "title": "Category pages are thin (heading + one-line description + card grid)",
-      "pages": ["/guides/category/* x5"],
-      "evidence": "app/guides/category/[slug]/page.tsx.",
-      "fix": "Add 200-400 words of pillar copy + service links per category."
+      "area": "schema",
+      "checklist": [21],
+      "title": "Home page emits 7 JSON-LD scripts instead of one connected graph",
+      "pages": ["/"],
+      "evidence": "Rendered HTML: one graph (WebSite+WebPage+MedicalClinic+FAQPage) plus 3 standalone Person scripts and 3 standalone Course scripts.",
+      "fix": "Fold Person/Course nodes into pageGraph([...]) in app/page.tsx."
     },
     {
       "id": "ISS-211",
       "priority": "P2",
-      "area": "entities",
-      "title": "Brand says 'Fertility Centre' but no fertility service exists; fertility guides have no relatedService",
-      "pages": ["pcos-and-pregnancy", "fertility-testing-for-couples", "services data"],
-      "evidence": "13 services, none fertility; two fertility guides lack relatedService.",
-      "fix": "Client confirms whether fertility consults are offered; add service page or adjust naming."
+      "area": "entitiesSemantics",
+      "checklist": [33, 50, 58],
+      "title": "No INR costs, no insurance answers, few quotable specifics",
+      "pages": ["all /guides/*", "/services/*"],
+      "evidence": "0 guides mention ₹/INR/Rs; NIPT guide has 'NIPT test cost: why prices can differ' H2 with no figures; 5 comparison tables across 60 guides.",
+      "fix": "Add client-confirmed cost ranges/drivers; add comparison tables to remaining vs-guides; add insurance coverage answers where relevant."
     },
     {
-      "id": "ISS-301",
-      "priority": "P3",
-      "area": "client",
-      "title": "Medical council registration numbers for all 3 doctors",
-      "evidence": "data/doctors.ts registration: null x3."
+      "id": "ISS-212",
+      "priority": "P2",
+      "area": "technical",
+      "checklist": [19],
+      "title": "Core Web Vitals unverified on deployed site",
+      "pages": ["/", "pillar", "guide", "service", "doctor templates"],
+      "evidence": "Prior localhost lab: LCP 3.7-4.6s, TBT 90-280ms, CLS 0. Templates unchanged since.",
+      "fix": "Run PageSpeed Insights on live fmctrichy.com pages; verify LCP element (hero image, already priority)."
     },
     {
-      "id": "ISS-302",
+      "id": "ISS-213",
       "priority": "P3",
-      "area": "client",
-      "title": "PCPNDT / TN Clinical Establishments / ART registration numbers",
-      "evidence": "data/site.ts:46-50 all null."
+      "area": "technical",
+      "checklist": [17],
+      "title": "Doctor pages lack og:image",
+      "pages": ["/doctors/dr-malathi-g-prasad", "/doctors/dr-revathy-chandrasekharan"],
+      "evidence": "summary_large_image twitter card with no og:image in rendered HTML.",
+      "fix": "Emit openGraph.images in app/doctors/[slug]/page.tsx metadata."
     },
     {
-      "id": "ISS-303",
+      "id": "ISS-214",
       "priority": "P3",
-      "area": "client",
-      "title": "geo, hasMap, areaServed, sameAs, socials, foundingDate, DPDP grievance officer",
-      "evidence": "data/site.ts:52-67 all null/empty."
+      "area": "eeat",
+      "checklist": [30],
+      "title": "5 nice.org.uk source links 403 to curl",
+      "pages": ["guides citing NICE ng126/ng137/ng156/ng201/ng3"],
+      "evidence": "All NICE URLs return 403 to curl even with browser UA — likely WAF bot-blocking, probably fine for users.",
+      "fix": "Verify in a real browser; replace only if actually dead."
     },
     {
-      "id": "ISS-304",
+      "id": "ISS-215",
       "priority": "P3",
-      "area": "client",
-      "title": "Dr Nivethitha role line, qualifications detail, profile decision",
-      "evidence": "roleIsPlaceholder:true, hasProfile:false."
+      "area": "pillarLinking",
+      "checklist": [37],
+      "title": "Pillar link appears late in 3 supporting guides",
+      "pages": ["male-fertility-tests-semen-analysis (block 21/24)", "diabetes-and-pregnancy-baby-extra-monitoring (12/33)", "can-genetic-problems-cause-recurrent-miscarriage (9/33)"],
+      "evidence": "First /guides/ link position from programmatic scan; all other supporting guides link pillar within first ~4 blocks.",
+      "fix": "Move/add a pillar mention in the intro blocks."
     },
     {
-      "id": "ISS-305",
+      "id": "ISS-216",
       "priority": "P3",
-      "area": "client",
-      "title": "Saturday/Sunday opening hours confirmation",
-      "evidence": "contact page 'please call to confirm'; schema Mon-Fri only."
+      "area": "crawling",
+      "checklist": [4],
+      "title": "Paginated /guides/page/2-5 indexable but absent from sitemap",
+      "pages": ["/guides/page/2", "/guides/page/3", "/guides/page/4", "/guides/page/5"],
+      "evidence": "Pages return 200 with index,follow and self-canonical; not in sitemap.",
+      "fix": "Optional: either add to sitemap or set robots index:false on page>=2."
     },
     {
-      "id": "ISS-306",
+      "id": "ISS-217",
       "priority": "P3",
-      "area": "client",
-      "title": "Confirm WhatsApp lead number +91 74489 39808 and international line",
-      "evidence": "prebuild launch gate blocker."
+      "area": "technical",
+      "checklist": [17],
+      "title": "Guide OG images are raw covers, not 1200x630 cards",
+      "pages": ["all /guides/*"],
+      "evidence": "openGraph.images = cover webp; services have generated opengraph-image, guides don't.",
+      "fix": "Add opengraph-image generator for /guides/[slug]."
     },
     {
-      "id": "ISS-307",
+      "id": "ISS-218",
       "priority": "P3",
-      "area": "client",
-      "title": "3 testimonial consents, 3 claim substantiations, 2 course durations, 3 placeholder-licence images in use",
-      "evidence": "prebuild gate: hands-baby-feet, baby-overhead, pregnancy-test-stork render on placeholder licence."
+      "area": "crawling",
+      "checklist": [6],
+      "title": "Indexability silently depends on build-time INDEXABLE/VERCEL_ENV",
+      "pages": ["*"],
+      "evidence": "app/layout.tsx:39-44, app/robots.ts:4-5, proxy.ts — verified correct on the live deploy, but a misconfigured redeploy silently ships noindex + Disallow:/ sitewide.",
+      "fix": "Document the env requirement in LAUNCH-CHECKLIST.md; optionally add a post-deploy assert on /robots.txt + robots meta."
     },
     {
-      "id": "ISS-308",
+      "id": "ISS-219",
       "priority": "P3",
-      "area": "client",
-      "title": "Verify Google Business Profile NAP matches site exactly",
-      "evidence": "Cannot be verified from repo."
+      "area": "technical",
+      "checklist": [49],
+      "title": "Cannibalisation watch: anomaly/nipt/nt clusters overlap service pages",
+      "pages": ["/services/anomaly-scan + 5 anomaly guides", "/services/nipt + NIPT cluster", "/services/downs-screening-oscar + NT cluster"],
+      "evidence": "e.g. 'anomaly scan' intent spread across service page + pillar + tiffa + what-does-check + vs-normal guides with heavily overlapping titles.",
+      "fix": "Sharpen title/H1 intent per URL (book-in-Trichy vs learn vs compare); monitor GSC for query splits."
+    },
+    {
+      "id": "ISS-220",
+      "priority": "P3",
+      "area": "clientInput",
+      "checklist": [23, 27, 28, 33, 56, 57],
+      "title": "Client-supplied data missing (unblocks multiple fixes)",
+      "pages": ["site-wide"],
+      "evidence": "Typed-null fields across data/site.ts + data/doctors.ts; launch-gate lists 9 blockers + 18 post-launch items.",
+      "fix": "Registration numbers, per-guide reviewer ownership, legal sign-offs, PCPNDT/CEA/ART regs, GBP details, social sameAs, geo, WhatsApp number, testimonial consents, claim substantiation, cost figures, landmark directions."
     }
-  ]
+  ],
+  "artifacts": {
+    "crawl": "seo-audit/crawl.mjs + crawl-results.json + html/",
+    "analysis": "seo-audit/analyze.mjs + analysis.json",
+    "guideChecks": "seo-audit/guides.mjs + guide-checks.json",
+    "aiLikeness": "seo-audit/ai-likeness.mjs + ai-likeness.json",
+    "pageTable": "seo-audit/page-table.json"
+  }
 }

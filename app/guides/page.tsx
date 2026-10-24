@@ -14,11 +14,15 @@ import {
   getFeaturedGuide,
   hasPublishedGuides,
 } from "@/lib/guides";
-import { breadcrumbSchema } from "@/lib/schema";
+import {
+  breadcrumbNode,
+  pageGraph,
+  webPageNode,
+} from "@/lib/schema";
 
 export function generateMetadata(): Metadata {
   return {
-    title: "Patient Guides on Scans, Screening and Pregnancy",
+    title: "Patient Guides on Scans and Pregnancy Tests",
     description:
       "Clear, practical guides to pregnancy scans, screening tests and fetal medicine, written by our clinical team for families in Trichy and nearby districts.",
     alternates: { canonical: "/guides" },
@@ -40,9 +44,12 @@ export default function GuidesPage() {
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema([
-          { label: "Home", href: "/" },
-          { label: "Patient guides", href: "/guides" },
+        data={pageGraph([
+          webPageNode("/guides", "Patient Guides on Scans, Screening and Pregnancy"),
+          breadcrumbNode([
+            { label: "Home", href: "/" },
+            { label: "Patient guides", href: "/guides" },
+          ]),
         ])}
       />
       {/* Hero (blush) with the search input inside it */}

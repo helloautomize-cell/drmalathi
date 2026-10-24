@@ -24,7 +24,11 @@ import { SectionHeader } from "@/components/shared/section-header";
 import { MobileSectionHeader } from "@/components/shared/mobile-section-header";
 import { courses, fellowshipProgram } from "@/data/courses";
 import { site } from "@/data/site";
-import { breadcrumbSchema } from "@/lib/schema";
+import {
+  breadcrumbNode,
+  pageGraph,
+  webPageNode,
+} from "@/lib/schema";
 import { showPending } from "@/lib/env";
 
 export const metadata: Metadata = {
@@ -38,9 +42,12 @@ export default function FellowshipPage() {
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema([
-          { label: "Home", href: "/" },
-          { label: "Fellowship", href: "/fellowship" },
+        data={pageGraph([
+          webPageNode("/fellowship", metadata.title as string, metadata.description as string),
+          breadcrumbNode([
+            { label: "Home", href: "/" },
+            { label: "Fellowship", href: "/fellowship" },
+          ]),
         ])}
       />
       <PageHero

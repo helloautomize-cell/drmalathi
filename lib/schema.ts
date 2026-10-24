@@ -278,47 +278,324 @@ export function faqSchema(faqs: { question: string; answer: string }[]) {
 /**
  * The medical entity a guide is about. Keys are guide slugs; names must only
  * restate what the guide itself covers — nothing is invented here.
+ * `sameAs` links the entity to its Wikipedia article where a canonical one
+ * exists, so answer engines can resolve the entity.
  */
-const GUIDE_ABOUT: Record<string, { "@type": string; name: string }> = {
+const GUIDE_ABOUT: Record<
+  string,
+  { "@type": string; name: string; sameAs?: string[] }
+> = {
   "pcos-and-pregnancy": {
     "@type": "MedicalCondition",
     name: "Polycystic ovary syndrome (PCOS)",
+    sameAs: ["https://en.wikipedia.org/wiki/Polycystic_ovary_syndrome"],
   },
   "high-risk-pregnancy-fetal-medicine-specialist": {
     "@type": "MedicalCondition",
     name: "High-risk pregnancy",
+    sameAs: ["https://en.wikipedia.org/wiki/High-risk_pregnancy"],
   },
   "recurrent-miscarriage-causes-tests-treatment": {
     "@type": "MedicalCondition",
     name: "Recurrent miscarriage",
+    sameAs: ["https://en.wikipedia.org/wiki/Recurrent_miscarriage"],
   },
   "fertility-testing-for-couples": {
-    "@type": "MedicalProcedure",
+    "@type": "MedicalTest",
     name: "Fertility assessment",
+    sameAs: ["https://en.wikipedia.org/wiki/Infertility"],
   },
   "twin-pregnancy-scans-risks-monitoring": {
     "@type": "MedicalCondition",
     name: "Twin pregnancy",
+    sameAs: ["https://en.wikipedia.org/wiki/Multiple_birth"],
   },
   "anomaly-scan-tiffa-scan-pregnancy": {
     "@type": "MedicalProcedure",
     name: "Fetal anomaly scan (TIFFA scan)",
+    sameAs: ["https://en.wikipedia.org/wiki/Obstetric_ultrasonography"],
   },
   "fetal-echocardiography-pregnancy": {
     "@type": "MedicalProcedure",
     name: "Fetal echocardiography",
+    sameAs: ["https://en.wikipedia.org/wiki/Fetal_echocardiography"],
   },
   "growth-scan-doppler-pregnancy-fetal-growth-restriction": {
     "@type": "MedicalProcedure",
     name: "Growth scan with Doppler",
+    sameAs: ["https://en.wikipedia.org/wiki/Fetal_growth_restriction"],
   },
   "nipt-in-pregnancy-test-accuracy-high-risk-result": {
-    "@type": "MedicalProcedure",
+    "@type": "MedicalTest",
     name: "Non-invasive prenatal testing (NIPT)",
+    sameAs: ["https://en.wikipedia.org/wiki/Non-invasive_prenatal_testing"],
   },
   "nt-scan-pregnancy-timing-normal-range-down-syndrome": {
     "@type": "MedicalProcedure",
     name: "Nuchal translucency (NT) scan",
+    sameAs: ["https://en.wikipedia.org/wiki/Nuchal_scan"],
+  },
+  "tiffa-scan-pregnancy-when-to-get": {
+    "@type": "MedicalProcedure",
+    name: "Fetal anomaly scan (TIFFA scan)",
+    sameAs: ["https://en.wikipedia.org/wiki/Obstetric_ultrasonography"],
+  },
+  "anomaly-scan-vs-normal-pregnancy-ultrasound": {
+    "@type": "MedicalProcedure",
+    name: "Fetal anomaly scan",
+    sameAs: ["https://en.wikipedia.org/wiki/Obstetric_ultrasonography"],
+  },
+  "anomaly-scan-detect-all-birth-defects": {
+    "@type": "MedicalProcedure",
+    name: "Fetal anomaly scan",
+    sameAs: ["https://en.wikipedia.org/wiki/Obstetric_ultrasonography"],
+  },
+  "what-does-anomaly-scan-check": {
+    "@type": "MedicalProcedure",
+    name: "Fetal anomaly scan",
+    sameAs: ["https://en.wikipedia.org/wiki/Obstetric_ultrasonography"],
+  },
+  "anomaly-found-20-week-scan-what-happens": {
+    "@type": "MedicalProcedure",
+    name: "Fetal anomaly scan",
+    sameAs: ["https://en.wikipedia.org/wiki/Obstetric_ultrasonography"],
+  },
+  "get-pregnant-naturally-with-pcos": {
+    "@type": "MedicalCondition",
+    name: "Polycystic ovary syndrome (PCOS)",
+    sameAs: ["https://en.wikipedia.org/wiki/Polycystic_ovary_syndrome"],
+  },
+  "how-pcos-affects-ovulation-fertility": {
+    "@type": "MedicalCondition",
+    name: "Polycystic ovary syndrome (PCOS)",
+    sameAs: ["https://en.wikipedia.org/wiki/Polycystic_ovary_syndrome"],
+  },
+  "tests-for-pcos-related-infertility": {
+    "@type": "MedicalCondition",
+    name: "Polycystic ovary syndrome (PCOS)",
+    sameAs: ["https://en.wikipedia.org/wiki/Polycystic_ovary_syndrome"],
+  },
+  "low-amh-vs-pcos-difference": {
+    "@type": "MedicalCondition",
+    name: "Polycystic ovary syndrome and low AMH",
+    sameAs: [
+      "https://en.wikipedia.org/wiki/Polycystic_ovary_syndrome",
+      "https://en.wikipedia.org/wiki/Anti-M%C3%BCllerian_hormone",
+    ],
+  },
+  "when-to-see-fertility-specialist-pcos": {
+    "@type": "MedicalCondition",
+    name: "Polycystic ovary syndrome (PCOS)",
+    sameAs: ["https://en.wikipedia.org/wiki/Polycystic_ovary_syndrome"],
+  },
+  "best-time-for-nt-scan-pregnancy": {
+    "@type": "MedicalProcedure",
+    name: "Nuchal translucency (NT) scan",
+    sameAs: ["https://en.wikipedia.org/wiki/Nuchal_scan"],
+  },
+  "high-nt-measurement-meaning": {
+    "@type": "MedicalProcedure",
+    name: "Nuchal translucency (NT) scan",
+    sameAs: ["https://en.wikipedia.org/wiki/Nuchal_scan"],
+  },
+  "nt-scan-vs-double-marker-test": {
+    "@type": "MedicalTest",
+    name: "First-trimester combined screening",
+    sameAs: [
+      "https://en.wikipedia.org/wiki/Nuchal_scan",
+      "https://en.wikipedia.org/wiki/Down_syndrome",
+    ],
+  },
+  "nt-scan-detect-down-syndrome": {
+    "@type": "MedicalProcedure",
+    name: "Nuchal translucency (NT) scan",
+    sameAs: [
+      "https://en.wikipedia.org/wiki/Nuchal_scan",
+      "https://en.wikipedia.org/wiki/Down_syndrome",
+    ],
+  },
+  "what-happens-after-abnormal-nt-scan": {
+    "@type": "MedicalProcedure",
+    name: "Nuchal translucency (NT) scan",
+    sameAs: ["https://en.wikipedia.org/wiki/Nuchal_scan"],
+  },
+  "nipt-vs-nt-scan-vs-double-marker-test": {
+    "@type": "MedicalTest",
+    name: "Non-invasive prenatal testing (NIPT)",
+    sameAs: ["https://en.wikipedia.org/wiki/Non-invasive_prenatal_testing"],
+  },
+  "what-does-high-risk-nipt-result-mean": {
+    "@type": "MedicalTest",
+    name: "Non-invasive prenatal testing (NIPT)",
+    sameAs: ["https://en.wikipedia.org/wiki/Non-invasive_prenatal_testing"],
+  },
+  "can-nipt-detect-down-syndrome": {
+    "@type": "MedicalTest",
+    name: "Non-invasive prenatal testing (NIPT)",
+    sameAs: [
+      "https://en.wikipedia.org/wiki/Non-invasive_prenatal_testing",
+      "https://en.wikipedia.org/wiki/Down_syndrome",
+    ],
+  },
+  "nipt-in-twin-pregnancy-reliability": {
+    "@type": "MedicalTest",
+    name: "Non-invasive prenatal testing (NIPT)",
+    sameAs: ["https://en.wikipedia.org/wiki/Non-invasive_prenatal_testing"],
+  },
+  "what-happens-after-positive-nipt-result": {
+    "@type": "MedicalTest",
+    name: "Non-invasive prenatal testing (NIPT)",
+    sameAs: ["https://en.wikipedia.org/wiki/Non-invasive_prenatal_testing"],
+  },
+  "what-is-fetal-echo-and-when-is-it-done": {
+    "@type": "MedicalProcedure",
+    name: "Fetal echocardiography",
+    sameAs: ["https://en.wikipedia.org/wiki/Fetal_echocardiography"],
+  },
+  "why-doctor-recommends-fetal-echocardiogram": {
+    "@type": "MedicalProcedure",
+    name: "Fetal echocardiography",
+    sameAs: ["https://en.wikipedia.org/wiki/Fetal_echocardiography"],
+  },
+  "fetal-echo-vs-anomaly-scan-difference": {
+    "@type": "MedicalProcedure",
+    name: "Fetal echocardiography",
+    sameAs: ["https://en.wikipedia.org/wiki/Fetal_echocardiography"],
+  },
+  "can-fetal-echo-detect-heart-defects": {
+    "@type": "MedicalProcedure",
+    name: "Fetal echocardiography",
+    sameAs: ["https://en.wikipedia.org/wiki/Fetal_echocardiography"],
+  },
+  "fetal-echo-shows-heart-abnormality-next-steps": {
+    "@type": "MedicalProcedure",
+    name: "Fetal echocardiography",
+    sameAs: ["https://en.wikipedia.org/wiki/Fetal_echocardiography"],
+  },
+  "what-is-a-growth-scan-and-when-is-it-done": {
+    "@type": "MedicalProcedure",
+    name: "Growth scan",
+    sameAs: ["https://en.wikipedia.org/wiki/Obstetric_ultrasonography"],
+  },
+  "why-doppler-scan-during-pregnancy": {
+    "@type": "MedicalProcedure",
+    name: "Doppler ultrasound in pregnancy",
+    sameAs: ["https://en.wikipedia.org/wiki/Doppler_ultrasonography"],
+  },
+  "what-does-it-mean-if-baby-is-measuring-small": {
+    "@type": "MedicalCondition",
+    name: "Fetal growth restriction",
+    sameAs: ["https://en.wikipedia.org/wiki/Fetal_growth_restriction"],
+  },
+  "fetal-growth-restriction-causes-monitoring-treatment": {
+    "@type": "MedicalCondition",
+    name: "Fetal growth restriction",
+    sameAs: ["https://en.wikipedia.org/wiki/Fetal_growth_restriction"],
+  },
+  "how-often-growth-scans-high-risk-pregnancy": {
+    "@type": "MedicalProcedure",
+    name: "Growth scan in high-risk pregnancy",
+    sameAs: ["https://en.wikipedia.org/wiki/Fetal_growth_restriction"],
+  },
+  "what-makes-a-pregnancy-high-risk": {
+    "@type": "MedicalCondition",
+    name: "High-risk pregnancy",
+    sameAs: ["https://en.wikipedia.org/wiki/High-risk_pregnancy"],
+  },
+  "when-to-see-a-fetal-medicine-specialist": {
+    "@type": "MedicalCondition",
+    name: "High-risk pregnancy",
+    sameAs: ["https://en.wikipedia.org/wiki/High-risk_pregnancy"],
+  },
+  "high-risk-pregnancy-extra-scans-and-tests": {
+    "@type": "MedicalCondition",
+    name: "High-risk pregnancy",
+    sameAs: ["https://en.wikipedia.org/wiki/High-risk_pregnancy"],
+  },
+  "pregnancy-after-ivf-extra-monitoring": {
+    "@type": "MedicalEntity",
+    name: "Pregnancy after IVF",
+    sameAs: ["https://en.wikipedia.org/wiki/In_vitro_fertilisation"],
+  },
+  "diabetes-and-pregnancy-baby-extra-monitoring": {
+    "@type": "MedicalCondition",
+    name: "Diabetes in pregnancy",
+    sameAs: ["https://en.wikipedia.org/wiki/Gestational_diabetes"],
+  },
+  "how-many-miscarriages-recurrent-pregnancy-loss": {
+    "@type": "MedicalCondition",
+    name: "Recurrent miscarriage",
+    sameAs: ["https://en.wikipedia.org/wiki/Recurrent_miscarriage"],
+  },
+  "tests-after-repeated-miscarriages": {
+    "@type": "MedicalCondition",
+    name: "Recurrent miscarriage",
+    sameAs: ["https://en.wikipedia.org/wiki/Recurrent_miscarriage"],
+  },
+  "can-genetic-problems-cause-recurrent-miscarriage": {
+    "@type": "MedicalCondition",
+    name: "Recurrent miscarriage",
+    sameAs: ["https://en.wikipedia.org/wiki/Recurrent_miscarriage"],
+  },
+  "before-trying-to-conceive-after-miscarriage": {
+    "@type": "MedicalCondition",
+    name: "Miscarriage",
+    sameAs: ["https://en.wikipedia.org/wiki/Miscarriage"],
+  },
+  "pregnancy-after-recurrent-miscarriage-monitoring": {
+    "@type": "MedicalCondition",
+    name: "Recurrent miscarriage",
+    sameAs: ["https://en.wikipedia.org/wiki/Recurrent_miscarriage"],
+  },
+  "when-can-twins-be-detected-on-ultrasound": {
+    "@type": "MedicalCondition",
+    name: "Twin pregnancy",
+    sameAs: ["https://en.wikipedia.org/wiki/Multiple_birth"],
+  },
+  "how-often-scans-twin-pregnancy": {
+    "@type": "MedicalCondition",
+    name: "Twin pregnancy",
+    sameAs: ["https://en.wikipedia.org/wiki/Multiple_birth"],
+  },
+  "chorionicity-twin-pregnancy-why-it-matters": {
+    "@type": "MedicalEntity",
+    name: "Chorionicity in twin pregnancy",
+    sameAs: ["https://en.wikipedia.org/wiki/Chorionicity"],
+  },
+  "monochorionic-vs-dichorionic-twins": {
+    "@type": "MedicalEntity",
+    name: "Chorionicity in twin pregnancy",
+    sameAs: ["https://en.wikipedia.org/wiki/Chorionicity"],
+  },
+  "twin-pregnancy-complications-doctors-look-for": {
+    "@type": "MedicalCondition",
+    name: "Twin pregnancy",
+    sameAs: ["https://en.wikipedia.org/wiki/Multiple_birth"],
+  },
+  "fertility-tests-for-women-before-treatment": {
+    "@type": "MedicalTest",
+    name: "Female fertility tests",
+    sameAs: ["https://en.wikipedia.org/wiki/Infertility"],
+  },
+  "male-fertility-tests-semen-analysis": {
+    "@type": "MedicalTest",
+    name: "Semen analysis",
+    sameAs: ["https://en.wikipedia.org/wiki/Semen_analysis"],
+  },
+  "what-is-amh-fertility-test": {
+    "@type": "MedicalTest",
+    name: "Anti-Müllerian hormone (AMH) test",
+    sameAs: ["https://en.wikipedia.org/wiki/Anti-M%C3%BCllerian_hormone"],
+  },
+  "follicular-monitoring-ovulation-scan": {
+    "@type": "MedicalTest",
+    name: "Follicular monitoring",
+    sameAs: ["https://en.wikipedia.org/wiki/Ovulation"],
+  },
+  "how-to-know-when-you-are-ovulating": {
+    "@type": "MedicalEntity",
+    name: "Ovulation",
+    sameAs: ["https://en.wikipedia.org/wiki/Ovulation"],
   },
 };
 

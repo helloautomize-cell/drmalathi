@@ -6,14 +6,15 @@ import type { Guide } from "@/types/guide";
 // dashes, no invisible characters).
 
 export const blogGuides: Guide[] = [
+
   {
     "slug": "pcos-and-pregnancy",
     "title": "PCOS and Pregnancy: How PCOS Affects Ovulation, Fertility and Your Chances of Conceiving",
     "cardTitle": "PCOS and Pregnancy",
     "excerpt": "Irregular periods with PCOS usually mean irregular ovulation, and that's the main reason conception can take longer. Here's what helps, and what to expect in pregnancy.",
     "seo": {
-      "description": "PCOS can make ovulation irregular, but many women do get pregnant. How it affects fertility, which tests help and what care involves.",
-      "title": "PCOS and Pregnancy"
+      "description": "PCOS can make ovulation irregular, but many women do get pregnant. Learn how it affects fertility, which tests help, and what care involves.",
+      "title": "PCOS and Pregnancy: How PCOS Affects Ovulation"
     },
     "coverImage": {
       "src": "/images/guides/pcos-and-pregnancy.webp",
@@ -160,7 +161,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "The choice depends on whether you're ovulating, your age, your general health, how long you've been trying and what the other tests show. Doctors usually start with the simplest option likely to work and step up only if needed."
+        "text": "The choice depends on whether you are ovulating, your age, your general health, how long you've been trying and what the other tests show. Doctors usually start with the simplest option likely to work and step up only if needed."
       },
       {
         "type": "h3",
@@ -300,11 +301,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Being told you have PCOS when you're hoping for a baby can be hard to hear. In practice, the problem is often a practical one. Find out whether you're ovulating, check the basics for both partners, and get your health in good shape before pregnancy. For many couples, that's enough to find a clear way forward."
+        "text": "Being told you have PCOS when you're hoping for a baby can be hard to hear. In practice, the problem is often a practical one. Find out whether you are ovulating, check the basics for both partners, and get your health in good shape before pregnancy. For many couples, that's enough to find a clear way forward."
       },
       {
         "type": "paragraph",
         "text": "If you have PCOS and are planning a pregnancy, talk to a gynaecologist or fertility specialist about where to start. In Trichy, you can reach Trichy Fetal Medicine and Fertility Centre through fmctrichy.com."
+      },
+      {
+        "type": "paragraph",
+        "text": "If any of this sounds familiar, [our fetal medicine specialists](/doctors) can review your reports and tell you what the next step looks like."
       },
       {
         "type": "h2",
@@ -363,10 +368,19 @@ export const blogGuides: Guide[] = [
         "answer": "If you're overweight, losing even a modest amount can restore ovulation for some women and supports a healthier pregnancy. It isn't needed if your weight is already healthy. Steady changes to diet, activity and sleep, ideally with support from a doctor or dietitian, usually work better than crash diets."
       }
     ],
-        "sources": [
-      { "title": "International Evidence-based Guideline for the Assessment and Management of Polycystic Ovary Syndrome 2023", "publisher": "Monash University / international PCOS guideline group" },
-      { "title": "Polycystic ovary syndrome", "publisher": "WHO fact sheet" },
-      { "title": "Information for you: PCOS", "publisher": "RCOG patient information" }
+    "sources": [
+      {
+        "title": "International Evidence-based Guideline for the Assessment and Management of Polycystic Ovary Syndrome 2023",
+        "publisher": "Monash University / international PCOS guideline group"
+      },
+      {
+        "title": "Polycystic ovary syndrome",
+        "publisher": "WHO fact sheet"
+      },
+      {
+        "title": "Information for you: PCOS",
+        "publisher": "RCOG patient information"
+      }
     ],
     "publishedAt": "2026-10-01",
     "reviewStatus": "reviewed",
@@ -379,7 +393,7 @@ export const blogGuides: Guide[] = [
     "excerpt": "A high-risk pregnancy may need closer observation because of maternal health, fetal findings or pregnancy history. Learn when specialist care may be helpful.",
     "seo": {
       "description": "Learn what makes a pregnancy high risk, when a fetal medicine specialist may be needed, and what additional scans and monitoring may be recommended.",
-      "title": "High-Risk Pregnancy"
+      "title": "High-Risk Pregnancy: When You Need a Fetal"
     },
     "coverImage": {
       "src": "/images/guides/high-risk-pregnancy-fetal-medicine-specialist.webp",
@@ -1139,6 +1153,10 @@ export const blogGuides: Guide[] = [
         "text": "For patients seeking fetal medicine care in Trichy, Trichy Fetal Medicine and Fertility Centre provides fetal assessment, pregnancy screening, genetic counselling and selected fetal medicine procedures."
       },
       {
+        "type": "paragraph",
+        "text": "To arrange this at our Trichy centre, see [second opinion scan](/services/second-opinion-scan); if you are unsure whether you need it, [our doctors](/doctors) can tell you after a review."
+      },
+      {
         "type": "h2",
         "text": "Related guides"
       },
@@ -1197,9 +1215,17 @@ export const blogGuides: Guide[] = [
         "answer": "No. High-risk classification means that certain factors may justify closer observation or specialist input. It does not predict that a complication will definitely occur. The actual level of concern depends on the underlying condition, current pregnancy findings and how the pregnancy changes over time."
       }
     ],
-        "sources": [
-      { "title": "Society for Maternal-Fetal Medicine Consult Series #60", "publisher": "SMFM", "url": "https://publications.smfm.org/publications/435-society-for-maternal-fetal-medicine-consult-series-60/" },
-      { "title": "Society for Maternal-Fetal Medicine Consult Series #74", "publisher": "SMFM", "url": "https://publications.smfm.org/publications/620-society-for-maternal-fetal-medicine-consult-series-74cell/" }
+    "sources": [
+      {
+        "title": "Society for Maternal-Fetal Medicine Consult Series #60",
+        "publisher": "SMFM",
+        "url": "https://publications.smfm.org/publications/435-society-for-maternal-fetal-medicine-consult-series-60/"
+      },
+      {
+        "title": "Society for Maternal-Fetal Medicine Consult Series #74",
+        "publisher": "SMFM",
+        "url": "https://publications.smfm.org/publications/620-society-for-maternal-fetal-medicine-consult-series-74cell/"
+      }
     ],
     "relatedService": "second-opinion-scan",
     "publishedAt": "2026-10-03",
@@ -1213,7 +1239,7 @@ export const blogGuides: Guide[] = [
     "excerpt": "Why do some women miscarry more than once? What recurrent miscarriage means, which tests are worth doing, what treatment can offer and how to plan the next pregnancy.",
     "seo": {
       "description": "Had two or more miscarriages? Learn what can cause recurrent miscarriage, which tests help, which treatments have evidence and how to plan your next pregnancy.",
-      "title": "Recurrent Miscarriage"
+      "title": "Recurrent Miscarriage: Causes, Tests, Treatment"
     },
     "coverImage": {
       "src": "/images/guides/recurrent-miscarriage-causes-tests-treatment.webp",
@@ -1626,6 +1652,10 @@ export const blogGuides: Guide[] = [
         "text": "A good starting point is a conversation with a specialist who can go through your history, suggest only the tests likely to help and plan the next pregnancy alongside you. Trichy Fetal Medicine and Fertility Centre runs a recurrent miscarriage clinic, and couples in and around Trichy can get in touch through the centre's website, https://fmctrichy.com/."
       },
       {
+        "type": "paragraph",
+        "text": "You can read about how we run the [recurrent miscarriages clinic](/services/recurrent-miscarriages-clinic) at our centre, and who performs it, on the [team page](/doctors)."
+      },
+      {
         "type": "h2",
         "text": "Related guides"
       },
@@ -1655,7 +1685,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "What is the most common cause of recurrent miscarriage?",
-        "answer": "Chance chromosomal errors in the embryo are the commonest reason for miscarriage overall, and they become more frequent as a woman gets older. Of the causes that can be treated, antiphospholipid syndrome is one of the most important to look for. A uterine septum and a balanced translocation in one parent are other recognised causes, though many couples have no identifiable reason at all."
+        "answer": "Chance chromosomal errors in the embryo are the commonest reason for miscarriage overall, and they become more frequent as a woman gets older.  Of the causes that can be treated, antiphospholipid syndrome is one of the most important to look for."
       },
       {
         "question": "Can I still have a healthy baby after recurrent miscarriage?",
@@ -1675,7 +1705,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "Can stress or work cause a miscarriage?",
-        "answer": "There's no good evidence that stress, ordinary work, travel, sex or everyday activity causes miscarriage. Most losses come down to factors nobody could have controlled, so please try not to blame yourself. That said, repeated loss takes an emotional toll on both partners, and counselling or peer support is a genuine part of good care."
+        "answer": "There's no good evidence that stress, ordinary work, travel, sex or everyday activity causes miscarriage. Most losses come down to factors nobody could have controlled, so please try not to blame yourself. Even so, repeated loss takes an emotional toll on both partners, and counselling or peer support is a genuine part of good care."
       },
       {
         "question": "When should I see a recurrent miscarriage specialist?",
@@ -1683,9 +1713,15 @@ export const blogGuides: Guide[] = [
       }
     ],
     "relatedService": "recurrent-miscarriages-clinic",
-        "sources": [
-      { "title": "Recurrent Miscarriage, Green-top Guideline No. 17", "publisher": "RCOG" },
-      { "title": "Miscarriage: information and support", "publisher": "NHS" }
+    "sources": [
+      {
+        "title": "Recurrent Miscarriage, Green-top Guideline No. 17",
+        "publisher": "RCOG"
+      },
+      {
+        "title": "Miscarriage: information and support",
+        "publisher": "NHS"
+      }
     ],
     "publishedAt": "2026-10-05",
     "reviewStatus": "reviewed",
@@ -1697,8 +1733,8 @@ export const blogGuides: Guide[] = [
     "cardTitle": "Fertility Testing for Couples",
     "excerpt": "A practical guide to fertility testing for couples, covering ovulation, AMH, semen analysis, follicular monitoring, ultrasound and other evaluations.",
     "seo": {
-      "description": "Learn about fertility testing for couples, including ovulation assessment, AMH, semen analysis, follicular monitoring and fertility scans.",
-      "title": "Fertility Testing for Couples"
+      "description": "A practical guide to fertility testing for couples, covering ovulation, AMH, semen analysis, follicular monitoring, ultrasound and other evaluations.",
+      "title": "Fertility Testing for Couples: Complete Guide"
     },
     "coverImage": {
       "src": "/images/guides/fertility-testing-for-couples.webp",
@@ -2378,6 +2414,10 @@ export const blogGuides: Guide[] = [
         "text": "If you have been trying to conceive and are unsure whether you need testing, a fertility consultation can help you understand which investigations are appropriate for your circumstances and what the results actually mean."
       },
       {
+        "type": "paragraph",
+        "text": "If you want a specialist opinion on your own situation, [the team](/doctors) is a call or a visit away."
+      },
+      {
         "type": "h2",
         "text": "Related guides"
       },
@@ -2435,12 +2475,18 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "When should a couple see a fertility specialist?",
-        "answer": "A fertility evaluation is commonly considered after 12 months of trying when the woman is under 35 and after 6 months when she is 35 or older. Earlier assessment may be appropriate when periods are irregular or absent, there are known reproductive problems, previous pelvic disease or surgery, suspected male-factor concerns, recurrent pregnancy loss or other reasons to suspect reduced fertility."
+        "answer": "A fertility evaluation is commonly considered after 12 months of trying when the woman is under 35 and after 6 months when she is 35 or older. Earlier assessment may be appropriate when periods are irregular or absent, there are known reproductive problems, previous pelvic surgery, suspected male-factor concerns or recurrent pregnancy loss."
       }
     ],
-        "sources": [
-      { "title": "Fertility problems: assessment and treatment", "publisher": "NICE guideline CG156" },
-      { "title": "Infertility", "publisher": "WHO fact sheet" }
+    "sources": [
+      {
+        "title": "Fertility problems: assessment and treatment",
+        "publisher": "NICE guideline CG156"
+      },
+      {
+        "title": "Infertility",
+        "publisher": "WHO fact sheet"
+      }
     ],
     "publishedAt": "2026-10-08",
     "reviewStatus": "reviewed",
@@ -2452,8 +2498,8 @@ export const blogGuides: Guide[] = [
     "cardTitle": "Twin Pregnancy",
     "excerpt": "Whether your twins share a placenta decides most of your scan plan. Here's what that means, what each scan looks for, and when a fetal medicine specialist steps in.",
     "seo": {
-      "description": "Expecting twins? Learn why it matters whether your twins share a placenta, how often you'll be scanned, which complications doctors watch for, and when twins are delivered.",
-      "title": "Twin Pregnancy"
+      "description": "Expecting twins? Learn why it matters whether your twins share a placenta, how often you'll be scanned, which complications doctors watch for",
+      "title": "Twin Pregnancy: Scans, Risks, Monitoring"
     },
     "coverImage": {
       "src": "/images/guides/twin-pregnancy-scans-risks-monitoring.webp",
@@ -2815,6 +2861,10 @@ export const blogGuides: Guide[] = [
         "text": "If a twin scan has raised a question, talk it over with your obstetrician or a fetal medicine specialist. Families looking for twin pregnancy care in Trichy can reach Trichy Fetal Medicine and Fertility Centre through https://fmctrichy.com/."
       },
       {
+        "type": "paragraph",
+        "text": "If your doctor has suggested this, our [twin specialised clinic](/services/twin-specialised-clinic) page lists what is included and how to book; [the team](/doctors) is happy to talk it through first."
+      },
+      {
         "type": "h2",
         "text": "Related guides"
       },
@@ -2857,7 +2907,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "What is twin-to-twin transfusion syndrome?",
-        "answer": "TTTS can happen when twins share a placenta. Blood flows unevenly between them through connecting vessels, so one baby gets too much and the other too little. On a scan, this usually shows up as a big difference in the fluid around each baby. It affects roughly 10 to 15% of monochorionic twin pregnancies and is treated in specialist fetal medicine centres."
+        "answer": "TTTS can happen when twins share a placenta.  Blood flows unevenly between them through connecting vessels, so one baby gets too much and the other too little.  On a scan, this usually shows up as a big difference in the fluid around each baby."
       },
       {
         "question": "Why are twins usually born earlier than single babies?",
@@ -2892,7 +2942,7 @@ export const blogGuides: Guide[] = [
     "excerpt": "Anomaly scan or TIFFA scan checks your baby’s development around 18 to 22 weeks. Learn what it examines, its limitations, and what happens after a finding.",
     "seo": {
       "description": "Anomaly scan or TIFFA scan checks your baby’s development around 18 to 22 weeks. Learn what it examines, its limitations, and what happens after a finding.",
-      "title": "Anomaly Scan in Pregnancy"
+      "title": "Anomaly Scan in Pregnancy: Complete Guide to"
     },
     "coverImage": {
       "src": "/images/guides/anomaly-scan-tiffa-scan-pregnancy.webp",
@@ -3531,7 +3581,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "A straightforward examination may be completed within a reasonable appointment period, but a detailed fetal assessment can take longer when:"
+        "text": "A routine examination may be completed within a reasonable appointment period, but a detailed fetal assessment can take longer when:"
       },
       {
         "type": "list",
@@ -3671,6 +3721,10 @@ export const blogGuides: Guide[] = [
         "text": ""
       },
       {
+        "type": "paragraph",
+        "text": "For appointments, the [anomaly scan](/services/anomaly-scan) page has the details, and [our fetal medicine specialists](/doctors) can advise whether it fits your situation."
+      },
+      {
         "type": "h2",
         "text": "Related guides"
       },
@@ -3720,7 +3774,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "What happens if an abnormality is seen?",
-        "answer": "A suspected abnormality usually leads to further assessment rather than an immediate final diagnosis. Depending on the finding, this may involve a detailed specialist ultrasound, fetal echocardiography, genetic counselling, genetic testing or other investigations."
+        "answer": "A suspected abnormality usually leads to further assessment rather than an immediate final diagnosis. Depending on the finding, this may involve a detailed specialist ultrasound, fetal echocardiography, genetic counselling, genetic testing or other investigations. This guide explains what happens during the scan, what doctors look for, what the examination can and cannot tell you."
       },
       {
         "question": "Do IVF pregnancies need an anomaly scan?",
@@ -3770,8 +3824,8 @@ export const blogGuides: Guide[] = [
     "cardTitle": "Fetal Echocardiography",
     "excerpt": "A fetal echocardiogram takes a closer look at your baby's developing heart. Learn when it may be advised, what happens during the scan and what results can mean.",
     "seo": {
-      "description": "Fetal echocardiography is a detailed scan of your baby's heart. Learn when it is advised, what it checks, how it differs from an anomaly scan and what results mean.",
-      "title": "Fetal Echocardiography"
+      "description": "Fetal echocardiography is a detailed scan of your baby's heart. Learn when it is advised, what it checks, how it differs from an anomaly scan that mean.",
+      "title": "Fetal Echocardiography: When Your Baby Needs a"
     },
     "coverImage": {
       "src": "/images/guides/fetal-echocardiography-pregnancy.webp",
@@ -4634,6 +4688,10 @@ export const blogGuides: Guide[] = [
         "text": "For patients seeking fetal medicine consultation in Trichy, Trichy Fetal Medicine and Fertility Centre provides specialist fetal medicine services, including fetal echocardiography. The official website is fmctrichy.com."
       },
       {
+        "type": "paragraph",
+        "text": "If this applies to your pregnancy, our [fetal echo](/services/fetal-echo) page explains what the visit involves, or you can [meet our specialists](/doctors) before you decide anything."
+      },
+      {
         "type": "h2",
         "text": "Related guides"
       },
@@ -4698,9 +4756,15 @@ export const blogGuides: Guide[] = [
       }
     ],
     "relatedService": "fetal-echo",
-        "sources": [
-      { "title": "Fetal cardiac screening examination", "publisher": "ISUOG patient information" },
-      { "title": "ISUOG Practice Guidelines: cardiac screening examination of the fetus", "publisher": "ISUOG" }
+    "sources": [
+      {
+        "title": "Fetal cardiac screening examination",
+        "publisher": "ISUOG patient information"
+      },
+      {
+        "title": "ISUOG Practice Guidelines: cardiac screening examination of the fetus",
+        "publisher": "ISUOG"
+      }
     ],
     "publishedAt": "2026-10-15",
     "reviewStatus": "reviewed",
@@ -4713,7 +4777,7 @@ export const blogGuides: Guide[] = [
     "excerpt": "A growth scan checks how your baby is growing, while Doppler ultrasound looks at blood flow between the placenta and baby. Here is what these scans can tell you and what happens when a baby measures small.",
     "seo": {
       "description": "Learn what a growth scan and Doppler test in pregnancy check, how fetal growth is assessed, and what a small baby or fetal growth restriction may mean.",
-      "title": "Growth Scan and Doppler in Pregnancy"
+      "title": "Growth Scan and Doppler in Pregnancy: Fetal"
     },
     "coverImage": {
       "src": "/images/guides/growth-scan-doppler-pregnancy-fetal-growth-restriction.webp",
@@ -5707,6 +5771,10 @@ export const blogGuides: Guide[] = [
         "text": "For patients seeking fetal medicine consultation and pregnancy scan services in Trichy, Trichy Fetal Medicine and Fertility Centre provides services including growth scans with Doppler, [fetal echocardiography](/guides/fetal-echocardiography-pregnancy), anomaly scans, [NIPT](/guides/nipt-in-pregnancy-test-accuracy-high-risk-result), genetic counselling and other fetal medicine services."
       },
       {
+        "type": "paragraph",
+        "text": "To arrange this at our Trichy centre, see [growth scan with Doppler](/services/growth-scan-doppler); if you are unsure whether you need it, [our doctors](/doctors) can tell you after a review."
+      },
+      {
         "type": "h2",
         "text": "Related guides"
       },
@@ -5755,15 +5823,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "Can a growth scan tell the exact weight of my baby?",
-        "answer": "No. Ultrasound provides an estimated fetal weight. The actual birth weight can be different from the ultrasound estimate. It is best read as a range; trends across scans matter more than one figure."
+        "answer": "No. Ultrasound provides an estimated fetal weight. The actual birth weight can be different from the ultrasound estimate. It is best read as a range; trends across scans matter more than one figure. A growth scan provides an estimated fetal weight, not an exact measurement."
       },
       {
         "question": "How often should growth scans be done?",
-        "answer": "There is no single schedule for every pregnancy. The interval depends on the reason for monitoring, gestational age, previous scan findings, fetal growth and other clinical factors. Your fetal medicine specialist sets the interval for your situation."
+        "answer": "There is no single schedule for every pregnancy. The interval depends on the reason for monitoring, gestational age, previous scan findings, fetal growth and other clinical factors. Your fetal medicine specialist sets the interval for your situation. How Often Should Growth Scans Be Done in a High-Risk Pregnancy?"
       },
       {
         "question": "Does every baby below the 10th percentile have fetal growth restriction?",
-        "answer": "No. A fetus may be small for gestational age without having pathological growth restriction. Additional assessment is needed to distinguish a constitutionally small fetus from FGR. The distinction is made by measuring over time and checking blood flow."
+        "answer": "No. A fetus may be small for gestational age without having pathological growth restriction. Additional assessment is needed to distinguish a constitutionally small fetus from FGR. The distinction is made by measuring over time and checking blood flow. Others may have fetal growth restriction (FGR), where the baby has not reached its expected growth potential because of an underlying problem."
       },
       {
         "question": "What happens if Doppler is abnormal?",
@@ -5771,9 +5839,16 @@ export const blogGuides: Guide[] = [
       }
     ],
     "relatedService": "growth-scan-doppler",
-        "sources": [
-      { "title": "Society for Maternal-Fetal Medicine Consult Series #60", "publisher": "SMFM", "url": "https://publications.smfm.org/publications/435-society-for-maternal-fetal-medicine-consult-series-60/" },
-      { "title": "Fetal growth restriction information", "publisher": "RCOG patient information" }
+    "sources": [
+      {
+        "title": "Society for Maternal-Fetal Medicine Consult Series #60",
+        "publisher": "SMFM",
+        "url": "https://publications.smfm.org/publications/435-society-for-maternal-fetal-medicine-consult-series-60/"
+      },
+      {
+        "title": "Fetal growth restriction information",
+        "publisher": "RCOG patient information"
+      }
     ],
     "publishedAt": "2026-10-17",
     "reviewStatus": "reviewed",
@@ -5786,7 +5861,7 @@ export const blogGuides: Guide[] = [
     "excerpt": "NIPT is a blood test used during pregnancy to screen for certain chromosome conditions, particularly Down syndrome. Learn when NIPT is done, what it can detect, its limitations, and what to do after a high-risk result.",
     "seo": {
       "description": "Learn what NIPT detects in pregnancy, when the test can be done, how accurate it is, what a low- or high-risk result means, and what happens next.",
-      "title": "NIPT in Pregnancy"
+      "title": "NIPT in Pregnancy: What It Detects, When to"
     },
     "coverImage": {
       "src": "/images/guides/nipt-in-pregnancy-test-accuracy-high-risk-result.webp",
@@ -6859,6 +6934,10 @@ export const blogGuides: Guide[] = [
         "text": "If you are considering NIPT, or have already received a result that you are unsure how to interpret, discussing it with a fetal medicine specialist can help you understand what the result means and what options are available next."
       },
       {
+        "type": "paragraph",
+        "text": "You can read about how we run the [NIPT](/services/nipt) at our centre, and who performs it, on the [team page](/doctors)."
+      },
+      {
         "type": "h2",
         "text": "Related guides"
       },
@@ -6893,7 +6972,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "At how many weeks can NIPT be done?",
-        "answer": "NIPT can generally be performed from 10 weeks of pregnancy. It can also be done later in pregnancy when needed, though earlier testing leaves more time for follow-up decisions."
+        "answer": "NIPT can generally be performed from 10 weeks of pregnancy. It can also be done later in pregnancy when needed, though earlier testing leaves more time for follow-up decisions. From how many weeks can I take the test? Most standard cfDNA screening begins from around 10 weeks."
       },
       {
         "question": "Can NIPT diagnose Down syndrome?",
@@ -6905,11 +6984,11 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "What does a high-risk NIPT result mean?",
-        "answer": "It means the screening test has identified an increased likelihood of a particular chromosome condition. Further evaluation and diagnostic testing may be recommended. Only a diagnostic test such as CVS or amniocentesis can give a definite answer."
+        "answer": "It means the screening test has identified an increased likelihood of a particular chromosome condition. Further evaluation and diagnostic testing may be recommended. Only a diagnostic test such as CVS or amniocentesis can give a definite answer. If you are considering NIPT, or have already received a result that you are unsure how to interpret."
       },
       {
         "question": "Is NIPT safe for the baby?",
-        "answer": "The test itself involves a blood sample from the mother and does not require a procedure inside the uterus. There is no procedure inside the uterus, so there is no procedure-related risk to the baby."
+        "answer": "The test itself involves a blood sample from the mother and does not require a procedure inside the uterus. There is no procedure inside the uterus, so there is no procedure-related risk to the baby. The details depend on your dates, history and earlier reports, so your doctor will tailor the answer to you."
       },
       {
         "question": "Can NIPT be done in a twin pregnancy?",
@@ -6917,7 +6996,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "Does NIPT replace the anomaly scan?",
-        "answer": "No. NIPT and ultrasound provide different information. A detailed anomaly scan remains important even when NIPT is low risk. A low-risk NIPT result does not remove the need for the detailed mid-pregnancy scan."
+        "answer": "No. NIPT and ultrasound provide different information. A detailed anomaly scan remains important even when NIPT is low risk. A low-risk NIPT result does not remove the need for the detailed mid-pregnancy scan. NIPT does not replace routine fetal ultrasound or the anomaly scan."
       }
     ],
     "sources": [
@@ -6944,7 +7023,7 @@ export const blogGuides: Guide[] = [
     "excerpt": "An NT scan is an early pregnancy ultrasound that measures fluid behind the baby's neck and helps assess the risk of certain chromosomal and structural conditions.",
     "seo": {
       "description": "Understand the NT scan in pregnancy, including the right timing, NT measurement, normal range, Down syndrome screening and what an increased result may mean.",
-      "title": "NT Scan in Pregnancy"
+      "title": "NT Scan in Pregnancy: Timing, Normal Range"
     },
     "coverImage": {
       "src": "/images/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome.webp",
@@ -7816,6 +7895,10 @@ export const blogGuides: Guide[] = [
         "text": "For that reason, an NT report is best interpreted with your obstetrician or fetal medicine specialist rather than by comparing the number with an online \"normal range.\""
       },
       {
+        "type": "paragraph",
+        "text": "When you are ready, the [Down's screening (OSCAR)](/services/downs-screening-oscar) service page covers timings and preparation; questions about your own situation are best put to [our specialists](/doctors)."
+      },
+      {
         "type": "h2",
         "text": "Related guides"
       },
@@ -7880,18 +7963,24 @@ export const blogGuides: Guide[] = [
       }
     ],
     "relatedService": "downs-screening-oscar",
-        "sources": [
-      { "title": "The 11-13 weeks scan", "publisher": "Fetal Medicine Foundation" },
-      { "title": "Screening tests for Down's syndrome", "publisher": "NHS" },
-      { "title": "Nuchal translucency scan", "publisher": "ISUOG patient information" }
+    "sources": [
+      {
+        "title": "The 11-13 weeks scan",
+        "publisher": "Fetal Medicine Foundation"
+      },
+      {
+        "title": "Screening tests for Down's syndrome",
+        "publisher": "NHS"
+      },
+      {
+        "title": "Nuchal translucency scan",
+        "publisher": "ISUOG patient information"
+      }
     ],
     "publishedAt": "2026-10-22",
     "reviewStatus": "reviewed",
     "reviewedAt": "2026-10-22"
   },
-
-  // ---------- Support guides ----------
-  // Cluster support articles 1.1 to 10.5, one pillar plus five supports each.
   {
     "slug": "tiffa-scan-pregnancy-when-to-get",
     "title": "What Is a TIFFA Scan and When Should You Get It?",
@@ -7987,11 +8076,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "What this means for you"
       },
       {
         "type": "paragraph",
         "text": "Treat the TIFFA scan as a planned check rather than a test to dread. Go within the window your doctor suggests, carry your earlier reports, and ask for the findings to be explained in plain language before you leave."
+      },
+      {
+        "type": "paragraph",
+        "text": "If your doctor has suggested this, our [anomaly scan](/services/anomaly-scan) page lists what is included and how to book; [the team](/doctors) is happy to talk it through first."
       },
       {
         "type": "h2",
@@ -8031,7 +8124,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "What if I am asked to repeat the scan?",
-        "answer": "This happens fairly often. The baby may simply have been lying in a position that blocked a particular view. If a finding does need a closer look, your doctor may suggest a detailed specialist scan and explain the options."
+        "answer": "This happens fairly often. The baby may simply have been lying in a position that blocked a particular view. If a finding does need a closer look, your doctor may suggest a detailed specialist scan and explain the options. If the scan raises a question, you may need a repeat scan, a fetal heart scan or a genetic counselling session."
       }
     ],
     "sources": [
@@ -8050,7 +8143,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-13",
     "publishedAt": "2026-10-13",
     "seo": {
-      "title": "What Is a TIFFA Scan and When Should You Get It?",
+      "title": "What Is a TIFFA Scan and When Should You Get",
       "description": "What a TIFFA scan is, when it is done at 18 to 22 weeks, who may need one, and what the scan can and cannot show. A plain guide for expecting parents."
     },
     "relatedService": "anomaly-scan"
@@ -8151,7 +8244,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "No, and this is where parents are often caught out. A normal report is genuinely reassuring, but ultrasound has limits. Some conditions are too subtle to see, and some only appear later in pregnancy. Growth scans may still be advised afterwards, particularly if there are concerns about the baby's size or your own health."
+        "text": "No, and this is where parents are often caught out. A normal report is truly reassuring, but ultrasound has limits. Some conditions are too subtle to see, and some only appear later in pregnancy. Growth scans may still be advised afterwards, particularly if there are concerns about the baby's size or your own health."
       },
       {
         "type": "paragraph",
@@ -8171,11 +8264,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "The takeaway"
       },
       {
         "type": "paragraph",
         "text": "Think of pregnancy scans as different tools, each built for its own question. If you are unsure why one has been advised, ask before the appointment rather than after. Parents who know what the scan will look at tend to walk in far calmer."
+      },
+      {
+        "type": "paragraph",
+        "text": "For appointments, the [anomaly scan](/services/anomaly-scan) page has the details, and [our fetal medicine specialists](/doctors) can advise whether it fits your situation."
       },
       {
         "type": "h2",
@@ -8204,23 +8301,23 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "Can a routine ultrasound detect birth defects?",
-        "answer": "A routine scan may sometimes show an obvious problem, but it is not designed to examine the baby's anatomy in detail. The anomaly scan is the examination meant for that purpose, and even it cannot detect every condition."
+        "answer": "A routine scan may sometimes show an obvious problem, but it is not designed to examine the baby's anatomy in detail. The anomaly scan is the examination meant for that purpose, and even it cannot detect every condition. Can an Anomaly Scan Detect All Birth Defects?"
       },
       {
         "question": "Is the anomaly scan compulsory?",
-        "answer": "It is generally recommended as part of antenatal care, but the decision is yours after talking to your doctor. Understanding what the scan can and cannot tell you may help you decide."
+        "answer": "It is generally recommended as part of antenatal care, but the decision is yours after talking to your doctor. Understanding what the scan can and cannot tell you may help you decide. A routine ultrasound and an anomaly scan use the same machine but serve different purposes, and knowing the difference helps you go into the appointment prepared."
       },
       {
         "question": "Does a normal anomaly scan mean my baby is completely healthy?",
-        "answer": "A normal scan is good news, but ultrasound has limits. Some conditions cannot be seen, and others develop later in pregnancy. Your doctor will keep monitoring your pregnancy as needed."
+        "answer": "A normal scan is good news, but ultrasound has limits. Some conditions cannot be seen, and others develop later in pregnancy. Your doctor will keep monitoring your pregnancy as needed. Can a normal anomaly scan replace other scans? An anomaly scan, commonly called a TIFFA scan in India, asks whether the baby's organs and body structures are forming as expected."
       },
       {
         "question": "Will I need more scans after the anomaly scan?",
-        "answer": "Not always. Some women return for growth scans, Doppler assessment, or a repeat visit to complete views the baby's position made difficult. Your doctor will advise based on your pregnancy."
+        "answer": "Not always. Some women return for growth scans, Doppler assessment, or a repeat visit to complete views the baby's position made difficult. Your doctor will advise based on your pregnancy. Most pregnancies need nothing more than routine scans and a well-timed anomaly scan."
       },
       {
         "question": "Is the anomaly scan painful or unsafe for the baby?",
-        "answer": "It is an abdominal ultrasound and is not painful, though you may feel mild pressure from the probe. Ultrasound performed by trained professionals for medical reasons is considered safe in pregnancy."
+        "answer": "It is an abdominal ultrasound and is not painful, though you may feel mild pressure from the probe. Ultrasound performed by trained professionals for medical reasons is considered safe in pregnancy. For appointments, the anomaly scan page has the details, and our fetal medicine specialists can advise whether it fits your situation."
       }
     ],
     "sources": [
@@ -8239,7 +8336,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-13",
     "publishedAt": "2026-10-13",
     "seo": {
-      "title": "Anomaly Scan vs Normal Pregnancy Ultrasound: Key Differences",
+      "title": "Anomaly Scan vs Normal Pregnancy Ultrasound",
       "description": "Anomaly scan vs normal pregnancy ultrasound: see how their purpose, timing and level of detail differ, and why a routine scan cannot replace an anatomy scan."
     },
     "relatedService": "anomaly-scan"
@@ -8362,11 +8459,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "Before your appointment"
       },
       {
         "type": "paragraph",
         "text": "A scan report answers a specific question about structure at a specific moment. If something in your report or family history is on your mind, take it to your obstetrician or a fetal medicine specialist. Patients seeking fetal medicine consultation in Trichy can contact Trichy Fetal Medicine and Fertility Centre through the official website."
+      },
+      {
+        "type": "paragraph",
+        "text": "If this applies to your pregnancy, our [anomaly scan](/services/anomaly-scan) page explains what the visit involves, or you can [meet our specialists](/doctors) before you decide anything."
       },
       {
         "type": "h2",
@@ -8399,15 +8500,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "Does a repeat scan mean something is wrong?",
-        "answer": "Not necessarily. Repeat scans are often advised because the baby's position or image quality prevented a clear view of certain structures. If a specific finding needs closer assessment, your doctor will tell you so directly."
+        "answer": "Not necessarily. Repeat scans are often advised because the baby's position or image quality prevented a clear view of certain structures. If a specific finding needs closer assessment, your doctor will tell you so directly. What it cannot tell you is whether the baby has a genetic condition, whether something will appear later."
       },
       {
         "question": "How is a fetal echocardiogram different from the anomaly scan?",
-        "answer": "The anomaly scan includes a basic check of the heart. A fetal echocardiogram is a longer, more specialised examination of the heart's structure and function. It is usually reserved for pregnancies with a higher risk or a suspicious finding."
+        "answer": "The anomaly scan includes a basic check of the heart. A fetal echocardiogram is a longer, more specialised examination of the heart's structure and function. It is usually reserved for pregnancies with a higher risk or a suspicious finding. Fetal Echo vs Anomaly Scan: What's the Difference?"
       },
       {
         "question": "Can NIPT or amniocentesis find what the anomaly scan misses?",
-        "answer": "They answer different questions. NIPT estimates the likelihood of certain chromosomal conditions, while amniocentesis and CVS can confirm them. Neither detects every birth defect, and whether they suit you depends on your history and screening results."
+        "answer": "They answer different questions. NIPT estimates the likelihood of certain chromosomal conditions, while amniocentesis and CVS can confirm them. Neither detects every birth defect, and whether they suit you depends on your history and screening results. If this applies to your pregnancy, our anomaly scan page explains what the visit involves."
       }
     ],
     "sources": [
@@ -8532,11 +8633,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "A few things to hold on to"
       },
       {
         "type": "paragraph",
         "text": "A useful habit at the end of the appointment is to ask whether all the views were completed and whether anything needs a second look. If you are in Trichy and want fetal medicine input, Trichy Fetal Medicine and Fertility Centre can be reached through its official website."
+      },
+      {
+        "type": "paragraph",
+        "text": "To arrange this at our Trichy centre, see [anomaly scan](/services/anomaly-scan); if you are unsure whether you need it, [our doctors](/doctors) can tell you after a review."
       },
       {
         "type": "h2",
@@ -8561,7 +8666,7 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "At what week is the anomaly scan done?",
-        "answer": "Most centres schedule it between 18 and 22 weeks. Your doctor may choose a different time if you are carrying twins, have a high-risk pregnancy, or had an unusual finding on an earlier scan."
+        "answer": "Most centres schedule it between 18 and 22 weeks. Your doctor may choose a different time if you are carrying twins, have a high-risk pregnancy, or had an unusual finding on an earlier scan. To arrange this at our Trichy centre, see anomaly scan; if you are unsure whether you need it, our doctors can tell you after a review."
       },
       {
         "question": "Does the anomaly scan check the baby's heart?",
@@ -8569,15 +8674,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "Can the anomaly scan show Down syndrome?",
-        "answer": "It can sometimes show features that raise the possibility of a chromosomal condition, but it cannot diagnose Down syndrome. Screening tests like NIPT and diagnostic tests like amniocentesis are separate, and your doctor can explain when each is used."
+        "answer": "It can sometimes show features that raise the possibility of a chromosomal condition, but it cannot diagnose Down syndrome. Screening tests like NIPT and diagnostic tests like amniocentesis are separate, and your doctor can explain when each is used. Around the 20th week, your obstetrician will probably ask you to book an anomaly scan."
       },
       {
         "question": "Why was part of my anomaly scan repeated?",
-        "answer": "Usually a view was not clear enough, often because of the baby's position. It does not mean an abnormality was found. A second visit simply lets the doctor finish the examination with better images."
+        "answer": "Usually a view was not clear enough, often because of the baby's position. It does not mean an abnormality was found. A second visit simply lets the doctor finish the examination with better images. Why is part of the scan sometimes repeated?"
       },
       {
         "question": "Is the anomaly scan painful?",
-        "answer": "No. A probe is moved over your abdomen with gel, and you may feel light pressure. Ultrasound is widely used in pregnancy and should be performed by trained professionals."
+        "answer": "No. A probe is moved over your abdomen with gel, and you may feel light pressure. Ultrasound is widely used in pregnancy and should be performed by trained professionals. The anomaly scan is a study of structure. Can an Anomaly Scan Detect All Birth Defects?"
       }
     ],
     "sources": [
@@ -8635,7 +8740,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Expect a longer, slower examination than the 20-week scan. The specialist concentrates on the area of concern and tries to settle four things: whether the finding is genuinely there, whether it stands alone or is part of a pattern, how significant it looks, and whether it could change as the pregnancy progresses."
+        "text": "Expect a longer, slower examination than the 20-week scan. The specialist concentrates on the area of concern and tries to settle four things: whether the finding is actually there, whether it stands alone or is part of a pattern, how significant it looks, and whether it could change as the pregnancy progresses."
       },
       {
         "type": "paragraph",
@@ -8683,11 +8788,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "What matters most"
       },
       {
         "type": "paragraph",
         "text": "Before you leave any appointment, ask what exactly was seen, how certain the finding is, what the next test will tell you and when the results will be ready. Request copies of your reports too. Parents in Trichy who have been advised further fetal assessment can contact Trichy Fetal Medicine and Fertility Centre through its official website."
+      },
+      {
+        "type": "paragraph",
+        "text": "You can read about how we run the [second opinion scan](/services/second-opinion-scan) at our centre, and who performs it, on the [team page](/doctors)."
       },
       {
         "type": "h2",
@@ -8712,23 +8821,23 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Does an abnormal 20-week scan always mean the baby has a condition?",
-        "answer": "Not always. Some findings are normal variations, and others are unclear because of the baby's position. A specialist scan generally shows whether the finding actually matters."
+        "answer": "Not always. Some findings are normal variations, and others are unclear because of the baby's position. A specialist scan generally shows whether the finding actually matters. Does an abnormal finding always mean something is wrong? In India, the Medical Termination of Pregnancy (Amendment) Act, 2021 sets gestational limits and provides for Medical Board review where substantial fetal abnormalities are found."
       },
       {
         "question": "How soon will I get a specialist scan?",
-        "answer": "That depends on the finding. Many centres book it as early as practical, and your doctor will tell you if it is urgent."
+        "answer": "That depends on the finding. Many centres book it as early as practical, and your doctor will tell you if it is urgent. The specialist concentrates on the area of concern and tries to settle four things: whether the finding is actually there, whether it stands alone or is part of a pattern, how significant it looks."
       },
       {
         "question": "Can an anomaly found at 20 weeks be treated before birth?",
-        "answer": "A few can. Most are handled through monitoring, planned delivery and treatment after birth. A fetal medicine specialist can tell you whether a prenatal option exists for your baby's condition."
+        "answer": "A few can. Most are handled through monitoring, planned delivery and treatment after birth. A fetal medicine specialist can tell you whether a prenatal option exists for your baby's condition. A small number of conditions can be treated before birth."
       },
       {
         "question": "Is NIPT enough to confirm a problem after an abnormal scan?",
-        "answer": "No. NIPT screens for certain chromosomal conditions and does not explain a structural finding. If needed, diagnostic testing such as amniocentesis can be discussed."
+        "answer": "No. NIPT screens for certain chromosomal conditions and does not explain a structural finding. If needed, diagnostic testing such as amniocentesis can be discussed. If this is your situation, the safest step is to ask at your next visit rather than waiting."
       },
       {
         "question": "Should I get a second opinion?",
-        "answer": "You can ask for one. Take your scan reports and images with you, and let your obstetrician know."
+        "answer": "You can ask for one. Take your scan reports and images with you, and let your obstetrician know. You can read about how we run the second opinion scan at our centre, and who performs it, on the team page."
       }
     ],
     "sources": [
@@ -8747,7 +8856,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-14",
     "publishedAt": "2026-10-14",
     "seo": {
-      "title": "What Happens If an Anomaly Is Found During the 20-Week Scan?",
+      "title": "What Happens If an Anomaly Is Found During the",
       "description": "The reassuring part is that a concern raised at this scan is the start of a conversation, not the end of one. No, and this surprises many parents."
     },
     "relatedService": "second-opinion-scan"
@@ -8769,7 +8878,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Why Does PCOS Make It Harder?"
+        "text": "Why does PCOS make it harder?"
       },
       {
         "type": "paragraph",
@@ -8777,7 +8886,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Improves Your Chances Naturally?"
+        "text": "What improves your chances naturally?"
       },
       {
         "type": "h3",
@@ -8821,7 +8930,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "When Do You Need Medical Help?"
+        "text": "When do you need medical help?"
       },
       {
         "type": "paragraph",
@@ -8843,7 +8952,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Is Pregnancy With PCOS Safe?"
+        "text": "Is pregnancy with PCOS safe?"
       },
       {
         "type": "paragraph",
@@ -8851,11 +8960,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "If you remember one thing"
       },
       {
         "type": "paragraph",
         "text": "PCOS can feel discouraging, but it is one of the most treatable causes of fertility delay. Simple steps taken early often make a real difference. For a plan that suits your cycle and health, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "If you want a specialist opinion on your own situation, [the team](/doctors) is a call or a visit away."
       },
       {
         "type": "h2",
@@ -8880,27 +8993,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "How long does it take to get pregnant with PCOS?",
-        "answer": "It varies. Some women conceive within months, while others take longer because ovulation is irregular. If you are under 35 and have tried for a year, or over 35 for six months, a specialist review is a good idea."
+        "answer": "It varies. Some women conceive within months, while others take longer because ovulation is irregular. If you are under 35 and have tried for a year, or over 35 for six months, a specialist review is a good idea. Your own result can differ, which is why the specialist looks at the whole picture before advising."
       },
       {
         "question": "Can losing weight help PCOS fertility?",
-        "answer": "Yes. For women who are overweight, losing 5 to 10 percent of body weight can restore regular ovulation and improve the chance of pregnancy. Slow, steady changes in food and activity work better than crash diets."
+        "answer": "Yes. For women who are overweight, losing 5 to 10 percent of body weight can restore regular ovulation and improve the chance of pregnancy. Slow, steady changes in food and activity work better than crash diets. PCOS can feel discouraging, but it is one of the most treatable causes of fertility delay."
       },
       {
         "question": "Do I need IVF if I have PCOS?",
-        "answer": "Most women with PCOS do not need IVF. Ovulation tablets like letrozole, with scan monitoring, help many conceive. IVF is considered when other treatments fail, or when there are tube or sperm problems as well."
+        "answer": "Most women with PCOS do not need IVF. Ovulation tablets like letrozole, with scan monitoring, help many conceive. IVF is considered when other treatments fail, or when there are tube or sperm problems as well. It is a reasonable question to ask directly. the answer often depends on your scan findings."
       },
       {
         "question": "Can thin women have PCOS?",
-        "answer": "Yes. PCOS can affect women of any body size. Thin women may still have irregular cycles and high androgen levels. Weight loss is not the focus for them, but other lifestyle steps and ovulation support may still help."
+        "answer": "Yes. PCOS can affect women of any body size. Thin women may still have irregular cycles and high androgen levels. Weight loss is not the focus for them, but other lifestyle steps and ovulation support may still help. Healthy lifestyle changes, cycle tracking and, when needed, simple ovulation medicines help most women achieve pregnancy."
       },
       {
         "question": "Does PCOS increase miscarriage risk?",
-        "answer": "Some studies suggest a slightly higher risk, often linked to insulin resistance or high weight. Good blood sugar control, a healthy lifestyle and early pregnancy care help lower that risk. Most PCOS pregnancies continue normally."
+        "answer": "Some studies suggest a slightly higher risk, often linked to insulin resistance or high weight. Good blood sugar control, a healthy lifestyle and early pregnancy care help lower that risk. Most PCOS pregnancies continue normally. The team will explain how this applies to your pregnancy when you come in."
       },
       {
         "question": "Is metformin needed to get pregnant with PCOS?",
-        "answer": "Not for everyone. Metformin may help women with insulin resistance or high sugar levels. It is not usually the main fertility treatment. Your doctor will decide based on your tests and health."
+        "answer": "Not for everyone. Metformin may help women with insulin resistance or high sugar levels. It is not usually the main fertility treatment. Your doctor will decide based on your tests and health. IVF is needed only for some women. In most cases the answer also depends on your medical history, so bring it up at your appointment."
       }
     ],
     "sources": [
@@ -8920,7 +9033,7 @@ export const blogGuides: Guide[] = [
     "publishedAt": "2026-10-01",
     "seo": {
       "title": "Can You Get Pregnant Naturally With PCOS?",
-      "description": "Yes, many women with PCOS conceive naturally. Yes, many women with [PCOS](/guides/pcos-and-pregnancy) get pregnant naturally. This does not need extreme diets."
+      "description": "Many women with PCOS conceive naturally, sometimes with small lifestyle changes. Learn what improves your chances and when treatment helps."
     }
   },
   {
@@ -8940,7 +9053,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Happens in a Normal Cycle?"
+        "text": "What happens in a normal cycle?"
       },
       {
         "type": "paragraph",
@@ -8948,7 +9061,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Changes in PCOS?"
+        "text": "What changes in PCOS?"
       },
       {
         "type": "h3",
@@ -8984,7 +9097,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Signs Suggest PCOS Is Affecting Fertility?"
+        "text": "What signs suggest PCOS is affecting fertility?"
       },
       {
         "type": "list",
@@ -9000,7 +9113,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Does PCOS Affect Egg Quality?"
+        "text": "Does PCOS affect egg quality?"
       },
       {
         "type": "paragraph",
@@ -9008,7 +9121,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Is Ovulation Restored?"
+        "text": "How is ovulation restored?"
       },
       {
         "type": "list",
@@ -9027,11 +9140,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "Putting it together"
       },
       {
         "type": "paragraph",
         "text": "Understanding how PCOS affects your cycle makes treatment feel less confusing. The problem is usually timing and frequency of ovulation, which is very treatable. For a clear diagnosis and ovulation plan, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "If any of this sounds familiar, [our fetal medicine specialists](/doctors) can review your reports and tell you what the next step looks like."
       },
       {
         "type": "h2",
@@ -9057,27 +9174,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Do women with PCOS ovulate at all?",
-        "answer": "Many do, but less often. Some women with PCOS ovulate every few months, while others rarely ovulate. Tracking periods, checking progesterone or doing follicular scans helps show how often ovulation actually happens."
+        "answer": "Many do, but less often. Some women with PCOS ovulate every few months, while others rarely ovulate. Tracking periods, checking progesterone or doing follicular scans helps show how often ovulation actually happens. Fewer ovulations mean fewer chances of pregnancy, but with the right care most women with PCOS can ovulate and conceive."
       },
       {
         "question": "Are the cysts in PCOS harmful?",
-        "answer": "They are not true cysts. They are small follicles that stopped growing before ovulation. They do not need removal and are not cancerous. The aim of treatment is to help one follicle grow fully and release an egg."
+        "answer": "They are not true cysts. They are small follicles that stopped growing before ovulation. They do not need removal and are not cancerous. The aim of treatment is to help one follicle grow fully and release an egg. These are not true cysts."
       },
       {
         "question": "Why is letrozole used for PCOS?",
-        "answer": "Letrozole lowers estrogen briefly, which makes the brain release more FSH. This helps one follicle grow and mature. Studies show it often works better than clomiphene for women with PCOS, with good ovulation and pregnancy rates."
+        "answer": "Letrozole lowers estrogen briefly, which makes the brain release more FSH. This helps one follicle grow and mature. Studies show it often works better than clomiphene for women with PCOS, with good ovulation and pregnancy rates. Your specialist will factor in your reports and dates before giving you a definite answer."
       },
       {
         "question": "Can PCOS go away?",
-        "answer": "PCOS is a long-term condition, but symptoms can improve a lot with lifestyle changes and treatment. Many women find their cycles become more regular with time, healthy weight and age. Ongoing care keeps it under control."
+        "answer": "PCOS is a long-term condition, but symptoms can improve a lot with lifestyle changes and treatment. Many women find their cycles become more regular with time, healthy weight and age. Ongoing care keeps it under control. If you are unsure whether this applies to you, ask the doctor at your next scan."
       },
       {
         "question": "Does insulin resistance always come with PCOS?",
-        "answer": "Not always, but it is common, even in women who are not overweight. A doctor may check fasting sugar, HbA1c or an oral glucose test. Managing insulin resistance often improves ovulation."
+        "answer": "Not always, but it is common, even in women who are not overweight. A doctor may check fasting sugar, HbA1c or an oral glucose test. Managing insulin resistance often improves ovulation. Many women with PCOS have insulin resistance, where the body needs more insulin to control sugar."
       },
       {
         "question": "Can PCOS affect pregnancy after conception?",
-        "answer": "It slightly raises the chance of gestational diabetes, high blood pressure and preterm birth. Early sugar testing, regular check-ups and healthy habits help most women have safe pregnancies and healthy babies."
+        "answer": "It slightly raises the chance of gestational diabetes, high blood pressure and preterm birth. Early sugar testing, regular check-ups and healthy habits help most women have safe pregnancies and healthy babies. Some studies suggest high insulin and hormone imbalance may affect eggs slightly, but many women with PCOS have good-quality eggs and respond well to treatment."
       }
     ],
     "sources": [
@@ -9097,7 +9214,7 @@ export const blogGuides: Guide[] = [
     "publishedAt": "2026-10-01",
     "seo": {
       "title": "How PCOS Affects Ovulation and Fertility",
-      "description": "PCOS can delay or stop ovulation by upsetting hormones and insulin. [PCOS](/guides/pcos-and-pregnancy) affects fertility mainly by disturbing ovulation."
+      "description": "PCOS can delay or stop ovulation by disturbing hormones and insulin. Learn how that affects fertility and which treatments restore regular cycles."
     }
   },
   {
@@ -9117,7 +9234,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Why Are Tests Needed?"
+        "text": "Why are tests needed?"
       },
       {
         "type": "paragraph",
@@ -9125,7 +9242,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Which Tests Confirm PCOS?"
+        "text": "Which tests confirm PCOS?"
       },
       {
         "type": "h3",
@@ -9161,7 +9278,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Which Tests Rule Out Other Causes?"
+        "text": "Which tests rule out other causes?"
       },
       {
         "type": "list",
@@ -9175,7 +9292,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Which Tests Check Pregnancy Readiness?"
+        "text": "Which tests check pregnancy readiness?"
       },
       {
         "type": "h3",
@@ -9211,7 +9328,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Do Tubes and Sperm Need Testing Too?"
+        "text": "Do tubes and sperm need testing too?"
       },
       {
         "type": "paragraph",
@@ -9219,11 +9336,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "The essentials"
       },
       {
         "type": "paragraph",
         "text": "The right tests save time, money and stress by pointing you straight to the right treatment. With PCOS, a careful work-up also prepares your body for a healthier pregnancy. To plan your tests in the right order, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "You do not have to work this out alone. [our doctors](/doctors) see these situations every week and can guide you."
       },
       {
         "type": "h2",
@@ -9249,7 +9370,7 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Can PCOS be diagnosed with only an ultrasound?",
-        "answer": "No. Many small follicles on a scan can appear in women without PCOS. Diagnosis needs two of three features, irregular ovulation, high androgens and the ultrasound pattern, after other causes such as thyroid problems are ruled out."
+        "answer": "No. Many small follicles on a scan can appear in women without PCOS. Diagnosis needs two of three features, irregular ovulation, high androgens and the ultrasound pattern, after other causes such as thyroid problems are ruled out. These usually include a pelvic ultrasound, hormone blood tests, sugar tests, a tubal check and a semen analysis for your partner."
       },
       {
         "question": "On which day should PCOS hormone tests be done?",
@@ -9257,19 +9378,19 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "Why is a sugar test needed in PCOS?",
-        "answer": "Many women with PCOS have insulin resistance, even when slim. High sugar can affect ovulation and raise pregnancy risks like gestational diabetes. Testing early allows diet, exercise or medicine to bring levels into a safe range."
+        "answer": "Many women with PCOS have insulin resistance, even when slim. High sugar can affect ovulation and raise pregnancy risks like gestational diabetes. Testing early allows diet, exercise or medicine to bring levels into a safe range. A higher LH than FSH can be seen in PCOS but is not needed for diagnosis."
       },
       {
         "question": "Does my husband need to be tested if I have PCOS?",
-        "answer": "Yes. PCOS explains ovulation problems but not every fertility issue. A semen analysis is quick and low cost. Knowing both partners' results helps choose the right treatment from the start."
+        "answer": "Yes. PCOS explains ovulation problems but not every fertility issue. A semen analysis is quick and low cost. Knowing both partners' results helps choose the right treatment from the start. The details depend on your dates, history and earlier reports, so your doctor will tailor the answer to you."
       },
       {
         "question": "Is a tubal test always needed in PCOS?",
-        "answer": "Not always at the start. Some doctors begin ovulation treatment first in women with no risk factors. A tubal test is usually advised before IUI or if pregnancy does not happen after a few ovulatory cycles."
+        "answer": "Not always at the start. Some doctors begin ovulation treatment first in women with no risk factors. A tubal test is usually advised before IUI or if pregnancy does not happen after a few ovulatory cycles. Irregular periods are not always PCOS."
       },
       {
         "question": "Do I need all these tests every cycle?",
-        "answer": "No. Most tests are done once at the start. During treatment, the main repeated test is follicular monitoring by ultrasound to check how the ovaries respond to medicine."
+        "answer": "No. Most tests are done once at the start. During treatment, the main repeated test is follicular monitoring by ultrasound to check how the ovaries respond to medicine. If you have PCOS and are trying to conceive, your doctor will order tests to confirm the diagnosis, rule out other causes of irregular periods and check your overall readiness for pregnancy."
       }
     ],
     "sources": [
@@ -9309,7 +9430,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Is Low AMH?"
+        "text": "What is low AMH?"
       },
       {
         "type": "paragraph",
@@ -9329,7 +9450,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Do They Compare?"
+        "text": "How do they compare?"
       },
       {
         "type": "h3",
@@ -9393,7 +9514,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Can You Have Both?"
+        "text": "Can you have both?"
       },
       {
         "type": "paragraph",
@@ -9401,7 +9522,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Is Each Treated?"
+        "text": "How is each treated?"
       },
       {
         "type": "paragraph",
@@ -9413,11 +9534,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "What to do next"
       },
       {
         "type": "paragraph",
         "text": "Two women with irregular cycles can have very different reasons behind them. Getting the right diagnosis prevents wasted time and the wrong medicines. For a clear explanation of your AMH and scan reports, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "When you are ready to talk it through, [our specialists](/doctors) will look at your history and suggest what fits."
       },
       {
         "type": "h2",
@@ -9444,27 +9569,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Is high AMH always a sign of PCOS?",
-        "answer": "No. A high AMH supports a PCOS diagnosis but does not confirm it alone. Young women can naturally have higher AMH. Doctors also look at cycle regularity, androgen levels and the ultrasound before deciding."
+        "answer": "No. A high AMH supports a PCOS diagnosis but does not confirm it alone. Young women can naturally have higher AMH. Doctors also look at cycle regularity, androgen levels and the ultrasound before deciding. If this is your situation, the safest step is to ask at your next visit rather than waiting."
       },
       {
         "question": "Can low AMH cause irregular periods?",
-        "answer": "Usually not in the early stages. Many women with low AMH have regular cycles. As reserve falls further, cycles can become shorter or irregular. Irregular cycles are more typical of PCOS or other hormone problems."
+        "answer": "Usually not in the early stages. Many women with low AMH have regular cycles. As reserve falls further, cycles can become shorter or irregular. Irregular cycles are more typical of PCOS or other hormone problems. Androgen levels and insulin are often raised, and periods are irregular."
       },
       {
         "question": "Which is harder to treat, low AMH or PCOS?",
-        "answer": "PCOS usually responds well to simple ovulation treatment. Low AMH can be more challenging because egg numbers cannot be increased. Age matters a lot in both, so early review gives the best options."
+        "answer": "PCOS usually responds well to simple ovulation treatment. Low AMH can be more challenging because egg numbers cannot be increased. Age matters a lot in both, so early review gives the best options. Both can delay pregnancy, but they need different treatment plans, so knowing which one you have matters."
       },
       {
         "question": "Can PCOS turn into low AMH?",
-        "answer": "AMH naturally falls with age in all women, including those with PCOS. Women with PCOS often keep a higher reserve for longer. PCOS does not turn into low AMH, but values change over time."
+        "answer": "AMH naturally falls with age in all women, including those with PCOS. Women with PCOS often keep a higher reserve for longer. PCOS does not turn into low AMH, but values change over time. Your own result can differ, which is why the specialist looks at the whole picture before advising."
       },
       {
         "question": "Does egg freezing help with low AMH?",
-        "answer": "It can help some women who want to delay pregnancy, especially if done at a younger age. Fewer eggs may be collected when AMH is low. A specialist can explain the expected results for your age and levels."
+        "answer": "It can help some women who want to delay pregnancy, especially if done at a younger age. Fewer eggs may be collected when AMH is low. A specialist can explain the expected results for your age and levels. Egg freezing may be discussed for women who want to delay pregnancy."
       },
       {
         "question": "Should I repeat my AMH test?",
-        "answer": "It is not usually needed often. A repeat test may help if planning treatment after a long gap or after ovarian surgery. Small differences between labs are normal, so focus on the overall trend."
+        "answer": "It is not usually needed often. A repeat test may help if planning treatment after a long gap or after ovarian surgery. Small differences between labs are normal, so focus on the overall trend. It is a reasonable question to ask directly. the answer often depends on your scan findings."
       }
     ],
     "sources": [
@@ -9484,7 +9609,7 @@ export const blogGuides: Guide[] = [
     "publishedAt": "2026-10-02",
     "seo": {
       "title": "Low AMH vs PCOS: What Is the Difference?",
-      "description": "Low AMH and PCOS can both cause irregular cycles, but they are opposite problems. Low AMH and [PCOS](/guides/pcos-and-pregnancy) are almost opposite conditions."
+      "description": "Low AMH and PCOS can both cause irregular cycles but for opposite reasons. Learn how doctors tell them apart and what each means for fertility."
     }
   },
   {
@@ -9504,7 +9629,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Why Not Just Wait?"
+        "text": "Why not just wait?"
       },
       {
         "type": "paragraph",
@@ -9512,7 +9637,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Signs You Should Go Sooner"
+        "text": "Signs you should go sooner"
       },
       {
         "type": "paragraph",
@@ -9534,7 +9659,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Will the Specialist Do?"
+        "text": "What will the specialist do?"
       },
       {
         "type": "h3",
@@ -9562,7 +9687,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Can a Gynaecologist Manage PCOS Fertility?"
+        "text": "Can a gynaecologist manage PCOS fertility?"
       },
       {
         "type": "paragraph",
@@ -9570,7 +9695,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Can You Prepare for the Visit?"
+        "text": "How can you prepare for the visit?"
       },
       {
         "type": "list",
@@ -9585,11 +9710,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "The short version"
       },
       {
         "type": "paragraph",
         "text": "Seeking help is not a sign of failure. It is simply a way to make sure time is used well. With PCOS, the right guidance often leads to pregnancy without complex treatment. For a calm, step-by-step plan, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "If you want a specialist opinion on your own situation, [the team](/doctors) is a call or a visit away."
       },
       {
         "type": "h2",
@@ -9619,23 +9748,23 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "How many cycles of letrozole should I try before IVF?",
-        "answer": "Many doctors suggest up to about 3 to 6 ovulatory cycles with tablets before moving on, provided tubes and sperm are normal. The exact number depends on your age, response and other test results."
+        "answer": "Many doctors suggest up to about 3 to 6 ovulatory cycles with tablets before moving on, provided tubes and sperm are normal. The exact number depends on your age, response and other test results. If you have tried a few ovulation cycles without success, a specialist review is a sensible next step."
       },
       {
         "question": "Is IVF the only option if PCOS tablets fail?",
-        "answer": "No. Other options include low-dose hormone injections, IUI and ovarian drilling surgery for selected women. IVF is considered if these do not work or if there are other factors like blocked tubes or low sperm count."
+        "answer": "No. Other options include low-dose hormone injections, IUI and ovarian drilling surgery for selected women. IVF is considered if these do not work or if there are other factors like blocked tubes or low sperm count. Most plans start simple, with lifestyle advice and ovulation tablets like letrozole under scan monitoring."
       },
       {
         "question": "Should I lose weight before seeing a specialist?",
-        "answer": "You do not need to wait. A specialist can guide healthy weight changes while starting tests. If you are overweight, losing even a small amount can improve ovulation, and both can happen at the same time."
+        "answer": "You do not need to wait. A specialist can guide healthy weight changes while starting tests. If you are overweight, losing even a small amount can improve ovulation, and both can happen at the same time. If you want a specialist opinion on your own situation, the team is a call or a visit away."
       },
       {
         "question": "Does my age matter if I have PCOS?",
-        "answer": "Yes. Age affects egg quality for every woman, including those with PCOS. At 35 or older, doctors advise seeking help after 6 months of trying, and sooner if cycles are irregular."
+        "answer": "Yes. Age affects egg quality for every woman, including those with PCOS. At 35 or older, doctors advise seeking help after 6 months of trying, and sooner if cycles are irregular. The team will explain how this applies to your pregnancy when you come in."
       },
       {
         "question": "Is fertility treatment for PCOS expensive?",
-        "answer": "First-line treatment, like ovulation tablets with scans, is usually affordable. Costs rise only if advanced treatments like IVF are needed. Ask your clinic for an estimate so you can plan with confidence."
+        "answer": "First-line treatment, like ovulation tablets with scans, is usually affordable. Costs rise only if advanced treatments like IVF are needed. Ask your clinic for an estimate so you can plan with confidence. A woman with PCOS should see a fertility specialist if she is not pregnant after 12 months of trying (6 months if she is 35 or older)."
       }
     ],
     "sources": [
@@ -9747,11 +9876,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "Keeping it simple"
       },
       {
         "type": "paragraph",
         "text": "A well-timed NT scan usually comes down to knowing your dates and booking early enough. If it slips, your doctor can guide you to another option. Patients seeking fetal medicine consultation in Trichy can contact Trichy Fetal Medicine and Fertility Centre through the official website."
+      },
+      {
+        "type": "paragraph",
+        "text": "You can read about how we run the [Down's screening (OSCAR)](/services/downs-screening-oscar) at our centre, and who performs it, on the [team page](/doctors)."
       },
       {
         "type": "h2",
@@ -9776,23 +9909,23 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "At how many weeks is the NT scan done?",
-        "answer": "The NT scan is done between 11 weeks and 13 weeks 6 days of pregnancy. Many centres schedule it at about 12 weeks. The exact day depends on your confirmed dates and the baby's crown-rump length."
+        "answer": "The NT scan is done between 11 weeks and 13 weeks 6 days of pregnancy. Many centres schedule it at about 12 weeks. The exact day depends on your confirmed dates and the baby's crown-rump length. The nuchal translucency (NT) scan measures a thin fluid-filled space at the back of the baby's neck."
       },
       {
         "question": "Can an NT scan be done at 10 weeks?",
-        "answer": "Usually not. At 10 weeks the baby is often too small for a standard measurement, so your doctor will probably ask you to wait until the window begins at around 11 weeks."
+        "answer": "Usually not. At 10 weeks the baby is often too small for a standard measurement, so your doctor will probably ask you to wait until the window begins at around 11 weeks. The first scan, usually at 6 to 9 weeks, confirms that the pregnancy is in the womb, looks for a heartbeat and sets your dates."
       },
       {
         "question": "What happens if I miss the NT scan?",
-        "answer": "Once the baby is past the standard size range, the NT measurement is no longer reliable. Your doctor may suggest NIPT, second-trimester blood screening or a detailed anomaly scan at about 18 to 20 weeks."
+        "answer": "Once the baby is past the standard size range, the NT measurement is no longer reliable. Your doctor may suggest NIPT, second-trimester blood screening or a detailed anomaly scan at about 18 to 20 weeks. What happens if the NT scan is too early or missed?"
       },
       {
         "question": "Is the NT scan done on the same day as the blood test?",
-        "answer": "Not always. A first-trimester blood test is often combined with the NT measurement, but timing depends on the laboratory and your centre. Ask when the sample should be taken so that both results can be used together."
+        "answer": "Not always. A first-trimester blood test is often combined with the NT measurement, but timing depends on the laboratory and your centre. Ask when the sample should be taken so that both results can be used together. Your doctor may discuss NIPT, a blood test for certain chromosomal conditions that is usually possible from about 10 weeks."
       },
       {
         "question": "Does a normal NT scan guarantee a healthy baby?",
-        "answer": "No. A low-risk result lowers the estimated chance of certain chromosomal conditions but cannot rule them out, and it does not exclude other problems. The anomaly scan later in pregnancy examines the baby's anatomy in more detail."
+        "answer": "No. A low-risk result lowers the estimated chance of certain chromosomal conditions but cannot rule them out, and it does not exclude other problems. The anomaly scan later in pregnancy examines the baby's anatomy in more detail. Weeks are normally counted from the first day of your last period."
       }
     ],
     "sources": [
@@ -9811,7 +9944,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-22",
     "publishedAt": "2026-10-22",
     "seo": {
-      "title": "What Is the Best Time for an NT Scan in Pregnancy?",
+      "title": "What Is the Best Time for an NT Scan in",
       "description": "The NT scan is done between 11 weeks and 13 weeks 6 days. Here is why that window matters, how your dates are checked and what to do if you miss it."
     },
     "relatedService": "downs-screening-oscar"
@@ -9913,11 +10046,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "The part to remember"
       },
       {
         "type": "paragraph",
         "text": "Waiting for answers after a high NT is the hardest part for most parents. Knowing what each test can tell you, and having a specialist to guide you through it, makes that wait easier to bear."
+      },
+      {
+        "type": "paragraph",
+        "text": "When you are ready, the [Down's screening (OSCAR)](/services/downs-screening-oscar) service page covers timings and preparation; questions about your own situation are best put to [our specialists](/doctors)."
       },
       {
         "type": "h2",
@@ -9946,19 +10083,19 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "Can a high NT go back to normal later in pregnancy?",
-        "answer": "Sometimes the fluid reduces on later scans. The early measurement still counts, though, so a normal later scan does not cancel the follow-up your doctor has recommended, such as genetic testing or a fetal echocardiogram."
+        "answer": "Sometimes the fluid reduces on later scans. The early measurement still counts, though, so a normal later scan does not cancel the follow-up your doctor has recommended, such as genetic testing or a fetal echocardiogram. The larger the measurement, the more likely an underlying cause becomes, and a mildly raised NT is more often followed by a normal outcome."
       },
       {
         "question": "Can a baby with a high NT be born healthy?",
-        "answer": "Yes. Many babies with an increased NT have normal chromosomes and normal anatomy. The measurement raises the chance of an underlying condition without proving one exists, and further testing shows which situation applies to your pregnancy."
+        "answer": "Yes. Many babies with an increased NT have normal chromosomes and normal anatomy. The measurement raises the chance of an underlying condition without proving one exists, and further testing shows which situation applies to your pregnancy. Many babies in this situation are healthy, and this article explains what the result can point to and what usually happens next."
       },
       {
         "question": "Is NIPT enough after a high NT result?",
-        "answer": "Not always. NIPT screens for common chromosomal conditions and can miss other genetic changes and structural problems. If the NT is markedly raised, doctors often advise CVS or amniocentesis, usually with a detailed scan and fetal echocardiogram."
+        "answer": "Not always. NIPT screens for common chromosomal conditions and can miss other genetic changes and structural problems. If the NT is markedly raised, doctors often advise CVS or amniocentesis, usually with a detailed scan and fetal echocardiogram. If the genetic results, anomaly scan and fetal echo are reassuring, the outlook is generally good despite the early finding."
       },
       {
         "question": "Does a high NT mean my baby has a heart problem?",
-        "answer": "Not necessarily. A raised NT makes a structural heart difference somewhat more likely, which is why a fetal echocardiogram is often offered. Most babies with a high NT have a normal heart, and the scan helps confirm that."
+        "answer": "Not necessarily. A raised NT makes a structural heart difference somewhat more likely, which is why a fetal echocardiogram is often offered. Most babies with a high NT have a normal heart, and the scan helps confirm that. Sometimes it is a difference in the baby's heart, since early cardiac development can influence how fluid collects in the neck."
       }
     ],
     "sources": [
@@ -10102,11 +10239,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "What this means for you"
       },
       {
         "type": "paragraph",
         "text": "A screening report can look final when it is really the start of a conversation. Take it to your obstetrician or fetal medicine specialist, and ask them what the numbers mean for your pregnancy."
+      },
+      {
+        "type": "paragraph",
+        "text": "If your doctor has suggested this, our [Down's screening (OSCAR)](/services/downs-screening-oscar) page lists what is included and how to book; [the team](/doctors) is happy to talk it through first."
       },
       {
         "type": "h2",
@@ -10139,11 +10280,11 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "Can the double marker test diagnose Down syndrome?",
-        "answer": "No. It only estimates how likely Down syndrome is. If the result is high-risk, your doctor may discuss CVS or amniocentesis, which can show whether a chromosomal condition is actually present."
+        "answer": "No. It only estimates how likely Down syndrome is. If the result is high-risk, your doctor may discuss CVS or amniocentesis, which can show whether a chromosomal condition is actually present. If you are around ten or eleven weeks pregnant, your doctor may have asked for an NT scan and a double marker test in the same breath."
       },
       {
         "question": "What does a high-risk double marker result mean?",
-        "answer": "It means the estimated chance of a chromosomal condition is above the lab's cut-off. It does not mean your baby has a condition. Depending on your situation, your doctor may suggest genetic counselling, NIPT or diagnostic testing."
+        "answer": "It means the estimated chance of a chromosomal condition is above the lab's cut-off. It does not mean your baby has a condition. Depending on your situation, your doctor may suggest genetic counselling, NIPT or diagnostic testing. The NT scan is an ultrasound of your baby, and the double marker is a blood test taken from you."
       },
       {
         "question": "Is a normal NT scan enough without the double marker test?",
@@ -10166,7 +10307,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-23",
     "publishedAt": "2026-10-23",
     "seo": {
-      "title": "NT Scan vs Double Marker Test: What's the Difference?",
+      "title": "NT Scan vs Double Marker Test: What's the",
       "description": "NT scan vs double marker test: one is an ultrasound, the other a blood test. Learn what each measures and how doctors read the two together."
     },
     "relatedService": "downs-screening-oscar"
@@ -10256,7 +10397,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "The takeaway"
       },
       {
         "type": "paragraph",
@@ -10265,6 +10406,10 @@ export const blogGuides: Guide[] = [
       {
         "type": "paragraph",
         "text": "Patients in Trichy seeking fetal medicine consultation can contact Trichy Fetal Medicine and Fertility Centre through the official website."
+      },
+      {
+        "type": "paragraph",
+        "text": "For appointments, the [Down's screening (OSCAR)](/services/downs-screening-oscar) page has the details, and [our fetal medicine specialists](/doctors) can advise whether it fits your situation."
       },
       {
         "type": "h2",
@@ -10290,23 +10435,23 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Can an NT scan confirm Down syndrome?",
-        "answer": "No. An NT scan is a screening test, so it can only estimate the chance of Down syndrome. Confirmation needs a diagnostic test such as CVS or amniocentesis, which examines the baby's chromosomes directly."
+        "answer": "No. An NT scan is a screening test, so it can only estimate the chance of Down syndrome. Confirmation needs a diagnostic test such as CVS or amniocentesis, which examines the baby's chromosomes directly. An NT scan can show that a baby has a higher or lower chance of Down syndrome."
       },
       {
         "question": "Can a baby have Down syndrome with a normal NT scan?",
-        "answer": "Yes. A normal NT lowers the estimated risk but does not remove it. Some babies with Down syndrome have an NT within the usual range, which is why screening results are given as probabilities."
+        "answer": "Yes. A normal NT lowers the estimated risk but does not remove it. Some babies with Down syndrome have an NT within the usual range, which is why screening results are given as probabilities. Combined screening is commonly quoted as identifying most Down syndrome pregnancies, roughly 85 to 90 percent, with about 5 percent of women getting a false-positive result."
       },
       {
         "question": "Does a high NT always mean Down syndrome?",
-        "answer": "No. An increased NT can be linked to Down syndrome, other chromosomal conditions, some heart or structural differences, or sometimes no identifiable problem. Further assessment helps clarify what the measurement means."
+        "answer": "No. An increased NT can be linked to Down syndrome, other chromosomal conditions, some heart or structural differences, or sometimes no identifiable problem. Further assessment helps clarify what the measurement means. This blood test analyses fragments of the baby's DNA in the mother's blood and is generally more accurate than combined screening for Down syndrome."
       },
       {
         "question": "Is combined screening better than an NT scan alone?",
-        "answer": "Generally, yes. Combining NT with the mother's age and blood markers gives a more reliable risk estimate than the measurement alone. Your doctor can explain which approach suits your pregnancy."
+        "answer": "Generally, yes. Combining NT with the mother's age and blood markers gives a more reliable risk estimate than the measurement alone. Your doctor can explain which approach suits your pregnancy. In first-trimester combined screening, the NT measurement is read together with the mother's age, the baby's crown-rump length and two blood markers, free beta-hCG and PAPP-A."
       },
       {
         "question": "Is NIPT more accurate than the NT scan for Down syndrome?",
-        "answer": "For Down syndrome, NIPT is generally more accurate than combined screening, but it remains a screening test. It also cannot replace an ultrasound, which shows the baby's development in ways a blood test cannot."
+        "answer": "For Down syndrome, NIPT is generally more accurate than combined screening, but it remains a screening test. It also cannot replace an ultrasound, which shows the baby's development in ways a blood test cannot. Plenty of babies with a larger NT turn out to be unaffected, and some babies with Down syndrome have a perfectly typical measurement."
       }
     ],
     "sources": [
@@ -10325,7 +10470,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-23",
     "publishedAt": "2026-10-23",
     "seo": {
-      "title": "Can an NT Scan Detect Down Syndrome?",
+      "title": "Can an NT Scan Detect Down Syndrome?. a",
       "description": "Can an NT scan detect Down syndrome in pregnancy? Learn what it can show, how reliable screening is and which tests can confirm a diagnosis."
     },
     "relatedService": "downs-screening-oscar"
@@ -10442,11 +10587,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "Before your appointment"
       },
       {
         "type": "paragraph",
         "text": "An abnormal NT result can turn a happy pregnancy into a few anxious weeks, and that reaction is entirely understandable. The steps ahead are manageable, and each one brings a little more clarity. Talk the findings through with your obstetrician or a fetal medicine specialist, ask whatever is on your mind, and take the time you need to decide what is right for your family."
+      },
+      {
+        "type": "paragraph",
+        "text": "If this applies to your pregnancy, our [genetic counselling](/services/genetic-counselling) page explains what the visit involves, or you can [meet our specialists](/doctors) before you decide anything."
       },
       {
         "type": "h2",
@@ -10471,27 +10620,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Does an abnormal NT scan mean my baby has Down syndrome?",
-        "answer": "No. It means the chance of certain conditions, including Down syndrome, is higher than average for your pregnancy. Only a diagnostic test such as CVS or amniocentesis can show whether your baby actually has a chromosome condition."
+        "answer": "No. It means the chance of certain conditions, including Down syndrome, is higher than average for your pregnancy. Only a diagnostic test such as CVS or amniocentesis can show whether your baby actually has a chromosome condition. A thicker NT goes with a higher chance of chromosomal conditions such as Down syndrome."
       },
       {
         "question": "Can an increased NT go back to normal on a later scan?",
-        "answer": "In some babies the fluid space is no longer thick on later scans. That does not cancel the earlier finding, so your doctor may still recommend counselling, testing and a detailed anomaly scan to understand the result fully."
+        "answer": "In some babies the fluid space is no longer thick on later scans. That does not cancel the earlier finding, so your doctor may still recommend counselling, testing and a detailed anomaly scan to understand the result fully. That shifts the odds without deciding the outcome."
       },
       {
         "question": "Is NIPT enough after a high NT scan?",
-        "answer": "Sometimes, but not always. NIPT is a screening test that mainly checks for common chromosome conditions. If the NT is markedly increased or other findings are present, your specialist may advise a diagnostic test instead of, or alongside, NIPT."
+        "answer": "Sometimes, but not always. NIPT is a screening test that mainly checks for common chromosome conditions. If the NT is markedly increased or other findings are present, your specialist may advise a diagnostic test instead of, or alongside, NIPT. A week's error in dating is enough to change how the number is read."
       },
       {
         "question": "Is it safe to have CVS or amniocentesis?",
-        "answer": "Both are done under ultrasound guidance and carry a small risk of miscarriage. Your specialist can explain how that risk applies to you and help you weigh it against the value of a definite answer."
+        "answer": "Both are done under ultrasound guidance and carry a small risk of miscarriage. Your specialist can explain how that risk applies to you and help you weigh it against the value of a definite answer. If you live in Trichy or elsewhere in Tamil Nadu."
       },
       {
         "question": "Can a baby with an increased NT be born healthy?",
-        "answer": "Yes. Many babies with an increased NT have normal chromosomes and normal scans, and are born healthy. Follow-up tests help identify the ones who need closer care, although no assessment can guarantee an outcome."
+        "answer": "Yes. Many babies with an increased NT have normal chromosomes and normal scans, and are born healthy. Follow-up tests help identify the ones who need closer care, although no assessment can guarantee an outcome. Most people hear the words \"your NT is increased\" while still lying on the couch with gel on their tummy."
       },
       {
         "question": "Will I need a fetal echocardiogram after an abnormal NT?",
-        "answer": "Often it is recommended, since a raised NT can go along with heart differences. Whether and when it is done depends on the NT value, any other findings and your doctor's judgement."
+        "answer": "Often it is recommended, since a raised NT can go along with heart differences. Whether and when it is done depends on the NT value, any other findings and your doctor's judgement. A fetal echocardiogram looks at the heart in particular."
       }
     ],
     "sources": [
@@ -10540,7 +10689,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Is the Double Marker Test?"
+        "text": "What is the double marker test?"
       },
       {
         "type": "paragraph",
@@ -10556,7 +10705,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Do the Tests Compare?"
+        "text": "How do the tests compare?"
       },
       {
         "type": "paragraph",
@@ -10592,7 +10741,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Why Is the NT Scan Still Important With NIPT?"
+        "text": "Why is the NT scan still important with NIPT?"
       },
       {
         "type": "paragraph",
@@ -10600,7 +10749,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Happens After a High-Risk Result?"
+        "text": "What happens after a high-risk result?"
       },
       {
         "type": "paragraph",
@@ -10608,7 +10757,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Which Test Is Right for You?"
+        "text": "Which test is right for you?"
       },
       {
         "type": "paragraph",
@@ -10616,11 +10765,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "A few things to hold on to"
       },
       {
         "type": "paragraph",
         "text": "Understanding each test helps you choose the screening that suits your pregnancy. Counselling before and after testing is important. Dr Malathi G. Prasad offers first-trimester screening and fetal medicine counselling in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "To arrange this at our Trichy centre, see [NIPT](/services/nipt); if you are unsure whether you need it, [our doctors](/doctors) can tell you after a review."
       },
       {
         "type": "h2",
@@ -10646,23 +10799,23 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Is NIPT better than the double marker test?",
-        "answer": "NIPT has a higher detection rate and fewer false positives for Down syndrome than the double marker test. However, it is still a screening test and does not check the baby's structure, so an NT scan remains valuable."
+        "answer": "NIPT has a higher detection rate and fewer false positives for Down syndrome than the double marker test. However, it is still a screening test and does not check the baby's structure, so an NT scan remains valuable. The three tests most often discussed are the NT scan, the double marker blood test and NIPT."
       },
       {
         "question": "Do I need an NT scan if I do NIPT?",
-        "answer": "Many specialists recommend an NT scan even with NIPT because it checks early anatomy, dating, twins and neck fluid, which can point to heart or other structural problems that NIPT cannot detect."
+        "answer": "Many specialists recommend an NT scan even with NIPT because it checks early anatomy, dating, twins and neck fluid, which can point to heart or other structural problems that NIPT cannot detect. In most cases the answer also depends on your medical history, so bring it up at your appointment."
       },
       {
         "question": "When is the double marker test done?",
-        "answer": "It is usually done between about 9 and 13 weeks, often on the same visit as the NT scan, and the results are combined into one risk assessment."
+        "answer": "It is usually done between about 9 and 13 weeks, often on the same visit as the NT scan, and the results are combined into one risk assessment. The double marker test measures PAPP-A and free beta hCG in the mother's blood."
       },
       {
         "question": "Can these tests confirm Down syndrome?",
-        "answer": "No. They are screening tests that estimate risk. A diagnosis requires a diagnostic test such as CVS or amniocentesis."
+        "answer": "No. They are screening tests that estimate risk. A diagnosis requires a diagnostic test such as CVS or amniocentesis. The NT scan can detect early anatomical problems, increased NT linked to heart defects and other conditions, and confirm dating and twins."
       },
       {
         "question": "Which screening test should I choose?",
-        "answer": "The best option depends on your age, history, twins, budget and preferences. Discuss with your fetal medicine specialist, who will explain benefits and limitations."
+        "answer": "The best option depends on your age, history, twins, budget and preferences. Discuss with your fetal medicine specialist, who will explain benefits and limitations. Understanding each test helps you choose the screening that suits your pregnancy. Early pregnancy screening helps estimate the chance that a baby has a chromosomal condition such as Down syndrome."
       }
     ],
     "sources": [
@@ -10681,7 +10834,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-20",
     "publishedAt": "2026-10-20",
     "seo": {
-      "title": "NIPT vs NT Scan vs Double Marker Test: Key Differences",
+      "title": "NIPT vs NT Scan vs Double Marker Test",
       "description": "NIPT, NT scan and double marker test all screen for chromosomal conditions in early pregnancy. Compare how they work, timing, accuracy and which may suit you."
     },
     "relatedService": "nipt"
@@ -10703,7 +10856,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Why Is NIPT Not a Diagnosis?"
+        "text": "Why is NIPT not a diagnosis?"
       },
       {
         "type": "paragraph",
@@ -10711,7 +10864,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Is Positive Predictive Value?"
+        "text": "What is positive predictive value?"
       },
       {
         "type": "paragraph",
@@ -10719,7 +10872,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Happens Next?"
+        "text": "What happens next?"
       },
       {
         "type": "h3",
@@ -10751,7 +10904,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Should Decisions Be Made on NIPT Alone?"
+        "text": "Should decisions be made on NIPT alone?"
       },
       {
         "type": "paragraph",
@@ -10759,7 +10912,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What About Low-Risk Results?"
+        "text": "What about low-risk results?"
       },
       {
         "type": "paragraph",
@@ -10767,7 +10920,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Can You Cope Emotionally?"
+        "text": "How can you cope emotionally?"
       },
       {
         "type": "paragraph",
@@ -10775,11 +10928,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "What matters most"
       },
       {
         "type": "paragraph",
         "text": "A high-risk result is the start of a conversation, not the end of the story. Specialist counselling and confirmation testing give you accurate information. Dr Malathi G. Prasad provides NIPT counselling, fetal medicine scans and diagnostic testing in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "You can read about how we run the [genetic counselling](/services/genetic-counselling) at our centre, and who performs it, on the [team page](/doctors)."
       },
       {
         "type": "h2",
@@ -10806,23 +10963,23 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Does a high-risk NIPT mean my baby has Down syndrome?",
-        "answer": "No. It means a higher chance, not a diagnosis. Some results are false positives. A diagnostic test such as amniocentesis is needed to confirm."
+        "answer": "No. It means a higher chance, not a diagnosis. Some results are false positives. A diagnostic test such as amniocentesis is needed to confirm. NIPT, or non-invasive prenatal testing, screens a mother's blood for fragments of DNA mainly from the placenta to estimate the chance of chromosomal conditions such as Down syndrome."
       },
       {
         "question": "How accurate is a high-risk NIPT result?",
-        "answer": "Accuracy, measured as positive predictive value, is higher for Down syndrome than for rarer conditions and depends on maternal age and baseline risk. Your counsellor can explain what it means for you."
+        "answer": "Accuracy, measured as positive predictive value, is higher for Down syndrome than for rarer conditions and depends on maternal age and baseline risk. Your counsellor can explain what it means for you. Chorionic villus sampling (CVS), from about 11 weeks, tests placental tissue and may be used in some situations, though placental mosaicism can still affect results."
       },
       {
         "question": "Which test confirms a high-risk NIPT?",
-        "answer": "Amniocentesis is often preferred because it tests the baby's own cells. CVS may be used in some situations. Your specialist will recommend the best option."
+        "answer": "Amniocentesis is often preferred because it tests the baby's own cells. CVS may be used in some situations. Your specialist will recommend the best option. Your specialist will factor in your reports and dates before giving you a definite answer."
       },
       {
         "question": "Can NIPT be wrong?",
-        "answer": "Yes. NIPT can give false-positive or, rarely, false-negative results, partly because it tests mainly placental DNA. That is why high-risk results need confirmation."
+        "answer": "Yes. NIPT can give false-positive or, rarely, false-negative results, partly because it tests mainly placental DNA. That is why high-risk results need confirmation. If you are unsure whether this applies to you, ask the doctor at your next scan. The details depend on your dates, history and earlier reports, so your doctor will tailor the answer to you."
       },
       {
         "question": "Should I decide about my pregnancy based on NIPT?",
-        "answer": "No. Important decisions should only be made after diagnostic testing and counselling. NIPT alone is not enough."
+        "answer": "No. Important decisions should only be made after diagnostic testing and counselling. NIPT alone is not enough. Major decisions about the pregnancy should not be based on NIPT alone. If this is your situation, the safest step is to ask at your next visit rather than waiting."
       }
     ],
     "sources": [
@@ -10859,7 +11016,7 @@ export const blogGuides: Guide[] = [
     "content": [
       {
         "type": "h2",
-        "text": "How NIPT Works"
+        "text": "How NIPT works"
       },
       {
         "type": "paragraph",
@@ -10871,7 +11028,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What NIPT Can Tell You"
+        "text": "What NIPT can tell you"
       },
       {
         "type": "list",
@@ -10884,7 +11041,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What NIPT Cannot Tell You"
+        "text": "What NIPT cannot tell you"
       },
       {
         "type": "list",
@@ -10898,7 +11055,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Who Should Consider NIPT"
+        "text": "Who should consider NIPT"
       },
       {
         "type": "paragraph",
@@ -10916,7 +11073,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Happens After the Result"
+        "text": "What happens after the result"
       },
       {
         "type": "paragraph",
@@ -10924,11 +11081,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "If you remember one thing"
       },
       {
         "type": "paragraph",
         "text": "Choosing a prenatal test can feel overwhelming. Dr Malathi G. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy can explain which test suits your pregnancy and help you understand the results in plain language."
+      },
+      {
+        "type": "paragraph",
+        "text": "When you are ready, the [NIPT](/services/nipt) service page covers timings and preparation; questions about your own situation are best put to [our specialists](/doctors)."
       },
       {
         "type": "h2",
@@ -10954,27 +11115,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Is NIPT 100 percent accurate for Down syndrome?",
-        "answer": "No. It is highly accurate for screening but is not a diagnostic test, so a high-risk result needs confirmation."
+        "answer": "No. It is highly accurate for screening but is not a diagnostic test, so a high-risk result needs confirmation. NIPT reads these fragments and checks whether there is an extra copy of chromosome 21, which causes Down syndrome. A high-risk result does not mean the baby definitely has Down syndrome."
       },
       {
         "question": "When can NIPT be done?",
-        "answer": "It is usually done from about 10 weeks of pregnancy onwards."
+        "answer": "It is usually done from about 10 weeks of pregnancy onwards. Your own result can differ, which is why the specialist looks at the whole picture before advising. It is a reasonable question to ask directly. the answer often depends on your scan findings."
       },
       {
         "question": "Is NIPT safe for the baby?",
-        "answer": "Yes. It needs only a blood sample from the mother."
+        "answer": "Yes. It needs only a blood sample from the mother. The team will explain how this applies to your pregnancy when you come in. In most cases the answer also depends on your medical history, so bring it up at your appointment."
       },
       {
         "question": "Can NIPT give a false positive?",
-        "answer": "Yes, it can occasionally, which is why a confirmatory test is advised after a high-risk result."
+        "answer": "Yes, it can occasionally, which is why a confirmatory test is advised after a high-risk result. What Happens After a Positive NIPT Result? Your specialist will factor in your reports and dates before giving you a definite answer. If you are unsure whether this applies to you, ask the doctor at your next scan."
       },
       {
         "question": "Do I still need the anomaly scan after NIPT?",
-        "answer": "Yes. NIPT checks chromosomes, while the scan checks the baby's structure."
+        "answer": "Yes. NIPT checks chromosomes, while the scan checks the baby's structure. It does not replace the detailed anomaly scan. The details depend on your dates, history and earlier reports, so your doctor will tailor the answer to you. If this is your situation, the safest step is to ask at your next visit rather than waiting."
       },
       {
         "question": "Does a low-risk NIPT rule out all problems?",
-        "answer": "No. It lowers the chance of the conditions it tests for but does not rule out every problem."
+        "answer": "No. It lowers the chance of the conditions it tests for but does not rule out every problem. Your own result can differ, which is why the specialist looks at the whole picture before advising. It is a reasonable question to ask directly. the answer often depends on your scan findings."
       }
     ],
     "sources": [
@@ -10993,7 +11154,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-20",
     "publishedAt": "2026-10-20",
     "seo": {
-      "title": "Can NIPT Detect Down Syndrome?",
+      "title": "Can NIPT Detect Down Syndrome?. a patient",
       "description": "NIPT is a blood test that screens for Down syndrome from about 10 weeks of pregnancy. Learn what it can and cannot tell you, and what happens next."
     },
     "relatedService": "nipt"
@@ -11015,7 +11176,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Why Is NIPT More Complex in Twins?"
+        "text": "Why is NIPT more complex in twins?"
       },
       {
         "type": "h3",
@@ -11051,7 +11212,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Reliable Is NIPT in Twins?"
+        "text": "How reliable is NIPT in twins?"
       },
       {
         "type": "paragraph",
@@ -11059,7 +11220,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Does Chorionicity Matter?"
+        "text": "Does chorionicity matter?"
       },
       {
         "type": "paragraph",
@@ -11067,7 +11228,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What About IVF Twins?"
+        "text": "What about IVF twins?"
       },
       {
         "type": "paragraph",
@@ -11075,7 +11236,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Why Is the NT Scan Still Important?"
+        "text": "Why is the NT scan still important?"
       },
       {
         "type": "paragraph",
@@ -11083,7 +11244,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Happens After a High-Risk Result?"
+        "text": "What happens after a high-risk result?"
       },
       {
         "type": "paragraph",
@@ -11091,11 +11252,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "Putting it together"
       },
       {
         "type": "paragraph",
         "text": "NIPT is a useful screening option in twin pregnancies when combined with expert ultrasound and counselling. Dr Malathi G. Prasad provides [twin pregnancy](/guides/twin-pregnancy-scans-risks-monitoring) scans, NIPT counselling and diagnostic testing in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "If your doctor has suggested this, our [twin specialised clinic](/services/twin-specialised-clinic) page lists what is included and how to book; [the team](/doctors) is happy to talk it through first."
       },
       {
         "type": "h2",
@@ -11120,23 +11285,23 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Can NIPT be done in twin pregnancy?",
-        "answer": "Yes. NIPT can be performed in twin pregnancies and works well for screening Down syndrome, though results are interpreted more cautiously than in single pregnancies."
+        "answer": "Yes. NIPT can be performed in twin pregnancies and works well for screening Down syndrome, though results are interpreted more cautiously than in single pregnancies. The team will explain how this applies to your pregnancy when you come in. In most cases the answer also depends on your medical history, so bring it up at your appointment."
       },
       {
         "question": "Can NIPT tell which twin is affected?",
-        "answer": "Usually not in non-identical twins. If the result is high risk, diagnostic testing on each baby may be needed to identify which twin is affected."
+        "answer": "Usually not in non-identical twins. If the result is high risk, diagnostic testing on each baby may be needed to identify which twin is affected. NIPT cannot usually tell which twin is affected in non-identical twins. Your specialist will factor in your reports and dates before giving you a definite answer."
       },
       {
         "question": "Why does NIPT fail more often in twins?",
-        "answer": "The proportion of fetal DNA from each twin may be lower, which can lead to inconclusive results. Repeat testing or other screening may then be advised."
+        "answer": "The proportion of fetal DNA from each twin may be lower, which can lead to inconclusive results. Repeat testing or other screening may then be advised. NIPT can be done in IVF twin pregnancies, though factors such as donor eggs or vanished twins should be shared with the laboratory and doctor."
       },
       {
         "question": "Does a vanished twin affect NIPT?",
-        "answer": "Yes. DNA from a twin that stopped developing early can remain in the mother's blood and may cause a false result. Tell your doctor if a vanished twin was seen on an early scan."
+        "answer": "Yes. DNA from a twin that stopped developing early can remain in the mother's blood and may cause a false result. Tell your doctor if a vanished twin was seen on an early scan. If you are unsure whether this applies to you, ask the doctor at your next scan."
       },
       {
         "question": "Do I still need an NT scan with NIPT in twins?",
-        "answer": "Yes. The NT scan assesses each baby separately, confirms chorionicity and checks early anatomy, which NIPT cannot do."
+        "answer": "Yes. The NT scan assesses each baby separately, confirms chorionicity and checks early anatomy, which NIPT cannot do. Monochorionic twins usually share the same genetic makeup, so a result generally applies to both. Dichorionic twins may be non-identical, so the result may apply to one or both."
       }
     ],
     "sources": [
@@ -11173,7 +11338,7 @@ export const blogGuides: Guide[] = [
     "content": [
       {
         "type": "h2",
-        "text": "First, Take a Breath"
+        "text": "First, take a breath"
       },
       {
         "type": "paragraph",
@@ -11181,7 +11346,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Step 1: Counselling With Your Doctor"
+        "text": "Step 1: Counselling with your doctor"
       },
       {
         "type": "paragraph",
@@ -11189,7 +11354,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Step 2: A Detailed Ultrasound"
+        "text": "Step 2: A detailed ultrasound"
       },
       {
         "type": "paragraph",
@@ -11197,7 +11362,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Step 3: A Diagnostic Test"
+        "text": "Step 3: A diagnostic test"
       },
       {
         "type": "paragraph",
@@ -11217,7 +11382,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Step 4: Understanding the Final Result"
+        "text": "Step 4: Understanding the final result"
       },
       {
         "type": "paragraph",
@@ -11225,11 +11390,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "The essentials"
       },
       {
         "type": "paragraph",
         "text": "Waiting for answers is hard, and you do not need to go through it alone. Dr Malathi G. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy offers counselling and the confirmatory testing that families need at this stage."
+      },
+      {
+        "type": "paragraph",
+        "text": "For appointments, the [genetic counselling](/services/genetic-counselling) page has the details, and [our fetal medicine specialists](/doctors) can advise whether it fits your situation."
       },
       {
         "type": "h2",
@@ -11255,27 +11424,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Does a positive NIPT mean my baby has a problem?",
-        "answer": "No. It means the chance is higher and further testing is needed."
+        "answer": "No. It means the chance is higher and further testing is needed. If the diagnostic test is normal, the NIPT result was a false positive and the pregnancy continues with routine care. Some positive results turn out to be false alarms, and confirmation is always needed before any decision is made."
       },
       {
         "question": "What tests confirm a positive NIPT?",
-        "answer": "CVS or amniocentesis."
+        "answer": "CVS or amniocentesis. If it confirms a condition, your doctor will explain what it means for the baby, what care is available and what options you have, without pressure. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy offers counselling and the confirmatory testing that families need at this stage."
       },
       {
         "question": "Are CVS and amniocentesis safe?",
-        "answer": "They carry a small risk and are performed under ultrasound guidance by trained specialists."
+        "answer": "They carry a small risk and are performed under ultrasound guidance by trained specialists. Amniocentesis: a small sample of the fluid around the baby, usually after about 15 weeks. The details depend on your dates, history and earlier reports, so your doctor will tailor the answer to you."
       },
       {
         "question": "How long does the confirmatory result take?",
-        "answer": "Often a few days to about two weeks, depending on the test and the lab."
+        "answer": "Often a few days to about two weeks, depending on the test and the lab. A fetal medicine specialist will explain what was found, which chromosome is involved, and what the result may mean. What Does a High-Risk NIPT Result Mean?"
       },
       {
         "question": "Can a positive NIPT be a false positive?",
-        "answer": "Yes, which is why confirmation is advised."
+        "answer": "Yes, which is why confirmation is advised. Getting a positive result is stressful. If this is your situation, the safest step is to ask at your next visit rather than waiting. Your own result can differ, which is why the specialist looks at the whole picture before advising."
       },
       {
         "question": "Should I make decisions before the confirmatory test?",
-        "answer": "It is best to wait for the diagnostic result and discuss it with your doctor."
+        "answer": "It is best to wait for the diagnostic result and discuss it with your doctor. It is a reasonable question to ask directly. the answer often depends on your scan findings. The team will explain how this applies to your pregnancy when you come in."
       }
     ],
     "sources": [
@@ -11312,7 +11481,7 @@ export const blogGuides: Guide[] = [
     "content": [
       {
         "type": "h2",
-        "text": "How a Fetal Echo Differs From a Routine Scan"
+        "text": "How a fetal echo differs from a routine scan"
       },
       {
         "type": "paragraph",
@@ -11328,7 +11497,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Who May Need a Fetal Echo"
+        "text": "Who may need a fetal echo"
       },
       {
         "type": "list",
@@ -11346,7 +11515,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Happens During the Test"
+        "text": "What happens during the test"
       },
       {
         "type": "paragraph",
@@ -11354,7 +11523,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Do the Results Mean?"
+        "text": "What do the results mean?"
       },
       {
         "type": "paragraph",
@@ -11362,11 +11531,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "What to do next"
       },
       {
         "type": "paragraph",
         "text": "Most babies have a healthy heart, but a fetal echo gives answers when there is a reason to look closer. Dr Malathi G. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy can advise whether you need one and explain the findings clearly."
+      },
+      {
+        "type": "paragraph",
+        "text": "If this applies to your pregnancy, our [fetal echo](/services/fetal-echo) page explains what the visit involves, or you can [meet our specialists](/doctors) before you decide anything."
       },
       {
         "type": "h2",
@@ -11390,27 +11563,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Is a fetal echo safe?",
-        "answer": "Yes. It uses ultrasound, not radiation."
+        "answer": "Yes. It uses ultrasound, not radiation. In some high-risk situations an early fetal echo may be done at about 12 to 16 weeks, and it can be repeated later if needed. If this applies to your pregnancy, our fetal echo page explains what the visit involves, or you can meet our specialists before you decide anything."
       },
       {
         "question": "Does every pregnant woman need a fetal echo?",
-        "answer": "No. It is advised when there are risk factors or a scan finding."
+        "answer": "No. It is advised when there are risk factors or a scan finding. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy can advise whether you need one and explain the findings clearly. Most babies have a healthy heart, but a fetal echo gives answers when there is a reason to look closer."
       },
       {
         "question": "What is the best time for a fetal echo?",
-        "answer": "Usually between 18 and 24 weeks."
+        "answer": "Usually between 18 and 24 weeks. Why Would a Doctor Recommend a Fetal Echocardiogram? A fetal echo goes much further. In most cases the answer also depends on your medical history, so bring it up at your appointment. Your specialist will factor in your reports and dates before giving you a definite answer."
       },
       {
         "question": "Can a fetal echo detect all heart defects?",
-        "answer": "It detects most major defects, but some minor or late-developing problems may not be seen before birth."
+        "answer": "It detects most major defects, but some minor or late-developing problems may not be seen before birth. If a heart problem is found, your doctor will explain what it is, how it may affect the baby, where delivery should be planned and what treatment is likely after birth."
       },
       {
         "question": "How long does it take?",
-        "answer": "Roughly 30 to 60 minutes."
+        "answer": "Roughly 30 to 60 minutes. If you are unsure whether this applies to you, ask the doctor at your next scan. The details depend on your dates, history and earlier reports, so your doctor will tailor the answer to you."
       },
       {
         "question": "Can it be repeated?",
-        "answer": "Yes, if there is a finding or a change in the pregnancy."
+        "answer": "Yes, if there is a finding or a change in the pregnancy. If this is your situation, the safest step is to ask at your next visit rather than waiting. Your own result can differ, which is why the specialist looks at the whole picture before advising."
       }
     ],
     "sources": [
@@ -11436,7 +11609,7 @@ export const blogGuides: Guide[] = [
   },
   {
     "slug": "why-doctor-recommends-fetal-echocardiogram",
-    "title": "Why Would a Doctor Recommend a Fetal Echocardiogram?",
+    "title": "Why Doctors Recommend a Fetal Echocardiogram",
     "excerpt": "A fetal echo is a detailed heart scan of the unborn baby. Learn the common reasons doctors recommend it, including family history, diabetes, IVF and scan findings.",
     "coverImage": {
       "src": "/images/guides/why-doctor-recommends-fetal-echocardiogram.webp",
@@ -11451,7 +11624,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Why Do Heart Defects Matter?"
+        "text": "Why do heart defects matter?"
       },
       {
         "type": "paragraph",
@@ -11459,7 +11632,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Are the Common Reasons for Referral?"
+        "text": "What are the common reasons for referral?"
       },
       {
         "type": "h3",
@@ -11543,7 +11716,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "When Is a Fetal Echo Done?"
+        "text": "When is a fetal echo done?"
       },
       {
         "type": "paragraph",
@@ -11551,7 +11724,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Should You Expect?"
+        "text": "What should you expect?"
       },
       {
         "type": "paragraph",
@@ -11559,11 +11732,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "The short version"
       },
       {
         "type": "paragraph",
         "text": "A referral for a fetal echo is a precaution that gives you clear information. Early detection supports planning and peace of mind. Dr Malathi G. Prasad offers fetal echocardiography and fetal medicine care in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "To arrange this at our Trichy centre, see [fetal echo](/services/fetal-echo); if you are unsure whether you need it, [our doctors](/doctors) can tell you after a review."
       },
       {
         "type": "h2",
@@ -11588,23 +11765,23 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Why do doctors recommend a fetal echo?",
-        "answer": "A fetal echo is recommended when there is a higher chance of a heart defect, such as a heart concern on routine scans, increased NT, family history, maternal diabetes, IVF pregnancy or abnormal heart rhythm."
+        "answer": "A fetal echo is recommended when there is a higher chance of a heart defect, such as a heart concern on routine scans, increased NT, family history, maternal diabetes, IVF pregnancy or abnormal heart rhythm. To arrange this at our Trichy centre, see fetal echo, if you are unsure whether you need it."
       },
       {
         "question": "Does a fetal echo referral mean my baby has a heart problem?",
-        "answer": "No. Most babies who have a fetal echo have normal hearts. The scan is done to check carefully when risk is higher."
+        "answer": "No. Most babies who have a fetal echo have normal hearts. The scan is done to check carefully when risk is higher. What Happens If a Fetal Echo Shows a Heart Problem? A fetal echocardiogram, or fetal echo, is a specialised ultrasound that examines the structure and function of the unborn baby's heart in detail."
       },
       {
         "question": "When is a fetal echo done?",
-        "answer": "It is usually performed between about 18 and 24 weeks. Some high-risk pregnancies have an earlier heart check around 13 to 16 weeks followed by a later scan."
+        "answer": "It is usually performed between about 18 and 24 weeks. Some high-risk pregnancies have an earlier heart check around 13 to 16 weeks followed by a later scan. Being referred for one can feel worrying, but most babies who have a fetal echo have normal hearts."
       },
       {
         "question": "Is a fetal echo safe for the baby?",
-        "answer": "Yes. It is a non-invasive ultrasound with no radiation and is considered safe when performed by trained specialists."
+        "answer": "Yes. It is a non-invasive ultrasound with no radiation and is considered safe when performed by trained specialists. A referral for a fetal echo is a precaution that gives you clear information. A very fast, slow or irregular fetal heart rate needs detailed assessment."
       },
       {
         "question": "Do IVF pregnancies need a fetal echo?",
-        "answer": "Some specialists recommend a fetal echo for IVF or ICSI pregnancies because of a slightly increased chance of heart defects. Your doctor will advise based on your situation."
+        "answer": "Some specialists recommend a fetal echo for IVF or ICSI pregnancies because of a slightly increased chance of heart defects. Your doctor will advise based on your situation. Pregnancies conceived through IVF or ICSI may have a slightly increased chance of heart defects in some studies."
       }
     ],
     "sources": [
@@ -11623,7 +11800,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-15",
     "publishedAt": "2026-10-15",
     "seo": {
-      "title": "Why Would a Doctor Recommend a Fetal Echocardiogram?",
+      "title": "Why Doctors Recommend a Fetal Echocardiogram",
       "description": "A fetal echo is a detailed heart scan of the unborn baby. Learn the common reasons doctors recommend it, including family history, diabetes, IVF and scan"
     },
     "relatedService": "fetal-echo"
@@ -11645,7 +11822,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Does the Anomaly Scan Check?"
+        "text": "What does the anomaly scan check?"
       },
       {
         "type": "paragraph",
@@ -11653,7 +11830,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Does a Fetal Echo Check?"
+        "text": "What does a fetal echo check?"
       },
       {
         "type": "paragraph",
@@ -11677,7 +11854,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Do They Compare?"
+        "text": "How do they compare?"
       },
       {
         "type": "paragraph",
@@ -11709,7 +11886,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Can the Anomaly Scan Detect Heart Defects?"
+        "text": "Can the anomaly scan detect heart defects?"
       },
       {
         "type": "paragraph",
@@ -11717,7 +11894,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "When Do You Need Both?"
+        "text": "When do you need both?"
       },
       {
         "type": "paragraph",
@@ -11738,11 +11915,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "Keeping it simple"
       },
       {
         "type": "paragraph",
         "text": "The anomaly scan and fetal echo complement each other. Knowing when you need each helps ensure your baby's heart is checked thoroughly. Dr Malathi G. Prasad performs anomaly scans and fetal echocardiography in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "You can read about how we run the [fetal echo](/services/fetal-echo) at our centre, and who performs it, on the [team page](/doctors)."
       },
       {
         "type": "h2",
@@ -11766,23 +11947,23 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Is the fetal echo the same as the anomaly scan?",
-        "answer": "No. The anomaly scan checks all of the baby's organs, including basic heart views, while a fetal echo examines the heart in much greater detail."
+        "answer": "No. The anomaly scan checks all of the baby's organs, including basic heart views, while a fetal echo examines the heart in much greater detail. Both the anomaly scan and the fetal echocardiogram are ultrasound scans done in the second trimester."
       },
       {
         "question": "Can the anomaly scan miss heart defects?",
-        "answer": "Yes. Some heart defects, especially smaller or complex ones, can be missed on a routine anomaly scan. A fetal echo improves detection when risk is higher."
+        "answer": "Yes. Some heart defects, especially smaller or complex ones, can be missed on a routine anomaly scan. A fetal echo improves detection when risk is higher. Can the anomaly scan detect heart defects? It detects many major heart defects, but some, particularly those affecting valves, small holes or vessel connections, can be missed."
       },
       {
         "question": "Do all pregnant women need a fetal echo?",
-        "answer": "No. Fetal echo is usually recommended when there are risk factors or concerns. All pregnant women are advised to have an anomaly scan."
+        "answer": "No. Fetal echo is usually recommended when there are risk factors or concerns. All pregnant women are advised to have an anomaly scan. You can read about how we run the fetal echo at our centre, and who performs it, on the team page."
       },
       {
         "question": "When are the anomaly scan and fetal echo done?",
-        "answer": "The anomaly scan is usually done at about 18 to 22 weeks and the fetal echo at about 18 to 24 weeks. Sometimes they are scheduled close together."
+        "answer": "The anomaly scan is usually done at about 18 to 22 weeks and the fetal echo at about 18 to 24 weeks. Sometimes they are scheduled close together. The anomaly scan and fetal echo complement each other. Prasad performs anomaly scans and fetal echocardiography in Trichy."
       },
       {
         "question": "Are both scans safe?",
-        "answer": "Yes. Both are non-invasive ultrasound scans without radiation and are considered safe for mother and baby."
+        "answer": "Yes. Both are non-invasive ultrasound scans without radiation and are considered safe for mother and baby. It is a reasonable question to ask directly. the answer often depends on your scan findings. The team will explain how this applies to your pregnancy when you come in."
       }
     ],
     "sources": [
@@ -11801,7 +11982,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-16",
     "publishedAt": "2026-10-16",
     "seo": {
-      "title": "Fetal Echo vs Anomaly Scan: What's the Difference?",
+      "title": "Fetal Echo vs Anomaly Scan: What's the",
       "description": "The anomaly scan checks the whole baby, while a fetal echo focuses in depth on the heart. Learn how they differ, what each detects and when you may need both."
     },
     "relatedService": "fetal-echo"
@@ -11823,7 +12004,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Can a Fetal Echo Detect?"
+        "text": "What can a fetal echo detect?"
       },
       {
         "type": "list",
@@ -11841,7 +12022,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What May Be Missed?"
+        "text": "What may be missed?"
       },
       {
         "type": "h3",
@@ -11885,7 +12066,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Affects Accuracy?"
+        "text": "What affects accuracy?"
       },
       {
         "type": "list",
@@ -11905,7 +12086,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Happens If a Defect Is Found?"
+        "text": "What happens if a defect is found?"
       },
       {
         "type": "paragraph",
@@ -11913,11 +12094,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "The part to remember"
       },
       {
         "type": "paragraph",
         "text": "A fetal echo provides valuable information about the baby's heart and helps families and doctors prepare. Understanding its strengths and limits sets realistic expectations. Dr Malathi G. Prasad offers fetal echocardiography in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "When you are ready, the [fetal echo](/services/fetal-echo) service page covers timings and preparation; questions about your own situation are best put to [our specialists](/doctors)."
       },
       {
         "type": "h2",
@@ -11943,23 +12128,23 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "How accurate is a fetal echo?",
-        "answer": "When performed by experienced specialists, a fetal echo detects most major heart defects. Some smaller defects or conditions linked to normal fetal circulation may not be detected before birth."
+        "answer": "When performed by experienced specialists, a fetal echo detects most major heart defects. Some smaller defects or conditions linked to normal fetal circulation may not be detected before birth. When you are ready, the fetal echo service page covers timings and preparation; questions about your own situation are best put to our specialists."
       },
       {
         "question": "Can a fetal echo miss heart defects?",
-        "answer": "Yes. Small holes, atrial septal defects, a patent ductus arteriosus, some aortic narrowings and problems that develop later may be missed. A normal scan is reassuring but not a guarantee."
+        "answer": "Yes. Small holes, atrial septal defects, a patent ductus arteriosus, some aortic narrowings and problems that develop later may be missed. A normal scan is reassuring but not a guarantee. The answer is that a fetal echo detects most significant heart defects, but some conditions are difficult or impossible to see before birth."
       },
       {
         "question": "Can a fetal echo detect a hole in the heart?",
-        "answer": "Larger holes between the ventricles or complex defects are often detected. Small ventricular holes may be missed and often close after birth. Atrial holes usually cannot be diagnosed before birth."
+        "answer": "Larger holes between the ventricles or complex defects are often detected. Small ventricular holes may be missed and often close after birth. Atrial holes usually cannot be diagnosed before birth. A fetal echo provides valuable information about the baby's heart and helps families and doctors prepare."
       },
       {
         "question": "Do I need a repeat fetal echo?",
-        "answer": "A repeat scan may be advised if views were unclear, if a problem needs monitoring or if a condition may progress. Your specialist will advise."
+        "answer": "A repeat scan may be advised if views were unclear, if a problem needs monitoring or if a condition may progress. Your specialist will advise. The ductus is a normal fetal vessel and is expected to be open before birth."
       },
       {
         "question": "What happens after a heart defect is found on fetal echo?",
-        "answer": "You will receive counselling, may meet a paediatric cardiologist, and may be offered genetic testing. Delivery may be planned at a centre with neonatal cardiac care."
+        "answer": "You will receive counselling, may meet a paediatric cardiologist, and may be offered genetic testing. Delivery may be planned at a centre with neonatal cardiac care. What Happens If a Fetal Echo Shows a Heart Problem? What happens if a defect is found?"
       }
     ],
     "sources": [
@@ -12000,7 +12185,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Is the Finding Explained?"
+        "text": "How is the finding explained?"
       },
       {
         "type": "paragraph",
@@ -12023,7 +12208,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Is Genetic Testing Recommended?"
+        "text": "Is genetic testing recommended?"
       },
       {
         "type": "paragraph",
@@ -12031,7 +12216,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Are Other Scans Needed?"
+        "text": "Are other scans needed?"
       },
       {
         "type": "paragraph",
@@ -12039,7 +12224,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Is Delivery Planned?"
+        "text": "How is delivery planned?"
       },
       {
         "type": "paragraph",
@@ -12047,7 +12232,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Happens After Birth?"
+        "text": "What happens after birth?"
       },
       {
         "type": "paragraph",
@@ -12065,7 +12250,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Choices Do Parents Have?"
+        "text": "What choices do parents have?"
       },
       {
         "type": "paragraph",
@@ -12073,7 +12258,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Can Families Cope?"
+        "text": "How can families cope?"
       },
       {
         "type": "paragraph",
@@ -12081,11 +12266,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "What this means for you"
       },
       {
         "type": "paragraph",
         "text": "A heart abnormality on a fetal echo is the beginning of a planned path, not the end. Expert counselling and coordinated care give your baby the best start. Dr Malathi G. Prasad provides fetal echocardiography, counselling and coordinated care planning in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "If your doctor has suggested this, our [genetic counselling](/services/genetic-counselling) page lists what is included and how to book; [the team](/doctors) is happy to talk it through first."
       },
       {
         "type": "h2",
@@ -12110,23 +12299,23 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "What happens after a heart defect is found on fetal echo?",
-        "answer": "You will receive counselling, possibly meet a paediatric cardiologist and be offered genetic testing and follow-up scans. Delivery is planned at a hospital equipped for newborn cardiac care."
+        "answer": "You will receive counselling, possibly meet a paediatric cardiologist and be offered genetic testing and follow-up scans. Delivery is planned at a hospital equipped for newborn cardiac care. A fetal echocardiogram gives detailed information about the heart, and finding a problem before birth allows time for counselling, planning and the right care."
       },
       {
         "question": "Can heart defects found before birth be treated?",
-        "answer": "Many heart defects can be treated after birth with medicines, catheter procedures or surgery. Some small defects need no treatment. Your specialist will explain the likely plan."
+        "answer": "Many heart defects can be treated after birth with medicines, catheter procedures or surgery. Some small defects need no treatment. Your specialist will explain the likely plan. Many heart defects are treatable, and outcomes have improved significantly. Some heart defects are associated with chromosomal or genetic conditions."
       },
       {
         "question": "Do I need genetic testing if my baby has a heart defect?",
-        "answer": "Genetic testing may be offered because some heart defects are linked to chromosomal or genetic conditions. It helps guide counselling, but the decision to test is yours."
+        "answer": "Genetic testing may be offered because some heart defects are linked to chromosomal or genetic conditions. It helps guide counselling, but the decision to test is yours. If your doctor has suggested this, our genetic counselling page lists what is included and how to book; the team is happy to talk it through first."
       },
       {
         "question": "Can I have a normal delivery if my baby has a heart defect?",
-        "answer": "Often yes. Many babies with heart defects can be delivered vaginally. Delivery should take place at a hospital with neonatal and cardiac care."
+        "answer": "Often yes. Many babies with heart defects can be delivered vaginally. Delivery should take place at a hospital with neonatal and cardiac care. For many defects, normal vaginal delivery is possible. A heart abnormality on a fetal echo is the beginning of a planned path, not the end."
       },
       {
         "question": "Will my baby need surgery immediately after birth?",
-        "answer": "It depends on the defect. Some babies need treatment within days, some later in infancy and some only need monitoring. Your cardiologist will explain the expected timeline."
+        "answer": "It depends on the defect. Some babies need treatment within days, some later in infancy and some only need monitoring. Your cardiologist will explain the expected timeline. In most cases the answer also depends on your medical history, so bring it up at your appointment."
       }
     ],
     "sources": [
@@ -12145,7 +12334,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-16",
     "publishedAt": "2026-10-16",
     "seo": {
-      "title": "What Happens If a Fetal Echo Shows a Heart Problem?",
+      "title": "What Happens If a Fetal Echo Shows a Heart",
       "description": "Finding a heart abnormality on a fetal echo brings many questions. Learning that your baby may have a heart abnormality can be overwhelming."
     },
     "relatedService": "genetic-counselling"
@@ -12163,7 +12352,7 @@ export const blogGuides: Guide[] = [
     "content": [
       {
         "type": "h2",
-        "text": "What a Growth Scan Measures"
+        "text": "What a growth scan measures"
       },
       {
         "type": "list",
@@ -12186,7 +12375,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Who May Need a Growth Scan"
+        "text": "Who may need a growth scan"
       },
       {
         "type": "list",
@@ -12211,7 +12400,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How to Understand the Report"
+        "text": "How to understand the report"
       },
       {
         "type": "paragraph",
@@ -12219,11 +12408,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "The takeaway"
       },
       {
         "type": "paragraph",
         "text": "A growth scan is a helpful way to make sure the baby is doing well in the later months. Dr Malathi G. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy can explain your report and guide the right timing of follow-up scans."
+      },
+      {
+        "type": "paragraph",
+        "text": "For appointments, the [growth scan with Doppler](/services/growth-scan-doppler) page has the details, and [our fetal medicine specialists](/doctors) can advise whether it fits your situation."
       },
       {
         "type": "h2",
@@ -12248,27 +12441,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Is a growth scan the same as an anomaly scan?",
-        "answer": "No. The anomaly scan checks structure, while the growth scan checks size, fluid and blood flow."
+        "answer": "No. The anomaly scan checks structure, while the growth scan checks size, fluid and blood flow. For appointments, the growth scan with Doppler page has the details, and our fetal medicine specialists can advise whether it fits your situation. For a low-risk pregnancy, one scan in the third trimester may be enough."
       },
       {
         "question": "How accurate is the weight estimate?",
-        "answer": "It is an estimate and can differ from the birth weight, so repeat scans and trends help."
+        "answer": "It is an estimate and can differ from the birth weight, so repeat scans and trends help. The report gives the baby's estimated weight and a percentile, which compares the baby with others of the same age. Head and abdomen size and thigh bone length: used to estimate the baby's weight."
       },
       {
         "question": "How many growth scans will I need?",
-        "answer": "It depends on your risk factors. Some need one, others need several."
+        "answer": "It depends on your risk factors. Some need one, others need several. How Often Should Growth Scans Be Done in a High-Risk Pregnancy? Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy can explain your report and guide the right timing of follow-up scans."
       },
       {
         "question": "Can a growth scan tell if the baby is breech?",
-        "answer": "Yes, it shows the baby's position."
+        "answer": "Yes, it shows the baby's position. A growth scan is a helpful way to make sure the baby is doing well in the later months. Baby's position: head down, breech or sideways. Your specialist will factor in your reports and dates before giving you a definite answer."
       },
       {
         "question": "What is Doppler in a growth scan?",
-        "answer": "It measures blood flow in the baby's and the mother's vessels."
+        "answer": "It measures blood flow in the baby's and the mother's vessels. Doctors look at the trend over time and at the Doppler findings. Doppler blood flow: shows how well blood is reaching the baby. Why Is a Doppler Scan Done During Pregnancy?"
       },
       {
         "question": "Does a small estimated weight always mean a problem?",
-        "answer": "No. Some babies are small but healthy. Your doctor looks at the full picture."
+        "answer": "No. Some babies are small but healthy. Your doctor looks at the full picture. A previous baby who was small or large. A baby measuring small or large on examination. If you are unsure whether this applies to you, ask the doctor at your next scan."
       }
     ],
     "sources": [
@@ -12309,7 +12502,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Does Doppler Ultrasound Work?"
+        "text": "How does doppler ultrasound work?"
       },
       {
         "type": "paragraph",
@@ -12317,7 +12510,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Which Blood Vessels Are Checked?"
+        "text": "Which blood vessels are checked?"
       },
       {
         "type": "h3",
@@ -12353,7 +12546,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Why Might Your Doctor Recommend a Doppler Scan?"
+        "text": "Why might your doctor recommend a doppler scan?"
       },
       {
         "type": "list",
@@ -12371,7 +12564,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Do Results Mean?"
+        "text": "What do results mean?"
       },
       {
         "type": "paragraph",
@@ -12379,7 +12572,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Do Results Guide Care?"
+        "text": "How do results guide care?"
       },
       {
         "type": "paragraph",
@@ -12404,11 +12597,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "Before your appointment"
       },
       {
         "type": "paragraph",
         "text": "A Doppler scan gives a window into how well the placenta is supporting your baby. It is one of the most useful tools in high-risk pregnancy care. Dr Malathi G. Prasad offers growth and Doppler scans in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "If this applies to your pregnancy, our [growth scan with Doppler](/services/growth-scan-doppler) page explains what the visit involves, or you can [meet our specialists](/doctors) before you decide anything."
       },
       {
         "type": "h2",
@@ -12435,23 +12632,23 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Why is a Doppler scan done in pregnancy?",
-        "answer": "A Doppler scan checks blood flow through the umbilical cord, the baby's brain and the mother's uterine arteries. It helps assess whether the placenta is supplying enough oxygen and nutrients, especially in high-risk pregnancies."
+        "answer": "A Doppler scan checks blood flow through the umbilical cord, the baby's brain and the mother's uterine arteries. It helps assess whether the placenta is supplying enough oxygen and nutrients, especially in high-risk pregnancies. If this applies to your pregnancy, our growth scan with Doppler page explains what the visit involves."
       },
       {
         "question": "Is a Doppler scan safe for my baby?",
-        "answer": "Yes, when performed for a medical reason by trained professionals. Doppler uses slightly more energy than standard ultrasound, so it is used only when indicated."
+        "answer": "Yes, when performed for a medical reason by trained professionals. Doppler uses slightly more energy than standard ultrasound, so it is used only when indicated. Doppler is considered safe when performed for medical reasons by trained professionals, using appropriate settings and duration."
       },
       {
         "question": "What does an abnormal umbilical artery Doppler mean?",
-        "answer": "It suggests increased resistance in the placenta, which may affect the baby's supply of oxygen and nutrients. It usually leads to closer monitoring and may influence delivery timing."
+        "answer": "It suggests increased resistance in the placenta, which may affect the baby's supply of oxygen and nutrients. It usually leads to closer monitoring and may influence delivery timing. In pregnancy, it checks how well blood moves through the umbilical cord, the baby's brain and other vessels and the mother's uterine arteries."
       },
       {
         "question": "When is a Doppler scan recommended?",
-        "answer": "It is commonly recommended when the baby is small, the mother has high blood pressure or diabetes, in twin pregnancies, with reduced movements or with previous pregnancy complications."
+        "answer": "It is commonly recommended when the baby is small, the mother has high blood pressure or diabetes, in twin pregnancies, with reduced movements or with previous pregnancy complications. Doppler ultrasound detects changes in the frequency of sound waves bouncing off moving blood cells."
       },
       {
         "question": "How often is a Doppler scan repeated?",
-        "answer": "It depends on results and the clinical situation, ranging from every few weeks to more frequently when there are concerns. Your specialist will advise."
+        "answer": "It depends on results and the clinical situation, ranging from every few weeks to more frequently when there are concerns. Your specialist will advise. A Doppler scan gives a window into how well the placenta is supporting your baby. A Doppler scan is a type of ultrasound that measures blood flow."
       }
     ],
     "sources": [
@@ -12496,7 +12693,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Fetal Growth Restriction (FGR)"
+        "text": "Fetal growth restriction (FGR)"
       },
       {
         "type": "paragraph",
@@ -12522,7 +12719,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Doctors Tell the Difference"
+        "text": "How doctors tell the difference"
       },
       {
         "type": "list",
@@ -12536,7 +12733,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Can Be Done"
+        "text": "What can be done"
       },
       {
         "type": "paragraph",
@@ -12544,7 +12741,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "When to Call Your Doctor"
+        "text": "When to call your doctor"
       },
       {
         "type": "paragraph",
@@ -12552,11 +12749,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "A few things to hold on to"
       },
       {
         "type": "paragraph",
         "text": "Hearing that your baby is small is worrying, but the right monitoring makes a real difference. Dr Malathi G. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy can assess the cause and plan careful follow-up."
+      },
+      {
+        "type": "paragraph",
+        "text": "To arrange this at our Trichy centre, see [growth scan with Doppler](/services/growth-scan-doppler); if you are unsure whether you need it, [our doctors](/doctors) can tell you after a review."
       },
       {
         "type": "h2",
@@ -12580,27 +12781,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Can a small baby be normal?",
-        "answer": "Yes. Some babies are small but healthy."
+        "answer": "Yes. Some babies are small but healthy. Hearing that your baby is small is worrying, but the right monitoring makes a real difference. Some babies are small because their parents are small, or because of their genes. There is no medicine that makes a small baby grow faster in every case."
       },
       {
         "question": "What is FGR?",
-        "answer": "Fetal growth restriction, where the baby is not growing as well as expected."
+        "answer": "Fetal growth restriction, where the baby is not growing as well as expected. The details depend on your dates, history and earlier reports, so your doctor will tailor the answer to you. If this is your situation, the safest step is to ask at your next visit rather than waiting."
       },
       {
         "question": "Can diet make the baby grow bigger?",
-        "answer": "Good nutrition helps overall health, but it cannot fix every cause of poor growth."
+        "answer": "Good nutrition helps overall health, but it cannot fix every cause of poor growth. Your own result can differ, which is why the specialist looks at the whole picture before advising. It is a reasonable question to ask directly. the answer often depends on your scan findings."
       },
       {
         "question": "How often will I need scans?",
-        "answer": "It depends on the findings, and can be every one to two weeks if there is concern."
+        "answer": "It depends on the findings, and can be every one to two weeks if there is concern. Care focuses on treating the cause where possible, such as controlling blood pressure, advising rest and nutrition, monitoring closely with scans and heart-rate tracking, and planning the timing and place of delivery."
       },
       {
         "question": "Does a small baby need an early delivery?",
-        "answer": "Not always. Timing depends on growth, Doppler and the baby's wellbeing."
+        "answer": "Not always. Timing depends on growth, Doppler and the baby's wellbeing. The team will explain how this applies to your pregnancy when you come in. In most cases the answer also depends on your medical history, so bring it up at your appointment."
       },
       {
         "question": "What is Doppler?",
-        "answer": "A scan that measures blood flow to and from the baby."
+        "answer": "A scan that measures blood flow to and from the baby. To arrange this at our Trichy centre, see growth scan with Doppler; if you are unsure whether you need it, our doctors can tell you after a review. Doppler studies: to check blood flow in the umbilical cord and baby's vessels."
       }
     ],
     "sources": [
@@ -12641,7 +12842,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Is the Difference Between Small and Growth Restricted?"
+        "text": "What is the difference between small and growth restricted?"
       },
       {
         "type": "paragraph",
@@ -12649,7 +12850,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Causes FGR?"
+        "text": "What causes FGR?"
       },
       {
         "type": "h3",
@@ -12685,7 +12886,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Is FGR Diagnosed?"
+        "text": "How is FGR diagnosed?"
       },
       {
         "type": "list",
@@ -12704,7 +12905,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Is FGR Monitored?"
+        "text": "How is FGR monitored?"
       },
       {
         "type": "list",
@@ -12723,7 +12924,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Treatment Is Available?"
+        "text": "What treatment is available?"
       },
       {
         "type": "paragraph",
@@ -12742,7 +12943,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Is Delivery Timing Decided?"
+        "text": "How is delivery timing decided?"
       },
       {
         "type": "paragraph",
@@ -12750,11 +12951,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "What matters most"
       },
       {
         "type": "paragraph",
         "text": "FGR needs expert monitoring and careful decisions about timing. With good surveillance, many growth-restricted babies are delivered safely and do well. Dr Malathi G. Prasad provides growth and Doppler monitoring for high-risk pregnancies in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "You can read about how we run the [growth scan with Doppler](/services/growth-scan-doppler) at our centre, and who performs it, on the [team page](/doctors)."
       },
       {
         "type": "h2",
@@ -12781,23 +12986,23 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "What causes fetal growth restriction?",
-        "answer": "The most common cause is placental insufficiency. Maternal high blood pressure, preeclampsia, smoking, some infections, chromosomal conditions and twin pregnancies can also contribute."
+        "answer": "The most common cause is placental insufficiency. Maternal high blood pressure, preeclampsia, smoking, some infections, chromosomal conditions and twin pregnancies can also contribute. Fetal growth restriction, also called FGR or intrauterine growth restriction (IUGR), means a baby is not growing to its expected size in the womb."
       },
       {
         "question": "Can a growth-restricted baby catch up in the womb?",
-        "answer": "There is no proven treatment to make the baby grow in the womb. Monitoring helps decide the safest time for delivery. Many babies grow well after birth."
+        "answer": "There is no proven treatment to make the baby grow in the womb. Monitoring helps decide the safest time for delivery. Many babies grow well after birth. Your specialist will factor in your reports and dates before giving you a definite answer."
       },
       {
         "question": "How often are scans needed with FGR?",
-        "answer": "Growth scans are often done every two to three weeks, with Doppler scans and heart monitoring more frequently depending on severity. Your specialist will set the schedule."
+        "answer": "Growth scans are often done every two to three weeks, with Doppler scans and heart monitoring more frequently depending on severity. Your specialist will set the schedule. How Often Should Growth Scans Be Done in a High-Risk Pregnancy? Growth-restricted babies are not reaching their growth potential, often because the placenta is not working well."
       },
       {
         "question": "Will I need an early delivery with FGR?",
-        "answer": "Not always. Many babies with FGR are delivered close to term, but delivery may be recommended earlier if monitoring shows the baby is under stress."
+        "answer": "Not always. Many babies with FGR are delivered close to term, but delivery may be recommended earlier if monitoring shows the baby is under stress. Identifying FGR early allows careful monitoring and timely delivery. Doctors balance the risks of staying in the womb against the risks of early birth."
       },
       {
         "question": "Can FGR be prevented?",
-        "answer": "Not always, but low-dose aspirin for high-risk women, stopping smoking, treating high blood pressure and good antenatal care can reduce risk in some cases."
+        "answer": "Not always, but low-dose aspirin for high-risk women, stopping smoking, treating high blood pressure and good antenatal care can reduce risk in some cases. If you are unsure whether this applies to you, ask the doctor at your next scan."
       }
     ],
     "sources": [
@@ -12816,7 +13021,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-18",
     "publishedAt": "2026-10-18",
     "seo": {
-      "title": "Fetal Growth Restriction: Causes, Monitoring, Treatment",
+      "title": "Fetal Growth Restriction: Causes, Monitoring",
       "description": "Fetal growth restriction means a baby is not growing as expected in the womb. Learn the causes, how it is diagnosed and monitored, and how delivery timing is"
     },
     "relatedService": "growth-scan-doppler"
@@ -12834,7 +13039,7 @@ export const blogGuides: Guide[] = [
     "content": [
       {
         "type": "h2",
-        "text": "Why Repeat Scans Are Needed"
+        "text": "Why repeat scans are needed"
       },
       {
         "type": "paragraph",
@@ -12842,7 +13047,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Common Situations and Typical Approaches"
+        "text": "Common situations and typical approaches"
       },
       {
         "type": "list",
@@ -12861,7 +13066,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Else Is Checked"
+        "text": "What else is checked"
       },
       {
         "type": "list",
@@ -12875,7 +13080,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What You Can Do"
+        "text": "What you can do"
       },
       {
         "type": "list",
@@ -12889,11 +13094,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "If you remember one thing"
       },
       {
         "type": "paragraph",
         "text": "Frequent scans are a way of staying one step ahead and keeping both mother and baby safe. Dr Malathi G. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy can set a follow-up plan suited to your pregnancy."
+      },
+      {
+        "type": "paragraph",
+        "text": "When you are ready, the [growth scan with Doppler](/services/growth-scan-doppler) service page covers timings and preparation; questions about your own situation are best put to [our specialists](/doctors)."
       },
       {
         "type": "h2",
@@ -12917,27 +13126,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Are frequent scans harmful to the baby?",
-        "answer": "No. Ultrasound has no known harm when used appropriately by trained professionals."
+        "answer": "No. Ultrasound has no known harm when used appropriately by trained professionals. Frequent scans are a way of staying one step ahead and keeping both mother and baby safe. Diabetes or gestational diabetes: growth scans in the third trimester, to check for a large or small baby and fluid levels."
       },
       {
         "question": "Can scans be skipped if I feel the baby moving?",
-        "answer": "No. Movements are reassuring, but scans give information that you cannot feel."
+        "answer": "No. Movements are reassuring, but scans give information that you cannot feel. High blood pressure or pre-eclampsia: repeated scans with Doppler, as these can affect the placenta. Twin pregnancy: regular growth scans, with extra attention if the twins are growing differently."
       },
       {
         "question": "How often are growth scans done in twins?",
-        "answer": "Usually at regular intervals through the second and third trimester, as decided by the specialist."
+        "answer": "Usually at regular intervals through the second and third trimester, as decided by the specialist. Previous stillbirth or growth problem: serial scans from the third trimester or earlier. Repeat scans show the pattern of growth, which is far more useful."
       },
       {
         "question": "What if the baby's growth slows down?",
-        "answer": "Your doctor will increase monitoring and plan the timing of delivery."
+        "answer": "Your doctor will increase monitoring and plan the timing of delivery. When you are ready, the growth scan with Doppler service page covers timings and preparation; questions about your own situation are best put to our specialists. What Is a Growth Scan and When Is It Done?"
       },
       {
         "question": "Do I need a Doppler every time?",
-        "answer": "Not always. It is added when there is a growth or blood flow concern."
+        "answer": "Not always. It is added when there is a growth or blood flow concern. Doctors compare measurements over time and look at fluid and Doppler blood flow to judge whether the baby is thriving. Baby measuring small (FGR): closer follow-up, often every one to two weeks, with Doppler."
       },
       {
         "question": "Who decides the schedule?",
-        "answer": "Your fetal medicine specialist or obstetrician."
+        "answer": "Your fetal medicine specialist or obstetrician. The details depend on your dates, history and earlier reports, so your doctor will tailor the answer to you. If this is your situation, the safest step is to ask at your next visit rather than waiting."
       }
     ],
     "sources": [
@@ -12956,7 +13165,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-19",
     "publishedAt": "2026-10-19",
     "seo": {
-      "title": "How Often Should Growth Scans Be Done in a High-Risk",
+      "title": "How Often Should Growth Scans Be Done in a",
       "description": "In a high-risk pregnancy, growth scans are usually repeated every two to four weeks, sometimes more often. Learn what decides the schedule. Dr Malathi G."
     },
     "relatedService": "growth-scan-doppler"
@@ -12974,7 +13183,7 @@ export const blogGuides: Guide[] = [
     "content": [
       {
         "type": "h2",
-        "text": "Reasons Related to the Mother"
+        "text": "Reasons related to the mother"
       },
       {
         "type": "list",
@@ -12990,7 +13199,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Reasons From Past Pregnancies"
+        "text": "Reasons from past pregnancies"
       },
       {
         "type": "list",
@@ -13004,7 +13213,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Reasons in the Current Pregnancy"
+        "text": "Reasons in the current pregnancy"
       },
       {
         "type": "list",
@@ -13022,7 +13231,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Extra Care Looks Like"
+        "text": "What extra care looks like"
       },
       {
         "type": "paragraph",
@@ -13030,7 +13239,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What You Can Do"
+        "text": "What you can do"
       },
       {
         "type": "list",
@@ -13045,11 +13254,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "Putting it together"
       },
       {
         "type": "paragraph",
         "text": "Many women with high-risk pregnancies deliver healthy babies with the right support. Dr Malathi G. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy can assess your risks and plan the care you need."
+      },
+      {
+        "type": "paragraph",
+        "text": "If your doctor has suggested this, our [second opinion scan](/services/second-opinion-scan) page lists what is included and how to book; [the team](/doctors) is happy to talk it through first."
       },
       {
         "type": "h2",
@@ -13075,27 +13288,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Does high risk mean I will lose the baby?",
-        "answer": "No. It means closer monitoring so problems are caught early."
+        "answer": "No. It means closer monitoring so problems are caught early. Your own result can differ, which is why the specialist looks at the whole picture before advising. It is a reasonable question to ask directly. the answer often depends on your scan findings."
       },
       {
         "question": "Is being over 35 always high risk?",
-        "answer": "It raises certain risks, but many women over 35 have smooth pregnancies with good care."
+        "answer": "It raises certain risks, but many women over 35 have smooth pregnancies with good care. The team will explain how this applies to your pregnancy when you come in. In most cases the answer also depends on your medical history, so bring it up at your appointment."
       },
       {
         "question": "Are twins always high risk?",
-        "answer": "They are generally managed as higher risk because complications are more common."
+        "answer": "They are generally managed as higher risk because complications are more common. Your specialist will factor in your reports and dates before giving you a definite answer. If you are unsure whether this applies to you, ask the doctor at your next scan."
       },
       {
         "question": "Can a normal pregnancy become high risk later?",
-        "answer": "Yes, for example with gestational diabetes or high blood pressure."
+        "answer": "Yes, for example with gestational diabetes or high blood pressure. The details depend on your dates, history and earlier reports, so your doctor will tailor the answer to you. If this is your situation, the safest step is to ask at your next visit rather than waiting."
       },
       {
         "question": "Do I need a special doctor?",
-        "answer": "A fetal medicine specialist can help, especially if scans show concerns."
+        "answer": "A fetal medicine specialist can help, especially if scans show concerns. A fetal medicine specialist often works with your obstetrician. When Should You See a Fetal Medicine Specialist? Your own result can differ, which is why the specialist looks at the whole picture before advising."
       },
       {
         "question": "Can I have a normal delivery in a high-risk pregnancy?",
-        "answer": "In many cases yes. It depends on the condition and the baby's wellbeing."
+        "answer": "In many cases yes. It depends on the condition and the baby's wellbeing. High-risk care may include more frequent antenatal visits, additional scans, blood tests, medicines, and planning delivery at a hospital with the right facilities. It is a reasonable question to ask directly. the answer often depends on your scan findings."
       }
     ],
     "sources": [
@@ -13114,13 +13327,14 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-03",
     "publishedAt": "2026-10-03",
     "seo": {
-      "title": "What Makes a Pregnancy High Risk?",
+      "title": "What Makes a Pregnancy High Risk?. a patient",
       "description": "A high-risk pregnancy needs extra monitoring, but most go on to have healthy babies. Learn the common causes and what they mean for you. Dr Malathi G."
-    }
+    },
+    "relatedService": "second-opinion-scan"
   },
   {
     "slug": "when-to-see-a-fetal-medicine-specialist",
-    "title": "When Should You See a Fetal Medicine Specialist?",
+    "title": "When to See a Fetal Medicine Specialist",
     "excerpt": "A fetal medicine specialist cares for pregnancies with scan findings or higher risks. Learn when a referral is worth considering.",
     "coverImage": {
       "src": "/images/guides/when-to-see-a-fetal-medicine-specialist.webp",
@@ -13131,7 +13345,7 @@ export const blogGuides: Guide[] = [
     "content": [
       {
         "type": "h2",
-        "text": "What Does a Fetal Medicine Specialist Do?"
+        "text": "What does a fetal medicine specialist do?"
       },
       {
         "type": "paragraph",
@@ -13139,7 +13353,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Situations Where a Visit Is Helpful"
+        "text": "Situations where a visit is helpful"
       },
       {
         "type": "list",
@@ -13159,7 +13373,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Key Scans Often Done by Fetal Medicine Specialists"
+        "text": "Key scans often done by fetal medicine specialists"
       },
       {
         "type": "list",
@@ -13173,7 +13387,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What to Bring to the Visit"
+        "text": "What to bring to the visit"
       },
       {
         "type": "paragraph",
@@ -13189,11 +13403,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "The essentials"
       },
       {
         "type": "paragraph",
         "text": "Seeing a specialist early often brings clarity and calm. Dr Malathi G. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy offers detailed fetal scans and counselling to guide you through pregnancy with confidence."
+      },
+      {
+        "type": "paragraph",
+        "text": "For appointments, the [second opinion scan](/services/second-opinion-scan) page has the details, and [our fetal medicine specialists](/doctors) can advise whether it fits your situation."
       },
       {
         "type": "h2",
@@ -13217,27 +13435,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Is a fetal medicine specialist the same as a gynaecologist?",
-        "answer": "No. They are obstetricians with additional training in fetal conditions and prenatal diagnosis."
+        "answer": "No. They are obstetricians with additional training in fetal conditions and prenatal diagnosis. For appointments, the second opinion scan page has the details, and our fetal medicine specialists can advise whether it fits your situation. A fetal medicine specialist is an obstetrician with extra training in the care of the unborn baby."
       },
       {
         "question": "Do I need a referral?",
-        "answer": "Not necessarily, though your obstetrician can refer you."
+        "answer": "Not necessarily, though your obstetrician can refer you. The team will explain how this applies to your pregnancy when you come in. In most cases the answer also depends on your medical history, so bring it up at your appointment."
       },
       {
         "question": "Should every pregnant woman see one?",
-        "answer": "Not necessarily. It helps when there are findings or risk factors."
+        "answer": "Not necessarily. It helps when there are findings or risk factors. Your specialist will factor in your reports and dates before giving you a definite answer. If you are unsure whether this applies to you, ask the doctor at your next scan."
       },
       {
         "question": "When is the best time for a first visit?",
-        "answer": "Ideally early, around the NT scan window of 11 to 14 weeks, or whenever a concern arises."
+        "answer": "Ideally early, around the NT scan window of 11 to 14 weeks, or whenever a concern arises. The details depend on your dates, history and earlier reports, so your doctor will tailor the answer to you. If this is your situation, the safest step is to ask at your next visit rather than waiting."
       },
       {
         "question": "Will I need to change my regular doctor?",
-        "answer": "No. The specialist usually works alongside your obstetrician."
+        "answer": "No. The specialist usually works alongside your obstetrician. Your own result can differ, which is why the specialist looks at the whole picture before advising. It is a reasonable question to ask directly. the answer often depends on your scan findings."
       },
       {
         "question": "What if the scan is normal?",
-        "answer": "That is good news, and you continue routine care."
+        "answer": "That is good news, and you continue routine care. The team will explain how this applies to your pregnancy when you come in. In most cases the answer also depends on your medical history, so bring it up at your appointment."
       }
     ],
     "sources": [
@@ -13256,7 +13474,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-04",
     "publishedAt": "2026-10-04",
     "seo": {
-      "title": "When Should You See a Fetal Medicine Specialist?",
+      "title": "When to See a Fetal Medicine Specialist",
       "description": "A fetal medicine specialist cares for pregnancies with scan findings or higher risks. Learn when a referral is worth considering. Not always."
     },
     "relatedService": "second-opinion-scan"
@@ -13290,7 +13508,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Extra Blood and Other Tests"
+        "text": "Extra blood and other tests"
       },
       {
         "type": "list",
@@ -13327,7 +13545,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Tips for Going Through Extra Tests"
+        "text": "Tips for going through extra tests"
       },
       {
         "type": "list",
@@ -13341,11 +13559,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "What to do next"
       },
       {
         "type": "paragraph",
         "text": "Extra tests are meant to protect you and your baby, not to alarm you. Dr Malathi G. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy can create a clear monitoring plan and explain each step along the way. For the broader picture, see our guide to [High-Risk Pregnancy](/guides/high-risk-pregnancy-fetal-medicine-specialist)."
+      },
+      {
+        "type": "paragraph",
+        "text": "If this applies to your pregnancy, our [growth scan with Doppler](/services/growth-scan-doppler) page explains what the visit involves, or you can [meet our specialists](/doctors) before you decide anything."
       },
       {
         "type": "h2",
@@ -13370,27 +13592,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Are extra scans safe for the baby?",
-        "answer": "Yes. Ultrasound has no known harm when done appropriately."
+        "answer": "Yes. Ultrasound has no known harm when done appropriately. Growth scans: to track the baby's size, usually every two to four weeks in the third trimester. Doppler scans: to check blood flow through the umbilical cord and the baby's vessels."
       },
       {
         "question": "How many scans will I have?",
-        "answer": "It varies with your condition and how the pregnancy progresses."
+        "answer": "It varies with your condition and how the pregnancy progresses. Your specialist will factor in your reports and dates before giving you a definite answer. If you are unsure whether this applies to you, ask the doctor at your next scan."
       },
       {
         "question": "What is a non-stress test?",
-        "answer": "A test that records the baby's heart rate along with movements, usually for 20 to 40 minutes."
+        "answer": "A test that records the baby's heart rate along with movements, usually for 20 to 40 minutes. The details depend on your dates, history and earlier reports, so your doctor will tailor the answer to you. If this is your situation, the safest step is to ask at your next visit rather than waiting."
       },
       {
         "question": "Will I need amniocentesis?",
-        "answer": "Only if screening or scans suggest a need."
+        "answer": "Only if screening or scans suggest a need. Diagnostic tests such as CVS or amniocentesis when indicated. Your own result can differ, which is why the specialist looks at the whole picture before advising. It is a reasonable question to ask directly. the answer often depends on your scan findings."
       },
       {
         "question": "Can I go home after the tests?",
-        "answer": "Usually yes, as most are outpatient tests."
+        "answer": "Usually yes, as most are outpatient tests. Extra tests are meant to protect you and your baby, not to alarm you. Thyroid, kidney and liver function tests where needed. Blood pressure checks and urine protein tests. Extra tests can be tiring."
       },
       {
         "question": "What if a test result is abnormal?",
-        "answer": "Your doctor will explain the next steps and may repeat or add tests."
+        "answer": "Your doctor will explain the next steps and may repeat or add tests. The team will explain how this applies to your pregnancy when you come in. In most cases the answer also depends on your medical history, so bring it up at your appointment."
       }
     ],
     "sources": [
@@ -13409,10 +13631,11 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-04",
     "publishedAt": "2026-10-04",
     "seo": {
-      "title": "High-Risk Pregnancy: What Extra Scans and Tests Can You",
+      "title": "High-Risk Pregnancy: What Extra Scans and Tests",
       "description": "A high-risk pregnancy usually means extra scans and tests. Here is a plain guide to what they are and why they are done. Your team will help decide the right"
     },
-    "cardTitle": "High-Risk Pregnancy"
+    "cardTitle": "High-Risk Pregnancy",
+    "relatedService": "growth-scan-doppler"
   },
   {
     "slug": "pregnancy-after-ivf-extra-monitoring",
@@ -13431,7 +13654,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Why Might IVF Pregnancies Need More Monitoring?"
+        "text": "Why might IVF pregnancies need more monitoring?"
       },
       {
         "type": "list",
@@ -13446,7 +13669,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Early Scans Are Done?"
+        "text": "What early scans are done?"
       },
       {
         "type": "paragraph",
@@ -13454,7 +13677,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Which Screening Tests Are Recommended?"
+        "text": "Which screening tests are recommended?"
       },
       {
         "type": "h3",
@@ -13490,7 +13713,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Monitoring Happens Later in Pregnancy?"
+        "text": "What monitoring happens later in pregnancy?"
       },
       {
         "type": "list",
@@ -13505,7 +13728,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Are IVF Twins Monitored?"
+        "text": "How are IVF twins monitored?"
       },
       {
         "type": "paragraph",
@@ -13513,7 +13736,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "When Should You Seek Urgent Help?"
+        "text": "When should you seek urgent help?"
       },
       {
         "type": "paragraph",
@@ -13521,11 +13744,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "The short version"
       },
       {
         "type": "paragraph",
         "text": "After the hard work of IVF, careful monitoring helps protect your pregnancy. A [fetal medicine specialist](/guides/high-risk-pregnancy-fetal-medicine-specialist) can tailor scans and tests to your needs. Dr Malathi G. Prasad supports IVF and high-risk pregnancies with fetal medicine care in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "To arrange this at our Trichy centre, see [growth scan with Doppler](/services/growth-scan-doppler); if you are unsure whether you need it, [our doctors](/doctors) can tell you after a review."
       },
       {
         "type": "h2",
@@ -13551,23 +13778,23 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Is an IVF pregnancy high risk?",
-        "answer": "IVF pregnancies may carry some higher risks, often due to maternal age, infertility causes or twins. Many are healthy, but closer monitoring is commonly advised."
+        "answer": "IVF pregnancies may carry some higher risks, often due to maternal age, infertility causes or twins. Many are healthy, but closer monitoring is commonly advised. Your specialist will factor in your reports and dates before giving you a definite answer."
       },
       {
         "question": "What extra scans are needed after IVF?",
-        "answer": "Early viability and dating scans, first-trimester screening, a detailed anomaly scan, sometimes a fetal echo and growth or Doppler scans may be recommended depending on risk factors."
+        "answer": "Early viability and dating scans, first-trimester screening, a detailed anomaly scan, sometimes a fetal echo and growth or Doppler scans may be recommended depending on risk factors. Early scans confirm the pregnancy is in the uterus, check the heartbeat, confirm dating and the number of babies, and assess chorionicity in twins."
       },
       {
         "question": "Can NIPT be done in IVF pregnancies?",
-        "answer": "Yes. NIPT can be used, but the laboratory and doctor should know about donor eggs, vanished twins or other factors that may affect results."
+        "answer": "Yes. NIPT can be used, but the laboratory and doctor should know about donor eggs, vanished twins or other factors that may affect results. NIPT can be used in IVF pregnancies, but donor eggs or a vanished twin should be shared with the lab."
       },
       {
         "question": "Do IVF babies have more heart problems?",
-        "answer": "Some studies suggest a slightly higher chance of heart defects in IVF or ICSI pregnancies. A fetal echo may be recommended, especially with other risk factors."
+        "answer": "Some studies suggest a slightly higher chance of heart defects in IVF or ICSI pregnancies. A fetal echo may be recommended, especially with other risk factors. Extra monitoring helps detect problems early. If you are unsure whether this applies to you, ask the doctor at your next scan."
       },
       {
         "question": "Should I take aspirin during an IVF pregnancy?",
-        "answer": "Low-dose aspirin may be advised for women at higher risk of preeclampsia, often started early in pregnancy. Only take it if your doctor recommends it."
+        "answer": "Low-dose aspirin may be advised for women at higher risk of preeclampsia, often started early in pregnancy. Only take it if your doctor recommends it. The details depend on your dates, history and earlier reports, so your doctor will tailor the answer to you."
       }
     ],
     "sources": [
@@ -13586,9 +13813,10 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-04",
     "publishedAt": "2026-10-04",
     "seo": {
-      "title": "Pregnancy After IVF: What Extra Monitoring Is Needed?",
+      "title": "Pregnancy After IVF: What Extra Monitoring Is",
       "description": "IVF pregnancies often need closer monitoring. Learn why, which scans and tests are recommended, how twin and older-age risks are managed, and when to seek help."
-    }
+    },
+    "relatedService": "growth-scan-doppler"
   },
   {
     "slug": "diabetes-and-pregnancy-baby-extra-monitoring",
@@ -13607,7 +13835,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Which Types of Diabetes Need Extra Monitoring?"
+        "text": "Which types of diabetes need extra monitoring?"
       },
       {
         "type": "list",
@@ -13623,7 +13851,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Can Diabetes Affect the Baby?"
+        "text": "How can diabetes affect the baby?"
       },
       {
         "type": "list",
@@ -13640,7 +13868,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Scans and Checks Are Used?"
+        "text": "What scans and checks are used?"
       },
       {
         "type": "h3",
@@ -13700,7 +13928,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Does Good Sugar Control Help?"
+        "text": "How does good sugar control help?"
       },
       {
         "type": "paragraph",
@@ -13708,7 +13936,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "When Should Delivery Be Planned?"
+        "text": "When should delivery be planned?"
       },
       {
         "type": "paragraph",
@@ -13716,7 +13944,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Happens After Birth?"
+        "text": "What happens after birth?"
       },
       {
         "type": "paragraph",
@@ -13724,7 +13952,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "When Should You Call Your Doctor?"
+        "text": "When should you call your doctor?"
       },
       {
         "type": "list",
@@ -13739,11 +13967,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "Keeping it simple"
       },
       {
         "type": "paragraph",
         "text": "With careful monitoring and good sugar control, most women with diabetes have healthy pregnancies. If you have diabetes and are pregnant or planning pregnancy, consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy, for a personalised monitoring plan."
+      },
+      {
+        "type": "paragraph",
+        "text": "You can read about how we run the [growth scan with Doppler](/services/growth-scan-doppler) at our centre, and who performs it, on the [team page](/doctors)."
       },
       {
         "type": "h2",
@@ -13769,27 +14001,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Does diabetes affect the baby in pregnancy?",
-        "answer": "It can. High sugar may raise the risk of birth defects, large babies, excess fluid and newborn sugar problems. With good control and regular monitoring, most babies are born healthy."
+        "answer": "It can. High sugar may raise the risk of birth defects, large babies, excess fluid and newborn sugar problems. With good control and regular monitoring, most babies are born healthy. A special heart scan, usually at 20 to 24 weeks, advised for women with pre-existing diabetes or poor early sugar control."
       },
       {
         "question": "Do I need a fetal echo if I have diabetes?",
-        "answer": "A fetal echo is usually advised for women with type 1 or type 2 diabetes before pregnancy, or with poor early sugar control, because the baby's heart is more at risk. Your doctor will advise if you need it."
+        "answer": "A fetal echo is usually advised for women with type 1 or type 2 diabetes before pregnancy, or with poor early sugar control, because the baby's heart is more at risk. Your doctor will advise if you need it. Fetal growth restriction: Less often, in women with long-standing diabetes or kidney or blood vessel disease."
       },
       {
         "question": "How often are growth scans done in diabetic pregnancy?",
-        "answer": "Usually from about 28 weeks, every 2 to 4 weeks, depending on your sugar control and the baby's growth. More frequent scans may be advised if problems appear."
+        "answer": "Usually from about 28 weeks, every 2 to 4 weeks, depending on your sugar control and the baby's growth. More frequent scans may be advised if problems appear. You can read about how we run the growth scan with Doppler at our centre, and who performs it, on the team page."
       },
       {
         "question": "Is normal delivery possible with diabetes?",
-        "answer": "Often yes, if the baby is of normal size and your sugars are controlled. A caesarean may be advised for a very large baby or other obstetric reasons. The decision is individual."
+        "answer": "Often yes, if the baby is of normal size and your sugars are controlled. A caesarean may be advised for a very large baby or other obstetric reasons. The decision is individual. For pre-existing diabetes or complications, delivery may be offered earlier, often between 37 and 39 weeks."
       },
       {
         "question": "When is the baby delivered in gestational diabetes?",
-        "answer": "Usually around 39 to 40 weeks if sugars are well controlled. Earlier delivery may be offered if control is poor or there are complications."
+        "answer": "Usually around 39 to 40 weeks if sugars are well controlled. Earlier delivery may be offered if control is poor or there are complications. For well-controlled gestational diabetes, delivery is often planned around 39 to 40 weeks. Women with gestational diabetes need a sugar test at 6 to 12 weeks."
       },
       {
         "question": "Will my baby have diabetes?",
-        "answer": "Most babies of mothers with diabetes do not have diabetes at birth. They may have low sugar in the first hours, which is checked and treated. Long-term risk of diabetes is somewhat higher, and healthy lifestyle helps."
+        "answer": "Most babies of mothers with diabetes do not have diabetes at birth. They may have low sugar in the first hours, which is checked and treated. Long-term risk of diabetes is somewhat higher, and healthy lifestyle helps. Diabetes in pregnancy is common, and most women with good care have healthy babies."
       }
     ],
     "sources": [
@@ -13808,7 +14040,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-05",
     "publishedAt": "2026-10-05",
     "seo": {
-      "title": "Diabetes and Pregnancy: When Baby Needs Extra Monitoring",
+      "title": "Diabetes and Pregnancy: When Baby Needs Extra",
       "description": "Diabetes in pregnancy can affect your baby's growth, heart and fluid levels. Learn which scans and checks are used, when they are done and why they matter."
     },
     "relatedService": "growth-scan-doppler"
@@ -13830,7 +14062,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Common Is Miscarriage?"
+        "text": "How common is miscarriage?"
       },
       {
         "type": "paragraph",
@@ -13842,7 +14074,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Do Guidelines Define It?"
+        "text": "How do guidelines define it?"
       },
       {
         "type": "list",
@@ -13859,7 +14091,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Does the Number Need to Be Consecutive?"
+        "text": "Does the number need to be consecutive?"
       },
       {
         "type": "paragraph",
@@ -13867,7 +14099,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Which Losses Count?"
+        "text": "Which losses count?"
       },
       {
         "type": "list",
@@ -13885,7 +14117,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "When Should You See a Doctor?"
+        "text": "When should you see a doctor?"
       },
       {
         "type": "paragraph",
@@ -13906,7 +14138,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Happens at the First Visit?"
+        "text": "What happens at the first visit?"
       },
       {
         "type": "paragraph",
@@ -13914,7 +14146,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Should You Avoid Believing?"
+        "text": "What should you avoid believing?"
       },
       {
         "type": "list",
@@ -13928,7 +14160,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Looking After Your Emotional Health"
+        "text": "Looking after your emotional health"
       },
       {
         "type": "paragraph",
@@ -13936,11 +14168,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "The part to remember"
       },
       {
         "type": "paragraph",
         "text": "You are not alone, and there is hope. A proper evaluation and careful monitoring give many couples the answer and the care they need. For compassionate guidance, consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "When you are ready, the [recurrent miscarriages clinic](/services/recurrent-miscarriages-clinic) service page covers timings and preparation; questions about your own situation are best put to [our specialists](/doctors)."
       },
       {
         "type": "h2",
@@ -13966,27 +14202,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "How many miscarriages are considered recurrent?",
-        "answer": "Most international societies define recurrent pregnancy loss as two or more losses. Some guidelines use three consecutive losses. Evaluation can start after two, especially if you are 35 or older."
+        "answer": "Most international societies define recurrent pregnancy loss as two or more losses. Some guidelines use three consecutive losses. Evaluation can start after two, especially if you are 35 or older. When you are ready, the recurrent miscarriages clinic service page covers timings and preparation; questions about your own situation are best put to our specialists."
       },
       {
         "question": "Should I wait for a third miscarriage before testing?",
-        "answer": "No. Many doctors advise tests after two losses, since some causes are treatable. Early evaluation can save time and distress."
+        "answer": "No. Many doctors advise tests after two losses, since some causes are treatable. Early evaluation can save time and distress. About 1 in 5 recognised pregnancies end in a miscarriage, and most of these are caused by a one-time chromosomal error in the embryo."
       },
       {
         "question": "Is recurrent miscarriage my fault?",
-        "answer": "No. Most miscarriages are caused by chromosomal errors in the embryo that are not related to anything you did. Work, exercise, travel and stress do not cause recurrent pregnancy loss."
+        "answer": "No. Most miscarriages are caused by chromosomal errors in the embryo that are not related to anything you did. Work, exercise, travel and stress do not cause recurrent pregnancy loss. Can Genetic Problems Cause Recurrent Miscarriage? One of the first questions they ask is whether this counts as \"recurrent\" and when to seek help."
       },
       {
         "question": "What are the chances of a healthy pregnancy after two or three losses?",
-        "answer": "Most couples, often more than 60 to 70 percent, go on to have a healthy baby, even when no cause is found. The chance depends on age and the underlying cause."
+        "answer": "Most couples, often more than 60 to 70 percent, go on to have a healthy baby, even when no cause is found. The chance depends on age and the underlying cause. Two losses in a row happen in about 2 to 5 percent of couples, and three or more in about 1 percent."
       },
       {
         "question": "Does a biochemical pregnancy count as a miscarriage?",
-        "answer": "A biochemical pregnancy is a very early loss detected only by a positive test. Some guidelines count it, others do not. Tell your doctor about it, as it can add useful information."
+        "answer": "A biochemical pregnancy is a very early loss detected only by a positive test. Some guidelines count it, others do not. Tell your doctor about it, as it can add useful information. Some include non-visualised pregnancy losses, such as biochemical pregnancies, while others count only losses confirmed by ultrasound or tissue examination."
       },
       {
         "question": "When should both partners be tested?",
-        "answer": "Evaluation often involves both partners, with tests of hormones, uterine structure, blood clotting and sometimes genetics. Your doctor will plan the tests in a sensible order."
+        "answer": "Evaluation often involves both partners, with tests of hormones, uterine structure, blood clotting and sometimes genetics. Your doctor will plan the tests in a sensible order. They may suggest tests for both partners, covering hormones, uterine anatomy, blood clotting, genetics and other factors."
       }
     ],
     "sources": [
@@ -14005,14 +14241,14 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-06",
     "publishedAt": "2026-10-06",
     "seo": {
-      "title": "How Many Miscarriages Count as Recurrent Pregnancy Loss?",
+      "title": "How Many Miscarriages Count as Recurrent",
       "description": "Two or three? Learn how recurrent pregnancy loss is defined, how common it is, when doctors start testing and why you are not to blame. Miscarriage is common."
     },
     "relatedService": "recurrent-miscarriages-clinic"
   },
   {
     "slug": "tests-after-repeated-miscarriages",
-    "title": "What Tests Are Done After Repeated Miscarriages?",
+    "title": "Tests Done After Repeated Miscarriages",
     "excerpt": "Which tests help find the cause of repeated miscarriages? Learn about hormone, uterine, clotting, genetic and other tests, and what normal results mean.",
     "coverImage": {
       "src": "/images/guides/tests-after-repeated-miscarriages.webp",
@@ -14027,7 +14263,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Why Is Testing Done?"
+        "text": "Why is testing done?"
       },
       {
         "type": "paragraph",
@@ -14035,7 +14271,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Tests Are Recommended?"
+        "text": "What tests are recommended?"
       },
       {
         "type": "h3",
@@ -14112,7 +14348,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Which Tests Are Not Routinely Recommended?"
+        "text": "Which tests are not routinely recommended?"
       },
       {
         "type": "paragraph",
@@ -14134,7 +14370,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Are Results Used?"
+        "text": "How are results used?"
       },
       {
         "type": "list",
@@ -14147,7 +14383,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Is the Best Time to Test?"
+        "text": "What is the best time to test?"
       },
       {
         "type": "paragraph",
@@ -14155,7 +14391,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Should You Bring?"
+        "text": "What should you bring?"
       },
       {
         "type": "paragraph",
@@ -14163,7 +14399,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "When Should You See a Doctor?"
+        "text": "When should you see a doctor?"
       },
       {
         "type": "paragraph",
@@ -14171,11 +14407,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "What this means for you"
       },
       {
         "type": "paragraph",
         "text": "A thoughtful, step-by-step approach saves cost and stress, and gives you the best chance of success. To plan your tests, consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "If your doctor has suggested this, our [recurrent miscarriages clinic](/services/recurrent-miscarriages-clinic) page lists what is included and how to book; [the team](/doctors) is happy to talk it through first."
       },
       {
         "type": "h2",
@@ -14200,27 +14440,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "What tests should be done after two miscarriages?",
-        "answer": "Common tests include antiphospholipid antibodies, thyroid and sugar tests, a pelvic ultrasound to check the uterus, and sometimes parental chromosome testing. Your doctor will choose based on your history."
+        "answer": "Common tests include antiphospholipid antibodies, thyroid and sugar tests, a pelvic ultrasound to check the uterus, and sometimes parental chromosome testing. Your doctor will choose based on your history. See a specialist after two miscarriages, earlier if you are over 35, have had a loss after a heartbeat was seen, have a second-trimester loss or have any medical illness."
       },
       {
         "question": "Is genetic testing needed after repeated miscarriage?",
-        "answer": "Parental karyotyping may be advised in selected couples, and chromosome testing of the miscarried tissue can show whether an embryo error occurred. Your doctor will guide you."
+        "answer": "Parental karyotyping may be advised in selected couples, and chromosome testing of the miscarried tissue can show whether an embryo error occurred. Your doctor will guide you. A genetic cause: counselling and options such as pre-implantation genetic testing with IVF or prenatal diagnosis."
       },
       {
         "question": "Which blood tests are done for recurrent miscarriage?",
-        "answer": "Antiphospholipid antibodies, thyroid function, prolactin, blood sugar or HbA1c, and a blood count are common. Others may be added if your history suggests them."
+        "answer": "Antiphospholipid antibodies, thyroid function, prolactin, blood sugar or HbA1c, and a blood count are common. Others may be added if your history suggests them. If your doctor has suggested this, our recurrent miscarriages clinic page lists what is included and how to book; the team is happy to talk it through first."
       },
       {
         "question": "Is hysteroscopy needed after repeated miscarriages?",
-        "answer": "Hysteroscopy or a 3D ultrasound is used to look for a septum, polyps or adhesions in the uterus. It is advised when other tests suggest a uterine problem or when the cause is unclear."
+        "answer": "Hysteroscopy or a 3D ultrasound is used to look for a septum, polyps or adhesions in the uterus. It is advised when other tests suggest a uterine problem or when the cause is unclear. Some tests, such as antiphospholipid antibodies, hysteroscopy and hormone tests, are done a few weeks after a loss, once the body has recovered."
       },
       {
         "question": "Should my husband be tested too?",
-        "answer": "Yes. Both partners can contribute. Men may have a semen analysis and in some cases tests for sperm DNA damage. If a chromosome problem is suspected, both are tested."
+        "answer": "Yes. Both partners can contribute. Men may have a semen analysis and in some cases tests for sperm DNA damage. If a chromosome problem is suspected, both are tested. Here is what is usually tested and why. If this is your situation, the safest step is to ask at your next visit rather than waiting."
       },
       {
         "question": "Are NK cell tests useful?",
-        "answer": "Major guidelines do not recommend routine NK cell testing, as it has not been shown to predict or improve outcomes. Treatments based on it are not proven."
+        "answer": "Major guidelines do not recommend routine NK cell testing, as it has not been shown to predict or improve outcomes. Treatments based on it are not proven. A structured set of tests can find a cause in about half of cases, and in many of those, treatment is possible."
       }
     ],
     "sources": [
@@ -14239,14 +14479,14 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-06",
     "publishedAt": "2026-10-06",
     "seo": {
-      "title": "What Tests Are Done After Repeated Miscarriages?",
+      "title": "Tests Done After Repeated Miscarriages",
       "description": "Which tests help find the cause of repeated miscarriages? Learn about hormone, uterine, clotting, genetic and other tests, and what normal results mean."
     },
     "relatedService": "recurrent-miscarriages-clinic"
   },
   {
     "slug": "can-genetic-problems-cause-recurrent-miscarriage",
-    "title": "Can Genetic Problems Cause Recurrent Miscarriage?",
+    "title": "Genetic Causes of Recurrent Miscarriage",
     "excerpt": "Chromosome errors are the most common cause of miscarriage. Learn how genetics plays a role in repeated losses, which tests help and what options exist.",
     "coverImage": {
       "src": "/images/guides/can-genetic-problems-cause-recurrent-miscarriage.webp",
@@ -14261,7 +14501,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Do Chromosomes Cause Miscarriage?"
+        "text": "How do chromosomes cause miscarriage?"
       },
       {
         "type": "paragraph",
@@ -14269,7 +14509,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Two Types of Genetic Causes"
+        "text": "Two types of genetic causes"
       },
       {
         "type": "h3",
@@ -14297,7 +14537,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Which Tests Help?"
+        "text": "Which tests help?"
       },
       {
         "type": "h3",
@@ -14329,7 +14569,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Happens If a Rearrangement Is Found?"
+        "text": "What happens if a rearrangement is found?"
       },
       {
         "type": "paragraph",
@@ -14352,7 +14592,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Does Genetic Testing of Embryos Prevent Miscarriage?"
+        "text": "Does genetic testing of embryos prevent miscarriage?"
       },
       {
         "type": "paragraph",
@@ -14360,7 +14600,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Do Genes Cause All Miscarriages?"
+        "text": "Do genes cause all miscarriages?"
       },
       {
         "type": "paragraph",
@@ -14368,7 +14608,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Can You Do Now?"
+        "text": "What can you do now?"
       },
       {
         "type": "list",
@@ -14383,7 +14623,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "When Should You See a Doctor?"
+        "text": "When should you see a doctor?"
       },
       {
         "type": "paragraph",
@@ -14391,11 +14631,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "The takeaway"
       },
       {
         "type": "paragraph",
         "text": "Finding a genetic reason can bring clarity and a plan. And when the cause is chance, it brings hope. For counselling and testing, consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "For appointments, the [genetic counselling](/services/genetic-counselling) page has the details, and [our fetal medicine specialists](/doctors) can advise whether it fits your situation."
       },
       {
         "type": "h2",
@@ -14422,27 +14666,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Can genetic problems cause repeated miscarriages?",
-        "answer": "Yes. Chromosome errors in the embryo are the most common cause and are usually random. In a small number of couples, a parent carries a balanced rearrangement that raises the risk."
+        "answer": "Yes. Chromosome errors in the embryo are the most common cause and are usually random. In a small number of couples, a parent carries a balanced rearrangement that raises the risk. Seek advice if you have had two or more miscarriages, a loss after a heartbeat was seen, a stillbirth."
       },
       {
         "question": "How common is a balanced translocation in recurrent miscarriage?",
-        "answer": "About 2 to 4 percent of couples with recurrent pregnancy loss have one partner with a balanced translocation. It is more likely with three or more losses or relevant family history."
+        "answer": "About 2 to 4 percent of couples with recurrent pregnancy loss have one partner with a balanced translocation. It is more likely with three or more losses or relevant family history. A balanced translocation is found in about 2 to 4 percent of couples with recurrent miscarriage."
       },
       {
         "question": "Is karyotyping needed for every couple with miscarriages?",
-        "answer": "Not always. It is considered after repeated losses, especially if tissue testing shows an unbalanced rearrangement, or if there is a family history. Your doctor will advise."
+        "answer": "Not always. It is considered after repeated losses, especially if tissue testing shows an unbalanced rearrangement, or if there is a family history. Your doctor will advise. When couples face repeated miscarriages, they often ask if something is wrong in their genes."
       },
       {
         "question": "Can miscarriage tissue be tested?",
-        "answer": "Yes. Chromosome analysis of the tissue from a miscarriage can show whether the embryo had an error. It must be planned at the time of the loss, so ask your doctor in advance."
+        "answer": "Yes. Chromosome analysis of the tissue from a miscarriage can show whether the embryo had an error. It must be planned at the time of the loss, so ask your doctor in advance. The parent is healthy because no genetic material is lost, but their eggs or sperm may carry too much or too little."
       },
       {
         "question": "Will IVF with genetic testing prevent miscarriage?",
-        "answer": "It can help couples with a known balanced rearrangement, using PGT-SR to select unaffected embryos. For unexplained loss, benefit has not been clearly shown in all studies."
+        "answer": "It can help couples with a known balanced rearrangement, using PGT-SR to select unaffected embryos. For unexplained loss, benefit has not been clearly shown in all studies. Does genetic testing of embryos prevent miscarriage? The honest answer is that genetics plays a major role in miscarriage, but in most cases it is a chance event."
       },
       {
         "question": "Is the next pregnancy likely to be normal if the last miscarriage was genetic?",
-        "answer": "Often yes. Chance chromosome errors tend not to repeat, and most women go on to have healthy pregnancies. Age and other factors matter."
+        "answer": "Often yes. Chance chromosome errors tend not to repeat, and most women go on to have healthy pregnancies. Age and other factors matter. It is more likely in couples with three or more losses, or with a family history of miscarriage, stillbirth or children with birth defects."
       }
     ],
     "sources": [
@@ -14461,7 +14705,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-06",
     "publishedAt": "2026-10-06",
     "seo": {
-      "title": "Can Genetic Problems Cause Recurrent Miscarriage?",
+      "title": "Genetic Causes of Recurrent Miscarriage",
       "description": "Chromosome errors are the most common cause of miscarriage. Learn how genetics plays a role in repeated losses, which tests help and what options exist."
     },
     "relatedService": "genetic-counselling"
@@ -14483,7 +14727,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Long Should You Wait?"
+        "text": "How long should you wait?"
       },
       {
         "type": "paragraph",
@@ -14495,7 +14739,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Medical Checks Are Useful?"
+        "text": "What medical checks are useful?"
       },
       {
         "type": "list",
@@ -14518,7 +14762,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Which Supplements Help?"
+        "text": "Which supplements help?"
       },
       {
         "type": "list",
@@ -14531,7 +14775,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Which Lifestyle Steps Matter?"
+        "text": "Which lifestyle steps matter?"
       },
       {
         "type": "list",
@@ -14549,7 +14793,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What About Intercourse and Tracking?"
+        "text": "What about intercourse and tracking?"
       },
       {
         "type": "paragraph",
@@ -14557,7 +14801,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "When Should You See a Specialist First?"
+        "text": "When should you see a specialist first?"
       },
       {
         "type": "list",
@@ -14574,7 +14818,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Should You Expect in the Next Pregnancy?"
+        "text": "What should you expect in the next pregnancy?"
       },
       {
         "type": "paragraph",
@@ -14590,11 +14834,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "Before your appointment"
       },
       {
         "type": "paragraph",
         "text": "Preparation can bring confidence and a sense of control after loss. You deserve both medical care and kindness. For a pre-pregnancy plan, consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "If this applies to your pregnancy, our [recurrent miscarriages clinic](/services/recurrent-miscarriages-clinic) page explains what the visit involves, or you can [meet our specialists](/doctors) before you decide anything."
       },
       {
         "type": "h2",
@@ -14620,27 +14868,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "How soon can I get pregnant after a miscarriage?",
-        "answer": "Ovulation can return within two weeks. Many doctors say you can try again after one normal period if you feel ready, unless you had complications. Always follow your doctor's advice."
+        "answer": "Ovulation can return within two weeks. Many doctors say you can try again after one normal period if you feel ready, unless you had complications. Always follow your doctor's advice. If this applies to your pregnancy, our recurrent miscarriages clinic page explains what the visit involves, or you can meet our specialists before you decide anything."
       },
       {
         "question": "Should I take folic acid after a miscarriage?",
-        "answer": "Yes. Take folic acid daily before trying. The usual dose is 400 micrograms, but some women need a higher dose. Ask your doctor."
+        "answer": "Yes. Take folic acid daily before trying. The usual dose is 400 micrograms, but some women need a higher dose. Ask your doctor. The World Health Organization recommends waiting about six months after a miscarriage before trying again, based on older studies."
       },
       {
         "question": "Do I need tests before trying again?",
-        "answer": "After one miscarriage, basic checks such as thyroid and sugar are reasonable. After two or more, a full evaluation is advised. See a specialist early if you are 35 or older."
+        "answer": "After one miscarriage, basic checks such as thyroid and sugar are reasonable. After two or more, a full evaluation is advised. See a specialist early if you are 35 or older. Folic acid: 400 micrograms daily, starting at least a month before trying."
       },
       {
         "question": "Does caffeine or alcohol cause miscarriage?",
-        "answer": "High caffeine intake and alcohol are linked with higher risk. It is best to avoid alcohol and keep caffeine below about 200 mg a day when trying to conceive."
+        "answer": "High caffeine intake and alcohol are linked with higher risk. It is best to avoid alcohol and keep caffeine below about 200 mg a day when trying to conceive. After a miscarriage, many couples want to try again quickly, while others feel nervous about trying at all."
       },
       {
         "question": "Can stress cause miscarriage?",
-        "answer": "Everyday stress is not known to cause miscarriage. But looking after your mental health is important, and counselling can help after loss."
+        "answer": "Everyday stress is not known to cause miscarriage. But looking after your mental health is important, and counselling can help after loss. Review the loss: If a cause was identified, for example a chromosomal error, discuss it. How Many Miscarriages Count as Recurrent Pregnancy Loss?"
       },
       {
         "question": "What is the chance of a successful pregnancy after one miscarriage?",
-        "answer": "The chance is high, with most women going on to have a healthy pregnancy. Your age and health affect the numbers, and your doctor can give you a personal estimate."
+        "answer": "The chance is high, with most women going on to have a healthy pregnancy. Your age and health affect the numbers, and your doctor can give you a personal estimate. A little preparation can help you feel confident and give the next pregnancy the best chance."
       }
     ],
     "sources": [
@@ -14689,7 +14937,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Happens in the Early Weeks?"
+        "text": "What happens in the early weeks?"
       },
       {
         "type": "h3",
@@ -14740,7 +14988,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Scans Come Later?"
+        "text": "What scans come later?"
       },
       {
         "type": "list",
@@ -14755,7 +15003,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What About Bed Rest?"
+        "text": "What about bed rest?"
       },
       {
         "type": "paragraph",
@@ -14763,7 +15011,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Should You Do If You Have Bleeding or Pain?"
+        "text": "What should you do if you have bleeding or pain?"
       },
       {
         "type": "paragraph",
@@ -14785,7 +15033,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Can You Look After Your Mind?"
+        "text": "How can you look after your mind?"
       },
       {
         "type": "list",
@@ -14801,7 +15049,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "When Should You See a Doctor?"
+        "text": "When should you see a doctor?"
       },
       {
         "type": "paragraph",
@@ -14809,11 +15057,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "A few things to hold on to"
       },
       {
         "type": "paragraph",
         "text": "You do not have to go through this pregnancy alone. A caring team, clear plan and a bit of hope can make a big difference. For supportive monitoring, consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "To arrange this at our Trichy centre, see [recurrent miscarriages clinic](/services/recurrent-miscarriages-clinic); if you are unsure whether you need it, [our doctors](/doctors) can tell you after a review."
       },
       {
         "type": "h2",
@@ -14840,27 +15092,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "When should I have my first scan after recurrent miscarriage?",
-        "answer": "Usually at 6 to 7 weeks, when a heartbeat can be seen. A repeat scan a week or two later is common. Your specialist may adjust the timing based on your history."
+        "answer": "Usually at 6 to 7 weeks, when a heartbeat can be seen. A repeat scan a week or two later is common. Your specialist may adjust the timing based on your history. To arrange this at our Trichy centre, see recurrent miscarriages clinic; if you are unsure whether you need it, our doctors can tell you after a review."
       },
       {
         "question": "Should I take progesterone in early pregnancy?",
-        "answer": "Progesterone may be advised for women with a history of miscarriage and early bleeding, especially after three or more losses. It is not needed by everyone. Your doctor will decide."
+        "answer": "Progesterone may be advised for women with a history of miscarriage and early bleeding, especially after three or more losses. It is not needed by everyone. Your doctor will decide. Progesterone: Considered in women with early bleeding and a history of one or more miscarriages."
       },
       {
         "question": "Do I need bed rest after recurrent miscarriage?",
-        "answer": "No. Strict bed rest has not been shown to prevent miscarriage. Gentle activity is generally fine unless your doctor advises otherwise."
+        "answer": "No. Strict bed rest has not been shown to prevent miscarriage. Gentle activity is generally fine unless your doctor advises otherwise. How Many Miscarriages Count as Recurrent Pregnancy Loss? Can Genetic Problems Cause Recurrent Miscarriage? Even after three or more miscarriages, the chance of a successful next pregnancy is about 60 to 75 percent, depending on age and cause."
       },
       {
         "question": "What is the chance of a healthy baby after three miscarriages?",
-        "answer": "Roughly 60 to 75 percent, depending on age and cause. Close supervision and treatment of any cause can improve outcomes."
+        "answer": "Roughly 60 to 75 percent, depending on age and cause. Close supervision and treatment of any cause can improve outcomes. Supportive monitoring can give reassurance and, where needed, treatment that improves the chance of a healthy baby. It may improve live birth in women with three or more losses and bleeding in early pregnancy."
       },
       {
         "question": "Which injections are used in pregnancy after miscarriage?",
-        "answer": "Heparin injections with low-dose aspirin are used for antiphospholipid syndrome. They are not recommended routinely for unexplained miscarriage. Your doctor will explain whether you need them."
+        "answer": "Heparin injections with low-dose aspirin are used for antiphospholipid syndrome. They are not recommended routinely for unexplained miscarriage. Your doctor will explain whether you need them. Strict bed rest has not been shown to prevent miscarriage and increases the risk of blood clots."
       },
       {
         "question": "How can I cope with anxiety in pregnancy after loss?",
-        "answer": "Share your fears with your partner and doctor, ask for extra reassurance scans if available, limit online searching and consider counselling. Anxiety is understandable and treatable."
+        "answer": "Share your fears with your partner and doctor, ask for extra reassurance scans if available, limit online searching and consider counselling. Anxiety is understandable and treatable. Close supervision and support are known to improve outcomes and reduce anxiety. Some clinics offer additional scans to ease anxiety."
       }
     ],
     "sources": [
@@ -14879,7 +15131,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-07",
     "publishedAt": "2026-10-07",
     "seo": {
-      "title": "Pregnancy After Recurrent Miscarriage: How It Is Monitored",
+      "title": "Pregnancy After Recurrent Miscarriage",
       "description": "Pregnant again after repeated miscarriages? A positive pregnancy test after repeated losses brings joy mixed with fear. Many women count every day."
     },
     "relatedService": "recurrent-miscarriages-clinic"
@@ -14901,7 +15153,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Early Can You See Twins?"
+        "text": "How early can you see twins?"
       },
       {
         "type": "h3",
@@ -14937,7 +15189,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Can a Twin Be Missed?"
+        "text": "Can a twin be missed?"
       },
       {
         "type": "paragraph",
@@ -14945,7 +15197,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Is the \"Vanishing Twin\"?"
+        "text": "What is the \"vanishing twin\"?"
       },
       {
         "type": "paragraph",
@@ -14953,7 +15205,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Why Are the First Scans So Important?"
+        "text": "Why are the first scans so important?"
       },
       {
         "type": "list",
@@ -14968,7 +15220,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Are the Signs That Suggest Twins?"
+        "text": "What are the signs that suggest twins?"
       },
       {
         "type": "paragraph",
@@ -14993,7 +15245,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Happens After Twins Are Confirmed?"
+        "text": "What happens after twins are confirmed?"
       },
       {
         "type": "list",
@@ -15008,7 +15260,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "When Should You See a Doctor?"
+        "text": "When should you see a doctor?"
       },
       {
         "type": "paragraph",
@@ -15016,11 +15268,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "What matters most"
       },
       {
         "type": "paragraph",
         "text": "Early scans give you the answers and the plan. Twins need extra attention, and starting well makes a difference. For expert twin pregnancy care, consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "You can read about how we run the [twin specialised clinic](/services/twin-specialised-clinic) at our centre, and who performs it, on the [team page](/doctors)."
       },
       {
         "type": "h2",
@@ -15046,27 +15302,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "What is the earliest week twins can be seen?",
-        "answer": "A transvaginal scan may show two sacs at 5 to 6 weeks. Two embryos with heartbeats are usually seen by 6 to 8 weeks. Early findings are confirmed on later scans."
+        "answer": "A transvaginal scan may show two sacs at 5 to 6 weeks. Two embryos with heartbeats are usually seen by 6 to 8 weeks. Early findings are confirmed on later scans. This is the best time to determine whether the twins are monochorionic (sharing a placenta) or dichorionic (separate placentas)."
       },
       {
         "question": "Can an ultrasound miss twins?",
-        "answer": "Yes, if done very early or when babies are positioned closely together. A repeat scan or the first-trimester scan generally clarifies."
+        "answer": "Yes, if done very early or when babies are positioned closely together. A repeat scan or the first-trimester scan generally clarifies. Only an ultrasound can confirm twins. Many couples want to know how early an ultrasound can tell, how sure the doctor can be, and what to do next."
       },
       {
         "question": "What is a vanishing twin?",
-        "answer": "It is when one of two early embryos stops developing and is absorbed. It is seen in some early twin pregnancies, and the remaining baby usually develops normally."
+        "answer": "It is when one of two early embryos stops developing and is absorbed. It is seen in some early twin pregnancies, and the remaining baby usually develops normally. What is the \"vanishing twin\"? Your own result can differ, which is why the specialist looks at the whole picture before advising."
       },
       {
         "question": "Why is the 11 to 13 week scan important in twins?",
-        "answer": "It confirms the number of babies, checks their growth and NT, and determines chorionicity, which decides the scan schedule and risk planning."
+        "answer": "It confirms the number of babies, checks their growth and NT, and determines chorionicity, which decides the scan schedule and risk planning. Finding out that you are expecting twins is a big moment. Twins need extra attention, and starting well makes a difference."
       },
       {
         "question": "Do IVF pregnancies have a higher chance of twins?",
-        "answer": "Yes, especially when more than one embryo is transferred. Many centres now transfer a single embryo to reduce the twin risk."
+        "answer": "Yes, especially when more than one embryo is transferred. Many centres now transfer a single embryo to reduce the twin risk. This happens in about 1 in 8 to 1 in 10 twin pregnancies seen at early scans. In some pregnancies, one embryo stops developing early and is absorbed."
       },
       {
         "question": "Can a blood test show twins?",
-        "answer": "High hCG levels may suggest twins but do not confirm them. Ultrasound is needed for confirmation."
+        "answer": "High hCG levels may suggest twins but do not confirm them. Ultrasound is needed for confirmation. Monochorionic vs Dichorionic Twins: What Is the Difference? What are the signs that suggest twins? How early can you see twins? What happens after twins are confirmed?"
       }
     ],
     "sources": [
@@ -15107,7 +15363,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Why Are More Scans Needed?"
+        "text": "Why are more scans needed?"
       },
       {
         "type": "paragraph",
@@ -15131,7 +15387,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Is the Usual Schedule?"
+        "text": "What is the usual schedule?"
       },
       {
         "type": "paragraph",
@@ -15215,7 +15471,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Does Each Scan Check?"
+        "text": "What does each scan check?"
       },
       {
         "type": "list",
@@ -15231,7 +15487,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Else Is Needed Besides Scans?"
+        "text": "What else is needed besides scans?"
       },
       {
         "type": "list",
@@ -15247,7 +15503,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Symptoms Need Urgent Review?"
+        "text": "What symptoms need urgent review?"
       },
       {
         "type": "list",
@@ -15263,7 +15519,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "When Is Delivery Planned?"
+        "text": "When is delivery planned?"
       },
       {
         "type": "paragraph",
@@ -15271,11 +15527,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "If you remember one thing"
       },
       {
         "type": "paragraph",
         "text": "A good schedule gives you safety and peace of mind. Your care plan will be tailored to your twins. For specialist twin pregnancy care, consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "When you are ready, the [twin specialised clinic](/services/twin-specialised-clinic) service page covers timings and preparation; questions about your own situation are best put to [our specialists](/doctors)."
       },
       {
         "type": "h2",
@@ -15300,27 +15560,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "How many scans are needed in a twin pregnancy?",
-        "answer": "Usually more than 10 over the pregnancy. Dichorionic twins are often scanned every 4 weeks after 20 weeks, and monochorionic twins every 2 weeks from 16 weeks."
+        "answer": "Usually more than 10 over the pregnancy. Dichorionic twins are often scanned every 4 weeks after 20 weeks, and monochorionic twins every 2 weeks from 16 weeks. What else is needed besides scans? Why are more scans needed? Because twins are more likely to be born early or to grow unevenly, doctors schedule more scans than in a single pregnancy."
       },
       {
         "question": "Why are monochorionic twins scanned every two weeks?",
-        "answer": "Because they share a placenta, which can lead to TTTS and uneven growth. Fortnightly scans find these problems early, when treatment such as laser can be considered."
+        "answer": "Because they share a placenta, which can lead to TTTS and uneven growth. Fortnightly scans find these problems early, when treatment such as laser can be considered. Dichorionic twins are often delivered at 37 weeks, monochorionic diamniotic at 36 weeks, and monoamniotic at about 32 to 34 weeks."
       },
       {
         "question": "Is it safe to have so many scans?",
-        "answer": "Yes. Ultrasound uses sound waves and is considered safe when done for medical reasons by trained professionals."
+        "answer": "Yes. Ultrasound uses sound waves and is considered safe when done for medical reasons by trained professionals. Regular scans detect these early, when treatment works best. It is a reasonable question to ask directly. the answer often depends on your scan findings."
       },
       {
         "question": "What is TTTS?",
-        "answer": "Twin-to-twin transfusion syndrome is a condition in monochorionic twins in which blood flows unequally between the babies through shared vessels. It needs prompt specialist care."
+        "answer": "Twin-to-twin transfusion syndrome is a condition in monochorionic twins in which blood flows unequally between the babies through shared vessels. It needs prompt specialist care. The team will explain how this applies to your pregnancy when you come in. In most cases the answer also depends on your medical history, so bring it up at your appointment."
       },
       {
         "question": "Do twins need a cervical length scan?",
-        "answer": "Often yes. A short cervix raises the risk of early birth. The scan is usually done at 18 to 24 weeks, and your doctor may repeat it."
+        "answer": "Often yes. A short cervix raises the risk of early birth. The scan is usually done at 18 to 24 weeks, and your doctor may repeat it. Cervical length: Often measured at 18 to 24 weeks to assess the risk of early birth."
       },
       {
         "question": "When will my twins be delivered?",
-        "answer": "Typically between 36 and 37 weeks for uncomplicated twins, depending on type and complications. Your specialist will plan the date."
+        "answer": "Typically between 36 and 37 weeks for uncomplicated twins, depending on type and complications. Your specialist will plan the date. The exact schedule depends mainly on the type of twins you carry. Bladder and heart: In monochorionic twins, to catch early TTTS signs."
       }
     ],
     "sources": [
@@ -15339,8 +15599,8 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-11",
     "publishedAt": "2026-10-11",
     "seo": {
-      "title": "How Often Do You Need Scans in a Twin Pregnancy?",
-      "description": "Twin pregnancies need more scans than single ones. [Twin pregnancy](/guides/twin-pregnancy-scans-risks-monitoring) brings joy and extra responsibility."
+      "title": "How Often Do You Need Scans in a Twin",
+      "description": "Twin pregnancies need more scans than singletons because problems can develop quickly. Learn the usual scan schedule and what decides yours."
     },
     "relatedService": "twin-specialised-clinic"
   },
@@ -15361,7 +15621,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Does Chorionicity Mean?"
+        "text": "What does chorionicity mean?"
       },
       {
         "type": "paragraph",
@@ -15382,7 +15642,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Is Chorionicity Different From Zygosity?"
+        "text": "How is chorionicity different from zygosity?"
       },
       {
         "type": "paragraph",
@@ -15402,7 +15662,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Do Doctors Find Out?"
+        "text": "How do doctors find out?"
       },
       {
         "type": "paragraph",
@@ -15414,7 +15674,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Why Does Chorionicity Matter?"
+        "text": "Why does chorionicity matter?"
       },
       {
         "type": "h3",
@@ -15447,7 +15707,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Does This Mean for Your Care in Trichy?"
+        "text": "What does this mean for your care in Trichy?"
       },
       {
         "type": "paragraph",
@@ -15459,11 +15719,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "Putting it together"
       },
       {
         "type": "paragraph",
         "text": "A twin pregnancy brings double joy and a few extra questions. Chorionicity is the foundation of your care plan, and getting it right early makes every later scan more meaningful. To confirm it and plan your follow-up, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "If your doctor has suggested this, our [twin specialised clinic](/services/twin-specialised-clinic) page lists what is included and how to book; [the team](/doctors) is happy to talk it through first."
       },
       {
         "type": "h2",
@@ -15497,7 +15761,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "Why are monochorionic twins scanned more often?",
-        "answer": "They share one placenta with connected blood vessels, which can cause uneven blood flow or growth. Scanning every two weeks helps doctors spot problems like TTTS early, when treatment works best. Most pregnancies still end with healthy babies."
+        "answer": "They share one placenta with connected blood vessels, which can cause uneven blood flow or growth. Scanning every two weeks helps doctors spot problems like TTTS early, when treatment works best. Most pregnancies still end with healthy babies. Most monochorionic twins do well with regular scans, and problems found early can often be treated."
       },
       {
         "question": "Can chorionicity be confirmed after 14 weeks?",
@@ -15505,11 +15769,11 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "Does chorionicity affect the delivery plan?",
-        "answer": "Yes. Dichorionic twins are often delivered around 37 weeks, while monochorionic twins are usually advised delivery at about 36 weeks if all is well. Your doctor will set the exact timing based on growth, position and your health."
+        "answer": "Yes. Dichorionic twins are often delivered around 37 weeks, while monochorionic twins are usually advised delivery at about 36 weeks if all is well. Your doctor will set the exact timing based on growth, position and your health. Chorionicity is the foundation of your care plan, and getting it right early makes every later scan more meaningful."
       },
       {
         "question": "Is a shared placenta always dangerous?",
-        "answer": "No. It raises the chance of certain complications, but many monochorionic pregnancies are uncomplicated. Regular scans exist to catch any issue early. Following the advised schedule matters more than worrying about the placenta type."
+        "answer": "No. It raises the chance of certain complications, but many monochorionic pregnancies are uncomplicated. Regular scans exist to catch any issue early. Following the advised schedule matters more than worrying about the placenta type. A thin \"T sign\" points to a shared placenta."
       }
     ],
     "sources": [
@@ -15528,7 +15792,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-11",
     "publishedAt": "2026-10-11",
     "seo": {
-      "title": "What Is Chorionicity in Twin Pregnancy and Why It Matters",
+      "title": "What Is Chorionicity in Twin Pregnancy and Why",
       "description": "Chorionicity tells doctors whether twins share a placenta. Learn how it is found, why the first trimester scan is best, and how it changes your care in Trichy."
     },
     "relatedService": "twin-specialised-clinic"
@@ -15581,7 +15845,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Extra Risks in Monochorionic Twins"
+        "text": "Extra risks in monochorionic twins"
       },
       {
         "type": "list",
@@ -15595,7 +15859,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Care Differs"
+        "text": "How care differs"
       },
       {
         "type": "paragraph",
@@ -15603,11 +15867,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "The essentials"
       },
       {
         "type": "paragraph",
         "text": "Knowing the type of twin pregnancy early lets your team plan the right monitoring. Dr Malathi G. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy can confirm chorionicity and arrange the follow-up your twins need."
+      },
+      {
+        "type": "paragraph",
+        "text": "For appointments, the [twin specialised clinic](/services/twin-specialised-clinic) page has the details, and [our fetal medicine specialists](/doctors) can advise whether it fits your situation."
       },
       {
         "type": "h2",
@@ -15633,27 +15901,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Are all identical twins monochorionic?",
-        "answer": "No. Some identical twins are dichorionic, depending on when the egg splits."
+        "answer": "No. Some identical twins are dichorionic, depending on when the egg splits. Monochorionic diamniotic twins usually have scans every two weeks from about 16 weeks to look for TTTS and growth differences. Risks are lower than in monochorionic twins, though twin pregnancies still need extra care."
       },
       {
         "question": "Are non-identical twins always dichorionic?",
-        "answer": "Yes, they have separate placentas."
+        "answer": "Yes, they have separate placentas. Dichorionic twins are generally scanned less often, such as every four weeks, depending on the specialist's plan. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy can confirm chorionicity and arrange the follow-up your twins need."
       },
       {
         "question": "Why is the first trimester scan important for twins?",
-        "answer": "It is the most accurate time to determine chorionicity."
+        "answer": "It is the most accurate time to determine chorionicity. It is best determined by ultrasound in the first trimester, between about 11 and 14 weeks, when it is most accurate. The number of chorions tells you whether the twins have separate or shared placentas."
       },
       {
         "question": "What is TTTS?",
-        "answer": "A condition where blood flows unevenly between monochorionic twins. It needs specialist care."
+        "answer": "A condition where blood flows unevenly between monochorionic twins. It needs specialist care. Your specialist will factor in your reports and dates before giving you a definite answer. If you are unsure whether this applies to you, ask the doctor at your next scan."
       },
       {
         "question": "How often are scans needed in monochorionic twins?",
-        "answer": "Usually every two weeks from around 16 weeks, as advised by the specialist."
+        "answer": "Usually every two weeks from around 16 weeks, as advised by the specialist. Twin-to-twin transfusion syndrome (TTTS): unbalanced blood flow between the twins. Scans are usually done at regular intervals for growth. Cord entanglement in monoamniotic twins. The details depend on your dates, history and earlier reports, so your doctor will tailor the answer to you."
       },
       {
         "question": "Can monochorionic twins be delivered normally?",
-        "answer": "Sometimes, depending on the type and the babies' health. Your doctor will advise."
+        "answer": "Sometimes, depending on the type and the babies' health. Your doctor will advise. If this is your situation, the safest step is to ask at your next visit rather than waiting. Your own result can differ, which is why the specialist looks at the whole picture before advising."
       }
     ],
     "sources": [
@@ -15672,7 +15940,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-11",
     "publishedAt": "2026-10-11",
     "seo": {
-      "title": "Monochorionic vs Dichorionic Twins: What Is the Difference?",
+      "title": "Monochorionic vs Dichorionic Twins: What Is the",
       "description": "Chorionicity tells whether twins share a placenta. It decides how closely a twin pregnancy needs to be monitored. Learn the difference. Dr Malathi G."
     },
     "relatedService": "twin-specialised-clinic"
@@ -15694,7 +15962,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Why Do Twins Need Extra Monitoring?"
+        "text": "Why do twins need extra monitoring?"
       },
       {
         "type": "paragraph",
@@ -15702,7 +15970,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Are the Common Complications?"
+        "text": "What are the common complications?"
       },
       {
         "type": "h3",
@@ -15762,7 +16030,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Which Warning Signs Need Urgent Attention?"
+        "text": "Which warning signs need urgent attention?"
       },
       {
         "type": "paragraph",
@@ -15782,7 +16050,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Can You Lower Your Risk?"
+        "text": "How can you lower your risk?"
       },
       {
         "type": "paragraph",
@@ -15801,11 +16069,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "What to do next"
       },
       {
         "type": "paragraph",
         "text": "A twin pregnancy needs more attention, but it does not need constant worry. Each scan and test has a clear purpose, which is to keep both babies safe. If you are expecting twins and want a clear care plan, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "If this applies to your pregnancy, our [twin specialised clinic](/services/twin-specialised-clinic) page explains what the visit involves, or you can [meet our specialists](/doctors) before you decide anything."
       },
       {
         "type": "h2",
@@ -15832,7 +16104,7 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Are twin pregnancies always high risk?",
-        "answer": "Doctors treat them as higher risk because complications are more common, not because they are certain. Many twin pregnancies are smooth. Extra scans and checks simply help catch any problem early so both babies can be looked after well."
+        "answer": "Doctors treat them as higher risk because complications are more common, not because they are certain. Many twin pregnancies are smooth. Extra scans and checks simply help catch any problem early so both babies can be looked after well. Most twin pregnancies end with two healthy babies."
       },
       {
         "question": "When are twins usually born?",
@@ -15840,19 +16112,19 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "Can I have a normal delivery with twins?",
-        "answer": "Sometimes. If the first baby is head down and both babies are growing well, vaginal birth may be possible in a hospital with proper facilities. Your doctor will decide based on positions, placenta type and any complications."
+        "answer": "Sometimes. If the first baby is head down and both babies are growing well, vaginal birth may be possible in a hospital with proper facilities. Your doctor will decide based on positions, placenta type and any complications. Still, twins carry a higher chance of certain problems than a single baby, which is why doctors schedule extra scans and checks."
       },
       {
         "question": "What is the most serious complication in twins?",
-        "answer": "For shared-placenta twins, TTTS is among the most serious, but it can be treated if found early. Severe pre-eclampsia and very early preterm birth are also important. This is why regular monitoring is advised."
+        "answer": "For shared-placenta twins, TTTS is among the most serious, but it can be treated if found early. Severe pre-eclampsia and very early preterm birth are also important. This is why regular monitoring is advised. If you are expecting twins and want a clear care plan, you can consult Dr Malathi G."
       },
       {
         "question": "How often will I need scans?",
-        "answer": "Dichorionic twins are usually scanned about every 4 weeks, and monochorionic twins about every 2 weeks from 16 weeks. Your doctor may add scans if growth, fluid or blood flow needs closer watching."
+        "answer": "Dichorionic twins are usually scanned about every 4 weeks, and monochorionic twins about every 2 weeks from 16 weeks. Your doctor may add scans if growth, fluid or blood flow needs closer watching. How Often Do You Need Scans in a Twin Pregnancy?"
       },
       {
         "question": "Does bed rest prevent preterm birth in twins?",
-        "answer": "Strict bed rest has not been shown to prevent preterm birth and can raise other risks, such as blood clots. Doctors usually advise reducing heavy activity and getting good rest instead. Follow your own doctor's advice."
+        "answer": "Strict bed rest has not been shown to prevent preterm birth and can raise other risks, such as blood clots. Doctors usually advise reducing heavy activity and getting good rest instead. Follow your own doctor's advice. Steroid injections may be given to help the babies' lungs if early birth seems likely."
       }
     ],
     "sources": [
@@ -15893,7 +16165,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "When Should You Start Testing?"
+        "text": "When should you start testing?"
       },
       {
         "type": "paragraph",
@@ -15916,7 +16188,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Which Tests Are Done First?"
+        "text": "Which tests are done first?"
       },
       {
         "type": "h3",
@@ -15971,7 +16243,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Do You Prepare?"
+        "text": "How do you prepare?"
       },
       {
         "type": "list",
@@ -15985,7 +16257,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Do Results Mean?"
+        "text": "What do results mean?"
       },
       {
         "type": "paragraph",
@@ -15993,11 +16265,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "The short version"
       },
       {
         "type": "paragraph",
         "text": "Fertility testing can feel stressful, but it is mostly a simple, step-by-step process that gives clear direction. Starting early gives you more options and less uncertainty. For a personalised work-up, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "If you want a specialist opinion on your own situation, [the team](/doctors) is a call or a visit away."
       },
       {
         "type": "h2",
@@ -16024,27 +16300,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "What is the first fertility test for a woman?",
-        "answer": "Usually it begins with a detailed history and a pelvic ultrasound, followed by hormone blood tests such as AMH, TSH and prolactin. These give a quick picture of ovulation and egg reserve before any further tests are chosen."
+        "answer": "Usually it begins with a detailed history and a pelvic ultrasound, followed by hormone blood tests such as AMH, TSH and prolactin. These give a quick picture of ovulation and egg reserve before any further tests are chosen. A woman usually needs a few basic tests before any fertility treatment starts."
       },
       {
         "question": "Are fertility tests painful?",
-        "answer": "Most are painless. Blood tests feel like a routine needle prick. An HSG can cause cramping for a few minutes, and many women take a pain tablet beforehand. Your doctor will explain what to expect for each test."
+        "answer": "Most are painless. Blood tests feel like a routine needle prick. An HSG can cause cramping for a few minutes, and many women take a pain tablet beforehand. Your doctor will explain what to expect for each test. Fertility testing can feel stressful, but it is mostly a simple, step-by-step process that gives clear direction."
       },
       {
         "question": "On which day of the cycle are fertility tests done?",
-        "answer": "It depends on the test. FSH and estradiol are usually checked on day 2 or 3 of the period. Progesterone is checked in the second half of the cycle. AMH and TSH can be done on any day."
+        "answer": "It depends on the test. FSH and estradiol are usually checked on day 2 or 3 of the period. Progesterone is checked in the second half of the cycle. AMH and TSH can be done on any day. The doctor asks about your cycles, past pregnancies, medicines, weight changes and your partner's health."
       },
       {
         "question": "Can fertility tests be done during periods?",
-        "answer": "Yes, some are best done then, such as day 2 or 3 hormone tests. Others, like HSG, must be done after bleeding stops. Your clinic will give you exact timing so the results are reliable."
+        "answer": "Yes, some are best done then, such as day 2 or 3 hormone tests. Others, like HSG, must be done after bleeding stops. Your clinic will give you exact timing so the results are reliable. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
       },
       {
         "question": "How much does a basic fertility work-up cost?",
-        "answer": "Cost varies by clinic and by which tests are needed, so it is best to ask the centre for an estimate before starting. A stepwise plan helps you pay only for tests that are truly useful."
+        "answer": "Cost varies by clinic and by which tests are needed, so it is best to ask the centre for an estimate before starting. A stepwise plan helps you pay only for tests that are truly useful. It is a reasonable question to ask directly. the answer often depends on your scan findings."
       },
       {
         "question": "Should my husband be tested too?",
-        "answer": "Yes. A simple semen analysis is quick, painless and low cost. Male factors contribute in nearly half of couples with fertility problems, so testing both partners early saves time."
+        "answer": "Yes. A simple semen analysis is quick, painless and low cost. Male factors contribute in nearly half of couples with fertility problems, so testing both partners early saves time. The team will explain how this applies to your pregnancy when you come in."
       }
     ],
     "sources": [
@@ -16063,7 +16339,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-08",
     "publishedAt": "2026-10-08",
     "seo": {
-      "title": "Fertility Tests for Women Before Starting Treatment",
+      "title": "Fertility Tests for Women Before Starting",
       "description": "Wondering which fertility tests a woman needs? Learn the basic checks for ovulation, hormones, tubes and the uterus before treatment, and when to book them in"
     }
   },
@@ -16084,7 +16360,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Why Should the Man Be Tested?"
+        "text": "Why should the man be tested?"
       },
       {
         "type": "paragraph",
@@ -16092,7 +16368,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Is Semen Analysis?"
+        "text": "What is semen analysis?"
       },
       {
         "type": "paragraph",
@@ -16111,7 +16387,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Do You Prepare for It?"
+        "text": "How do you prepare for it?"
       },
       {
         "type": "list",
@@ -16130,7 +16406,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Other Tests May Be Needed?"
+        "text": "What other tests may be needed?"
       },
       {
         "type": "h3",
@@ -16166,7 +16442,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Can Affect Sperm Health?"
+        "text": "What can affect sperm health?"
       },
       {
         "type": "paragraph",
@@ -16174,11 +16450,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "Keeping it simple"
       },
       {
         "type": "paragraph",
         "text": "A man's test is simple and gives answers that guide the whole treatment plan. There is nothing to be embarrassed about, because fertility is a shared health issue. To discuss your reports with a specialist, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy. For the broader picture, see our guide to [Fertility Testing for Couples](/guides/fertility-testing-for-couples)."
+      },
+      {
+        "type": "paragraph",
+        "text": "If any of this sounds familiar, [our fetal medicine specialists](/doctors) can review your reports and tell you what the next step looks like."
       },
       {
         "type": "h2",
@@ -16205,27 +16485,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "How long should a man avoid ejaculation before a semen test?",
-        "answer": "Most labs advise 2 to 5 days. Too short a gap can lower the sperm count, and too long can reduce movement. Follow the lab's instructions and keep the gap similar if the test needs to be repeated."
+        "answer": "Most labs advise 2 to 5 days. Too short a gap can lower the sperm count, and too long can reduce movement. Follow the lab's instructions and keep the gap similar if the test needs to be repeated. Sperm problems contribute in a large share of cases, and a semen test is far easier than most tests a woman needs."
       },
       {
         "question": "Is one abnormal semen report enough to diagnose infertility?",
-        "answer": "No. Sperm counts vary widely and can drop after fever or stress. If a first report is abnormal, doctors usually repeat it after a few weeks before drawing any conclusion or planning treatment."
+        "answer": "No. Sperm counts vary widely and can drop after fever or stress. If a first report is abnormal, doctors usually repeat it after a few weeks before drawing any conclusion or planning treatment. If the result is abnormal, the test is usually repeated after a few weeks, because sperm numbers vary from one sample to another."
       },
       {
         "question": "Can a man with a low sperm count still father a child?",
-        "answer": "Often yes. A low count does not always mean zero chance. Depending on the numbers, options range from lifestyle changes and medicines to treatments like IUI or IVF with ICSI. A specialist will advise what suits your results."
+        "answer": "Often yes. A low count does not always mean zero chance. Depending on the numbers, options range from lifestyle changes and medicines to treatments like IUI or IVF with ICSI. A specialist will advise what suits your results. If sperm count is very low or absent, tests such as karyotype or Y-chromosome microdeletion may be advised."
       },
       {
         "question": "What lifestyle changes help sperm health?",
-        "answer": "Stop smoking, cut down alcohol, keep a healthy weight, exercise regularly and avoid prolonged heat such as hot baths or laptops on the lap. Sleep and stress control also help. Changes take about three months to show."
+        "answer": "Stop smoking, cut down alcohol, keep a healthy weight, exercise regularly and avoid prolonged heat such as hot baths or laptops on the lap. Sleep and stress control also help. Changes take about three months to show. Many of these can be improved with lifestyle changes over a few months."
       },
       {
         "question": "What is a varicocele?",
-        "answer": "It is a swelling of veins in the scrotum, similar to varicose veins. It is common and can reduce sperm quality in some men. A doctor can diagnose it by examination or scan and advise whether treatment is needed."
+        "answer": "It is a swelling of veins in the scrotum, similar to varicose veins. It is common and can reduce sperm quality in some men. A doctor can diagnose it by examination or scan and advise whether treatment is needed. A doctor checks the testes, looks for varicocele (enlarged veins in the scrotum) and reviews medical, work and lifestyle history."
       },
       {
         "question": "Do men need a hormone test too?",
-        "answer": "Only if the semen report is abnormal or the doctor suspects a hormonal cause. Blood tests like FSH, LH and testosterone help find the reason behind low sperm counts and decide the next step."
+        "answer": "Only if the semen report is abnormal or the doctor suspects a hormonal cause. Blood tests like FSH, LH and testosterone help find the reason behind low sperm counts and decide the next step. If that shows a problem, the doctor may add hormone tests, a physical exam or a scan."
       }
     ],
     "sources": [
@@ -16244,7 +16524,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-08",
     "publishedAt": "2026-10-08",
     "seo": {
-      "title": "Male Fertility Tests: What a Man Should Have Done",
+      "title": "Male Fertility Tests: What a Man Should Have",
       "description": "Male factors cause nearly half of fertility problems. Learn which tests a man should have, from semen analysis to hormone checks, and how to prepare for them."
     }
   },
@@ -16265,7 +16545,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Does AMH Measure?"
+        "text": "What does AMH measure?"
       },
       {
         "type": "paragraph",
@@ -16277,7 +16557,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "When Is the AMH Test Done?"
+        "text": "When is the AMH test done?"
       },
       {
         "type": "paragraph",
@@ -16296,7 +16576,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Does a Low AMH Mean?"
+        "text": "What does a low AMH mean?"
       },
       {
         "type": "paragraph",
@@ -16304,7 +16584,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Does a High AMH Mean?"
+        "text": "What does a high AMH mean?"
       },
       {
         "type": "paragraph",
@@ -16312,7 +16592,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What AMH Cannot Tell You"
+        "text": "What AMH cannot tell you"
       },
       {
         "type": "list",
@@ -16330,7 +16610,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Else Is Checked Along With AMH?"
+        "text": "What else is checked along with AMH?"
       },
       {
         "type": "paragraph",
@@ -16338,7 +16618,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Can You Improve Your AMH?"
+        "text": "Can you improve your AMH?"
       },
       {
         "type": "paragraph",
@@ -16346,11 +16626,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "The part to remember"
       },
       {
         "type": "paragraph",
         "text": "An AMH report is one useful piece of the fertility puzzle, not a verdict. Understanding it early can help you plan with confidence instead of fear. To have your result explained and a plan made, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+      },
+      {
+        "type": "paragraph",
+        "text": "You do not have to work this out alone. [our doctors](/doctors) see these situations every week and can guide you."
       },
       {
         "type": "h2",
@@ -16375,27 +16659,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "What is a normal AMH level?",
-        "answer": "Normal ranges differ by age and by lab, so your report will show a reference range. Levels naturally fall with age. Your doctor will compare your value against your age group instead of using one number for everyone."
+        "answer": "Normal ranges differ by age and by lab, so your report will show a reference range. Levels naturally fall with age. Your doctor will compare your value against your age group instead of using one number for everyone. So the blood level of AMH roughly reflects the size of your egg reserve, also called ovarian reserve."
       },
       {
         "question": "Does low AMH mean early menopause?",
-        "answer": "Not necessarily. Low AMH suggests a smaller egg reserve, but it cannot predict the exact time of menopause. Some women with low values continue to have regular cycles for years. Regular follow-up gives a clearer picture."
+        "answer": "Not necessarily. Low AMH suggests a smaller egg reserve, but it cannot predict the exact time of menopause. Some women with low values continue to have regular cycles for years. Regular follow-up gives a clearer picture. Understanding it early can help you plan with confidence instead of fear."
       },
       {
         "question": "Can I get pregnant naturally with low AMH?",
-        "answer": "Yes, many women do, particularly if they are younger and ovulating regularly. Because fewer eggs are available each month, doctors often advise not delaying attempts, and may suggest assisted options sooner if pregnancy does not happen."
+        "answer": "Yes, many women do, particularly if they are younger and ovulating regularly. Because fewer eggs are available each month, doctors often advise not delaying attempts, and may suggest assisted options sooner if pregnancy does not happen. Many women with low AMH conceive naturally, especially when they are young."
       },
       {
         "question": "Why is AMH high in PCOS?",
-        "answer": "In PCOS, the ovaries hold many small follicles that each release AMH, so the total level rises. A high AMH supports the diagnosis but is not used alone. Cycle pattern, scan findings and hormone levels are also considered."
+        "answer": "In PCOS, the ovaries hold many small follicles that each release AMH, so the total level rises. A high AMH supports the diagnosis but is not used alone. Cycle pattern, scan findings and hormone levels are also considered. In most cases the answer also depends on your medical history, so bring it up at your appointment."
       },
       {
         "question": "Do I need to fast for an AMH test?",
-        "answer": "No. AMH does not need fasting and can be tested on any day of the cycle. Some labs may ask you to avoid certain supplements like biotin before the test, so check with the lab."
+        "answer": "No. AMH does not need fasting and can be tested on any day of the cycle. Some labs may ask you to avoid certain supplements like biotin before the test, so check with the lab. Your specialist will factor in your reports and dates before giving you a definite answer."
       },
       {
         "question": "Can AMH improve with treatment?",
-        "answer": "There is no proven treatment that raises AMH or egg numbers. Healthy habits and treating conditions like thyroid or vitamin D deficiency help overall health. The most useful step is planning treatment at the right time."
+        "answer": "There is no proven treatment that raises AMH or egg numbers. Healthy habits and treating conditions like thyroid or vitamin D deficiency help overall health. The most useful step is planning treatment at the right time. It helps doctors plan fertility treatment, but it does not measure egg quality and cannot predict exactly when or whether you will conceive."
       }
     ],
     "sources": [
@@ -16414,7 +16698,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-09",
     "publishedAt": "2026-10-09",
     "seo": {
-      "title": "What Is AMH and What Does It Say About Fertility?",
+      "title": "What Is AMH and What Does It Say About",
       "description": "AMH shows how many eggs remain in your ovaries, but not egg quality. Learn what high and low AMH mean, and what the test can and cannot tell you."
     }
   },
@@ -16443,7 +16727,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Is Follicular Monitoring Done?"
+        "text": "How is follicular monitoring done?"
       },
       {
         "type": "paragraph",
@@ -16468,7 +16752,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Who Benefits From It?"
+        "text": "Who benefits from it?"
       },
       {
         "type": "paragraph",
@@ -16487,7 +16771,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "How Does It Help You Conceive?"
+        "text": "How does it help you conceive?"
       },
       {
         "type": "paragraph",
@@ -16499,7 +16783,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Can a Trigger Injection Be Used?"
+        "text": "Can a trigger injection be used?"
       },
       {
         "type": "paragraph",
@@ -16507,7 +16791,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Is It Better Than Ovulation Kits?"
+        "text": "Is it better than ovulation kits?"
       },
       {
         "type": "paragraph",
@@ -16515,11 +16799,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "What this means for you"
       },
       {
         "type": "paragraph",
         "text": "Follicular monitoring turns a guessing game into a clear plan. It is simple, safe and very useful for couples who want to understand their cycle. To begin cycle tracking with expert scans, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy. For the broader picture, see our guide to [Fertility Testing for Couples](/guides/fertility-testing-for-couples)."
+      },
+      {
+        "type": "paragraph",
+        "text": "When you are ready to talk it through, [our specialists](/doctors) will look at your history and suggest what fits."
       },
       {
         "type": "h2",
@@ -16544,27 +16832,27 @@ export const blogGuides: Guide[] = [
     "faqs": [
       {
         "question": "Is follicular monitoring painful?",
-        "answer": "No, most women find it comfortable. A thin ultrasound probe is gently placed in the vagina, and the scan takes only a few minutes. You may feel mild pressure. Emptying your bladder before the scan makes it easier."
+        "answer": "No, most women find it comfortable. A thin ultrasound probe is gently placed in the vagina, and the scan takes only a few minutes. You may feel mild pressure. Emptying your bladder before the scan makes it easier. Follicular monitoring is a series of ultrasound scans that track how an egg grows inside the ovary during your cycle."
       },
       {
         "question": "On which day does follicular monitoring start?",
-        "answer": "It usually starts around day 8 to 10 of the cycle, counting the first day of bleeding as day 1. In women with irregular cycles or on medicines, the doctor may set a different start day."
+        "answer": "It usually starts around day 8 to 10 of the cycle, counting the first day of bleeding as day 1. In women with irregular cycles or on medicines, the doctor may set a different start day. Follicular monitoring turns a guessing game into a clear plan."
       },
       {
         "question": "How many scans are needed in one cycle?",
-        "answer": "Most women need about 3 to 5 scans. The number depends on how fast the follicle grows and whether ovulation happens on time. Women with PCOS or irregular cycles may need a few more."
+        "answer": "Most women need about 3 to 5 scans. The number depends on how fast the follicle grows and whether ovulation happens on time. Women with PCOS or irregular cycles may need a few more. To begin cycle tracking with expert scans, you can consult Dr Malathi G."
       },
       {
         "question": "What size should a follicle be before ovulation?",
-        "answer": "A mature follicle is usually around 18 to 24 mm. Below that, it may not yet be ready. The doctor reads the size together with the uterine lining and your cycle day before advising intercourse or a trigger injection."
+        "answer": "A mature follicle is usually around 18 to 24 mm. Below that, it may not yet be ready. The doctor reads the size together with the uterine lining and your cycle day before advising intercourse or a trigger injection. So the most fertile time is the few days before and on the day of ovulation."
       },
       {
         "question": "Can follicular monitoring increase the chance of pregnancy?",
-        "answer": "It does not change egg quality, but it improves timing. Knowing exactly when ovulation happens helps couples use the fertile window well. It also shows early if ovulation fails, so treatment can be adjusted."
+        "answer": "It does not change egg quality, but it improves timing. Knowing exactly when ovulation happens helps couples use the fertile window well. It also shows early if ovulation fails, so treatment can be adjusted. How is follicular monitoring done? This helps couples time intercourse or treatments such as IUI for the best chance of pregnancy."
       },
       {
         "question": "Is follicular monitoring safe to repeat every month?",
-        "answer": "Yes. Ultrasound uses sound waves, not radiation, so it is safe to repeat. Your doctor will decide how many cycles to monitor before suggesting further tests or treatment."
+        "answer": "Yes. Ultrasound uses sound waves, not radiation, so it is safe to repeat. Your doctor will decide how many cycles to monitor before suggesting further tests or treatment. Each month, several follicles start growing, but usually one becomes dominant. If ovulation does not happen, monitoring shows this early."
       }
     ],
     "sources": [
@@ -16583,7 +16871,7 @@ export const blogGuides: Guide[] = [
     "reviewedAt": "2026-10-09",
     "publishedAt": "2026-10-09",
     "seo": {
-      "title": "Follicular Monitoring: How It Helps You Conceive",
+      "title": "Follicular Monitoring: How It Helps You",
       "description": "Follicular monitoring uses a series of scans to track egg growth and pinpoint ovulation. A follicle is a small fluid-filled sac in the ovary that holds an egg."
     }
   },
@@ -16612,7 +16900,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "When Does Ovulation Happen?"
+        "text": "When does ovulation happen?"
       },
       {
         "type": "paragraph",
@@ -16620,7 +16908,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "What Are the Body Signs of Ovulation?"
+        "text": "What are the body signs of ovulation?"
       },
       {
         "type": "h3",
@@ -16656,7 +16944,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Which Tests Can Confirm Ovulation?"
+        "text": "Which tests can confirm ovulation?"
       },
       {
         "type": "list",
@@ -16669,7 +16957,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "When Is Home Tracking Not Enough?"
+        "text": "When is home tracking not enough?"
       },
       {
         "type": "paragraph",
@@ -16688,11 +16976,15 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "h2",
-        "text": "Final Thoughts"
+        "text": "The takeaway"
       },
       {
         "type": "paragraph",
         "text": "Learning your body's signs is a helpful first step, and many couples conceive with simple tracking. If your cycles are irregular or months pass without success, a scan-based check can save time. For help confirming ovulation, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy. For the broader picture, see our guide to [Fertility Testing for Couples](/guides/fertility-testing-for-couples)."
+      },
+      {
+        "type": "paragraph",
+        "text": "If you want a specialist opinion on your own situation, [the team](/doctors) is a call or a visit away."
       },
       {
         "type": "h2",
@@ -16721,23 +17013,23 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "Can you have a period without ovulating?",
-        "answer": "Yes. These are called anovulatory cycles, and they are common in PCOS, thyroid problems and around puberty or menopause. Bleeding may look normal. A progesterone blood test or ultrasound can show whether ovulation actually happened."
+        "answer": "Yes. These are called anovulatory cycles, and they are common in PCOS, thyroid problems and around puberty or menopause. Bleeding may look normal. A progesterone blood test or ultrasound can show whether ovulation actually happened. You can often tell you are ovulating from body signs such as clear, stretchy cervical mucus."
       },
       {
         "question": "Are ovulation apps accurate?",
-        "answer": "Apps estimate ovulation based on past cycle dates, so they work best for very regular cycles. They cannot detect actual ovulation. Combining apps with mucus checks, LH kits or a scan gives a much more reliable picture."
+        "answer": "Apps estimate ovulation based on past cycle dates, so they work best for very regular cycles. They cannot detect actual ovulation. Combining apps with mucus checks, LH kits or a scan gives a much more reliable picture. It confirms ovulation after it has happened, so it is better for learning your pattern than for timing."
       },
       {
         "question": "How long does the fertile window last?",
-        "answer": "It lasts about six days, the five days before ovulation and the day of ovulation. Intercourse every one to two days in this window gives a good chance of pregnancy without needing exact timing."
+        "answer": "It lasts about six days, the five days before ovulation and the day of ovulation. Intercourse every one to two days in this window gives a good chance of pregnancy without needing exact timing. So the fertile window is about 5 days before ovulation plus the day of ovulation itself."
       },
       {
         "question": "Why do LH kits not work well in PCOS?",
-        "answer": "Women with PCOS often have high LH levels throughout the cycle, so kits may show many positive results without real ovulation. An ultrasound scan is a better way to confirm whether and when an egg is released."
+        "answer": "Women with PCOS often have high LH levels throughout the cycle, so kits may show many positive results without real ovulation. An ultrasound scan is a better way to confirm whether and when an egg is released. If you are unsure whether this applies to you, ask the doctor at your next scan."
       },
       {
         "question": "When should I see a doctor about ovulation?",
-        "answer": "See a doctor if your cycles are irregular, very short or very long, or if you have tried for a year without success, or six months if you are over 35. Early tests can find a simple, treatable cause."
+        "answer": "See a doctor if your cycles are irregular, very short or very long, or if you have tried for a year without success, or six months if you are over 35. Early tests can find a simple, treatable cause. Around ovulation, vaginal discharge becomes clear, slippery and stretchy, like raw egg white."
       }
     ],
     "sources": [

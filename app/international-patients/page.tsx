@@ -18,7 +18,12 @@ import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
 import { StepsList } from "@/components/shared/steps-list";
 import { site } from "@/data/site";
-import { breadcrumbSchema, faqSchema } from "@/lib/schema";
+import {
+  breadcrumbNode,
+  faqNode,
+  pageGraph,
+  webPageNode,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "International Patients: Planning Your Visit",
@@ -71,12 +76,19 @@ export default function InternationalPatientsPage() {
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema([
-          { label: "Home", href: "/" },
-          { label: "International Patients", href: "/international-patients" },
+        data={pageGraph([
+          webPageNode(
+            "/international-patients",
+            metadata.title as string,
+            metadata.description as string
+          ),
+          breadcrumbNode([
+            { label: "Home", href: "/" },
+            { label: "International Patients", href: "/international-patients" },
+          ]),
+          faqNode(faqs, "/international-patients"),
         ])}
       />
-      <JsonLd data={faqSchema(faqs)} />
       <PageHero
         eyebrow="International patients"
         title="Visiting us from abroad"

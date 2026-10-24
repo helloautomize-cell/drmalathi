@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import { Fragment } from "react";
 import { BookingCta } from "@/components/booking/booking-sheet";
-import { JsonLd } from "@/components/seo/json-ld";
 import { Container } from "@/components/shared/container";
 import { MobileCarousel } from "@/components/shared/mobile-carousel";
 import { Section } from "@/components/shared/section";
@@ -20,7 +19,6 @@ import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
 import { doctors, type Doctor, type DoctorExpertise } from "@/data/doctors";
 import { showPending } from "@/lib/env";
 import { site } from "@/data/site";
-import { personSchema } from "@/lib/schema";
 
 const highlightIcons = [Award, GraduationCap, Microscope];
 
@@ -282,9 +280,6 @@ export function DoctorsSection() {
 
   return (
     <Section id="doctors" surface="white" className="md:bg-white">
-      {doctors.map((doctor) => (
-        <JsonLd key={doctor.slug} data={personSchema(doctor)} />
-      ))}
       <Container>
         <SectionHeader
           eyebrow="Our doctors"
