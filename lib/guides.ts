@@ -48,7 +48,10 @@ export function getAllGuides(options?: {
   const pages = Math.max(1, Math.ceil(total / GUIDES_PER_PAGE));
   const page = Math.min(Math.max(options?.page ?? 1, 1), pages);
   return {
-    guides: list.slice((page - 1) * GUIDES_PER_PAGE, page * GUIDES_PER_PAGE),
+    guides:
+      options?.page === undefined
+        ? list
+        : list.slice((page - 1) * GUIDES_PER_PAGE, page * GUIDES_PER_PAGE),
     total,
     pages,
     page,
