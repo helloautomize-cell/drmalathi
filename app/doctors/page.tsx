@@ -11,7 +11,11 @@ import { MobileCarousel } from "@/components/shared/mobile-carousel";
 import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
 import { doctors } from "@/data/doctors";
-import { breadcrumbSchema } from "@/lib/schema";
+import {
+  breadcrumbNode,
+  pageGraph,
+  webPageNode,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Our Fetal Medicine Specialists in Trichy",
@@ -24,9 +28,12 @@ export default function DoctorsPage() {
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema([
-          { label: "Home", href: "/" },
-          { label: "Doctors", href: "/doctors" },
+        data={pageGraph([
+          webPageNode("/doctors", metadata.title as string, metadata.description as string),
+          breadcrumbNode([
+            { label: "Home", href: "/" },
+            { label: "Doctors", href: "/doctors" },
+          ]),
         ])}
       />
       <PageHero

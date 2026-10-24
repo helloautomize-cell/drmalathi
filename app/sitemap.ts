@@ -22,9 +22,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contact",
     "/faq",
     "/international-patients",
-    "/privacy",
-    "/terms",
     // Draft pages enter the sitemap only after counsel sign-off.
+    ...(legal.privacy.draftPendingReview ? [] : ["/privacy"]),
+    ...(legal.terms.draftPendingReview ? [] : ["/terms"]),
     ...(legal.editorialPolicy.draftPendingReview ? [] : ["/editorial-policy"]),
     ...(legal.accessibility.draftPendingReview ? [] : ["/accessibility"]),
     ...(legal.medicalDisclaimer.draftPendingReview ? [] : ["/medical-disclaimer"]),

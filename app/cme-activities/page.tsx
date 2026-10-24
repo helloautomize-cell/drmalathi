@@ -15,7 +15,11 @@ import { PhotoGrid } from "@/components/shared/photo-grid";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
 import { cmeYears } from "@/data/cme";
-import { breadcrumbSchema } from "@/lib/schema";
+import {
+  breadcrumbNode,
+  pageGraph,
+  webPageNode,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "CME Activities for Obstetricians in Trichy",
@@ -30,9 +34,12 @@ export default function CmeActivitiesPage() {
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema([
-          { label: "Home", href: "/" },
-          { label: "CME Activities", href: "/cme-activities" },
+        data={pageGraph([
+          webPageNode("/cme-activities", metadata.title as string, metadata.description as string),
+          breadcrumbNode([
+            { label: "Home", href: "/" },
+            { label: "CME Activities", href: "/cme-activities" },
+          ]),
         ])}
       />
       <PageHero

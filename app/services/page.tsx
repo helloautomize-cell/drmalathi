@@ -5,7 +5,11 @@ import { ServiceBrowser } from "@/components/services/service-browser";
 import { Container } from "@/components/shared/container";
 import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
-import { breadcrumbSchema } from "@/lib/schema";
+import {
+  breadcrumbNode,
+  pageGraph,
+  webPageNode,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "All Services and Pregnancy Scans in Trichy",
@@ -18,9 +22,12 @@ export default function ServicesPage() {
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema([
-          { label: "Home", href: "/" },
-          { label: "Services", href: "/services" },
+        data={pageGraph([
+          webPageNode("/services", metadata.title as string, metadata.description as string),
+          breadcrumbNode([
+            { label: "Home", href: "/" },
+            { label: "Services", href: "/services" },
+          ]),
         ])}
       />
       <PageHero

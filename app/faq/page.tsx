@@ -6,7 +6,12 @@ import { Container } from "@/components/shared/container";
 import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
 import { faqs } from "@/data/faqs";
-import { breadcrumbSchema, faqSchema } from "@/lib/schema";
+import {
+  breadcrumbNode,
+  faqNode,
+  pageGraph,
+  webPageNode,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "FAQs About Scans, Tests and Appointments",
@@ -18,11 +23,14 @@ export const metadata: Metadata = {
 export default function FaqPage() {
   return (
     <>
-      <JsonLd data={faqSchema(faqs)} />
       <JsonLd
-        data={breadcrumbSchema([
-          { label: "Home", href: "/" },
-          { label: "FAQ", href: "/faq" },
+        data={pageGraph([
+          webPageNode("/faq", metadata.title as string, metadata.description as string),
+          breadcrumbNode([
+            { label: "Home", href: "/" },
+            { label: "FAQ", href: "/faq" },
+          ]),
+          faqNode(faqs, "/faq"),
         ])}
       />
       <PageHero

@@ -15,19 +15,23 @@ import { WhyChooseUs } from "@/components/home/why-choose-us";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Section } from "@/components/shared/section";
 import { TrustSlots } from "@/components/shared/trust-slots";
+import { courses } from "@/data/courses";
+import { doctors } from "@/data/doctors";
 import { faqs } from "@/data/faqs";
 import { site } from "@/data/site";
 import { hasPublishedGuides } from "@/lib/guides";
 import {
+  courseNode,
   faqNode,
   medicalClinicNode,
   pageGraph,
+  personNode,
   webPageNode,
   webSiteNode,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Fetal Medicine Specialists in Trichy | FMC Trichy",
+  title: "Fetal Medicine Specialists & Scans in Trichy | FMC Trichy",
   description:
     "Specialist pregnancy scans, NIPT and genetic counselling in Trichy, performed or supervised by fetal medicine specialists. Book an appointment.",
   alternates: { canonical: "/" },
@@ -43,6 +47,8 @@ export default function HomePage() {
           webSiteNode(),
           webPageNode("/", "Fetal Medicine Specialists in Trichy", site.description),
           medicalClinicNode(),
+          ...doctors.map((doctor) => personNode(doctor)),
+          ...courses.map((course) => courseNode(course)),
           faqNode(faqs, "/"),
         ])}
       />

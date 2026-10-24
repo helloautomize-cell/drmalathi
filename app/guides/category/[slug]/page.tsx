@@ -13,7 +13,11 @@ import {
   getCategory,
   hasPublishedGuides,
 } from "@/lib/guides";
-import { breadcrumbSchema } from "@/lib/schema";
+import {
+  breadcrumbNode,
+  pageGraph,
+  webPageNode,
+} from "@/lib/schema";
 
 export function generateStaticParams() {
   return categoriesInUse().map((c) => ({ slug: c.slug }));
@@ -51,10 +55,17 @@ export default async function GuideCategoryPage({
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema([
-          { label: "Home", href: "/" },
-          { label: "Patient guides", href: "/guides" },
-          { label: category.name, href: `/guides/category/${category.slug}` },
+        data={pageGraph([
+          webPageNode(
+            `/guides/category/${category.slug}`,
+            `${category.name}: Patient Guides`,
+            category.description
+          ),
+          breadcrumbNode([
+            { label: "Home", href: "/" },
+            { label: "Patient guides", href: "/guides" },
+            { label: category.name, href: `/guides/category/${category.slug}` },
+          ]),
         ])}
       />
       <GuideBrowser

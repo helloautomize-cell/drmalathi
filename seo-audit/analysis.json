@@ -1,0 +1,752 @@
+{
+  "sitemapCount": 93,
+  "titlesOutOfRange": [
+    {
+      "path": "",
+      "len": 49,
+      "title": "Fetal Medicine Specialists in Trichy | FMC Trichy"
+    },
+    {
+      "path": "/gallery",
+      "len": 46,
+      "title": "Gallery: Inside Our Trichy Centre | FMC Trichy"
+    },
+    {
+      "path": "/terms",
+      "len": 42,
+      "title": "Terms of Use for This Website | FMC Trichy"
+    },
+    {
+      "path": "/guides",
+      "len": 61,
+      "title": "Patient Guides on Scans, Screening and Pregnancy | FMC Trichy"
+    },
+    {
+      "path": "/services/viability-scan",
+      "len": 37,
+      "title": "Viability Scan in Trichy | FMC Trichy"
+    },
+    {
+      "path": "/services/anomaly-scan",
+      "len": 35,
+      "title": "Anomaly Scan in Trichy | FMC Trichy"
+    },
+    {
+      "path": "/services/growth-scan-doppler",
+      "len": 47,
+      "title": "Growth Scan with Doppler in Trichy | FMC Trichy"
+    },
+    {
+      "path": "/services/nipt",
+      "len": 27,
+      "title": "NIPT in Trichy | FMC Trichy"
+    },
+    {
+      "path": "/services/fetal-echo",
+      "len": 33,
+      "title": "Fetal Echo in Trichy | FMC Trichy"
+    },
+    {
+      "path": "/services/fetal-neurosonogram",
+      "len": 42,
+      "title": "Fetal Neurosonogram in Trichy | FMC Trichy"
+    },
+    {
+      "path": "/services/second-opinion-scan",
+      "len": 42,
+      "title": "Second Opinion Scan in Trichy | FMC Trichy"
+    },
+    {
+      "path": "/services/genetic-counselling",
+      "len": 42,
+      "title": "Genetic Counselling in Trichy | FMC Trichy"
+    },
+    {
+      "path": "/services/fetal-postmortem",
+      "len": 39,
+      "title": "Fetal Postmortem in Trichy | FMC Trichy"
+    },
+    {
+      "path": "/services/twin-specialised-clinic",
+      "len": 46,
+      "title": "Twin Specialised Clinic in Trichy | FMC Trichy"
+    },
+    {
+      "path": "/doctors/dr-revathy-chandrasekharan",
+      "len": 66,
+      "title": "Dr Revathy Chandrasekharan, Fetal Medicine Specialist | FMC Trichy"
+    },
+    {
+      "path": "/guides/nt-scan-vs-double-marker-test",
+      "len": 71,
+      "title": "NT Scan vs Double Marker Test: What&#x27;s the Difference? | FMC Trichy"
+    },
+    {
+      "path": "/guides/nt-scan-detect-down-syndrome",
+      "len": 49,
+      "title": "Can an NT Scan Detect Down Syndrome? | FMC Trichy"
+    },
+    {
+      "path": "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "len": 33,
+      "title": "NT Scan in Pregnancy | FMC Trichy"
+    },
+    {
+      "path": "/guides/best-time-for-nt-scan-pregnancy",
+      "len": 63,
+      "title": "What Is the Best Time for an NT Scan in Pregnancy? | FMC Trichy"
+    },
+    {
+      "path": "/guides/nipt-vs-nt-scan-vs-double-marker-test",
+      "len": 67,
+      "title": "NIPT vs NT Scan vs Double Marker Test: Key Differences | FMC Trichy"
+    },
+    {
+      "path": "/guides/can-nipt-detect-down-syndrome",
+      "len": 43,
+      "title": "Can NIPT Detect Down Syndrome? | FMC Trichy"
+    },
+    {
+      "path": "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "len": 30,
+      "title": "NIPT in Pregnancy | FMC Trichy"
+    },
+    {
+      "path": "/guides/how-often-growth-scans-high-risk-pregnancy",
+      "len": 65,
+      "title": "How Often Should Growth Scans Be Done in a High-Risk | FMC Trichy"
+    },
+    {
+      "path": "/guides/fetal-growth-restriction-causes-monitoring-treatment",
+      "len": 68,
+      "title": "Fetal Growth Restriction: Causes, Monitoring, Treatment | FMC Trichy"
+    },
+    {
+      "path": "/guides/growth-scan-doppler-pregnancy-fetal-growth-restriction",
+      "len": 49,
+      "title": "Growth Scan and Doppler in Pregnancy | FMC Trichy"
+    },
+    {
+      "path": "/guides/fetal-echo-vs-anomaly-scan-difference",
+      "len": 68,
+      "title": "Fetal Echo vs Anomaly Scan: What&#x27;s the Difference? | FMC Trichy"
+    },
+    {
+      "path": "/guides/fetal-echo-shows-heart-abnormality-next-steps",
+      "len": 64,
+      "title": "What Happens If a Fetal Echo Shows a Heart Problem? | FMC Trichy"
+    },
+    {
+      "path": "/guides/fetal-echocardiography-pregnancy",
+      "len": 35,
+      "title": "Fetal Echocardiography | FMC Trichy"
+    },
+    {
+      "path": "/guides/why-doctor-recommends-fetal-echocardiogram",
+      "len": 65,
+      "title": "Why Would a Doctor Recommend a Fetal Echocardiogram? | FMC Trichy"
+    },
+    {
+      "path": "/guides/anomaly-found-20-week-scan-what-happens",
+      "len": 73,
+      "title": "What Happens If an Anomaly Is Found During the 20-Week Scan? | FMC Trichy"
+    },
+    {
+      "path": "/guides/tiffa-scan-pregnancy-when-to-get",
+      "len": 61,
+      "title": "What Is a TIFFA Scan and When Should You Get It? | FMC Trichy"
+    },
+    {
+      "path": "/guides/anomaly-scan-vs-normal-pregnancy-ultrasound",
+      "len": 73,
+      "title": "Anomaly Scan vs Normal Pregnancy Ultrasound: Key Differences | FMC Trichy"
+    },
+    {
+      "path": "/guides/anomaly-scan-tiffa-scan-pregnancy",
+      "len": 38,
+      "title": "Anomaly Scan in Pregnancy | FMC Trichy"
+    },
+    {
+      "path": "/guides/how-often-scans-twin-pregnancy",
+      "len": 61,
+      "title": "How Often Do You Need Scans in a Twin Pregnancy? | FMC Trichy"
+    },
+    {
+      "path": "/guides/chorionicity-twin-pregnancy-why-it-matters",
+      "len": 70,
+      "title": "What Is Chorionicity in Twin Pregnancy and Why It Matters | FMC Trichy"
+    },
+    {
+      "path": "/guides/monochorionic-vs-dichorionic-twins",
+      "len": 72,
+      "title": "Monochorionic vs Dichorionic Twins: What Is the Difference? | FMC Trichy"
+    },
+    {
+      "path": "/guides/twin-pregnancy-scans-risks-monitoring",
+      "len": 27,
+      "title": "Twin Pregnancy | FMC Trichy"
+    },
+    {
+      "path": "/guides/what-is-amh-fertility-test",
+      "len": 62,
+      "title": "What Is AMH and What Does It Say About Fertility? | FMC Trichy"
+    },
+    {
+      "path": "/guides/follicular-monitoring-ovulation-scan",
+      "len": 61,
+      "title": "Follicular Monitoring: How It Helps You Conceive | FMC Trichy"
+    },
+    {
+      "path": "/guides/fertility-testing-for-couples",
+      "len": 42,
+      "title": "Fertility Testing for Couples | FMC Trichy"
+    },
+    {
+      "path": "/guides/fertility-tests-for-women-before-treatment",
+      "len": 64,
+      "title": "Fertility Tests for Women Before Starting Treatment | FMC Trichy"
+    },
+    {
+      "path": "/guides/male-fertility-tests-semen-analysis",
+      "len": 62,
+      "title": "Male Fertility Tests: What a Man Should Have Done | FMC Trichy"
+    },
+    {
+      "path": "/guides/pregnancy-after-recurrent-miscarriage-monitoring",
+      "len": 71,
+      "title": "Pregnancy After Recurrent Miscarriage: How It Is Monitored | FMC Trichy"
+    },
+    {
+      "path": "/guides/how-many-miscarriages-recurrent-pregnancy-loss",
+      "len": 69,
+      "title": "How Many Miscarriages Count as Recurrent Pregnancy Loss? | FMC Trichy"
+    },
+    {
+      "path": "/guides/tests-after-repeated-miscarriages",
+      "len": 61,
+      "title": "What Tests Are Done After Repeated Miscarriages? | FMC Trichy"
+    },
+    {
+      "path": "/guides/can-genetic-problems-cause-recurrent-miscarriage",
+      "len": 62,
+      "title": "Can Genetic Problems Cause Recurrent Miscarriage? | FMC Trichy"
+    },
+    {
+      "path": "/guides/recurrent-miscarriage-causes-tests-treatment",
+      "len": 34,
+      "title": "Recurrent Miscarriage | FMC Trichy"
+    },
+    {
+      "path": "/guides/diabetes-and-pregnancy-baby-extra-monitoring",
+      "len": 69,
+      "title": "Diabetes and Pregnancy: When Baby Needs Extra Monitoring | FMC Trichy"
+    },
+    {
+      "path": "/guides/when-to-see-a-fetal-medicine-specialist",
+      "len": 61,
+      "title": "When Should You See a Fetal Medicine Specialist? | FMC Trichy"
+    },
+    {
+      "path": "/guides/high-risk-pregnancy-extra-scans-and-tests",
+      "len": 68,
+      "title": "High-Risk Pregnancy: What Extra Scans and Tests Can You | FMC Trichy"
+    },
+    {
+      "path": "/guides/pregnancy-after-ivf-extra-monitoring",
+      "len": 66,
+      "title": "Pregnancy After IVF: What Extra Monitoring Is Needed? | FMC Trichy"
+    },
+    {
+      "path": "/guides/high-risk-pregnancy-fetal-medicine-specialist",
+      "len": 32,
+      "title": "High-Risk Pregnancy | FMC Trichy"
+    },
+    {
+      "path": "/guides/what-makes-a-pregnancy-high-risk",
+      "len": 46,
+      "title": "What Makes a Pregnancy High Risk? | FMC Trichy"
+    },
+    {
+      "path": "/guides/pcos-and-pregnancy",
+      "len": 31,
+      "title": "PCOS and Pregnancy | FMC Trichy"
+    },
+    {
+      "path": "/guides/category/pregnancy-scans",
+      "len": 44,
+      "title": "Pregnancy scans: Patient Guides | FMC Trichy"
+    },
+    {
+      "path": "/guides/category/screening-and-tests",
+      "len": 48,
+      "title": "Screening and tests: Patient Guides | FMC Trichy"
+    },
+    {
+      "path": "/guides/category/pregnancy-loss",
+      "len": 43,
+      "title": "Pregnancy loss: Patient Guides | FMC Trichy"
+    },
+    {
+      "path": "/book",
+      "len": 35,
+      "title": "Request an appointment | FMC Trichy"
+    }
+  ],
+  "metaOutOfRange": [
+    {
+      "path": "/services/recurrent-miscarriages-clinic",
+      "len": 139
+    },
+    {
+      "path": "/guides/what-is-a-growth-scan-and-when-is-it-done",
+      "len": 163
+    },
+    {
+      "path": "/guides/fetal-echocardiography-pregnancy",
+      "len": 169
+    },
+    {
+      "path": "/guides/what-is-fetal-echo-and-when-is-it-done",
+      "len": 161
+    },
+    {
+      "path": "/guides/twin-pregnancy-scans-risks-monitoring",
+      "len": 177
+    },
+    {
+      "path": "/guides/fertility-testing-for-couples",
+      "len": 138
+    },
+    {
+      "path": "/guides/pcos-and-pregnancy",
+      "len": 133
+    },
+    {
+      "path": "/guides/category/pregnancy-scans",
+      "len": 122
+    },
+    {
+      "path": "/guides/category/screening-and-tests",
+      "len": 121
+    },
+    {
+      "path": "/guides/category/fertility-and-planning",
+      "len": 120
+    },
+    {
+      "path": "/book",
+      "len": 113
+    }
+  ],
+  "h1Issues": [],
+  "missingCanonical": [
+    "/book"
+  ],
+  "robotsMetaPages": [
+    {
+      "path": "",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/about",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/services",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/fellowship",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/cme-activities",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/doctors",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/gallery",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/contact",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/faq",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/international-patients",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/privacy",
+      "robots": "noindex"
+    },
+    {
+      "path": "/terms",
+      "robots": "noindex"
+    },
+    {
+      "path": "/guides",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/services/viability-scan",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/services/downs-screening-oscar",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/services/first-trimester-anomaly-scan",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/services/anomaly-scan",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/services/growth-scan-doppler",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/services/nipt",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/services/fetal-echo",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/services/fetal-neurosonogram",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/services/second-opinion-scan",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/services/genetic-counselling",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/services/fetal-postmortem",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/services/recurrent-miscarriages-clinic",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/services/twin-specialised-clinic",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/doctors/dr-malathi-g-prasad",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/doctors/dr-revathy-chandrasekharan",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/what-happens-after-abnormal-nt-scan",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/nt-scan-vs-double-marker-test",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/nt-scan-detect-down-syndrome",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/best-time-for-nt-scan-pregnancy",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/high-nt-measurement-meaning",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/nipt-in-twin-pregnancy-reliability",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/what-happens-after-positive-nipt-result",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/nipt-vs-nt-scan-vs-double-marker-test",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/what-does-high-risk-nipt-result-mean",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/can-nipt-detect-down-syndrome",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/how-often-growth-scans-high-risk-pregnancy",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/why-doppler-scan-during-pregnancy",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/what-does-it-mean-if-baby-is-measuring-small",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/fetal-growth-restriction-causes-monitoring-treatment",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/growth-scan-doppler-pregnancy-fetal-growth-restriction",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/what-is-a-growth-scan-and-when-is-it-done",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/fetal-echo-vs-anomaly-scan-difference",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/can-fetal-echo-detect-heart-defects",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/fetal-echo-shows-heart-abnormality-next-steps",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/fetal-echocardiography-pregnancy",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/what-is-fetal-echo-and-when-is-it-done",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/why-doctor-recommends-fetal-echocardiogram",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/what-does-anomaly-scan-check",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/anomaly-found-20-week-scan-what-happens",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/tiffa-scan-pregnancy-when-to-get",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/anomaly-scan-vs-normal-pregnancy-ultrasound",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/anomaly-scan-detect-all-birth-defects",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/anomaly-scan-tiffa-scan-pregnancy",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/twin-pregnancy-complications-doctors-look-for",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/how-often-scans-twin-pregnancy",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/chorionicity-twin-pregnancy-why-it-matters",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/monochorionic-vs-dichorionic-twins",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/twin-pregnancy-scans-risks-monitoring",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/when-can-twins-be-detected-on-ultrasound",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/what-is-amh-fertility-test",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/follicular-monitoring-ovulation-scan",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/how-to-know-when-you-are-ovulating",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/fertility-testing-for-couples",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/fertility-tests-for-women-before-treatment",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/male-fertility-tests-semen-analysis",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/before-trying-to-conceive-after-miscarriage",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/pregnancy-after-recurrent-miscarriage-monitoring",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/how-many-miscarriages-recurrent-pregnancy-loss",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/tests-after-repeated-miscarriages",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/can-genetic-problems-cause-recurrent-miscarriage",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/recurrent-miscarriage-causes-tests-treatment",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/diabetes-and-pregnancy-baby-extra-monitoring",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/when-to-see-a-fetal-medicine-specialist",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/high-risk-pregnancy-extra-scans-and-tests",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/pregnancy-after-ivf-extra-monitoring",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/high-risk-pregnancy-fetal-medicine-specialist",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/what-makes-a-pregnancy-high-risk",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/tests-for-pcos-related-infertility",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/low-amh-vs-pcos-difference",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/when-to-see-fertility-specialist-pcos",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/pcos-and-pregnancy",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/get-pregnant-naturally-with-pcos",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/how-pcos-affects-ovulation-fertility",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/category/pregnancy-scans",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/category/screening-and-tests",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/category/twins-and-high-risk",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/category/pregnancy-loss",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/guides/category/fertility-and-planning",
+      "robots": "index, follow"
+    },
+    {
+      "path": "/book",
+      "robots": "noindex, nofollow"
+    }
+  ],
+  "noindexInSitemap": [
+    "/privacy",
+    "/terms"
+  ],
+  "lastmodMissing": [],
+  "imageIssues": [],
+  "guideBylines": "0 guides without named reviewer",
+  "guideFaqMissing": [],
+  "missingBreadcrumbs": [
+    "",
+    "/book"
+  ],
+  "ogIssues": [
+    {
+      "path": "/doctors/dr-malathi-g-prasad",
+      "ogTitle": true,
+      "ogImage": false,
+      "tw": "summary_large_image"
+    },
+    {
+      "path": "/doctors/dr-revathy-chandrasekharan",
+      "ogTitle": true,
+      "ogImage": false,
+      "tw": "summary_large_image"
+    }
+  ],
+  "uniqueInternalLinks": 101,
+  "brokenLinks": [],
+  "orphanSitemapUrls": []
+}

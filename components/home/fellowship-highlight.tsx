@@ -11,14 +11,13 @@ import {
 } from "lucide-react";
 import { BrochureDialog } from "@/components/fellowship/brochure-dialog";
 import { CourseEnquiryDialog } from "@/components/fellowship/enquiry-dialog";
-import { JsonLd } from "@/components/seo/json-ld";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/container";
 import { SectionShell } from "@/components/shared/section-shell";
 import { courses, fellowshipProgram, type Course } from "@/data/courses";
 import { showPending } from "@/lib/env";
 import { doctors } from "@/data/doctors";
-import { courseSchema } from "@/lib/schema";
+
 
 const featuredHighlights = [
   "Simulator-based training in fetal interventions",
@@ -115,9 +114,6 @@ export function FellowshipHighlight() {
       surface="white"
       className="relative overflow-hidden bg-white py-12 text-white md:bg-plum md:py-24"
     >
-      {courses.map((course) => (
-        <JsonLd key={course.slug} data={courseSchema(course)} />
-      ))}
       <div
         className="pointer-events-none absolute -bottom-32 -left-24 size-96 rounded-full bg-accent-soft/10 blur-3xl"
         aria-hidden="true"

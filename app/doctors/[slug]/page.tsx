@@ -37,7 +37,10 @@ export async function generateMetadata({
       doctor.seoDescription ??
       `${doctor.name}, ${doctor.role} at ${site.name}. ${doctor.qualifications.join(", ")}.`,
     alternates: { canonical: `/doctors/${doctor.slug}` },
-    openGraph: { url: `${site.url}/doctors/${doctor.slug}` },
+    openGraph: {
+      url: `${site.url}/doctors/${doctor.slug}`,
+      images: [{ url: `${site.url}${doctor.photo}` }],
+    },
   };
 }
 

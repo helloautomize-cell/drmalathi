@@ -29,7 +29,11 @@ import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
 import { site } from "@/data/site";
 import { addDays, istDateString } from "@/lib/booking-schema";
-import { breadcrumbSchema } from "@/lib/schema";
+import {
+  breadcrumbNode,
+  pageGraph,
+  webPageNode,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Contact and Appointments: Thillai Nagar, Trichy",
@@ -107,9 +111,12 @@ export default function ContactPage() {
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema([
-          { label: "Home", href: "/" },
-          { label: "Contact", href: "/contact" },
+        data={pageGraph([
+          webPageNode("/contact", metadata.title as string, metadata.description as string),
+          breadcrumbNode([
+            { label: "Home", href: "/" },
+            { label: "Contact", href: "/contact" },
+          ]),
         ])}
       />
       <PageHero

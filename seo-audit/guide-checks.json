@@ -1,0 +1,4299 @@
+[
+  {
+    "slug": "pcos-and-pregnancy",
+    "title": "PCOS and Pregnancy",
+    "category": "fertility-and-planning",
+    "relatedService": null,
+    "faqCount": 8,
+    "faqAnswersOutOf40to60": [],
+    "quickAnswer": true,
+    "sourcesCount": 3,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/fertility-testing-for-couples",
+      "/guides/recurrent-miscarriage-causes-tests-treatment",
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/get-pregnant-naturally-with-pcos",
+      "/guides/how-pcos-affects-ovulation-fertility",
+      "/guides/tests-for-pcos-related-infertility",
+      "/guides/low-amh-vs-pcos-difference",
+      "/guides/when-to-see-fertility-specialist-pcos"
+    ],
+    "h2s": [
+      "What is PCOS?",
+      "How does PCOS affect ovulation?",
+      "Can PCOS cause infertility?",
+      "Can you get pregnant naturally with PCOS?",
+      "What tests are needed for PCOS-related infertility?",
+      "Low AMH vs PCOS: what's the difference?",
+      "How is PCOS treated when you want to get pregnant?",
+      "Does PCOS affect pregnancy itself?",
+      "When should a woman with PCOS see a fertility specialist?",
+      "Questions worth asking at your appointment",
+      "When to get urgent care in pregnancy",
+      "Related guides"
+    ],
+    "h3s": [
+      "How do doctors diagnose PCOS?",
+      "Does PCOS affect every woman the same way?",
+      "Can you still ovulate with PCOS?",
+      "Lifestyle and metabolic health",
+      "Tablets to help you ovulate",
+      "If tablets don't work",
+      "IVF",
+      "What are the risks of fertility treatment with PCOS?",
+      "What extra monitoring might you have?",
+      "Does PCOS raise the risk of miscarriage?"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 73,
+    "guideLinks": [
+      "/guides/fertility-testing-for-couples",
+      "/guides/recurrent-miscarriage-causes-tests-treatment",
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/get-pregnant-naturally-with-pcos",
+      "/guides/how-pcos-affects-ovulation-fertility",
+      "/guides/tests-for-pcos-related-infertility",
+      "/guides/low-amh-vs-pcos-difference",
+      "/guides/when-to-see-fertility-specialist-pcos"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "high-risk-pregnancy-fetal-medicine-specialist",
+    "title": "High-Risk Pregnancy",
+    "category": "twins-and-high-risk",
+    "relatedService": "second-opinion-scan",
+    "faqCount": 8,
+    "faqAnswersOutOf40to60": [],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/growth-scan-doppler-pregnancy-fetal-growth-restriction",
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/what-makes-a-pregnancy-high-risk",
+      "/guides/when-to-see-a-fetal-medicine-specialist",
+      "/guides/high-risk-pregnancy-extra-scans-and-tests",
+      "/guides/pregnancy-after-ivf-extra-monitoring",
+      "/guides/diabetes-and-pregnancy-baby-extra-monitoring"
+    ],
+    "h2s": [
+      "What does high-risk pregnancy actually mean?",
+      "What can make a pregnancy high risk?",
+      "Can a pregnancy be high risk even when the baby appears healthy?",
+      "What maternal conditions may require closer monitoring?",
+      "Can previous pregnancy problems make the next pregnancy high risk?",
+      "When should you see a fetal medicine specialist?",
+      "What does a fetal medicine specialist do?",
+      "What extra scans and tests might be needed?",
+      "Does every high-risk pregnancy need frequent scans?",
+      "High-risk pregnancy after IVF: does IVF mean you need extra monitoring?",
+      "How does diabetes affect pregnancy monitoring?",
+      "What happens when an ultrasound shows a possible abnormality?",
+      "Why is the difference between screening and diagnosis important?",
+      "Does a high-risk pregnancy mean you need a specialist for the entire pregnancy?",
+      "How do an obstetrician and fetal medicine specialist work together?",
+      "What should you ask your doctor if your pregnancy is high risk?",
+      "When should you seek urgent medical attention?",
+      "Can the level of risk change during pregnancy?",
+      "When is fetal medicine consultation particularly useful?",
+      "Fetal medicine care in Trichy",
+      "Related guides"
+    ],
+    "h3s": [
+      "You may be referred for fetal medicine assessment if:",
+      "Detailed ultrasound",
+      "Growth scans",
+      "Doppler ultrasound",
+      "Fetal echocardiography",
+      "Genetic counselling and testing"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 161,
+    "guideLinks": [
+      "/guides/growth-scan-doppler-pregnancy-fetal-growth-restriction",
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/what-makes-a-pregnancy-high-risk",
+      "/guides/when-to-see-a-fetal-medicine-specialist",
+      "/guides/high-risk-pregnancy-extra-scans-and-tests",
+      "/guides/pregnancy-after-ivf-extra-monitoring",
+      "/guides/diabetes-and-pregnancy-baby-extra-monitoring"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "recurrent-miscarriage-causes-tests-treatment",
+    "title": "Recurrent Miscarriage",
+    "category": "pregnancy-loss",
+    "relatedService": "recurrent-miscarriages-clinic",
+    "faqCount": 8,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "What is the most common cause of recurrent miscarriage?",
+        "w": 64
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/pcos-and-pregnancy",
+      "/guides/growth-scan-doppler-pregnancy-fetal-growth-restriction",
+      "/guides/how-many-miscarriages-recurrent-pregnancy-loss",
+      "/guides/tests-after-repeated-miscarriages",
+      "/guides/can-genetic-problems-cause-recurrent-miscarriage",
+      "/guides/before-trying-to-conceive-after-miscarriage",
+      "/guides/pregnancy-after-recurrent-miscarriage-monitoring"
+    ],
+    "h2s": [
+      "What does recurrent miscarriage mean?",
+      "Why does recurrent miscarriage happen?",
+      "Which tests are useful after recurrent miscarriage?",
+      "What treatments are available?",
+      "How to prepare for your next pregnancy",
+      "When to get urgent medical help",
+      "When to see a specialist",
+      "Related guides"
+    ],
+    "h3s": [
+      "How common is it?",
+      "I've had one miscarriage. Will it happen again?",
+      "Chromosomal errors in the pregnancy",
+      "A balanced translocation in one parent",
+      "Antiphospholipid syndrome (APS)",
+      "The shape of the uterus",
+      "Cervical weakness and later losses",
+      "Hormones and general health",
+      "Age and lifestyle",
+      "Things that don't cause miscarriage",
+      "Antiphospholipid antibody tests",
+      "An ultrasound of the uterus",
+      "Testing the pregnancy tissue",
+      "Parental karyotype",
+      "Thyroid and sugar levels",
+      "Tests you probably don't need",
+      "Aspirin and heparin for APS",
+      "Surgery for a septum",
+      "Progesterone if you bleed in early pregnancy",
+      "Thyroid disease and diabetes",
+      "If one partner carries a balanced translocation",
+      "Second trimester loss",
+      "When no cause is found",
+      "Before trying again",
+      "How long should you wait?",
+      "The first weeks of the next pregnancy",
+      "Will you need extra scans later?",
+      "Questions worth asking at your appointment"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 99,
+    "guideLinks": [
+      "/guides/pcos-and-pregnancy",
+      "/guides/growth-scan-doppler-pregnancy-fetal-growth-restriction",
+      "/guides/how-many-miscarriages-recurrent-pregnancy-loss",
+      "/guides/tests-after-repeated-miscarriages",
+      "/guides/can-genetic-problems-cause-recurrent-miscarriage",
+      "/guides/before-trying-to-conceive-after-miscarriage",
+      "/guides/pregnancy-after-recurrent-miscarriage-monitoring"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "fertility-testing-for-couples",
+    "title": "Fertility Testing for Couples",
+    "category": "fertility-and-planning",
+    "relatedService": null,
+    "faqCount": 8,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "When should a couple see a fertility specialist?",
+        "w": 61
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/pcos-and-pregnancy",
+      "/guides/recurrent-miscarriage-causes-tests-treatment",
+      "/guides/fertility-tests-for-women-before-treatment",
+      "/guides/male-fertility-tests-semen-analysis",
+      "/guides/what-is-amh-fertility-test",
+      "/guides/follicular-monitoring-ovulation-scan",
+      "/guides/how-to-know-when-you-are-ovulating"
+    ],
+    "h2s": [
+      "When should a couple consider fertility testing?",
+      "Why are both partners usually evaluated?",
+      "What does a fertility evaluation for a woman involve?",
+      "How is ovulation assessed?",
+      "Can you have periods without normal ovulation?",
+      "What is an ovulation predictor kit?",
+      "What is follicular monitoring?",
+      "What is AMH?",
+      "Does AMH measure egg quality?",
+      "Does a low AMH mean infertility?",
+      "Can AMH be normal and pregnancy still be difficult?",
+      "What is antral follicle count?",
+      "What is a fertility scan?",
+      "How are the fallopian tubes checked?",
+      "What fertility tests are done for men?",
+      "What does a semen analysis actually tell you?",
+      "What happens if the semen analysis is abnormal?",
+      "Which blood tests may be used in fertility assessment?",
+      "Does every woman trying to conceive need an AMH test?",
+      "What if all the fertility tests are normal?",
+      "What factors can affect fertility?",
+      "What happens during the first fertility consultation?",
+      "Do couples need every fertility test available?",
+      "Can fertility testing be done before trying to conceive?",
+      "When should you see a fertility specialist?",
+      "Fertility testing for couples in Trichy",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 152,
+    "guideLinks": [
+      "/guides/pcos-and-pregnancy",
+      "/guides/recurrent-miscarriage-causes-tests-treatment",
+      "/guides/fertility-tests-for-women-before-treatment",
+      "/guides/male-fertility-tests-semen-analysis",
+      "/guides/what-is-amh-fertility-test",
+      "/guides/follicular-monitoring-ovulation-scan",
+      "/guides/how-to-know-when-you-are-ovulating"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "twin-pregnancy-scans-risks-monitoring",
+    "title": "Twin Pregnancy",
+    "category": "twins-and-high-risk",
+    "relatedService": "twin-specialised-clinic",
+    "faqCount": 8,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "What is twin-to-twin transfusion syndrome?",
+        "w": 62
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "/guides/anomaly-scan-tiffa-scan-pregnancy",
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/when-can-twins-be-detected-on-ultrasound",
+      "/guides/how-often-scans-twin-pregnancy",
+      "/guides/chorionicity-twin-pregnancy-why-it-matters",
+      "/guides/monochorionic-vs-dichorionic-twins",
+      "/guides/twin-pregnancy-complications-doctors-look-for"
+    ],
+    "h2s": [
+      "What is a twin pregnancy?",
+      "How are twins detected on ultrasound?",
+      "What are chorionicity and amnionicity, and why do they matter?",
+      "What happens at the first-trimester twin scan?",
+      "How often do you need scans in a twin pregnancy?",
+      "What does each follow-up twin scan check?",
+      "What is the anomaly scan like in a twin pregnancy?",
+      "What are the risks of a twin pregnancy?",
+      "What complications affect twins who share a placenta?",
+      "What happens if a complication is found on a twin scan?",
+      "When are twins usually delivered?",
+      "When should you seek urgent medical attention?",
+      "How can you look after yourself during a twin pregnancy?",
+      "When should you see a fetal medicine specialist for a twin pregnancy?",
+      "Twin pregnancy care in Trichy",
+      "Related guides"
+    ],
+    "h3s": [
+      "Dichorionic diamniotic (DCDA) twins",
+      "Monochorionic diamniotic (MCDA) twins",
+      "Monochorionic monoamniotic (MCMA) twins",
+      "When should chorionicity be checked?",
+      "How does screening for Down syndrome work in twins?",
+      "Risks for the mother",
+      "Risks for the babies",
+      "Twin-to-twin transfusion syndrome (TTTS)",
+      "Selective fetal growth restriction (sFGR)",
+      "Twin anaemia-polycythaemia sequence (TAPS)",
+      "Twin reversed arterial perfusion (TRAP) sequence",
+      "Cord entanglement in monoamniotic twins",
+      "What happens if one twin dies during pregnancy?",
+      "What questions can you ask at your twin scan?"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 90,
+    "guideLinks": [
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "/guides/anomaly-scan-tiffa-scan-pregnancy",
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/when-can-twins-be-detected-on-ultrasound",
+      "/guides/how-often-scans-twin-pregnancy",
+      "/guides/chorionicity-twin-pregnancy-why-it-matters",
+      "/guides/monochorionic-vs-dichorionic-twins",
+      "/guides/twin-pregnancy-complications-doctors-look-for"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "anomaly-scan-tiffa-scan-pregnancy",
+    "title": "Anomaly Scan in Pregnancy",
+    "category": "pregnancy-scans",
+    "relatedService": "anomaly-scan",
+    "faqCount": 8,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "What happens if an abnormality is seen?",
+        "w": 34
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 5,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/high-risk-pregnancy-fetal-medicine-specialist",
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/tiffa-scan-pregnancy-when-to-get",
+      "/guides/anomaly-scan-vs-normal-pregnancy-ultrasound",
+      "/guides/anomaly-scan-detect-all-birth-defects",
+      "/guides/what-does-anomaly-scan-check",
+      "/guides/anomaly-found-20-week-scan-what-happens"
+    ],
+    "h2s": [
+      "What is a TIFFA scan?",
+      "When is the anomaly scan done?",
+      "Why is the 20-week scan important?",
+      "What does an anomaly scan check?",
+      "What else is assessed during the anomaly scan?",
+      "Can the anomaly scan detect all birth defects?",
+      "Is an anomaly scan a screening test or a diagnostic test?",
+      "What if the baby's position makes the scan difficult?",
+      "What happens if something unusual is found?",
+      "What happens after an abnormal anomaly scan?",
+      "Is an anomaly scan different in a high-risk pregnancy?",
+      "What about anomaly scans after IVF?",
+      "What about twins and multiple pregnancies?",
+      "How long does an anomaly scan take?",
+      "Do you need to prepare for the anomaly scan?",
+      "What should you ask after the scan?",
+      "Does a normal anomaly scan mean my baby is completely healthy?",
+      "Anomaly Scan in Trichy: When should you seek specialist guidance?",
+      "Medical Disclaimer",
+      "Related guides"
+    ],
+    "h3s": [
+      "Baby's brain and head",
+      "Face",
+      "Spine",
+      "Baby's heart",
+      "Abdomen and stomach",
+      "Kidneys and urinary bladder",
+      "Arms, legs, hands and feet",
+      "Placenta",
+      "Amniotic fluid",
+      "Fetal growth",
+      "Umbilical cord",
+      "A detailed fetal medicine scan",
+      "Fetal echocardiography",
+      "Genetic counselling",
+      "Genetic testing",
+      "Fetal MRI",
+      ""
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 172,
+    "guideLinks": [
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/high-risk-pregnancy-fetal-medicine-specialist",
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/tiffa-scan-pregnancy-when-to-get",
+      "/guides/anomaly-scan-vs-normal-pregnancy-ultrasound",
+      "/guides/anomaly-scan-detect-all-birth-defects",
+      "/guides/what-does-anomaly-scan-check",
+      "/guides/anomaly-found-20-week-scan-what-happens"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "fetal-echocardiography-pregnancy",
+    "title": "Fetal Echocardiography",
+    "category": "pregnancy-scans",
+    "relatedService": "fetal-echo",
+    "faqCount": 8,
+    "faqAnswersOutOf40to60": [],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/anomaly-scan-tiffa-scan-pregnancy",
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "/guides/what-is-fetal-echo-and-when-is-it-done",
+      "/guides/why-doctor-recommends-fetal-echocardiogram",
+      "/guides/fetal-echo-vs-anomaly-scan-difference",
+      "/guides/can-fetal-echo-detect-heart-defects",
+      "/guides/fetal-echo-shows-heart-abnormality-next-steps"
+    ],
+    "h2s": [
+      "What is fetal echocardiography?",
+      "When is a fetal echo done?",
+      "Why would a doctor recommend a fetal echocardiogram?",
+      "What does a fetal echocardiogram check?",
+      "Fetal echo vs anomaly scan: what's the difference?",
+      "Can an anomaly scan detect heart problems?",
+      "What happens during a fetal echocardiogram?",
+      "Is fetal echocardiography safe?",
+      "What if the fetal echo finds something abnormal?",
+      "Does an abnormal fetal echo mean the baby has a severe heart problem?",
+      "Can fetal echocardiography detect every heart defect?",
+      "What if the baby is in the wrong position?",
+      "Does every pregnancy need a fetal echo?",
+      "Does a high NT mean my baby needs a fetal echo?",
+      "Does diabetes mean a fetal echo is necessary?",
+      "What questions should you ask before or after a fetal echo?",
+      "When should you see a fetal medicine specialist?",
+      "Fetal echocardiography in trichy",
+      "Fetal echo and fetal neurosonography: are they the same?",
+      "Can a fetal echo be done with the anomaly scan?",
+      "What happens if the fetal echo is normal?",
+      "Related guides"
+    ],
+    "h3s": [
+      "A possible heart problem on the ultrasound",
+      "Increased nuchal translucency",
+      "A previous baby or pregnancy had congenital heart disease",
+      "Diabetes that existed before pregnancy",
+      "Certain genetic or fetal findings",
+      "Certain maternal conditions",
+      "IVF Pregnancy",
+      "The four chambers",
+      "The heart's position and axis",
+      "The heart valves",
+      "The outflow tracts",
+      "The major blood vessels",
+      "Heart rhythm",
+      "Blood flow"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 1,
+    "blocks": 192,
+    "guideLinks": [
+      "/guides/anomaly-scan-tiffa-scan-pregnancy",
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "/guides/what-is-fetal-echo-and-when-is-it-done",
+      "/guides/why-doctor-recommends-fetal-echocardiogram",
+      "/guides/fetal-echo-vs-anomaly-scan-difference",
+      "/guides/can-fetal-echo-detect-heart-defects",
+      "/guides/fetal-echo-shows-heart-abnormality-next-steps"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "growth-scan-doppler-pregnancy-fetal-growth-restriction",
+    "title": "Growth Scan and Doppler in Pregnancy",
+    "category": "pregnancy-scans",
+    "relatedService": "growth-scan-doppler",
+    "faqCount": 8,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Can a growth scan tell the exact weight of my baby?",
+        "w": 33
+      },
+      {
+        "q": "How often should growth scans be done?",
+        "w": 37
+      },
+      {
+        "q": "Does every baby below the 10th percentile have fetal growth ",
+        "w": 38
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "/guides/what-is-a-growth-scan-and-when-is-it-done",
+      "/guides/why-doppler-scan-during-pregnancy",
+      "/guides/what-does-it-mean-if-baby-is-measuring-small",
+      "/guides/fetal-growth-restriction-causes-monitoring-treatment",
+      "/guides/how-often-growth-scans-high-risk-pregnancy"
+    ],
+    "h2s": [
+      "What is a growth scan in pregnancy?",
+      "When is a growth scan recommended?",
+      "What does a growth scan measure?",
+      "What does a fetal growth percentile mean?",
+      "What is the difference between a small baby and fetal growth restriction?",
+      "Why does a baby become growth restricted?",
+      "What is a Doppler scan in pregnancy?",
+      "Why is Doppler done during pregnancy?",
+      "Which blood vessels can be assessed with Doppler?",
+      "Does an abnormal Doppler mean that the baby is in danger?",
+      "How is Doppler related to fetal growth restriction?",
+      "What does it mean if the baby is measuring small?",
+      "Why are repeat growth scans sometimes necessary?",
+      "Can a growth scan predict my baby's exact birth weight?",
+      "Growth scan vs Doppler: what is the difference?",
+      "Can Doppler alone diagnose fetal growth restriction?",
+      "What happens if fetal growth restriction is confirmed?",
+      "Does fetal growth restriction always mean there is a serious problem?",
+      "Can a small baby catch up in growth?",
+      "What factors can affect fetal growth?",
+      "What is early-onset and late-onset fetal growth restriction?",
+      "Does every small baby need a Doppler scan?",
+      "How often do you need a growth scan in a high-risk pregnancy?",
+      "What happens during a growth scan with Doppler?",
+      "Is a growth scan with Doppler safe?",
+      "Can a growth scan detect every pregnancy problem?",
+      "When should you discuss a growth scan with a fetal medicine specialist?",
+      "What should you ask your doctor after a growth scan?",
+      "Growth monitoring is about more than one number",
+      "Related guides"
+    ],
+    "h3s": [
+      "Head measurements",
+      "Abdominal circumference",
+      "Femur length",
+      "Estimated fetal weight",
+      "Umbilical artery",
+      "Middle cerebral artery",
+      "Uterine arteries",
+      "Ductus venosus"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 1,
+    "blocks": 208,
+    "guideLinks": [
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "/guides/what-is-a-growth-scan-and-when-is-it-done",
+      "/guides/why-doppler-scan-during-pregnancy",
+      "/guides/what-does-it-mean-if-baby-is-measuring-small",
+      "/guides/fetal-growth-restriction-causes-monitoring-treatment",
+      "/guides/how-often-growth-scans-high-risk-pregnancy"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "nipt-in-pregnancy-test-accuracy-high-risk-result",
+    "title": "NIPT in Pregnancy",
+    "category": "screening-and-tests",
+    "relatedService": "nipt",
+    "faqCount": 8,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "At how many weeks can NIPT be done?",
+        "w": 29
+      },
+      {
+        "q": "What does a high-risk NIPT result mean?",
+        "w": 37
+      },
+      {
+        "q": "Is NIPT safe for the baby?",
+        "w": 35
+      },
+      {
+        "q": "Does NIPT replace the anomaly scan?",
+        "w": 33
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/anomaly-scan-tiffa-scan-pregnancy",
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/nipt-vs-nt-scan-vs-double-marker-test",
+      "/guides/what-does-high-risk-nipt-result-mean",
+      "/guides/can-nipt-detect-down-syndrome",
+      "/guides/nipt-in-twin-pregnancy-reliability",
+      "/guides/what-happens-after-positive-nipt-result"
+    ],
+    "h2s": [
+      "What does NIPT detect?",
+      "Does NIPT detect every genetic condition?",
+      "How does NIPT work?",
+      "Is NIPT a diagnostic test?",
+      "How accurate is NIPT?",
+      "What is positive predictive value?",
+      "What does a low-Risk NIPT result mean?",
+      "What does a high-Risk NIPT result mean?",
+      "What happens after a high-Risk NIPT result?",
+      "Can you have CVS or amniocentesis after a high-Risk NIPT?",
+      "Should pregnancy decisions be made from NIPT alone?",
+      "NIPT vs NT scan: are they the same?",
+      "NIPT vs double marker test",
+      "Is NIPT recommended after IVF?",
+      "Is NIPT reliable in twin pregnancy?",
+      "What if NIPT gives an inconclusive or no-Result report?",
+      "Does NIPT replace the anomaly scan?",
+      "What conditions can NIPT miss?",
+      "Who should consider NIPT?",
+      "What should you ask before taking an NIPT?",
+      "When should you speak to a fetal medicine specialist?",
+      "NIPT in trichy: why specialist interpretation matters",
+      "NIPT test cost: why prices can differ",
+      "What is the most important thing to remember about NIPT?",
+      "Related guides"
+    ],
+    "h3s": [
+      "What is NIPT in pregnancy?",
+      "When can NIPT be done?",
+      "Trisomy 21, down syndrome",
+      "Trisomy 18, edwards syndrome",
+      "Trisomy 13, patau syndrome",
+      "Sex chromosome conditions",
+      "The NIPT report is reviewed",
+      "Your pregnancy history is considered",
+      "Ultrasound findings are reviewed",
+      "Genetic counselling may be recommended",
+      "Diagnostic testing may be offered",
+      "Decisions can then be made with better information",
+      "What exactly does this test screen for?",
+      "From how many weeks can I take the test?",
+      "Is my pregnancy suitable for this test?",
+      "What happens if my result is high risk?",
+      "What happens if the test gives no result?",
+      "Does the test screen for rare conditions?",
+      "Will I still need ultrasound scans?"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 1,
+    "blocks": 232,
+    "guideLinks": [
+      "/guides/anomaly-scan-tiffa-scan-pregnancy",
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/nipt-vs-nt-scan-vs-double-marker-test",
+      "/guides/what-does-high-risk-nipt-result-mean",
+      "/guides/can-nipt-detect-down-syndrome",
+      "/guides/nipt-in-twin-pregnancy-reliability",
+      "/guides/what-happens-after-positive-nipt-result"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "nt-scan-pregnancy-timing-normal-range-down-syndrome",
+    "title": "NT Scan in Pregnancy",
+    "category": "screening-and-tests",
+    "relatedService": "downs-screening-oscar",
+    "faqCount": 8,
+    "faqAnswersOutOf40to60": [],
+    "quickAnswer": true,
+    "sourcesCount": 3,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/best-time-for-nt-scan-pregnancy",
+      "/guides/high-nt-measurement-meaning",
+      "/guides/nt-scan-vs-double-marker-test",
+      "/guides/nt-scan-detect-down-syndrome",
+      "/guides/what-happens-after-abnormal-nt-scan"
+    ],
+    "h2s": [
+      "What is an NT scan?",
+      "When should an NT scan be done?",
+      "Why is the timing of the NT scan important?",
+      "What is the normal NT range?",
+      "What does the NT scan actually tell you?",
+      "How is NT connected with Down syndrome?",
+      "Can an NT scan detect Down syndrome?",
+      "Does NT screening look for other chromosomal conditions?",
+      "What is the role of the nasal bone?",
+      "What does an increased NT measurement mean?",
+      "Is a high NT always a sign that something is wrong?",
+      "What happens after an abnormal NT scan?",
+      "Does a high NT mean I need an amniocentesis?",
+      "NT scan vs NIPT: What is the difference?",
+      "NT scan vs double marker test",
+      "What does a low-risk NT result mean?",
+      "What does a high-risk screening result mean?",
+      "Can the NT be normal but the baby still have a chromosomal condition?",
+      "Can a high NT occur when chromosome testing is normal?",
+      "Can NT be associated with heart problems?",
+      "How is the NT scan performed?",
+      "Can the baby's position affect the NT measurement?",
+      "What if the baby is not in the right position?",
+      "Is the NT scan different in twin pregnancy?",
+      "What about NT screening after IVF?",
+      "Is an NT scan necessary for every pregnancy?",
+      "What should you do if your NT report says \"increased\"?",
+      "When should you consult a fetal medicine specialist?",
+      "NT scan in Trichy: when specialist assessment may help",
+      "Related guides"
+    ],
+    "h3s": [
+      "Why can't you interpret the NT number by itself?"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 196,
+    "guideLinks": [
+      "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/best-time-for-nt-scan-pregnancy",
+      "/guides/high-nt-measurement-meaning",
+      "/guides/nt-scan-vs-double-marker-test",
+      "/guides/nt-scan-detect-down-syndrome",
+      "/guides/what-happens-after-abnormal-nt-scan"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "tiffa-scan-pregnancy-when-to-get",
+    "title": "What Is a TIFFA Scan and When Should You Get It?",
+    "category": "pregnancy-scans",
+    "relatedService": "anomaly-scan",
+    "faqCount": 5,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "What if I am asked to repeat the scan?",
+        "w": 39
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/what-does-anomaly-scan-check",
+      "/guides/anomaly-scan-tiffa-scan-pregnancy",
+      "/guides/anomaly-found-20-week-scan-what-happens",
+      "/guides/anomaly-scan-vs-normal-pregnancy-ultrasound",
+      "/guides/anomaly-scan-detect-all-birth-defects"
+    ],
+    "h2s": [
+      "What is a TIFFA scan?",
+      "When should you get a TIFFA scan?",
+      "Who may need a TIFFA scan?",
+      "What to expect on the day",
+      "What the scan cannot tell you",
+      "When to speak to a fetal medicine specialist",
+      "What this means for you",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 23,
+    "guideLinks": [
+      "/guides/what-does-anomaly-scan-check",
+      "/guides/anomaly-scan-tiffa-scan-pregnancy",
+      "/guides/anomaly-found-20-week-scan-what-happens",
+      "/guides/anomaly-scan-vs-normal-pregnancy-ultrasound",
+      "/guides/anomaly-scan-detect-all-birth-defects"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "anomaly-scan-vs-normal-pregnancy-ultrasound",
+    "title": "Anomaly Scan vs Normal Pregnancy Ultrasound: Key Differences",
+    "category": "pregnancy-scans",
+    "relatedService": "anomaly-scan",
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Can a routine ultrasound detect birth defects?",
+        "w": 38
+      },
+      {
+        "q": "Is the anomaly scan compulsory?",
+        "w": 32
+      },
+      {
+        "q": "Does a normal anomaly scan mean my baby is completely health",
+        "w": 30
+      },
+      {
+        "q": "Will I need more scans after the anomaly scan?",
+        "w": 30
+      },
+      {
+        "q": "Is the anomaly scan painful or unsafe for the baby?",
+        "w": 31
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/anomaly-scan-tiffa-scan-pregnancy",
+      "/guides/growth-scan-doppler-pregnancy-fetal-growth-restriction",
+      "/guides/anomaly-scan-detect-all-birth-defects",
+      "/guides/what-does-anomaly-scan-check",
+      "/guides/fetal-echo-vs-anomaly-scan-difference"
+    ],
+    "h2s": [
+      "What does a normal pregnancy ultrasound cover?",
+      "What does an anomaly scan do differently?",
+      "Anomaly scan vs routine ultrasound at a glance",
+      "Why the timing and the examiner both matter",
+      "Can a normal anomaly scan replace other scans?",
+      "When might a specialist-level scan be advised?",
+      "The takeaway",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 1,
+    "blocks": 23,
+    "guideLinks": [
+      "/guides/anomaly-scan-tiffa-scan-pregnancy",
+      "/guides/growth-scan-doppler-pregnancy-fetal-growth-restriction",
+      "/guides/anomaly-scan-detect-all-birth-defects",
+      "/guides/what-does-anomaly-scan-check",
+      "/guides/fetal-echo-vs-anomaly-scan-difference"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "anomaly-scan-detect-all-birth-defects",
+    "title": "Can an Anomaly Scan Detect All Birth Defects?",
+    "category": "pregnancy-scans",
+    "relatedService": "anomaly-scan",
+    "faqCount": 5,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Does a repeat scan mean something is wrong?",
+        "w": 35
+      },
+      {
+        "q": "How is a fetal echocardiogram different from the anomaly sca",
+        "w": 39
+      },
+      {
+        "q": "Can NIPT or amniocentesis find what the anomaly scan misses?",
+        "w": 36
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/anomaly-scan-tiffa-scan-pregnancy",
+      "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "/guides/what-does-anomaly-scan-check",
+      "/guides/anomaly-found-20-week-scan-what-happens",
+      "/guides/fetal-echo-vs-anomaly-scan-difference"
+    ],
+    "h2s": [
+      "Why does the scan miss some conditions?",
+      "What affects the quality of the scan?",
+      "What does a normal report actually tell you?",
+      "When are further tests considered?",
+      "Questions worth asking at your scan",
+      "When should you see a fetal medicine specialist?",
+      "Before your appointment",
+      "Related guides"
+    ],
+    "h3s": [
+      "Conditions that do not change anatomy",
+      "Conditions that develop later",
+      "Small or well-hidden findings"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 29,
+    "guideLinks": [
+      "/guides/anomaly-scan-tiffa-scan-pregnancy",
+      "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "/guides/what-does-anomaly-scan-check",
+      "/guides/anomaly-found-20-week-scan-what-happens",
+      "/guides/fetal-echo-vs-anomaly-scan-difference"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "what-does-anomaly-scan-check",
+    "title": "What Does an Anomaly Scan Check in the Baby?",
+    "category": "pregnancy-scans",
+    "relatedService": "anomaly-scan",
+    "faqCount": 5,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "At what week is the anomaly scan done?",
+        "w": 34
+      },
+      {
+        "q": "Can the anomaly scan show Down syndrome?",
+        "w": 39
+      },
+      {
+        "q": "Why was part of my anomaly scan repeated?",
+        "w": 34
+      },
+      {
+        "q": "Is the anomaly scan painful?",
+        "w": 29
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 3,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/anomaly-scan-tiffa-scan-pregnancy",
+      "/guides/anomaly-found-20-week-scan-what-happens",
+      "/guides/anomaly-scan-vs-normal-pregnancy-ultrasound",
+      "/guides/anomaly-scan-detect-all-birth-defects",
+      "/guides/fetal-echo-vs-anomaly-scan-difference"
+    ],
+    "h2s": [
+      "What does the sonographer look at on the baby?",
+      "What else does the scan look at?",
+      "Will we find out the baby's sex?",
+      "Why is part of the scan sometimes repeated?",
+      "What the scan cannot tell you",
+      "A few things to hold on to",
+      "Related guides"
+    ],
+    "h3s": [
+      "The brain and skull",
+      "The face",
+      "The spine",
+      "The heart and chest",
+      "The abdomen, kidneys and bladder",
+      "The arms and legs"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 26,
+    "guideLinks": [
+      "/guides/anomaly-scan-tiffa-scan-pregnancy",
+      "/guides/anomaly-found-20-week-scan-what-happens",
+      "/guides/anomaly-scan-vs-normal-pregnancy-ultrasound",
+      "/guides/anomaly-scan-detect-all-birth-defects",
+      "/guides/fetal-echo-vs-anomaly-scan-difference"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "anomaly-found-20-week-scan-what-happens",
+    "title": "What Happens If an Anomaly Is Found During the 20-Week Scan?",
+    "category": "pregnancy-scans",
+    "relatedService": "second-opinion-scan",
+    "faqCount": 5,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Does an abnormal 20-week scan always mean the baby has a con",
+        "w": 26
+      },
+      {
+        "q": "How soon will I get a specialist scan?",
+        "w": 23
+      },
+      {
+        "q": "Can an anomaly found at 20 weeks be treated before birth?",
+        "w": 30
+      },
+      {
+        "q": "Is NIPT enough to confirm a problem after an abnormal scan?",
+        "w": 24
+      },
+      {
+        "q": "Should I get a second opinion?",
+        "w": 18
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/anomaly-scan-tiffa-scan-pregnancy",
+      "/guides/tiffa-scan-pregnancy-when-to-get",
+      "/guides/anomaly-scan-vs-normal-pregnancy-ultrasound",
+      "/guides/anomaly-scan-detect-all-birth-defects",
+      "/guides/what-does-anomaly-scan-check"
+    ],
+    "h2s": [
+      "Does an abnormal finding always mean something is wrong?",
+      "What happens at the specialist scan?",
+      "Which tests might be suggested next?",
+      "What can the outcome look like?",
+      "Who helps with the decisions?",
+      "When should you call your doctor urgently?",
+      "What matters most",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 20,
+    "guideLinks": [
+      "/guides/anomaly-scan-tiffa-scan-pregnancy",
+      "/guides/tiffa-scan-pregnancy-when-to-get",
+      "/guides/anomaly-scan-vs-normal-pregnancy-ultrasound",
+      "/guides/anomaly-scan-detect-all-birth-defects",
+      "/guides/what-does-anomaly-scan-check"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "get-pregnant-naturally-with-pcos",
+    "title": "Can You Get Pregnant Naturally With PCOS?",
+    "category": "fertility-and-planning",
+    "relatedService": null,
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "How long does it take to get pregnant with PCOS?",
+        "w": 39
+      },
+      {
+        "q": "Can losing weight help PCOS fertility?",
+        "w": 36
+      },
+      {
+        "q": "Do I need IVF if I have PCOS?",
+        "w": 35
+      },
+      {
+        "q": "Can thin women have PCOS?",
+        "w": 38
+      },
+      {
+        "q": "Does PCOS increase miscarriage risk?",
+        "w": 35
+      },
+      {
+        "q": "Is metformin needed to get pregnant with PCOS?",
+        "w": 32
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/pcos-and-pregnancy",
+      "/guides/when-to-see-fertility-specialist-pcos",
+      "/guides/follicular-monitoring-ovulation-scan",
+      "/guides/how-pcos-affects-ovulation-fertility",
+      "/guides/tests-for-pcos-related-infertility"
+    ],
+    "h2s": [
+      "Why does PCOS make it harder?",
+      "What improves your chances naturally?",
+      "When do you need medical help?",
+      "Is pregnancy with PCOS safe?",
+      "If you remember one thing",
+      "Related guides"
+    ],
+    "h3s": [
+      "Healthy weight",
+      "Regular activity",
+      "Food choices",
+      "Sleep and stress",
+      "Track your cycle"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 24,
+    "guideLinks": [
+      "/guides/pcos-and-pregnancy",
+      "/guides/when-to-see-fertility-specialist-pcos",
+      "/guides/follicular-monitoring-ovulation-scan",
+      "/guides/how-pcos-affects-ovulation-fertility",
+      "/guides/tests-for-pcos-related-infertility"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "how-pcos-affects-ovulation-fertility",
+    "title": "How PCOS Affects Ovulation and Fertility",
+    "category": "fertility-and-planning",
+    "relatedService": null,
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Do women with PCOS ovulate at all?",
+        "w": 32
+      },
+      {
+        "q": "Are the cysts in PCOS harmful?",
+        "w": 38
+      },
+      {
+        "q": "Why is letrozole used for PCOS?",
+        "w": 36
+      },
+      {
+        "q": "Can PCOS go away?",
+        "w": 36
+      },
+      {
+        "q": "Does insulin resistance always come with PCOS?",
+        "w": 31
+      },
+      {
+        "q": "Can PCOS affect pregnancy after conception?",
+        "w": 31
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/pcos-and-pregnancy",
+      "/guides/follicular-monitoring-ovulation-scan",
+      "/guides/tests-for-pcos-related-infertility",
+      "/guides/get-pregnant-naturally-with-pcos",
+      "/guides/low-amh-vs-pcos-difference"
+    ],
+    "h2s": [
+      "What happens in a normal cycle?",
+      "What changes in PCOS?",
+      "What signs suggest PCOS is affecting fertility?",
+      "Does PCOS affect egg quality?",
+      "How is ovulation restored?",
+      "Putting it together",
+      "Related guides"
+    ],
+    "h3s": [
+      "Hormone imbalance",
+      "Insulin resistance",
+      "Many small follicles",
+      "Missed ovulation"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 23,
+    "guideLinks": [
+      "/guides/pcos-and-pregnancy",
+      "/guides/follicular-monitoring-ovulation-scan",
+      "/guides/tests-for-pcos-related-infertility",
+      "/guides/get-pregnant-naturally-with-pcos",
+      "/guides/low-amh-vs-pcos-difference"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "tests-for-pcos-related-infertility",
+    "title": "Tests Needed for PCOS-Related Infertility",
+    "category": "fertility-and-planning",
+    "relatedService": null,
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Can PCOS be diagnosed with only an ultrasound?",
+        "w": 37
+      },
+      {
+        "q": "Why is a sugar test needed in PCOS?",
+        "w": 36
+      },
+      {
+        "q": "Does my husband need to be tested if I have PCOS?",
+        "w": 30
+      },
+      {
+        "q": "Is a tubal test always needed in PCOS?",
+        "w": 36
+      },
+      {
+        "q": "Do I need all these tests every cycle?",
+        "w": 28
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/pcos-and-pregnancy",
+      "/guides/male-fertility-tests-semen-analysis",
+      "/guides/low-amh-vs-pcos-difference",
+      "/guides/get-pregnant-naturally-with-pcos",
+      "/guides/fertility-tests-for-women-before-treatment"
+    ],
+    "h2s": [
+      "Why are tests needed?",
+      "Which tests confirm PCOS?",
+      "Which tests rule out other causes?",
+      "Which tests check pregnancy readiness?",
+      "Do tubes and sperm need testing too?",
+      "The essentials",
+      "Related guides"
+    ],
+    "h3s": [
+      "Pelvic ultrasound",
+      "Androgen tests",
+      "LH and FSH",
+      "AMH",
+      "Blood sugar tests",
+      "Lipid profile and blood pressure",
+      "Vitamin D and blood count",
+      "Rubella and infection screening"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 29,
+    "guideLinks": [
+      "/guides/pcos-and-pregnancy",
+      "/guides/male-fertility-tests-semen-analysis",
+      "/guides/low-amh-vs-pcos-difference",
+      "/guides/get-pregnant-naturally-with-pcos",
+      "/guides/fertility-tests-for-women-before-treatment"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "low-amh-vs-pcos-difference",
+    "title": "Low AMH vs PCOS: What Is the Difference?",
+    "category": "fertility-and-planning",
+    "relatedService": null,
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Is high AMH always a sign of PCOS?",
+        "w": 34
+      },
+      {
+        "q": "Can low AMH cause irregular periods?",
+        "w": 35
+      },
+      {
+        "q": "Which is harder to treat, low AMH or PCOS?",
+        "w": 33
+      },
+      {
+        "q": "Can PCOS turn into low AMH?",
+        "w": 34
+      },
+      {
+        "q": "Does egg freezing help with low AMH?",
+        "w": 38
+      },
+      {
+        "q": "Should I repeat my AMH test?",
+        "w": 34
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/pcos-and-pregnancy",
+      "/guides/when-to-see-fertility-specialist-pcos",
+      "/guides/fertility-testing-for-couples",
+      "/guides/tests-for-pcos-related-infertility",
+      "/guides/fertility-tests-for-women-before-treatment"
+    ],
+    "h2s": [
+      "What is low AMH?",
+      "What Is PCOS?",
+      "How do they compare?",
+      "Can you have both?",
+      "How is each treated?",
+      "What to do next",
+      "Related guides"
+    ],
+    "h3s": [
+      "Egg reserve",
+      "Periods",
+      "Ultrasound",
+      "Other signs",
+      "Response to fertility medicines"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 26,
+    "guideLinks": [
+      "/guides/pcos-and-pregnancy",
+      "/guides/when-to-see-fertility-specialist-pcos",
+      "/guides/fertility-testing-for-couples",
+      "/guides/tests-for-pcos-related-infertility",
+      "/guides/fertility-tests-for-women-before-treatment"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "when-to-see-fertility-specialist-pcos",
+    "title": "When to See a Fertility Specialist With PCOS",
+    "category": "fertility-and-planning",
+    "relatedService": null,
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "How many cycles of letrozole should I try before IVF?",
+        "w": 34
+      },
+      {
+        "q": "Is IVF the only option if PCOS tablets fail?",
+        "w": 36
+      },
+      {
+        "q": "Should I lose weight before seeing a specialist?",
+        "w": 36
+      },
+      {
+        "q": "Does my age matter if I have PCOS?",
+        "w": 31
+      },
+      {
+        "q": "Is fertility treatment for PCOS expensive?",
+        "w": 32
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/pcos-and-pregnancy",
+      "/guides/get-pregnant-naturally-with-pcos",
+      "/guides/tests-for-pcos-related-infertility",
+      "/guides/low-amh-vs-pcos-difference",
+      "/guides/follicular-monitoring-ovulation-scan"
+    ],
+    "h2s": [
+      "Why not just wait?",
+      "Signs you should go sooner",
+      "What will the specialist do?",
+      "Can a gynaecologist manage PCOS fertility?",
+      "How can you prepare for the visit?",
+      "The short version",
+      "Related guides"
+    ],
+    "h3s": [
+      "Review your history",
+      "Order tests",
+      "Make a step-by-step plan"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 21,
+    "guideLinks": [
+      "/guides/pcos-and-pregnancy",
+      "/guides/get-pregnant-naturally-with-pcos",
+      "/guides/tests-for-pcos-related-infertility",
+      "/guides/low-amh-vs-pcos-difference",
+      "/guides/follicular-monitoring-ovulation-scan"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "best-time-for-nt-scan-pregnancy",
+    "title": "What Is the Best Time for an NT Scan in Pregnancy?",
+    "category": "screening-and-tests",
+    "relatedService": "downs-screening-oscar",
+    "faqCount": 5,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "At how many weeks is the NT scan done?",
+        "w": 36
+      },
+      {
+        "q": "Can an NT scan be done at 10 weeks?",
+        "w": 32
+      },
+      {
+        "q": "What happens if I miss the NT scan?",
+        "w": 35
+      },
+      {
+        "q": "Is the NT scan done on the same day as the blood test?",
+        "w": 37
+      },
+      {
+        "q": "Does a normal NT scan guarantee a healthy baby?",
+        "w": 37
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "/guides/high-nt-measurement-meaning",
+      "/guides/nt-scan-vs-double-marker-test",
+      "/guides/nt-scan-detect-down-syndrome",
+      "/guides/what-happens-after-abnormal-nt-scan"
+    ],
+    "h2s": [
+      "Why is the NT scan done only in this window?",
+      "How do doctors work out my pregnancy weeks?",
+      "Is the NT scan the same as the first pregnancy scan?",
+      "What happens if the NT scan is too early or missed?",
+      "Does the timing change for twins?",
+      "How should I prepare for the appointment?",
+      "Keeping it simple",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 23,
+    "guideLinks": [
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "/guides/high-nt-measurement-meaning",
+      "/guides/nt-scan-vs-double-marker-test",
+      "/guides/nt-scan-detect-down-syndrome",
+      "/guides/what-happens-after-abnormal-nt-scan"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "high-nt-measurement-meaning",
+    "title": "What Does a High NT Measurement Mean?",
+    "category": "screening-and-tests",
+    "relatedService": "downs-screening-oscar",
+    "faqCount": 5,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Can a high NT go back to normal later in pregnancy?",
+        "w": 35
+      },
+      {
+        "q": "Can a baby with a high NT be born healthy?",
+        "w": 36
+      },
+      {
+        "q": "Is NIPT enough after a high NT result?",
+        "w": 37
+      },
+      {
+        "q": "Does a high NT mean my baby has a heart problem?",
+        "w": 38
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/nt-scan-vs-double-marker-test",
+      "/guides/what-happens-after-abnormal-nt-scan",
+      "/guides/nipt-vs-nt-scan-vs-double-marker-test"
+    ],
+    "h2s": [
+      "How high is \"high\"?",
+      "Why does the NT increase?",
+      "Does a high NT mean Down syndrome?",
+      "What happens after a high NT result?",
+      "What if all the tests are normal?",
+      "When should you see a fetal medicine specialist?",
+      "The part to remember",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 25,
+    "guideLinks": [
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/nt-scan-vs-double-marker-test",
+      "/guides/what-happens-after-abnormal-nt-scan",
+      "/guides/nipt-vs-nt-scan-vs-double-marker-test"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "nt-scan-vs-double-marker-test",
+    "title": "NT Scan vs Double Marker Test: What's the Difference?",
+    "category": "screening-and-tests",
+    "relatedService": "downs-screening-oscar",
+    "faqCount": 5,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Can the double marker test diagnose Down syndrome?",
+        "w": 31
+      },
+      {
+        "q": "What does a high-risk double marker result mean?",
+        "w": 37
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "/guides/nipt-vs-nt-scan-vs-double-marker-test",
+      "/guides/nt-scan-detect-down-syndrome",
+      "/guides/best-time-for-nt-scan-pregnancy",
+      "/guides/high-nt-measurement-meaning"
+    ],
+    "h2s": [
+      "What is an NT scan?",
+      "What is the double marker test?",
+      "NT scan vs double marker test at a glance",
+      "Why do doctors use both?",
+      "How do you read the result?",
+      "Where does NIPT fit in?",
+      "When is it worth seeing a specialist?",
+      "What this means for you",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 1,
+    "blocks": 24,
+    "guideLinks": [
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "/guides/nipt-vs-nt-scan-vs-double-marker-test",
+      "/guides/nt-scan-detect-down-syndrome",
+      "/guides/best-time-for-nt-scan-pregnancy",
+      "/guides/high-nt-measurement-meaning"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "nt-scan-detect-down-syndrome",
+    "title": "Can an NT Scan Detect Down Syndrome?",
+    "category": "screening-and-tests",
+    "relatedService": "downs-screening-oscar",
+    "faqCount": 5,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Can an NT scan confirm Down syndrome?",
+        "w": 34
+      },
+      {
+        "q": "Can a baby have Down syndrome with a normal NT scan?",
+        "w": 34
+      },
+      {
+        "q": "Does a high NT always mean Down syndrome?",
+        "w": 31
+      },
+      {
+        "q": "Is combined screening better than an NT scan alone?",
+        "w": 30
+      },
+      {
+        "q": "Is NIPT more accurate than the NT scan for Down syndrome?",
+        "w": 34
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "/guides/what-happens-after-abnormal-nt-scan",
+      "/guides/high-nt-measurement-meaning",
+      "/guides/nt-scan-vs-double-marker-test",
+      "/guides/can-nipt-detect-down-syndrome"
+    ],
+    "h2s": [
+      "Why does the NT measurement matter for Down syndrome?",
+      "How reliable is the screening?",
+      "How do you read the result?",
+      "Which tests can confirm Down syndrome?",
+      "What should you do after a higher-risk result?",
+      "The takeaway",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 23,
+    "guideLinks": [
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "/guides/what-happens-after-abnormal-nt-scan",
+      "/guides/high-nt-measurement-meaning",
+      "/guides/nt-scan-vs-double-marker-test",
+      "/guides/can-nipt-detect-down-syndrome"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "what-happens-after-abnormal-nt-scan",
+    "title": "What Happens After an Abnormal NT Scan?",
+    "category": "screening-and-tests",
+    "relatedService": "genetic-counselling",
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Does an abnormal NT scan mean my baby has Down syndrome?",
+        "w": 37
+      },
+      {
+        "q": "Can an increased NT go back to normal on a later scan?",
+        "w": 38
+      },
+      {
+        "q": "Is NIPT enough after a high NT scan?",
+        "w": 39
+      },
+      {
+        "q": "Is it safe to have CVS or amniocentesis?",
+        "w": 35
+      },
+      {
+        "q": "Can a baby with an increased NT be born healthy?",
+        "w": 34
+      },
+      {
+        "q": "Will I need a fetal echocardiogram after an abnormal NT?",
+        "w": 32
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/best-time-for-nt-scan-pregnancy",
+      "/guides/high-nt-measurement-meaning"
+    ],
+    "h2s": [
+      "What does an abnormal NT result mean?",
+      "What happens in the first few days?",
+      "Which tests may be offered next?",
+      "What if the chromosome test is normal?",
+      "What questions can you ask your doctor?",
+      "When should you see a fetal medicine specialist?",
+      "Before your appointment",
+      "Related guides"
+    ],
+    "h3s": [
+      "NIPT",
+      "CVS and amniocentesis",
+      "Detailed ultrasound and fetal heart scan"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 27,
+    "guideLinks": [
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/best-time-for-nt-scan-pregnancy",
+      "/guides/high-nt-measurement-meaning"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "nipt-vs-nt-scan-vs-double-marker-test",
+    "title": "NIPT vs NT Scan vs Double Marker Test: Key Differences",
+    "category": "screening-and-tests",
+    "relatedService": "nipt",
+    "faqCount": 5,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Is NIPT better than the double marker test?",
+        "w": 38
+      },
+      {
+        "q": "Do I need an NT scan if I do NIPT?",
+        "w": 32
+      },
+      {
+        "q": "When is the double marker test done?",
+        "w": 28
+      },
+      {
+        "q": "Can these tests confirm Down syndrome?",
+        "w": 19
+      },
+      {
+        "q": "Which screening test should I choose?",
+        "w": 24
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "/guides/what-does-high-risk-nipt-result-mean",
+      "/guides/nipt-in-twin-pregnancy-reliability",
+      "/guides/can-nipt-detect-down-syndrome"
+    ],
+    "h2s": [
+      "What Is the NT Scan?",
+      "What is the double marker test?",
+      "What Is NIPT?",
+      "How do the tests compare?",
+      "Why is the NT scan still important with NIPT?",
+      "What happens after a high-risk result?",
+      "Which test is right for you?",
+      "A few things to hold on to",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 26,
+    "guideLinks": [
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "/guides/what-does-high-risk-nipt-result-mean",
+      "/guides/nipt-in-twin-pregnancy-reliability",
+      "/guides/can-nipt-detect-down-syndrome"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "what-does-high-risk-nipt-result-mean",
+    "title": "What Does a High-Risk NIPT Result Mean?",
+    "category": "screening-and-tests",
+    "relatedService": "genetic-counselling",
+    "faqCount": 5,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Does a high-risk NIPT mean my baby has Down syndrome?",
+        "w": 24
+      },
+      {
+        "q": "How accurate is a high-risk NIPT result?",
+        "w": 32
+      },
+      {
+        "q": "Which test confirms a high-risk NIPT?",
+        "w": 25
+      },
+      {
+        "q": "Can NIPT be wrong?",
+        "w": 23
+      },
+      {
+        "q": "Should I decide about my pregnancy based on NIPT?",
+        "w": 17
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "/guides/can-nipt-detect-down-syndrome",
+      "/guides/nipt-vs-nt-scan-vs-double-marker-test",
+      "/guides/nipt-in-twin-pregnancy-reliability",
+      "/guides/high-nt-measurement-meaning"
+    ],
+    "h2s": [
+      "Why is NIPT not a diagnosis?",
+      "What is positive predictive value?",
+      "What happens next?",
+      "Should decisions be made on NIPT alone?",
+      "What about low-risk results?",
+      "How can you cope emotionally?",
+      "What matters most",
+      "Related guides"
+    ],
+    "h3s": [
+      "Genetic counselling",
+      "Detailed ultrasound",
+      "Diagnostic testing"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 22,
+    "guideLinks": [
+      "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "/guides/can-nipt-detect-down-syndrome",
+      "/guides/nipt-vs-nt-scan-vs-double-marker-test",
+      "/guides/nipt-in-twin-pregnancy-reliability",
+      "/guides/high-nt-measurement-meaning"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "can-nipt-detect-down-syndrome",
+    "title": "Can NIPT Detect Down Syndrome?",
+    "category": "screening-and-tests",
+    "relatedService": "nipt",
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Is NIPT 100 percent accurate for Down syndrome?",
+        "w": 19
+      },
+      {
+        "q": "When can NIPT be done?",
+        "w": 11
+      },
+      {
+        "q": "Is NIPT safe for the baby?",
+        "w": 10
+      },
+      {
+        "q": "Can NIPT give a false positive?",
+        "w": 16
+      },
+      {
+        "q": "Do I still need the anomaly scan after NIPT?",
+        "w": 11
+      },
+      {
+        "q": "Does a low-risk NIPT rule out all problems?",
+        "w": 18
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "/guides/nipt-in-twin-pregnancy-reliability",
+      "/guides/nt-scan-vs-double-marker-test",
+      "/guides/what-happens-after-positive-nipt-result",
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome"
+    ],
+    "h2s": [
+      "How NIPT works",
+      "What NIPT can tell you",
+      "What NIPT cannot tell you",
+      "Who should consider NIPT",
+      "What happens after the result",
+      "If you remember one thing",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 16,
+    "guideLinks": [
+      "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "/guides/nipt-in-twin-pregnancy-reliability",
+      "/guides/nt-scan-vs-double-marker-test",
+      "/guides/what-happens-after-positive-nipt-result",
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "nipt-in-twin-pregnancy-reliability",
+    "title": "NIPT in Twin Pregnancy: Is It Reliable?",
+    "category": "screening-and-tests",
+    "relatedService": "twin-specialised-clinic",
+    "faqCount": 5,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Can NIPT be done in twin pregnancy?",
+        "w": 25
+      },
+      {
+        "q": "Can NIPT tell which twin is affected?",
+        "w": 25
+      },
+      {
+        "q": "Why does NIPT fail more often in twins?",
+        "w": 26
+      },
+      {
+        "q": "Does a vanished twin affect NIPT?",
+        "w": 34
+      },
+      {
+        "q": "Do I still need an NT scan with NIPT in twins?",
+        "w": 18
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "/guides/chorionicity-twin-pregnancy-why-it-matters",
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/what-happens-after-positive-nipt-result",
+      "/guides/nipt-vs-nt-scan-vs-double-marker-test"
+    ],
+    "h2s": [
+      "Why is NIPT more complex in twins?",
+      "How reliable is NIPT in twins?",
+      "Does chorionicity matter?",
+      "What about IVF twins?",
+      "Why is the NT scan still important?",
+      "What happens after a high-risk result?",
+      "Putting it together",
+      "Related guides"
+    ],
+    "h3s": [
+      "Two sources of DNA",
+      "Identifying the affected twin",
+      "Low fetal fraction",
+      "Vanished twin"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 24,
+    "guideLinks": [
+      "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "/guides/chorionicity-twin-pregnancy-why-it-matters",
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/what-happens-after-positive-nipt-result",
+      "/guides/nipt-vs-nt-scan-vs-double-marker-test"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "what-happens-after-positive-nipt-result",
+    "title": "What Happens After a Positive NIPT Result?",
+    "category": "screening-and-tests",
+    "relatedService": "genetic-counselling",
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Does a positive NIPT mean my baby has a problem?",
+        "w": 12
+      },
+      {
+        "q": "What tests confirm a positive NIPT?",
+        "w": 3
+      },
+      {
+        "q": "Are CVS and amniocentesis safe?",
+        "w": 14
+      },
+      {
+        "q": "How long does the confirmatory result take?",
+        "w": 15
+      },
+      {
+        "q": "Can a positive NIPT be a false positive?",
+        "w": 7
+      },
+      {
+        "q": "Should I make decisions before the confirmatory test?",
+        "w": 15
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "/guides/nipt-vs-nt-scan-vs-double-marker-test",
+      "/guides/can-nipt-detect-down-syndrome",
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "/guides/what-does-high-risk-nipt-result-mean"
+    ],
+    "h2s": [
+      "First, take a breath",
+      "Step 1: Counselling with your doctor",
+      "Step 2: A detailed ultrasound",
+      "Step 3: A diagnostic test",
+      "Step 4: Understanding the final result",
+      "The essentials",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 16,
+    "guideLinks": [
+      "/guides/nipt-in-pregnancy-test-accuracy-high-risk-result",
+      "/guides/nipt-vs-nt-scan-vs-double-marker-test",
+      "/guides/can-nipt-detect-down-syndrome",
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "/guides/what-does-high-risk-nipt-result-mean"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "what-is-fetal-echo-and-when-is-it-done",
+    "title": "What Is a Fetal Echo and When Is It Done?",
+    "category": "pregnancy-scans",
+    "relatedService": "fetal-echo",
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Is a fetal echo safe?",
+        "w": 6
+      },
+      {
+        "q": "Does every pregnant woman need a fetal echo?",
+        "w": 13
+      },
+      {
+        "q": "What is the best time for a fetal echo?",
+        "w": 6
+      },
+      {
+        "q": "Can a fetal echo detect all heart defects?",
+        "w": 17
+      },
+      {
+        "q": "How long does it take?",
+        "w": 5
+      },
+      {
+        "q": "Can it be repeated?",
+        "w": 12
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/anomaly-scan-tiffa-scan-pregnancy",
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "/guides/why-doctor-recommends-fetal-echocardiogram",
+      "/guides/what-makes-a-pregnancy-high-risk"
+    ],
+    "h2s": [
+      "How a fetal echo differs from a routine scan",
+      "When Is It Done?",
+      "Who may need a fetal echo",
+      "What happens during the test",
+      "What do the results mean?",
+      "What to do next",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 14,
+    "guideLinks": [
+      "/guides/anomaly-scan-tiffa-scan-pregnancy",
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "/guides/why-doctor-recommends-fetal-echocardiogram",
+      "/guides/what-makes-a-pregnancy-high-risk"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "why-doctor-recommends-fetal-echocardiogram",
+    "title": "Why Would a Doctor Recommend a Fetal Echocardiogram?",
+    "category": "pregnancy-scans",
+    "relatedService": "fetal-echo",
+    "faqCount": 5,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Why do doctors recommend a fetal echo?",
+        "w": 35
+      },
+      {
+        "q": "Does a fetal echo referral mean my baby has a heart problem?",
+        "w": 22
+      },
+      {
+        "q": "When is a fetal echo done?",
+        "w": 28
+      },
+      {
+        "q": "Is a fetal echo safe for the baby?",
+        "w": 18
+      },
+      {
+        "q": "Do IVF pregnancies need a fetal echo?",
+        "w": 28
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/can-fetal-echo-detect-heart-defects",
+      "/guides/high-nt-measurement-meaning",
+      "/guides/fetal-echo-vs-anomaly-scan-difference",
+      "/guides/fetal-echo-shows-heart-abnormality-next-steps"
+    ],
+    "h2s": [
+      "Why do heart defects matter?",
+      "What are the common reasons for referral?",
+      "When is a fetal echo done?",
+      "What should you expect?",
+      "The short version",
+      "Related guides"
+    ],
+    "h3s": [
+      "Findings on routine scans",
+      "Increased nuchal translucency",
+      "Family history",
+      "Maternal diabetes",
+      "IVF pregnancy",
+      "Medicines and infections",
+      "Abnormal heart rhythm",
+      "Monochorionic twins",
+      "Chromosomal or genetic conditions",
+      "Maternal autoimmune conditions"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 32,
+    "guideLinks": [
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/can-fetal-echo-detect-heart-defects",
+      "/guides/high-nt-measurement-meaning",
+      "/guides/fetal-echo-vs-anomaly-scan-difference",
+      "/guides/fetal-echo-shows-heart-abnormality-next-steps"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "fetal-echo-vs-anomaly-scan-difference",
+    "title": "Fetal Echo vs Anomaly Scan: What's the Difference?",
+    "category": "pregnancy-scans",
+    "relatedService": "fetal-echo",
+    "faqCount": 5,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Is the fetal echo the same as the anomaly scan?",
+        "w": 25
+      },
+      {
+        "q": "Can the anomaly scan miss heart defects?",
+        "w": 26
+      },
+      {
+        "q": "Do all pregnant women need a fetal echo?",
+        "w": 23
+      },
+      {
+        "q": "When are the anomaly scan and fetal echo done?",
+        "w": 28
+      },
+      {
+        "q": "Are both scans safe?",
+        "w": 16
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/anomaly-scan-tiffa-scan-pregnancy",
+      "/guides/why-doctor-recommends-fetal-echocardiogram",
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/can-fetal-echo-detect-heart-defects",
+      "/guides/what-is-fetal-echo-and-when-is-it-done"
+    ],
+    "h2s": [
+      "What does the anomaly scan check?",
+      "What does a fetal echo check?",
+      "How do they compare?",
+      "Can the anomaly scan detect heart defects?",
+      "When do you need both?",
+      "Keeping it simple",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 24,
+    "guideLinks": [
+      "/guides/anomaly-scan-tiffa-scan-pregnancy",
+      "/guides/why-doctor-recommends-fetal-echocardiogram",
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/can-fetal-echo-detect-heart-defects",
+      "/guides/what-is-fetal-echo-and-when-is-it-done"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "can-fetal-echo-detect-heart-defects",
+    "title": "Can Fetal Echo Detect Heart Defects in Babies?",
+    "category": "pregnancy-scans",
+    "relatedService": "fetal-echo",
+    "faqCount": 5,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "How accurate is a fetal echo?",
+        "w": 29
+      },
+      {
+        "q": "Can a fetal echo miss heart defects?",
+        "w": 30
+      },
+      {
+        "q": "Can a fetal echo detect a hole in the heart?",
+        "w": 30
+      },
+      {
+        "q": "Do I need a repeat fetal echo?",
+        "w": 25
+      },
+      {
+        "q": "What happens after a heart defect is found on fetal echo?",
+        "w": 26
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/why-doctor-recommends-fetal-echocardiogram",
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/fetal-echo-shows-heart-abnormality-next-steps",
+      "/guides/fetal-echo-vs-anomaly-scan-difference",
+      "/guides/anomaly-scan-tiffa-scan-pregnancy"
+    ],
+    "h2s": [
+      "What can a fetal echo detect?",
+      "What may be missed?",
+      "What affects accuracy?",
+      "What happens if a defect is found?",
+      "The part to remember",
+      "Related guides"
+    ],
+    "h3s": [
+      "Small holes",
+      "Atrial septal defects",
+      "Patent ductus arteriosus",
+      "Coarctation of the aorta",
+      "Progressive problems"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 23,
+    "guideLinks": [
+      "/guides/why-doctor-recommends-fetal-echocardiogram",
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/fetal-echo-shows-heart-abnormality-next-steps",
+      "/guides/fetal-echo-vs-anomaly-scan-difference",
+      "/guides/anomaly-scan-tiffa-scan-pregnancy"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "fetal-echo-shows-heart-abnormality-next-steps",
+    "title": "What Happens If a Fetal Echo Shows a Heart Problem?",
+    "category": "pregnancy-scans",
+    "relatedService": "genetic-counselling",
+    "faqCount": 5,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "What happens after a heart defect is found on fetal echo?",
+        "w": 28
+      },
+      {
+        "q": "Can heart defects found before birth be treated?",
+        "w": 27
+      },
+      {
+        "q": "Do I need genetic testing if my baby has a heart defect?",
+        "w": 27
+      },
+      {
+        "q": "Can I have a normal delivery if my baby has a heart defect?",
+        "w": 23
+      },
+      {
+        "q": "Will my baby need surgery immediately after birth?",
+        "w": 27
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/can-fetal-echo-detect-heart-defects",
+      "/guides/high-risk-pregnancy-fetal-medicine-specialist",
+      "/guides/what-is-fetal-echo-and-when-is-it-done",
+      "/guides/why-doctor-recommends-fetal-echocardiogram"
+    ],
+    "h2s": [
+      "How is the finding explained?",
+      "Is genetic testing recommended?",
+      "Are other scans needed?",
+      "How is delivery planned?",
+      "What happens after birth?",
+      "What choices do parents have?",
+      "How can families cope?",
+      "What this means for you",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 22,
+    "guideLinks": [
+      "/guides/fetal-echocardiography-pregnancy",
+      "/guides/can-fetal-echo-detect-heart-defects",
+      "/guides/high-risk-pregnancy-fetal-medicine-specialist",
+      "/guides/what-is-fetal-echo-and-when-is-it-done",
+      "/guides/why-doctor-recommends-fetal-echocardiogram"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "what-is-a-growth-scan-and-when-is-it-done",
+    "title": "What Is a Growth Scan and When Is It Done?",
+    "category": "pregnancy-scans",
+    "relatedService": "growth-scan-doppler",
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Is a growth scan the same as an anomaly scan?",
+        "w": 16
+      },
+      {
+        "q": "How accurate is the weight estimate?",
+        "w": 17
+      },
+      {
+        "q": "How many growth scans will I need?",
+        "w": 12
+      },
+      {
+        "q": "Can a growth scan tell if the baby is breech?",
+        "w": 6
+      },
+      {
+        "q": "What is Doppler in a growth scan?",
+        "w": 11
+      },
+      {
+        "q": "Does a small estimated weight always mean a problem?",
+        "w": 14
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/growth-scan-doppler-pregnancy-fetal-growth-restriction",
+      "/guides/what-does-it-mean-if-baby-is-measuring-small",
+      "/guides/why-doppler-scan-during-pregnancy",
+      "/guides/how-often-growth-scans-high-risk-pregnancy",
+      "/guides/anomaly-scan-tiffa-scan-pregnancy"
+    ],
+    "h2s": [
+      "What a growth scan measures",
+      "When Is It Done?",
+      "Who may need a growth scan",
+      "Is It Safe?",
+      "How to understand the report",
+      "The takeaway",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 14,
+    "guideLinks": [
+      "/guides/growth-scan-doppler-pregnancy-fetal-growth-restriction",
+      "/guides/what-does-it-mean-if-baby-is-measuring-small",
+      "/guides/why-doppler-scan-during-pregnancy",
+      "/guides/how-often-growth-scans-high-risk-pregnancy",
+      "/guides/anomaly-scan-tiffa-scan-pregnancy"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "why-doppler-scan-during-pregnancy",
+    "title": "Why Is a Doppler Scan Done During Pregnancy?",
+    "category": "pregnancy-scans",
+    "relatedService": "growth-scan-doppler",
+    "faqCount": 5,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Why is a Doppler scan done in pregnancy?",
+        "w": 34
+      },
+      {
+        "q": "Is a Doppler scan safe for my baby?",
+        "w": 25
+      },
+      {
+        "q": "What does an abnormal umbilical artery Doppler mean?",
+        "w": 28
+      },
+      {
+        "q": "When is a Doppler scan recommended?",
+        "w": 28
+      },
+      {
+        "q": "How often is a Doppler scan repeated?",
+        "w": 24
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/growth-scan-doppler-pregnancy-fetal-growth-restriction",
+      "/guides/what-does-it-mean-if-baby-is-measuring-small",
+      "/guides/fetal-growth-restriction-causes-monitoring-treatment",
+      "/guides/what-is-a-growth-scan-and-when-is-it-done",
+      "/guides/how-often-growth-scans-high-risk-pregnancy"
+    ],
+    "h2s": [
+      "How does doppler ultrasound work?",
+      "Which blood vessels are checked?",
+      "Why might your doctor recommend a doppler scan?",
+      "What do results mean?",
+      "How do results guide care?",
+      "Is Doppler Safe?",
+      "Before your appointment",
+      "Related guides"
+    ],
+    "h3s": [
+      "Umbilical artery",
+      "Middle cerebral artery",
+      "Ductus venosus",
+      "Uterine arteries"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 25,
+    "guideLinks": [
+      "/guides/growth-scan-doppler-pregnancy-fetal-growth-restriction",
+      "/guides/what-does-it-mean-if-baby-is-measuring-small",
+      "/guides/fetal-growth-restriction-causes-monitoring-treatment",
+      "/guides/what-is-a-growth-scan-and-when-is-it-done",
+      "/guides/how-often-growth-scans-high-risk-pregnancy"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "what-does-it-mean-if-baby-is-measuring-small",
+    "title": "What Does It Mean If Baby Is Measuring Small?",
+    "category": "pregnancy-scans",
+    "relatedService": "growth-scan-doppler",
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Can a small baby be normal?",
+        "w": 7
+      },
+      {
+        "q": "What is FGR?",
+        "w": 13
+      },
+      {
+        "q": "Can diet make the baby grow bigger?",
+        "w": 14
+      },
+      {
+        "q": "How often will I need scans?",
+        "w": 17
+      },
+      {
+        "q": "Does a small baby need an early delivery?",
+        "w": 11
+      },
+      {
+        "q": "What is Doppler?",
+        "w": 11
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/growth-scan-doppler-pregnancy-fetal-growth-restriction",
+      "/guides/why-doppler-scan-during-pregnancy",
+      "/guides/when-to-see-a-fetal-medicine-specialist",
+      "/guides/fetal-growth-restriction-causes-monitoring-treatment",
+      "/guides/what-is-a-growth-scan-and-when-is-it-done"
+    ],
+    "h2s": [
+      "Small but Healthy",
+      "Fetal growth restriction (FGR)",
+      "Possible Reasons",
+      "How doctors tell the difference",
+      "What can be done",
+      "When to call your doctor",
+      "A few things to hold on to",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 16,
+    "guideLinks": [
+      "/guides/growth-scan-doppler-pregnancy-fetal-growth-restriction",
+      "/guides/why-doppler-scan-during-pregnancy",
+      "/guides/when-to-see-a-fetal-medicine-specialist",
+      "/guides/fetal-growth-restriction-causes-monitoring-treatment",
+      "/guides/what-is-a-growth-scan-and-when-is-it-done"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "fetal-growth-restriction-causes-monitoring-treatment",
+    "title": "Fetal Growth Restriction: Causes, Monitoring, Treatment",
+    "category": "pregnancy-scans",
+    "relatedService": "growth-scan-doppler",
+    "faqCount": 5,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "What causes fetal growth restriction?",
+        "w": 23
+      },
+      {
+        "q": "Can a growth-restricted baby catch up in the womb?",
+        "w": 27
+      },
+      {
+        "q": "How often are scans needed with FGR?",
+        "w": 27
+      },
+      {
+        "q": "Will I need an early delivery with FGR?",
+        "w": 25
+      },
+      {
+        "q": "Can FGR be prevented?",
+        "w": 24
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/growth-scan-doppler-pregnancy-fetal-growth-restriction",
+      "/guides/how-often-growth-scans-high-risk-pregnancy",
+      "/guides/why-doppler-scan-during-pregnancy",
+      "/guides/what-is-a-growth-scan-and-when-is-it-done",
+      "/guides/what-does-it-mean-if-baby-is-measuring-small"
+    ],
+    "h2s": [
+      "What is the difference between small and growth restricted?",
+      "What causes FGR?",
+      "How is FGR diagnosed?",
+      "How is FGR monitored?",
+      "What treatment is available?",
+      "How is delivery timing decided?",
+      "What matters most",
+      "Related guides"
+    ],
+    "h3s": [
+      "Placental causes",
+      "Maternal factors",
+      "Fetal factors",
+      "Pregnancy factors"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 27,
+    "guideLinks": [
+      "/guides/growth-scan-doppler-pregnancy-fetal-growth-restriction",
+      "/guides/how-often-growth-scans-high-risk-pregnancy",
+      "/guides/why-doppler-scan-during-pregnancy",
+      "/guides/what-is-a-growth-scan-and-when-is-it-done",
+      "/guides/what-does-it-mean-if-baby-is-measuring-small"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "how-often-growth-scans-high-risk-pregnancy",
+    "title": "How Often Should Growth Scans Be Done in a High-Risk",
+    "category": "pregnancy-scans",
+    "relatedService": "growth-scan-doppler",
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Are frequent scans harmful to the baby?",
+        "w": 12
+      },
+      {
+        "q": "Can scans be skipped if I feel the baby moving?",
+        "w": 12
+      },
+      {
+        "q": "How often are growth scans done in twins?",
+        "w": 15
+      },
+      {
+        "q": "What if the baby's growth slows down?",
+        "w": 11
+      },
+      {
+        "q": "Do I need a Doppler every time?",
+        "w": 14
+      },
+      {
+        "q": "Who decides the schedule?",
+        "w": 6
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/why-doppler-scan-during-pregnancy",
+      "/guides/growth-scan-doppler-pregnancy-fetal-growth-restriction",
+      "/guides/what-does-it-mean-if-baby-is-measuring-small",
+      "/guides/what-is-a-growth-scan-and-when-is-it-done",
+      "/guides/what-makes-a-pregnancy-high-risk"
+    ],
+    "h2s": [
+      "Why repeat scans are needed",
+      "Common situations and typical approaches",
+      "What else is checked",
+      "What you can do",
+      "If you remember one thing",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 13,
+    "guideLinks": [
+      "/guides/why-doppler-scan-during-pregnancy",
+      "/guides/growth-scan-doppler-pregnancy-fetal-growth-restriction",
+      "/guides/what-does-it-mean-if-baby-is-measuring-small",
+      "/guides/what-is-a-growth-scan-and-when-is-it-done",
+      "/guides/what-makes-a-pregnancy-high-risk"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "what-makes-a-pregnancy-high-risk",
+    "title": "What Makes a Pregnancy High Risk?",
+    "category": "twins-and-high-risk",
+    "relatedService": null,
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Does high risk mean I will lose the baby?",
+        "w": 10
+      },
+      {
+        "q": "Is being over 35 always high risk?",
+        "w": 15
+      },
+      {
+        "q": "Are twins always high risk?",
+        "w": 12
+      },
+      {
+        "q": "Can a normal pregnancy become high risk later?",
+        "w": 10
+      },
+      {
+        "q": "Do I need a special doctor?",
+        "w": 11
+      },
+      {
+        "q": "Can I have a normal delivery in a high-risk pregnancy?",
+        "w": 13
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/high-risk-pregnancy-fetal-medicine-specialist",
+      "/guides/when-to-see-a-fetal-medicine-specialist",
+      "/guides/high-risk-pregnancy-extra-scans-and-tests",
+      "/guides/how-often-growth-scans-high-risk-pregnancy",
+      "/guides/what-is-a-growth-scan-and-when-is-it-done"
+    ],
+    "h2s": [
+      "Reasons related to the mother",
+      "Reasons from past pregnancies",
+      "Reasons in the current pregnancy",
+      "What extra care looks like",
+      "What you can do",
+      "Putting it together",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 14,
+    "guideLinks": [
+      "/guides/high-risk-pregnancy-fetal-medicine-specialist",
+      "/guides/when-to-see-a-fetal-medicine-specialist",
+      "/guides/high-risk-pregnancy-extra-scans-and-tests",
+      "/guides/how-often-growth-scans-high-risk-pregnancy",
+      "/guides/what-is-a-growth-scan-and-when-is-it-done"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "when-to-see-a-fetal-medicine-specialist",
+    "title": "When Should You See a Fetal Medicine Specialist?",
+    "category": "twins-and-high-risk",
+    "relatedService": "second-opinion-scan",
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Is a fetal medicine specialist the same as a gynaecologist?",
+        "w": 13
+      },
+      {
+        "q": "Do I need a referral?",
+        "w": 8
+      },
+      {
+        "q": "Should every pregnant woman see one?",
+        "w": 11
+      },
+      {
+        "q": "When is the best time for a first visit?",
+        "w": 17
+      },
+      {
+        "q": "Will I need to change my regular doctor?",
+        "w": 8
+      },
+      {
+        "q": "What if the scan is normal?",
+        "w": 9
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/high-risk-pregnancy-fetal-medicine-specialist",
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "/guides/what-is-fetal-echo-and-when-is-it-done",
+      "/guides/high-risk-pregnancy-extra-scans-and-tests",
+      "/guides/what-makes-a-pregnancy-high-risk"
+    ],
+    "h2s": [
+      "What does a fetal medicine specialist do?",
+      "Situations where a visit is helpful",
+      "Key scans often done by fetal medicine specialists",
+      "What to bring to the visit",
+      "Is a Referral Needed?",
+      "The essentials",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 14,
+    "guideLinks": [
+      "/guides/high-risk-pregnancy-fetal-medicine-specialist",
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome",
+      "/guides/what-is-fetal-echo-and-when-is-it-done",
+      "/guides/high-risk-pregnancy-extra-scans-and-tests",
+      "/guides/what-makes-a-pregnancy-high-risk"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "high-risk-pregnancy-extra-scans-and-tests",
+    "title": "High-Risk Pregnancy: What Extra Scans and Tests Can You",
+    "category": "twins-and-high-risk",
+    "relatedService": null,
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Are extra scans safe for the baby?",
+        "w": 9
+      },
+      {
+        "q": "How many scans will I have?",
+        "w": 10
+      },
+      {
+        "q": "What is a non-stress test?",
+        "w": 17
+      },
+      {
+        "q": "Will I need amniocentesis?",
+        "w": 8
+      },
+      {
+        "q": "Can I go home after the tests?",
+        "w": 7
+      },
+      {
+        "q": "What if a test result is abnormal?",
+        "w": 13
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/why-doppler-scan-during-pregnancy",
+      "/guides/high-risk-pregnancy-fetal-medicine-specialist",
+      "/guides/pregnancy-after-ivf-extra-monitoring",
+      "/guides/what-makes-a-pregnancy-high-risk",
+      "/guides/when-to-see-a-fetal-medicine-specialist"
+    ],
+    "h2s": [
+      "Extra Scans",
+      "Extra blood and other tests",
+      "Monitoring the Baby",
+      "Planning the Delivery",
+      "Tips for going through extra tests",
+      "What to do next",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 14,
+    "guideLinks": [
+      "/guides/why-doppler-scan-during-pregnancy",
+      "/guides/high-risk-pregnancy-fetal-medicine-specialist",
+      "/guides/pregnancy-after-ivf-extra-monitoring",
+      "/guides/what-makes-a-pregnancy-high-risk",
+      "/guides/when-to-see-a-fetal-medicine-specialist"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "pregnancy-after-ivf-extra-monitoring",
+    "title": "Pregnancy After IVF: What Extra Monitoring Is Needed?",
+    "category": "twins-and-high-risk",
+    "relatedService": null,
+    "faqCount": 5,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Is an IVF pregnancy high risk?",
+        "w": 25
+      },
+      {
+        "q": "What extra scans are needed after IVF?",
+        "w": 27
+      },
+      {
+        "q": "Can NIPT be done in IVF pregnancies?",
+        "w": 24
+      },
+      {
+        "q": "Do IVF babies have more heart problems?",
+        "w": 26
+      },
+      {
+        "q": "Should I take aspirin during an IVF pregnancy?",
+        "w": 25
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/high-risk-pregnancy-fetal-medicine-specialist",
+      "/guides/diabetes-and-pregnancy-baby-extra-monitoring",
+      "/guides/why-doctor-recommends-fetal-echocardiogram",
+      "/guides/what-makes-a-pregnancy-high-risk"
+    ],
+    "h2s": [
+      "Why might IVF pregnancies need more monitoring?",
+      "What early scans are done?",
+      "Which screening tests are recommended?",
+      "What monitoring happens later in pregnancy?",
+      "How are IVF twins monitored?",
+      "When should you seek urgent help?",
+      "The short version",
+      "Related guides"
+    ],
+    "h3s": [
+      "First-trimester screening",
+      "Preeclampsia screening",
+      "Anomaly scan",
+      "Fetal echocardiography"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 24,
+    "guideLinks": [
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/high-risk-pregnancy-fetal-medicine-specialist",
+      "/guides/diabetes-and-pregnancy-baby-extra-monitoring",
+      "/guides/why-doctor-recommends-fetal-echocardiogram",
+      "/guides/what-makes-a-pregnancy-high-risk"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "diabetes-and-pregnancy-baby-extra-monitoring",
+    "title": "Diabetes and Pregnancy: When Baby Needs Extra Monitoring",
+    "category": "twins-and-high-risk",
+    "relatedService": "growth-scan-doppler",
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Does diabetes affect the baby in pregnancy?",
+        "w": 30
+      },
+      {
+        "q": "Do I need a fetal echo if I have diabetes?",
+        "w": 39
+      },
+      {
+        "q": "How often are growth scans done in diabetic pregnancy?",
+        "w": 28
+      },
+      {
+        "q": "Is normal delivery possible with diabetes?",
+        "w": 32
+      },
+      {
+        "q": "When is the baby delivered in gestational diabetes?",
+        "w": 24
+      },
+      {
+        "q": "Will my baby have diabetes?",
+        "w": 37
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/high-risk-pregnancy-fetal-medicine-specialist",
+      "/guides/why-doppler-scan-during-pregnancy",
+      "/guides/what-makes-a-pregnancy-high-risk",
+      "/guides/fetal-echo-vs-anomaly-scan-difference",
+      "/guides/fetal-growth-restriction-causes-monitoring-treatment"
+    ],
+    "h2s": [
+      "Which types of diabetes need extra monitoring?",
+      "How can diabetes affect the baby?",
+      "What scans and checks are used?",
+      "How does good sugar control help?",
+      "When should delivery be planned?",
+      "What happens after birth?",
+      "When should you call your doctor?",
+      "Keeping it simple",
+      "Related guides"
+    ],
+    "h3s": [
+      "1. Early dating scan",
+      "2. Nuchal translucency and first-trimester screening",
+      "3. Detailed anomaly scan (18 to 22 weeks)",
+      "4. Fetal echocardiography",
+      "5. Growth scans",
+      "6. Doppler studies",
+      "7. Kick counts and cardiotocography (CTG)"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 33,
+    "guideLinks": [
+      "/guides/high-risk-pregnancy-fetal-medicine-specialist",
+      "/guides/why-doppler-scan-during-pregnancy",
+      "/guides/what-makes-a-pregnancy-high-risk",
+      "/guides/fetal-echo-vs-anomaly-scan-difference",
+      "/guides/fetal-growth-restriction-causes-monitoring-treatment"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "how-many-miscarriages-recurrent-pregnancy-loss",
+    "title": "How Many Miscarriages Count as Recurrent Pregnancy Loss?",
+    "category": "pregnancy-loss",
+    "relatedService": "recurrent-miscarriages-clinic",
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "How many miscarriages are considered recurrent?",
+        "w": 30
+      },
+      {
+        "q": "Should I wait for a third miscarriage before testing?",
+        "w": 20
+      },
+      {
+        "q": "Is recurrent miscarriage my fault?",
+        "w": 30
+      },
+      {
+        "q": "What are the chances of a healthy pregnancy after two or thr",
+        "w": 31
+      },
+      {
+        "q": "Does a biochemical pregnancy count as a miscarriage?",
+        "w": 32
+      },
+      {
+        "q": "When should both partners be tested?",
+        "w": 26
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/recurrent-miscarriage-causes-tests-treatment",
+      "/guides/pregnancy-after-recurrent-miscarriage-monitoring",
+      "/guides/tests-after-repeated-miscarriages",
+      "/guides/can-genetic-problems-cause-recurrent-miscarriage",
+      "/guides/before-trying-to-conceive-after-miscarriage"
+    ],
+    "h2s": [
+      "How common is miscarriage?",
+      "How do guidelines define it?",
+      "Does the number need to be consecutive?",
+      "Which losses count?",
+      "When should you see a doctor?",
+      "What happens at the first visit?",
+      "What should you avoid believing?",
+      "Looking after your emotional health",
+      "The part to remember",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 25,
+    "guideLinks": [
+      "/guides/recurrent-miscarriage-causes-tests-treatment",
+      "/guides/pregnancy-after-recurrent-miscarriage-monitoring",
+      "/guides/tests-after-repeated-miscarriages",
+      "/guides/can-genetic-problems-cause-recurrent-miscarriage",
+      "/guides/before-trying-to-conceive-after-miscarriage"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "tests-after-repeated-miscarriages",
+    "title": "What Tests Are Done After Repeated Miscarriages?",
+    "category": "pregnancy-loss",
+    "relatedService": "recurrent-miscarriages-clinic",
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "What tests should be done after two miscarriages?",
+        "w": 29
+      },
+      {
+        "q": "Is genetic testing needed after repeated miscarriage?",
+        "w": 27
+      },
+      {
+        "q": "Which blood tests are done for recurrent miscarriage?",
+        "w": 24
+      },
+      {
+        "q": "Is hysteroscopy needed after repeated miscarriages?",
+        "w": 34
+      },
+      {
+        "q": "Should my husband be tested too?",
+        "w": 29
+      },
+      {
+        "q": "Are NK cell tests useful?",
+        "w": 27
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/recurrent-miscarriage-causes-tests-treatment",
+      "/guides/pregnancy-after-recurrent-miscarriage-monitoring",
+      "/guides/can-genetic-problems-cause-recurrent-miscarriage",
+      "/guides/how-many-miscarriages-recurrent-pregnancy-loss",
+      "/guides/before-trying-to-conceive-after-miscarriage"
+    ],
+    "h2s": [
+      "Why is testing done?",
+      "What tests are recommended?",
+      "Which tests are not routinely recommended?",
+      "How are results used?",
+      "What is the best time to test?",
+      "What should you bring?",
+      "When should you see a doctor?",
+      "What this means for you",
+      "Related guides"
+    ],
+    "h3s": [
+      "1. Antiphospholipid antibodies",
+      "2. Uterine assessment",
+      "3. Genetic tests",
+      "4. Hormone and metabolic tests",
+      "5. Other tests",
+      "6. Male partner tests"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 33,
+    "guideLinks": [
+      "/guides/recurrent-miscarriage-causes-tests-treatment",
+      "/guides/pregnancy-after-recurrent-miscarriage-monitoring",
+      "/guides/can-genetic-problems-cause-recurrent-miscarriage",
+      "/guides/how-many-miscarriages-recurrent-pregnancy-loss",
+      "/guides/before-trying-to-conceive-after-miscarriage"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "can-genetic-problems-cause-recurrent-miscarriage",
+    "title": "Can Genetic Problems Cause Recurrent Miscarriage?",
+    "category": "pregnancy-loss",
+    "relatedService": "genetic-counselling",
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Can genetic problems cause repeated miscarriages?",
+        "w": 31
+      },
+      {
+        "q": "How common is a balanced translocation in recurrent miscarri",
+        "w": 31
+      },
+      {
+        "q": "Is karyotyping needed for every couple with miscarriages?",
+        "w": 27
+      },
+      {
+        "q": "Can miscarriage tissue be tested?",
+        "w": 33
+      },
+      {
+        "q": "Will IVF with genetic testing prevent miscarriage?",
+        "w": 27
+      },
+      {
+        "q": "Is the next pregnancy likely to be normal if the last miscar",
+        "w": 23
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/recurrent-miscarriage-causes-tests-treatment",
+      "/guides/before-trying-to-conceive-after-miscarriage",
+      "/guides/how-many-miscarriages-recurrent-pregnancy-loss",
+      "/guides/tests-after-repeated-miscarriages",
+      "/guides/pregnancy-after-recurrent-miscarriage-monitoring"
+    ],
+    "h2s": [
+      "How do chromosomes cause miscarriage?",
+      "Two types of genetic causes",
+      "How Common Is It?",
+      "Which tests help?",
+      "What happens if a rearrangement is found?",
+      "Does genetic testing of embryos prevent miscarriage?",
+      "Do genes cause all miscarriages?",
+      "What can you do now?",
+      "When should you see a doctor?",
+      "The takeaway",
+      "Related guides"
+    ],
+    "h3s": [
+      "1. Chance errors in the embryo (most common)",
+      "2. Parental chromosomal rearrangement",
+      "Parental karyotype",
+      "Testing the miscarried tissue",
+      "Other genetic tests"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 33,
+    "guideLinks": [
+      "/guides/recurrent-miscarriage-causes-tests-treatment",
+      "/guides/before-trying-to-conceive-after-miscarriage",
+      "/guides/how-many-miscarriages-recurrent-pregnancy-loss",
+      "/guides/tests-after-repeated-miscarriages",
+      "/guides/pregnancy-after-recurrent-miscarriage-monitoring"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "before-trying-to-conceive-after-miscarriage",
+    "title": "Before Trying to Conceive After a Miscarriage",
+    "category": "pregnancy-loss",
+    "relatedService": "recurrent-miscarriages-clinic",
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "How soon can I get pregnant after a miscarriage?",
+        "w": 30
+      },
+      {
+        "q": "Should I take folic acid after a miscarriage?",
+        "w": 23
+      },
+      {
+        "q": "Do I need tests before trying again?",
+        "w": 31
+      },
+      {
+        "q": "Does caffeine or alcohol cause miscarriage?",
+        "w": 29
+      },
+      {
+        "q": "Can stress cause miscarriage?",
+        "w": 22
+      },
+      {
+        "q": "What is the chance of a successful pregnancy after one misca",
+        "w": 30
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/recurrent-miscarriage-causes-tests-treatment",
+      "/guides/pregnancy-after-recurrent-miscarriage-monitoring",
+      "/guides/how-many-miscarriages-recurrent-pregnancy-loss",
+      "/guides/tests-after-repeated-miscarriages",
+      "/guides/how-to-know-when-you-are-ovulating"
+    ],
+    "h2s": [
+      "How long should you wait?",
+      "What medical checks are useful?",
+      "Which supplements help?",
+      "Which lifestyle steps matter?",
+      "What about intercourse and tracking?",
+      "When should you see a specialist first?",
+      "What should you expect in the next pregnancy?",
+      "Emotional Preparation",
+      "Before your appointment",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 23,
+    "guideLinks": [
+      "/guides/recurrent-miscarriage-causes-tests-treatment",
+      "/guides/pregnancy-after-recurrent-miscarriage-monitoring",
+      "/guides/how-many-miscarriages-recurrent-pregnancy-loss",
+      "/guides/tests-after-repeated-miscarriages",
+      "/guides/how-to-know-when-you-are-ovulating"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "pregnancy-after-recurrent-miscarriage-monitoring",
+    "title": "Pregnancy After Recurrent Miscarriage: How It Is Monitored",
+    "category": "pregnancy-loss",
+    "relatedService": "recurrent-miscarriages-clinic",
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "When should I have my first scan after recurrent miscarriage",
+        "w": 32
+      },
+      {
+        "q": "Should I take progesterone in early pregnancy?",
+        "w": 30
+      },
+      {
+        "q": "Do I need bed rest after recurrent miscarriage?",
+        "w": 21
+      },
+      {
+        "q": "What is the chance of a healthy baby after three miscarriage",
+        "w": 20
+      },
+      {
+        "q": "Which injections are used in pregnancy after miscarriage?",
+        "w": 26
+      },
+      {
+        "q": "How can I cope with anxiety in pregnancy after loss?",
+        "w": 26
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/recurrent-miscarriage-causes-tests-treatment",
+      "/guides/how-many-miscarriages-recurrent-pregnancy-loss",
+      "/guides/tests-after-repeated-miscarriages",
+      "/guides/can-genetic-problems-cause-recurrent-miscarriage",
+      "/guides/before-trying-to-conceive-after-miscarriage"
+    ],
+    "h2s": [
+      "What Is the Outlook?",
+      "What happens in the early weeks?",
+      "What scans come later?",
+      "What about bed rest?",
+      "What should you do if you have bleeding or pain?",
+      "How can you look after your mind?",
+      "When should you see a doctor?",
+      "A few things to hold on to",
+      "Related guides"
+    ],
+    "h3s": [
+      "Confirm the pregnancy",
+      "Early scan",
+      "Start treatment promptly"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 29,
+    "guideLinks": [
+      "/guides/recurrent-miscarriage-causes-tests-treatment",
+      "/guides/how-many-miscarriages-recurrent-pregnancy-loss",
+      "/guides/tests-after-repeated-miscarriages",
+      "/guides/can-genetic-problems-cause-recurrent-miscarriage",
+      "/guides/before-trying-to-conceive-after-miscarriage"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "when-can-twins-be-detected-on-ultrasound",
+    "title": "When Can Twins Be Detected on an Ultrasound?",
+    "category": "twins-and-high-risk",
+    "relatedService": "twin-specialised-clinic",
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "What is the earliest week twins can be seen?",
+        "w": 31
+      },
+      {
+        "q": "Can an ultrasound miss twins?",
+        "w": 21
+      },
+      {
+        "q": "What is a vanishing twin?",
+        "w": 28
+      },
+      {
+        "q": "Why is the 11 to 13 week scan important in twins?",
+        "w": 22
+      },
+      {
+        "q": "Do IVF pregnancies have a higher chance of twins?",
+        "w": 21
+      },
+      {
+        "q": "Can a blood test show twins?",
+        "w": 16
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/chorionicity-twin-pregnancy-why-it-matters",
+      "/guides/how-often-scans-twin-pregnancy",
+      "/guides/nipt-in-twin-pregnancy-reliability",
+      "/guides/monochorionic-vs-dichorionic-twins"
+    ],
+    "h2s": [
+      "How early can you see twins?",
+      "Can a twin be missed?",
+      "What is the \"vanishing twin\"?",
+      "Why are the first scans so important?",
+      "What are the signs that suggest twins?",
+      "What happens after twins are confirmed?",
+      "When should you see a doctor?",
+      "What matters most",
+      "Related guides"
+    ],
+    "h3s": [
+      "5 to 6 weeks",
+      "6 to 8 weeks",
+      "8 to 10 weeks",
+      "11 to 13 weeks"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 28,
+    "guideLinks": [
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/chorionicity-twin-pregnancy-why-it-matters",
+      "/guides/how-often-scans-twin-pregnancy",
+      "/guides/nipt-in-twin-pregnancy-reliability",
+      "/guides/monochorionic-vs-dichorionic-twins"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "how-often-scans-twin-pregnancy",
+    "title": "How Often Do You Need Scans in a Twin Pregnancy?",
+    "category": "twins-and-high-risk",
+    "relatedService": "twin-specialised-clinic",
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "How many scans are needed in a twin pregnancy?",
+        "w": 27
+      },
+      {
+        "q": "Why are monochorionic twins scanned every two weeks?",
+        "w": 27
+      },
+      {
+        "q": "Is it safe to have so many scans?",
+        "w": 17
+      },
+      {
+        "q": "What is TTTS?",
+        "w": 25
+      },
+      {
+        "q": "Do twins need a cervical length scan?",
+        "w": 27
+      },
+      {
+        "q": "When will my twins be delivered?",
+        "w": 20
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/chorionicity-twin-pregnancy-why-it-matters",
+      "/guides/twin-pregnancy-complications-doctors-look-for",
+      "/guides/when-can-twins-be-detected-on-ultrasound",
+      "/guides/monochorionic-vs-dichorionic-twins"
+    ],
+    "h2s": [
+      "Why are more scans needed?",
+      "What is the usual schedule?",
+      "What does each scan check?",
+      "What else is needed besides scans?",
+      "What symptoms need urgent review?",
+      "When is delivery planned?",
+      "If you remember one thing",
+      "Related guides"
+    ],
+    "h3s": [
+      "Dichorionic diamniotic twins (separate placentas and sacs)",
+      "Monochorionic diamniotic twins (shared placenta, separate sacs)",
+      "Monochorionic monoamniotic twins (shared placenta and sac)"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 38,
+    "guideLinks": [
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/chorionicity-twin-pregnancy-why-it-matters",
+      "/guides/twin-pregnancy-complications-doctors-look-for",
+      "/guides/when-can-twins-be-detected-on-ultrasound",
+      "/guides/monochorionic-vs-dichorionic-twins"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "chorionicity-twin-pregnancy-why-it-matters",
+    "title": "What Is Chorionicity in Twin Pregnancy and Why It Matters",
+    "category": "twins-and-high-risk",
+    "relatedService": "twin-specialised-clinic",
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Why are monochorionic twins scanned more often?",
+        "w": 38
+      },
+      {
+        "q": "Does chorionicity affect the delivery plan?",
+        "w": 38
+      },
+      {
+        "q": "Is a shared placenta always dangerous?",
+        "w": 34
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/twin-pregnancy-complications-doctors-look-for",
+      "/guides/monochorionic-vs-dichorionic-twins",
+      "/guides/when-can-twins-be-detected-on-ultrasound",
+      "/guides/how-often-scans-twin-pregnancy"
+    ],
+    "h2s": [
+      "What does chorionicity mean?",
+      "How is chorionicity different from zygosity?",
+      "How do doctors find out?",
+      "Why does chorionicity matter?",
+      "What does this mean for your care in Trichy?",
+      "Putting it together",
+      "Related guides"
+    ],
+    "h3s": [
+      "Dichorionic twins",
+      "Monochorionic twins"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 26,
+    "guideLinks": [
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/twin-pregnancy-complications-doctors-look-for",
+      "/guides/monochorionic-vs-dichorionic-twins",
+      "/guides/when-can-twins-be-detected-on-ultrasound",
+      "/guides/how-often-scans-twin-pregnancy"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "monochorionic-vs-dichorionic-twins",
+    "title": "Monochorionic vs Dichorionic Twins: What Is the Difference?",
+    "category": "twins-and-high-risk",
+    "relatedService": "twin-specialised-clinic",
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Are all identical twins monochorionic?",
+        "w": 12
+      },
+      {
+        "q": "Are non-identical twins always dichorionic?",
+        "w": 5
+      },
+      {
+        "q": "Why is the first trimester scan important for twins?",
+        "w": 9
+      },
+      {
+        "q": "What is TTTS?",
+        "w": 13
+      },
+      {
+        "q": "How often are scans needed in monochorionic twins?",
+        "w": 13
+      },
+      {
+        "q": "Can monochorionic twins be delivered normally?",
+        "w": 13
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/twin-pregnancy-complications-doctors-look-for",
+      "/guides/what-makes-a-pregnancy-high-risk",
+      "/guides/when-to-see-a-fetal-medicine-specialist",
+      "/guides/what-is-a-growth-scan-and-when-is-it-done"
+    ],
+    "h2s": [
+      "What Is Chorionicity?",
+      "Dichorionic Twins",
+      "Monochorionic Twins",
+      "Extra risks in monochorionic twins",
+      "How care differs",
+      "The essentials",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 14,
+    "guideLinks": [
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/twin-pregnancy-complications-doctors-look-for",
+      "/guides/what-makes-a-pregnancy-high-risk",
+      "/guides/when-to-see-a-fetal-medicine-specialist",
+      "/guides/what-is-a-growth-scan-and-when-is-it-done"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "twin-pregnancy-complications-doctors-look-for",
+    "title": "Twin Pregnancy Complications Doctors Look For",
+    "category": "twins-and-high-risk",
+    "relatedService": "twin-specialised-clinic",
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Are twin pregnancies always high risk?",
+        "w": 39
+      },
+      {
+        "q": "Can I have a normal delivery with twins?",
+        "w": 37
+      },
+      {
+        "q": "What is the most serious complication in twins?",
+        "w": 34
+      },
+      {
+        "q": "How often will I need scans?",
+        "w": 33
+      },
+      {
+        "q": "Does bed rest prevent preterm birth in twins?",
+        "w": 36
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/when-can-twins-be-detected-on-ultrasound",
+      "/guides/chorionicity-twin-pregnancy-why-it-matters",
+      "/guides/how-often-scans-twin-pregnancy",
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome"
+    ],
+    "h2s": [
+      "Why do twins need extra monitoring?",
+      "What are the common complications?",
+      "Which warning signs need urgent attention?",
+      "How can you lower your risk?",
+      "What to do next",
+      "Related guides"
+    ],
+    "h3s": [
+      "Preterm birth",
+      "Uneven growth",
+      "Twin-to-twin transfusion syndrome (TTTS)",
+      "High blood pressure and pre-eclampsia",
+      "Gestational diabetes",
+      "Anemia",
+      "Low fluid or excess fluid"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 28,
+    "guideLinks": [
+      "/guides/twin-pregnancy-scans-risks-monitoring",
+      "/guides/when-can-twins-be-detected-on-ultrasound",
+      "/guides/chorionicity-twin-pregnancy-why-it-matters",
+      "/guides/how-often-scans-twin-pregnancy",
+      "/guides/nt-scan-pregnancy-timing-normal-range-down-syndrome"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "fertility-tests-for-women-before-treatment",
+    "title": "Fertility Tests for Women Before Starting Treatment",
+    "category": "fertility-and-planning",
+    "relatedService": null,
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "What is the first fertility test for a woman?",
+        "w": 38
+      },
+      {
+        "q": "Are fertility tests painful?",
+        "w": 38
+      },
+      {
+        "q": "On which day of the cycle are fertility tests done?",
+        "w": 38
+      },
+      {
+        "q": "Can fertility tests be done during periods?",
+        "w": 35
+      },
+      {
+        "q": "How much does a basic fertility work-up cost?",
+        "w": 36
+      },
+      {
+        "q": "Should my husband be tested too?",
+        "w": 29
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/fertility-testing-for-couples",
+      "/guides/male-fertility-tests-semen-analysis",
+      "/guides/follicular-monitoring-ovulation-scan",
+      "/guides/how-to-know-when-you-are-ovulating",
+      "/guides/when-to-see-fertility-specialist-pcos"
+    ],
+    "h2s": [
+      "When should you start testing?",
+      "Which tests are done first?",
+      "How do you prepare?",
+      "What do results mean?",
+      "The short version",
+      "Related guides"
+    ],
+    "h3s": [
+      "History and examination",
+      "Pelvic ultrasound",
+      "Hormone blood tests",
+      "Tubal check",
+      "Other tests when needed"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 25,
+    "guideLinks": [
+      "/guides/fertility-testing-for-couples",
+      "/guides/male-fertility-tests-semen-analysis",
+      "/guides/follicular-monitoring-ovulation-scan",
+      "/guides/how-to-know-when-you-are-ovulating",
+      "/guides/when-to-see-fertility-specialist-pcos"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "male-fertility-tests-semen-analysis",
+    "title": "Male Fertility Tests: What a Man Should Have Done",
+    "category": "fertility-and-planning",
+    "relatedService": null,
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "How long should a man avoid ejaculation before a semen test?",
+        "w": 38
+      },
+      {
+        "q": "Is one abnormal semen report enough to diagnose infertility?",
+        "w": 33
+      },
+      {
+        "q": "Can a man with a low sperm count still father a child?",
+        "w": 38
+      },
+      {
+        "q": "What lifestyle changes help sperm health?",
+        "w": 37
+      },
+      {
+        "q": "What is a varicocele?",
+        "w": 39
+      },
+      {
+        "q": "Do men need a hormone test too?",
+        "w": 34
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/fertility-testing-for-couples",
+      "/guides/what-is-amh-fertility-test",
+      "/guides/fertility-tests-for-women-before-treatment",
+      "/guides/how-to-know-when-you-are-ovulating",
+      "/guides/follicular-monitoring-ovulation-scan"
+    ],
+    "h2s": [
+      "Why should the man be tested?",
+      "What is semen analysis?",
+      "How do you prepare for it?",
+      "What other tests may be needed?",
+      "What can affect sperm health?",
+      "Keeping it simple",
+      "Related guides"
+    ],
+    "h3s": [
+      "Hormone tests",
+      "Physical examination",
+      "Scrotal ultrasound",
+      "Genetic and advanced tests"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 24,
+    "guideLinks": [
+      "/guides/fertility-testing-for-couples",
+      "/guides/what-is-amh-fertility-test",
+      "/guides/fertility-tests-for-women-before-treatment",
+      "/guides/how-to-know-when-you-are-ovulating",
+      "/guides/follicular-monitoring-ovulation-scan"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "what-is-amh-fertility-test",
+    "title": "What Is AMH and What Does It Say About Fertility?",
+    "category": "fertility-and-planning",
+    "relatedService": null,
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "What is a normal AMH level?",
+        "w": 38
+      },
+      {
+        "q": "Does low AMH mean early menopause?",
+        "w": 36
+      },
+      {
+        "q": "Can I get pregnant naturally with low AMH?",
+        "w": 36
+      },
+      {
+        "q": "Why is AMH high in PCOS?",
+        "w": 38
+      },
+      {
+        "q": "Do I need to fast for an AMH test?",
+        "w": 35
+      },
+      {
+        "q": "Can AMH improve with treatment?",
+        "w": 36
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/fertility-testing-for-couples",
+      "/guides/pcos-and-pregnancy",
+      "/guides/low-amh-vs-pcos-difference",
+      "/guides/follicular-monitoring-ovulation-scan",
+      "/guides/fertility-tests-for-women-before-treatment"
+    ],
+    "h2s": [
+      "What does AMH measure?",
+      "When is the AMH test done?",
+      "What does a low AMH mean?",
+      "What does a high AMH mean?",
+      "What AMH cannot tell you",
+      "What else is checked along with AMH?",
+      "Can you improve your AMH?",
+      "The part to remember",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 22,
+    "guideLinks": [
+      "/guides/fertility-testing-for-couples",
+      "/guides/pcos-and-pregnancy",
+      "/guides/low-amh-vs-pcos-difference",
+      "/guides/follicular-monitoring-ovulation-scan",
+      "/guides/fertility-tests-for-women-before-treatment"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "follicular-monitoring-ovulation-scan",
+    "title": "Follicular Monitoring: How It Helps You Conceive",
+    "category": "fertility-and-planning",
+    "relatedService": null,
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Is follicular monitoring painful?",
+        "w": 38
+      },
+      {
+        "q": "On which day does follicular monitoring start?",
+        "w": 36
+      },
+      {
+        "q": "How many scans are needed in one cycle?",
+        "w": 34
+      },
+      {
+        "q": "What size should a follicle be before ovulation?",
+        "w": 39
+      },
+      {
+        "q": "Can follicular monitoring increase the chance of pregnancy?",
+        "w": 34
+      },
+      {
+        "q": "Is follicular monitoring safe to repeat every month?",
+        "w": 28
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/how-to-know-when-you-are-ovulating",
+      "/guides/pcos-and-pregnancy",
+      "/guides/fertility-testing-for-couples",
+      "/guides/fertility-tests-for-women-before-treatment",
+      "/guides/get-pregnant-naturally-with-pcos"
+    ],
+    "h2s": [
+      "What Is a Follicle?",
+      "How is follicular monitoring done?",
+      "Who benefits from it?",
+      "How does it help you conceive?",
+      "Can a trigger injection be used?",
+      "Is it better than ovulation kits?",
+      "What this means for you",
+      "Related guides"
+    ],
+    "h3s": [],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 22,
+    "guideLinks": [
+      "/guides/how-to-know-when-you-are-ovulating",
+      "/guides/pcos-and-pregnancy",
+      "/guides/fertility-testing-for-couples",
+      "/guides/fertility-tests-for-women-before-treatment",
+      "/guides/get-pregnant-naturally-with-pcos"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  },
+  {
+    "slug": "how-to-know-when-you-are-ovulating",
+    "title": "How Do You Know When You Are Ovulating?",
+    "category": "fertility-and-planning",
+    "relatedService": null,
+    "faqCount": 6,
+    "faqAnswersOutOf40to60": [
+      {
+        "q": "Can you have a period without ovulating?",
+        "w": 35
+      },
+      {
+        "q": "Are ovulation apps accurate?",
+        "w": 37
+      },
+      {
+        "q": "How long does the fertile window last?",
+        "w": 34
+      },
+      {
+        "q": "Why do LH kits not work well in PCOS?",
+        "w": 37
+      },
+      {
+        "q": "When should I see a doctor about ovulation?",
+        "w": 39
+      }
+    ],
+    "quickAnswer": true,
+    "sourcesCount": 2,
+    "hasRelatedGuidesBlock": false,
+    "internalBodyLinks": [
+      "/guides/follicular-monitoring-ovulation-scan",
+      "/guides/pcos-and-pregnancy",
+      "/guides/fertility-testing-for-couples",
+      "/guides/fertility-tests-for-women-before-treatment",
+      "/guides/get-pregnant-naturally-with-pcos"
+    ],
+    "h2s": [
+      "What Is Ovulation?",
+      "When does ovulation happen?",
+      "What are the body signs of ovulation?",
+      "Which tests can confirm ovulation?",
+      "When is home tracking not enough?",
+      "The takeaway",
+      "Related guides"
+    ],
+    "h3s": [
+      "Cervical mucus changes",
+      "Basal body temperature",
+      "Mild pelvic pain",
+      "Other signs"
+    ],
+    "bannedHits": [],
+    "emDash": 0,
+    "finalThoughts": false,
+    "titleCaseH2": [],
+    "inr": false,
+    "tables": 0,
+    "blocks": 23,
+    "guideLinks": [
+      "/guides/follicular-monitoring-ovulation-scan",
+      "/guides/pcos-and-pregnancy",
+      "/guides/fertility-testing-for-couples",
+      "/guides/fertility-tests-for-women-before-treatment",
+      "/guides/get-pregnant-naturally-with-pcos"
+    ],
+    "serviceLinks": [],
+    "doctorLinks": []
+  }
+]

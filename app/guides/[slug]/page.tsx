@@ -72,7 +72,6 @@ export async function generateMetadata({
       type: "article",
       publishedTime: guide.publishedAt,
       modifiedTime: guide.updatedAt ?? guide.publishedAt,
-      images: [`${site.url}${guide.coverImage.src}`],
     },
   };
 }
