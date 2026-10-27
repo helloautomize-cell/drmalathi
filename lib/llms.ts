@@ -58,7 +58,7 @@ const usualWindow = (s: Service): string | null => {
 const absolutize = (text: string) => text.replaceAll("](/", `](${U}/`);
 
 const doctorLine = (d: (typeof doctors)[number]) =>
-  `${d.name}, ${d.role}; ${d.qualifications.join(", ")}`;
+  `${d.name}, ${d.role}${d.qualifications.length ? `; ${d.qualifications.join(", ")}` : ""}`;
 
 function header(): string {
   const doctorList = doctors.map(doctorLine).join("; ");
@@ -95,7 +95,7 @@ export function buildLlmsTxt(): string {
 
   const doctorLines = doctors
     .filter((d) => d.hasProfile)
-    .map((d) => `- [${d.name}](${U}/doctors/${d.slug}): ${d.role}; ${d.qualifications.join(", ")}.`);
+    .map((d) => `- [${d.name}](${U}/doctors/${d.slug}): ${d.role}${d.qualifications.length ? `; ${d.qualifications.join(", ")}` : ""}.`);
 
   const guideLines = reviewedGuides().map((g) => {
     const review = reviewedLine(g);
@@ -231,7 +231,9 @@ function servicePage(s: Service): string {
 }
 
 function doctorPage(d: (typeof doctors)[number]): string {
-  const parts: string[] = [`${d.role}. ${d.qualifications.join(", ")}.`];
+  const parts: string[] = [
+    `${d.role}.${d.qualifications.length ? ` ${d.qualifications.join(", ")}.` : ""}`,
+  ];
   if (d.highlights.length) parts.push(`## Highlights\n\n${list(d.highlights)}`);
   if (d.trainedAt.length) parts.push(`## Trained at\n\n${list(d.trainedAt)}`);
   if (d.expertise.length)

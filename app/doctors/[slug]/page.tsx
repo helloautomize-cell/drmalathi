@@ -32,7 +32,7 @@ export async function generateMetadata({
   const doctor = doctors.find((item) => item.slug === slug && item.hasProfile);
   if (!doctor) return {};
   return {
-    title: `${doctor.name}, Fetal Medicine Specialist`,
+    title: doctor.seoTitle ?? `${doctor.name}, Fetal Medicine Specialist`,
     description:
       doctor.seoDescription ??
       `${doctor.name}, ${doctor.role} at ${site.name}. ${doctor.qualifications.join(", ")}.`,
@@ -115,9 +115,11 @@ export default async function DoctorDetailPage({
                 }
               />
             </div>
-            <p className="mt-5 text-center text-sm font-semibold text-plum">
-              {doctor.qualifications.join(" · ")}
-            </p>
+            {doctor.qualifications.length ? (
+              <p className="mt-5 text-center text-sm font-semibold text-plum">
+                {doctor.qualifications.join(" · ")}
+              </p>
+            ) : null}
           </div>
 
           <div className="flex flex-col">

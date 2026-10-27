@@ -20,7 +20,7 @@ import {
 export const metadata: Metadata = {
   title: "Our Fetal Medicine Specialists in Trichy",
   description:
-    "Meet the fetal medicine specialists at Trichy Fetal Medicine and Fertility Centre: Dr Malathi G. Prasad, Dr Revathy Chandrasekharan, and Dr Nivethitha.",
+    "Meet the fetal medicine specialists at Trichy Fetal Medicine and Fertility Centre: Dr Malathi G. Prasad, Dr Revathy Chandrasekharan, Dr Nivethitha, and Dr Shriharini SG.",
   alternates: { canonical: "/doctors" },
 };
 

@@ -143,3 +143,13 @@ Conventions: "patients" not "cases"; plain language; Indian English.
 5. Languages you consult in?
 6. Memberships/roles we may list?
 7. One paragraph: what you want a patient to feel after meeting you?
+
+### Dr Shriharini SG
+
+1. Full list of degrees and fellowships, with institutions and years?
+2. NMC/State Council registration number we may print?
+3. Confirm the role line "Consultant in Fetal Medicine" is the title you want on the site?
+4. Fellowship or observership posts before joining the centre?
+5. Languages you consult in?
+6. Memberships/roles we may list?
+7. One paragraph: what you want a patient to feel after meeting you?

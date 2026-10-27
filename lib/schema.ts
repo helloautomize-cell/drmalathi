@@ -175,10 +175,14 @@ export function personNode(doctor: DoctorRecord) {
           })),
         }
       : {}),
-    hasCredential: doctor.qualifications.map((qualification) => ({
-      "@type": "EducationalOccupationalCredential",
-      name: qualification,
-    })),
+    ...(doctor.qualifications.length
+      ? {
+          hasCredential: doctor.qualifications.map((qualification) => ({
+            "@type": "EducationalOccupationalCredential",
+            name: qualification,
+          })),
+        }
+      : {}),
     ...(doctor.expertise.length
       ? { knowsAbout: doctor.expertise.map((e) => e.label) }
       : {}),

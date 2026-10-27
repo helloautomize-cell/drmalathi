@@ -57,6 +57,9 @@ export type Doctor = {
   lastModified: string;
   /** Meta description, 140 to 155 characters. */
   seoDescription?: string;
+  /** Meta title when the default "<name>, Fetal Medicine Specialist" does not
+      fit; rendered via the sitewide "| FMC Trichy" template. */
+  seoTitle?: string;
 };
 
 export const doctors: Doctor[] = [
@@ -162,5 +165,39 @@ export const doctors: Doctor[] = [
     trainingPosts: [],
     clinicalFocus: [],
     patientNote: null,
+  },
+  {
+    slug: "dr-shriharini-sg",
+    lastModified: "2026-10-27",
+    seoTitle: "Dr Shriharini SG, Consultant in Fetal Medicine",
+    seoDescription:
+      "Dr Shriharini SG, Consultant in Fetal Medicine in Trichy. Fetal imaging, prenatal screening and diagnosis of fetal structural and cardiac abnormalities.",
+    name: "Dr Shriharini SG",
+    role: "Consultant in Fetal Medicine",
+    // TODO: add qualifications when the client sends them
+    qualifications: [],
+    highlights: [],
+    trainedAt: [],
+    expertise: [
+      { label: "Fetal imaging" },
+      { label: "Prenatal screening", serviceSlug: "downs-screening-oscar" },
+      { label: "Fetal anomaly diagnosis", serviceSlug: "anomaly-scan" },
+      { label: "Fetal heart assessment", serviceSlug: "fetal-echo" },
+    ],
+    photo: "/images/doctors/shriharini-cutout.webp",
+    photoFocus: { x: 50, y: 34 },
+    photoAlt: "Dr Shriharini SG, Consultant in Fetal Medicine",
+    hasProfile: true,
+    registration: null,
+    experienceSinceYear: null,
+    languages: [],
+    memberships: [],
+    qualificationsDetailed: [],
+    trainingPosts: [],
+    clinicalFocus: [],
+    patientNote: null,
+    background: [
+      "Dr Shriharini SG provides expert care in fetal imaging, prenatal screening, and the diagnosis of fetal structural and cardiac abnormalities. She delivers evidence-based fetal assessments and personalised counselling, supporting expectant parents with clarity, compassion, and confidence throughout pregnancy.",
+    ],
   },
 ];

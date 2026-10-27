@@ -26,7 +26,7 @@ const ROUTES = [
   "/services/genetic-counselling", "/services/fetal-postmortem",
   "/services/recurrent-miscarriages-clinic", "/services/twin-specialised-clinic",
   "/doctors", "/doctors/dr-malathi-g-prasad",
-  "/doctors/dr-revathy-chandrasekharan",
+  "/doctors/dr-revathy-chandrasekharan", "/doctors/dr-shriharini-sg",
   "/fellowship", "/cme-activities", "/gallery", "/contact", "/faq",
   "/international-patients",
   "/privacy", "/terms",

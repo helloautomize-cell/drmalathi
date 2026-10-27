@@ -50,9 +50,11 @@ export function DoctorCard({
         {doctor.roleIsPlaceholder && !showPending ? null : (
           <p className="mt-1.5 text-sm text-muted-foreground">{doctor.role}</p>
         )}
-        <p className="mt-3 text-sm font-semibold text-plum">
-          {doctor.qualifications.join(" · ")}
-        </p>
+        {doctor.qualifications.length ? (
+          <p className="mt-3 text-sm font-semibold text-plum">
+            {doctor.qualifications.join(" · ")}
+          </p>
+        ) : null}
         <div className="mt-auto flex flex-wrap items-center gap-3 pt-5">
           <BookingCta
             source="doctor-card"

@@ -59,6 +59,7 @@ export const emptyBookingValues: BookingValues = {
 export const BOOK_DOCTOR_SLUGS = [
   "dr-malathi-g-prasad",
   "dr-revathy-chandrasekharan",
+  "dr-shriharini-sg",
 ];
 
 /** One option list for service and doctor, identical on every surface. */

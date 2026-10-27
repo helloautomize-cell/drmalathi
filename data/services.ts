@@ -167,7 +167,7 @@ const serviceList: Service[] = [
     ],
     reportAndNextSteps:
       "You receive your report in the same visit. If all is well, the usual next step is OSCAR screening between 11 and 14 weeks. If anything needs a closer look, the specialist explains your options calmly.",
-    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan"],
+    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan", "dr-shriharini-sg"],
     faqs: [
       {
         question: "Is the scan internal or over the tummy?",
@@ -230,7 +230,7 @@ const serviceList: Service[] = [
     ],
     reportAndNextSteps:
       "Your combined result is explained in the same visit. If the chance is low, the usual next step is the anomaly scan between 18 and 22 weeks. If the chance is higher, our in-house counselling helps you understand options such as NIPT or diagnostic testing.",
-    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan"],
+    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan", "dr-shriharini-sg"],
     faqs: [
       {
         question: "Is OSCAR a diagnosis?",
@@ -293,7 +293,7 @@ const serviceList: Service[] = [
     ],
     reportAndNextSteps:
       "You receive a detailed report in the same visit. Even when everything looks normal, the anomaly scan between 18 and 22 weeks is still recommended because some structures are best seen later.",
-    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan"],
+    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan", "dr-shriharini-sg"],
     faqs: [
       {
         question: "Does this replace the 18 to 22 week anomaly scan?",
@@ -359,7 +359,7 @@ const serviceList: Service[] = [
     ],
     reportAndNextSteps:
       "You receive a detailed report in the same visit. If a finding needs a closer look, our specialists and counsellors explain what it means and what comes next. Growth scans in the third trimester follow if advised.",
-    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan"],
+    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan", "dr-shriharini-sg"],
     faqs: [
       {
         question: "How long does the scan take?",
@@ -423,7 +423,7 @@ const serviceList: Service[] = [
     ],
     reportAndNextSteps:
       "You receive your report in the same visit, with a follow-up interval if one is advised. If growth or blood flow raises a question, the specialist discusses monitoring with you and your obstetrician.",
-    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan"],
+    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan", "dr-shriharini-sg"],
     faqs: [
       {
         question: "How often will I need this scan?",
@@ -486,7 +486,7 @@ const serviceList: Service[] = [
     ],
     reportAndNextSteps:
       "The laboratory sends the result to us and we contact you to explain it. A lower-chance result is usually reassuring news; a higher-chance result is discussed with counselling and the option of diagnostic testing.",
-    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan"],
+    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan", "dr-shriharini-sg"],
     faqs: [
       {
         question: "Is NIPT safe for the baby?",
@@ -551,7 +551,7 @@ const serviceList: Service[] = [
     ],
     reportAndNextSteps:
       "You receive the report in the same visit. When a heart condition is found, we explain what it means and help coordinate care with paediatric cardiology and your obstetrician.",
-    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan"],
+    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan", "dr-shriharini-sg"],
     faqs: [
       {
         question: "Is it different from the anomaly scan?",
@@ -681,7 +681,7 @@ const serviceList: Service[] = [
     ],
     reportAndNextSteps:
       "You leave with a written specialist report and a clear explanation of whether the earlier findings are confirmed or changed, plus the options open to you.",
-    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan"],
+    performedBy: ["dr-malathi-g-prasad", "dr-revathy-chandrasekharan", "dr-shriharini-sg"],
     faqs: [
       {
         question: "What should I bring?",

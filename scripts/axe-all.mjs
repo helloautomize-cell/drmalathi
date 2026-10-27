@@ -37,6 +37,7 @@ const ROUTES = [
   "/doctors",
   "/doctors/dr-malathi-g-prasad",
   "/doctors/dr-revathy-chandrasekharan",
+  "/doctors/dr-shriharini-sg",
   "/gallery",
   "/contact",
   "/faq",

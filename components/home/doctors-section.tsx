@@ -189,9 +189,11 @@ function TeamDoctorCard({ doctor }: { doctor: Doctor }) {
         {doctor.roleIsPlaceholder && !showPending ? null : (
           <p className="mt-1 text-sm text-ink-muted">{doctor.role}</p>
         )}
-        <p className="mt-2 text-xs font-semibold text-plum">
-          {doctor.qualifications.join(" · ")}
-        </p>
+        {doctor.qualifications.length ? (
+          <p className="mt-2 text-xs font-semibold text-plum">
+            {doctor.qualifications.join(" · ")}
+          </p>
+        ) : null}
 
         {doctor.award ? (
           <p className="mt-3 flex gap-2 text-sm font-semibold text-teal">
@@ -294,7 +296,7 @@ export function DoctorsSection() {
             <TeamDoctorMiniCard key={doctor.slug} doctor={doctor} />
           ))}
         />
-        <div className="mt-6 hidden items-stretch gap-6 md:grid lg:grid-cols-2">
+        <div className="mt-6 hidden items-stretch gap-6 md:grid md:grid-cols-2 lg:grid-cols-3">
           {team.map((doctor) => (
             <TeamDoctorCard key={doctor.slug} doctor={doctor} />
           ))}
