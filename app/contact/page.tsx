@@ -314,6 +314,7 @@ export default function ContactPage() {
             <div className="mt-6">
               <a
                 href="#callback-form"
+                data-ga="appointment"
                 className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-primary-hover"
               >
                 Book appointment

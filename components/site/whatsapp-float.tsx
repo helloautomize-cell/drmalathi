@@ -5,6 +5,7 @@ export function WhatsAppFloat() {
   return (
     <aside
       aria-label="WhatsApp contact"
+      data-ga-location="sticky"
       className="fixed right-6 bottom-6 z-40 hidden md:block"
     >
       <a

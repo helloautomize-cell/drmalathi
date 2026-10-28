@@ -2,6 +2,7 @@
 
 import { type FormEvent, useState } from "react";
 import Link from "next/link";
+import { sendGAEvent } from "@next/third-parties/google";
 import { requestCourseEnquiry } from "@/app/actions/appointment";
 import { ContactFallbackPanel } from "@/components/forms/contact-fallback-panel";
 import { Button } from "@/components/ui/button";
@@ -108,6 +109,14 @@ export default function CourseEnquiryDialogContent({
 
       const result = await requestCourseEnquiry(formData);
       if (result.ok) {
+        try {
+          sendGAEvent("event", "appointment_submit", {
+            form_name: "course_enquiry_form",
+            page_path: window.location.pathname,
+          });
+        } catch {
+          // analytics must never break the success flow
+        }
         toast.success(result.message);
         onOpenChange(false);
       } else if (result.deliveryFailed) {

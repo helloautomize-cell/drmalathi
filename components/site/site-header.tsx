@@ -97,7 +97,7 @@ function MobileNav({
 }) {
   return (
     <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
-      <div className="pt-4 pb-3">
+      <div className="pt-4 pb-3" data-ga-location="nav">
         <BookingCta
           source="mobile-nav"
           label="Book appointment"

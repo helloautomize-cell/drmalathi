@@ -6,6 +6,7 @@ export function UtilityBar() {
   return (
     <aside
       aria-label="Clinic contact information"
+      data-ga-location="header"
       className="hidden bg-plum text-white md:block"
     >
       <Container className="flex min-h-10 flex-wrap items-center justify-between gap-x-6 gap-y-1 py-1.5 text-xs">

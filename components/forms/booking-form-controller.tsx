@@ -1,6 +1,7 @@
 "use client";
 
 import { type FormEvent, type ReactNode, useId, useState } from "react";
+import { sendGAEvent } from "@next/third-parties/google";
 import { submitBooking } from "@/lib/booking-action";
 import { ContactFallbackPanel } from "@/components/forms/contact-fallback-panel";
 import {
@@ -110,6 +111,14 @@ export function BookingFormController({
 
       const result = await submitBooking(formData);
       if (result.ok) {
+        try {
+          sendGAEvent("event", "appointment_submit", {
+            form_name: "appointment_form",
+            page_path: window.location.pathname,
+          });
+        } catch {
+          // analytics must never break the success flow
+        }
         setValues({ ...emptyBookingValues });
         setSuccess({ bookingId: result.bookingId, mobile: result.mobile });
       } else if (result.deliveryFailed) {

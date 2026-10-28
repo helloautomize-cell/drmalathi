@@ -14,6 +14,7 @@ export function Hero() {
     <section
       data-section-shell
       data-surface="plum"
+      data-ga-location="hero"
       className="relative overflow-hidden text-white"
       style={{
         background:

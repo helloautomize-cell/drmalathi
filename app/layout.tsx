@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Fraunces, Noto_Sans_Tamil, Nunito_Sans } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
+import { AnalyticsEvents } from "@/components/analytics-events";
 import { LazyToaster } from "@/components/shared/lazy-toaster";
 import { RevealProvider } from "@/components/shared/reveal-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -53,6 +55,9 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: { card: "summary_large_image" },
+  verification: {
+    google: "sBnPD8YKUx6UcEMOxZXBabFP5IeFF3QEdlFYyYV33aA",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -81,7 +86,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <LazyToaster />
         </TooltipProvider>
         <SpeedInsights />
+        <AnalyticsEvents />
       </body>
+      <GoogleAnalytics gaId="G-LSMJ8P7HBT" />
     </html>
   );
 }

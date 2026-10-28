@@ -60,6 +60,7 @@ export function BookingCta({
       {trigger ? (
         <span
           className="contents"
+          data-ga="appointment"
           onPointerEnter={() => setPreload(true)}
           onFocus={() => setPreload(true)}
           onClick={() => {
@@ -73,6 +74,7 @@ export function BookingCta({
         <Button
           size={size}
           nativeButton={true}
+          data-ga="appointment"
           className={`max-md:min-h-12 max-md:w-full max-md:rounded-full ${buttonClass} ${className ?? ""}`}
           onPointerEnter={() => setPreload(true)}
           onFocus={() => setPreload(true)}

@@ -41,6 +41,7 @@ export function BookingQrCard({
       </p>
       <Link
         href="/book?src=website"
+        data-ga="appointment"
         className="link mt-2 inline-block text-sm font-semibold"
       >
         Or open the booking page

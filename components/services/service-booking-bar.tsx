@@ -17,6 +17,7 @@ export function ServiceBookingBar({ service }: { service: Service }) {
       <div aria-hidden="true" className="h-16 md:hidden" />
       <div
         data-mobile-bottom-bar
+        data-ga-location="sticky"
         className="fixed inset-x-0 bottom-[calc(4rem+env(safe-area-inset-bottom))] z-40 border-t border-rose-tint bg-white px-4 py-2 shadow-[0_-4px_20px_rgb(61_15_42/0.10)] md:hidden"
       >
         <div className="flex items-center gap-3">

@@ -74,6 +74,7 @@ export function BookingQr({
         <p className="mt-2 text-center">
           <Link
             href="/book?src=website"
+            data-ga="appointment"
             className="link text-sm font-semibold"
           >
             Or open the booking page
