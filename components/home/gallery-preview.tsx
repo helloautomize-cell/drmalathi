@@ -57,7 +57,7 @@ export function GalleryPreview() {
           subtitle="Scan and consulting rooms designed around your comfort and privacy."
         />
         <ul className="grid grid-cols-2 gap-4 md:grid-cols-3">
-          {previewImages.map((image, i) => (
+          {previewImages.map((image) => (
             <li
               key={image.src}
               className={cn(
@@ -69,7 +69,7 @@ export function GalleryPreview() {
                 src={image.src}
                 alt={image.alt}
                 fill
-                loading={i === 0 ? "eager" : "lazy"}
+                loading="lazy"
                 sizes={image.sizes}
                 placeholder="blur"
                 blurDataURL={imageBlurDataURL}

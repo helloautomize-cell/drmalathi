@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { getImageProps } from "next/image";
 import Link from "next/link";
 import { firsts } from "@/components/home/firsts-strip";
 import { ScanFinder } from "@/components/home/scan-finder";
@@ -8,6 +8,57 @@ import { MobileCarousel } from "@/components/shared/mobile-carousel";
 import { Button } from "@/components/ui/button";
 import { imageBlurDataURL } from "@/lib/image-placeholder";
 import { foundedYear, yearsOfCare } from "@/lib/site";
+
+const heroImage = {
+  src: "/images/brand/family-cutout-1024.webp",
+  alt: "Parents cradling their sleeping newborn",
+};
+
+/**
+ * LCP image. One <img> serves both frames: the <source> swaps the srcset
+ * below md so exactly one candidate downloads (art direction via
+ * getImageProps). Eager + fetchPriority=high restores preload-speed
+ * discovery without emitting a second preload for the hidden frame variant.
+ */
+function HeroImage() {
+  const {
+    props: { srcSet: mobileSrcSet },
+  } = getImageProps({
+    ...heroImage,
+    fill: true,
+    sizes: "(max-width: 767px) calc(100vw - 2rem)",
+  });
+  const { props: desktopProps } = getImageProps({
+    ...heroImage,
+    width: 1024,
+    height: 1536,
+    sizes:
+      "(min-width: 1280px) 448px, (min-width: 1024px) 416px, (min-width: 640px) 384px, 100vw",
+  });
+  const { srcSet: desktopSrcSet, ...imgProps } = desktopProps;
+  return (
+    <picture>
+      <source
+        media="(max-width: 767px)"
+        srcSet={mobileSrcSet}
+        sizes="(max-width: 767px) calc(100vw - 2rem)"
+      />
+      <img
+        {...imgProps}
+        srcSet={desktopSrcSet}
+        loading="eager"
+        fetchPriority="high"
+        className="absolute inset-0 h-full w-full object-cover object-[50%_32%] md:static md:h-auto"
+        style={{
+          color: "transparent",
+          backgroundImage: `url("${imageBlurDataURL}")`,
+          backgroundSize: "cover",
+          backgroundPosition: "50% 50%",
+        }}
+      />
+    </picture>
+  );
+}
 
 export function Hero() {
   return (
@@ -71,35 +122,10 @@ export function Hero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-md max-lg:order-2 lg:max-w-[26rem] xl:max-w-md">
-          {/* Mobile: 4/3 white panel, top corners arched like the desktop frame. */}
-          <div className="relative aspect-[4/3] overflow-hidden rounded-t-[120px] rounded-b-3xl bg-white shadow-card md:hidden">
-            <Image
-              src="/images/brand/family-cutout-1024.webp"
-              alt="Parents cradling their sleeping newborn"
-              fill
-              priority
-              fetchPriority="high"
-              placeholder="blur"
-              blurDataURL={imageBlurDataURL}
-              sizes="(max-width: 767px) 100vw, 50vw"
-              className="object-cover object-[50%_32%]"
-            />
-          </div>
-          {/* Desktop: arch frame, unchanged. */}
-          <div className="hidden overflow-hidden rounded-t-[10rem] rounded-b-3xl bg-white shadow-card md:block">
+          {/* Mobile: 4/3 white panel with 120px arch; md+: 10rem arch frame. */}
+          <div className="relative aspect-[4/3] overflow-hidden rounded-t-[120px] rounded-b-3xl bg-white shadow-card md:aspect-auto md:rounded-t-[10rem]">
             {/* Raw asset, no image pipeline treatment (user request) */}
-            <Image
-              src="/images/brand/family-cutout-1024.webp"
-              alt="Parents cradling their sleeping newborn"
-              width={1024}
-              height={1536}
-              priority
-              fetchPriority="high"
-              placeholder="blur"
-              blurDataURL={imageBlurDataURL}
-              sizes="(min-width: 1280px) 448px, (min-width: 1024px) 416px, (min-width: 640px) 384px, 100vw"
-              className="h-auto w-full"
-            />
+            <HeroImage />
           </div>
         </div>
 

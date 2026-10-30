@@ -86,7 +86,6 @@ export function PageHero({
               src={image}
               alt={imageAlt}
               fill
-              priority
               fetchPriority="high"
               sizes="100vw"
               placeholder="blur"

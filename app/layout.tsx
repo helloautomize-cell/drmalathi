@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Noto_Sans_Tamil, Nunito_Sans } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 import "./globals.css";
 import { AnalyticsEvents } from "@/components/analytics-events";
 import { LazyToaster } from "@/components/shared/lazy-toaster";
@@ -88,7 +88,20 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SpeedInsights />
         <AnalyticsEvents />
       </body>
-      <GoogleAnalytics gaId="G-LSMJ8P7HBT" />
+      {/* GA4: the 200-byte init runs right after hydration so window.gtag and
+          the dataLayer queue exist early; the ~180KB library itself waits for
+          browser idle (lazyOnload) so it can't compete with the LCP image or
+          first-party hydration work. */}
+      <Script id="ga4-init" strategy="afterInteractive">
+        {`window.dataLayer = window.dataLayer || [];
+function gtag(){window.dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LSMJ8P7HBT');`}
+      </Script>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-LSMJ8P7HBT"
+        strategy="lazyOnload"
+      />
     </html>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { sendGAEvent } from "@next/third-parties/google";
+import { sendGAEvent } from "@/lib/gtag";
 import { useEffect } from "react";
 
 // Fallback matcher for CMS-rendered copy only: whole-word, case-insensitive.
@@ -55,8 +55,8 @@ function classify(el: Element): { target: Element; event: string } | null {
 
 function send(event: string, params: Record<string, string>) {
   try {
-    // sendGAEvent no-ops with a warning until <GoogleAnalytics /> has created
-    // window.dataLayer, so clicks before hydration are simply dropped.
+    // Queues into window.dataLayer if gtag.js hasn't loaded yet; clicks
+    // before hydration are simply dropped.
     sendGAEvent("event", event, params);
   } catch {
     // analytics must never break the page

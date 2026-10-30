@@ -1,15 +1,15 @@
 import type { NextConfig } from "next";
 
 // Report-only CSP for the first deploy; tighten to enforce once the report
-// endpoint shows a clean baseline. Self + inline styles only: the site has
-// no third-party scripts, fonts, or embeds.
+// endpoint shows a clean baseline. Third parties: GA4 (script + beacons) and
+// Vercel Speed Insights (beacon POSTs).
 const contentSecurityPolicy = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline'",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob:",
   "font-src 'self'",
-  "connect-src 'self'",
+  "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://vitals.vercel-insights.com",
   "frame-ancestors 'none'",
   "form-action 'self'",
   "base-uri 'self'",

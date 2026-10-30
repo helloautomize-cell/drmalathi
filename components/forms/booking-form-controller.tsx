@@ -1,7 +1,7 @@
 "use client";
 
 import { type FormEvent, type ReactNode, useId, useState } from "react";
-import { sendGAEvent } from "@next/third-parties/google";
+import { sendGAEvent } from "@/lib/gtag";
 import { submitBooking } from "@/lib/booking-action";
 import { ContactFallbackPanel } from "@/components/forms/contact-fallback-panel";
 import {

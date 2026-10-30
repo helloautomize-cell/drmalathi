@@ -2,7 +2,7 @@
 
 import { type FormEvent, useState } from "react";
 import Link from "next/link";
-import { sendGAEvent } from "@next/third-parties/google";
+import { sendGAEvent } from "@/lib/gtag";
 import { requestCourseEnquiry } from "@/app/actions/appointment";
 import { ContactFallbackPanel } from "@/components/forms/contact-fallback-panel";
 import { Button } from "@/components/ui/button";
