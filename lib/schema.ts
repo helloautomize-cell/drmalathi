@@ -22,13 +22,23 @@ export function clinicRef() {
   };
 }
 
-/** Publisher for Article schema: Organization with name and logo. */
-export function publisherRef() {
+/**
+ * Reference to the organisation entity. Same self-describing convention as
+ * clinicRef: @id plus name and url.
+ */
+export function orgRef() {
   return {
     "@type": "Organization",
     "@id": `${site.url}/#org`,
     name: site.name,
     url: site.url,
+  };
+}
+
+/** Publisher for Article schema: Organization with name and logo. */
+export function publisherRef() {
+  return {
+    ...orgRef(),
     logo: {
       "@type": "ImageObject",
       url: `${site.url}/images/logo-transparent.png`,
@@ -36,13 +46,37 @@ export function publisherRef() {
   };
 }
 
+/** Reference to the website entity for isPartOf-style links. */
+export function webSiteRef() {
+  return {
+    "@type": "WebSite",
+    "@id": `${site.url}/#website`,
+    name: site.name,
+    url: site.url,
+  };
+}
+
 /**
  * One JSON-LD script per page: a single connected @graph. Node builders below
  * return graph members (no @context); wrap them with pageGraph() so entities
  * link by stable @id instead of duplicating context per script.
+ *
+ * The canonical clinic and organisation nodes are appended to every graph so
+ * every page carries the complete entity (partial refs like clinicRef merge
+ * into it by @id), and nodes are deduplicated by @id so callers may also
+ * pass the canonical builders explicitly.
  */
 export function pageGraph(nodes: object[]) {
-  return { "@context": "https://schema.org", "@graph": nodes };
+  const all = [...nodes, medicalClinicNode(), organizationNode()];
+  const seen = new Set<string>();
+  const graph = all.filter((node) => {
+    const id = (node as { "@id"?: unknown })["@id"];
+    if (typeof id !== "string") return true;
+    if (seen.has(id)) return false;
+    seen.add(id);
+    return true;
+  });
+  return { "@context": "https://schema.org", "@graph": graph };
 }
 
 export function webSiteNode() {
@@ -62,7 +96,7 @@ export function webPageNode(path: string, name: string, description?: string) {
     url: `${site.url}${path}`,
     name,
     ...(description ? { description } : {}),
-    isPartOf: { "@id": `${site.url}/#website` },
+    isPartOf: webSiteRef(),
     about: clinicRef(),
   };
 }
@@ -93,6 +127,9 @@ export function medicalClinicNode() {
       opens: "09:00",
       closes: "21:00",
     },
+    // No consultation fee is published on the site; "₹₹" is a neutral
+    // price-level indicator until the client confirms a fee range.
+    priceRange: "₹₹",
     ...(site.foundingDate ? { foundingDate: site.foundingDate } : {}),
     ...(site.geo
       ? {
@@ -109,6 +146,38 @@ export function medicalClinicNode() {
       : {}),
     ...(site.sameAs.length ? { sameAs: site.sameAs } : {}),
     employee: doctors.map((d) => personRef(d)),
+  };
+}
+
+/**
+ * Canonical organisation node. Carries the same verified address and phone
+ * numbers as the clinic so every reference to /#org resolves to a complete
+ * entity on the page.
+ */
+export function organizationNode() {
+  return {
+    "@type": "Organization",
+    "@id": `${site.url}/#org`,
+    name: site.name,
+    url: site.url,
+    description: site.description,
+    logo: {
+      "@type": "ImageObject",
+      url: `${site.url}/images/logo-transparent.png`,
+    },
+    image: `${site.url}/images/brand/family-cutout-1024.webp`,
+    telephone: telephones,
+    email: site.email,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "73, C/9, Annamalai Nagar, Thillai Nagar",
+      addressLocality: "Tiruchirappalli",
+      addressRegion: "Tamil Nadu",
+      postalCode: "620018",
+      addressCountry: "IN",
+    },
+    ...(site.foundingDate ? { foundingDate: site.foundingDate } : {}),
+    ...(site.sameAs.length ? { sameAs: site.sameAs } : {}),
   };
 }
 
@@ -630,12 +699,9 @@ export function guideArticleNode(guide: GuideSchemaInput) {
   const reviewerDoc = guide.reviewedBy
     ? doctors.find((d) => d.slug === guide.reviewedBy)
     : undefined;
-  const clinicalTeam = {
-    "@type": "MedicalOrganization",
-    "@id": `${site.url}/#clinic`,
-    name: `${site.name} clinical team`,
-    url: site.url,
-  };
+  // The byline names the clinical team, which is the organisation; the ref
+  // merges into the canonical /#org node in the same @graph.
+  const clinicalTeam = orgRef();
   return {
     "@type": "MedicalWebPage",
     "@id": `${url}#article`,
@@ -650,7 +716,7 @@ export function guideArticleNode(guide: GuideSchemaInput) {
     about: guideAboutNode(guide.slug),
     author: clinicalTeam,
     publisher: publisherRef(),
-    isPartOf: { "@id": `${site.url}/#website` },
+    isPartOf: webSiteRef(),
     ...(guide.reviewedAt
       ? {
           lastReviewed: guide.reviewedAt,

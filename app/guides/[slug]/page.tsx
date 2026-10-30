@@ -43,6 +43,7 @@ import {
   faqNode,
   guideArticleNode,
   pageGraph,
+  personNode,
   webPageNode,
 } from "@/lib/schema";
 import type { GuideBlock } from "@/types/guide";
@@ -144,6 +145,7 @@ export default async function GuideArticlePage({
         guide.reviewStatus === "reviewed" ? guide.reviewedAt : undefined,
       reviewedBy: guide.reviewedBy,
     }),
+    ...(reviewer ? [personNode(reviewer)] : []),
     breadcrumbNode([
       { label: "Home", href: "/" },
       { label: "Patient guides", href: "/guides" },
