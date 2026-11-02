@@ -12,7 +12,6 @@ import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
 import { StepsList } from "@/components/shared/steps-list";
-import { claimIsLive, type ClaimId } from "@/data/claims";
 import { doctors } from "@/data/doctors";
 import { advancedProcedures } from "@/data/procedures";
 import {
@@ -29,15 +28,11 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about" },
 };
 
-// TODO: client to confirm the founding year and the dates of each regional
-// first before launch. foundedYear is a placeholder pending confirmation.
-// claimTitle renders only while the claim is live (substantiated, or on a
-// preview deploy); otherwise the event uses `title`.
+// TODO: client to confirm the founding year before launch. foundedYear is a
+// placeholder pending confirmation.
 const timeline: {
   year?: string;
   title: string;
-  claimTitle?: string;
-  claimId?: ClaimId;
   text: string;
   href?: string;
 }[] = [
@@ -48,20 +43,14 @@ const timeline: {
   },
   {
     title: "Fetoscopic procedures for complex twin pregnancies",
-    claimTitle: "First in south Tamil Nadu for fetoscopic procedures",
-    claimId: "fetoscopic-first",
     text: "The centre introduces fetoscopic procedures for complex twin pregnancies.",
   },
   {
     title: "Fetal neurosonogram service begins",
-    claimTitle: "First in Tamil Nadu for fetal neurosonogram",
-    claimId: "neurosonogram-first",
     text: "A fetal neurosonogram service begins for detailed brain and spine assessment.",
   },
   {
     title: "In-house genetic counselling",
-    claimTitle: "First in the region with in-house genetic counselling",
-    claimId: "counselling-first",
     text: "In-house genetic counselling and fetal postmortem evaluation mean families are not sent elsewhere for answers.",
   },
   {
@@ -71,12 +60,6 @@ const timeline: {
     href: "/cme-activities",
   },
 ];
-
-function eventTitle(event: (typeof timeline)[number]): string {
-  return event.claimId && event.claimTitle && claimIsLive(event.claimId)
-    ? event.claimTitle
-    : event.title;
-}
 
 const teachingLinks = [
   {
@@ -171,8 +154,8 @@ export default function AboutPage() {
             <StepsList
               steps={timeline.map((event) => ({
                 title: event.year
-                  ? `${event.year}: ${eventTitle(event)}`
-                  : eventTitle(event),
+                  ? `${event.year}: ${event.title}`
+                  : event.title,
                 text: event.text,
               }))}
               className="max-w-none"
@@ -181,7 +164,7 @@ export default function AboutPage() {
           {/* Desktop: border-l timeline, unchanged. */}
           <ol className="relative mx-auto hidden max-w-3xl space-y-8 border-l-2 border-rose-tint pl-8 md:block">
             {timeline.map((event) => (
-              <li key={eventTitle(event)} className="relative">
+              <li key={event.title} className="relative">
                 <span
                   aria-hidden="true"
                   className="absolute top-2 -left-[41px] size-4 rounded-full border-2 border-primary bg-white"
@@ -193,7 +176,7 @@ export default function AboutPage() {
                     </span>
                   ) : null}
                   <h3 className="text-lg font-semibold text-ink">
-                    {eventTitle(event)}
+                    {event.title}
                   </h3>
                 </div>
                 <p className="mt-1 text-sm text-muted-foreground">
@@ -227,6 +210,10 @@ export default function AboutPage() {
               </li>
             ))}
           </ul>
+          <p className="mx-auto mt-6 max-w-xl text-center text-sm text-muted-foreground">
+            All procedures carry risks and benefits that the specialist will
+            discuss with you before any decision.
+          </p>
         </Container>
       </Section>
 

@@ -121,17 +121,20 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-md max-lg:order-2 lg:max-w-[26rem] xl:max-w-md">
+        <figure className="relative mx-auto w-full max-w-md max-lg:order-2 lg:max-w-[26rem] xl:max-w-md">
           {/* Mobile: 4/3 white panel with 120px arch; md+: 10rem arch frame. */}
           <div className="relative aspect-[4/3] overflow-hidden rounded-t-[120px] rounded-b-3xl bg-white shadow-card md:aspect-auto md:rounded-t-[10rem]">
             {/* Raw asset, no image pipeline treatment (user request) */}
             <HeroImage />
           </div>
-        </div>
+          <figcaption className="mt-2 text-center text-xs text-white/60">
+            AI-generated illustration
+          </figcaption>
+        </figure>
 
-        {/* Mobile trust carousel: the three regional firsts on plum. */}
+        {/* Mobile trust carousel: the three specialist services on plum. */}
         <MobileCarousel
-          label="Regional firsts"
+          label="Specialist services"
           className="max-md:order-4 md:hidden"
           items={firsts.map((item) => (
             <article

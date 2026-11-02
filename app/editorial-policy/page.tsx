@@ -56,6 +56,15 @@ export default function EditorialPolicyPage() {
               the PCPNDT Act, 1994, governs what may be described or offered.
             </p>
 
+            <h2 id="ai-illustrations" className={h2}>
+              AI-generated illustrations
+            </h2>
+            <p>
+              Some illustrations on this website are generated with AI tools to
+              protect patient privacy. All medical content is reviewed by our
+              clinical team.
+            </p>
+
             <h2 id="claims" className={h2}>Claims and comparisons</h2>
             <p>
               This website does not publish success rates, outcome statistics,

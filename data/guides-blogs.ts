@@ -305,7 +305,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "If you have PCOS and are planning a pregnancy, talk to a gynaecologist or fertility specialist about where to start. In Trichy, you can reach Trichy Fetal Medicine and Fertility Centre through fmctrichy.com."
+        "text": "If you have PCOS and are planning a pregnancy, talk to a gynaecologist or fertility specialist about where to start."
       },
       {
         "type": "paragraph",
@@ -1130,10 +1130,6 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Trichy Fetal Medicine and Fertility Centre lists services including pregnancy screening, anomaly assessment, fetal echocardiography, fetal neurosonography, growth scans with Doppler, genetic counselling, twin pregnancy care and selected invasive and fetal procedures."
-      },
-      {
-        "type": "paragraph",
         "text": "If your obstetrician has referred you for fetal medicine assessment, the consultation can help clarify why the referral was made, what needs to be investigated and whether additional monitoring is necessary."
       },
       {
@@ -1147,10 +1143,6 @@ export const blogGuides: Guide[] = [
       {
         "type": "paragraph",
         "text": "If you have been advised to see a fetal medicine specialist, ask what prompted the referral and what the proposed assessment is intended to clarify. Having that information can make the next stage of pregnancy care much easier to understand."
-      },
-      {
-        "type": "paragraph",
-        "text": "For patients seeking fetal medicine care in Trichy, Trichy Fetal Medicine and Fertility Centre provides fetal assessment, pregnancy screening, genetic counselling and selected fetal medicine procedures."
       },
       {
         "type": "paragraph",
@@ -1649,7 +1641,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "A good starting point is a conversation with a specialist who can go through your history, suggest only the tests likely to help and plan the next pregnancy alongside you. Trichy Fetal Medicine and Fertility Centre runs a recurrent miscarriage clinic, and couples in and around Trichy can get in touch through the centre's website, https://fmctrichy.com/."
+        "text": "A good starting point is a conversation with a specialist who can go through your history, suggest only the tests likely to help and plan the next pregnancy alongside you."
       },
       {
         "type": "paragraph",
@@ -2391,10 +2383,6 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Trichy Fetal Medicine and Fertility Centre includes fertility and reproductive health within its areas of care. Its planned fertility content cluster specifically covers fertility testing for women and men, AMH, ovulation, semen analysis and follicular monitoring."
-      },
-      {
-        "type": "paragraph",
         "text": "A fertility consultation can help determine which investigations are relevant and how the results should be interpreted together."
       },
       {
@@ -2850,15 +2838,11 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "For families in Trichy and nearby parts of Tamil Nadu, Trichy Fetal Medicine and Fertility Centre runs a specialised twin clinic. The centre also offers first-trimester screening, anomaly scans, growth scans with Doppler, [fetal echocardiography](/guides/fetal-echocardiography-pregnancy) and genetic counselling, along with CVS and amniocentesis. Fetal interventions, including fetoscopic procedures and RF ablation for selected twin pregnancies, are also available. Specialist care here works alongside your own obstetrician."
-      },
-      {
-        "type": "paragraph",
         "text": "If you've just found out you're having twins, the most practical step is to make sure your chorionicity is written clearly in your report and that you know which scan plan goes with it. The extra appointments can feel like a lot, but they exist so that any problem is caught while there's still time to act."
       },
       {
         "type": "paragraph",
-        "text": "If a twin scan has raised a question, talk it over with your obstetrician or a fetal medicine specialist. Families looking for twin pregnancy care in Trichy can reach Trichy Fetal Medicine and Fertility Centre through https://fmctrichy.com/."
+        "text": "If a twin scan has raised a question, talk it over with your obstetrician or a fetal medicine specialist."
       },
       {
         "type": "paragraph",
@@ -3698,10 +3682,6 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Trichy Fetal Medicine and Fertility Centre provides fetal medicine services including anomaly scans, fetal echocardiography, fetal neurosonography, growth scans with Doppler, genetic counselling and other specialist fetal assessments, according to the centre information provided for this project."
-      },
-      {
-        "type": "paragraph",
         "text": "The centre is located at 73C/9, Annamalai Nagar Main Road, Tiruchirappalli, Tamil Nadu 620018."
       },
       {
@@ -3711,10 +3691,6 @@ export const blogGuides: Guide[] = [
       {
         "type": "paragraph",
         "text": "This article is intended for general educational purposes and should not be used to diagnose or treat a medical condition. Pregnancy care and the need for additional investigations vary from person to person. If an ultrasound report contains an unexpected finding, discuss it with your obstetrician or fetal medicine specialist rather than trying to interpret the result independently."
-      },
-      {
-        "type": "paragraph",
-        "text": "Medical review: Dr. Malathi G. Prasad, MD, FRCOG (UK), Diploma in Fetal Medicine, FMF (Barcelona), subject to final clinical review before publication."
       },
       {
         "type": "h3",
@@ -4597,10 +4573,6 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Fetal echocardiography is among the specialist fetal medicine services listed by Trichy Fetal Medicine and Fertility Centre, alongside anomaly scans, [NIPT](/guides/nipt-in-pregnancy-test-accuracy-high-risk-result), fetal neurosonography, growth scans with Doppler and genetic counselling."
-      },
-      {
-        "type": "paragraph",
         "text": "The centre's official information lists its location as 73, C/9, Annamalai Nagar, Thillai Nagar, Trichy - 620 018."
       },
       {
@@ -4682,10 +4654,6 @@ export const blogGuides: Guide[] = [
       {
         "type": "paragraph",
         "text": "If you have been advised to undergo fetal echocardiography, ask what prompted the referral, what the specialist will be looking for and whether any follow-up is likely to be needed. Those answers can make the purpose of the examination much clearer."
-      },
-      {
-        "type": "paragraph",
-        "text": "For patients seeking fetal medicine consultation in Trichy, Trichy Fetal Medicine and Fertility Centre provides specialist fetal medicine services, including fetal echocardiography. The official website is fmctrichy.com."
       },
       {
         "type": "paragraph",
@@ -5768,10 +5736,6 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "For patients seeking fetal medicine consultation and pregnancy scan services in Trichy, Trichy Fetal Medicine and Fertility Centre provides services including growth scans with Doppler, [fetal echocardiography](/guides/fetal-echocardiography-pregnancy), anomaly scans, [NIPT](/guides/nipt-in-pregnancy-test-accuracy-high-risk-result), genetic counselling and other fetal medicine services."
-      },
-      {
-        "type": "paragraph",
         "text": "To arrange this at our Trichy centre, see [growth scan with Doppler](/services/growth-scan-doppler); if you are unsure whether you need it, [our doctors](/doctors) can tell you after a review."
       },
       {
@@ -6825,10 +6789,6 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "At Trichy Fetal Medicine & Fertility Centre, fetal medicine services include Down syndrome screening, NIPT, anomaly scanning, genetic counselling, fetal echocardiography, second-opinion scans and other specialised prenatal procedures."
-      },
-      {
-        "type": "paragraph",
         "text": "When a screening result raises concern, the next step may involve a combination of ultrasound assessment, counselling and, when appropriate, diagnostic testing."
       },
       {
@@ -7868,10 +7828,6 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Trichy Fetal Medicine and Fertility Centre lists services including Down syndrome screening/OSCAR, first-trimester anomaly scans, NIPT, anomaly scans and genetic counselling, alongside other fetal medicine services."
-      },
-      {
-        "type": "paragraph",
         "text": "The centre is located at 73, C/9, Annamalai Nagar, Thillai Nagar, Trichy - 620 018."
       },
       {
@@ -8072,7 +8028,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "A specialist opinion is worth seeking if your report mentions a finding, if part of the scan could not be completed, or if your history makes you want a more detailed assessment. Patients seeking fetal medicine consultation in Trichy can contact Trichy Fetal Medicine and Fertility Centre through the official website."
+        "text": "A specialist opinion is worth seeking if your report mentions a finding, if part of the scan could not be completed, or if your history makes you want a more detailed assessment."
       },
       {
         "type": "h2",
@@ -8257,10 +8213,6 @@ export const blogGuides: Guide[] = [
       {
         "type": "paragraph",
         "text": "Most pregnancies need nothing more than routine scans and a well-timed anomaly scan. Your obstetrician may suggest a fetal medicine assessment if you have a family history of a genetic or structural condition, are expecting twins, had an affected pregnancy before, received an unexpected screening result, or had a finding on an earlier scan that needs clarifying."
-      },
-      {
-        "type": "paragraph",
-        "text": "Parents looking for a fetal medicine opinion in Trichy can consult Trichy Fetal Medicine and Fertility Centre, which offers detailed scans and genetic counselling."
       },
       {
         "type": "h2",
@@ -8463,7 +8415,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "A scan report answers a specific question about structure at a specific moment. If something in your report or family history is on your mind, take it to your obstetrician or a fetal medicine specialist. Patients seeking fetal medicine consultation in Trichy can contact Trichy Fetal Medicine and Fertility Centre through the official website."
+        "text": "A scan report answers a specific question about structure at a specific moment. If something in your report or family history is on your mind, take it to your obstetrician or a fetal medicine specialist."
       },
       {
         "type": "paragraph",
@@ -8637,7 +8589,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "A useful habit at the end of the appointment is to ask whether all the views were completed and whether anything needs a second look. If you are in Trichy and want fetal medicine input, Trichy Fetal Medicine and Fertility Centre can be reached through its official website."
+        "text": "A useful habit at the end of the appointment is to ask whether all the views were completed and whether anything needs a second look."
       },
       {
         "type": "paragraph",
@@ -8792,7 +8744,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Before you leave any appointment, ask what exactly was seen, how certain the finding is, what the next test will tell you and when the results will be ready. Request copies of your reports too. Parents in Trichy who have been advised further fetal assessment can contact Trichy Fetal Medicine and Fertility Centre through its official website."
+        "text": "Before you leave any appointment, ask what exactly was seen, how certain the finding is, what the next test will tell you and when the results will be ready. Request copies of your reports too."
       },
       {
         "type": "paragraph",
@@ -8964,7 +8916,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "PCOS can feel discouraging, but it is one of the most treatable causes of fertility delay. Simple steps taken early often make a real difference. For a plan that suits your cycle and health, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+        "text": "PCOS can feel discouraging, but it is one of the most treatable causes of fertility delay. Simple steps taken early often make a real difference."
       },
       {
         "type": "paragraph",
@@ -9144,7 +9096,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Understanding how PCOS affects your cycle makes treatment feel less confusing. The problem is usually timing and frequency of ovulation, which is very treatable. For a clear diagnosis and ovulation plan, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+        "text": "Understanding how PCOS affects your cycle makes treatment feel less confusing. The problem is usually timing and frequency of ovulation, which is very treatable."
       },
       {
         "type": "paragraph",
@@ -9340,7 +9292,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "The right tests save time, money and stress by pointing you straight to the right treatment. With PCOS, a careful work-up also prepares your body for a healthier pregnancy. To plan your tests in the right order, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+        "text": "The right tests save time, money and stress by pointing you straight to the right treatment. With PCOS, a careful work-up also prepares your body for a healthier pregnancy."
       },
       {
         "type": "paragraph",
@@ -9538,7 +9490,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Two women with irregular cycles can have very different reasons behind them. Getting the right diagnosis prevents wasted time and the wrong medicines. For a clear explanation of your AMH and scan reports, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+        "text": "Two women with irregular cycles can have very different reasons behind them. Getting the right diagnosis prevents wasted time and the wrong medicines."
       },
       {
         "type": "paragraph",
@@ -9714,7 +9666,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Seeking help is not a sign of failure. It is simply a way to make sure time is used well. With PCOS, the right guidance often leads to pregnancy without complex treatment. For a calm, step-by-step plan, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+        "text": "Seeking help is not a sign of failure. It is simply a way to make sure time is used well. With PCOS, the right guidance often leads to pregnancy without complex treatment."
       },
       {
         "type": "paragraph",
@@ -9880,7 +9832,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "A well-timed NT scan usually comes down to knowing your dates and booking early enough. If it slips, your doctor can guide you to another option. Patients seeking fetal medicine consultation in Trichy can contact Trichy Fetal Medicine and Fertility Centre through the official website."
+        "text": "A well-timed NT scan usually comes down to knowing your dates and booking early enough. If it slips, your doctor can guide you to another option."
       },
       {
         "type": "paragraph",
@@ -10042,7 +9994,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Ideally soon after the result, while every testing option is still open. Patients seeking fetal medicine consultation in Trichy can contact Trichy Fetal Medicine and Fertility Centre through the official website."
+        "text": "Ideally soon after the result, while every testing option is still open."
       },
       {
         "type": "h2",
@@ -10235,7 +10187,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "If your result is high-risk, your NT measurement is increased or the report simply does not make sense to you, a fetal medicine consultation can help. Patients in Trichy can reach Trichy Fetal Medicine and Fertility Centre through the official website to discuss first-trimester screening."
+        "text": "If your result is high-risk, your NT measurement is increased or the report simply does not make sense to you, a fetal medicine consultation can help."
       },
       {
         "type": "h2",
@@ -10402,10 +10354,6 @@ export const blogGuides: Guide[] = [
       {
         "type": "paragraph",
         "text": "An NT scan gives early information, but it was never designed to deliver a verdict. If your result is lower risk, you have a reassuring estimate. If it is higher, you have good reason to ask more questions and, if you wish, to look at testing that can give a clearer answer."
-      },
-      {
-        "type": "paragraph",
-        "text": "Patients in Trichy seeking fetal medicine consultation can contact Trichy Fetal Medicine and Fertility Centre through the official website."
       },
       {
         "type": "paragraph",
@@ -10583,7 +10531,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Sooner is better, because the timing of the pregnancy decides which tests are still possible. If you live in Trichy or elsewhere in Tamil Nadu, you can contact Trichy Fetal Medicine and Fertility Centre through the official website for a fetal medicine consultation, genetic counselling and diagnostic procedures such as CVS and amniocentesis."
+        "text": "Sooner is better, because the timing of the pregnancy decides which tests are still possible."
       },
       {
         "type": "h2",
@@ -10769,7 +10717,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Understanding each test helps you choose the screening that suits your pregnancy. Counselling before and after testing is important. Dr Malathi G. Prasad offers first-trimester screening and fetal medicine counselling in Trichy."
+        "text": "Understanding each test helps you choose the screening that suits your pregnancy. Counselling before and after testing is important."
       },
       {
         "type": "paragraph",
@@ -10932,7 +10880,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "A high-risk result is the start of a conversation, not the end of the story. Specialist counselling and confirmation testing give you accurate information. Dr Malathi G. Prasad provides NIPT counselling, fetal medicine scans and diagnostic testing in Trichy."
+        "text": "A high-risk result is the start of a conversation, not the end of the story. Specialist counselling and confirmation testing give you accurate information."
       },
       {
         "type": "paragraph",
@@ -11085,7 +11033,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Choosing a prenatal test can feel overwhelming. Dr Malathi G. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy can explain which test suits your pregnancy and help you understand the results in plain language."
+        "text": "Choosing a prenatal test can feel overwhelming."
       },
       {
         "type": "paragraph",
@@ -11256,7 +11204,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "NIPT is a useful screening option in twin pregnancies when combined with expert ultrasound and counselling. Dr Malathi G. Prasad provides [twin pregnancy](/guides/twin-pregnancy-scans-risks-monitoring) scans, NIPT counselling and diagnostic testing in Trichy."
+        "text": "NIPT is a useful screening option in twin pregnancies when combined with expert ultrasound and counselling."
       },
       {
         "type": "paragraph",
@@ -11394,7 +11342,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Waiting for answers is hard, and you do not need to go through it alone. Dr Malathi G. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy offers counselling and the confirmatory testing that families need at this stage."
+        "text": "Waiting for answers is hard, and you do not need to go through it alone."
       },
       {
         "type": "paragraph",
@@ -11428,7 +11376,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "What tests confirm a positive NIPT?",
-        "answer": "CVS or amniocentesis. If it confirms a condition, your doctor will explain what it means for the baby, what care is available and what options you have, without pressure. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy offers counselling and the confirmatory testing that families need at this stage."
+        "answer": "CVS or amniocentesis. If it confirms a condition, your doctor will explain what it means for the baby, what care is available and what options you have, without pressure."
       },
       {
         "question": "Are CVS and amniocentesis safe?",
@@ -11535,7 +11483,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Most babies have a healthy heart, but a fetal echo gives answers when there is a reason to look closer. Dr Malathi G. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy can advise whether you need one and explain the findings clearly."
+        "text": "Most babies have a healthy heart, but a fetal echo gives answers when there is a reason to look closer."
       },
       {
         "type": "paragraph",
@@ -11567,7 +11515,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "Does every pregnant woman need a fetal echo?",
-        "answer": "No. It is advised when there are risk factors or a scan finding. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy can advise whether you need one and explain the findings clearly. Most babies have a healthy heart, but a fetal echo gives answers when there is a reason to look closer."
+        "answer": "No. It is advised when there are risk factors or a scan finding. Most babies have a healthy heart, but a fetal echo gives answers when there is a reason to look closer."
       },
       {
         "question": "What is the best time for a fetal echo?",
@@ -11736,7 +11684,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "A referral for a fetal echo is a precaution that gives you clear information. Early detection supports planning and peace of mind. Dr Malathi G. Prasad offers fetal echocardiography and fetal medicine care in Trichy."
+        "text": "A referral for a fetal echo is a precaution that gives you clear information. Early detection supports planning and peace of mind."
       },
       {
         "type": "paragraph",
@@ -11919,7 +11867,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "The anomaly scan and fetal echo complement each other. Knowing when you need each helps ensure your baby's heart is checked thoroughly. Dr Malathi G. Prasad performs anomaly scans and fetal echocardiography in Trichy."
+        "text": "The anomaly scan and fetal echo complement each other. Knowing when you need each helps ensure your baby's heart is checked thoroughly."
       },
       {
         "type": "paragraph",
@@ -12098,7 +12046,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "A fetal echo provides valuable information about the baby's heart and helps families and doctors prepare. Understanding its strengths and limits sets realistic expectations. Dr Malathi G. Prasad offers fetal echocardiography in Trichy."
+        "text": "A fetal echo provides valuable information about the baby's heart and helps families and doctors prepare. Understanding its strengths and limits sets realistic expectations."
       },
       {
         "type": "paragraph",
@@ -12270,7 +12218,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "A heart abnormality on a fetal echo is the beginning of a planned path, not the end. Expert counselling and coordinated care give your baby the best start. Dr Malathi G. Prasad provides fetal echocardiography, counselling and coordinated care planning in Trichy."
+        "text": "A heart abnormality on a fetal echo is the beginning of a planned path, not the end. Expert counselling and coordinated care give your baby the best start."
       },
       {
         "type": "paragraph",
@@ -12412,7 +12360,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "A growth scan is a helpful way to make sure the baby is doing well in the later months. Dr Malathi G. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy can explain your report and guide the right timing of follow-up scans."
+        "text": "A growth scan is a helpful way to make sure the baby is doing well in the later months."
       },
       {
         "type": "paragraph",
@@ -12449,7 +12397,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "How many growth scans will I need?",
-        "answer": "It depends on your risk factors. Some need one, others need several. How Often Should Growth Scans Be Done in a High-Risk Pregnancy? Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy can explain your report and guide the right timing of follow-up scans."
+        "answer": "It depends on your risk factors. Some need one, others need several."
       },
       {
         "question": "Can a growth scan tell if the baby is breech?",
@@ -12601,7 +12549,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "A Doppler scan gives a window into how well the placenta is supporting your baby. It is one of the most useful tools in high-risk pregnancy care. Dr Malathi G. Prasad offers growth and Doppler scans in Trichy."
+        "text": "A Doppler scan gives a window into how well the placenta is supporting your baby. It is one of the most useful tools in high-risk pregnancy care."
       },
       {
         "type": "paragraph",
@@ -12753,7 +12701,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Hearing that your baby is small is worrying, but the right monitoring makes a real difference. Dr Malathi G. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy can assess the cause and plan careful follow-up."
+        "text": "Hearing that your baby is small is worrying, but the right monitoring makes a real difference."
       },
       {
         "type": "paragraph",
@@ -12955,7 +12903,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "FGR needs expert monitoring and careful decisions about timing. With good surveillance, many growth-restricted babies are delivered safely and do well. Dr Malathi G. Prasad provides growth and Doppler monitoring for high-risk pregnancies in Trichy."
+        "text": "FGR needs expert monitoring and careful decisions about timing. With good surveillance, many growth-restricted babies are delivered safely and do well."
       },
       {
         "type": "paragraph",
@@ -13098,7 +13046,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Frequent scans are a way of staying one step ahead and keeping both mother and baby safe. Dr Malathi G. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy can set a follow-up plan suited to your pregnancy."
+        "text": "Frequent scans are a way of staying one step ahead and keeping both mother and baby safe."
       },
       {
         "type": "paragraph",
@@ -13166,7 +13114,7 @@ export const blogGuides: Guide[] = [
     "publishedAt": "2026-10-19",
     "seo": {
       "title": "How Often Should Growth Scans Be Done in a",
-      "description": "In a high-risk pregnancy, growth scans are usually repeated every two to four weeks, sometimes more often. Learn what decides the schedule. Dr Malathi G."
+      "description": "In a high-risk pregnancy, growth scans are usually repeated every two to four weeks, sometimes more often. Learn what decides the schedule."
     },
     "relatedService": "growth-scan-doppler"
   },
@@ -13258,7 +13206,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Many women with high-risk pregnancies deliver healthy babies with the right support. Dr Malathi G. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy can assess your risks and plan the care you need."
+        "text": "Many women with high-risk pregnancies deliver healthy babies with the right support."
       },
       {
         "type": "paragraph",
@@ -13328,7 +13276,7 @@ export const blogGuides: Guide[] = [
     "publishedAt": "2026-10-03",
     "seo": {
       "title": "What Makes a Pregnancy High Risk?. a patient",
-      "description": "A high-risk pregnancy needs extra monitoring, but most go on to have healthy babies. Learn the common causes and what they mean for you. Dr Malathi G."
+      "description": "A high-risk pregnancy needs extra monitoring, but most go on to have healthy babies. Learn the common causes and what they mean for you."
     },
     "relatedService": "second-opinion-scan"
   },
@@ -13407,7 +13355,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Seeing a specialist early often brings clarity and calm. Dr Malathi G. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy offers detailed fetal scans and counselling to guide you through pregnancy with confidence."
+        "text": "Seeing a specialist early often brings clarity and calm."
       },
       {
         "type": "paragraph",
@@ -13563,7 +13511,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Extra tests are meant to protect you and your baby, not to alarm you. Dr Malathi G. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy can create a clear monitoring plan and explain each step along the way. For the broader picture, see our guide to [High-Risk Pregnancy](/guides/high-risk-pregnancy-fetal-medicine-specialist)."
+        "text": "Extra tests are meant to protect you and your baby, not to alarm you. For the broader picture, see our guide to [High-Risk Pregnancy](/guides/high-risk-pregnancy-fetal-medicine-specialist)."
       },
       {
         "type": "paragraph",
@@ -13748,7 +13696,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "After the hard work of IVF, careful monitoring helps protect your pregnancy. A [fetal medicine specialist](/guides/high-risk-pregnancy-fetal-medicine-specialist) can tailor scans and tests to your needs. Dr Malathi G. Prasad supports IVF and high-risk pregnancies with fetal medicine care in Trichy."
+        "text": "After the hard work of IVF, careful monitoring helps protect your pregnancy. A [fetal medicine specialist](/guides/high-risk-pregnancy-fetal-medicine-specialist) can tailor scans and tests to your needs."
       },
       {
         "type": "paragraph",
@@ -13971,7 +13919,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "With careful monitoring and good sugar control, most women with diabetes have healthy pregnancies. If you have diabetes and are pregnant or planning pregnancy, consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy, for a personalised monitoring plan."
+        "text": "With careful monitoring and good sugar control, most women with diabetes have healthy pregnancies."
       },
       {
         "type": "paragraph",
@@ -14172,7 +14120,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "You are not alone, and there is hope. A proper evaluation and careful monitoring give many couples the answer and the care they need. For compassionate guidance, consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+        "text": "You are not alone, and there is hope. A proper evaluation and careful monitoring give many couples the answer and the care they need."
       },
       {
         "type": "paragraph",
@@ -14411,7 +14359,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "A thoughtful, step-by-step approach saves cost and stress, and gives you the best chance of success. To plan your tests, consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+        "text": "A thoughtful, step-by-step approach saves cost and stress, and gives you the best chance of success."
       },
       {
         "type": "paragraph",
@@ -14635,7 +14583,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Finding a genetic reason can bring clarity and a plan. And when the cause is chance, it brings hope. For counselling and testing, consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+        "text": "Finding a genetic reason can bring clarity and a plan. And when the cause is chance, it brings hope."
       },
       {
         "type": "paragraph",
@@ -14838,7 +14786,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Preparation can bring confidence and a sense of control after loss. You deserve both medical care and kindness. For a pre-pregnancy plan, consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+        "text": "Preparation can bring confidence and a sense of control after loss. You deserve both medical care and kindness."
       },
       {
         "type": "paragraph",
@@ -15061,7 +15009,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "You do not have to go through this pregnancy alone. A caring team, clear plan and a bit of hope can make a big difference. For supportive monitoring, consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+        "text": "You do not have to go through this pregnancy alone. A caring team, clear plan and a bit of hope can make a big difference."
       },
       {
         "type": "paragraph",
@@ -15272,7 +15220,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Early scans give you the answers and the plan. Twins need extra attention, and starting well makes a difference. For expert twin pregnancy care, consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+        "text": "Early scans give you the answers and the plan. Twins need extra attention, and starting well makes a difference."
       },
       {
         "type": "paragraph",
@@ -15531,7 +15479,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "A good schedule gives you safety and peace of mind. Your care plan will be tailored to your twins. For specialist twin pregnancy care, consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+        "text": "A good schedule gives you safety and peace of mind. Your care plan will be tailored to your twins."
       },
       {
         "type": "paragraph",
@@ -15723,7 +15671,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "A twin pregnancy brings double joy and a few extra questions. Chorionicity is the foundation of your care plan, and getting it right early makes every later scan more meaningful. To confirm it and plan your follow-up, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+        "text": "A twin pregnancy brings double joy and a few extra questions. Chorionicity is the foundation of your care plan, and getting it right early makes every later scan more meaningful."
       },
       {
         "type": "paragraph",
@@ -15871,7 +15819,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Knowing the type of twin pregnancy early lets your team plan the right monitoring. Dr Malathi G. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy can confirm chorionicity and arrange the follow-up your twins need."
+        "text": "Knowing the type of twin pregnancy early lets your team plan the right monitoring."
       },
       {
         "type": "paragraph",
@@ -15905,7 +15853,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "Are non-identical twins always dichorionic?",
-        "answer": "Yes, they have separate placentas. Dichorionic twins are generally scanned less often, such as every four weeks, depending on the specialist's plan. Prasad at Trichy Fetal Medicine and Fertility Centre in Trichy can confirm chorionicity and arrange the follow-up your twins need."
+        "answer": "Yes, they have separate placentas. Dichorionic twins are generally scanned less often, such as every four weeks, depending on the specialist's plan."
       },
       {
         "question": "Why is the first trimester scan important for twins?",
@@ -15941,7 +15889,7 @@ export const blogGuides: Guide[] = [
     "publishedAt": "2026-10-11",
     "seo": {
       "title": "Monochorionic vs Dichorionic Twins: What Is the",
-      "description": "Chorionicity tells whether twins share a placenta. It decides how closely a twin pregnancy needs to be monitored. Learn the difference. Dr Malathi G."
+      "description": "Chorionicity tells whether twins share a placenta. It decides how closely a twin pregnancy needs to be monitored. Learn the difference."
     },
     "relatedService": "twin-specialised-clinic"
   },
@@ -16073,7 +16021,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "A twin pregnancy needs more attention, but it does not need constant worry. Each scan and test has a clear purpose, which is to keep both babies safe. If you are expecting twins and want a clear care plan, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+        "text": "A twin pregnancy needs more attention, but it does not need constant worry. Each scan and test has a clear purpose, which is to keep both babies safe."
       },
       {
         "type": "paragraph",
@@ -16116,7 +16064,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "What is the most serious complication in twins?",
-        "answer": "For shared-placenta twins, TTTS is among the most serious, but it can be treated if found early. Severe pre-eclampsia and very early preterm birth are also important. This is why regular monitoring is advised. If you are expecting twins and want a clear care plan, you can consult Dr Malathi G."
+        "answer": "For shared-placenta twins, TTTS is among the most serious, but it can be treated if found early. Severe pre-eclampsia and very early preterm birth are also important. This is why regular monitoring is advised."
       },
       {
         "question": "How often will I need scans?",
@@ -16269,7 +16217,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Fertility testing can feel stressful, but it is mostly a simple, step-by-step process that gives clear direction. Starting early gives you more options and less uncertainty. For a personalised work-up, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+        "text": "Fertility testing can feel stressful, but it is mostly a simple, step-by-step process that gives clear direction. Starting early gives you more options and less uncertainty."
       },
       {
         "type": "paragraph",
@@ -16312,7 +16260,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "Can fertility tests be done during periods?",
-        "answer": "Yes, some are best done then, such as day 2 or 3 hormone tests. Others, like HSG, must be done after bleeding stops. Your clinic will give you exact timing so the results are reliable. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+        "answer": "Yes, some are best done then, such as day 2 or 3 hormone tests. Others, like HSG, must be done after bleeding stops. Your clinic will give you exact timing so the results are reliable."
       },
       {
         "question": "How much does a basic fertility work-up cost?",
@@ -16454,7 +16402,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "A man's test is simple and gives answers that guide the whole treatment plan. There is nothing to be embarrassed about, because fertility is a shared health issue. To discuss your reports with a specialist, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy. For the broader picture, see our guide to [Fertility Testing for Couples](/guides/fertility-testing-for-couples)."
+        "text": "A man's test is simple and gives answers that guide the whole treatment plan. There is nothing to be embarrassed about, because fertility is a shared health issue. For the broader picture, see our guide to [Fertility Testing for Couples](/guides/fertility-testing-for-couples)."
       },
       {
         "type": "paragraph",
@@ -16630,7 +16578,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "An AMH report is one useful piece of the fertility puzzle, not a verdict. Understanding it early can help you plan with confidence instead of fear. To have your result explained and a plan made, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy."
+        "text": "An AMH report is one useful piece of the fertility puzzle, not a verdict. Understanding it early can help you plan with confidence instead of fear."
       },
       {
         "type": "paragraph",
@@ -16803,7 +16751,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Follicular monitoring turns a guessing game into a clear plan. It is simple, safe and very useful for couples who want to understand their cycle. To begin cycle tracking with expert scans, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy. For the broader picture, see our guide to [Fertility Testing for Couples](/guides/fertility-testing-for-couples)."
+        "text": "Follicular monitoring turns a guessing game into a clear plan. It is simple, safe and very useful for couples who want to understand their cycle. For the broader picture, see our guide to [Fertility Testing for Couples](/guides/fertility-testing-for-couples)."
       },
       {
         "type": "paragraph",
@@ -16840,7 +16788,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "question": "How many scans are needed in one cycle?",
-        "answer": "Most women need about 3 to 5 scans. The number depends on how fast the follicle grows and whether ovulation happens on time. Women with PCOS or irregular cycles may need a few more. To begin cycle tracking with expert scans, you can consult Dr Malathi G."
+        "answer": "Most women need about 3 to 5 scans. The number depends on how fast the follicle grows and whether ovulation happens on time. Women with PCOS or irregular cycles may need a few more."
       },
       {
         "question": "What size should a follicle be before ovulation?",
@@ -16980,7 +16928,7 @@ export const blogGuides: Guide[] = [
       },
       {
         "type": "paragraph",
-        "text": "Learning your body's signs is a helpful first step, and many couples conceive with simple tracking. If your cycles are irregular or months pass without success, a scan-based check can save time. For help confirming ovulation, you can consult Dr Malathi G. Prasad, a fetal medicine specialist at Trichy Fetal Medicine and Fertility Centre in Trichy. For the broader picture, see our guide to [Fertility Testing for Couples](/guides/fertility-testing-for-couples)."
+        "text": "Learning your body's signs is a helpful first step, and many couples conceive with simple tracking. If your cycles are irregular or months pass without success, a scan-based check can save time. For the broader picture, see our guide to [Fertility Testing for Couples](/guides/fertility-testing-for-couples)."
       },
       {
         "type": "paragraph",

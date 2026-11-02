@@ -1,27 +1,22 @@
 import { Brain, Calendar, Dna, TrendingUp, Zap } from "lucide-react";
 import { StatChip } from "@/components/cards/stat-chip";
 import { Container } from "@/components/shared/container";
-import { claimIsLive, type ClaimId } from "@/data/claims";
 import { stats as metricSlots } from "@/data/trust";
 import { foundedYear } from "@/lib/site";
 
-// `claimText` renders only while the claim is live (substantiated, or on a
-// preview deploy); `description` is the claim-free wording used otherwise.
+// Factual descriptions only — comparative "first in the region" claims were
+// removed for NMC compliance and must not be re-added without independent,
+// documented evidence.
 export const firsts: {
   icon: typeof Zap;
   title: string;
   pill: string;
-  claimId: ClaimId;
-  claimText: string;
   description: string;
 }[] = [
   {
     icon: Zap,
     title: "Fetoscopic procedures",
     pill: "South Tamil Nadu",
-    claimId: "fetoscopic-first",
-    claimText:
-      "The first centre in South Tamil Nadu to perform minimally invasive surgery inside the womb.",
     description:
       "Minimally invasive surgery inside the womb, performed at our Trichy centre.",
   },
@@ -29,9 +24,6 @@ export const firsts: {
     icon: Brain,
     title: "Fetal neurosonogram",
     pill: "Tamil Nadu",
-    claimId: "neurosonogram-first",
-    claimText:
-      "The first centre in Tamil Nadu to offer detailed scanning of the baby's brain and spine.",
     description:
       "Detailed scanning of the baby's brain and spine at our Trichy centre.",
   },
@@ -39,22 +31,14 @@ export const firsts: {
     icon: Dna,
     title: "In-house genetic counselling",
     pill: "In-house",
-    claimId: "counselling-first",
-    claimText:
-      "The first centre with in-house genetic counselling and fetal postmortem evaluation.",
     description:
       "Genetic counselling and fetal postmortem evaluation inside the centre.",
   },
 ];
 
 const chips = [
-  { icon: Calendar, label: `Since ${foundedYear}`, claimId: null },
-  {
-    icon: Zap,
-    label: "First in south Tamil Nadu for fetoscopic procedures",
-    claimId: "fetoscopic-first" as ClaimId,
-  },
-  { icon: Dna, label: "In-house genetic counselling", claimId: null },
+  { icon: Calendar, label: `Since ${foundedYear}` },
+  { icon: Dna, label: "In-house genetic counselling" },
   // Real-figure slots populate automatically from data/trust.ts once the
   // client supplies verified numbers (scans performed, fellows trained, CME).
   ...Object.values(metricSlots)
@@ -62,14 +46,10 @@ const chips = [
     .map((m) => ({
       icon: TrendingUp,
       label: `${m.value.toLocaleString("en-IN")} ${m.label}`,
-      claimId: null,
     })),
 ];
 
 export function FirstsStrip() {
-  const visibleChips = chips.filter(
-    (chip) => !chip.claimId || claimIsLive(chip.claimId)
-  );
   return (
     <section className="relative z-10 -mt-6 hidden overflow-hidden rounded-t-3xl bg-white text-ink md:mt-0 md:block md:rounded-none md:bg-plum md:text-white">
       <div
@@ -78,7 +58,7 @@ export function FirstsStrip() {
       />
       <Container className="relative py-12 md:py-20">
         <div className="mb-12 flex flex-wrap items-center justify-center gap-3">
-          {visibleChips.map((chip) => (
+          {chips.map((chip) => (
             <StatChip key={chip.label} icon={chip.icon} label={chip.label} />
           ))}
         </div>
@@ -101,7 +81,7 @@ export function FirstsStrip() {
                 {item.title}
               </h2>
               <p className="mt-2 text-base text-ink-muted md:text-sm md:text-white/70">
-                {claimIsLive(item.claimId) ? item.claimText : item.description}
+                {item.description}
               </p>
             </div>
           ))}

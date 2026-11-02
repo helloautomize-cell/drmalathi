@@ -6,33 +6,18 @@ import { MobileCarousel } from "@/components/shared/mobile-carousel";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
 import { advancedProcedures } from "@/data/procedures";
-import { testimonials } from "@/data/testimonials";
 import { imageBlurDataURL } from "@/lib/image-placeholder";
-
-// Quotes reuse the consented testimonials only; while consent is pending the
-// quote slot stays empty instead of leaking unapproved words into production.
-const consentedQuote = (name: string, fragment: string) => {
-  const t = testimonials.find(
-    (item) =>
-      item.name === name &&
-      item.consentOnFile === true &&
-      item.quote.includes(fragment)
-  );
-  return t ? { text: fragment, name } : undefined;
-};
 
 const proofCards: ProofCardData[] = [
   {
     icon: ScanSearch,
     title: "Specialist-only scanning",
     body: "Every scan is performed or supervised by a fetal medicine specialist.",
-    quote: consentedQuote("Manisha Margrete", "explained every single detail"),
   },
   {
     icon: Baby,
     title: "Twin and multiple pregnancy care",
     body: "Scan schedules and care plans for twins and multiples.",
-    quote: consentedQuote("Deva", "they saved my twins"),
     href: "/services/twin-specialised-clinic",
     linkLabel: "Visit the Twin Specialised Clinic",
   },
@@ -56,7 +41,7 @@ export function WhyChooseUs() {
       <Container>
         <SectionHeader
           eyebrow="Why families choose us"
-          title="Care you can trust, in their words"
+          title="Care you can trust"
         />
         <div className="grid items-center gap-6 md:gap-10 lg:grid-cols-[420px_1fr] lg:gap-16">
           <figure className="mx-auto w-full max-w-md lg:max-w-none">
@@ -94,6 +79,10 @@ export function WhyChooseUs() {
             </span>
           ))}
         </div>
+        <p className="mt-4 text-center text-sm text-muted-foreground md:hidden">
+          All procedures carry risks and benefits that the specialist will
+          discuss with you before any decision.
+        </p>
       </Container>
     </Section>
   );

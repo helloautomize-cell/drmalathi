@@ -177,18 +177,6 @@ if (unconfirmed > 0) {
   postLaunch.push(`${unconfirmed} course duration(s) awaiting confirmation`);
 }
 
-const testSrc = read("data/testimonials.ts");
-const pendingConsent = [...testSrc.matchAll(/consentOnFile:\s*null/g)].length;
-if (pendingConsent > 0) {
-  postLaunch.push(`${pendingConsent} testimonial(s) awaiting written consent`);
-}
-
-const claimsSrc = read("data/claims.ts");
-const unsub = [...claimsSrc.matchAll(/substantiated:\s*(null|false)/g)].length;
-if (unsub > 0) {
-  postLaunch.push(`${unsub} comparative claim(s) awaiting substantiation`);
-}
-
 // --- report ----------------------------------------------------------------
 console.log("LAUNCH GATE\n");
 console.log(`BLOCKERS (${blockers.length})`);

@@ -67,7 +67,7 @@
   --radius-3xl: calc(var(--radius) * 2);
 
   /* Injected by next/font in the root layout */
-  --font-sans: var(--font-nunito), var(--font-tamil), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-fraunces), Georgia, serif;
 }
 

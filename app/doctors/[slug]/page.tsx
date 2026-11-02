@@ -39,7 +39,6 @@ export async function generateMetadata({
     alternates: { canonical: `/doctors/${doctor.slug}` },
     openGraph: {
       url: `${site.url}/doctors/${doctor.slug}`,
-      images: [{ url: `${site.url}${doctor.photo}` }],
     },
   };
 }

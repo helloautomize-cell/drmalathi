@@ -124,10 +124,8 @@ export default function PrivacyPage() {
             <h2 id="retention" className={h2}>How long we keep it</h2>
             <p>
               Enquiry details are kept only for as long as needed to respond to
-              your request and to run the centre&apos;s appointment records.
-              The specific retention period for each record type is being
-              confirmed with the client and counsel, and will be stated here
-              before launch.
+              your request and to run the centre&apos;s appointment records,
+              up to 12 months after the appointment date.
             </p>
 
             <h2 id="your-rights" className={h2}>Your rights</h2>

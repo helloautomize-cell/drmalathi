@@ -9,7 +9,6 @@ import { GuidesSection } from "@/components/home/guides-section";
 import { HelpRow } from "@/components/home/help-row";
 import { Hero } from "@/components/home/hero";
 import { ServicesSection } from "@/components/home/services-section";
-import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { VisitSteps } from "@/components/home/visit-steps";
 import { WhyChooseUs } from "@/components/home/why-choose-us";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -66,9 +65,6 @@ export default function HomePage() {
         </div>
         <div className="order-5 md:contents">
           <WhyChooseUs />
-        </div>
-        <div className="order-6 md:contents">
-          <TestimonialsSection />
         </div>
         <div className="order-7 md:contents">
           <VisitSteps />
