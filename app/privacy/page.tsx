@@ -74,8 +74,9 @@ export default function PrivacyPage() {
               When you call or message us we receive your phone number and the
               contents of the conversation. The website also uses Vercel Speed
               Insights, which records anonymised performance measurements such
-              as page load times; it does not use advertising trackers or
-              advertising cookies.
+              as page load times, and Google Analytics 4, which measures site
+              visits and enquiry clicks without ad personalisation; neither
+              uses advertising trackers or advertising cookies.
             </p>
 
             <h2 id="purposes" className={h2}>Why we use it</h2>

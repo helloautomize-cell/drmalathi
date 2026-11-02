@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Noto_Sans_Tamil, Nunito_Sans } from "next/font/google";
+import { Fraunces, Nunito_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { AnalyticsEvents } from "@/components/analytics-events";
@@ -25,15 +25,6 @@ const nunito = Nunito_Sans({
   subsets: ["latin"],
   variable: "--font-nunito",
   display: "swap",
-});
-
-// Tamil glyphs appear only in testimonial quotes below the fold; skip the
-// global preload and let the browser fetch it on demand.
-const notoTamil = Noto_Sans_Tamil({
-  subsets: ["tamil"],
-  variable: "--font-tamil",
-  display: "swap",
-  preload: false,
 });
 
 // Index only the production deployment. Preview/non-production hosts build
@@ -64,7 +55,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en-IN"
-      className={`${fraunces.variable} ${nunito.variable} ${notoTamil.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${nunito.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col pb-[calc(4rem+env(safe-area-inset-bottom))] md:pb-0">
         <a
@@ -96,7 +87,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         {`window.dataLayer = window.dataLayer || [];
 function gtag(){window.dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-LSMJ8P7HBT');`}
+gtag('config', 'G-LSMJ8P7HBT', {
+  allow_google_signals: false,
+  allow_ad_personalization_signals: false,
+});`}
       </Script>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-LSMJ8P7HBT"
