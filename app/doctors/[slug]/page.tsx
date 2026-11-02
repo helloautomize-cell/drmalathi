@@ -39,6 +39,8 @@ export async function generateMetadata({
     alternates: { canonical: `/doctors/${doctor.slug}` },
     openGraph: {
       url: `${site.url}/doctors/${doctor.slug}`,
+      // Default branded share card, not the doctor portrait (NMC 9.2).
+      images: [{ url: `${site.url}/opengraph-image` }],
     },
   };
 }
