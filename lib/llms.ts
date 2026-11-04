@@ -111,7 +111,7 @@ export function buildLlmsTxt(): string {
       ? `## Patient guides\n\n${guideLines.join("\n")}\n`
       : "",
     `## Visit and contact\n\n- [Contact and appointments](${U}/contact): Book a scan or consultation; phones, WhatsApp, email and clinic hours.\n- [International patients](${U}/international-patients): Planning a visit from outside India; dedicated international line and coordination.\n- [Frequently asked questions](${U}/faq): Answers about scans, tests, visits and appointments.\n`,
-    `## For doctors\n\n- [Fellowship programmes](${U}/fellowship): ${fellowshipProgram.programName} and structured fellowships in fetal medicine at the centre.\n- [CME activities](${U}/cme-activities): Workshops, master classes and CME events run by the team.\n`,
+    `## For doctors\n\n- [Fellowship programmes](${U}/fellowship): ${fellowshipProgram.programName} and structured fellowships in fetal medicine at the centre.\n- [Apply for fellowship training](${U}/fellowship/apply): Doctors can apply online at /fellowship/apply by filling in a form and uploading a CV.\n- [CME activities](${U}/cme-activities): Workshops, master classes and CME events run by the team.\n`,
     `## Optional\n\n- [About the centre](${U}/about): The team, history and approach to fetal medicine.\n- [Gallery](${U}/gallery): Photos from the centre and its events.${
       legal.editorialPolicy.draftPendingReview
         ? ""
@@ -349,9 +349,9 @@ export function buildLlmsFull(): string {
           .map((f) => `- ${f.name}, ${f.role}; ${f.qualifications}`)
           .join("\n")}\n\n## Admissions\n\n${
           fellowshipProgram.admissions.process
-        } Email ${fellowshipProgram.admissions.email} or call ${
-          fellowshipProgram.admissions.phone
-        }.`,
+        } Doctors can apply online at ${U}/fellowship/apply. Email ${
+          fellowshipProgram.admissions.email
+        } or call ${fellowshipProgram.admissions.phone}.`,
     })
   );
 

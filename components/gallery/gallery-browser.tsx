@@ -2,11 +2,13 @@
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { imageBlurDataURL } from "@/lib/image-placeholder";
 import dynamic from "next/dynamic";
 import {
   galleryCategories,
   galleryImages,
+  galleryImagesFor,
   type GalleryCategoryId,
 } from "@/data/gallery";
 
@@ -16,17 +18,22 @@ const Lightbox = dynamic(
   { ssr: false }
 );
 
-type Filter = "all" | GalleryCategoryId;
+export type GalleryFilter = "all" | GalleryCategoryId;
 
-export function GalleryBrowser() {
-  const [filter, setFilter] = useState<Filter>("all");
+export function GalleryBrowser({
+  initialFilter = "all",
+}: {
+  /** Validated on the page from ?tab=; "all" when absent or unknown. */
+  initialFilter?: GalleryFilter;
+}) {
+  const [filter, setFilter] = useState<GalleryFilter>(initialFilter);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const chips = useMemo(
     () => [
       { id: "all" as const, label: "All" },
-      ...galleryCategories.filter((category) =>
-        galleryImages.some((image) => image.category === category.id)
+      ...galleryCategories.filter(
+        (category) => galleryImagesFor(category.id).length > 0
       ),
     ],
     []
@@ -34,9 +41,7 @@ export function GalleryBrowser() {
 
   const visible = useMemo(
     () =>
-      filter === "all"
-        ? galleryImages
-        : galleryImages.filter((image) => image.category === filter),
+      filter === "all" ? galleryImages : galleryImagesFor(filter),
     [filter]
   );
 
@@ -84,10 +89,28 @@ export function GalleryBrowser() {
                 blurDataURL={imageBlurDataURL}
                 className="h-auto w-full object-cover"
               />
+              {image.eventTitle ? (
+                <span className="block bg-white px-3 py-2 text-left text-xs font-semibold text-ink-muted">
+                  {image.eventTitle}
+                </span>
+              ) : null}
             </button>
           </li>
         ))}
       </ul>
+
+      {filter === "cme" ? (
+        <p className="mt-8 text-center text-base text-ink-muted">
+          Conclaves, workshops and hands-on training we have hosted for
+          doctors.{" "}
+          <Link
+            href="/cme-activities"
+            className="link font-semibold whitespace-nowrap"
+          >
+            View all CME activities
+          </Link>
+        </p>
+      ) : null}
 
       {openIndex !== null ? (
         <Lightbox

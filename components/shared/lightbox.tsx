@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { imageBlurDataURL } from "@/lib/image-placeholder";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
@@ -17,6 +18,9 @@ export type LightboxImage = {
   alt: string;
   width: number;
   height: number;
+  /** Optional event the photo belongs to; adds a details link. */
+  eventId?: string;
+  eventTitle?: string;
 };
 
 /**
@@ -118,9 +122,19 @@ export function Lightbox({
             </div>
             <div className="flex items-center justify-between gap-4 text-sm">
               <p className="min-w-0 flex-1 text-white/85">{image.alt}</p>
-              <p className="shrink-0 text-white/60">
-                {(index ?? 0) + 1} of {images.length}
-              </p>
+              <div className="flex shrink-0 items-center gap-4">
+                {image.eventId ? (
+                  <Link
+                    href={`/cme-activities#${image.eventId}`}
+                    className="font-semibold text-white underline-offset-4 hover:underline"
+                  >
+                    See event details
+                  </Link>
+                ) : null}
+                <p className="text-white/60">
+                  {(index ?? 0) + 1} of {images.length}
+                </p>
+              </div>
             </div>
           </>
         ) : null}

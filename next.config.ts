@@ -39,6 +39,13 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   devIndicators: false,
   poweredByHeader: false,
+  experimental: {
+    serverActions: {
+      // The fellowship application accepts a CV PDF up to 3 MB; leave room
+      // for multipart overhead above the 1 MB default.
+      bodySizeLimit: "4mb",
+    },
+  },
   images: {
     formats: ["image/avif", "image/webp"],
   },

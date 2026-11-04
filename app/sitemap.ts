@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/services",
     "/fellowship",
+    "/fellowship/apply",
     "/cme-activities",
     "/doctors",
     "/gallery",

@@ -4,12 +4,15 @@
 // draft copy pending client approval. No patient-identifiable images are
 // used; event photos show staff and guests at the grand opening.
 
+import { cmeEvents } from "@/data/cme";
+
 export type GalleryCategoryId =
   | "reception"
   | "scan-rooms"
   | "consultation"
   | "team"
-  | "events";
+  | "events"
+  | "cme";
 
 export const galleryCategories: { id: GalleryCategoryId; label: string }[] = [
   { id: "reception", label: "Reception" },
@@ -17,6 +20,7 @@ export const galleryCategories: { id: GalleryCategoryId; label: string }[] = [
   { id: "consultation", label: "Consultation" },
   { id: "team", label: "Team" },
   { id: "events", label: "Events" },
+  { id: "cme", label: "CME and training" },
 ];
 
 export type GalleryImage = {
@@ -25,6 +29,9 @@ export type GalleryImage = {
   category: GalleryCategoryId;
   width: number;
   height: number;
+  /** Set on CME items: the event the photo belongs to. */
+  eventId?: string;
+  eventTitle?: string;
 };
 
 export const galleryImages: GalleryImage[] = [
@@ -141,3 +148,27 @@ export const galleryImages: GalleryImage[] = [
     height: 1066,
   },
 ];
+
+/**
+ * CME tab items are derived from cmeEvents, newest event first, so a new
+ * entry in data/cme.ts appears in the gallery automatically. They are kept
+ * out of galleryImages so no other tab changes.
+ */
+export const cmeGalleryImages: GalleryImage[] = [...cmeEvents]
+  .sort((a, b) => b.year - a.year)
+  .flatMap((event) =>
+    event.photos.map((photo) => ({
+      ...photo,
+      category: "cme" as const,
+      eventId: event.id,
+      eventTitle: event.title,
+    }))
+  );
+
+export function galleryImagesFor(
+  category: GalleryCategoryId
+): GalleryImage[] {
+  return category === "cme"
+    ? cmeGalleryImages
+    : galleryImages.filter((image) => image.category === category);
+}

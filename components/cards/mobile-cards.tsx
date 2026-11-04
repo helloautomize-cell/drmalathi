@@ -145,6 +145,7 @@ export function ListRow({
   meta,
   icon: Icon,
   current = false,
+  ariaCurrent,
   onClick,
   className,
 }: {
@@ -153,13 +154,15 @@ export function ListRow({
   meta?: string;
   icon?: IconType;
   current?: boolean;
+  /** Exact-match control for aria-current; defaults to `current`. */
+  ariaCurrent?: boolean;
   onClick?: () => void;
   className?: string;
 }) {
   return (
     <Link
       href={href}
-      aria-current={current ? "page" : undefined}
+      aria-current={(ariaCurrent ?? current) ? "page" : undefined}
       onClick={onClick}
       data-mobile-card="list-row"
       className={cn(

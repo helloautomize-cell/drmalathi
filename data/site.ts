@@ -71,13 +71,7 @@ export const mainNav = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services", mega: true },
   { label: "Patient Guides", href: "/guides" },
-  {
-    label: "For doctors",
-    children: [
-      { label: "Fellowship", href: "/fellowship" },
-      { label: "CME Activities", href: "/cme-activities" },
-    ],
-  },
+  { label: "Fellowship", href: "/fellowship" },
   { label: "Doctors", href: "/doctors" },
   { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" },

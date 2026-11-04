@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CalendarCheck, Clock, Globe2, Menu, Phone } from "lucide-react";
+import { cn } from "cn";
 import { BookingCta } from "@/components/booking/booking-sheet";
 import { ListRow } from "@/components/cards/mobile-cards";
 import { Container } from "@/components/shared/container";
@@ -39,12 +40,10 @@ const plainLinks = mainNav.filter(
   (item): item is NavLinkItem =>
     "href" in item && !("mega" in item && item.mega)
 );
-const doctorLinks = mainNav.find((item) => "children" in item)?.children ?? [];
 const mobileLinks = [
   { label: "About", href: "/about" },
   { label: "Patient Guides", href: "/guides" },
   { label: "Fellowship", href: "/fellowship" },
-  { label: "CME Activities", href: "/cme-activities" },
   { label: "Doctors", href: "/doctors" },
   { label: "Gallery", href: "/gallery" },
   { label: "FAQ", href: "/faq" },
@@ -151,16 +150,26 @@ function MobileNav({
         {mobileLinks
           .slice(1)
           .filter((l) => showGuides || l.href !== "/guides")
-          .map((item) => (
-          <ListRow
-            key={item.href}
-            label={item.label}
-            href={item.href}
-            current={pathname === item.href || (item.href !== "/" && pathname.startsWith(`${item.href}/`))}
-            onClick={onNavigate}
-            className="text-lg"
-          />
-        ))}
+          .map((item) => {
+            const isCurrent =
+              item.href === "/fellowship"
+                ? pathname.startsWith("/fellowship") ||
+                  pathname.startsWith("/cme-activities")
+                : pathname === item.href ||
+                  (item.href !== "/" &&
+                    pathname.startsWith(`${item.href}/`));
+            return (
+              <ListRow
+                key={item.href}
+                label={item.label}
+                href={item.href}
+                current={isCurrent}
+                ariaCurrent={pathname === item.href}
+                onClick={onNavigate}
+                className="text-lg"
+              />
+            );
+          })}
       </nav>
       <div className="mt-6 rounded-2xl bg-blush p-3">
         <ListRow label="Call" meta={site.phones[0].label} href={site.phones[0].href} icon={Phone} onClick={onNavigate} />
@@ -183,6 +192,10 @@ export function SiteHeader({ showGuides = true }: { showGuides?: boolean }) {
     .slice(1)
     .filter((l) => showGuides || l.href !== "/guides");
   const pathname = usePathname();
+  // Fellowship stays highlighted for the whole training area, including CME.
+  const fellowshipActive =
+    pathname.startsWith("/fellowship") ||
+    pathname.startsWith("/cme-activities");
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -231,27 +244,24 @@ export function SiteHeader({ showGuides = true }: { showGuides?: boolean }) {
                 </NavigationMenuItem>
               ) : null
             )}
-            <NavigationMenuItem value="for-doctors">
-              <NavigationMenuTrigger>For doctors</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="w-56 space-y-1 p-4">
-                  {doctorLinks.map((item) => (
-                    <li key={item.href}>
-                      <NavigationMenuLink
-                        render={<Link href={item.href} />}
-                        className="block rounded-lg px-3 py-2 text-sm font-semibold text-ink hover:bg-blush"
-                      >
-                        {item.label}
-                      </NavigationMenuLink>
-                    </li>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
             {restLinks.map((item) =>
               item.label === "Patient Guides" ? null : (
                 <NavigationMenuItem key={item.href}>
-                  <NavigationMenuLink render={<Link href={item.href} />} className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink
+                    render={<Link href={item.href} />}
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      item.href === "/fellowship" &&
+                        fellowshipActive &&
+                        "font-semibold text-primary"
+                    )}
+                    aria-current={
+                      item.href === "/fellowship" &&
+                      pathname === item.href
+                        ? "page"
+                        : undefined
+                    }
+                  >
                     {item.label}
                   </NavigationMenuLink>
                 </NavigationMenuItem>

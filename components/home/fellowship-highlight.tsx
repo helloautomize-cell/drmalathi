@@ -10,7 +10,6 @@ import {
   Phone,
 } from "lucide-react";
 import { BrochureDialog } from "@/components/fellowship/brochure-dialog";
-import { CourseEnquiryDialog } from "@/components/fellowship/enquiry-dialog";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/container";
 import { SectionShell } from "@/components/shared/section-shell";
@@ -98,17 +97,19 @@ function CourseCard({ course }: { course: Course }) {
         </p>
       </div>
       <div className="mt-auto pt-5">
-        <CourseEnquiryDialog course={course} />
+        <Link
+          href={`/fellowship/apply?course=${course.slug}`}
+          className="inline-flex min-h-11 items-center gap-1.5 rounded-lg text-sm font-semibold text-white underline-offset-4 hover:underline focus-visible:ring-3 focus-visible:ring-white/60 focus-visible:outline-none"
+        >
+          Apply for this course
+          <ArrowRight className="size-4" aria-hidden="true" />
+        </Link>
       </div>
     </article>
   );
 }
 
 export function FellowshipHighlight() {
-  const mailtoHref = `mailto:${fellowshipProgram.admissions.email}?subject=${encodeURIComponent(
-    "Fellowship application"
-  )}`;
-
   return (
     <SectionShell
       surface="white"
@@ -150,12 +151,12 @@ export function FellowshipHighlight() {
           >
             View courses
           </Button>
-          <a
-            href={mailtoHref}
+          <Link
+            href="/fellowship/apply"
             className="mt-2 flex min-h-11 w-full items-center justify-center text-sm font-semibold text-white underline-offset-4 hover:underline"
           >
-            Send your CV
-          </a>
+            Apply for training
+          </Link>
         </div>
         {/* Desktop: original section, unchanged. */}
         <div className="hidden md:contents">
@@ -246,9 +247,9 @@ export function FellowshipHighlight() {
               size="lg"
               nativeButton={false}
               className="min-h-11 bg-white text-plum hover:bg-rose-tint max-md:w-full"
-              render={<a href={mailtoHref} />}
+              render={<Link href="/fellowship/apply" />}
             >
-              Send your CV
+              Apply for training
             </Button>
             <a
               href={fellowshipProgram.admissions.phoneHref}

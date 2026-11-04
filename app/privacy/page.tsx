@@ -4,6 +4,7 @@ import { OnThisPage } from "@/components/shared/on-this-page";
 import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
 import { site } from "@/data/site";
+import { fellowshipProgram } from "@/data/courses";
 import { legal, legalDateLabel } from "@/data/legal";
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ const toc = [
   { id: "purposes", label: "Why we use it" },
   { id: "who-we-share-with", label: "Who we share it with" },
   { id: "appointment-requests", label: "Appointment requests" },
+  { id: "training-applications", label: "Training applications" },
   { id: "retention", label: "How long we keep it" },
   { id: "your-rights", label: "Your rights" },
   { id: "consent-withdrawal", label: "Withdrawing consent" },
@@ -57,7 +59,8 @@ export default function PrivacyPage() {
             <p>
               {site.name} is the Data Fiduciary for personal data collected
               through this website. This policy covers the appointment and
-              callback forms, the course enquiry form, phone calls and WhatsApp
+              callback forms, the training application form, phone calls and
+              WhatsApp
               messages to the numbers listed on this site, and basic technical
               data generated when you browse. It does not cover your medical
               records, which are handled at the centre under separate clinical
@@ -68,9 +71,10 @@ export default function PrivacyPage() {
             <p>
               Through the appointment and callback forms we collect your name,
               phone number, your preferred doctor, service and time of day, and
-              your consent to be contacted. Through the course enquiry form we
-              collect your name, phone number, email address, professional
-              qualification, the course you are asking about and your message.
+              your consent to be contacted. Through the training application
+              form we collect your name, phone number, email address, city,
+              professional qualifications, medical council registration
+              number, experience, the course you are applying for and your CV.
               When you call or message us we receive your phone number and the
               contents of the conversation. The website also uses Vercel Speed
               Insights, which records anonymised performance measurements such
@@ -83,16 +87,20 @@ export default function PrivacyPage() {
             <p>
               We use the details you submit for one purpose: to respond to your
               request. For appointment and callback forms that means calling or
-              messaging you to arrange a visit. For course enquiries it means
-              answering questions about eligibility and admissions. We do not
+              messaging you to arrange a visit. For training applications it
+              means assessing your application and contacting you about
+              shortlisting and interviews. We do not
               use your details for marketing without separate consent, and we
               do not sell or rent personal data.
             </p>
 
             <h2 id="who-we-share-with" className={h2}>Who we share it with</h2>
             <p>
-              Form submissions are emailed to the centre&apos;s administrative
-              team through Resend, our email delivery provider. The website is
+              Form submissions are stored in a private Google Sheet that only
+              clinic staff can open, and training application CVs are stored
+              in a private Google Drive folder owned by the centre. New
+              training applications also trigger an email alert to the centre
+              through Google. The website is
               hosted by Vercel. WhatsApp conversations are subject to
               WhatsApp&apos;s own privacy policy in addition to this one. We do
               not share your personal data with anyone else unless the law
@@ -117,6 +125,30 @@ export default function PrivacyPage() {
               on {site.phones[0].label} or email{" "}
               <a href={`mailto:${site.email}`} className="link">
                 {site.email}
+              </a>
+              .
+            </p>
+
+            <h2 id="training-applications" className={h2}>
+              Training applications
+            </h2>
+            <p>
+              When you apply for fellowship or ultrasound training, we collect
+              your contact details, your qualifications, your medical council
+              registration number, the course you are applying for and your
+              CV. We use these only to assess your application, shortlist
+              candidates and arrange interviews.
+            </p>
+            <p>
+              Applications are stored in a private Google Sheet and your CV in
+              a private Google Drive folder, both owned by the centre and
+              accessible only to clinic staff. To ask for an application to be
+              corrected or deleted, email{" "}
+              <a
+                href={`mailto:${fellowshipProgram.admissions.email}`}
+                className="link"
+              >
+                {fellowshipProgram.admissions.email}
               </a>
               .
             </p>

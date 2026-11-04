@@ -26,7 +26,7 @@ const VALID = {
   mobile: "9876543210",
   service: "Anomaly Scan",
   doctor: "Dr Malathi G. Prasad",
-  preferredDate: addDays(TODAY, 10),
+  preferredDate: addDays(istDateString(), 10),
   preferredTime: "Morning",
   notes: "",
   consent: true,

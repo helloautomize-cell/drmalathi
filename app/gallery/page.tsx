@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { GalleryBrowser } from "@/components/gallery/gallery-browser";
+import { GalleryBrowser, type GalleryFilter } from "@/components/gallery/gallery-browser";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Container } from "@/components/shared/container";
 import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
+import { galleryCategories } from "@/data/gallery";
 import {
   breadcrumbNode,
   pageGraph,
@@ -17,7 +18,22 @@ export const metadata: Metadata = {
   alternates: { canonical: "/gallery" },
 };
 
-export default function GalleryPage() {
+const validTabs = new Set<string>([
+  "all",
+  ...galleryCategories.map((category) => category.id),
+]);
+
+export default async function GalleryPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ tab?: string }>;
+}) {
+  // ?tab= links straight to a category; unknown values fall back to All.
+  const { tab } = await searchParams;
+  const initialFilter = (
+    tab && validTabs.has(tab) ? tab : "all"
+  ) as GalleryFilter;
+
   return (
     <>
       <JsonLd
@@ -32,12 +48,12 @@ export default function GalleryPage() {
       <PageHero
         eyebrow="Gallery"
         title="Inside the centre"
-        intro="A look at our reception, scan rooms, waiting areas, and the spaces where we care for families."
+        intro="A look at our reception, scan rooms, the spaces where we care for families, and the training events we host for doctors."
         crumbs={[{ label: "Home", href: "/" }, { label: "Gallery" }]}
       />
       <Section>
         <Container>
-          <GalleryBrowser />
+          <GalleryBrowser initialFilter={initialFilter} />
         </Container>
       </Section>
     </>

@@ -9,6 +9,7 @@ import {
   MapPin,
 } from "lucide-react";
 import { JsonLd } from "@/components/seo/json-ld";
+import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/container";
 import { PageHero } from "@/components/shared/page-hero";
 import { PhotoGrid } from "@/components/shared/photo-grid";
@@ -58,7 +59,8 @@ export default function CmeActivitiesPage() {
                 {events.map((event) => (
                   <article
                     key={event.id}
-                    className="rounded-2xl border border-rose-tint bg-white p-5 shadow-soft sm:p-6"
+                    id={event.id}
+                    className="scroll-mt-24 rounded-2xl border border-rose-tint bg-white p-5 shadow-soft sm:p-6"
                   >
                     <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
                       <div className="min-w-0">
@@ -146,13 +148,23 @@ export default function CmeActivitiesPage() {
                 procedures and teaching under senior specialists.
               </p>
             </div>
-            <Link
-              href="/fellowship"
-              className="mt-5 inline-flex shrink-0 items-center gap-1.5 rounded-xl border border-primary px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-rose-tint max-md:min-h-11 sm:mt-0"
-            >
-              Explore the fellowship
-              <ArrowRight className="size-4" aria-hidden="true" />
-            </Link>
+            <div className="mt-5 flex shrink-0 flex-col gap-3 sm:mt-0 sm:flex-row sm:items-center">
+              <Button
+                size="lg"
+                nativeButton={false}
+                className="min-h-11 bg-primary text-white hover:bg-primary-hover"
+                render={<Link href="/fellowship/apply" />}
+              >
+                Apply for training
+                <ArrowRight aria-hidden="true" />
+              </Button>
+              <Link
+                href="/fellowship"
+                className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-primary px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-rose-tint max-md:min-h-11"
+              >
+                Explore the fellowship
+              </Link>
+            </div>
           </div>
         </Container>
       </Section>

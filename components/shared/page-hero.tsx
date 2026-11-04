@@ -17,6 +17,7 @@ export function PageHero({
   intro,
   crumbs,
   chips,
+  actions,
   image,
   imageAlt = "",
 }: {
@@ -25,6 +26,8 @@ export function PageHero({
   intro?: string;
   crumbs: Crumb[];
   chips?: React.ReactNode;
+  /** Optional buttons/links rendered under the intro on every breakpoint. */
+  actions?: React.ReactNode;
   image?: string;
   imageAlt?: string;
 }) {
@@ -80,6 +83,11 @@ export function PageHero({
           </p>
         ) : null}
         {chips ? <div className="mt-4 flex flex-wrap gap-2">{chips}</div> : null}
+        {actions ? (
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            {actions}
+          </div>
+        ) : null}
         {image ? (
           <div className="relative mt-6 aspect-[16/10] overflow-hidden rounded-3xl shadow-soft md:hidden">
             <Image

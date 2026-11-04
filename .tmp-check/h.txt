@@ -1,0 +1,18 @@
+HTTP/1.1 200 OK
+Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'; report-uri /api/csp-report; report-to csp-endpoint
+Reporting-Endpoints: csp-endpoint="/api/csp-report"
+X-Content-Type-Options: nosniff
+Referrer-Policy: strict-origin-when-cross-origin
+Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+Vary: Accept
+Cache-Control: public, max-age=14400, must-revalidate
+ETag: _UEfxuIllQWqcQT9JZU8wB2-Ik28mrm1VFsgY4nlr0U
+Content-Type: image/jpeg
+Content-Disposition: attachment; filename="dr-shriharini-sg.jpeg"
+Content-Security-Policy: script-src 'none'; frame-src 'none'; sandbox;
+X-Nextjs-Cache: MISS
+Content-Length: 18126
+Date: Tue, 27 Oct 2026 13:56:00 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+

@@ -14,9 +14,13 @@ import {
 export function BrochureDialog({
   image,
   alt,
+  label = "View course brochure",
+  triggerClassName = "inline-flex min-h-11 items-center rounded-lg px-2 text-sm font-semibold text-white underline-offset-4 hover:underline focus-visible:ring-3 focus-visible:ring-white/60 focus-visible:outline-none",
 }: {
   image: string;
   alt: string;
+  label?: string;
+  triggerClassName?: string;
 }) {
   return (
     <Dialog>
@@ -24,11 +28,11 @@ export function BrochureDialog({
         render={
           <button
             type="button"
-            className="inline-flex min-h-11 items-center rounded-lg px-2 text-sm font-semibold text-white underline-offset-4 hover:underline focus-visible:ring-3 focus-visible:ring-white/60 focus-visible:outline-none"
+            className={triggerClassName}
           />
         }
       >
-        View course brochure
+        {label}
       </DialogTrigger>
       <DialogContent className="max-w-3xl">
         <DialogHeader>
