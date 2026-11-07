@@ -2,7 +2,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   addDays,
   bookingSchema,
-  isPreferredDateValid,
+  isBookingDateValid,
   istDateString,
   istStamp,
   maskMobile,
@@ -10,11 +10,10 @@ import {
   qrSourceOrUnknown,
 } from "@/lib/booking-schema";
 import {
-  appendRow,
-  buildRow,
-  evaluateLimits,
+  bookSlot,
+  getAvailability,
   parseSheetStamp,
-  readRecentRows,
+  ping,
   sanitiseCell,
 } from "@/lib/google-sheets";
 
@@ -24,28 +23,14 @@ const TODAY = istDateString(NOW); // "2026-10-16"
 const VALID = {
   name: "Anitha R",
   mobile: "9876543210",
-  service: "Anomaly Scan",
-  doctor: "Dr Malathi G. Prasad",
-  preferredDate: addDays(istDateString(), 10),
-  preferredTime: "Morning",
+  visitType: "New consultation",
+  reason: "Genetic Counselling",
+  date: addDays(istDateString(), 10),
+  slotStart: "09:00",
   notes: "",
   consent: true,
   source: "reception",
 };
-
-function row(over: Partial<{
-  submittedAt: string;
-  mobile: string;
-  service: string;
-  preferredDate: string;
-}> = {}): string[] {
-  const r = new Array(8).fill("");
-  r[0] = over.submittedAt ?? istStamp(NOW);
-  r[4] = over.mobile ?? "9999999999";
-  r[5] = over.service ?? "Other";
-  r[7] = over.preferredDate ?? "2026-10-20";
-  return r;
-}
 
 describe("mobile normalisation", () => {
   it("strips +91, spaces and a leading zero", () => {
@@ -99,26 +84,68 @@ describe("name and notes lengths", () => {
   });
 });
 
-describe("preferred date in IST", () => {
-  it("accepts tomorrow through 60 days ahead", () => {
-    const tomorrow = addDays(TODAY, 1);
-    const last = addDays(TODAY, 60);
-    expect(isPreferredDateValid(tomorrow, TODAY)).toBe(true);
-    expect(isPreferredDateValid(last, TODAY)).toBe(true);
+describe("visit type and reason", () => {
+  it("rejects an unknown visit type", () => {
+    expect(
+      bookingSchema.safeParse({ ...VALID, visitType: "Checkup" }).success
+    ).toBe(false);
   });
 
-  it("rejects today, the past, beyond 60 days and malformed dates", () => {
-    expect(isPreferredDateValid(TODAY, TODAY)).toBe(false);
-    expect(isPreferredDateValid(addDays(TODAY, -1), TODAY)).toBe(false);
-    expect(isPreferredDateValid(addDays(TODAY, 61), TODAY)).toBe(false);
-    expect(isPreferredDateValid("16-10-2026", TODAY)).toBe(false);
-    expect(isPreferredDateValid("2026-02-30", TODAY)).toBe(false);
+  it("rejects a reason that does not belong to the visit type", () => {
+    expect(
+      bookingSchema.safeParse({
+        ...VALID,
+        visitType: "Follow-up",
+        reason: "Genetic Counselling",
+      }).success
+    ).toBe(false);
+    expect(
+      bookingSchema.safeParse({ ...VALID, reason: "Anomaly Scan" }).success
+    ).toBe(false);
+  });
+
+  it("accepts a test under Test only", () => {
+    expect(
+      bookingSchema.safeParse({
+        ...VALID,
+        visitType: "Test only",
+        reason: "Anomaly Scan",
+      }).success
+    ).toBe(true);
+  });
+});
+
+describe("booking date in IST", () => {
+  it("accepts today through 30 days ahead", () => {
+    expect(isBookingDateValid(TODAY, TODAY)).toBe(true);
+    expect(isBookingDateValid(addDays(TODAY, 30), TODAY)).toBe(true);
+  });
+
+  it("rejects the past, beyond 30 days and malformed dates", () => {
+    expect(isBookingDateValid(addDays(TODAY, -1), TODAY)).toBe(false);
+    expect(isBookingDateValid(addDays(TODAY, 31), TODAY)).toBe(false);
+    expect(isBookingDateValid("16-10-2026", TODAY)).toBe(false);
+    expect(isBookingDateValid("2026-02-30", TODAY)).toBe(false);
   });
 
   it("stores the stamp in IST", () => {
     expect(TODAY).toBe("2026-10-16");
     expect(istStamp(NOW)).toBe("2026-10-16 11:42");
     expect(parseSheetStamp("2026-10-16 11:42")).toBe(NOW.getTime());
+  });
+});
+
+describe("slot start format", () => {
+  it("requires HH:mm", () => {
+    expect(
+      bookingSchema.safeParse({ ...VALID, slotStart: "9 am" }).success
+    ).toBe(false);
+    expect(
+      bookingSchema.safeParse({ ...VALID, slotStart: "9:00" }).success
+    ).toBe(false);
+    expect(
+      bookingSchema.safeParse({ ...VALID, slotStart: "10:30" }).success
+    ).toBe(true);
   });
 });
 
@@ -140,66 +167,6 @@ describe("cell sanitiser", () => {
     expect(sanitiseCell("@cmd")).toBe("'@cmd");
     expect(sanitiseCell("\t=1")).toBe("'\t=1");
     expect(sanitiseCell("plain text")).toBe("plain text");
-  });
-});
-
-describe("sheet row shape", () => {
-  it("writes the 13 columns in the fixed order", () => {
-    const r = buildRow({
-      bookingId: "bk_abcdefgh",
-      source: "reception",
-      name: "Anitha R",
-      mobile: "9876543210",
-      service: "Anomaly Scan",
-      doctor: "Dr Malathi G. Prasad",
-      preferredDate: "2026-10-20",
-      preferredTime: "Morning",
-      notes: '=HYPERLINK("x")',
-      now: NOW,
-    });
-    expect(r).toHaveLength(13);
-    expect(r[0]).toBe("2026-10-16 11:42");
-    expect(r[1]).toBe("bk_abcdefgh");
-    expect(r[2]).toBe("reception");
-    expect(r[9]).toBe("'=HYPERLINK(\"x\")");
-    expect(r[10]).toBe("v1");
-    expect(r[11]).toBe("New");
-    expect(r[12]).toBe("");
-  });
-});
-
-describe("sheet limits", () => {
-  const ctx = { mobile: "9876543210", service: "Anomaly Scan", preferredDate: "2026-10-20" };
-
-  it("blocks when more than 100 rows were submitted today", () => {
-    const rows = [row(), ...Array.from({ length: 101 }, () => row())];
-    expect(evaluateLimits(rows, ctx, NOW)).toBe("daily-limit");
-  });
-
-  it("silently accepts a same mobile, service and date within 24 hours", () => {
-    const rows = [row({ mobile: ctx.mobile, service: ctx.service, preferredDate: ctx.preferredDate })];
-    expect(evaluateLimits(rows, ctx, NOW)).toBe("duplicate");
-  });
-
-  it("blocks a third request from the same mobile within 24 hours", () => {
-    const rows = [
-      row({ mobile: ctx.mobile, service: "NIPT" }),
-      row({ mobile: ctx.mobile, service: "Growth Scan" }),
-    ];
-    expect(evaluateLimits(rows, ctx, NOW)).toBe("rate-limit");
-  });
-
-  it("ignores rows older than 24 hours", () => {
-    const rows = [
-      row({ mobile: ctx.mobile, submittedAt: "2026-10-10 09:00" }),
-      row({ mobile: ctx.mobile, submittedAt: "2026-10-10 10:00" }),
-      row({ mobile: ctx.mobile, service: ctx.service, preferredDate: ctx.preferredDate, submittedAt: "2026-10-10 11:00" }),
-    ];
-    expect(evaluateLimits(rows, ctx, NOW)).toBe("ok");
-  });
-
-  it("passes a normal first request", () => {
-    expect(evaluateLimits([row()], ctx, NOW)).toBe("ok");
   });
 });
 
@@ -230,28 +197,74 @@ describe("webhook client", () => {
     delete process.env.SHEETS_WEBHOOK_SECRET;
   });
 
-  it("posts the secret and action, and returns rows on success", async () => {
+  it("ping posts the secret and reports ok", async () => {
     Object.assign(process.env, env);
     const mock = stubFetch(async () => ({
       ok: true,
-      json: async () => ({ ok: true, rows: [["a", "b"], ["c"]] }),
+      json: async () => ({ ok: true }),
     }));
-    const rows = await readRecentRows();
-    expect(rows).toEqual([["a", "b"], ["c"]]);
+    expect(await ping()).toBe(true);
     const sent = JSON.parse(String(mock.mock.calls[0][1].body));
-    expect(sent).toEqual({ action: "recent", secret: "test-secret" });
+    expect(sent).toEqual({ action: "ping", secret: "test-secret" });
   });
 
-  it("rejects when the webhook answers ok false", async () => {
+  it("ping returns false on a webhook failure instead of throwing", async () => {
     Object.assign(process.env, env);
-    stubFetch(async () => ({
-      ok: true,
-      json: async () => ({ ok: false }),
-    }));
-    await expect(readRecentRows()).rejects.toThrow();
+    stubFetch(async () => ({ ok: true, json: async () => ({ ok: false }) }));
+    expect(await ping()).toBe(false);
   });
 
-  it("rejects on unparseable JSON", async () => {
+  it("availability returns days with slots", async () => {
+    Object.assign(process.env, env);
+    const day = {
+      date: "2026-10-20",
+      closed: false,
+      reason: "",
+      slots: [
+        {
+          start: "09:00",
+          end: "10:00",
+          label: "9 am to 10 am",
+          capacity: 4,
+          left: 3,
+          open: true,
+        },
+      ],
+    };
+    const mock = stubFetch(async () => ({
+      ok: true,
+      json: async () => ({
+        ok: true,
+        today: "2026-10-16",
+        lastDate: "2026-11-15",
+        dates: [day],
+      }),
+    }));
+    const res = await getAvailability("2026-10-20", 1);
+    expect(res).toEqual({
+      ok: true,
+      today: "2026-10-16",
+      lastDate: "2026-11-15",
+      dates: [day],
+    });
+    const sent = JSON.parse(String(mock.mock.calls[0][1].body));
+    expect(sent).toEqual({
+      action: "availability",
+      from: "2026-10-20",
+      days: 1,
+      secret: "test-secret",
+    });
+  });
+
+  it("availability maps ok false to { ok: false }", async () => {
+    Object.assign(process.env, env);
+    stubFetch(async () => ({ ok: true, json: async () => ({ ok: false }) }));
+    await expect(getAvailability("2026-10-21", 1)).resolves.toEqual({
+      ok: false,
+    });
+  });
+
+  it("availability rejects on unparseable JSON", async () => {
     Object.assign(process.env, env);
     stubFetch(async () => ({
       ok: true,
@@ -259,41 +272,81 @@ describe("webhook client", () => {
         throw new SyntaxError("Unexpected token");
       },
     }));
-    await expect(readRecentRows()).rejects.toThrow();
+    await expect(getAvailability("2026-10-22", 1)).rejects.toThrow();
   });
 
-  it("appends a 13 value row with the secret", async () => {
+  it("book posts the booking with the secret and returns the slot label", async () => {
     Object.assign(process.env, env);
     const mock = stubFetch(async () => ({
       ok: true,
-      json: async () => ({ ok: true }),
+      json: async () => ({ ok: true, code: "ok", slot: "9 am to 10 am" }),
     }));
-    const row = buildRow({
-      bookingId: "bk_abcdefgh",
-      source: "reception",
+    const result = await bookSlot({
+      id: "bk_abcdefgh",
+      source: "website-book",
       name: "Anitha R",
       mobile: "9876543210",
-      service: "Anomaly Scan",
-      doctor: "Dr Malathi G. Prasad",
-      preferredDate: "2026-10-20",
-      preferredTime: "Morning",
+      visitType: "New consultation",
+      reason: "Genetic Counselling",
+      date: "2026-10-20",
+      slotStart: "09:00",
       notes: "",
-      now: NOW,
+      consent: "v1",
     });
-    await appendRow(row);
+    expect(result).toEqual({ ok: true, code: "ok", slot: "9 am to 10 am" });
     const sent = JSON.parse(String(mock.mock.calls[0][1].body));
-    expect(sent.action).toBe("append");
+    expect(sent.action).toBe("book");
     expect(sent.secret).toBe("test-secret");
-    expect(sent.row).toHaveLength(13);
+    expect(sent.booking.id).toBe("bk_abcdefgh");
+    expect(sent.booking.slotStart).toBe("09:00");
   });
 
-  it("append rejects on ok false", async () => {
+  it("book maps every refusal code through", async () => {
     Object.assign(process.env, env);
-    stubFetch(async () => ({
-      ok: true,
-      json: async () => ({ ok: false }),
-    }));
-    await expect(appendRow(["x"])).rejects.toThrow();
+    for (const code of [
+      "slot_full",
+      "slot_closed",
+      "duplicate",
+      "limit",
+      "busy",
+      "invalid",
+    ]) {
+      stubFetch(async () => ({
+        ok: true,
+        json: async () => ({ ok: false, code }),
+      }));
+      const result = await bookSlot({
+        id: "bk_abcdefgh",
+        source: "website-book",
+        name: "Anitha R",
+        mobile: "9876543210",
+        visitType: "New consultation",
+        reason: "Genetic Counselling",
+        date: "2026-10-20",
+        slotStart: "09:00",
+        notes: "",
+        consent: "v1",
+      });
+      expect(result).toEqual({ ok: false, code });
+    }
+  });
+
+  it("book maps an unexpected answer to failed", async () => {
+    Object.assign(process.env, env);
+    stubFetch(async () => ({ ok: true, json: async () => ({ ok: false }) }));
+    const result = await bookSlot({
+      id: "bk_abcdefgh",
+      source: "website-book",
+      name: "Anitha R",
+      mobile: "9876543210",
+      visitType: "New consultation",
+      reason: "Genetic Counselling",
+      date: "2026-10-20",
+      slotStart: "09:00",
+      notes: "",
+      consent: "v1",
+    });
+    expect(result).toEqual({ ok: false, code: "failed" });
   });
 
   it("aborts the request after 15 seconds", async () => {
@@ -310,7 +363,7 @@ describe("webhook client", () => {
           })
       )
     );
-    const promise = appendRow(["x"]);
+    const promise = getAvailability("2026-10-23", 1);
     const assertion = expect(promise).rejects.toThrow();
     await vi.advanceTimersByTimeAsync(16000);
     await assertion;

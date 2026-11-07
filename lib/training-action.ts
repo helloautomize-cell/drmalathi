@@ -75,7 +75,7 @@ export async function submitTrainingApplication(
   applicationId?: string;
 }> {
   // 1. Honeypot: silently accept so bots do not retry or adapt.
-  if (text(formData.get("website"), 200)) {
+  if (text(formData.get("website_url2"), 200)) {
     devLog("honeypot hit, silently accepted");
     return { ok: true, message: OK_MESSAGE };
   }

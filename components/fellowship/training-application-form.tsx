@@ -364,7 +364,7 @@ export function TrainingApplicationForm({
   return (
     <form onSubmit={onSubmit} className="space-y-6" noValidate>
       <div className="absolute -left-[9999px]" aria-hidden="true">
-        <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+        <input type="text" name="website_url2" tabIndex={-1} autoComplete="new-password" />
       </div>
 
       <div className="space-y-1.5">

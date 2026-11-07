@@ -130,6 +130,19 @@ export function medicalClinicNode() {
     // No consultation fee is published on the site; "₹₹" is a neutral
     // price-level indicator until the client confirms a fee range.
     priceRange: "₹₹",
+    potentialAction: {
+      "@type": "ReserveAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${site.url}/book`,
+        inLanguage: "en",
+        actionPlatform: [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform",
+        ],
+      },
+      result: { "@type": "Reservation", name: "Appointment request" },
+    },
     ...(site.foundingDate ? { foundingDate: site.foundingDate } : {}),
     ...(site.geo
       ? {

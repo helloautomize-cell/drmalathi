@@ -18,13 +18,11 @@ export default function BookingSheetContent({
   onOpenChange,
   source,
   service,
-  doctor,
 }: {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   source: string;
   service?: string;
-  doctor?: string;
 }) {
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
@@ -44,7 +42,6 @@ export default function BookingSheetContent({
         <BookingForm
           source={source}
           service={service}
-          doctor={doctor}
           layout="sheet"
           onDone={() => onOpenChange(false)}
           trailing={

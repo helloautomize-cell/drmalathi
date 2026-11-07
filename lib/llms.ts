@@ -110,7 +110,7 @@ export function buildLlmsTxt(): string {
     guideLines.length
       ? `## Patient guides\n\n${guideLines.join("\n")}\n`
       : "",
-    `## Visit and contact\n\n- [Contact and appointments](${U}/contact): Book a scan or consultation; phones, WhatsApp, email and clinic hours.\n- [International patients](${U}/international-patients): Planning a visit from outside India; dedicated international line and coordination.\n- [Frequently asked questions](${U}/faq): Answers about scans, tests, visits and appointments.\n`,
+    `## Visit and contact\n\n- Book online: ${U}/book (pick a day and time slot; the clinic confirms by phone)\n- [Contact and appointments](${U}/contact): Book a scan or consultation; phones, WhatsApp, email and clinic hours.\n- [International patients](${U}/international-patients): Planning a visit from outside India; dedicated international line and coordination.\n- [Frequently asked questions](${U}/faq): Answers about scans, tests, visits and appointments.\n`,
     `## For doctors\n\n- [Fellowship programmes](${U}/fellowship): ${fellowshipProgram.programName} and structured fellowships in fetal medicine at the centre.\n- [Apply for fellowship training](${U}/fellowship/apply): Doctors can apply online at /fellowship/apply by filling in a form and uploading a CV.\n- [CME activities](${U}/cme-activities): Workshops, master classes and CME events run by the team.\n`,
     `## Optional\n\n- [About the centre](${U}/about): The team, history and approach to fetal medicine.\n- [Gallery](${U}/gallery): Photos from the centre and its events.${
       legal.editorialPolicy.draftPendingReview
@@ -329,7 +329,7 @@ export function buildLlmsFull(): string {
       title: "Contact",
       path: "/contact",
       lastUpdated: pageLastModified["/contact"],
-      body: `- Address: ${site.address.lines.join(" ")}\n- Phone: ${phones.map((p) => p.label).join(" and ")}\n- International line: ${internationalPhone.label}\n- WhatsApp: ${site.whatsapp.label}\n- Email: ${email}\n- Hours: ${hours}\n- Map: ${site.address.mapsUrl}`,
+      body: `- Address: ${site.address.lines.join(" ")}\n- Book online: ${site.url}/book (pick a day and time slot; the clinic confirms by phone)\n- Phone: ${phones.map((p) => p.label).join(" and ")}\n- International line: ${internationalPhone.label}\n- WhatsApp: ${site.whatsapp.label}\n- Email: ${email}\n- Hours: ${hours}\n- Map: ${site.address.mapsUrl}`,
     })
   );
 

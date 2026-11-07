@@ -160,7 +160,6 @@ export function LeadDoctorCard({
         <div className="mt-auto flex flex-wrap items-center gap-3 pt-4">
           <BookingCta
             source="home-lead-doctor"
-            doctor={doctor.slug}
             label="Book with Dr Malathi"
             size="lg"
             className="min-h-11"
@@ -213,7 +212,6 @@ function TeamDoctorCard({ doctor }: { doctor: Doctor }) {
         <div className="mt-auto flex flex-wrap items-center gap-2 pt-4">
           <BookingCta
             source="home-team-doctor"
-            doctor={doctor.slug}
             label="Book"
             size="lg"
             className="min-h-11"

@@ -152,7 +152,6 @@ export default async function DoctorDetailPage({
             <div className="order-2 mt-8 flex flex-wrap gap-3">
               <BookingCta
                 source="doctor-profile"
-                doctor={doctor.slug}
                 label={`Book with ${doctor.name.split(" ").slice(0, 2).join(" ")}`}
                 size="lg"
                 className="min-h-11 max-md:w-full"

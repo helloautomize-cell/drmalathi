@@ -48,3 +48,7 @@ next-env.d.ts
 
 # generated QR print files
 qr-output/
+
+# Apps Script deployment (project binding and any local secret file)
+apps-script/.clasp.json
+apps-script/Secret.gs

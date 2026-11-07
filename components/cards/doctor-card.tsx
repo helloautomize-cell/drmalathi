@@ -58,7 +58,6 @@ export function DoctorCard({
         <div className="mt-auto flex flex-wrap items-center gap-3 pt-5">
           <BookingCta
             source="doctor-card"
-            doctor={doctor.slug}
             label="Book"
             size="lg"
             className="min-h-11"

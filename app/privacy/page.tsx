@@ -113,9 +113,10 @@ export default function PrivacyPage() {
             <p>
               When you request an appointment, on this website or through a QR
               code at the centre, we collect your name, mobile number, the
-              service you chose, your preferred doctor, your preferred date
-              and time, and any optional notes you add. Please do not share
-              medical reports or health details in the notes field.
+              kind of visit and reason you chose, your preferred date and
+              time slot, and any optional notes you add. These are saved to a
+              private Google Sheet that only clinic staff can open. Please do
+              not share medical reports or health details in the notes field.
             </p>
             <p>
               We use these details only to contact you about your appointment.

@@ -17,7 +17,6 @@ import { BookingQrCard } from "@/components/booking-qr-card";
 import { LazyQuickConsultForm } from "@/components/forms/lazy-quick-consult-form";
 import {
   BookingFields,
-  bookingOptionLists,
   emptyBookingValues,
 } from "@/components/forms/booking-fields";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -28,7 +27,6 @@ import { PageHero } from "@/components/shared/page-hero";
 import { Section } from "@/components/shared/section";
 import { SectionHeader } from "@/components/shared/section-header";
 import { site } from "@/data/site";
-import { addDays, istDateString } from "@/lib/booking-schema";
 import {
   breadcrumbNode,
   pageGraph,
@@ -79,11 +77,6 @@ const contactRows = [
     external: false,
   },
 ];
-
-// Shared option lists for the callback form, identical to /book and the
-// appointment sheet.
-const { serviceOptions: consultServiceOptions, doctorOptions: consultDoctorOptions } =
-  bookingOptionLists();
 
 // TODO: client to confirm Saturday and Sunday hours before launch.
 const hoursRows = [
@@ -188,8 +181,6 @@ export default function ContactPage() {
               time.
             </p>
             <LazyQuickConsultForm
-              doctorOptions={consultDoctorOptions}
-              serviceOptions={consultServiceOptions}
               placeholder={
                 <BookingFields
                   interactive={false}
@@ -198,10 +189,13 @@ export default function ContactPage() {
                   values={emptyBookingValues}
                   errors={{}}
                   isSubmitting={false}
-                  doctorOptions={consultDoctorOptions}
-                  serviceOptions={consultServiceOptions}
-                  minDate={addDays(istDateString(), 1)}
-                  maxDate={addDays(istDateString(), 60)}
+                  availability={{
+                    today: "",
+                    lastDate: "",
+                    days: {},
+                    loading: false,
+                    offline: false,
+                  }}
                 />
               }
             />

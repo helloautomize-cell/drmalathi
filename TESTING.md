@@ -1,49 +1,57 @@
 # Testing
 
-## Booking requests and the Google Sheet
+## Slot booking requests and the Google Sheet
 
-The `Submissions` tab holds one row per booking request. Columns: Submitted at
-(IST), Booking ID, Source, Patient name, Mobile, Service, Preferred doctor,
-Preferred date, Preferred time, Notes, Consent version, Status, Staff notes.
+The `Bookings` tab holds one row per booking request. Columns: Submitted at
+(IST), Booking ID, Source, Patient name, Mobile, Visit type, Reason or test,
+Date, Slot, Notes, Consent, Status, Staff note, Status updated at. The
+`Slots`, `Holidays` and `Settings` tabs control what is bookable; see
+`docs/BOOKING.md` for the full reference.
 
 ### Apps Script setup (one time)
 
-1. In the private Google Sheet, format the `Submissions` tab as plain text
-   (Format > Number > Plain text) so values are stored exactly as sent.
-2. Open Extensions > Apps Script, paste `docs/sheets-apps-script.gs` and save.
-3. Project Settings > Script Properties: add `SECRET` with a long random value.
-4. Deploy > New deployment > Web app: Execute as **Me**, access **Anyone**
-   (the secret, not the URL, guards writes).
-5. Copy the web app URL into `SHEETS_WEBHOOK_URL` and the same secret into
-   `SHEETS_WEBHOOK_SECRET` (Vercel env vars and `.env.local`).
+The web app code lives in `apps-script/Code.gs` and is pushed to the Sheet's
+bound Apps Script project with clasp (`npx @google/clasp push -f` from
+`apps-script/`). It serves the slot actions (`ping`, `availability`,
+`book`) and the existing `recent`/`append`/`recent_training`/
+`append_training` actions on the same deployment, so `SHEETS_WEBHOOK_URL`
+and `SHEETS_WEBHOOK_SECRET` do not change. Run `setup()` once in the editor
+to create the new tabs and triggers, then redeploy the same deployment.
 
 ### Verify on a Vercel preview
 
-1. **QR page**: submit `/book?src=scan-room` with a valid mobile, a service,
-   tomorrow's date and a time. The row appears with `Source = scan-room` and
-   the success card shows the masked mobile and a `bk_` booking ID.
-   `/book` without `src`, or with any other value, writes `Source = unknown`.
-2. **Website form**: submit the booking form from the home page. Its row
-   shows a `website-` prefixed source (for example `website-hero`).
-3. **Same mobile, third request**: submit twice from the same mobile within
-   24 hours with different services or dates. The third request is declined
-   and the UI shows the Call/WhatsApp fallback.
-4. **Duplicate**: send the exact same mobile, service and preferred date
-   twice within 24 hours. Only one row is written; the second submit still
-   shows the success card.
-5. **Formula text**: submit a note of `=HYPERLINK("x")`. It lands in the
+1. **Health check**: `GET /api/booking-health` returns `{ "ok": true }`.
+2. **QR page**: submit `/book?src=scan-room` with a visit type, a reason, a
+   day and a slot. The row appears with `Source = scan-room` and the
+   success card shows the slot label, the masked mobile and a `bk_`
+   booking ID. `/book` without `src`, or with any other value, writes
+   `Source = unknown`.
+3. **Website forms**: submit the booking sheet (any Book button) or the
+   /contact callback form. Their rows show a `website-` prefixed source
+   (for example `website-hero`, `website-contact-page`).
+4. **Slot fills up**: after `Capacity` bookings for the same date and slot
+   (default 4), the next submit is declined with "that time just filled
+   up" and the day reloads with the slot marked Full.
+5. **Duplicate**: submit the same mobile for the same date twice. The
+   second submit shows "You already have a request for that day".
+6. **Rate limit**: a third request from one mobile within 24 hours shows
+   "You have sent several requests today".
+7. **Formula text**: submit a note of `=HYPERLINK("x")`. It lands in the
    Sheet as plain text (prefixed with an apostrophe), never as a formula.
-6. **Honeypot**: fill the hidden `website` field (for example through
+8. **Honeypot**: fill the hidden `website` field (for example through
    browser devtools) and submit. The UI shows success but no row is written.
-7. **Fast submit**: submitting within 3 seconds of page load behaves like
+9. **Fast submit**: submitting within 3 seconds of page load behaves like
    the honeypot, success shown, nothing written.
+10. **Offline**: with the webhook URL emptied, the form shows "Online
+    booking is unavailable right now" with a call button instead of slots.
 
-Daily cap: if the `Submissions` tab already has more than 100 rows for the
-current IST day, new requests are declined and callers are asked to phone.
+Daily cap: after `MaxPerDay` rows in `Bookings` for the current IST day
+(default 150), new requests are declined and callers are asked to phone.
 
-Unit tests for the schema, mobile normalisation, IST date window, sanitiser,
-the Sheet limit logic and the webhook client (success, ok false, bad JSON,
-timeout) run with `npm test` (vitest, `tests/booking.test.ts`).
+Unit tests for the schema, mobile normalisation, IST date window, visit
+type and reason rules, the sanitiser and the webhook client (ping,
+availability, book, bad JSON, timeout) run with `npm test` (vitest,
+`tests/booking.test.ts`).
 
 ## Training applications and the Google Sheet
 
@@ -67,7 +75,7 @@ Script, so no Resend setup is needed.
    `FMC Training CVs`. Do not share it. Copy the folder ID from its URL (the
    part after `/folders/`).
 3. Open Extensions > Apps Script, replace the script with the current
-   `docs/sheets-apps-script.gs` and save. In Project Settings > Script
+   `apps-script/Code.gs` and save. In Project Settings > Script
    Properties add `CV_FOLDER_ID` (the folder ID) and `ALERT_EMAIL`
    (`fmc.trichy@gmail.com`). `SECRET` stays as before.
 4. Deploy > Manage deployments > pencil icon > Version: New version > Deploy.

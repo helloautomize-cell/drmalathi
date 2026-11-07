@@ -255,6 +255,10 @@ if (llmsBuilt) {
     }
   }
 
+  // Deliberately noindex but still cited for crawlers (transactional
+  // pages). Keeping them out of the sitemap is correct on purpose.
+  const citedNoindex = new Set(["https://fmctrichy.com/book"]);
+
   for (const bodyPath of llmsBodies) {
     const rel = `.next/server/app/${bodyPath.split(/[\\/]/).pop()}`;
     const text = readFileSync(bodyPath, "utf8");
@@ -277,6 +281,7 @@ if (llmsBuilt) {
         continue;
       }
       const normalized = url.replace(/\/$/, "");
+      if (citedNoindex.has(normalized)) continue;
       if (!sitemapUrls.has(url) && !sitemapUrls.has(normalized)) {
         failures.push(`${rel}: URL not in sitemap: ${url}`);
       }

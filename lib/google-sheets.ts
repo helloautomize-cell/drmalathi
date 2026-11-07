@@ -2,21 +2,21 @@ import { istDateString, istStamp } from "@/lib/booking-schema";
 
 /**
  * Google Sheets client over a private Apps Script web app.
- * The web app (docs/sheets-apps-script.gs) reads the last rows of the
- * Submissions tab for abuse checks and appends booking rows. The shared
- * secret travels in the POST body; it is server only and never logged.
+ * The web app (apps-script/Code.gs) answers three slot-booking actions:
+ *   ping          -> health check
+ *   availability  -> days with per-slot places left
+ *   book          -> validates under a lock, appends one Bookings row
+ * plus the legacy "recent"/"append" pair and the fellowship "recent_training"/
+ * "append_training" pair (CV PDF to Drive). The shared secret travels in the
+ * POST body; it is server only and never logged.
  */
 
 const TIMEOUT_MS = 15000;
 /** The CV upload makes append_training slower; give it more room. */
 const TRAINING_TIMEOUT_MS = 30000;
 const RECENT_WINDOW = 300;
-
-// Column positions inside the A:H range returned by the "recent" action.
-export const COL_SUBMITTED_AT = 0;
-export const COL_MOBILE = 4;
-export const COL_SERVICE = 5;
-export const COL_PREFERRED_DATE = 7;
+/** How long an availability answer is reused before refetching. */
+const AVAILABILITY_CACHE_MS = 30 * 1000;
 
 // Column positions inside the A:G range returned by "recent_training".
 export const T_COL_SUBMITTED_AT = 0;
@@ -42,7 +42,17 @@ function devLog(msg: string): void {
 }
 
 type WebhookBody = {
-  action: "recent" | "append" | "recent_training" | "append_training";
+  action:
+    | "ping"
+    | "availability"
+    | "book"
+    | "recent"
+    | "append"
+    | "recent_training"
+    | "append_training";
+  from?: string;
+  days?: number;
+  booking?: Record<string, string>;
   row?: string[];
   cv?: { name: string; mimeType: string; base64: string };
 };
@@ -84,16 +94,129 @@ async function postToWebhook(
   }
 }
 
-/** Last RECENT_WINDOW data rows of the Submissions tab (A:H). */
-export async function readRecentRows(): Promise<string[][]> {
-  const json = await postToWebhook({ action: "recent" });
-  if (json.ok !== true || !Array.isArray(json.rows)) {
-    throw new Error("recent failed");
+/* ------------------------------------------------------------------ */
+/* Slot booking actions (ping / availability / book)                   */
+/* ------------------------------------------------------------------ */
+
+export type SlotView = {
+  start: string;
+  end: string;
+  /** "9 am to 10 am", the same string the Sheet stores. */
+  label: string;
+  capacity: number;
+  left: number;
+  open: boolean;
+};
+
+export type DayView = {
+  date: string;
+  closed: boolean;
+  reason: string;
+  slots: SlotView[];
+};
+
+export type AvailabilityResult =
+  | { ok: true; today: string; lastDate: string; dates: DayView[] }
+  | { ok: false };
+
+export type BookingPayload = {
+  id: string;
+  source: string;
+  name: string;
+  mobile: string;
+  visitType: string;
+  reason: string;
+  date: string;
+  slotStart: string;
+  notes: string;
+  consent: string;
+};
+
+export type BookResult =
+  | { ok: true; code: "ok"; slot: string }
+  | {
+      ok: false;
+      code:
+        | "slot_full"
+        | "slot_closed"
+        | "duplicate"
+        | "limit"
+        | "busy"
+        | "invalid"
+        | "failed";
+    };
+
+/** Health check for /api/booking-health. Never throws. */
+export async function ping(): Promise<boolean> {
+  try {
+    const json = await postToWebhook({ action: "ping" });
+    return json.ok === true;
+  } catch {
+    return false;
   }
-  const rows = json.rows
-    .filter((r): r is unknown[] => Array.isArray(r))
-    .map((r) => r.map((v) => String(v ?? "")));
-  return rows.slice(-RECENT_WINDOW);
+}
+
+// Short in-memory cache so a form mount + day pick within half a minute
+// does not hammer the Sheet. Cleared after every successful booking.
+const availabilityCache = new Map<
+  string,
+  { at: number; result: AvailabilityResult }
+>();
+
+/** Slots for `days` days starting at `from` (YYYY-MM-DD). Throws on failure. */
+export async function getAvailability(
+  from: string,
+  days: number
+): Promise<AvailabilityResult> {
+  const key = `${from}|${days}`;
+  const hit = availabilityCache.get(key);
+  if (hit && Date.now() - hit.at < AVAILABILITY_CACHE_MS) return hit.result;
+
+  const json = (await postToWebhook({
+    action: "availability",
+    from,
+    days,
+  })) as WebhookResponse & Partial<AvailabilityResult>;
+  const result: AvailabilityResult =
+    json.ok === true && Array.isArray(json.dates)
+      ? {
+          ok: true,
+          today: String(json.today ?? ""),
+          lastDate: String(json.lastDate ?? ""),
+          dates: json.dates as DayView[],
+        }
+      : { ok: false };
+  if (result.ok) {
+    availabilityCache.set(key, { at: Date.now(), result });
+    if (availabilityCache.size > 40) {
+      const oldest = availabilityCache.keys().next().value;
+      if (oldest) availabilityCache.delete(oldest);
+    }
+  }
+  return result;
+}
+
+/** Book one slot. Throws on HTTP, parse or timeout; returns codes otherwise. */
+export async function bookSlot(booking: BookingPayload): Promise<BookResult> {
+  const json = (await postToWebhook({
+    action: "book",
+    booking: { ...booking },
+  })) as WebhookResponse & { code?: string; slot?: string };
+  availabilityCache.clear();
+  if (json.ok === true && json.code === "ok") {
+    return { ok: true, code: "ok", slot: String(json.slot ?? "") };
+  }
+  const code = [
+    "slot_full",
+    "slot_closed",
+    "duplicate",
+    "limit",
+    "busy",
+    "invalid",
+  ].includes(String(json.code))
+    ? (json.code as Exclude<BookResult, { ok: true }>["code"])
+    : "failed";
+  return { ok: false, code };
 }
 
 /**
@@ -104,88 +227,10 @@ export function sanitiseCell(value: string): string {
   return /^[=+\-@\t]/.test(value) ? `'${value}` : value;
 }
 
-export type LimitVerdict = "ok" | "daily-limit" | "duplicate" | "rate-limit";
-
-/**
- * Evaluate the Sheet based limits against already-read rows.
- * Rows are A:H slices; times are the "YYYY-MM-DD HH:mm" IST stamps we write.
- */
-export function evaluateLimits(
-  rows: string[][],
-  ctx: { mobile: string; service: string; preferredDate: string },
-  now: Date = new Date()
-): LimitVerdict {
-  const today = istDateString(now);
-  const todayCount = rows.filter((r) =>
-    (r[COL_SUBMITTED_AT] ?? "").startsWith(today)
-  ).length;
-  if (todayCount > 100) return "daily-limit";
-
-  const recent = rows.filter((r) => {
-    const t = parseSheetStamp(r[COL_SUBMITTED_AT] ?? "");
-    return t !== null && now.getTime() - t < DAY_MS;
-  });
-
-  if (
-    recent.some(
-      (r) =>
-        r[COL_MOBILE] === ctx.mobile &&
-        r[COL_SERVICE] === ctx.service &&
-        r[COL_PREFERRED_DATE] === ctx.preferredDate
-    )
-  ) {
-    return "duplicate";
-  }
-
-  if (recent.filter((r) => r[COL_MOBILE] === ctx.mobile).length >= 2) {
-    return "rate-limit";
-  }
-  return "ok";
-}
-
 /** Parse "YYYY-MM-DD HH:mm" written in IST back to a timestamp. */
 export function parseSheetStamp(stamp: string): number | null {
   const ms = Date.parse(`${stamp.replace(" ", "T")}:00+05:30`);
   return Number.isNaN(ms) ? null : ms;
-}
-
-/** Build the A:M row in the fixed column order. */
-export function buildRow(input: {
-  bookingId: string;
-  source: string;
-  name: string;
-  mobile: string;
-  service: string;
-  doctor: string;
-  preferredDate: string;
-  preferredTime: string;
-  notes: string;
-  now?: Date;
-}): string[] {
-  const now = input.now ?? new Date();
-  return [
-    istStamp(now),
-    input.bookingId,
-    input.source,
-    input.name,
-    input.mobile,
-    input.service,
-    input.doctor,
-    input.preferredDate,
-    input.preferredTime,
-    input.notes,
-    CONSENT_VERSION_CELL,
-    "New",
-    "",
-  ].map(sanitiseCell);
-}
-
-/** Append one row. Throws on HTTP, parse or webhook failure; callers catch. */
-export async function appendRow(row: string[]): Promise<void> {
-  const json = await postToWebhook({ action: "append", row });
-  if (json.ok !== true) {
-    throw new Error("append failed");
-  }
 }
 
 /** Last RECENT_WINDOW data rows of the Training Applications tab (A:G). */

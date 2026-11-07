@@ -23,7 +23,6 @@ const BookingSheetContent = dynamic(
 export function BookingCta({
   source,
   service,
-  doctor,
   label,
   icon = true,
   variant = "primary",
@@ -33,7 +32,6 @@ export function BookingCta({
 }: {
   source: string;
   service?: string;
-  doctor?: string;
   label?: string;
   icon?: boolean;
   /** "primary" = solid rose, "light" = white on dark bands, "bare" = unstyled trigger. */
@@ -93,7 +91,6 @@ export function BookingCta({
           onOpenChange={setOpen}
           source={source}
           service={service}
-          doctor={doctor}
         />
       ) : null}
     </>

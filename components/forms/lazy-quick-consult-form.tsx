@@ -2,7 +2,6 @@
 
 import dynamic from "next/dynamic";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import type { BookingOption } from "@/components/forms/booking-fields";
 
 const QuickConsultForm = dynamic(
   () =>
@@ -18,15 +17,7 @@ const QuickConsultForm = dynamic(
  * then it renders `placeholder`, the same form markup rendered server-side
  * in non-interactive mode, so the page is identical before hydration.
  */
-export function LazyQuickConsultForm({
-  doctorOptions,
-  serviceOptions,
-  placeholder,
-}: {
-  doctorOptions: BookingOption[];
-  serviceOptions: BookingOption[];
-  placeholder: ReactNode;
-}) {
+export function LazyQuickConsultForm({ placeholder }: { placeholder: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   const [load, setLoad] = useState(false);
 
@@ -53,14 +44,7 @@ export function LazyQuickConsultForm({
       onPointerEnter={() => setLoad(true)}
       onFocus={() => setLoad(true)}
     >
-      {load ? (
-        <QuickConsultForm
-          doctorOptions={doctorOptions}
-          serviceOptions={serviceOptions}
-        />
-      ) : (
-        placeholder
-      )}
+      {load ? <QuickConsultForm /> : placeholder}
     </div>
   );
 }
